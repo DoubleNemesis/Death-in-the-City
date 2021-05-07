@@ -23,6 +23,10 @@
         .wrong{
             background-color: red;
         }
+        .selected{
+            font-size: 1.1em;
+            background-color: green;
+        }
     </style>
 
 </head>
@@ -34,21 +38,22 @@
         <div class="card answer" id="answer1">dry</div>
         <div class="card answer" id="answer2">disguise</div>
         <div class="card answer" id="answer3">property</div>
-    </div>
-   
+    </div> 
 </body>
 
 <script>
+    let selectedCards = [];
 document.addEventListener('click', function(e){
-if(e.target.classList.contains('card')){
-    console.log(e.target.id)
+    const targetTile = e.target;
+if(targetTile.classList.contains('card')){
+    selectedCards.push(targetTile.id.slice(targetTile.id.length-1))
+    targetTile.classList.add('selected')
+    if (selectedCards.length === 2){
+        console.log(selectedCards[0] === selectedCards[1])
+    }
 }
 })
-function checkAnswer(e){
-    console.log(e)
-    let target = document.getElementById(e)
-        // target.style.top = 0;
-}
+
 
 </script>
 </html>
