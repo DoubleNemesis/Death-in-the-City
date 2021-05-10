@@ -1,10 +1,13 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  background-color: #659dbd;
+  background-image: linear-gradient(#3c5e71, #659dbd);
+  height: 100vh;
 }
 
 code {
@@ -12,30 +15,23 @@ code {
     monospace;
 }
 
-.container {
-  background-color: #999;
-  width: 80%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  border-radius: .3em;
-  justify-content: space-around;
-}
 
 .question,
 .answer {
-  border-radius: .3em;
-  width: 7em;
-  height: 7em;
+  border-radius: .2em;
+  width: 7.3em;
+  height: 7.3em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: midnightblue;
-  margin: 1em;
-  font-size: 1rem;
-  color: whitesmoke;
-  box-shadow: .1em .1em .1em #333;
+  background-color: #8d8741;
+  background-image: linear-gradient(#333, #202020);
+  margin: .5em;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: .1em .1em .1em #999;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
 @keyframes shake {
@@ -47,43 +43,52 @@ code {
 
   20%,
   80% {
-      transform: translate3d(2px, 0, 0);
+      transform: translate3d(1px, 0, 0);
   }
 
   30%,
   50%,
   70% {
-      transform: translate3d(-4px, 0, 0);
+      transform: translate3d(-2px, 0, 0);
   }
 
   40%,
   60% {
-      transform: translate3d(4px, 0, 0);
+      transform: translate3d(2px, 0, 0);
   }
 }
 
 .question:hover,
 .answer:hover {
-  box-shadow: .1em .1em .1em limegreen;
+  box-shadow: .1em .1em .1em yellow;
   animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
   transform: translate3d(0, 0, 0);
-}
-
-.answer {
-  transition-property: top;
-  transition-duration: .5s;
+  color: yellow;
 }
 
 .wrong {
   background-color: red;
+  background-image: unset;
 }
 
 .selected {
-  font-size: 1.1em;
   background-color: green;
+  background-image: unset;
 }
 
 .used {
   font-size: 1.1em;
-  background-color: skyblue;
+  background-color: #999;
+  color: #333;
+  background-image: unset;
+  cursor: unset;
+  animation: none;
+  box-shadow: none;
+}
+
+.used:hover{
+  animation: none;
+  background-color: #999;
+  color: #333;
+  box-shadow: none;
 }

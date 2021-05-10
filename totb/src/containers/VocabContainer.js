@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-border: 1px solid red;
 display: flex;
 flex-wrap: wrap;
-width: 100%;
-justify-content: space-around;
+width: 80%;
+justify-content: center;
+align-items: center;
+margin: 0 auto;
+border-radius: .3em;
+margin-top: 2em;
 `
 
 function Container({children, ...restProps}){
