@@ -9,6 +9,11 @@ align-items: center;
 margin: 0 auto;
 border-radius: .3em;
 margin-top: 2em;
+
+@media(max-width:900px){
+    width: 100%
+}
+
 `
 
 function Container({children, ...restProps}){

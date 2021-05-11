@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  font-family: 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Lato', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   background-color: #659dbd;
   background-image: linear-gradient(#3c5e71, #659dbd);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 code {
@@ -16,17 +16,18 @@ code {
 }
 
 
-.question,
-.answer {
-  border-radius: .2em;
+.questionTile{
+  /* border-radius: .2em; */
+  border: 1px solid grey;
   width: 7.3em;
   height: 7.3em;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #8d8741;
   background-image: linear-gradient(#333, #202020);
-  margin: .5em;
+  margin: 0em;
   font-size: 1.2rem;
   color: white;
   box-shadow: .1em .1em .1em #999;
@@ -58,13 +59,19 @@ code {
   }
 }
 
-.question:hover,
-.answer:hover {
-  box-shadow: .1em .1em .1em yellow;
+.questionTile:hover{
+  box-shadow: 0 0 .5em yellow;
   animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
   transform: translate3d(0, 0, 0);
   color: yellow;
 }
+.questionTile:active{
+  box-shadow: 0 0 .5em limegreen;
+  animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  color: limegreen;
+}
+
 
 .wrong {
   background-color: red;
@@ -72,14 +79,16 @@ code {
 }
 
 .selected {
-  background-color: green;
-  background-image: unset;
+  box-shadow: 0 0 .5em limegreen;
+  animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  color: limegreen;
 }
 
 .used {
-  font-size: 1.1em;
+  /* font-size: 1.1em; */
   background-color: #999;
-  color: #333;
+  color: #666;
   background-image: unset;
   cursor: unset;
   animation: none;
@@ -91,4 +100,10 @@ code {
   background-color: #999;
   color: #333;
   box-shadow: none;
+}
+
+.correctTileTick{
+  display: flex;
+  color: green;
+  font-size: 3rem;
 }

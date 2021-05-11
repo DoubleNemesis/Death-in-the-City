@@ -4,17 +4,16 @@ import Title from '../components/Title'
 import SubTitle from '../components/SubTitle'
 import data from '../data/lessonData'
 
-
 function VocabPage() {
 
     let questions = data.vocabA.map((item, index)=>{
         return(
-            <div key={`q${index}`}id={`question${index}`} className="card question">{item}</div>
+            <div key={`q${index}`}id={`question${index}`} className="card questionTile">{item}</div>
         )
     })
     let answers = data.vocabB.map((item, index)=>{
         return(
-            <div key={`a${index}`}id={`answer${index}`} className="card question">{item}</div>
+            <div key={`a${index}`}id={`answer${index}`} className="card questionTile">{item}</div>
         )
     })
 let tiles = questions.concat(answers)
@@ -22,10 +21,11 @@ let tiles = questions.concat(answers)
 
 useEffect(()=>{
     let selectedCards = [];
+    let counter = 1
     document.addEventListener('click', function (e) {
         const targetTile = e.target;
         if (targetTile.classList.contains('card')) {
-            console.log('running');
+           if (!targetTile.classList.contains('selected')){
             selectedCards.push(targetTile.id)
             console.log(selectedCards)
             targetTile.classList.add('selected')
@@ -37,7 +37,10 @@ useEffect(()=>{
                     secondCard.classList.add('used')
                     firstCard.classList.remove('card')
                     secondCard.classList.remove('card')
-                    selectedCards = []
+                    firstCard.innerHTML += `<div class="correctTileTick">${counter}</div>`;
+                    secondCard.innerHTML += `<div class="correctTileTick">${counter}</div>`;
+                    selectedCards = [] //delete?
+                    counter ++
                 }
                 else {
                     firstCard.classList.add('wrong')
@@ -51,24 +54,21 @@ useEffect(()=>{
                 }
                 selectedCards = []
             }
+               }       //here
         }
     })
 
 })
 
-    
-
-
     return (
         <>
-            <Title>Vocabulary</Title>
+            <Title>Your first challenge...</Title>
             <SubTitle>Click on a word and then click on its synonym</SubTitle>
             <Container>
                 {tiles = tiles.sort(() => Math.random() - 0.5)}
             </Container>
         </>
     )
-
 }
 
 export default VocabPage
