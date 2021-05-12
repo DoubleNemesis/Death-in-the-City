@@ -19,4 +19,4 @@ function Home() {
     )
 }
 
-export default VocabPage
+export default Home
