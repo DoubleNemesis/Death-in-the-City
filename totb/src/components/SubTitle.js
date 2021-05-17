@@ -3,7 +3,6 @@ import TitleContainer from '../components/TitleContainer'
 
 const StyledSubTitle = styled.h2`
 color: whitesmoke;
-font-size: 1.4rem;
 `
 
 function SubTitle({ children }) {

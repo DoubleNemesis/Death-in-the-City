@@ -61,13 +61,13 @@ useEffect(()=>{
 })
 
     return (
-        <>
+        <div className="vocabPage">
             <Title>Your first challenge...</Title>
             <SubTitle>Click on a word and then click on its synonym</SubTitle>
             <Container>
                 {tiles = tiles.sort(() => Math.random() - 0.5)}
             </Container>
-        </>
+        </div>
     )
 }
 

@@ -2,8 +2,12 @@ import styled from 'styled-components'
 
 const StyledTitleContainer = styled.div`
 display: flex;
-justify-content: center;
-text-align:center;
+justify-content: flex-start;
+
+@media(max-width: 900px){
+    padding-top: 2.5em;
+}
+
 `
 
 
