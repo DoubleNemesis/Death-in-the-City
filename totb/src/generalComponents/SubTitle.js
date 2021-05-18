@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import TitleContainer from '../components/TitleContainer'
+import TitleContainer from '../generalComponents/TitleContainer'
 
 const StyledSubTitle = styled.h2`
 color: whitesmoke;

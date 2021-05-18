@@ -34,6 +34,7 @@ right:15px;
 top:15px;
 cursor: pointer;
 font-size: 2rem;
+z-index: 200000;
 
 :hover{
     color: red;
@@ -61,6 +62,13 @@ perspective: 2000px;
     align-items: center;
     gap: 1em;
 }
-
 `
 //https://unsplash.com/@lishakov    - desk
+
+export const OverlayDiv = styled.div`
+position: absolute;
+background-color: transparent;
+width: 100%;
+height: 100%;
+z-index: 1000;
+`

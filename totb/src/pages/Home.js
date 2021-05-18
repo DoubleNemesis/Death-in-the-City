@@ -1,8 +1,8 @@
 import CallToActionContainer from '../containers/CallToActionContainer'
 import MainContainer from '../containers/MainContainer'
-import Title from '../components/Title'
-import SubTitle from '../components/SubTitle'
-import Button from '../components/Button'
+import Title from '../generalComponents/Title'
+import SubTitle from '../generalComponents/SubTitle'
+import Button from '../generalComponents/Button'
 import {useHistory} from 'react-router-dom'
 
 function Home() {

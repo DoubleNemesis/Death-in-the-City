@@ -8,12 +8,12 @@ from {
 to {
     transform: rotateX(0deg)
     }
-from {
+/* from {
     transform: translate(0, 0)
 }
 to {
     transform: translate(15vw, 0)
-    }
+    } */
 from {
     width: 18vw
 }
@@ -36,17 +36,12 @@ to {
 export const defocusDeskItem = keyframes`
 
 from {
-    transform: rotateX(0deg)
+    transform: rotateX(0deg), translate(15vw, 0)
 }
 to {
-    transform: rotateX(45deg)
+    transform: rotateX(45deg), translate(0, 0)
     }
-from {
-    transform: translate(15vw, 0)
-}
-to {
-    transform: translate(0, 0)
-    }
+
 from {
     width: 80vw
 }
@@ -78,6 +73,10 @@ background-color: white;
 box-shadow: 1px 1px 3px #202020;
 transform: rotateX(45deg);
 margin-right: 2em;
+animation: ${({animateBoard})=>{
+    return animateBoard ? focusDeskItem : defocusDeskItem
+    }} 2s;
+animation-fill-mode: forwards;
 
 img{
     max-width: 50px;
@@ -112,7 +111,6 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: flex-end;
-border: 1px solid red;
 padding-bottom: 4em;
 `
 
@@ -129,7 +127,6 @@ box-shadow: 3px 3px 3px #202020;
 transform: rotateX(45deg);
 margin-right: 2em;
 animation: ${({animateMap})=>{
-    console.log('i fired')
     return animateMap ? focusDeskItem : defocusDeskItem
     }} 2s;
 animation-fill-mode: forwards;
@@ -151,6 +148,11 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 background-position: center;
 box-shadow: 3px 3px 3px #202020;
 transform: rotateX(45deg);
+animation: ${({animateNotes})=>{
+    return animateNotes ? focusDeskItem : defocusDeskItem
+    }} 2s;
+animation-fill-mode: forwards;
+z-index: 20;
 
 @media(max-width: 900px){
     width: 90%;
@@ -171,6 +173,7 @@ text-align: center;
 transform: rotate(355deg);
 color: red;
 font-size: 1.2rem;
+z-index: -20;
 
 a{
     color: red;

@@ -1,8 +1,8 @@
 import {useEffect} from 'react'
 import Container from '../containers/VocabContainer'
-import Title from '../components/Title'
-import SubTitle from '../components/SubTitle'
-import data from '../data/lessonData'
+import Title from '../generalComponents/Title'
+import SubTitle from '../generalComponents/SubTitle'
+import {data2 as data} from '../data/lessonData'
 
 function VocabPage() {
 

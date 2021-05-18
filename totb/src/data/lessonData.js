@@ -23,7 +23,7 @@ let data = {
     ]
 }
 
-let data2 = {
+export const data2 = {
     'vocabA': [
         'arid',
         'comouflage',
@@ -49,6 +49,14 @@ let data2 = {
         'tread on',
     ]
 }
+
+export const questionsToni = [
+    ['I was wondering if I could ask you some questions.', true],
+    ['I was wondered if I can ask you some questions.', false],
+    ['I am wonder if I can ask you some questions.', false],
+    ['I wonder I can ask you some questions. ', false],
+    ['I am wondering I can asking you some questions.', false]
+]
 
 
 
