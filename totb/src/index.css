@@ -51,7 +51,12 @@ h2{
   /* https://unsplash.com/@nikolasbehrendt */
 }
 
-
+.success{
+  color: limegreen !important;
+}
+.fail{
+  color: red !important;
+}
 
 .questionTile{
   /* border-radius: .2em; */

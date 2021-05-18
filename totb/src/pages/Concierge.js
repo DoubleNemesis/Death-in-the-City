@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
 import MainContainer from '../containers/MainContainer'
@@ -7,24 +8,41 @@ import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
 import { WitnessImage } from '../witnessComponents/WitnessImage'
 import { SpeechBubbleRight, SpeechBubbleLeft, Conversation } from '../witnessComponents/SpeechBubble'
-import {QuestionsContainer, QuestionsList, Question, Instructions} from '../witnessComponents/Questions'
+import { Question, Instructions } from '../witnessComponents/Questions'
 import Janitor from '../images/janitor.png'
-import {questionsToni} from '../data/lessonData'
+import { questionsToni } from '../data/lessonData'
 
 function Concierge() {
+
+    const [questions, setQuestions] = useState([])
 
     console.log(questionsToni[0][1])
 
     let history = useHistory()
 
-    function handleClick(e) {
-        const destinationPage = e.target.id
-        history.push(destinationPage)
-    }
 
-    const questionsList = questionsToni.map((item, index)=>{
-        return <Question key={index} correct={item[1]=== true ? 'correct' : null}>{item}</Question>
-    })
+    useEffect(()=>{
+        let questionsList = questionsToni.map((item, index) => {
+            return <Question key={index} onClick={handleClick}><span id={item[1] === 'success' ? 'success' : 'fail'}>{item[0]}</span></Question>
+        })
+        setQuestions(questionsList)
+    },[])
+
+
+    function handleClick(e) {
+        console.log(e.target.id)
+        if (e.target.id === 'success'){
+            e.target.classList.add('success')
+            setTimeout(()=>{
+                setQuestions([])
+            },2000)
+            // next questions
+            
+        }
+        else{
+            e.target.classList.add('fail')
+        }  
+    }
 
     return (
         <>
@@ -33,33 +51,19 @@ function Concierge() {
             </div>
             <MainContainer>
                 <PageContainer>
+
+                    <Instructions>
                     <WitnessImage img={Janitor} />
                     {/* https://unsplash.com/@shnautsher */}
+                        Task: Choose a question to ask Tony Monceto. Only one question is correct. 
+                </Instructions>
                     <Conversation>
                         <SpeechBubbleLeft>
-                            Hey! I'm Toni Monceto. Everyone likes old Toni! How can I help you?
+                            Hey! I'm Toni Monceto. A friend of Grey is a friend of mine! He told me you were coming. What can I do for you?
                     </SpeechBubbleLeft>
-                        <SpeechBubbleRight>
-                            Hey! I'm Toni Monceto. Everyone likes old Toni! How can I help you?
-                    </SpeechBubbleRight>
+                    {questions}
                     </Conversation>
-                    {/*
-                                       questions
-                                       I was wondering if you could help me
-                                       I was wondered if you could help me
-                                       I am wonder if you can help me
-                                       safe
-                                       */}
                 </PageContainer>
-                <QuestionsContainer>
-                <QuestionsList>
-                    {questionsList}
-                </QuestionsList>
-                <Instructions>
-                    Choose the best question to ask Toni Monceto!
-                </Instructions>
-                </QuestionsContainer>
-
             </MainContainer>
         </>
 

@@ -1,35 +1,21 @@
 import styled from 'styled-components'
 
-
-export const QuestionsContainer = styled.div`
-width: 80%;
-background-color: skyblue;
-display: flex;
-border-radius: .3em;
-padding: 1em;
-box-sizing: border-box;
-`
-export const QuestionsList = styled.div`
-display: flex;
-flex-direction: row;
-padding: .5em;
-flex-wrap: wrap;
-background-color: skyblue;
-`
-
 const StyledSpeechBubbleQ = styled.div`
 
 .bubble{
     position: relative;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1px;
     background: white;
-    border-radius: 40px;
-    padding: 1.5em 1.5em;
+    border-radius: 20px;
+    padding: 2em 1.5em;
     text-align: center;
     color: #000;
     margin: 1em;
+    cursor: pointer;
+    max-width: 50%;
+    float: right;
 }
 
 .bubble-bottom-right:before {
@@ -38,17 +24,24 @@ const StyledSpeechBubbleQ = styled.div`
   height: 0px;
   position: absolute;
   border-left: 12px solid transparent;
-  border-right: 24px solid white;
+  border-right: 12px solid white;
   border-top: 12px solid white;
   border-bottom: 20px solid transparent;
   left: 80%;
-  bottom: -24px;
+  bottom: -18px;
 }
 `
 
 export const Question = ({children, ...restProps})=><StyledSpeechBubbleQ {...restProps}><div className="bubble bubble-bottom-right">{children}</div></StyledSpeechBubbleQ>
 
 export const Instructions = styled.div`
-border: 1px solid pink;
 width: 50%;
+font-size: 1.5rem;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-color: white;
+padding: .5em;
+border-radius: .5em;
+display: flex;
+flex-direction: column;
+min-height: 100%;
 `

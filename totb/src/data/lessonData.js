@@ -51,11 +51,11 @@ export const data2 = {
 }
 
 export const questionsToni = [
-    ['I was wondering if I could ask you some questions.', true],
-    ['I was wondered if I can ask you some questions.', false],
-    ['I am wonder if I can ask you some questions.', false],
-    ['I wonder I can ask you some questions. ', false],
-    ['I am wondering I can asking you some questions.', false]
+    ['I was wondered if I can ask you some questions.', 'fail'],
+    ['I am wonder if I can ask you some questions.', 'fail'],
+    ['I wonder I can ask you some questions. ', 'fail'],
+    ['I was wondering if I could ask you some questions.', 'success'],
+    ['I am wondering I can asking you some questions.', 'fail']
 ]
 
 

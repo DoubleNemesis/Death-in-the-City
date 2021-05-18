@@ -5,7 +5,7 @@ display: flex;
 /* flex-direction: column; */
 width: 80%;
 /* justify-content: center; */
-align-items: center;
+/* align-items: center; */
 border-radius: .3em;
 border: 1px solid #333;
 background-color: whitesmoke;

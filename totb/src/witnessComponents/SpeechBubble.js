@@ -55,5 +55,4 @@ display: flex;
 flex-direction: column;
 background-color: skyblue;
 width: 100%;
-height: 100%;
 `
