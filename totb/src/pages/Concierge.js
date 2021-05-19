@@ -1,47 +1,91 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
 import MainContainer from '../containers/MainContainer'
-import SubTitle from '../generalComponents/SubTitle'
 import Button from '../generalComponents/Button'
-import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
-import { WitnessImage } from '../witnessComponents/WitnessImage'
-import { SpeechBubbleRight, SpeechBubbleLeft, Conversation } from '../witnessComponents/SpeechBubble'
-import { Question, Instructions } from '../witnessComponents/Questions'
+import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
+import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
 import Janitor from '../images/janitor.png'
-import { questionsToni } from '../data/lessonData'
+import { questionsToni, questionsToni2, conversationArray2 } from '../data/lessonData'
 
+let counter = 0
+let fullConversation = []
 function Concierge() {
 
     const [questions, setQuestions] = useState([])
-
-    console.log(questionsToni[0][1])
-
+    const [rightWrong, setRightWrong] = useState('Choose what to say')
+    const [conversation, setConversation] = useState([])
+    const [questionList, setQuestionList] = useState(questionsToni)
     let history = useHistory()
 
+    useEffect(() => {
+        function assignQuestionsList(dat) {
+            console.log('i ran');
+            let questionsList = dat.map((item, index) => {
+                return <Question key={index} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></Question>
+            })
+            setQuestions(questionsList)
+        }
+        assignQuestionsList(questionList)
+    }, [questionList])
 
-    useEffect(()=>{
-        let questionsList = questionsToni.map((item, index) => {
-            return <Question key={index} onClick={handleClick}><span id={item[1] === 'success' ? 'success' : 'fail'}>{item[0]}</span></Question>
+    useEffect(() => {
+        let newConversationArray = conversationArray2.map((item, index) => {
+            if (index % 2 === 0) {
+                return <SpeechBubbleLeft key={index}>{item}</SpeechBubbleLeft>
+            }
+            else {
+                return <SpeechBubbleRight key={index}>{item}</SpeechBubbleRight>
+            }
         })
-        setQuestions(questionsList)
-    },[])
+        fullConversation = newConversationArray
+    }, [])
 
+
+    useEffect(() => {
+        displayConversation(counter)
+    }, [])
+
+    function displayConversation(count) {
+        for (let i = count; i <= count; i = i + 1) {
+            setConversation((prev) => [...prev, fullConversation[i]])
+        }
+    }
 
     function handleClick(e) {
-        console.log(e.target.id)
-        if (e.target.id === 'success'){
-            e.target.classList.add('success')
-            setTimeout(()=>{
-                setQuestions([])
-            },2000)
-            // next questions
-            
+        if (e.target.classList.contains('success')) {
+            console.log(counter)
+            counter = counter + 1
+            setRightWrong('Correct!')
+            e.target.classList.add('correct')
+            let listToHide = document.querySelectorAll('.question');
+            setTimeout(() => {
+                listToHide.forEach((item) => { item.parentNode.style.display = 'none' })
+                displayConversation(counter)
+                setTimeout(() => {
+                    counter = counter + 1
+                    displayConversation(counter)
+                    setQuestionList(questionsToni2)
+                    if (counter <= 2) {
+                        listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
+                    }
+                    else {
+                        setRightWrong(<Button onclick={handleExit}>Let's go!</Button>)
+                    }
+
+                }, 1000)
+            }, 1000)
         }
-        else{
-            e.target.classList.add('fail')
-        }  
+        else {
+            e.target.classList.add('wrong')
+            setRightWrong('Lose a point and try again!')
+            //minus points
+        }
+    }
+
+    function handleExit(){
+        history.push('/office')
     }
 
     return (
@@ -53,16 +97,26 @@ function Concierge() {
                 <PageContainer>
 
                     <Instructions>
-                    <WitnessImage img={Janitor} />
-                    {/* https://unsplash.com/@shnautsher */}
-                        Task: Choose a question to ask Tony Monceto. Only one question is correct. 
-                </Instructions>
+                        <WitnessImage img={Janitor} />
+                        {/* https://unsplash.com/@shnautsher */}
+                        <TaskBox>
+                            Your Task:
+                        <ul>
+                                <li>Choose a question from the list on the right. </li>
+                                <li>Only one question is grammatically correct. </li>
+                                <li>If you choose the wrong one you lose a point.</li>
+                            </ul>
+                        </TaskBox>
+                    </Instructions>
                     <Conversation>
-                        <SpeechBubbleLeft>
-                            Hey! I'm Toni Monceto. A friend of Grey is a friend of mine! He told me you were coming. What can I do for you?
-                    </SpeechBubbleLeft>
-                    {questions}
+                        {conversation}
                     </Conversation>
+                    <QuestionOptions>
+                        <InfoBox>
+                            {rightWrong}
+                        </InfoBox>
+                        {questions}
+                    </QuestionOptions>
                 </PageContainer>
             </MainContainer>
         </>

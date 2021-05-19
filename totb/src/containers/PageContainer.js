@@ -18,6 +18,7 @@ animation-name: fadeIn;
 animation-delay: 1s;
 animation-duration: 3s;
 animation-fill-mode: forwards;
+min-height: 100vh;
 
 @keyframes fadeIn{
     0% {opacity: 0}

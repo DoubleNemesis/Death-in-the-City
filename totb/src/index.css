@@ -51,11 +51,14 @@ h2{
   /* https://unsplash.com/@nikolasbehrendt */
 }
 
-.success{
-  color: limegreen !important;
+.correct{
+  border: 1px solid yellow !important;
 }
-.fail{
-  color: red !important;
+.wrong{
+  padding: .5em;
+  border-radius: .3em;
+  color: #666;
+  cursor:not-allowed;
 }
 
 .questionTile{
