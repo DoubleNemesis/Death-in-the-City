@@ -1,11 +1,9 @@
 import styled from 'styled-components'
+import MainContainer from './MainContainer'
 
 const StyledContainer = styled.div`
 display: flex;
-/* flex-direction: column; */
 width: 80%;
-/* justify-content: center; */
-/* align-items: center; */
 border-radius: .3em;
 border: 1px solid #333;
 background-color: whitesmoke;
@@ -15,8 +13,8 @@ font-size: 1.5rem;
 opacity: 0;
 margin: 1em;
 animation-name: fadeIn;
-animation-delay: 1s;
-animation-duration: 3s;
+animation-delay: .1s;
+animation-duration: .3s;
 animation-fill-mode: forwards;
 min-height: 100vh;
 
@@ -36,7 +34,7 @@ min-height: 100vh;
 function PageContainer({children, ...restProps}){
 
     return (
-        <StyledContainer>{children}</StyledContainer>
+        <MainContainer><StyledContainer>{children}</StyledContainer></MainContainer>
     )
 }
 

@@ -13,13 +13,13 @@ function Home() {
 
     return (
         <>
-            <div className="title">
+
                 <Title>Death in the City</Title>
-            </div>
+
             <SubTitle>Your mission: solve the crime</SubTitle>
             <MainContainer>
             <CallToActionContainer>
-                On the 27th of January 2021 at 3:06am the body of 25-year-old actor Lexington Grey was discovered on the sidewalk at the foot of the exclusive Kaplinsky Tower. Some say it was suicide. We think it was murder.
+                On the 27th of January 2021 at 3:06am the body of 25-year-old actor Lexington Grey was discovered on the sidewalk at the foot of the exclusive Kaplinsky Tower. The police say it was suicide...
                 <Button onclick={handleClick}>Get Going!</Button>
             </CallToActionContainer>
             </MainContainer>

@@ -93,7 +93,6 @@ function Concierge() {
             <div className="title">
                 <Title>Kaplinksy Tower Concierge</Title>
             </div>
-            <MainContainer>
                 <PageContainer>
 
                     <Instructions>
@@ -118,7 +117,6 @@ function Concierge() {
                         {questions}
                     </QuestionOptions>
                 </PageContainer>
-            </MainContainer>
         </>
 
     )
