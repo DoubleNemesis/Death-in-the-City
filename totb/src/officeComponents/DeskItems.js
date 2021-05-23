@@ -8,12 +8,6 @@ from {
 to {
     transform: rotateX(0deg)
     }
-/* from {
-    transform: translate(0, 0)
-}
-to {
-    transform: translate(15vw, 0)
-    } */
 from {
     width: 18vw
 }
@@ -60,10 +54,7 @@ from {
 to {
     z-index: 1
     }
-
 `
-
-
 export const Board = styled.div`
 display: flex;
 flex-direction: column;
@@ -71,6 +62,7 @@ height: 30vh;
 width: 250px;
 background-color: white;
 box-shadow: 1px 1px 3px #202020;
+box-shadow: 3px 3px 3px #202020;
 transform: rotateX(45deg);
 margin-right: 2em;
 animation: ${({animateBoard})=>{
@@ -134,7 +126,16 @@ animation-fill-mode: forwards;
 @media(max-width: 900px){
     width: 90%;
 }
-
+`
+export const MapLarge = styled.div`
+height: 100%;
+width: 100%;
+position: relative;
+background-color: white;
+background-image: url('http://tomsclassroom.com/totbImages/maplarge.png');
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-size: cover;
+background-position: center;
 `
 export const Notes = styled.div`
 height: 30vh;

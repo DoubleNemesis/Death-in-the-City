@@ -3,7 +3,8 @@ import MainContainer from '../containers/MainContainer'
 import Title from '../generalComponents/Title'
 import SubTitle from '../generalComponents/SubTitle'
 import Button from '../generalComponents/Button'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { homeTitle, backStorySubtitle} from '../data/lessonData'
 
 function Home() {
     let history = useHistory()
@@ -13,10 +14,8 @@ function Home() {
 
     return (
         <>
-
-                <Title>Death in the City</Title>
-
-            <SubTitle>Here's the backstory</SubTitle>
+            <Title>{homeTitle}</Title>
+            <SubTitle>{backStorySubtitle}</SubTitle>
             <MainContainer>
             <CallToActionContainer>
                <Button onclick={handleClick}>Go to the Vocab</Button>

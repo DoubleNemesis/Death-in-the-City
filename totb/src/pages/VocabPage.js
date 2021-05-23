@@ -1,11 +1,13 @@
 import {useEffect, useState} from 'react'
+import {history, useHistory} from 'react-router-dom'
 import Container from '../containers/VocabContainer'
 import Title from '../generalComponents/Title'
 import SubTitle from '../generalComponents/SubTitle'
-import {data2 as data} from '../data/lessonData'
+import {vocabData as data} from '../data/lessonData'
 
 function VocabPage() {
     const [hasFinished, setHasFinished] = useState(false)
+    let history = useHistory()
 
     let questions = data.vocabA.map((item, index)=>{
         return(
@@ -65,6 +67,10 @@ useEffect(()=>{
     })
 })
 
+function handleGameEnd(){
+    history.push('/office')
+}
+
     return (
         <div className="vocabPage">
             <Title>Your first challenge...</Title>
@@ -72,7 +78,11 @@ useEffect(()=>{
             <Container>
                 {tiles = tiles.sort(() => Math.random() - 0.5)}
             </Container>
-        </div>
+            <div>
+                Great, you passed the test. Go to your office and get going!
+                <button onClick={handleGameEnd}>Go!</button>
+            </div>
+                    </div>
     )
 }
 

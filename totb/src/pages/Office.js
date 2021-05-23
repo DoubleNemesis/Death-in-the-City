@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Title from '../generalComponents/Title'
-import { Board, Messages, DeskTitles, Notes, Map, Desk, PostIt } from '../officeComponents/DeskItems'
+import { Board, Messages, DeskTitles, Notes, Map, MapLarge, Desk, PostIt } from '../officeComponents/DeskItems'
+import { MapFeature } from '../officeComponents/MapDestinations'
 import { OfficeLayout, ModalClose, ModalOpen } from '../officeComponents/OfficeComponents'
 import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
@@ -8,17 +9,23 @@ import { history, useHistory } from 'react-router-dom'
 const OfficeItemsContents = styled.div`
 color: black;
 position: relative;
-z-index: 10000;
 background-color: white;
 width: 100%;
 height: 100%;
 margin-top: -4.5em;
 `
-
 function MapBig() {
+    let history = useHistory()
+    function handleMapClick(e) {
+    console.log(e.target.id);
+    const destination = `/${e.target.id}`
+    history.push(destination)
+    }
     return (
         <OfficeItemsContents>
-            Map
+            <MapLarge>
+                <MapFeature label="Kaplinksy Tower" top="56" right="35" id="witness1" onclick={handleMapClick} />
+            </MapLarge>
         </OfficeItemsContents>
     )
 }
@@ -32,12 +39,10 @@ function NotesBig() {
 function BoardBig() {
     return (
         <OfficeItemsContents>
-            Ideas 123
+            There's nothing to see here yet!
         </OfficeItemsContents>
     )
 }
-
-
 
 function Office() {
     const [animateMap, setAnimateMap] = useState(false)
@@ -90,9 +95,9 @@ function Office() {
             <OfficeLayout>
                 <Desk >
                     <Map animateMap={animateMap} >
-                        {!mapData ? 
-                        <ModalOpen id="map" onClick={handleDeskItemOpen} >+</ModalOpen> :
-                        <ModalClose onClick={handleDeskItemClose} id="map">X</ModalClose>
+                        {!mapData ?
+                            <ModalOpen id="map" onClick={handleDeskItemOpen} >+</ModalOpen> :
+                            <ModalClose onClick={handleDeskItemClose} id="map">X</ModalClose>
                         }
                         <DeskTitles>Maps/Diagrams</DeskTitles>
                         {mapData ? <MapBig /> : null}
@@ -126,8 +131,14 @@ function Office() {
 
                         <DeskTitles >Notes/Messages</DeskTitles>
                         {notesData ? <NotesBig /> : null}
-                        <Messages>Call Mr Lexton ASAP!!</Messages>
-                        <Messages>View all notes</Messages>
+                        {!notesData ?
+                            <>
+                                <Messages>Call Mr Lexton ASAP!!</Messages>
+                                <Messages>View all notes</Messages>
+                            </>
+                            : null
+                        }
+
 
                     </Notes>
                 </Desk>

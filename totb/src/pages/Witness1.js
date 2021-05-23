@@ -7,7 +7,7 @@ import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
 import Janitor from '../images/janitor.png'
-import { questionsToni, questionsToni2, conversationArray2 } from '../data/lessonData'
+import { questionsWit1 as questionsToni, questionsWit1_2 as questionsToni2, conversationArray } from '../data/lessonData'
 
 let counter = 0
 let fullConversation = []
@@ -31,7 +31,7 @@ function Concierge() {
     }, [questionList])
 
     useEffect(() => {
-        let newConversationArray = conversationArray2.map((item, index) => {
+        let newConversationArray = conversationArray.map((item, index) => {
             if (index % 2 === 0) {
                 return <SpeechBubbleLeft key={index}>{item}</SpeechBubbleLeft>
             }
@@ -85,7 +85,7 @@ function Concierge() {
     }
 
     function handleExit(){
-        history.push('/office')
+        history.push('/trial1')
     }
 
     return (

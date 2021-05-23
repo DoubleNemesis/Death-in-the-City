@@ -1,33 +1,13 @@
-import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
+//Home page
+export const homeTitle = "Death in the City"
+export const homeSubtitle = "Your mission: solve the crime"
+export const homeCallToActionText = "On the 27th of January 2021 at 3:06am the body of 25-year-old actor Lexington Grey was discovered on the sidewalk at the foot of the exclusive Kaplinsky Tower. The police say it was suicide..."
 
+//Backstory page
+export const backStorySubtitle = "Here's the backstory"
 
-
-let data = {
-    'words': [
-        'arid',
-        'comouflage',
-        'asset',
-        'breed',
-        'beast',
-        'curse',
-        'inscription',
-        'row',
-        'thrive',
-        'trample',
-        'dry',
-        'disguise',
-        'property',
-        'reproduce',
-        'creature',
-        'jinx',
-        'text',
-        'propel',
-        'grow',
-        'tread',
-    ]
-}
-
-export const data2 = {
+// Vocab Page
+export const vocabData = {
     'vocabA': [
         'arid',
         'comouflage',
@@ -54,14 +34,20 @@ export const data2 = {
     ]
 }
 
-export const questionsToni = [
+//office specific
+
+//character specific
+
+
+// Witness 1
+export const questionsWit1 = [
     ['I was wondered if I can ask you some questions.', 'fail'],
     ['I am wonder if I can ask you some questions.', 'fail'],
     ['I wonder I can ask you some questions. ', 'fail'],
     ['I was wondering if I could ask you some questions.', 'success'],
     ['I am wondering I can asking you some questions.', 'fail']
 ]
-export const questionsToni2 = [
+export const questionsWit1_2 = [
     ['I need knowing who was at the party with Lexington Grey.', 'fail'],
     ['I need to know who was at the party with Lexington Grey.', 'success'],
     ['I need know who was at the party with Lexington Grey. ', 'fail'],
@@ -69,8 +55,7 @@ export const questionsToni2 = [
     ['I need to know who was being at the party with Lexington Grey.', 'fail']
 ]
 
-
-export const conversationArray2 = [
+export const conversationArray = [
     "Hey! I'm Toni Monceto. What can I do for you?",
     "I was wondering if I could ask you some questions.",
     " A friend of Grey is a friend of mine! What do you want to know?",
