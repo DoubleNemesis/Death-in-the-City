@@ -9,25 +9,6 @@ to {
     }
 `
 
-export const Modal = styled.div`
-position: absolute;
-transform: rotateX(90deg);
-min-height: 80vh;
-min-width: 90vw;
-background-color: white;
-animation: ${({isShownDisplayModal})=>{
-    if(isShownDisplayModal){
-        return rotateModal
-    }
-    else{
-        return null
-    }
-}} 2s;
-animation-fill-mode: forwards;
-z-index: 2;
-border-radius: .2em;
-box-shadow: 2px 2px 5px #333;
-`
 export const ModalClose = styled.div`
 position: absolute;
 right:15px;
@@ -39,8 +20,18 @@ z-index: 200000;
 :hover{
     color: red;
 }
+`
+export const ModalOpen = styled.div`
+position: absolute;
+right:15px;
+top:15px;
+cursor: pointer;
+font-size: 2rem;
+z-index: 200000;
 
-
+:hover{
+    color: red;
+}
 `
 
 
@@ -64,11 +55,3 @@ perspective: 2000px;
 }
 `
 //https://unsplash.com/@lishakov    - desk
-
-export const OverlayDiv = styled.div`
-position: absolute;
-background-color: transparent;
-width: 100%;
-height: 100%;
-z-index: 1000;
-`

@@ -5,6 +5,7 @@ import Office from './pages/Office'
 import Concierge from './pages/Witness1'
 import MrGrey from './pages/Client'
 import Trial1 from './pages/Trial1'
+import BackStory from './pages/BackStory'
 import Header from './pageElements/Header'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import GameContext from './context/GameContext'
@@ -28,6 +29,7 @@ const [hasDoneVocab, setHasDoneVocab] = useState(false)
       <Link to="/concierge">Concierge</Link>
       <Link to="/mrgrey">MrGrey</Link>
       <Link to="/trial1">SafeCrack</Link>
+      <Link to="/backstory">SafeCrack</Link>
         </nav>
     </Header>
         <Route exact path="/">
@@ -47,6 +49,9 @@ const [hasDoneVocab, setHasDoneVocab] = useState(false)
         </Route>
         <Route path="/mrgrey">
           <MrGrey />
+        </Route>
+        <Route path="/backstory">
+          <BackStory />
         </Route>
       </GameContext.Provider>
       </Router>
