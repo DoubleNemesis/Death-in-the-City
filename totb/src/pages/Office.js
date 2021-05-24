@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Title from '../generalComponents/Title'
-import { Board, Messages, DeskTitles, Notes, Map, MapLarge, Desk, PostIt } from '../officeComponents/DeskItems'
+import { Board, Messages, DeskTitles, Notes, Map, MapLarge, Desk } from '../officeComponents/DeskItems'
 import { MapFeature } from '../officeComponents/MapDestinations'
+import { BoardIdea } from '../officeComponents/BoardIdea'
+import { NoteItem } from '../officeComponents/NoteItem'
 import { OfficeLayout, ModalClose, ModalOpen } from '../officeComponents/OfficeComponents'
 import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
+import { officeTitle, backStorySubtitle, mapFeatureData, BoardIdeaData, NoteItemData } from '../data/lessonData'
+import GameContext from '../context/GameContext'
 
 const OfficeItemsContents = styled.div`
 color: black;
@@ -14,35 +18,58 @@ width: 100%;
 height: 100%;
 margin-top: -4.5em;
 `
-function MapBig() {
+function MapOpen() {
     let history = useHistory()
+    const {level} = useContext(GameContext)
+    const numMapItemsToDisplay = level < 1 ? level : level === 1 ? 6 : 7
+
     function handleMapClick(e) {
-    console.log(e.target.id);
-    const destination = `/${e.target.id}`
-    history.push(destination)
+        console.log(e.target.id);
+        const destination = `/${e.target.id}`
+        history.push(destination)
     }
+
     return (
         <OfficeItemsContents>
             <MapLarge>
-                <MapFeature label="Kaplinksy Tower" top="56" right="35" id="witness1" onclick={handleMapClick} />
+                {mapFeatureData['features'].map((item, index) => {
+                    if(index <= numMapItemsToDisplay){
+                        return <MapFeature label={item.label} top={item.top} right={item.right} id={item.id} onclick={handleMapClick} />
+                    }
+               })}
             </MapLarge>
         </OfficeItemsContents>
     )
 }
-function NotesBig() {
+
+function BoardOpen() {
+    const {level} = useContext(GameContext)
     return (
         <OfficeItemsContents>
-            Notes
+            {BoardIdeaData['idea'].map((item, index)=>{
+                if (index<=level){
+                    return <BoardIdea key={item.key} title={item.title} name={item.name} image={item.image}/>
+                }
+
+            })}
         </OfficeItemsContents>
     )
 }
-function BoardBig() {
+
+function NotesOpen() {
+    const {level} = useContext(GameContext)
     return (
         <OfficeItemsContents>
-            There's nothing to see here yet!
+                        {NoteItemData['idea'].map((item, index)=>{
+                if (index<=level){
+                    return <NoteItem key={item.key} text={item.text}/>
+                }
+
+            })}
         </OfficeItemsContents>
     )
 }
+
 
 function Office() {
     const [animateMap, setAnimateMap] = useState(false)
@@ -91,7 +118,7 @@ function Office() {
 
     return (
         <>
-            <Title>Office</Title>
+            <Title>{officeTitle}</Title>
             <OfficeLayout>
                 <Desk >
                     <Map animateMap={animateMap} >
@@ -100,7 +127,7 @@ function Office() {
                             <ModalClose onClick={handleDeskItemClose} id="map">X</ModalClose>
                         }
                         <DeskTitles>Maps/Diagrams</DeskTitles>
-                        {mapData ? <MapBig /> : null}
+                        {mapData ? <MapOpen /> : null}
                     </Map>
 
                     <Board animateBoard={animateBoard}  >
@@ -109,20 +136,12 @@ function Office() {
                             <ModalClose onClick={handleDeskItemClose} id="board" >X</ModalClose>
                         }
                         <DeskTitles>Ideas</DeskTitles>
-                        {boardData ? <BoardBig /> : null}
-                        {!boardData ?
-                            <>
-                                <PostIt>
-                                    <p>The Victim</p>
-                                    <p>Lexington Grey</p>
-                                </PostIt>
-                                <img src="https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80" />
-                            </>
+                        {boardData ? <BoardOpen /> : null}
+                        {/* {!boardData ?
+
                             : null
-                        }
-
+                        } */}
                     </Board>
-
                     <Notes animateNotes={animateNotes} >
                         {!notesData ?
                             <ModalOpen onClick={handleDeskItemOpen} id="notes">+</ModalOpen> :
@@ -130,16 +149,14 @@ function Office() {
                         }
 
                         <DeskTitles >Notes/Messages</DeskTitles>
-                        {notesData ? <NotesBig /> : null}
-                        {!notesData ?
+                        {notesData ? <NotesOpen /> : null}
+                        {/* {!notesData ?
                             <>
                                 <Messages>Call Mr Lexton ASAP!!</Messages>
                                 <Messages>View all notes</Messages>
                             </>
                             : null
-                        }
-
-
+                        } */}
                     </Notes>
                 </Desk>
             </OfficeLayout>

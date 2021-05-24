@@ -1,4 +1,6 @@
 import styled, {keyframes} from 'styled-components'
+import mindmap from '../images/mindmap.jpg'
+import notebook from '../images/notebook.png'
 
 export const focusDeskItem = keyframes`
 
@@ -61,6 +63,9 @@ flex-direction: column;
 height: 30vh;
 width: 250px;
 background-color: white;
+background-image: url(${mindmap});
+background-size: cover;
+background-position: center;
 box-shadow: 1px 1px 3px #202020;
 box-shadow: 3px 3px 3px #202020;
 transform: rotateX(45deg);
@@ -78,7 +83,6 @@ img{
     padding: .4em;
 margin: .4em;
 }
-
 
 @media(max-width: 900px){
     width: 90%;
@@ -147,6 +151,10 @@ background: repeating-linear-gradient(
 );
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 background-position: center;
+background-image: url(${notebook});
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
 box-shadow: 3px 3px 3px #202020;
 transform: rotateX(45deg);
 animation: ${({animateNotes})=>{
@@ -165,8 +173,10 @@ text-align: center;
 box-sizing: border-box;
 background-color: white;
 font-weight: 400;
-padding: .3em .3em;
+padding: .6em .3em;
 z-index: -1;
+margin-top: 0;
+border-bottom: 2px solid #666;
 `
 export const Messages = styled.p`
 font-family: cursive;

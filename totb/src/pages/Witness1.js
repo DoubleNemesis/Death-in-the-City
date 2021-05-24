@@ -7,7 +7,7 @@ import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
 import Janitor from '../images/janitor.png'
-import { questionsWit1 as questionsToni, questionsWit1_2 as questionsToni2, conversationArray } from '../data/lessonData'
+import { questionsWit1, questionsWit1_2, conversationArray } from '../data/lessonData'
 
 let counter = 0
 let fullConversation = []
@@ -16,7 +16,7 @@ function Concierge() {
     const [questions, setQuestions] = useState([])
     const [rightWrong, setRightWrong] = useState('Choose what to say')
     const [conversation, setConversation] = useState([])
-    const [questionList, setQuestionList] = useState(questionsToni)
+    const [questionList, setQuestionList] = useState(questionsWit1)
     let history = useHistory()
 
     useEffect(() => {
@@ -66,7 +66,7 @@ function Concierge() {
                 setTimeout(() => {
                     counter = counter + 1
                     displayConversation(counter)
-                    setQuestionList(questionsToni2)
+                    setQuestionList(questionsWit1_2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
                     }

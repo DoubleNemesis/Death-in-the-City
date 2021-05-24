@@ -36,7 +36,62 @@ export const vocabData = {
 
 //office specific
 
+export const officeTitle = "Office"
+
+//map
+
+export const mapFeatureData = {
+    'features': [{
+        'key': [1],
+        'label': ["Kaplinksy Tower"],
+        'id': ['witness1'],
+        'top': [56],
+        'right': [35]
+    },
+    {
+        'key': [2],
+        'label': ["Nigel Franks"],
+        'id': ['witness2'],
+        'top': [16],
+        'right': [15]
+    },
+    {
+        'key': [3],
+        'label': ["Brain Dodds"],
+        'id': ['witness2'],
+        'top': [36],
+        'right': [35]
+    },
+    {
+        'key': [4],
+        'label': ["Sarah West"],
+        'id': ['witness2'],
+        'top': [76],
+        'right': [75]
+    },
+]
+}
+
+export const BoardIdeaData = {
+    'idea': [{
+        'key': [1],
+        'title': ["The Victim"],
+        'name': ["Lexington Grey"],
+        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+    },
+]
+}
+export const NoteItemData = {
+    'idea': [{
+        'key': [1],
+        'text': ["Call Mr Grey asap"],
+        },
+]
+}
+
+
 //character specific
+//stored here then passed to context as appears in story
 
 
 // Witness 1

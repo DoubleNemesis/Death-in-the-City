@@ -4,23 +4,24 @@ import Home from './pages/Home'
 import Office from './pages/Office'
 import Witness1 from './pages/Witness1'
 import MrGrey from './pages/Client'
-import Trial1 from './pages/Trial1'
+import CodeBox from './pages/CodeBox'
 import BackStory from './pages/BackStory'
 import Header from './pageElements/Header'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import GameContext from './context/GameContext'
-//import TestPage from './pages/TestPage'
 
 function App() {
 
 const [hasDoneVocab, setHasDoneVocab] = useState(false)
+const [level, setLevel] = useState(0)
 
+const providedValues = {hasDoneVocab, setHasDoneVocab, level, setLevel}
 
   return (
     <div className="outer">
 
       <Router>
-        <GameContext.Provider value={{vocab: [hasDoneVocab, setHasDoneVocab]}}>
+        <GameContext.Provider value={providedValues}>
       <Header>
       <nav>
       <Link to="/">home</Link>.
@@ -28,8 +29,8 @@ const [hasDoneVocab, setHasDoneVocab] = useState(false)
       <Link to="/office">office</Link>
       <Link to="/witness1">Janitor</Link>
       <Link to="/mrgrey">MrGrey</Link>
-      <Link to="/trial1">SafeCrack</Link>
-      <Link to="/backstory">SafeCrack</Link>
+      <Link to="/codebox">SafeCrack</Link>
+      <Link to="/backstory">BackStory</Link>
         </nav>
     </Header>
         <Route exact path="/">
@@ -41,8 +42,8 @@ const [hasDoneVocab, setHasDoneVocab] = useState(false)
         <Route path="/witness1">
           <Witness1 />
         </Route>
-        <Route path="/trial1">
-          <Trial1/>
+        <Route path="/codebox">
+          <CodeBox/>
         </Route>
         <Route path="/vocab">
           <VocabPage />

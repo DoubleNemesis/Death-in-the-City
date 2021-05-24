@@ -3,9 +3,8 @@ import safewheel from '../images/safewheel.png'
 import visitorbook from '../images/visitorbook.png'
 
 export const rotateDoor = keyframes`
-
-from { transform: rotateY(0deg) }
-to { transform: rotateY(120deg) }
+from { transform: rotateY(0deg); }
+to { transform: rotateY(120deg); }
 `
 export const rotateWheel = keyframes`
 0% { transform: rotate(0deg); }
@@ -159,5 +158,5 @@ width: 110px;
 
 
 export const Safe = ({ children, ...props }) => {
-    return <><SafeBox><SafeBoxInside><Notes {...props} onClick={props.handleNoteClick}/><SafeBoxDoor {...props}><SafeWheel onClick={props.handleCheckCorrectCode}{...props}/><ChildrenContainer {...props}>{children}</ChildrenContainer><SafeHinge top="190"/><SafeHinge top="25"/></SafeBoxDoor></SafeBoxInside></SafeBox><SafeFeetOuter><SafeFeet /><SafeFeet /></SafeFeetOuter></>
+    return <><SafeBox><SafeBoxInside><Notes {...props} onClick={props.handleVisitorBookClick}/><SafeBoxDoor {...props}><SafeWheel onClick={props.handleCheckCorrectCode}{...props}/><ChildrenContainer {...props}>{children}</ChildrenContainer><SafeHinge top="190"/><SafeHinge top="25"/></SafeBoxDoor></SafeBoxInside></SafeBox><SafeFeetOuter><SafeFeet /><SafeFeet /></SafeFeetOuter></>
 }

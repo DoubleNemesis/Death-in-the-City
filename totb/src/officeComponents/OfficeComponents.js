@@ -24,7 +24,7 @@ z-index: 200000;
 export const ModalOpen = styled.div`
 position: absolute;
 right:15px;
-top:15px;
+top:0px;
 cursor: pointer;
 font-size: 2rem;
 z-index: 200000;

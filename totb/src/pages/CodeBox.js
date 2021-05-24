@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
-import MainContainer from '../containers/MainContainer'
-import Button from '../generalComponents/Button'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
-import { StyledInput, CodeBoxContainer, Safe } from '../trial1Components/CodeBox'
+import { StyledInput, CodeBoxContainer, Safe } from '../CodeBoxComponents/CodeBoxComponents'
 import Janitor from '../images/janitor.png'
-import { questionsToni, questionsToni2, conversationArray2 } from '../data/lessonData'
-import { buildQueries } from '@testing-library/dom'
+import GameContext from '../context/GameContext'
 
-function Trial() {
+
+function CodeBox() {
     const [first, setFirst] = useState('')
     const [second, setSecond] = useState('')
     const [third, setThird] = useState('')
@@ -20,6 +18,8 @@ function Trial() {
     const [codeAnswer] = useState('m,d,h,t,c')
     const [safeCodeBgColor, setSafeCodeBgColor] = useState('white')
     const [codeIsCorrect, setCodeIsCorrect] = useState(false)
+
+    const {level, setLevel} = useContext(GameContext)
 
     let history = useHistory()
 
@@ -57,8 +57,12 @@ function Trial() {
         }
     }
 
-    function handleNoteClick(){
+    function handleVisitorBookClick(){
         console.log('notes clicked');
+        if(level < 1){
+            setLevel(1)
+        }
+
     }
 
     return (
@@ -82,7 +86,7 @@ function Trial() {
                     </SpeechBubbleLeft>
                     <CodeBoxContainer>
 
-                        <Safe codeIsCorrect={codeIsCorrect} handleCheckCorrectCode={handleCheckCorrectCode} handleNoteClick={handleNoteClick}>
+                        <Safe codeIsCorrect={codeIsCorrect} handleCheckCorrectCode={handleCheckCorrectCode} handleVisitorBookClick={handleVisitorBookClick}>
                             <div>
                                 <StyledInput safeCodeBgColor={safeCodeBgColor} type="text" name="first" value={first} onChange={handleChange} />
                                 <StyledInput safeCodeBgColor={safeCodeBgColor} type="text" name="second" value={second} onChange={handleChange} />
@@ -101,4 +105,4 @@ function Trial() {
     )
 }
 
-export default Trial
+export default CodeBox
