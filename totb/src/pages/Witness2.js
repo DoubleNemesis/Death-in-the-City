@@ -6,8 +6,8 @@ import Button from '../generalComponents/Button'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
-import ProfilePic from '../images/janitor.png'
-import { questionsWit1, questionsWit1_2, witnessConversationArray1 as conversationArray } from '../data/lessonData'
+import ProfilePic from '../images/chaymadz.jpg'
+import { questionsWit2 as questionsWit, questionsWit2_2 as questionsWit2, witnessConversationArray2 as conversationArray } from '../data/lessonData'
 
 let counter = 0
 let fullConversation = []
@@ -16,12 +16,11 @@ function Concierge() {
     const [questions, setQuestions] = useState([])
     const [rightWrong, setRightWrong] = useState('Choose what to say')
     const [conversation, setConversation] = useState([])
-    const [questionList, setQuestionList] = useState(questionsWit1)
+    const [questionList, setQuestionList] = useState(questionsWit)
     let history = useHistory()
 
     useEffect(() => {
         function assignQuestionsList(dat) {
-            console.log('i ran');
             let questionsList = dat.map((item, index) => {
                 return <Question key={index} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></Question>
             })
@@ -66,7 +65,7 @@ function Concierge() {
                 setTimeout(() => {
                     counter = counter + 1
                     displayConversation(counter)
-                    setQuestionList(questionsWit1_2)
+                    setQuestionList(questionsWit2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
                     }
@@ -85,19 +84,19 @@ function Concierge() {
     }
 
     function handleExit(){
-        history.push('/')
+        history.push('/tornletter')
     }
 
     return (
         <>
             <div className="title">
-                <Title>Kaplinksy Tower Concierge</Title>
+                <Title>Chay Madz</Title>
             </div>
                 <PageContainer>
 
                     <Instructions>
                         <WitnessImage img={ProfilePic} />
-                        {/* https://unsplash.com/@shnautsher */}
+                        {/* https://unsplash.com/@dammypayne*/}
                         <TaskBox>
                             Your Task:
                         <ul>

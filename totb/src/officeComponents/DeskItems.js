@@ -122,9 +122,9 @@ animation-fill-mode: forwards;
 `
 export const MapLarge = styled.div`
 height: 100%;
-width: 100%;
+min-width: 100%;
 position: relative;
-background-color: white;
+background-color: blue;
 background-image: url('http://tomsclassroom.com/totbImages/maplarge.png');
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 background-size: cover;

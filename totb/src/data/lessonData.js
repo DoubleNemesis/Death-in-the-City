@@ -50,22 +50,36 @@ export const mapFeatureData = {
     },
     {
         'key': [2],
-        'label': ["Nigel Franks"],
+        'label': ["Chay Madz"],
         'id': ['witness2'],
         'top': [16],
         'right': [15]
     },
     {
         'key': [3],
-        'label': ["Brain Dodds"],
-        'id': ['witness2'],
+        'label': ["Dallas Franks"],
+        'id': ['witness3'],
         'top': [36],
         'right': [35]
     },
     {
         'key': [4],
-        'label': ["Sarah West"],
-        'id': ['witness2'],
+        'label': ["Sara West"],
+        'id': ['witness4'],
+        'top': [76],
+        'right': [75]
+    },
+    {
+        'key': [5],
+        'label': ["Floe Light"],
+        'id': ['witness5'],
+        'top': [76],
+        'right': [75]
+    },
+    {
+        'key': [6],
+        'label': ["Wendy Rose"],
+        'id': ['witness6'],
         'top': [76],
         'right': [75]
     },
@@ -84,35 +98,35 @@ export const BoardIdeaData = {
         {
         'key': [2],
         'id': [1],
-        'title': ["Suspect 1"],
-        'name': ["James Grey"],
-        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+        'title': ["Suspect"],
+        'name': ["Chay Madz"],
+        'image': ["https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1926&q=80"],
     },
         {
         'key': [3],
         'id': [2],
-        'title': ["Suspect 2"],
-        'name': ["James Grey"],
+        'title': ["Suspect"],
+        'name': ["Dallas Franks"],
         'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
     },
         {
         'key': [4],
         'id': [3],
-        'title': ["Suspect 3"],
+        'title': ["Suspect"],
         'name': ["James Grey"],
         'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
     },
         {
         'key': [5],
         'id': [4],
-        'title': ["Suspect 4"],
+        'title': ["Suspect"],
         'name': ["James Grey"],
         'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
     },
         {
         'key': [6],
         'id': [5],
-        'title': ["Suspect 5"],
+        'title': ["Suspect"],
         'name': ["James Grey"],
         'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
     },
@@ -149,12 +163,36 @@ export const questionsWit1_2 = [
     ['I need to know who was being at the party with Lexington Grey.', 'fail']
 ]
 
-export const conversationArray = [
+export const witnessConversationArray1 = [
     "Hey! I'm Toni Monceto. What can I do for you?",
     "I was wondering if I could ask you some questions.",
-    " A friend of Grey is a friend of mine! What do you want to know?",
+    "A friend of Grey is a friend of mine! What do you want to know?",
     "I need to know who was at the party with Lexington Grey.",
     "Whooa! That's going to be hard. Let me see what I can do...come this way..."
+]
+
+// wit 2
+
+export const questionsWit2 = [
+    ['Can you describe me what happened at the party?', 'fail'],
+    ['Can you tell what happened at the party?', 'fail'],
+    ['Can you describe to me what happen at the party?', 'fail'],
+    ['Could you described what happened at the party?', 'fail'],
+    ['Can you describe what happened at the party?', 'success']
+]
+export const questionsWit2_2 = [
+    ['What happened when the lights came back on?', 'success'],
+    ['What happened when the lights come back on?', 'fail'],
+    ['What was happening when the lights were coming back on?', 'fail'],
+    ['What has happened when the lights came back on?', 'fail'],
+    ['What happened while the lights came back off?', 'fail']
+]
+export const witnessConversationArray2 = [
+    "OK, so I'm Chay Madz. People call me Madz. What do you want to know?",
+    "Can you describe what happened at the party?",
+    "We were having a good time just relaxing, eating, drinking. The lights went, there was a scream and that was the end of Lexington Grey.",
+    "What happened when the lights came back on?",
+    "We all rushed to the kitchen. Look, I told all this to the police. Get out of here!"
 ]
 
 
