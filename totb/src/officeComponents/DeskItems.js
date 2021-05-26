@@ -88,18 +88,7 @@ margin: .4em;
     width: 90%;
 }
 `
-export const PostIt = styled.div`
-background-color: pink;
-padding: .2em;
-margin: 0 0 0 .4em;
-max-width: 60px;
-font-family: cursive;
-box-shadow: 1px 1px 1px #999;
-font-size: .6rem;
-p{
-    margin: 0;
-}
-`
+
 export const Desk = styled.div`
 width: 100%;
 height: 100vh;

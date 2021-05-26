@@ -73,14 +73,53 @@ export const mapFeatureData = {
 }
 
 export const BoardIdeaData = {
-    'idea': [{
+    'idea': [
+        {
         'key': [1],
+        'id': [0],
         'title': ["The Victim"],
         'name': ["Lexington Grey"],
         'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
     },
+        {
+        'key': [2],
+        'id': [1],
+        'title': ["Suspect 1"],
+        'name': ["James Grey"],
+        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+    },
+        {
+        'key': [3],
+        'id': [2],
+        'title': ["Suspect 2"],
+        'name': ["James Grey"],
+        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+    },
+        {
+        'key': [4],
+        'id': [3],
+        'title': ["Suspect 3"],
+        'name': ["James Grey"],
+        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+    },
+        {
+        'key': [5],
+        'id': [4],
+        'title': ["Suspect 4"],
+        'name': ["James Grey"],
+        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+    },
+        {
+        'key': [6],
+        'id': [5],
+        'title': ["Suspect 5"],
+        'name': ["James Grey"],
+        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+    },
 ]
 }
+
+
 export const NoteItemData = {
     'idea': [{
         'key': [1],

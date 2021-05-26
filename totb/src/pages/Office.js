@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useRef, useEffect } from 'react'
 import Title from '../generalComponents/Title'
 import { Board, Messages, DeskTitles, Notes, Map, MapLarge, Desk } from '../officeComponents/DeskItems'
 import { MapFeature } from '../officeComponents/MapDestinations'
@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
 import { officeTitle, backStorySubtitle, mapFeatureData, BoardIdeaData, NoteItemData } from '../data/lessonData'
 import GameContext from '../context/GameContext'
+import Draggable from 'react-draggable';
 
 const OfficeItemsContents = styled.div`
 color: black;
@@ -17,14 +18,20 @@ background-color: white;
 width: 100%;
 height: 100%;
 margin-top: -4.5em;
+border: 4px solid orange;
+
+
+div{
+    max-width: 75px;
+    cursor: grab;
+}
 `
 function MapOpen() {
     let history = useHistory()
-    const {level} = useContext(GameContext)
+    const { level } = useContext(GameContext)
     const numMapItemsToDisplay = level < 1 ? level : level === 1 ? 6 : 7
 
     function handleMapClick(e) {
-        console.log(e.target.id);
         const destination = `/${e.target.id}`
         history.push(destination)
     }
@@ -33,36 +40,81 @@ function MapOpen() {
         <OfficeItemsContents>
             <MapLarge>
                 {mapFeatureData['features'].map((item, index) => {
-                    if(index <= numMapItemsToDisplay){
+                    if (index <= numMapItemsToDisplay) {
                         return <MapFeature label={item.label} top={item.top} right={item.right} id={item.id} onclick={handleMapClick} />
                     }
-               })}
+                })}
             </MapLarge>
         </OfficeItemsContents>
     )
 }
 
 function BoardOpen() {
-    const {level} = useContext(GameContext)
-    return (
-        <OfficeItemsContents>
-            {BoardIdeaData['idea'].map((item, index)=>{
-                if (index<=level){
-                    return <BoardIdea key={item.key} title={item.title} name={item.name} image={item.image}/>
-                }
+    const [positions, setPositions] = useState({})
+    const [hasLoaded, setHasLoaded] = useState(false)
+    const { level } = useContext(GameContext)
+    const nodeRef = useRef(null);
+    console.log(positions)
 
+    useEffect(() => {
+        const existingSuspectPositions = JSON.parse(localStorage.getItem('positions'))
+        setPositions(existingSuspectPositions)
+        setHasLoaded(true)
+    }, [])
+
+    function handleDrag(e) {
+    }
+
+    function handleStop(e, data) {
+        let dummyPositions = {...positions}
+        const itemId = e.target.id
+        dummyPositions[itemId] = {}
+        dummyPositions[itemId]['x'] = data.x
+        dummyPositions[itemId]['y'] = data.y
+        setPositions(dummyPositions)
+        //localStorage.setItem(`positions`, JSON.stringify(positions))
+        //setPositionsLocalStorage()
+    }
+
+    useEffect(()=>{
+        console.log('ls', positions)
+        localStorage.setItem(`positions`, JSON.stringify(positions))
+    },[positions])
+
+function setPositionsLocalStorage(){
+    console.log('ls', positions)
+    localStorage.setItem(`positions`, JSON.stringify(positions))
+}
+
+
+    return (
+   hasLoaded ?      <OfficeItemsContents >
+            {BoardIdeaData['idea'].map((item, index) => {
+                // if (index <= level) {
+                return (
+                    <Draggable
+                        defaultPosition={positions === null ? {x: 0, y: 0} : !positions[item.id] ? {x: 0, y: 0} : {x: positions[item.id].x, y: positions[item.id].y}}
+                        key={item.key}
+                        nodeRef={nodeRef}
+                        onDrag={handleDrag} onStop={handleStop}>
+                        <div ref={nodeRef} >
+                            <BoardIdea title={item.title} name={item.name} image={item.image} id={item.id} />
+                        </div>
+                    </Draggable>
+                )
+                //    }
             })}
-        </OfficeItemsContents>
+        </OfficeItemsContents> : null
     )
 }
 
 function NotesOpen() {
-    const {level} = useContext(GameContext)
+    const { level } = useContext(GameContext)
     return (
         <OfficeItemsContents>
-                        {NoteItemData['idea'].map((item, index)=>{
-                if (index<=level){
-                    return <NoteItem key={item.key} text={item.text}/>
+            {NoteItemData['idea'].map((item, index) => {
+                if (index <= level) {
+                    return <NoteItem key={item.key} text={item.text} />
                 }
 
             })}
