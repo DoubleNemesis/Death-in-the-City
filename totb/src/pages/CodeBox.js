@@ -4,7 +4,7 @@ import Title from '../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
-import { StyledInput, CodeBoxContainer, Safe } from '../CodeBoxComponents/CodeBoxComponents'
+import { StyledInput, CodeBoxContainer, Safe } from '../trialComponents/codeBoxComponents/CodeBoxComponents'
 import Janitor from '../images/janitor.png'
 import GameContext from '../context/GameContext'
 
