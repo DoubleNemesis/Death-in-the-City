@@ -1,5 +1,6 @@
 import styled, {keyframes} from 'styled-components'
 import {useEffect, useState} from 'react'
+import tornpaperedge from '../../images/tornpaperedge.png'
 
 export const LetterContainer = styled.div`
 display: flex;
@@ -8,7 +9,7 @@ width: 100%;
 height: 500px;
 min-width: 100%;
 min-height: 500px;
-background-color: white;
+background-color: #999;
 border: 4px solid black;
 box-sizing: border-box;
 
@@ -32,11 +33,17 @@ const rotate360 = keyframes`
 `
 
 const LetterPieceOuter = styled.div`
-border: 1px solid red;
-/* position: absolute; */
-background-color: #999;
-width: 400px;
+border: 10px solid transparent;
+background-image: url(${tornpaperedge});
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-color: transparent;
+width: auto;
+padding: .5em;
 cursor: grab;
+font-size: 17px;
+font-family: cursive;
 animation: ${({position})=>{
     return position === 90 ? rotate90 : position === 180 ? rotate180 : position === 270 ? rotate270 : position === 360 ? rotate360 : null
 
@@ -54,16 +61,14 @@ export const TornLetterPiece = ({children, ...props})=>{
         setPosition(potentialRotations[RandomNum])
     },[])
 
-    function handleDoubleClick() {
-        console.log('click');
+    function handleDoubleClick(e) {
         setPosition(prev=>{
          return prev<360 ?  prev+90 : 90
         })
     }
-    console.log(position);
 
 return(
-<LetterPieceOuter onDoubleClick={handleDoubleClick} position={position}>{children}</LetterPieceOuter>
+<LetterPieceOuter className="tim" onDoubleClick={handleDoubleClick} position={position}>{children}</LetterPieceOuter>
 )
 
 }

@@ -198,18 +198,18 @@ export const witnessConversationArray2 = [
 //trials
 
 export const TornLetterPiecesData = [
-    "When the lights went out, we were all",
-    "sitting round the table",
-    "I heard a chair",
-    "This was Lexington's first dinner party since",
-    "recovering from Corona Virus",
-    "being moved but I don't know who moved it",
-    "I heard Lexington and Dallas",
+    "When the lights went out, we ",
+    "were all sitting round the table",
+    "I heard a chair being moved",
+    "It was Lexi's first dinner party",
+    "since recovering from Covid19",
+    "but I don't know who moved it",
+    "I heard Lexi and Dallas",
     "arguing earlier in the evening",
-    "Floe's eyes were red as if she had been",
-    "crying before she arrived",
-    "Lexington Grey went into the kitchen",
-    "to get some drinks",
+    "Floe's eyes were red as if she'd",
+    "been crying before she arrived",
+    "Lexi Grey went into the kitchen",
+    "to get everyone some drinks",
 ]
 
 

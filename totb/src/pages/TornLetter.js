@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, useRef } from 'react'
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
@@ -14,14 +14,10 @@ import { TornLetterPiecesData} from '../data/lessonData'
 
 
 function CodeBox() {
-
-
     const { level, setLevel } = useContext(GameContext)
-
     let history = useHistory()
-
+    const nodeRef = useRef(null);
     function handleChange(e) {
-
     }
 
 
@@ -34,8 +30,13 @@ function CodeBox() {
     const style2={marginTop: '9%', marginLeft: '6%'}
     const style3={marginTop: '0%', marginLeft: '15%'}
 
+    function handleStop(e){
+        console.log(e.target.classList.contains('tim'))
+        console.log(e.target.parentNode.parentNode.parentNode) 
+    }
 
-    const TornLetterFragments = TornLetterPiecesData.map((item)=><Draggable><div><TornLetterPiece>{item}</TornLetterPiece></div></Draggable>)
+
+    const TornLetterFragments = TornLetterPiecesData.map((item, index)=><Draggable onStop={handleStop} key={index} nodeRef={nodeRef} ><div className="tim" ref={nodeRef}><TornLetterPiece >{item}</TornLetterPiece></div></Draggable>)
 
     return (
         <>
@@ -56,23 +57,8 @@ function CodeBox() {
                         up in a safe and I don't know the code.
                         But maybe you will be able to work it out. Ready to try?
                     </SpeechBubbleLeft>
-                    <LetterContainer>
+                    <LetterContainer className="letcont">
                         {TornLetterFragments}
-                        
-                        
-
-
-                        {/* <Draggable><div style={style2}><TornLetterPiece>two</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style1}><TornLetterPiece>three</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style3}><TornLetterPiece>four</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style2}><TornLetterPiece>five</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style3}><TornLetterPiece>six</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style1}><TornLetterPiece>seven</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style2}><TornLetterPiece>eight</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style1}><TornLetterPiece>nine</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style3}><TornLetterPiece>ten</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style2}><TornLetterPiece>eleven</TornLetterPiece></div></Draggable>
-                        <Draggable><div style={style1}><TornLetterPiece>twelve</TornLetterPiece></div></Draggable> */}
                     </LetterContainer>
 
 
