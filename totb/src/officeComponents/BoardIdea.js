@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { NoteItemData } from '../data/lessonData'
 
 const Container = styled.div`
 max-width: 100px;
@@ -7,9 +6,6 @@ z-index: 100;
 display: flex;
 flex-direction: column;
 align-items: center;
-/* position: absolute;
-top: ${({x})=> x}px;
-left: ${({y})=> y}px; */
 `
 const OverLay = styled.div`
 min-width: 100px;
@@ -37,4 +33,4 @@ p{
 
 
 
-export const BoardIdea = (props)=><Container x={props.x} y={props.y}><PostIt><p>{props.title}</p><p>{props.name}</p></PostIt><img src={props.image}/><OverLay id={props.id}/></Container>
+export const BoardIdea = (props)=><Container x={props.x} y={props.y}><PostIt><p>{props.title}</p><p>{props.name}</p></PostIt><img alt={props.title} src={props.image}/><OverLay id={props.id}/></Container>

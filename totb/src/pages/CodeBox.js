@@ -1,9 +1,9 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
-import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
-import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
+import { SpeechBubbleLeft} from '../witnessComponents/Questions'
+import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
 import { StyledInput, CodeBoxContainer, Safe } from '../trialComponents/codeBoxComponents/CodeBoxComponents'
 import Janitor from '../images/janitor.png'
 import GameContext from '../context/GameContext'
@@ -21,7 +21,7 @@ function CodeBox() {
 
     const {level, setLevel} = useContext(GameContext)
 
-    let history = useHistory()
+    //let history = useHistory()
 
     //make beds, mistakes, dinner
     //do homework, shopping, nothing
@@ -40,8 +40,8 @@ function CodeBox() {
 
     function handleCheckCorrectCode() {
         let codeAttempt = [...first, ...second, ...third, ...fourth, ...fifth]
-        console.log(codeAttempt.toString() == codeAnswer)
-        if (codeAttempt.toString() == codeAnswer) {
+        console.log(codeAttempt.toString() === codeAnswer)
+        if (codeAttempt.toString() === codeAnswer) {
             setSafeCodeBgColor('limeGreen')
             setCodeIsCorrect(true)
         }

@@ -1,13 +1,11 @@
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
-import MainContainer from '../containers/MainContainer'
-import GameContext from '../context/GameContext'
+// import GameContext from '../context/GameContext'
 import Button from '../generalComponents/Button'
-import { useContext } from 'react'
+// import { useContext } from 'react'
 import {useHistory} from 'react-router-dom'
 
 function MrGrey(){
-    const {vocab} = useContext(GameContext)
     let history = useHistory()
 
     function handleClickTest(){

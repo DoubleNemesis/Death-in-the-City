@@ -51,6 +51,16 @@ animation: ${({position})=>{
 } 1s;
 animation-fill-mode: forwards;
 `
+const DropZoneContainer = styled.div`
+border: 1px solid black;
+`
+
+export function DropZone(){
+    return(
+<DropZoneContainer><h1>dropzone</h1></DropZoneContainer>
+    )
+}
+
 
 export const TornLetterPiece = ({children, ...props})=>{
     const [position, setPosition] = useState(0)
@@ -67,8 +77,10 @@ export const TornLetterPiece = ({children, ...props})=>{
         })
     }
 
+
+
 return(
-<LetterPieceOuter className="tim" onDoubleClick={handleDoubleClick} position={position}>{children}</LetterPieceOuter>
+<LetterPieceOuter id={props.id} className={{...props.classname}} onDoubleClick={handleDoubleClick} position={position}>{children}</LetterPieceOuter>
 )
 
 }

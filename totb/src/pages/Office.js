@@ -1,13 +1,13 @@
 import { useState, useContext, useRef, useEffect } from 'react'
 import Title from '../generalComponents/Title'
-import { Board, Messages, DeskTitles, Notes, Map, MapLarge, Desk } from '../officeComponents/DeskItems'
+import { Board, DeskTitles, Notes, Map, MapLarge, Desk } from '../officeComponents/DeskItems'
 import { MapFeature } from '../officeComponents/MapDestinations'
 import { BoardIdea } from '../officeComponents/BoardIdea'
 import { NoteItem } from '../officeComponents/NoteItem'
 import { OfficeLayout, ModalClose, ModalOpen } from '../officeComponents/OfficeComponents'
 import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
-import { officeTitle, backStorySubtitle, mapFeatureData, BoardIdeaData, NoteItemData } from '../data/lessonData'
+import { officeTitle, mapFeatureData, BoardIdeaData, NoteItemData } from '../data/lessonData'
 import GameContext from '../context/GameContext'
 import Draggable from 'react-draggable';
 
@@ -40,9 +40,7 @@ function MapOpen() {
         <OfficeItemsContents>
             <MapLarge>
                 {mapFeatureData['features'].map((item, index) => {
-                    if (index <= numMapItemsToDisplay) {
-                        return <MapFeature key={item.key} label={item.label} top={item.top} right={item.right} id={item.id} onclick={handleMapClick} />
-                    }
+                        return  index <= numMapItemsToDisplay ? <MapFeature key={item.key} label={item.label} top={item.top} right={item.right} id={item.id} onclick={handleMapClick} /> : null
                 })}
             </MapLarge>
         </OfficeItemsContents>
@@ -80,8 +78,8 @@ function BoardOpen() {
     return (
         hasLoaded ? <OfficeItemsContents >
             {BoardIdeaData['idea'].map((item, index) => {
-                if (index <= level) {
                     return (
+                        index <= level ? 
                         <Draggable
                             defaultPosition={positions === null ? { x: 0, y: 0 } : !positions[item.id] ? { x: 0, y: 0 } : { x: positions[item.id].x, y: positions[item.id].y }}
                             key={item.key}
@@ -90,9 +88,9 @@ function BoardOpen() {
                             <div ref={nodeRef} >
                                 <BoardIdea title={item.title} name={item.name} image={item.image} id={item.id} />
                             </div>
-                        </Draggable>
+                        </Draggable> :
+                        null
                     )
-                }
             })}
         </OfficeItemsContents> : null
     )
@@ -103,10 +101,7 @@ function NotesOpen() {
     return (
         <OfficeItemsContents>
             {NoteItemData['idea'].map((item, index) => {
-                if (index <= level) {
-                    return <NoteItem key={item.key} text={item.text} />
-                }
-
+                    return index <= level ? <NoteItem key={item.key} text={item.text} /> : null
             })}
         </OfficeItemsContents>
     )
@@ -120,7 +115,7 @@ function Office() {
     const [boardData, setBoardData] = useState(false)
     const [notesData, setNotesData] = useState(false)
 
-    let history = useHistory()
+    //let history = useHistory()
 
     function handleDeskItemOpen(e) {
         e.preventDefault()
