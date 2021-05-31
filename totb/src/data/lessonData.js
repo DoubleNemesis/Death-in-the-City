@@ -6,6 +6,19 @@ export const homeCallToActionText = "On the 27th of January 2021 at 3:06am the b
 //Backstory page
 export const backStorySubtitle = "Here's the backstory"
 
+//character names
+
+export const characterNames = {
+    characterNames: [
+        'Tony Monceto',
+        'Chay Madz',
+        'Kirsten Wenstein',
+        'Dallas Franks',
+        'Floe Light',
+        'Wendy Rose'
+    ]
+}
+
 // Vocab Page
 export const vocabData = {
     'vocabA': [
@@ -144,56 +157,69 @@ export const NoteItemData = {
 
 
 //character specific
-//stored here then passed to context as appears in story
 
+// Witness 1 tony monceto
+export const questionsWitness1 = {
+    questionsWitness1: [
+        ['I was wondered if I can ask you some questions.', 'fail'],
+        ['I am wonder if I can ask you some questions.', 'fail'],
+        ['I wonder I can ask you some questions. ', 'fail'],
+        ['I was wondering if I could ask you some questions.', 'success'],
+        ['I am wondering I can asking you some questions.', 'fail']
+    ],
+    questionsWitness1_2: [
+        ['I need knowing who was at the party with Lexington Grey.', 'fail'],
+        ['I need to know who was at the party with Lexington Grey.', 'success'],
+        ['I need know who was at the party with Lexington Grey. ', 'fail'],
+        ['I am needing to know who was at the party with Lexington Grey.', 'faul'],
+        ['I need to know who was being at the party with Lexington Grey.', 'fail']
+    ],
+    witnessConversationArray1: [
+        "Hey! I'm Toni Monceto. What can I do for you?",
+        "I was wondering if I could ask you some questions.",
+        "A friend of Grey is a friend of mine! What do you want to know?",
+        "I need to know who was at the party with Lexington Grey.",
+        "Whooa! That's going to be hard. Let me see what I can do...come this way..."
+    ],
+    trialURL1: [
+        'codebox'
+    ]
+} 
 
-// Witness 1
-export const questionsWit1 = [
-    ['I was wondered if I can ask you some questions.', 'fail'],
-    ['I am wonder if I can ask you some questions.', 'fail'],
-    ['I wonder I can ask you some questions. ', 'fail'],
-    ['I was wondering if I could ask you some questions.', 'success'],
-    ['I am wondering I can asking you some questions.', 'fail']
-]
-export const questionsWit1_2 = [
-    ['I need knowing who was at the party with Lexington Grey.', 'fail'],
-    ['I need to know who was at the party with Lexington Grey.', 'success'],
-    ['I need know who was at the party with Lexington Grey. ', 'fail'],
-    ['I am needing to know who was at the party with Lexington Grey.', 'faul'],
-    ['I need to know who was being at the party with Lexington Grey.', 'fail']
-]
+//witness 2 chay madz
 
-export const witnessConversationArray1 = [
-    "Hey! I'm Toni Monceto. What can I do for you?",
-    "I was wondering if I could ask you some questions.",
-    "A friend of Grey is a friend of mine! What do you want to know?",
-    "I need to know who was at the party with Lexington Grey.",
-    "Whooa! That's going to be hard. Let me see what I can do...come this way..."
-]
+export const questionsWitness2 = {
+    questionsWitness2: [
+        ['Can you describe me what happened at the party?', 'fail'],
+        ['Can you tell what happened at the party?', 'fail'],
+        ['Can you describe to me what happen at the party?', 'fail'],
+        ['Could you described what happened at the party?', 'fail'],
+        ['Can you describe what happened at the party?', 'success']
+    ],
+    questionsWitness2_2: [
+        ['What happened when the lights came back on?', 'success'],
+        ['What happened when the lights come back on?', 'fail'],
+        ['What was happening when the lights were coming back on?', 'fail'],
+        ['What has happened when the lights came back on?', 'fail'],
+        ['What happened while the lights came back off?', 'fail']
+    ],
+    witnessConversationArray2: [
+        "OK, so I'm Chay Madz. People call me Madz. What do you want to know?",
+        "Can you describe what happened at the party?",
+        "We were having a good time just relaxing, eating, drinking. The lights went, there was a scream and that was the end of Lexington Grey.",
+        "What happened when the lights came back on?",
+        "We all rushed to the kitchen. Look, I told all this to the police. Get out of here!"
+    ],
+    trialURL2: [
+        'tornletter'
+    ]
+}
 
-// wit 2
+//witness 3 kirsten wenstein
+//witness 4 dallas franks
+//witness 5 floe lights
+//witness 6 wendy rose
 
-export const questionsWit2 = [
-    ['Can you describe me what happened at the party?', 'fail'],
-    ['Can you tell what happened at the party?', 'fail'],
-    ['Can you describe to me what happen at the party?', 'fail'],
-    ['Could you described what happened at the party?', 'fail'],
-    ['Can you describe what happened at the party?', 'success']
-]
-export const questionsWit2_2 = [
-    ['What happened when the lights came back on?', 'success'],
-    ['What happened when the lights come back on?', 'fail'],
-    ['What was happening when the lights were coming back on?', 'fail'],
-    ['What has happened when the lights came back on?', 'fail'],
-    ['What happened while the lights came back off?', 'fail']
-]
-export const witnessConversationArray2 = [
-    "OK, so I'm Chay Madz. People call me Madz. What do you want to know?",
-    "Can you describe what happened at the party?",
-    "We were having a good time just relaxing, eating, drinking. The lights went, there was a scream and that was the end of Lexington Grey.",
-    "What happened when the lights came back on?",
-    "We all rushed to the kitchen. Look, I told all this to the police. Get out of here!"
-]
 
 //trials
 

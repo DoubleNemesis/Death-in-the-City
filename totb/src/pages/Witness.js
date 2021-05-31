@@ -1,28 +1,28 @@
 import { useState, useEffect } from 'react'
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
-import MainContainer from '../containers/MainContainer'
 import Button from '../generalComponents/Button'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from '../witnessComponents/Layout'
-import ProfilePic from '../images/chaymadz.jpg'
-import { questionsWit2 as questionsWit, questionsWit2_2 as questionsWit2, witnessConversationArray2 as conversationArray } from '../data/lessonData'
+// import ProfilePic from '../images/janitor.png'
+//import { questionsWit1, questionsWit1_2, witnessConversationArray1 as conversationArray } from '../data/lessonData'
 
 let counter = 0
 let fullConversation = []
-function Concierge() {
-
+function Concierge(props) {
+    console.log(props);
     const [questions, setQuestions] = useState([])
     const [rightWrong, setRightWrong] = useState('Choose what to say')
     const [conversation, setConversation] = useState([])
-    const [questionList, setQuestionList] = useState(questionsWit)
+    const [questionList, setQuestionList] = useState(props.questionsWit)
     let history = useHistory()
 
     useEffect(() => {
         function assignQuestionsList(dat) {
+            console.log('i ran');
             let questionsList = dat.map((item, index) => {
-                return <Question key={index} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></Question>
+                return <Question key={`question${index}`} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></Question>
             })
             setQuestions(questionsList)
         }
@@ -30,26 +30,18 @@ function Concierge() {
     }, [questionList])
 
     useEffect(() => {
-        let newConversationArray = conversationArray.map((item, index) => {
-            if (index % 2 === 0) {
-                return <SpeechBubbleLeft key={index}>{item}</SpeechBubbleLeft>
-            }
-            else {
-                return <SpeechBubbleRight key={index}>{item}</SpeechBubbleRight>
-            }
+        let newConversationArray = props.conversationArray.map((item, index) => {
+            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`}>{item}</SpeechBubbleRight>
         })
         fullConversation = newConversationArray
     }, [])
-
 
     useEffect(() => {
         displayConversation(counter)
     }, [])
 
     function displayConversation(count) {
-        for (let i = count; i <= count; i = i + 1) {
-            setConversation((prev) => [...prev, fullConversation[i]])
-        }
+        setConversation((prev) => [...prev, fullConversation[count]])
     }
 
     function handleClick(e) {
@@ -65,7 +57,7 @@ function Concierge() {
                 setTimeout(() => {
                     counter = counter + 1
                     displayConversation(counter)
-                    setQuestionList(questionsWit2)
+                    setQuestionList(props.questionsWit2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
                     }
@@ -83,39 +75,42 @@ function Concierge() {
         }
     }
 
-    function handleExit(){
-        history.push('/tornletter')
+    function handleExit() {
+        let destination = props.trialURL
+        history.push(`/${destination}`)
+        //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
     }
+
 
     return (
         <>
             <div className="title">
-                <Title>Chay Madz</Title>
+                <Title>{props.title}</Title>
             </div>
-                <PageContainer>
+            <PageContainer>
 
-                    <Instructions>
-                        <WitnessImage img={ProfilePic} />
-                        {/* https://unsplash.com/@dammypayne*/}
-                        <TaskBox>
-                            Your Task:
+                <Instructions>
+                    <WitnessImage img={props.personImage} />
+                    {/* https://unsplash.com/@shnautsher */}
+                    <TaskBox>
+                        Your Task:
                         <ul>
-                                <li>Choose a question from the list on the right. </li>
-                                <li>Only one question is grammatically correct. </li>
-                                <li>If you choose the wrong one you lose a point.</li>
-                            </ul>
-                        </TaskBox>
-                    </Instructions>
-                    <Conversation>
-                        {conversation}
-                    </Conversation>
-                    <QuestionOptions>
-                        <InfoBox>
-                            {rightWrong}
-                        </InfoBox>
-                        {questions}
-                    </QuestionOptions>
-                </PageContainer>
+                            <li>Choose a question from the list on the right. </li>
+                            <li>Only one question is grammatically correct. </li>
+                            <li>If you choose the wrong one you lose a point.</li>
+                        </ul>
+                    </TaskBox>
+                </Instructions>
+                <Conversation>
+                    {conversation}
+                </Conversation>
+                <QuestionOptions>
+                    <InfoBox>
+                        {rightWrong}
+                    </InfoBox>
+                    {questions}
+                </QuestionOptions>
+            </PageContainer>
         </>
 
     )
