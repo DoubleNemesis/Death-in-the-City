@@ -1,14 +1,14 @@
 import {useContext, useRef } from 'react'
-import PageContainer from '../../containers/PageContainer'
-import Title from '../../generalComponents/Title'
+import PageContainer from '../../../containers/PageContainer'
+import Title from '../../../generalComponents/Title'
 //import { history, useHistory } from 'react-router-dom'
-import { SpeechBubbleLeft } from '../witness/witnessComponents/Questions'
-import { Instructions, Conversation, WitnessImage, TaskBox } from '../witness/witnessComponents/Layout'
+import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
+import { Instructions, Conversation, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
 import { TornLetterPiece, LetterContainer } from './tornLetterComponents/TornLetterComponents'
-import ProfilePic from '../../images/chaymadz.jpg'
-import GameContext from '../../context/GameContext'
+import ProfilePic from '../../../images/chaymadz.jpg'
+import GameContext from '../../../context/GameContext'
 import Draggable from 'react-draggable';
-import { TornLetterPiecesData} from '../../data/lessonData'
+import { TornLetterPiecesData} from '../../../data/lessonData'
 
 
 

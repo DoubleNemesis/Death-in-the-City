@@ -1,6 +1,6 @@
 import styled, {keyframes} from 'styled-components'
 import {useEffect, useState} from 'react'
-import tornpaperedge from '../../../images/tornpaperedge.png'
+import tornpaperedge from '../../../../images/tornpaperedge.png'
 
 export const LetterContainer = styled.div`
 display: flex;

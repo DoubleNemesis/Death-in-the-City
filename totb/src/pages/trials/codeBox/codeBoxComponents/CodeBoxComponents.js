@@ -1,6 +1,6 @@
 import styled, {keyframes} from 'styled-components'
-import safewheel from '../../../images/safewheel.png'
-import visitorbook from '../../../images/visitorbook.png'
+import safewheel from '../../../../images/safewheel.png'
+import visitorbook from '../../../../images/visitorbook.png'
 
 export const rotateDoor = keyframes` 
 from { transform: rotateY(0deg); }

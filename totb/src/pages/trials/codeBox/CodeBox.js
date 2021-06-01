@@ -1,12 +1,12 @@
 import { useState, useContext } from 'react'
-import PageContainer from '../../containers/PageContainer'
-import Title from '../../generalComponents/Title'
+import PageContainer from '../../../containers/PageContainer'
+import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
-import { SpeechBubbleLeft} from '../witness/witnessComponents/Questions'
-import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../witness/witnessComponents/Layout'
+import { SpeechBubbleLeft} from '../../witness/witnessComponents/Questions'
+import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import { StyledInput, CodeBoxContainer, Safe } from './codeBoxComponents/CodeBoxComponents'
-import Janitor from '../../images/janitor.png'
-import GameContext from '../../context/GameContext'
+import Janitor from '../../../images/janitor.png'
+import GameContext from '../../../context/GameContext'
 
 
 function CodeBox() {
