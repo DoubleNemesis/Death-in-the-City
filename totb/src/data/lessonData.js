@@ -157,8 +157,6 @@ export const NoteItemData = {
 
 
 //character specific
-
-// Witness 1 tony monceto
 export const questionsWitness1 = {
     questionsWitness1: [
         ['I was wondered if I can ask you some questions.', 'fail'],
@@ -216,10 +214,118 @@ export const questionsWitness2 = {
 }
 
 //witness 3 kirsten wenstein
+export const questionsWitness3 = {
+    questionsWitness3: [
+        ['Please tell me everything on the evening Lexington died', 'fail'],
+        ['Please tell me everything for the evening Lexington died', 'fail'],
+        ['Please tell me everything about the evening Lexington died.', 'success'],
+        ['Please tell me everything over the evening Lexington died', 'fail'],
+        ['Please tell me everything around the evening Lexington died', 'fail']
+    ],
+    questionsWitness3_2: [
+        ['I know your feeling. Don\'t worry, I\'ll help you.', 'fail'],
+        ['I know how you feel. Don\'t worry, I\'ll help you.', 'success'],
+        ['I know how you feel. Don\'t worry, I\'m helping you.', 'fail'],
+        ['I know your feelings. Don\'t worry, I\'ll help you.', 'fail'],
+        ['I know what you feel. Don\'t worry, I\'ll help you.', 'fail']
+    ],
+    witnessConversationArray3: [
+        "So you want to ask me something?",
+        "Please tell me everything about the evening Lexington died.",
+        "I don't mind talking to you. But my English is really bad",
+        "I know how you feel. Don't worry, I'll help you.",
+        "OK, correct my sentences please, else I will never learn this language!"
+    ],
+    trialURL3: [
+        'tornletter'
+    ]
+}
+
 //witness 4 dallas franks
+
+export const questionsWitness4 = {
+    questionsWitness4: [
+        ['', 'fail'],
+        ['', 'fail'],
+        ['', 'success'],
+        ['', 'fail'],
+        ['', 'fail']
+    ],
+    questionsWitness4_2: [
+        ['', 'fail'],
+        ['', 'success'],
+        ['', 'fail'],
+        ['', 'fail'],
+        ['', 'fail']
+    ],
+    witnessConversationArray4: [
+        "What do you want?",
+        "Can you open the door? I just want to ask about the party.",
+        "Get out of here! I'm not talking to you!",
+        "Not even two questions?",
+        "No! Get lost or I'll call the cops!"
+    ],
+    trialURL4: [
+        'tornletter'
+    ]
+}
+
 //witness 5 floe lights
+export const questionsWitness5 = {
+    questionsWitness5: [
+        ['', 'fail'],
+        ['', 'fail'],
+        ['', 'success'],
+        ['', 'fail'],
+        ['', 'fail']
+    ],
+    questionsWitness5_2: [
+        ['', 'fail'],
+        ['', 'success'],
+        ['', 'fail'],
+        ['', 'fail'],
+        ['', 'fail']
+    ],
+    witnessConversationArray5: [
+        "Hey I want to talk to you but Dallas told me not to.",
+        "I promise I won't tell him. He won't speak to me anyway.",
+        "If you should happen to read my messages you might learn something.",
+        "How would I do that?",
+        "I'll leave you with a clue....no I must go and powder my nose...."
+    ],
+    trialURL5: [
+        'tornletter'
+    ]
+}
+
 //witness 6 wendy rose
 
+export const questionsWitness6 = {
+    questionsWitness6: [
+        ["", 'fail'],
+        ["", 'fail'],
+        ["", 'success'],
+        ["", 'fail'],
+        ["", 'fail']
+    ],
+    questionsWitness6_2: [
+        ["", 'fail'],
+        ["", 'success'],
+        ["", 'fail'],
+        ["", 'fail'],
+        ["", 'fail']
+    ],
+    witnessConversationArray6: [
+        "Lexi told me in an email he was feeling suicidal.",
+        "Really? When did he say that?",
+        "Just before the party. I didn't take it seriously. Now I wish I had.",
+        "What did he say exactly?",
+        "I'll show you!"
+    ],
+    trialURL6: [
+        'tornletter'
+    ]
+}
 
 //trials
 

@@ -29,6 +29,7 @@ const providedValues = {hasDoneVocab, setHasDoneVocab, level, setLevel}
 const {characterNames} = lessonData['characterNames'];
 const {questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1} = lessonData['questionsWitness1'];
 const {questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2} = lessonData['questionsWitness2'];
+const {questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3} = lessonData['questionsWitness3'];
 
   return (
     <div className="outer">
@@ -78,13 +79,15 @@ const {questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialU
         <Route path="/witness3">
           <Witness
           title={characterNames[2]} 
-          questionsWit={questionsWitness2}
-          questionsWit2={questionsWitness2_2}
-          conversationArray={witnessConversationArray2}
+          questionsWit={questionsWitness3}
+          questionsWit2={questionsWitness3_2}
+          conversationArray={witnessConversationArray3}
           personImage={KirstenPic}
+          trialURL={trialURL2}
           />
         </Route>
-        <Route path="/codebox">
+        {/* //props below to make trial pages reeusable */}
+        <Route path="/codebox"> 
           <CodeBox/>
         </Route>
         <Route path="/tornletter">
