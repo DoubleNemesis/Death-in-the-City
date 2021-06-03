@@ -344,6 +344,25 @@ export const TornLetterPiecesData = [
     "to get everyone some drinks",
 ]
 
+export const ErrorCorrectionData = {
+    instructions: [
+        ["This is what I want you to do"],
+    ],
+    sentences: [
+        ["ONE", "1", true],
+        ["TWO", "2", false],
+        ["THREE", "3", false],
+        ["FOUR", "4", true],
+        ["FIVE", "5", true],
+        ["SIX", "6", false],
+    ],
+    correctedSentences: [
+        ["ONE"],
+        ["FOUR"],
+        ["FIVE"],
+    ]
+}
+
 
 
 

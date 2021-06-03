@@ -6,6 +6,7 @@ import Witness from './pages/witness/Witness'
 import MrGrey from './pages/Client'
 import CodeBox from './pages/trials/codeBox/CodeBox'
 import TornLetter from './pages/trials/tornLetter/TornLetter'
+import ErrorCorrection from './pages/trials/errorCorrection/ErrorCorrection'
 import BackStory from './pages/BackStory'
 import Header from './pageElements/Header'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
@@ -47,6 +48,7 @@ const {questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialU
       <Link to="/mrgrey">MrGrey</Link>
       <Link to="/codebox">SafeCrack</Link>
       <Link to="/tornletter">TornLetter</Link>
+      <Link to="/errorCorrection">ErrorCorrection</Link>
       <Link to="/backstory">BackStory</Link>
         </nav>
     </Header>
@@ -90,8 +92,8 @@ const {questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialU
         <Route path="/codebox"> 
           <CodeBox/>
         </Route>
-        <Route path="/tornletter">
-          <TornLetter/>
+        <Route path="/errorCorrection">
+          <ErrorCorrection/>
         </Route>
         <Route path="/vocab">
           <VocabPage />

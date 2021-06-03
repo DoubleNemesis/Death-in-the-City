@@ -12,9 +12,7 @@ min-height: 500px;
 background-color: #999;
 border: 4px solid black;
 box-sizing: border-box;
-
 `
-
 const rotate90 = keyframes`
 0% {transform: rotate(0deg);}
 100% {transform: rotate(90deg);}
