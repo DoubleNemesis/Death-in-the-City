@@ -349,17 +349,15 @@ export const ErrorCorrectionData = {
         ["This is what I want you to do"],
     ],
     sentences: [
-        ["ONE", "1", true],
-        ["TWO", "2", false],
-        ["THREE", "3", false],
-        ["FOUR", "4", true],
-        ["FIVE", "5", true],
-        ["SIX", "6", false],
+        ["I live here in the city.", "0", false],
+        ["I have live here for many years.", "1", false],
+        ["I have no moneys.", "2", false],
+        ["I don't know what happened to Lexi.", "3", false],
+        ["He was a good man.", "4", false],
+        ["I didn't see nothing.", "5", false],
     ],
-    correctedSentences: [
-        ["ONE"],
-        ["FOUR"],
-        ["FIVE"],
+    incorrectSentences: [
+        ["1", "2", "5"]
     ]
 }
 

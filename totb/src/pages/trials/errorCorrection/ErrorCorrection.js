@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
@@ -12,40 +12,55 @@ import GameContext from '../../../context/GameContext'
 
 function ErrorCorrection() {
 
-    const [ selectedSentences, setSelectedSentences ]  = useState([])
-
+    const [selectedSentences, setSelectedSentences] = useState([])
+    const [sentencesArray, setSentencesArray] = useState([])
     const { level, setLevel } = useContext(GameContext)
-    const { instructions, sentences, correctedSentences } = ErrorCorrectionData
+    const { instructions, sentences, incorrectSentences } = ErrorCorrectionData
+
+    useEffect(() => {
+        setSentencesArray(sentences)
+    }, [sentencesArray])
 
     function handleClick(e) {
         const selectedSentenceId = e.target.id
         const selectedSentence = document.getElementById(selectedSentenceId)
-        if(selectedSentence.classList.contains('selected')){
-            selectedSentence.classList.remove('selected') 
+        // if (selectedSentence.classList.contains('selected')) {
+        //selectedSentence.classList.remove('selected')
+        if (sentencesArray[selectedSentenceId][2] === true) {
+            let copySentencesArray = [...sentencesArray]
+            copySentencesArray[selectedSentenceId][2] = false
+            setSentencesArray(copySentencesArray)
             let copySelectedSentences = [...selectedSentences]
             const indexOfSelected = copySelectedSentences.indexOf(selectedSentenceId)
             copySelectedSentences.splice(indexOfSelected, 1)
             setSelectedSentences(copySelectedSentences)
+
         }
-        else{
-            selectedSentence.classList.add('selected')
+        else {
+            //selectedSentence.classList.add('selected')
+            let copySentencesArray = [...sentencesArray]
+            copySentencesArray[selectedSentenceId][2] = true
+            setSentencesArray(copySentencesArray)
             setSelectedSentences((prev) => [selectedSentenceId, ...prev])
-            console.log(selectedSentences.length)
+
         }
-
     }
 
-    console.log(selectedSentences);
+    useEffect(() => {
+        if (selectedSentences.length >= 3) {
+            if (selectedSentences.sort().toString() === incorrectSentences[0].sort().toString()) {
+                //render next step
+            }
+            else {
+                let copySentencesArray = [...sentencesArray]
+                copySentencesArray.forEach(item => item[2] = false)
+                setSentencesArray(copySentencesArray)
+                setSelectedSentences([])
+            }
+        }
+    }, [selectedSentences])
 
-    function handleCheckCorrectCode() {
-        console.log('clicked');
-    }
-
-    function handleVisitorBookClick() {
-        console.log('clicked');
-    }
-
-    const sentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isCorrect={item[2]} bgColor="red" onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
+    const sentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
 
     return (
         <>
