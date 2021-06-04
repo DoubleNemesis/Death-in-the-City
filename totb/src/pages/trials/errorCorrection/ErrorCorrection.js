@@ -14,8 +14,10 @@ function ErrorCorrection() {
 
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
+    const [isComplete, setIsComplete] = useState(false)
+    const [correctedSentences, setCorrectedSentences] = useState({})
     const { level, setLevel } = useContext(GameContext)
-    const { instructions, sentences, incorrectSentences } = ErrorCorrectionData
+    const { instructions, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
 
     useEffect(() => {
         setSentencesArray(sentences)
@@ -50,6 +52,7 @@ function ErrorCorrection() {
         if (selectedSentences.length >= 3) {
             if (selectedSentences.sort().toString() === incorrectSentences[0].sort().toString()) {
                 //render next step
+                setIsComplete(true)
             }
             else {
                 let copySentencesArray = [...sentencesArray]
@@ -60,7 +63,22 @@ function ErrorCorrection() {
         }
     }, [selectedSentences])
 
-    const sentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
+    function handleChange(e){
+console.log('clicked');
+    }
+    function handleInput(e){
+const sentenceId = e.target.id
+const {name, value} = e.target
+        setCorrectedSentences((prev)=>{
+            
+            
+
+        })
+
+    }
+
+    const firstSentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
+    const secondSentenceList = incorrectAndCorrected.map((item) => <SentenceDiv id={item[1]} key={item}>{item[0]}<input type="text" onChange={handleChange}/><button onClick={handleInput}>Go!</button></SentenceDiv>)
 
     return (
         <>
@@ -79,8 +97,7 @@ function ErrorCorrection() {
                     <SpeechBubbleLeft>
                         {instructions}
                     </SpeechBubbleLeft>
-                    {sentenceList}
-
+                    {!isComplete ? firstSentenceList : secondSentenceList}
                 </Conversation>
             </PageContainer>
 
