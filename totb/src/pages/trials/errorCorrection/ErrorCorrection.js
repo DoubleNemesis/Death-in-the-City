@@ -63,23 +63,17 @@ function ErrorCorrection() {
         }
     }, [selectedSentences])
 
+
     function handleChange(e){
-console.log('clicked');
-    }
-    function handleInput(e){
 const sentenceId = e.target.id
 const {name, value} = e.target
-        setCorrectedSentences((prev)=>{
-            
-            
-
-        })
+        setCorrectedSentences((prev)=>({...prev, [name]:value}))
 
     }
-
+//<button onClick={handleInput}>Go!</button>
     const firstSentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
-    const secondSentenceList = incorrectAndCorrected.map((item) => <SentenceDiv id={item[1]} key={item}>{item[0]}<input type="text" onChange={handleChange}/><button onClick={handleInput}>Go!</button></SentenceDiv>)
-
+    const secondSentenceList = incorrectAndCorrected.map((item) => <SentenceDiv id={item[1]} key={item}>{item[0]}<input id={item[1]} name={item[1]} value={correctedSentences[item[1]]} type="text" onChange={handleChange}/></SentenceDiv>)
+    console.log(correctedSentences);
     return (
         <>
             <div className="title">
