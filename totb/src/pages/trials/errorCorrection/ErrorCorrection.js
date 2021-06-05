@@ -6,7 +6,7 @@ import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
 import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import ProfilePic from '../../../images/janitor.png'
 import { ErrorCorrectionData } from '../../../data/lessonData'
-import { SentenceDiv } from './errorCorrectionComponents/ErrorCorrectionComponents'
+import { SentenceDiv, IncorrectSentencesDiv } from './errorCorrectionComponents/ErrorCorrectionComponents'
 import GameContext from '../../../context/GameContext'
 
 
@@ -14,6 +14,7 @@ function ErrorCorrection() {
 
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
+    const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
     const [isComplete, setIsComplete] = useState(false)
     const [correctedSentences, setCorrectedSentences] = useState({})
     const { level, setLevel } = useContext(GameContext)
@@ -21,6 +22,7 @@ function ErrorCorrection() {
 
     useEffect(() => {
         setSentencesArray(sentences)
+        setIncorrectAndCorrectedArray(incorrectAndCorrected)
     }, [sentencesArray])
 
     function handleClick(e) {
@@ -64,16 +66,25 @@ function ErrorCorrection() {
     }, [selectedSentences])
 
 
-    function handleChange(e){
-const sentenceId = e.target.id
-const {name, value} = e.target
-        setCorrectedSentences((prev)=>({...prev, [name]:value}))
-
+    function handleChange(e) {
+        const sentenceId = e.target.id
+        const { name, value } = e.target
+        setCorrectedSentences((prev) => ({ ...prev, [name]: value }))
     }
-//<button onClick={handleInput}>Go!</button>
+
+    function handleSubmit(e){
+        if(correctedSentences[e.target.id] === incorrectAndCorrectedArray[e.target.id][2]){
+            let copyIncorrectAndCorrectedArray = [...incorrectAndCorrectedArray]
+            copyIncorrectAndCorrectedArray[e.target.id][3] = true;
+            setIncorrectAndCorrectedArray(copyIncorrectAndCorrectedArray)
+        }
+        else {
+            console.log(correctedSentences[e.target.id], incorrectAndCorrectedArray[e.target.id][2] );
+        }
+    }
+console.log(incorrectAndCorrectedArray);
     const firstSentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
-    const secondSentenceList = incorrectAndCorrected.map((item) => <SentenceDiv id={item[1]} key={item}>{item[0]}<input id={item[1]} name={item[1]} value={correctedSentences[item[1]]} type="text" onChange={handleChange}/></SentenceDiv>)
-    console.log(correctedSentences);
+    const secondSentenceList = incorrectAndCorrectedArray.map((item) => <IncorrectSentencesDiv isCorrect={item[3]}  id={item[1]} key={item}>{item[0]}<input id={item[1]} name={item[1]} value={correctedSentences[item[1]] || ""} type="text" onChange={handleChange} /><button id={item[1]} onClick={handleSubmit}>Go!</button></IncorrectSentencesDiv>)
     return (
         <>
             <div className="title">
