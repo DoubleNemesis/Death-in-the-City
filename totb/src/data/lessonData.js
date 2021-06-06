@@ -360,8 +360,8 @@ export const ErrorCorrectionData = {
         ["1", "2", "5"]
     ],
     incorrectAndCorrected : [
-        ["I have live here for many years.", "0", "I have lived here for many years.", false],
-        ["I have no moneys.", "1", "I have no money.", false],
+        ["I have live here for many years.", "0", "I have lived here for many years", false],
+        ["I have no moneys.", "1", "I have no money", false],
         ["I didn't see nothing.", "2", "I didn't see anything", false], 
     ]
 }

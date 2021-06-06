@@ -15,7 +15,8 @@ function ErrorCorrection() {
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
     const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
-    const [isComplete, setIsComplete] = useState(false)
+    const [isComplete1, setIsComplete1] = useState(false)
+    const [isComplete2, setIsComplete2] = useState(false)
     const [correctedSentences, setCorrectedSentences] = useState({})
     const { level, setLevel } = useContext(GameContext)
     const { instructions, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
@@ -54,7 +55,7 @@ function ErrorCorrection() {
         if (selectedSentences.length >= 3) {
             if (selectedSentences.sort().toString() === incorrectSentences[0].sort().toString()) {
                 //render next step
-                setIsComplete(true)
+                setIsComplete1(true)
             }
             else {
                 let copySentencesArray = [...sentencesArray]
@@ -82,7 +83,19 @@ function ErrorCorrection() {
             console.log(correctedSentences[e.target.id], incorrectAndCorrectedArray[e.target.id][2] );
         }
     }
-console.log(incorrectAndCorrectedArray);
+
+    useEffect(()=>{
+        let count = 0
+        for (let item in incorrectAndCorrectedArray){
+            if(incorrectAndCorrectedArray[item][3] === false){
+                count++
+            }
+            
+        }
+        setIsComplete2(count === 0 ? true : false ) 
+    },[incorrectAndCorrectedArray])
+
+
     const firstSentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
     const secondSentenceList = incorrectAndCorrectedArray.map((item) => <IncorrectSentencesDiv isCorrect={item[3]}  id={item[1]} key={item}>{item[0]}<input id={item[1]} name={item[1]} value={correctedSentences[item[1]] || ""} type="text" onChange={handleChange} /><button id={item[1]} onClick={handleSubmit}>Go!</button></IncorrectSentencesDiv>)
     return (
@@ -102,7 +115,7 @@ console.log(incorrectAndCorrectedArray);
                     <SpeechBubbleLeft>
                         {instructions}
                     </SpeechBubbleLeft>
-                    {!isComplete ? firstSentenceList : secondSentenceList}
+                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <h1>let's go!</h1>}
                 </Conversation>
             </PageContainer>
 
