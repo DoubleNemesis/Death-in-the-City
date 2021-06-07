@@ -31,6 +31,7 @@ const {characterNames} = lessonData['characterNames'];
 const {questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1} = lessonData['questionsWitness1'];
 const {questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2} = lessonData['questionsWitness2'];
 const {questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3} = lessonData['questionsWitness3'];
+const {questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4} = lessonData['questionsWitness4'];
 
   return (
     <div className="outer">
@@ -45,6 +46,7 @@ const {questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialU
       <Link to="/witness1">{characterNames[0]}</Link>
       <Link to="/witness2">{characterNames[1]}</Link>
       <Link to="/witness3">{characterNames[2]}</Link>
+      <Link to="/witness4">{characterNames[3]}</Link>
       <Link to="/mrgrey">MrGrey</Link>
       <Link to="/codebox">SafeCrack</Link>
       <Link to="/tornletter">TornLetter</Link>
@@ -88,7 +90,20 @@ const {questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialU
           trialURL={trialURL2}
           />
         </Route>
+        <Route path="/witness4">
+          <Witness
+          title={characterNames[3]} 
+          questionsWit={questionsWitness4}
+          questionsWit2={questionsWitness4_2}
+          conversationArray={witnessConversationArray4}
+          personImage={KirstenPic}
+          trialURL={trialURL2}
+          />
+        </Route>
         {/* //props below to make trial pages reeusable */}
+        <Route path="/tornletter"> 
+          <TornLetter/>
+        </Route>
         <Route path="/codebox"> 
           <CodeBox/>
         </Route>

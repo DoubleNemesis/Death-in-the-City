@@ -245,22 +245,22 @@ export const questionsWitness3 = {
 
 export const questionsWitness4 = {
     questionsWitness4: [
-        ['', 'fail'],
-        ['', 'fail'],
-        ['', 'success'],
-        ['', 'fail'],
-        ['', 'fail']
+        ["I am wanting to ask about the party.", 'fail'],
+        ["I'll want to ask about the party.", 'fail'],
+        ["I wanted to ask about the party.", 'success'],
+        ["I was asking about the party.", 'fail'],
+        ["I want ask about the party.", 'fail']
     ],
     questionsWitness4_2: [
-        ['', 'fail'],
-        ['', 'success'],
-        ['', 'fail'],
-        ['', 'fail'],
-        ['', 'fail']
+        ["Not to say anything?", 'fail'],
+        ["Not even two questions?", 'success'],
+        ["Two questions by me?", 'fail'],
+        ["Barely two questions?", 'fail'],
+        ["Roughly two questions?", 'fail']
     ],
     witnessConversationArray4: [
         "What do you want?",
-        "Can you open the door? I just want to ask about the party.",
+        "I want to ask about the party.",
         "Get out of here! I'm not talking to you!",
         "Not even two questions?",
         "No! Get lost or I'll call the cops!"
