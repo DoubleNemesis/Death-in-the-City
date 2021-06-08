@@ -10,8 +10,6 @@ font-family: cursive;
 }
 `
 
-//function to toggle color based on iscorrect prop.
-
 export const SentenceDiv = ({ children, ...props}) => {
 
     return (

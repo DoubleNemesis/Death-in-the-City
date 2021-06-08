@@ -4,11 +4,11 @@ import Title from '../../../generalComponents/Title'
 //import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
 import { Instructions, Conversation, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
-// import { TornLetterPiece, LetterContainer } from './tornLetterComponents/TornLetterComponents'
+import { LoveLetterElems } from './LoveLetterComponents'
 import ProfilePic from '../../../images/chaymadz.jpg'
 import GameContext from '../../../context/GameContext'
 import Draggable from 'react-draggable';
-import { TornLetterPiecesData} from '../../../data/lessonData'
+import { loveLetterData} from '../../../data/lessonData'
 
 
 
@@ -17,6 +17,7 @@ function LoveLetter() {
     //const { level, setLevel } = useContext(GameContext)
     //let history = useHistory()
     const nodeRef = useRef(null);
+    const {instructions} = loveLetterData
 
 
     function handleStop(event){
@@ -48,11 +49,21 @@ function LoveLetter() {
                 </Instructions>
                 <Conversation>
                     <SpeechBubbleLeft>
-                        Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
-                        up in a safe and I don't know the code.
-                        But maybe you will be able to work it out. Ready to try?
+                        {instructions}
                     </SpeechBubbleLeft>
 
+                    <LoveLetterElems className="symbol" id="one">%</LoveLetterElems>
+                    <LoveLetterElems className="symbol" id="two">£</LoveLetterElems>
+                    <LoveLetterElems className="symbol" id="three">£</LoveLetterElems>
+
+                    <LoveLetterElems className="symbol" id="four">$</LoveLetterElems>
+                    <LoveLetterElems className="symbol" id="five">%</LoveLetterElems>
+                    <LoveLetterElems className="symbol" id="six">&</LoveLetterElems>
+
+                    <LoveLetterElems className="letter" id="a">a</LoveLetterElems>
+                    <LoveLetterElems className="letter" id="d">d</LoveLetterElems>
+                    <LoveLetterElems className="letter" id="l">l</LoveLetterElems>
+                    <LoveLetterElems className="letter" id="y">y</LoveLetterElems>
 
 
                 </Conversation>

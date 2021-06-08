@@ -366,6 +366,10 @@ export const ErrorCorrectionData = {
     ]
 }
 
+export const loveLetterData = {
+    instructions: ['Break the word code']
+}
+
 
 
 

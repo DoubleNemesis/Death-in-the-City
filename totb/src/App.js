@@ -51,6 +51,7 @@ const {questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialU
       <Link to="/mrgrey">MrGrey</Link>
       <Link to="/codebox">SafeCrack</Link>
       <Link to="/tornletter">TornLetter</Link>
+      <Link to="/loveletter">LoveLetter</Link>
       <Link to="/errorCorrection">ErrorCorrection</Link>
       <Link to="/backstory">BackStory</Link>
         </nav>
@@ -104,6 +105,9 @@ const {questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialU
         {/* //props below to make trial pages reeusable */}
         <Route path="/tornletter"> 
           <TornLetter/>
+        </Route>
+        <Route path="/loveletter"> 
+          <LoveLetter/>
         </Route>
         <Route path="/codebox"> 
           <CodeBox/>
