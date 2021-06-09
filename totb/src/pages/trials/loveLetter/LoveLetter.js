@@ -36,11 +36,11 @@ function LoveLetter() {
     //const LoveLetterSymbols = loveLetterData['symbols'].map((item, index) => <LoveLetterElems>{String.fromCharCode(item[0])}</LoveLetterElems>)
     const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems>{item[0]}</LoveLetterElems>)
     const LoveLetterCode = secretMessageArray.map((item, index) => {
-
+        console.log(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)])
         return (
             <>
                {typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? 
-               <LoveLetterElems>{String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][0])}</LoveLetterElems> :
+               <LoveLetterElems>{String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1])}</LoveLetterElems> :
                <LoveLetterSpace/>
                }
             </>
