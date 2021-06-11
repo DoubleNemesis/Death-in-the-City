@@ -16,21 +16,20 @@ import { loveLetterData } from '../../../data/lessonData'
 function LoveLetter() {
     //const { level, setLevel } = useContext(GameContext)
     //let history = useHistory()
-    const [selectedLetter, setSelectedLetter] = useState('')    
-    const [selectedSymbol, setSelectedSymbol] = useState('')    
-    const [usedLetters, setUsedLetters] = useState([])    
+    const [selectedLetter, setSelectedLetter] = useState('')
+    const [selectedSymbol, setSelectedSymbol] = useState('')
+    const [usedLetters, setUsedLetters] = useState([])
     const nodeRef = useRef(null);
     const { instructions } = loveLetterData
 
     const secretMessage = "I am a message";
     const secretMessageArray = secretMessage.toLowerCase().split('');
 
-    function handleLetterClick(e){
+    function handleLetterClick(e) {
         setSelectedLetter(e.target.id)
     }
 
-    function handleSymbolClick(e){
-        // check if has letter. if so, wipe letter and replace with current letter or just return to symbol
+    function handleSymbolClick(e) {
         let tilesToChange = e.target.classList[2];
         let tilesArray = document.getElementsByClassName(tilesToChange)
         tilesArray = [...tilesArray]
@@ -43,20 +42,52 @@ function LoveLetter() {
         setUsedLetters(dummyUsedLetters)
     }
 
-    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems draggable="true" color={usedLetters.indexOf(item[0]) >-1 ? 'transparent' : item[0] === selectedLetter ? 'red' : 'beige' } onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
-    const LoveLetterCode = secretMessageArray.map((item, index) => {
-    const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
-    // if (typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object'){
-    //     console.log( targetSymbol.charCodeAt(0) === parseInt(selectedSymbol))
-    //     console.log( targetSymbol.charCodeAt(0), selectedSymbol)
-    // }
 
+    function allowDrop(ev) {
+        ev.preventDefault();
+        console.log('allowdrop');
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("Text", ev.target.id);
+        console.log('drag');
+      }
+
+      function drop(ev) {
+        let data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+        ev.preventDefault();
+        console.log('drop');
+      }
+
+    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => {
+        return (
+            <div draggable="true" onDragStart={drag} id={item[0]}>
+            <LoveLetterElems
+                color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : 'beige'}
+>
+                    {item[0]}
+            </LoveLetterElems>
+            </div>
+        )
+    })
+
+    const LoveLetterCode = secretMessageArray.map((item, index) => {
+        const checkIfObject = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)]
+        const targetSymbol = checkIfObject === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
         return (
             <>
-               { targetSymbol ?
-               <LoveLetterSymbolElems className={targetSymbol.charCodeAt(0)} onClick={handleSymbolClick} color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'beige' }>{targetSymbol}</LoveLetterSymbolElems> :
-               <LoveLetterSpace/>
-               }
+                { targetSymbol ?
+                <div onDragOver={allowDrop} onDrop={drop}>
+                    <LoveLetterSymbolElems    
+                        className={targetSymbol.charCodeAt(0)}
+                        onClick={handleSymbolClick}
+                        color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'beige'}>
+                        {targetSymbol}
+                    </LoveLetterSymbolElems>
+                    </div> :
+                    <LoveLetterSpace />
+                }
             </>
         )
     })
@@ -71,7 +102,7 @@ function LoveLetter() {
                     <WitnessImage img={ProfilePic} />
                     {/* https://unsplash.com/@dammypayne*/}
                     <TaskBox>
-                        Break the code!
+                        Break the codes!
                         </TaskBox>
                 </Instructions>
                 <Conversation>
@@ -79,7 +110,7 @@ function LoveLetter() {
                         {instructions}
                     </SpeechBubbleLeft>
                     <LoveLetterSymbolsContainer>
-                    {LoveLetterCode}
+                        {LoveLetterCode}
                     </LoveLetterSymbolsContainer>
 
                     <LoveLetterLettersContainer>
