@@ -17,17 +17,10 @@ function LoveLetter() {
     //const { level, setLevel } = useContext(GameContext)
     //let history = useHistory()
     const [selectedLetter, setSelectedLetter] = useState('')    
-    const [selectedSymbol, setSelectedSymbol] = useState('8718')    
+    const [selectedSymbol, setSelectedSymbol] = useState('')    
+    const [usedLetters, setUsedLetters] = useState([])    
     const nodeRef = useRef(null);
     const { instructions } = loveLetterData
-
-    function handleStop(event) {
-        console.log(event)
-    }
-
-    function handleDrag(event) {
-        console.log(event.target.id)
-    }
 
     const secretMessage = "I am a message";
     const secretMessageArray = secretMessage.toLowerCase().split('');
@@ -36,18 +29,31 @@ function LoveLetter() {
         setSelectedLetter(e.target.id)
     }
 
-    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={item[0] === selectedLetter ? 'red' : 'beige' } onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
+    function handleSymbolClick(e){
+        let tilesToChange = e.target.classList[2];
+        let tilesArray = document.getElementsByClassName(tilesToChange)
+        tilesArray = [...tilesArray]
+        tilesArray.forEach(element => {
+            element.innerText = selectedLetter
+        });
+        setSelectedLetter('')
+        const dummyUsedLetters = [...usedLetters]
+        dummyUsedLetters.push(selectedLetter)
+        setUsedLetters(dummyUsedLetters)
+    }
+
+    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={usedLetters.indexOf(item[0]) >-1 ? 'transparent' : item[0] === selectedLetter ? 'red' : 'beige' } onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
     const LoveLetterCode = secretMessageArray.map((item, index) => {
     const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
-    if (typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object'){
-        console.log( targetSymbol.charCodeAt(0) === parseInt(selectedSymbol))
-        console.log( targetSymbol.charCodeAt(0), selectedSymbol)
-    }
+    // if (typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object'){
+    //     console.log( targetSymbol.charCodeAt(0) === parseInt(selectedSymbol))
+    //     console.log( targetSymbol.charCodeAt(0), selectedSymbol)
+    // }
 
         return (
             <>
                { targetSymbol ?
-               <LoveLetterSymbolElems color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'beige' }>{targetSymbol}</LoveLetterSymbolElems> :
+               <LoveLetterSymbolElems className={targetSymbol.charCodeAt(0)} onClick={handleSymbolClick} color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'beige' }>{targetSymbol}</LoveLetterSymbolElems> :
                <LoveLetterSpace/>
                }
             </>
