@@ -21,13 +21,6 @@ function CodeBox() {
 
 
 
-    // function handleVisitorBookClick() {
-
-    // }
-
-    // const style1={marginTop: '5%', marginLeft: '0%'}
-    // const style2={marginTop: '9%', marginLeft: '6%'}
-    // const style3={marginTop: '0%', marginLeft: '15%'}
 
     function handleStop(event){
 

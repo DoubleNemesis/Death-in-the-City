@@ -33,6 +33,8 @@ const {questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialU
 const {questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2} = lessonData['questionsWitness2'];
 const {questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3} = lessonData['questionsWitness3'];
 const {questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4} = lessonData['questionsWitness4'];
+const {questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5} = lessonData['questionsWitness5'];
+const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6} = lessonData['questionsWitness6'];
 
   return (
     <div className="outer">
@@ -48,6 +50,8 @@ const {questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialU
       <Link to="/witness2">{characterNames[1]}</Link>
       <Link to="/witness3">{characterNames[2]}</Link>
       <Link to="/witness4">{characterNames[3]}</Link>
+      <Link to="/witness5">{characterNames[4]}</Link>
+      <Link to="/witness6">{characterNames[5]}</Link>
       <Link to="/mrgrey">MrGrey</Link>
       <Link to="/codebox">SafeCrack</Link>
       <Link to="/tornletter">TornLetter</Link>
@@ -98,6 +102,26 @@ const {questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialU
           questionsWit={questionsWitness4}
           questionsWit2={questionsWitness4_2}
           conversationArray={witnessConversationArray4}
+          personImage={KirstenPic}
+          trialURL={trialURL2}
+          />
+        </Route>
+        <Route path="/witness5">
+          <Witness
+          title={characterNames[4]} 
+          questionsWit={questionsWitness5}
+          questionsWit2={questionsWitness5_2}
+          conversationArray={witnessConversationArray5}
+          personImage={KirstenPic}
+          trialURL={trialURL2}
+          />
+        </Route>
+        <Route path="/witness5">
+          <Witness
+          title={characterNames[5]} 
+          questionsWit={questionsWitness6}
+          questionsWit2={questionsWitness6_2}
+          conversationArray={witnessConversationArray6}
           personImage={KirstenPic}
           trialURL={trialURL2}
           />

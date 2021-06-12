@@ -273,25 +273,25 @@ export const questionsWitness4 = {
 //witness 5 floe lights
 export const questionsWitness5 = {
     questionsWitness5: [
-        ['', 'fail'],
-        ['', 'fail'],
-        ['', 'success'],
-        ['', 'fail'],
-        ['', 'fail']
+        ["I promise I won't tell him.", 'success'],
+        ["I promise I won't tell to him.", 'fail'],
+        ["I am promise I won't tell him.", 'fail'],
+        ["I promised I won't tell him.", 'fail'],
+        ["I have promised I won't tell him.", 'fail']
     ],
     questionsWitness5_2: [
-        ['', 'fail'],
-        ['', 'success'],
-        ['', 'fail'],
-        ['', 'fail'],
-        ['', 'fail']
+        ["How I can do that?", 'fail'],
+        ["How would I do that?", 'success'],
+        ["How does it do that?", 'fail'],
+        ["However can I do that?", 'fail'],
+        ["Where could I have done that?", 'fail']
     ],
     witnessConversationArray5: [
         "Hey I want to talk to you but Dallas told me not to.",
-        "I promise I won't tell him. He won't speak to me anyway.",
+        "I promise I won't tell him.",
         "If you should happen to read my messages you might learn something.",
         "How would I do that?",
-        "I'll leave you with a clue....no I must go and powder my nose...."
+        "I'll leave you with a clue....now I must go and powder my nose...."
     ],
     trialURL5: [
         'tornletter'
@@ -302,18 +302,18 @@ export const questionsWitness5 = {
 
 export const questionsWitness6 = {
     questionsWitness6: [
-        ["", 'fail'],
-        ["", 'fail'],
-        ["", 'success'],
-        ["", 'fail'],
-        ["", 'fail']
+        ["Really? When did he tell that?", 'fail'],
+        ["Really? When does he say that?", 'fail'],
+        ["Really? Why did he say about that?", 'fail'],
+        ["Really? Who did he say that to?", 'fail'],
+        ["Really? When did he say that?", 'success']
     ],
     questionsWitness6_2: [
-        ["", 'fail'],
-        ["", 'success'],
-        ["", 'fail'],
-        ["", 'fail'],
-        ["", 'fail']
+        ["What does he say exactly?", 'fail'],
+        ["What did he say exactly?", 'success'],
+        ["What did he want to say exactly?", 'fail'],
+        ["What did he speak exactly?", 'fail'],
+        ["What did he exactly say?", 'fail']
     ],
     witnessConversationArray6: [
         "Lexi told me in an email he was feeling suicidal.",
