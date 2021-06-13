@@ -73,31 +73,46 @@ function ErrorCorrection() {
         setCorrectedSentences((prev) => ({ ...prev, [name]: value }))
     }
 
-    function handleSubmit(e){
-        if(correctedSentences[e.target.id] === incorrectAndCorrectedArray[e.target.id][2]){
+    function handleSubmit(e) {
+        if (correctedSentences[e.target.id] === incorrectAndCorrectedArray[e.target.id][2]) {
             let copyIncorrectAndCorrectedArray = [...incorrectAndCorrectedArray]
             copyIncorrectAndCorrectedArray[e.target.id][3] = true;
             setIncorrectAndCorrectedArray(copyIncorrectAndCorrectedArray)
         }
         else {
-            console.log(correctedSentences[e.target.id], incorrectAndCorrectedArray[e.target.id][2] );
+            console.log(correctedSentences[e.target.id], incorrectAndCorrectedArray[e.target.id][2]);
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         let count = 0
-        for (let item in incorrectAndCorrectedArray){
-            if(incorrectAndCorrectedArray[item][3] === false){
+        for (let item in incorrectAndCorrectedArray) {
+            if (incorrectAndCorrectedArray[item][3] === false) {
                 count++
             }
-            
+
         }
-        setIsComplete2(count === 0 ? true : false ) 
-    },[incorrectAndCorrectedArray])
+        setIsComplete2(count === 0 ? true : false)
+    }, [incorrectAndCorrectedArray])
 
 
     const firstSentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
-    const secondSentenceList = incorrectAndCorrectedArray.map((item) => <IncorrectSentencesDiv isCorrect={item[3]}  id={item[1]} key={item}>{item[0]}<input id={item[1]} name={item[1]} value={correctedSentences[item[1]] || ""} type="text" onChange={handleChange} /><button id={item[1]} onClick={handleSubmit}>Go!</button></IncorrectSentencesDiv>)
+    const secondSentenceList = incorrectAndCorrectedArray.map((item) => <IncorrectSentencesDiv
+        isCorrect={item[3]}
+        id={item[1]}
+        key={item}
+    >
+        {item[0]}
+        <input
+            id={item[1]}
+            name={item[1]}
+            value={correctedSentences[item[1]] || ""}
+            type="text" onChange={handleChange} />
+        <button id={item[1]}
+            onClick={handleSubmit}
+        >Go!
+        </button>
+    </IncorrectSentencesDiv>)
     return (
         <>
             <div className="title">

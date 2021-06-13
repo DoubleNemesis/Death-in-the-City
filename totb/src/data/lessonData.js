@@ -96,54 +96,54 @@ export const mapFeatureData = {
         'top': [76],
         'right': [75]
     },
-]
+    ]
 }
 
 export const BoardIdeaData = {
     'idea': [
         {
-        'key': [1],
-        'id': [0],
-        'title': ["The Victim"],
-        'name': ["Lexington Grey"],
-        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
-    },
+            'key': [1],
+            'id': [0],
+            'title': ["The Victim"],
+            'name': ["Lexington Grey"],
+            'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+        },
         {
-        'key': [2],
-        'id': [1],
-        'title': ["Suspect"],
-        'name': ["Chay Madz"],
-        'image': ["https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1926&q=80"],
-    },
+            'key': [2],
+            'id': [1],
+            'title': ["Suspect"],
+            'name': ["Chay Madz"],
+            'image': ["https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1926&q=80"],
+        },
         {
-        'key': [3],
-        'id': [2],
-        'title': ["Suspect"],
-        'name': ["Dallas Franks"],
-        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
-    },
+            'key': [3],
+            'id': [2],
+            'title': ["Suspect"],
+            'name': ["Dallas Franks"],
+            'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+        },
         {
-        'key': [4],
-        'id': [3],
-        'title': ["Suspect"],
-        'name': ["James Grey"],
-        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
-    },
+            'key': [4],
+            'id': [3],
+            'title': ["Suspect"],
+            'name': ["James Grey"],
+            'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+        },
         {
-        'key': [5],
-        'id': [4],
-        'title': ["Suspect"],
-        'name': ["James Grey"],
-        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
-    },
+            'key': [5],
+            'id': [4],
+            'title': ["Suspect"],
+            'name': ["James Grey"],
+            'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+        },
         {
-        'key': [6],
-        'id': [5],
-        'title': ["Suspect"],
-        'name': ["James Grey"],
-        'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
-    },
-]
+            'key': [6],
+            'id': [5],
+            'title': ["Suspect"],
+            'name': ["James Grey"],
+            'image': ["https://images.unsplash.com/photo-1614331589242-a02c24b5f564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=318&q=80"],
+        },
+    ]
 }
 
 
@@ -151,8 +151,8 @@ export const NoteItemData = {
     'idea': [{
         'key': [1],
         'text': ["Call Mr Grey asap"],
-        },
-]
+    },
+    ]
 }
 
 
@@ -182,7 +182,7 @@ export const questionsWitness1 = {
     trialURL1: [
         'codebox'
     ]
-} 
+}
 
 //witness 2 chay madz
 
@@ -359,10 +359,10 @@ export const ErrorCorrectionData = {
     incorrectSentences: [
         ["1", "2", "5"]
     ],
-    incorrectAndCorrected : [
+    incorrectAndCorrected: [
         ["I have live here for many years.", "0", "I have lived here for many years", false],
         ["I have no moneys.", "1", "I have no money", false],
-        ["I didn't see nothing.", "2", "I didn't see anything", false], 
+        ["I didn't see nothing.", "2", "I didn't see anything", false],
     ]
 }
 
@@ -424,4 +424,19 @@ export const loveLetterData = {
         'y',
         'z',
     ]
+}
+
+const inputs = <input />
+
+export const redactedData = {
+    instructions: ['Add the missing words!'],
+    missingWords: ['text'],
+}
+
+export const RedactedComp = (props) => {
+    return (
+        <div>
+            This is an <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> box now
+        </div>
+    )
 }
