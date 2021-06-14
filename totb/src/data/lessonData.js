@@ -430,13 +430,17 @@ const inputs = <input />
 
 export const redactedData = {
     instructions: ['Add the missing words!'],
-    missingWords: ['text'],
+    missingWords: ['first', 'second', 'third', 'fourth', 'fifth'],
 }
 
 export const RedactedComp = (props) => {
     return (
         <div>
-            This is an <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> box now
+            This is the <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> sentence.
+            This is the <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> sentence.
+            This is the <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} /> sentence.
+            This is the <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} /> sentence.
+            This is the <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} /> sentence.
         </div>
     )
 }

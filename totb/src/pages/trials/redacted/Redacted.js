@@ -13,15 +13,23 @@ import GameContext from '../../../context/GameContext'
 function Redacted() {
 
     const [redactedInputs, setRedactedInputs] = useState({})
+    const [message, setMessage] = useState('')
     const { level, setLevel } = useContext(GameContext)
     const { instructions, text, missingWords } = redactedData
 
     function handleInputChange(e){
-        const {name, value} = e.target.id
+        const {name, value} = e.target
+        console.log(name, value);
         setRedactedInputs((prev)=>({...prev, [name]:value}))
     }
 
- 
+    function handleCheck(){
+        let arrayOfAnswers = []
+        setMessage(Object.values(redactedInputs).toString() === missingWords.toString()?'correct':'try again')
+
+    }
+
+ console.log(redactedInputs);
     return (
         <>
             <div className="title">
@@ -40,11 +48,21 @@ function Redacted() {
                         {instructions}
                     </SpeechBubbleLeft>
                     <StatementContainer>
+                        {message}
                         <RedactedComp
                         onchange={handleInputChange}
                         name1="name1"
+                        name2="name2"
+                        name3="name3"
+                        name4="name4"
+                        name5="name5"
                         value1={redactedInputs['name1'] || ""}
+                        value2={redactedInputs['name2'] || ""}
+                        value3={redactedInputs['name3'] || ""}
+                        value4={redactedInputs['name4'] || ""}
+                        value5={redactedInputs['name5'] || ""}
                         />
+                        <button onClick={handleCheck}>Check</button>
                         </StatementContainer>
                 </Conversation>
             </PageContainer>
