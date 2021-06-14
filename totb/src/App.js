@@ -9,6 +9,7 @@ import TornLetter from './pages/trials/tornLetter/TornLetter'
 import LoveLetter from './pages/trials/loveLetter/LoveLetter'
 import ErrorCorrection from './pages/trials/errorCorrection/ErrorCorrection'
 import Redacted from './pages/trials/redacted/Redacted'
+import OrderEvents from './pages/trials/orderEvents/OrderEvents'
 import BackStory from './pages/BackStory'
 import Header from './pageElements/Header'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
@@ -118,7 +119,7 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
           trialURL={trialURL2}
           />
         </Route>
-        <Route path="/witness5">
+        <Route path="/witness6">
           <Witness
           title={characterNames[5]} 
           questionsWit={questionsWitness6}
@@ -143,6 +144,9 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
         </Route>
         <Route path="/redacted">
           <Redacted/>
+        </Route>
+        <Route path="/orderEvents">
+          <OrderEvents/>
         </Route>
         <Route path="/vocab">
           <VocabPage />
