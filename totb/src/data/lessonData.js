@@ -329,6 +329,8 @@ export const questionsWitness6 = {
 
 //trials
 
+//tornLetter
+
 export const TornLetterPiecesData = [
     "When the lights went out, we ",
     "were all sitting round the table",
@@ -343,6 +345,8 @@ export const TornLetterPiecesData = [
     "Lexi Grey went into the kitchen",
     "to get everyone some drinks",
 ]
+
+//error correction
 
 export const ErrorCorrectionData = {
     instructions: [
@@ -366,6 +370,8 @@ export const ErrorCorrectionData = {
     ]
 }
 
+
+//loveletter
 export const loveLetterData = {
     instructions: ['Break the word code'],
     symbols: [
@@ -426,7 +432,7 @@ export const loveLetterData = {
     ]
 }
 
-const inputs = <input />
+//redacted
 
 export const redactedData = {
     instructions: ['Add the missing words!'],
@@ -444,3 +450,25 @@ export const RedactedComp = (props) => {
         </div>
     )
 }
+
+//orderEvent
+
+export const orderEventsData = {
+    eventsToOrder: [
+        'this is the 1 event',
+        'this is the 2 event',
+        'this is the 3 event',
+        'this is the 4 event',
+        'this is the 5 event',
+        'this is the 6 event',
+    ],
+    eventsCorrectOrder: [
+        'this is the 2 event',
+        'this is the 1 event',
+        'this is the 3 event',
+        'this is the 4 event',
+        'this is the 5 event',
+        'this is the 6 event',
+    ]
+}
+
