@@ -4,32 +4,30 @@ import Title from '../generalComponents/Title'
 import Button from '../generalComponents/Button'
 // import { useContext } from 'react'
 import {useHistory} from 'react-router-dom'
+import { clientData } from '../data/lessonData'
 
 function MrGrey(){
+    const {clientTitle, clientText} = clientData
     let history = useHistory()
-
-    function handleClickTest(){
-        history.push('/vocab')
-    }
     function handleClickOffice(){
         history.push('/office')
     }
 
-
     return(
         <>
-        <Title>Mr Grey</Title>
+        <Title>{clientTitle}</Title>
             <PageContainer>
-I want you to find out who killed my son. But first, you're going to need to show me you knwo your stuff. Get this test right and we're in business!
-                <Button onclick={handleClickTest}>Start Test</Button>
-                OK, great! Now I know you speak the lingo, get to work! I'll send what I've got over to your office for you to look at. 
-                But if you want my advice, the first thing to do is to speak to Tony Monceto. He's the janitor at Kaplinsky Tower and an old friend of mine.
-                Good luck! And remember, if you don't solve the crime you don't get paid! 
+                {clientText}
                 <Button onclick={handleClickOffice}>Go to office</Button>
+                In your office you will find three things:
+                <ul>
+                    <li>a map - you can use this to navigate the city</li>
+                    <li>an ideas board - you can see the suspects you have spoken to and arrange your ideas</li>
+                    <li>A notebook - you can view your notes and get other ideas and suggestions</li>
+                    </ul>
             </PageContainer>
         </>
     )
-
 }
 
 export default MrGrey

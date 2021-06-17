@@ -42,27 +42,7 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
     <div className="outer">
 
       <Router>
-        <GameContext.Provider value={providedValues}>
-      <Header>
-      <nav>
-      <Link to="/">home</Link>.
-      <Link to="/vocab">vocab</Link>
-      <Link to="/office">office</Link>
-      <Link to="/witness1">{characterNames[0]}</Link>
-      <Link to="/witness2">{characterNames[1]}</Link>
-      <Link to="/witness3">{characterNames[2]}</Link>
-      <Link to="/witness4">{characterNames[3]}</Link>
-      <Link to="/witness5">{characterNames[4]}</Link>
-      <Link to="/witness6">{characterNames[5]}</Link>
-      <Link to="/mrgrey">MrGrey</Link>
-      <Link to="/codebox">SafeCrack</Link>
-      <Link to="/tornletter">TornLetter</Link>
-      <Link to="/loveletter">LoveLetter</Link>
-      <Link to="/errorCorrection">ErrorCorrection</Link>
-      <Link to="/backstory">BackStory</Link>
-      <Link to="/redacted">Redacted</Link>
-        </nav>
-    </Header>
+        <GameContext.Provider value={providedValues}>   
         <Route exact path="/">
           <Home />
         </Route>
@@ -96,7 +76,7 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
           questionsWit2={questionsWitness3_2}
           conversationArray={witnessConversationArray3}
           personImage={KirstenPic}
-          trialURL={trialURL2}
+          trialURL={trialURL3}
           />
         </Route>
         <Route path="/witness4">
@@ -106,7 +86,7 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
           questionsWit2={questionsWitness4_2}
           conversationArray={witnessConversationArray4}
           personImage={KirstenPic}
-          trialURL={trialURL2}
+          trialURL={trialURL4}
           />
         </Route>
         <Route path="/witness5">
@@ -116,7 +96,7 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
           questionsWit2={questionsWitness5_2}
           conversationArray={witnessConversationArray5}
           personImage={KirstenPic}
-          trialURL={trialURL2}
+          trialURL={trialURL5}
           />
         </Route>
         <Route path="/witness6">
@@ -126,7 +106,7 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
           questionsWit2={questionsWitness6_2}
           conversationArray={witnessConversationArray6}
           personImage={KirstenPic}
-          trialURL={trialURL2}
+          trialURL={trialURL6}
           />
         </Route>
         {/* //props below to make trial pages reeusable */}
@@ -139,13 +119,13 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
         <Route path="/codebox"> 
           <CodeBox/>
         </Route>
-        <Route path="/errorCorrection">
+        <Route path="/errorcorrection">
           <ErrorCorrection/>
         </Route>
         <Route path="/redacted">
           <Redacted/>
         </Route>
-        <Route path="/orderEvents">
+        <Route path="/orderevents">
           <OrderEvents/>
         </Route>
         <Route path="/vocab">
@@ -157,6 +137,27 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
         <Route path="/backstory">
           <BackStory />
         </Route>
+        <Header>
+      <nav>
+      <Link to="/">home</Link>.
+      <Link to="/vocab">vocab</Link>
+      <Link to="/office">office</Link>
+      <Link to="/witness1">{characterNames[0]}</Link>
+      <Link to="/witness2">{characterNames[1]}</Link>
+      <Link to="/witness3">{characterNames[2]}</Link>
+      <Link to="/witness4">{characterNames[3]}</Link>
+      <Link to="/witness5">{characterNames[4]}</Link>
+      <Link to="/witness6">{characterNames[5]}</Link>
+      <Link to="/mrgrey">MrGrey</Link>
+      <Link to="/codebox">SafeCrack</Link>
+      <Link to="/tornletter">TornLetter</Link>
+      <Link to="/loveletter">LoveLetter</Link>
+      <Link to="/errorcorrection">ErrorCorrection</Link>
+      <Link to="/backstory">BackStory</Link>
+      <Link to="/redacted">Redacted</Link>
+      <Link to="/orderevents">Order Events</Link>
+        </nav>
+    </Header>
       </GameContext.Provider>
       </Router>
     </div>

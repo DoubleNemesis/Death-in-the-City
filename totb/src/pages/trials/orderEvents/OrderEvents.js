@@ -8,21 +8,13 @@ import ProfilePic from '../../../images/janitor.png'
 import { orderEventsData } from '../../../data/lessonData'
 import { EventsContainer, ParagraphContainer } from './orderEventsComponents/OrderEventsComponents'
 import GameContext from '../../../context/GameContext'
-import Simple from './Simple'
+import MoveableEvents from './MoveableEvents'
 
 
 function Redacted() {
 
  
     const { level, setLevel } = useContext(GameContext)
-    const [aMessage, setAMessage] = useState('')
-
-
-  
-    
-    function check(){
-        setAMessage(!aMessage)
-    }
 
     return (
         <>
@@ -43,13 +35,10 @@ function Redacted() {
                     </SpeechBubbleLeft>
                 <ParagraphContainer>
                     This is going to be the para of text
-                    
-                    <button onClick={check}>check</button>
                 </ParagraphContainer>
 
                     <EventsContainer>
-                    <Simple />
-                    {aMessage ? 'hi' : 'bye'}
+                    <MoveableEvents />
                     </EventsContainer>
                 </Conversation>
             </PageContainer>

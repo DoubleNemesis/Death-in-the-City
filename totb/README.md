@@ -1,4 +1,12 @@
-TornLetter Component needs mobile rotate option
+need some info on murder: lifted over balcony - tony monceto shows apartment
+TornLetter Component needs mobile rotate option or rethink of plugin.
+profile pics needed
+artefacts like visitors book glow on discovery
+tornletter needs to reflect story plot
+witness page needs a door to open to reveal witness 
+witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
+witness page should close out with extra info sometimes
+
 
 
 # Getting Started with Create React App

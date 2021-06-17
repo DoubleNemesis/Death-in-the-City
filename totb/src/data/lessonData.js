@@ -1,13 +1,32 @@
 //Home page
-export const homeTitle = "Death in the City"
-export const homeSubtitle = "Your mission: solve the crime"
-export const homeCallToActionText = "On the 27th of January 2021 at 3:06am the body of 25-year-old actor Lexington Grey was discovered on the sidewalk at the foot of the exclusive Kaplinsky Tower. The police say it was suicide..."
+export const homePageData = {
+    homeTitle: [`Murder in the City`],
+    homeSubtitle: [`Your mission: solve the crime`],
+    homeCallToActionText: [`On the 27th of January 2021 at 3:06am the body of 25-year-old actor Lexington Grey was discovered on the sidewalk at the foot of the exclusive Kaplinsky Tower. 
+    The police are calling it suicide...
+    `]
+}
 
 //Backstory page
-export const backStorySubtitle = "Here's the backstory"
+export const backStoryData = {
+    backStorySubtitle: [`Here's the backstory`],
+    backStoryText: [`So are you ready to be a detecive? I hope so, because you've got some work to do. 
+That boy that they found wasn't just anyone. He was my son, and he was murdered. Your job is to find out who did it. 
+Don't waste time talking to the police; they're useless. I'll give you their report anyway in case there's something in it I missed. 
+I want you to find out who killed my son. But first, you're going to need to show me you know your stuff. Get this vocabulary right and we're in business!. 
+`]
+}
+
+export const clientData = {
+    clientTitle: [`Mr Grey`],
+    clientText: [`OK, great! Now I know you speak the lingo, get to work! I'll send what I've got over to your office for you to look at. 
+    But if you want my advice, the first thing to do is to speak to Tony Monceto. He's the janitor at Kaplinsky Tower and an old friend of mine.
+    Good luck! And remember, if you don't solve the crime you don't get paid! `]
+
+
+}
 
 //character names
-
 export const characterNames = {
     characterNames: [
         'Tony Monceto',
@@ -202,11 +221,11 @@ export const questionsWitness2 = {
         ['What happened while the lights came back off?', 'fail']
     ],
     witnessConversationArray2: [
-        "OK, so I'm Chay Madz. People call me Madz. What do you want to know?",
+        "More questions? I told the police everything. I don't have time for this!",
         "Can you describe what happened at the party?",
-        "We were having a good time just relaxing, eating, drinking. The lights went, there was a scream and that was the end of Lexington Grey.",
+        "We were having a good time, eating, drinking. The lights went out, there was a scream and that was that. That's all I know. Ok?",
         "What happened when the lights came back on?",
-        "We all rushed to the kitchen. Look, I told all this to the police. Get out of here!"
+        "Look, I told all this to the police. Get out of here! Leave me alone! I'm done with this!"
     ],
     trialURL2: [
         'tornletter'
@@ -230,14 +249,14 @@ export const questionsWitness3 = {
         ['I know what you feel. Don\'t worry, I\'ll help you.', 'fail']
     ],
     witnessConversationArray3: [
-        "So you want to ask me something?",
+        "Oh! More questions about Lexi? Well, OK then. I'll help if I can.",
         "Please tell me everything about the evening Lexington died.",
         "I don't mind talking to you. But my English is really bad",
         "I know how you feel. Don't worry, I'll help you.",
         "OK, correct my sentences please, else I will never learn this language!"
     ],
     trialURL3: [
-        'tornletter'
+        'errorcorrection'
     ]
 }
 
@@ -252,21 +271,21 @@ export const questionsWitness4 = {
         ["I want ask about the party.", 'fail']
     ],
     questionsWitness4_2: [
-        ["Not to say anything?", 'fail'],
-        ["Not even two questions?", 'success'],
-        ["Two questions by me?", 'fail'],
-        ["Barely two questions?", 'fail'],
-        ["Roughly two questions?", 'fail']
+        ["That can be useful", 'fail'],
+        ["That would be useful", 'success'],
+        ["That would being useful", 'fail'],
+        ["That was useful", 'fail'],
+        ["They are useful", 'fail']
     ],
     witnessConversationArray4: [
         "What do you want?",
         "I want to ask about the party.",
-        "Get out of here! I'm not talking to you!",
-        "Not even two questions?",
-        "No! Get lost or I'll call the cops!"
+        "I'm going to show you my police statement, OK? But only for a few seconds. Then you have to leave.",
+        "That would be useful",
+        "OK, here it is. The clock is ticking!"
     ],
     trialURL4: [
-        'tornletter'
+        'orderevents'
     ]
 }
 
@@ -280,21 +299,21 @@ export const questionsWitness5 = {
         ["I have promised I won't tell him.", 'fail']
     ],
     questionsWitness5_2: [
-        ["How I can do that?", 'fail'],
-        ["How would I do that?", 'success'],
-        ["How does it do that?", 'fail'],
-        ["However can I do that?", 'fail'],
-        ["Where could I have done that?", 'fail']
+        ["Not to say anything?", 'fail'],
+        ["Not even two questions?", 'success'],
+        ["Two questions by me?", 'fail'],
+        ["Barely two questions?", 'fail'],
+        ["Roughly two questions?", 'fail']
     ],
     witnessConversationArray5: [
-        "Hey I want to talk to you but Dallas told me not to.",
+        "Hey I guess you're the detective. I want to talk to you but Chey told me not to. He doesn't like me speaking to other men.",
         "I promise I won't tell him.",
-        "If you should happen to read my messages you might learn something.",
-        "How would I do that?",
-        "I'll leave you with a clue....now I must go and powder my nose...."
+        "No. Just get out of here! It's too dangerous",
+        "Not even two questions?",
+        "No! Get lost or I'll call the cops!"
     ],
     trialURL5: [
-        'tornletter'
+        'loveletter'
     ]
 }
 
@@ -316,20 +335,20 @@ export const questionsWitness6 = {
         ["What did he exactly say?", 'fail']
     ],
     witnessConversationArray6: [
-        "Lexi told me in an email he was feeling suicidal.",
+        "Lexi told me in an email he was feeling depressed after suffering from Covid.",
         "Really? When did he say that?",
         "Just before the party. I didn't take it seriously. Now I wish I had.",
         "What did he say exactly?",
-        "I'll show you!"
+        "I'll show you! But the solicitor cut some bits out of it. I think I can help you understand it."
     ],
     trialURL6: [
-        'tornletter'
+        'redacted'
     ]
 }
 
 //trials
 
-//tornLetter
+//tornLetter chey madz
 
 export const TornLetterPiecesData = [
     "When the lights went out, we ",
@@ -338,40 +357,67 @@ export const TornLetterPiecesData = [
     "It was Lexi's first dinner party",
     "since recovering from Covid19",
     "but I don't know who moved it",
-    "I heard Lexi and Dallas",
+    "I heard Lexi and Vhey",
     "arguing earlier in the evening",
     "Floe's eyes were red as if she'd",
     "been crying before she arrived",
     "Lexi Grey went into the kitchen",
     "to get everyone some drinks",
+    "You could tell that Chey was",
+    "really angry for some reason."
 ]
 
-//error correction
+//error correction kirsten
 
 export const ErrorCorrectionData = {
     instructions: [
-        ["This is what I want you to do"],
+        ["Select the sentences that are gramamtically INCCORECT"],
     ],
     sentences: [
-        ["I live here in the city.", "0", false],
-        ["I have live here for many years.", "1", false],
-        ["I have no moneys.", "2", false],
-        ["I don't know what happened to Lexi.", "3", false],
-        ["He was a good man.", "4", false],
-        ["I didn't see nothing.", "5", false],
+        ["I saw Lexi and Floe holding hands under the table.", "0", false],
+        ["I don't really knew Chey very well.", "1", false],
+        ["Lexi seemed very relaxing and happy.", "2", false],
+        ["Lexi made a joke about still having Covid when he coughed.", "3", false],
+        ["Lexi was a good man. He was my friend.", "4", false],
+        ["I didn't see nothing of the crime. It was dark.", "5", false],
     ],
     incorrectSentences: [
         ["1", "2", "5"]
     ],
     incorrectAndCorrected: [
-        ["I have live here for many years.", "0", "I have lived here for many years", false],
-        ["I have no moneys.", "1", "I have no money", false],
-        ["I didn't see nothing.", "2", "I didn't see anything", false],
+        ["I don't really knew Chey very well", "0", "I don't really know Chey very well", false],
+        ["Lexi seemed very relaxing and happy.", "1", "Lexi seemed very relaxed and happy.", false],
+        ["I didn't see nothing of the crime. It was dark.", "2", "I didn't see anything of the crime. It was dark.", false],
     ]
 }
 
 
-//loveletter
+
+//orderEvent dallas chay sat next to her....she treated him for bad shoulder, too weak to lift someone
+
+export const orderEventsData = {
+    eventsToOrder: [
+        'this is the 1 event',
+        'this is the 2 event',
+        'this is the 3 event',
+        'this is the 4 event',
+        'this is the 5 event',
+        'this is the 6 event',
+    ],
+    eventsCorrectOrder: [
+        'this is the 2 event',
+        'this is the 1 event',
+        'this is the 3 event',
+        'this is the 4 event',
+        'this is the 5 event',
+        'this is the 6 event',
+    ]
+}
+
+
+
+
+//loveletter floe : chey: i will kill any man you go out with
 export const loveLetterData = {
     instructions: ['Break the word code'],
     symbols: [
@@ -432,12 +478,15 @@ export const loveLetterData = {
     ]
 }
 
-//redacted
 
+
+
+//wendy
 export const redactedData = {
     instructions: ['Add the missing words!'],
     missingWords: ['first', 'second', 'third', 'fourth', 'fifth'],
 }
+
 
 export const RedactedComp = (props) => {
     return (
@@ -449,26 +498,5 @@ export const RedactedComp = (props) => {
             This is the <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} /> sentence.
         </div>
     )
-}
-
-//orderEvent
-
-export const orderEventsData = {
-    eventsToOrder: [
-        'this is the 1 event',
-        'this is the 2 event',
-        'this is the 3 event',
-        'this is the 4 event',
-        'this is the 5 event',
-        'this is the 6 event',
-    ],
-    eventsCorrectOrder: [
-        'this is the 2 event',
-        'this is the 1 event',
-        'this is the 3 event',
-        'this is the 4 event',
-        'this is the 5 event',
-        'this is the 6 event',
-    ]
 }
 

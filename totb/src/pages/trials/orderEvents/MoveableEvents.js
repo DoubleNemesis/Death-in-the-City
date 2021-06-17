@@ -2,25 +2,18 @@ import { useState, useContext, useEffect } from 'react'
 import { List, arrayMove } from 'react-movable';
 import { orderEventsData } from '../../../data/lessonData'
 
-function Simple() {
+function MoveableEvents() {
     let {eventsToOrder} = orderEventsData
     const {eventsCorrectOrder} = orderEventsData
-    const [message1, setMessage1] = useState('')
-    const [items, setItems] = useState([
-        'this is the 1 event',
-        'this is the 2 event',
-        'this is the 3 event',
-        'this is the 4 event',
-        'this is the 5 event',
-        'this is the 6 event',
-    ]);
+    const [message, setMessage] = useState('')
+    const [items, setItems] = useState(eventsToOrder);
 
 
     useEffect(()=>{
         console.log(items.toString());
         console.log(eventsCorrectOrder.toString());
         console.log(eventsCorrectOrder.toString() === items.toString());
-        setMessage1(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
+        setMessage(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
     },[items])
     
     return (
@@ -37,9 +30,9 @@ function Simple() {
         }
         }
         />
-        {message1}
+        {message}
         </>
     );
 }
 
-export default Simple
+export default MoveableEvents

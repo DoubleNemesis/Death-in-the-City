@@ -4,9 +4,11 @@ import Title from '../generalComponents/Title'
 import SubTitle from '../generalComponents/SubTitle'
 import Button from '../generalComponents/Button'
 import { useHistory } from 'react-router-dom'
-import { homeTitle, homeSubtitle, homeCallToActionText } from '../data/lessonData'
+import { homePageData } from '../data/lessonData'
 
 function Home() {
+
+    const {homeTitle,  homeSubtitle, homeCallToActionText} = homePageData
     let history = useHistory()
     function handleClick() {
         history.push('/backstory')
@@ -16,12 +18,12 @@ function Home() {
         <>
             <Title>{homeTitle}</Title>
             <SubTitle>{homeSubtitle}</SubTitle>
-            <MainContainer>
+            {/* <MainContainer>
                 <CallToActionContainer>
                     {homeCallToActionText}
                     <Button onclick={handleClick}>Get Going!</Button>
                 </CallToActionContainer>
-            </MainContainer>
+            </MainContainer> */}
         </>
     )
 }
