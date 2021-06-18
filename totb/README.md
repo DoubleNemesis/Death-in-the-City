@@ -6,7 +6,8 @@ tornletter needs to reflect story plot
 witness page needs a door to open to reveal witness 
 witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
 witness page should close out with extra info sometimes
-
+one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
+chey got something new with blackmail cash
 
 
 # Getting Started with Create React App

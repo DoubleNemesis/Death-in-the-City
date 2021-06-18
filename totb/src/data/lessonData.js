@@ -396,26 +396,28 @@ export const ErrorCorrectionData = {
 //orderEvent dallas chay sat next to her....she treated him for bad shoulder, too weak to lift someone
 
 export const orderEventsData = {
+    orderEventsText: [`I got the party at around 10. I was already drunk. 
+    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've knon eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
+    Lexi? I met him on the set of his first Movie just three months ago.
+    It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
+    `],
     eventsToOrder: [
-        'this is the 1 event',
-        'this is the 2 event',
-        'this is the 3 event',
-        'this is the 4 event',
-        'this is the 5 event',
-        'this is the 6 event',
+        'Dallas arrived at the party',
+        'Dallas met Lexi',
+        'Dallas went to drama school',
+        'Dalls lost his mother',
+        'Dallas started drinking with his drama school friends',
+        'Dallas started drinking a lot',
     ],
     eventsCorrectOrder: [
-        'this is the 2 event',
-        'this is the 1 event',
-        'this is the 3 event',
-        'this is the 4 event',
-        'this is the 5 event',
-        'this is the 6 event',
+        'Dallas went to drama school',
+        'Dallas met Lexi',
+        'Dalls lost his mother',
+        'Dallas started drinking a lot',
+        'Dallas started drinking with his drama school friends',
+        'Dallas arrived at the party',
     ]
 }
-
-
-
 
 //loveletter floe : chey: i will kill any man you go out with
 export const loveLetterData = {
