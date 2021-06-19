@@ -422,6 +422,8 @@ export const orderEventsData = {
 //loveletter floe : chey: i will kill any man you go out with
 export const loveLetterData = {
     instructions: ['Break the word code'],
+    loveLetterCode: [`This is a new message`],
+    loveLetterFull: [`Dear Floe I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chey.`],
     symbols: [
         ['a', '8955', false, false],
         ['b', '8706', false, false],
@@ -493,11 +495,11 @@ export const redactedData = {
 export const RedactedComp = (props) => {
     return (
         <div>
-            This is the <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> sentence.
-            This is the <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> sentence.
-            This is the <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} /> sentence.
-            This is the <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} /> sentence.
-            This is the <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} /> sentence.
+            I first met Chey when he came into my clinic. He was having a problem with his back <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} />.
+            I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy he is cripled by pain <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} />.
+            He probably sustained this injury by working out in the gym without warming up <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} />.
+            Although he looks strong, he is physically too weak to life much more than a dinner plate <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} />.
+            And he is addicted to painkillers <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} />.
         </div>
     )
 }

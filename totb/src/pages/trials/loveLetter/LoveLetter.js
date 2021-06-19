@@ -22,8 +22,8 @@ function LoveLetter() {
     const [successMessage, setSuccessMessage] = useState('')
 
     const nodeRef = useRef(null);
-    const { instructions } = loveLetterData
-    const secretMessage = "I am a message";
+    const { instructions, loveLetterCode } = loveLetterData
+    const secretMessage = loveLetterCode[0]
     const secretMessageArray = secretMessage.toLowerCase().split('');
 
 

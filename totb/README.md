@@ -8,6 +8,12 @@ witness page should lead to another page or eg bin link / postman link (to get l
 witness page should close out with extra info sometimes
 one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
 chey got something new with blackmail cash
+loveletter instructions "now click a symbol..."
+trial intro with vocab "redacted adj with words or phrases removed"
+audio?
+test out at end?
+pacman walk round map?
+newspaper style reading to test vocab?
 
 
 # Getting Started with Create React App
