@@ -12,6 +12,7 @@ import Redacted from './pages/trials/redacted/Redacted'
 import OrderEvents from './pages/trials/orderEvents/OrderEvents'
 import BackStory from './pages/BackStory'
 import Header from './pageElements/Header'
+import Cont from './pageElements/Cont'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import * as lessonData from './data/lessonData'
 import TonyPic from './images/tonymonceto.png'
@@ -39,6 +40,7 @@ const {questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialU
 const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6} = lessonData['questionsWitness6'];
 
   return (
+    <Cont>
     <div className="outer">
 
       <Router>
@@ -161,6 +163,7 @@ const {questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialU
       </GameContext.Provider>
       </Router>
     </div>
+    </Cont>
   );
 }
 

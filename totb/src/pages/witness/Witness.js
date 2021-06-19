@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import PageContainer from './../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
-import Button from '../../generalComponents/Button'
+import NextPageButton from '../../generalComponents/NextPageButton'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from './witnessComponents/Layout'
@@ -17,6 +17,7 @@ function Concierge(props) {
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
     let history = useHistory()
+    let destination = props.trialURL
 
     useEffect(() => {
         function assignQuestionsList(dat) {
@@ -62,7 +63,7 @@ function Concierge(props) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
                     }
                     else {
-                        setRightWrong(<Button onclick={handleExit}>Let's go!</Button>)
+                        setRightWrong(<NextPageButton destination={destination}>Let's go!</NextPageButton>)
                     }
 
                 }, 1000)

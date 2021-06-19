@@ -1,12 +1,9 @@
 import PageContainer from '../containers/PageContainer'
 import Title from '../generalComponents/Title'
-// import GameContext from '../context/GameContext'
 import NextPageButton from '../generalComponents/NextPageButton'
-// import { useContext } from 'react'
-import {useHistory} from 'react-router-dom'
 import { clientData } from '../data/lessonData'
 
-function MrGrey(){
+function EndPage(){
     const {clientTitle, clientText} = clientData
 
     return(
@@ -26,4 +23,4 @@ function MrGrey(){
     )
 }
 
-export default MrGrey
+export default EndPage

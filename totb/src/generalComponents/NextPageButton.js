@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { history, useHistory } from 'react-router-dom'
 
 
 const StyledButton = styled.button`
@@ -17,14 +18,15 @@ border: none;
 
 `
 
-function Button({ children, ...props }) {
+function NextPageButton({ children, ...props }) {
+    let history = useHistory()
 
     return (
   
-            <StyledButton onClick={props.onclick}>{children}</StyledButton>
+            <StyledButton onClick={()=>history.push(`${props.destination}`)}>{children}</StyledButton>
 
     )
 
 }
 
-export default Button
+export default NextPageButton 

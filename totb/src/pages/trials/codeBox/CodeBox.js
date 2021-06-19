@@ -7,6 +7,7 @@ import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../.
 import { StyledInput, CodeBoxContainer, Safe } from './codeBoxComponents/CodeBoxComponents'
 import Janitor from '../../../images/janitor.png'
 import GameContext from '../../../context/GameContext'
+import NextPageButton from '../../../generalComponents/NextPageButton'
 
 
 function CodeBox() {
@@ -21,7 +22,6 @@ function CodeBox() {
 
     const {level, setLevel} = useContext(GameContext)
 
-    //let history = useHistory()
 
     //make beds, mistakes, dinner
     //do homework, shopping, nothing
@@ -96,7 +96,7 @@ function CodeBox() {
                             </div>
                         </Safe>
                     </CodeBoxContainer>
-
+                    <NextPageButton destination="crimescene">Next</NextPageButton>
                 </Conversation>
             </PageContainer>
 

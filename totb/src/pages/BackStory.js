@@ -2,7 +2,7 @@ import CallToActionContainer from '../containers/CallToActionContainer'
 import MainContainer from '../containers/MainContainer'
 import Title from '../generalComponents/Title'
 import SubTitle from '../generalComponents/SubTitle'
-import Button from '../generalComponents/Button'
+import NextPageButton from '../generalComponents/NextPageButton'
 import { useHistory } from 'react-router-dom'
 import { backStoryData } from '../data/lessonData'
 
@@ -22,7 +22,7 @@ function Home() {
 
             <CallToActionContainer>
             {backStoryText}
-               <Button onclick={handleClick}>Go to the Vocab</Button>
+               <NextPageButton destination="vocab">Go to the Vocab</NextPageButton>
             </CallToActionContainer>
             </MainContainer>
         </>
