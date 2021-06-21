@@ -5,7 +5,7 @@ import visitorbook from '../../../../images/visitorbook.png'
 export const rotateDoor = keyframes` 
 from { transform: rotateY(0deg); }
 to { transform: rotateY(120deg); }
-`
+` 
 export const rotateWheel = keyframes`
 0% { transform: rotate(0deg); }
 100% { transform: rotate(360deg); }

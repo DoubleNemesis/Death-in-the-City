@@ -13,9 +13,13 @@ font-size: 14px;
   }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar-light .navbar-toggler-icon {
+  background-image: url(https://tomsclassroom.com/react/navIcon.png) !important;
+}
+
+.navbar-nav{
+  background-color: whitesmoke;
+  padding-left: 1em !important;
 }
 
 /* text */
@@ -28,13 +32,15 @@ h1, h2{
 }
 
 
+
+
 .vocabPage{
   background-image: linear-gradient(#3c5e71, #659dbd);
   background-color: #659dbd;
 }
 
 .outer{
-  background-image: url('https:www.tomsclassroom.com/newYorkS.jpg');
+  background-image: url('https:www.tomsclassroom.com/newyork1.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;

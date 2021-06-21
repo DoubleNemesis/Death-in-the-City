@@ -8,6 +8,7 @@ right: 0;
 bottom: 0;
 font-size: .8rem;
 background-color: white;
+max-width: 80vw;
 a{
     padding: .5em;
     color: black;

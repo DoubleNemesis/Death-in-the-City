@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 import TitleContainer from '../generalComponents/TitleContainer'
 
-const StyledTitle = styled.h1`
+const StyledTitle = styled.span`
 color: whitesmoke;
-font-size: 3em;
+font-size: 2.3rem;
 text-align: left;
+font-family: 'Bangers', cursive;
+color: red;
+letter-spacing: 2px;
 `
 
 function Title({ children }) {
