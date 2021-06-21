@@ -34,7 +34,7 @@ h1, h2{
 }
 
 .outer{
-  background-image: url('https:www.tomsclassroom.com/city2dark.jpg');
+  background-image: url('https:www.tomsclassroom.com/newYorkS.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -42,12 +42,12 @@ h1, h2{
   background-color: black;
 }
 
-@media(max-width: 1000px){
+/* @media(max-width: 1000px){
   .outer{
     background-image: url('https:www.tomsclassroom.com/city3.jpg');
     background-size: cover;
   }
-}
+} */
 
 .correct{
   border: 1px solid yellow !important;
