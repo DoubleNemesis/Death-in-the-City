@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react'
 import VocabPage from './pages/VocabPage'
 import Home from './pages/Home'
+import Start from './pages/Start'
 import Office from './pages/Office'
 import Witness from './pages/witness/Witness'
 import MrGrey from './pages/Client'
@@ -57,7 +58,7 @@ function App() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-                <Link className="nav-link" to="/">homes</Link>.
+                <Link className="nav-link" to="/start">start</Link>.
                 <Link className="nav-link" to="/vocab">vocab</Link>
                 <Link className="nav-link" to="/office">office</Link>
                 <Link className="nav-link" to="/witness1">{characterNames[0]}</Link>
@@ -80,6 +81,9 @@ function App() {
             </Navbar>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/start">
+              <Start />
             </Route>
             <Route path="/office">
               <Office />

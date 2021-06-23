@@ -1,43 +1,65 @@
-import styled from 'styled-components'
-import newspaper from './../images/newspaper.jpg'
+import styled, {keyframes} from 'styled-components'
+import paperbgdark from './../images/paperbgdark.png'
+
+const paperIn = keyframes`
+0%{width: 0vw; transform: rotate(0deg)}
+100%{width: 90vw; transform: rotate(1080deg)}
+`
+const paperRotate = keyframes`
+0%{ width: 90vw; opacity: .3; transform: rotate(0deg)}
+100%{ width: 90vw; opacity: 1; transform: rotate(1080deg)}
+`
+const textIn = keyframes`
+0%{opacity: 0}
+100%{opacity: 1}
+`
+const textOut = keyframes`
+0%{opacity: 0}
+100%{opacity: 1}
+`
 
 const StyledContainer = styled.div`
-/* min-width: 60%;
-width: 60%;
-min-height: 60vh;
-background-image: url(${newspaper});
-background-size: cover;
-background-repeat: no-repeat; */
-/* border-radius: .3em;
-border: 1px solid #333;
-background-color: rgba(43, 41, 34, .6);
-color: white;
-font-family:'Courier New', Courier, monospace;
-font-size: 1.5rem;
-opacity: 0;
-margin: 1em; */
-/* animation-name: fadeIn;
-animation-delay: 1s;
-animation-duration: 3s;
-animation-fill-mode: forwards; */
+width: 0;
+animation: ${({paperOpen})=> paperOpen ? paperIn : paperRotate} 2s;
+animation-delay: 0s;
+animation-fill-mode: forwards;
+margin-top: 1.1em;
 background-color: transparent;
 
 img{
-    width: 60vw;
+    width: 100%;
 }
-
-@keyframes fadeIn{
-    0% {opacity: 0}
-    100%{opacity: 1} 
-}
+`
+const Text = styled.div`
+position: absolute;
+align-items: center;
+justify-content: center;
+display: flex;
+width: 88.3%;
+height: 10%;
+left: 5.7%;
+bottom: 5.5%;
+background-image:url(${paperbgdark});
+color: #dfdbcf;
+padding: .5rem;
+font-size: 1.5rem;
+font-weight: 700;
+text-decoration: underline;
+opacity: 0;
+animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 2s;
+animation-fill-mode: forwards;
+animation-delay: 2s;
 
 `
 
-function CallToActionContainer({children, ...restProps}){
 
+function CallToActionContainer({children, ...restProps}){
     return (
-        <StyledContainer><img src={newspaper}/>{children}</StyledContainer>
+        <StyledContainer {...restProps}>
+            <Text {...restProps} onClick={restProps.onclick}>{restProps.homeCallToActionTextBtn}</Text>
+            {children}
+        </StyledContainer>
     )
 }
 
-export default CallToActionContainer
+export default CallToActionContainer 

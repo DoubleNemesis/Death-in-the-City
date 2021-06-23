@@ -13,13 +13,17 @@ font-size: 14px;
   }
 }
 
+.navbar{
+  padding: .5rem .4rem 0 1rem !important;
+}
+
 .navbar-light .navbar-toggler-icon {
   background-image: url(https://tomsclassroom.com/react/navIcon.png) !important;
 }
 
 .navbar-nav{
   background-color: whitesmoke;
-  padding-left: 1em !important;
+  /* padding-left: 1em !important; */
 }
 
 /* text */

@@ -4,7 +4,9 @@ export const homePageData = {
     homeSubtitle: [`Your mission: solve the crime`],
     homeCallToActionText: [`On the 27th of January 2021 at 3:06am the body of 25-year-old actor Lexington Grey was discovered on the sidewalk at the foot of the exclusive Kaplinsky Tower. 
     The police are calling it suicide...
-    `]
+    `],
+    homeCallToActionTextBtn: [`FULL STORY on page TWO!`],
+    homeCallToActionTextBtn2: [`READY to turn detective?`],
 }
 
 //Backstory page

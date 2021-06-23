@@ -3,7 +3,7 @@ import TitleContainer from '../generalComponents/TitleContainer'
 
 const StyledTitle = styled.span`
 color: whitesmoke;
-font-size: 2.3rem;
+font-size: 2rem;
 text-align: left;
 font-family: 'Bangers', cursive;
 color: red;
