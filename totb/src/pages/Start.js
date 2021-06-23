@@ -19,7 +19,7 @@ function Start() {
     const {homeTitle,  homeSubtitle, homeCallToActionText, homeCallToActionTextBtn, homeCallToActionTextBtn2} = homePageData
     const [paperOpen, setPaperOpen] = useState(true)
     const [newspaperToDisplay, setNewspaperToDisplay] = useState(newspaper)
-   
+    let history = useHistory()
 
     function handlePaperClick(){
         if(paperOpen){
@@ -27,6 +27,9 @@ function Start() {
             setTimeout(()=>{
                 setNewspaperToDisplay(newspaperToDisplay === !newspaper ? newspaper : newspaperInside)
             },500) 
+        }
+        else {
+            history.push('/mrgrey')
         }
 
     }

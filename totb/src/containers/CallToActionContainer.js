@@ -18,6 +18,11 @@ const textOut = keyframes`
 100%{opacity: 1}
 `
 
+const animateBorder = keyframes`
+100%{box-shadow: 2px 2px 2px 2px #333; }
+0%{box-shadow: none; }
+`
+
 const StyledContainer = styled.div`
 width: 0;
 animation: ${({paperOpen})=> paperOpen ? paperIn : paperRotate} 2s;
@@ -46,10 +51,9 @@ font-size: 1.5rem;
 font-weight: 700;
 text-decoration: underline;
 opacity: 0;
-animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 2s;
+animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 2s, ${animateBorder} 3s infinite alternate;
 animation-fill-mode: forwards;
-animation-delay: 2s;
-
+box-shadow: 2px 2px 2px 2px #333;
 `
 
 
