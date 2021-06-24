@@ -48,6 +48,8 @@ const StyledSpeechBubble = styled.div`
   bottom: -24px;
 }
 `
+
+
 export const SpeechBubbleLeft = ({ children, ...restProps }) => <StyledSpeechBubble{...restProps}><div className="bubble bubble-bottom-left">{children}</div></StyledSpeechBubble>
 export const SpeechBubbleRight = ({ children, ...restProps }) => <StyledSpeechBubble{...restProps}><div className="bubbleRight bubble-bottom-right">{children}</div></StyledSpeechBubble>
 

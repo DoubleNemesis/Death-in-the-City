@@ -12,11 +12,9 @@ export const homePageData = {
 //Backstory page
 export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
-    backStoryText: [`So are you ready to be a detecive? I hope so, because you've got some work to do. 
-That boy that they found wasn't just anyone. He was my son, and he was murdered. Your job is to find out who did it. 
-Don't waste time talking to the police; they're useless. I'll give you their report anyway in case there's something in it I missed. 
-I want you to find out who killed my son. But first, you're going to need to show me you know your stuff. Get this vocabulary right and we're in business!. 
-`]
+    backStoryText: [`So are you ready to be a detective? I hope so, because you've got work to do! 
+Lexington Grey wasn't just anyone. That boy was my son, and he was murdered. Your job is to find out who killed him. First you need to show me you're capable.
+ Get this vocabulary right and then we're in business!`]
 }
 
 export const clientData = {

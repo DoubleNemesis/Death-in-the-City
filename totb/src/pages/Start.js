@@ -29,7 +29,7 @@ function Start() {
             },500) 
         }
         else {
-            history.push('/mrgrey')
+            history.push('/backstory')
         }
 
     }
