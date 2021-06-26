@@ -5,9 +5,13 @@ import Title from '../generalComponents/Title'
 import SubTitle from '../generalComponents/SubTitle'
 import { vocabData as data } from '../data/lessonData'
 import GameContext from '../context/GameContext'
+import { SpeechBubbleLeft } from './witness/witnessComponents/Questions'
+import NextPageButton from '../generalComponents/NextPageButton'
+import client from '../images/client.jpg'
 
 function VocabPage() {
     const { hasDoneVocab, setHasDoneVocab } = useContext(GameContext)
+    const {bubbleText1, bubbleText2} = data
     console.log(hasDoneVocab);
     let history = useHistory()
 
@@ -42,8 +46,8 @@ function VocabPage() {
                             secondCard.classList.add('used')
                             firstCard.classList.remove('card')
                             secondCard.classList.remove('card')
-                            firstCard.innerHTML += `<div class="correctTileTick">${counter}</div>`;
-                            secondCard.innerHTML += `<div class="correctTileTick">${counter}</div>`;
+                            firstCard.innerHTML += `<span class="correctTileTick">${counter}</span>`;
+                            secondCard.innerHTML += `<span class="correctTileTick">${counter}</span>`;
                             selectedCards = [] //delete?
                             if (counter === 10) {
                                 console.log('finished');
@@ -66,7 +70,11 @@ function VocabPage() {
                         }
                         selectedCards = []
                     }
-                }       //here
+                }
+                else {
+                    targetTile.classList.remove('selected')
+                    selectedCards = []
+                }      //here
             }
         })
     })
@@ -77,16 +85,16 @@ function VocabPage() {
 
     return (
         <div className="vocabPage">
-            <Title>Your first challenge...</Title>
-            <SubTitle>Click on a word and then click on its synonym</SubTitle>
+            <SpeechBubbleLeft image={client} bubbleWidth="90">
+            {!hasDoneVocab ? bubbleText1 : bubbleText2 }
+            </SpeechBubbleLeft>
 
             {!hasDoneVocab ?
                 <Container>
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
                 </Container> :
                 <Container>
-                    Great, you passed the test. Go to your office and get going!
-                        <button onClick={handleGameEnd}>Go!</button>
+                    <NextPageButton destination="office">Go!</NextPageButton>
                 </Container>
 
 
