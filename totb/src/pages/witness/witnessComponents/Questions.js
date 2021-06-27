@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-
 const StyledSpeechBubble = styled.div`
 
 .bubble, .bubbleRight{
@@ -8,7 +7,8 @@ const StyledSpeechBubble = styled.div`
     font-family: 'Kalam';
     font-size: 18px;
     line-height: 24px;
-    width: 70%;
+    width: ${({bubbleWidth})=>bubbleWidth || '70'}%;
+    min-height: 140px;
     background: #fff;
     border-radius: 40px;
     padding: 24px;
@@ -48,9 +48,15 @@ const StyledSpeechBubble = styled.div`
   bottom: -24px;
 }
 `
+const SpeakerImage = styled.img`
+width: 45%;
+max-width: 100px;
+float: left;
+margin: 0 .8em 0 0;
+border-radius: 10%;
+`
 
-
-export const SpeechBubbleLeft = ({ children, ...restProps }) => <StyledSpeechBubble{...restProps}><div className="bubble bubble-bottom-left">{children}</div></StyledSpeechBubble>
+export const SpeechBubbleLeft = ({ children, ...restProps }) => <StyledSpeechBubble{...restProps}><div className="bubble bubble-bottom-left"><SpeakerImage src={restProps.image}/>{children}</div></StyledSpeechBubble>
 export const SpeechBubbleRight = ({ children, ...restProps }) => <StyledSpeechBubble{...restProps}><div className="bubbleRight bubble-bottom-right">{children}</div></StyledSpeechBubble>
 
 
@@ -83,7 +89,7 @@ const StyledSpeechBubbleQ = styled.div`
   border-top: 12px solid limegreen;
   border-bottom: 20px solid transparent;
   left: 80%;
-  bottom: -18px;
+  bottom: -18px; 
 }
 `
 

@@ -39,8 +39,9 @@ h1, h2{
 
 
 .vocabPage{
-  background-image: linear-gradient(#3c5e71, #659dbd);
-  background-color: #659dbd;
+  /* background-image: linear-gradient(#3c5e71, #659dbd); */
+
+  /* background-color: #659dbd; */
 }
 
 .outer{
@@ -70,23 +71,35 @@ h1, h2{
 }
 
 .questionTile{
-  /* border-radius: .2em; */
   border: 1px solid grey;
-  width: 7.3em;
-  height: 7.3em;
+  padding: .5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #8d8741;
   background-image: linear-gradient(#333, #202020);
-  margin: 0em;
+  margin: .3em;
   font-size: 1.2rem;
   color: white;
   box-shadow: .1em .1em .1em #999;
   letter-spacing: 1px;
   cursor: pointer;
+  border-radius: 0 !important;
+
 }
+
+
+@media(min-width: 1000px){
+  .questionTile{
+    /* border-radius: .2em; */
+
+    width: 7.3em;
+    height: 7.3em;
+
+  }
+}
+
 
 @keyframes shake {
 
@@ -112,17 +125,28 @@ h1, h2{
   }
 }
 
-.questionTile:hover{
-  box-shadow: 0 0 .5em yellow;
+/* .questionTile:hover{
   animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
   transform: translate3d(0, 0, 0);
-  color: yellow;
-}
+} */
+
+
 .questionTile:active{
   box-shadow: 0 0 .5em limegreen;
   animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
   transform: translate3d(0, 0, 0);
   color: limegreen;
+}
+
+@media(min-width:1000px){
+ /* check if tiles can be made to not keep selected status when unclicked */
+ .questionTile:hover{
+  box-shadow: 0 0 .5em yellow;
+  animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  color: yellow;
+}
+
 }
 
 
@@ -139,12 +163,16 @@ h1, h2{
 }
 
 .used {
+  display: flex;
   background-color: #999;
   color: #666;
   background-image: unset;
   cursor: unset;
   animation: none;
   box-shadow: none;
+  font-size: 1em;
+  padding: .2em;
+  display: none;
 }
 
 .used:hover{
@@ -155,7 +183,8 @@ h1, h2{
 }
 
 .correctTileTick{
-  display: flex;
+
   color: green;
-  font-size: 3rem;
+  font-size: .8rem;
+  padding: 0;
 }

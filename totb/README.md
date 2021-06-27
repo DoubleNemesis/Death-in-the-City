@@ -2,7 +2,6 @@ need some info on murder: lifted over balcony - tony monceto shows apartment
 TornLetter Component needs mobile rotate option or rethink of plugin.
 profile pics needed
 artefacts like visitors book glow on discovery
-tornletter needs to reflect story plot
 witness page needs a door to open to reveal witness 
 witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
 witness page should close out with extra info sometimes
@@ -14,6 +13,14 @@ audio?
 test out at end?
 pacman walk round map?
 newspaper style reading to test vocab?
+intro newspaper columns
+make vocab relevant
+
+
+
+//
+mr grey: Photo by <a href="https://unsplash.com/@samanta1225?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samanta Barba Alcalá</a> on <a href="https://unsplash.com/s/photos/older-man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 
 # Getting Started with Create React App

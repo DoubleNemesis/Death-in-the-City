@@ -6,6 +6,7 @@ import VocabPage from './pages/VocabPage'
 import Home from './pages/Home'
 import Start from './pages/Start'
 import Office from './pages/Office'
+import OfficeBase from './pages/office/Office'
 import Witness from './pages/witness/Witness'
 import MrGrey from './pages/Client'
 import CodeBox from './pages/trials/codeBox/CodeBox'
@@ -87,6 +88,9 @@ function App() {
             </Route>
             <Route path="/office">
               <Office />
+            </Route>
+            <Route path="/officebase">
+              <OfficeBase />
             </Route>
             <Route path="/mrgrey">
               <MrGrey />

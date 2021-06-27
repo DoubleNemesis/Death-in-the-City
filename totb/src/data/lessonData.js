@@ -63,10 +63,57 @@ export const vocabData = {
         'propel',
         'grow',
         'tread on',
+    ],
+    'bubbleText1':[
+        `All I want you to do is Click on a word and then click on its synonym. Easy. Get this right and we're in business.`
+    ],
+    'bubbleText2':[
+        `Great, you passed the test! Now I'm happy for you to continue on your mission.`
     ]
 }
 
 //office specific
+
+export const officeCards = {
+    'witnesses' : [
+        {
+        'name': [`Chay Madz`],
+        'id': [1],
+        'image': [1],
+    },
+        {
+        'name': [`Kirsten Wenstein`],
+        'id': [1],
+        'image': [1],
+    },
+        {
+        'name': [`Dallas Franks`],
+        'id': [1],
+        'image': [1],
+    },
+        {
+        'name': [`Floe Light`],
+        'id': [1],
+        'image': [1],
+    },
+        {
+        'name': [`Wendy Rose`],
+        'id': [1],
+        'image': [1],
+    },
+    ],
+    'artefacts':[{
+
+    }],
+    'links':[
+        {
+            
+        }
+    ]
+
+}
+
+
 
 export const officeTitle = "Office"
 
