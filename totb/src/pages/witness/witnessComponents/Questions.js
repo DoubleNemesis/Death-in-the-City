@@ -8,7 +8,7 @@ const StyledSpeechBubble = styled.div`
     font-size: 18px;
     line-height: 24px;
     width: ${({bubbleWidth})=>bubbleWidth || '70'}%;
-    min-height: 140px;
+    min-height: ${({minHeight})=> minHeight || 140 }px;
     background: #fff;
     border-radius: 40px;
     padding: 24px;

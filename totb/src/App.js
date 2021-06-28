@@ -8,6 +8,7 @@ import Start from './pages/Start'
 import Office from './pages/Office'
 import OfficeBase from './pages/office/Office'
 import Witness from './pages/witness/Witness'
+import WitnessComp from './pages/witness/WitnessComp'
 import MrGrey from './pages/Client'
 import CodeBox from './pages/trials/codeBox/CodeBox'
 import TornLetter from './pages/trials/tornLetter/TornLetter'
@@ -51,7 +52,6 @@ function App() {
 
   return (
       <div className="outer">
-
         <Router>
           <GameContext.Provider value={providedValues}>
           <Navbar expand="lg">
@@ -102,7 +102,7 @@ function App() {
               <BackStory />
             </Route>
             <Route path="/witness1"> {/*Tony Monceto*/}
-              <Witness
+              <WitnessComp
                 title={characterNames[0]}
                 questionsWit={questionsWitness1}
                 questionsWit2={questionsWitness1_2}
