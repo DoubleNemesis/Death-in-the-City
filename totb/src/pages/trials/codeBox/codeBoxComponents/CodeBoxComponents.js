@@ -170,7 +170,7 @@ background-color: transparent;
 
 `
 export const TextButton = styled.button`
-background-color: transparent;
-color: red;
+background-color: ${({bgcolor})=> bgcolor || 'transparent'};
+color: black;
 margin: .2em;
 `

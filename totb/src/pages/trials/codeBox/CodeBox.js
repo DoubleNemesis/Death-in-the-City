@@ -94,9 +94,9 @@ function CodeBox() {
                         bubbleTextToDisplay === 3 ? 
                         bubbleText3 : bubbleText4}
                         <TextButtonContainer>
-                        <TextButton id="1" onClick={handleTextButtonClick}>1</TextButton>
-                        <TextButton id="2" onClick={handleTextButtonClick}>2</TextButton>
-                        <TextButton id="3" onClick={handleTextButtonClick}>3</TextButton>
+                        <TextButton id="1" bgcolor={bubbleTextToDisplay === 1 ? 'red' : null} onClick={handleTextButtonClick}>1</TextButton>
+                        <TextButton id="2" bgcolor={bubbleTextToDisplay === 2 ? 'red' : null} onClick={handleTextButtonClick}>2</TextButton>
+                        <TextButton id="3" bgcolor={bubbleTextToDisplay === 3 ? 'red' : null} onClick={handleTextButtonClick}>3</TextButton>
                         </TextButtonContainer>
 
                     </SpeechBubbleLeft>
