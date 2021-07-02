@@ -395,6 +395,24 @@ export const questionsWitness6 = {
 
 //trials
 
+//codebox tony monceto
+export const CodeBoxData = {
+    bubbleText1:[`Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
+    up in a safe and I don't know the code.
+    But maybe you will be able to work it out. Ready to try?`],
+    bubbleText2:[`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
+    I don't know the verbs but I do know the words they collocate with. Maybe you can work it out. For example "watch" 
+    collocates with "TV", so you would take the letter "W". 
+    `],
+    bubbleText3:[`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
+    3 "fun" and "a good time". 4 "your time" and "a break". 5 "a ball" and "a cold". Put the correct letters in and spin the dial!`
+],
+    bubbleText4:[`Excellent! Click on the book, and when you go back to your office you'll be able to see who was at the party and where they live. 
+    But before you go, I should show you the crime scene!`
+],
+}
+
+
 //tornLetter chey madz
 
 export const TornLetterPiecesData = [

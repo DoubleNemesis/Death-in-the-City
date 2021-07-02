@@ -13,9 +13,10 @@ audio?
 test out at end?
 pacman walk round map?
 newspaper style reading to test vocab?
-intro newspaper columns
+intro newspaper columns spelling error ge not get
 make vocab relevant
 decide about office
+
 
 
 //

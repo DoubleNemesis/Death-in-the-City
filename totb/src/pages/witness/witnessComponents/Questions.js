@@ -5,10 +5,10 @@ const StyledSpeechBubble = styled.div`
     position: relative;
     font-family: sans-serif;
     font-family: 'Kalam';
-    font-size: 18px;
+    font-size: 1.1rem;
     line-height: 24px;
-    width: ${({bubbleWidth})=>bubbleWidth || '70'}%;
-    min-height: ${({minHeight})=> minHeight || 140 }px;
+    width: ${({bubbleWidth})=>bubbleWidth || '80'}%;
+    min-height: ${({minHeight})=> minHeight || '140' }px;
     background: #fff;
     border-radius: 40px;
     padding: 24px;
@@ -49,7 +49,7 @@ const StyledSpeechBubble = styled.div`
 }
 `
 const SpeakerImage = styled.img`
-width: 45%;
+width: 25%;
 max-width: 100px;
 float: left;
 margin: 0 .8em 0 0;

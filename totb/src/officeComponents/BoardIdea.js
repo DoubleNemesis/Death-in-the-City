@@ -27,7 +27,7 @@ font-family: cursive;
 box-shadow: 1px 1px 1px #999;
 font-size: .6rem;
 p{
-    margin: 0;
+    margin: 0; 
 }
 `
 

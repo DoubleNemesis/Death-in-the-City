@@ -16,9 +16,9 @@ li{
 }
 `
 export const TaskBox = styled.div`
-margin-top: 1em;
-padding: .5em;
-border: 1px solid black;
+/* margin-top: 1em;
+padding: .5em; */
+/* border: 1px solid black; */
 `
 export const InfoBox = styled.div`
 margin-top: 1em;
@@ -31,17 +31,18 @@ text-align: center;
 export const Conversation = styled.div`
 display: flex;
 flex-direction: column;
-background-color: skyblue;
+/* background-color: skyblue; */
 width: 100%;
 `
 export const QuestionOptions = styled.div`
 display: flex;
 flex-direction: column;
-background-color: skyblue;
+/* background-color: skyblue; */
 width: 100%;
 `
 
 const StyledWitnessImage = styled.img`
 width: auto;
+max-width: 100px;
 `
 export const WitnessImage = (props)=><StyledWitnessImage src={props.img}></StyledWitnessImage>

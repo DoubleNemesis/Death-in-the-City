@@ -4,13 +4,15 @@ import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft} from '../../witness/witnessComponents/Questions'
 import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
-import { StyledInput, CodeBoxContainer, Safe } from './codeBoxComponents/CodeBoxComponents'
+import { StyledInput, CodeBoxContainer, Safe, TextButton, TextButtonContainer } from './codeBoxComponents/CodeBoxComponents'
 import Janitor from '../../../images/janitor.png'
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
+import {CodeBoxData} from '../../../data/lessonData'
 
 
 function CodeBox() {
+    const [bubbleTextToDisplay, setBubbleTextToDisplay] = useState(1)
     const [first, setFirst] = useState('')
     const [second, setSecond] = useState('')
     const [third, setThird] = useState('')
@@ -21,6 +23,7 @@ function CodeBox() {
     const [codeIsCorrect, setCodeIsCorrect] = useState(false)
 
     const {level, setLevel} = useContext(GameContext)
+    const {bubbleText1, bubbleText2, bubbleText3, bubbleText4} = CodeBoxData
 
 
     //make beds, mistakes, dinner
@@ -43,6 +46,7 @@ function CodeBox() {
         console.log(codeAttempt.toString() === codeAnswer)
         if (codeAttempt.toString() === codeAnswer) {
             setSafeCodeBgColor('limeGreen')
+            setBubbleTextToDisplay(4)
             setCodeIsCorrect(true)
         }
         else {
@@ -57,32 +61,44 @@ function CodeBox() {
         }
     }
 
+    function handleTextButtonClick(e){
+        setBubbleTextToDisplay(parseInt(e.target.id))
+    }
+
     function handleVisitorBookClick(){
-        console.log('notes clicked');
+        
         if(level < 1){
             setLevel(1)
         }
-
     }
 
     return (
         <>
-            <div className="title">
+            {/* <div className="title">
                 <Title>Solve the Puzzle</Title>
             </div>
-            <PageContainer>
-                <Instructions>
+            <PageContainer> */}
+                {/* <Instructions>
                     <WitnessImage img={Janitor} />
-                    {/* https://unsplash.com/@shnautsher */}
+                    https://unsplash.com/@shnautsher
                     <TaskBox>
                         Break the code!
                         </TaskBox>
-                </Instructions>
+                </Instructions> */}
                 <Conversation>
-                    <SpeechBubbleLeft>
-                        Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
-                        up in a safe and I don't know the code.
-                        But maybe you will be able to work it out. Ready to try?
+                    <SpeechBubbleLeft image={Janitor}>
+                        {bubbleTextToDisplay === 1 ? 
+                        bubbleText1 : 
+                        bubbleTextToDisplay === 2 ? 
+                        bubbleText2 : 
+                        bubbleTextToDisplay === 3 ? 
+                        bubbleText3 : bubbleText4}
+                        <TextButtonContainer>
+                        <TextButton id="1" onClick={handleTextButtonClick}>1</TextButton>
+                        <TextButton id="2" onClick={handleTextButtonClick}>2</TextButton>
+                        <TextButton id="3" onClick={handleTextButtonClick}>3</TextButton>
+                        </TextButtonContainer>
+
                     </SpeechBubbleLeft>
                     <CodeBoxContainer>
 
@@ -96,9 +112,9 @@ function CodeBox() {
                             </div>
                         </Safe>
                     </CodeBoxContainer>
-                    <NextPageButton destination="crimescene">Next</NextPageButton>
+                    {codeIsCorrect ? <NextPageButton destination="crimescene">Go to crime scene</NextPageButton> : null}
                 </Conversation>
-            </PageContainer>
+            {/* </PageContainer> */}
 
         </>
 
