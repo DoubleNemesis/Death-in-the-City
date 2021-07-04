@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import styled from 'styled-components'
 import PageContainer from './../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
+import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from './witnessComponents/Layout'
@@ -81,63 +81,13 @@ function WitnessComp(props) {
         }
     }
 
-    const StyledModal = styled.div`
-position: absolute;
-background-color: #333;
-color: white;
-z-index: 1;
-display: ${({ display }) => display};
-left:5%;
-right:5%;
-margin-left:auto;
-margin-right:auto;
-top: 34%;
-font-size: 1rem;
-border: 1px solid #666;
-border-radius: 2px;
-padding: 1em;
-box-shadow: 4px 4px 3px #666;
 
-h2{
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: .6em .5em;
-    font-size: 2rem;
-}
-
-`
-
-const ToggleContainer = styled.div `
-display: flex;
-`
-
-    const ToggleTaskInfo = styled.button`
-position: relative;
-font-size: 1.2rem;
-font-weight: 700;
-z-index: 2;
-color: #333;
-margin: 0 auto;
-padding: .3em 5em;
-text-transform: uppercase;
-
-`
-
-    const QuestionOption = styled.button`
-background-color: white;
-/* border-bottom: 1px solid #999; */
-padding: .5em 1em;
-margin: .2em;
-border-radius: 2px;
-`
 
 
     return (
         <>
 
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
-
-
                 <h2>Task: Dialogue</h2>
                 <ul>
                     <li> Read the text in the speech bubble.</li>
@@ -151,10 +101,8 @@ border-radius: 2px;
                     Start
                 </ToggleTaskInfo>
                 </ToggleContainer>
-
-
-
             </StyledModal>
+
             <Conversation>
                 {conversation}
             </Conversation>

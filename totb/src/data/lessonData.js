@@ -412,6 +412,13 @@ export const CodeBoxData = {
 ],
 }
 
+export const CrimeSceneData = {
+    bubbleText1:[`This is the kitchen and this is the window he went through. As you can see, he can't have done it by accident.`],
+    bubbleText2:[`This is a plan of the apartment.`],
+    bubbleText3:[``],
+    bubbleText4:[``],
+}
+
 
 //tornLetter chey madz
 

@@ -161,16 +161,3 @@ export const Safe = ({ children, ...props }) => {
     return <><SafeBox><SafeBoxInside><Notes {...props} onClick={props.handleVisitorBookClick}/><SafeBoxDoor {...props}><SafeWheel onClick={props.handleCheckCorrectCode}{...props}/><ChildrenContainer {...props}>{children}</ChildrenContainer><SafeHinge top="190"/><SafeHinge top="25"/></SafeBoxDoor></SafeBoxInside></SafeBox><SafeFeetOuter><SafeFeet /><SafeFeet /></SafeFeetOuter></>
 }
 
-export const TextButtonContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: auto.5em;
-background-color: transparent;
-
-`
-export const TextButton = styled.button`
-background-color: ${({bgcolor})=> bgcolor || 'transparent'};
-color: black;
-margin: .2em;
-`
