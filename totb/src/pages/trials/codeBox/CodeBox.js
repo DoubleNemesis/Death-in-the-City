@@ -77,17 +77,7 @@ function CodeBox() {
 
     return (
         <>
-            {/* <div className="title">
-                <Title>Solve the Puzzle</Title>
-            </div>
-            <PageContainer> */}
-                {/* <Instructions>
-                    <WitnessImage img={Janitor} />
-                    https://unsplash.com/@shnautsher
-                    <TaskBox>
-                        Break the code!
-                        </TaskBox>
-                </Instructions> */}
+
                 <Conversation>
                     <SpeechBubbleLeft image={Janitor}>
                         {bubbleTextToDisplay === 1 ? 
@@ -117,7 +107,6 @@ function CodeBox() {
                     </CodeBoxContainer>
                     {codeIsCorrect ? <NextPageButton destination="crimescene">Go to crime scene</NextPageButton> : null}
                 </Conversation>
-            {/* </PageContainer> */}
 
         </>
 

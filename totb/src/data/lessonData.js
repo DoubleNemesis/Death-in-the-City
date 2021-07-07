@@ -1,4 +1,11 @@
 //Home page
+import TonyPic from '../images/tonymonceto.png'
+import ChayPic from '../images/chaymadz.jpg'
+import KirstenPic from '../images/kirsten.jpg'
+import DallasPic from '../images/dallas.jpg'
+import FloePic from '../images/floe.jpg'
+import WendyPic from '../images/wendy.jpg'
+
 export const homePageData = {
     homeTitle: [`Murder in the City`],
     homeSubtitle: [`Your mission: solve the crime`],
@@ -64,10 +71,10 @@ export const vocabData = {
         'grow',
         'tread on',
     ],
-    'bubbleText1':[
+    'bubbleText1': [
         `All I want you to do is Click on a word and then click on its synonym. Easy. Get this right and we're in business.`
     ],
-    'bubbleText2':[
+    'bubbleText2': [
         `Great, you passed the test! Now I'm happy for you to continue on your mission.`
     ]
 }
@@ -75,39 +82,53 @@ export const vocabData = {
 //office specific
 
 export const officeCards = {
-    'witnesses' : [
+    'witnesses': [
         {
-        'name': [`Chay Madz`],
-        'id': [1],
-        'image': [1],
-    },
+            'name': [`Tony Monceto`],
+            'id': [1],
+            'image': [TonyPic],
+        },
         {
-        'name': [`Kirsten Wenstein`],
-        'id': [1],
-        'image': [1],
-    },
+            'name': [`Chay Madz`],
+            'id': [2],
+            'image': [ChayPic],
+        },
         {
-        'name': [`Dallas Franks`],
-        'id': [1],
-        'image': [1],
-    },
+            'name': [`Kirsten Stein`],
+            'id': [3],
+            'image': [KirstenPic],
+        },
         {
-        'name': [`Floe Light`],
-        'id': [1],
-        'image': [1],
-    },
+            'name': [`Dallas Franks`],
+            'id': [4],
+            'image': [DallasPic],
+        },
         {
-        'name': [`Wendy Rose`],
-        'id': [1],
-        'image': [1],
-    },
+            'name': [`Floe Light`],
+            'id': [5],
+            'image': [FloePic],
+        },
+        {
+            'name': [`Wendy Rose`],
+            'id': [6],
+            'image': [WendyPic],
+        },
     ],
-    'artefacts':[{
-
-    }],
-    'links':[
+    'artefacts': [
         {
-            
+            'name': [`Torn Letter`],
+            'id': [1],
+            'image': [1],
+        },
+        {
+            'name': [`Love Letter`],
+            'id': [2],
+            'image': [1],
+        },
+    ],
+    'links': [
+        {
+
         }
     ]
 
@@ -247,6 +268,9 @@ export const questionsWitness1 = {
     ],
     trialURL1: [
         'codebox'
+    ],
+    sneaky: [
+        'sneaky1'
     ]
 }
 
@@ -397,26 +421,26 @@ export const questionsWitness6 = {
 
 //codebox tony monceto
 export const CodeBoxData = {
-    bubbleText1:[`Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
+    bubbleText1: [`Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
     up in a safe and I don't know the code.
     But maybe you will be able to work it out. Ready to try?`],
-    bubbleText2:[`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
+    bubbleText2: [`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
     I don't know the verbs but I do know the words they collocate with. Maybe you can work it out. For example "watch" 
     collocates with "TV", so you would take the letter "W". 
     `],
-    bubbleText3:[`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
+    bubbleText3: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
     3 "fun" and "a good time". 4 "your time" and "a break". 5 "a ball" and "a cold". Put the correct letters in and spin the dial!`
-],
-    bubbleText4:[`Excellent! Click on the book, and when you go back to your office you'll be able to see who was at the party and where they live. 
+    ],
+    bubbleText4: [`Excellent! Click on the book, and when you go back to your office you'll be able to see who was at the party and where they live. 
     But before you go, I should show you the crime scene!`
-],
+    ],
 }
 
 export const CrimeSceneData = {
-    bubbleText1:[`This is the kitchen and this is the window he went through. As you can see, he can't have done it by accident.`],
-    bubbleText2:[`This is a plan of the apartment.`],
-    bubbleText3:[``],
-    bubbleText4:[``],
+    bubbleText1: [`This is the kitchen and this is the window he went through. As you can see, he can't have done it by accident.`],
+    bubbleText2: [`This is a plan of the apartment.`],
+    bubbleText3: [``],
+    bubbleText4: [``],
 }
 
 
@@ -443,7 +467,10 @@ export const TornLetterPiecesData = [
 
 export const ErrorCorrectionData = {
     instructions: [
-        ["Select the sentences that are gramamtically INCCORECT"],
+        ["Click or tap on all of the sentences that are gramamtically incorrect."],
+    ],
+    instructions2: [
+        ["Great! Now type out the sentences so they are correct and hit go."],
     ],
     sentences: [
         ["I saw Lexi and Floe holding hands under the table.", "0", false],
@@ -451,15 +478,15 @@ export const ErrorCorrectionData = {
         ["Lexi seemed very relaxing and happy.", "2", false],
         ["Lexi made a joke about still having Covid when he coughed.", "3", false],
         ["Lexi was a good man. He was my friend.", "4", false],
-        ["I didn't see nothing of the crime. It was dark.", "5", false],
+        ["I didn't see nothing of the crime because it was dark.", "5", false],
     ],
     incorrectSentences: [
         ["1", "2", "5"]
     ],
     incorrectAndCorrected: [
         ["I don't really knew Chey very well", "0", "I don't really know Chey very well", false],
-        ["Lexi seemed very relaxing and happy.", "1", "Lexi seemed very relaxed and happy.", false],
-        ["I didn't see nothing of the crime. It was dark.", "2", "I didn't see anything of the crime. It was dark.", false],
+        ["Lexi seemed very relaxing and happy", "1", "Lexi seemed very relaxed and happy", false],
+        ["I didn't see nothing of the crime because it was dark", "2", "I didn't see anything of the crime because it was dark", false],
     ]
 }
 

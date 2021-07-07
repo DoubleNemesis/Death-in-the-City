@@ -4,7 +4,7 @@ export const StyledModal = styled.div`
 position: absolute;
 background-color: #333;
 color: white;
-z-index: 1;
+z-index: 5;
 display: ${({ display }) => display};
 left:5%;
 right:5%;

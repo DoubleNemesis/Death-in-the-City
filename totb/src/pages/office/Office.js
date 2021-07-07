@@ -3,25 +3,46 @@ import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
 import GameContext from '../../context/GameContext'
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../generalComponents/InfoModal'
-import {characterNames} from '../../data/lessonData'
+import {officeCards} from '../../data/lessonData'
+import NextPageButton from './../../generalComponents/NextPageButton'
+import WitnessButton from './../../generalComponents/WitnessButton'
+
 
 const Container = styled.div`
 display: flex;
 flex-wrap: wrap;
 width: 100%;
-background-color: white;
+
+justify-content: center;
 `
 const WitnessCard = styled.div`
-width: 100px;
-height: 100px;
+width: 120px;
+height: auto;
 margin: .2em;
 background-color: skyblue;
+text-align: center;
+border-radius: 5px;
+border: 1px solid whitesmoke;
+`
+const CardImageContainer = styled.div`
+max-height: 100px;
+overflow: hidden;
+`
+const CardImage = styled.img`
+width: 100%;
+border-radius: 5px;
 `
 const ArtefactCard = styled.div`
-width: 100px;
+display: flex;
+width: 120px;
 height: 100px;
 margin: .2em;
 background-color: midnightblue;
+justify-content: center;
+align-items: center;
+color: white;
+border: 1px solid whitesmoke;
+border-radius: 5px;
 `
 const ActionCard = styled.div`
 width: 100px;
@@ -30,30 +51,32 @@ margin: .2em;
 background-color: pink;
 `
 
+
 function OfficeBase() {
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
 
-    let numberOfKnownWitnesses = 2
-    let witnessesArray = ['witness ? ', 'witness ? ', 'witness ? ', 'witness ? ', 'witness ? ', 'witness ? ', 'witness ? ',]
 
-    //console.log(characterNames['characterNames']);
 
-    for (let i=0; i<numberOfKnownWitnesses; i++){
-        witnessesArray[i] = characterNames['characterNames'][i]
-    }
-
-    const witnesses = witnessesArray.map((item)=>{
+    const witnesses = officeCards.witnesses.map((item)=>{
+        console.log(item.image);
+        const destination = `/witness${item.id}`
         return (
-            <WitnessCard>{item}</WitnessCard>
+            <WitnessCard><CardImageContainer><CardImage src={item.image}/></CardImageContainer><WitnessButton destination={destination}>{item.name}</WitnessButton></WitnessCard>
         )
     })
 
+    let numberOfKnownArtefacts = 2
+    let artefactArray = ['?', '?', '?', '?', '?', '?', '?']
 
+    for (let i=0; i<numberOfKnownArtefacts; i++){
+        artefactArray[i] = officeCards['artefacts'][i]['name']
+    }
 
-    //let history = useHistory()
-// const witnesses = 
-
-
+    const artefacts = artefactArray.map((item)=>{
+        return (
+            <ArtefactCard>{item}</ArtefactCard>
+        )
+    })
 
 
     return (
@@ -75,13 +98,9 @@ function OfficeBase() {
                 </ToggleContainer>
             </StyledModal>
                 {witnesses}
-            <ArtefactCard />
-            <ArtefactCard />
-            <ArtefactCard />
-            <ArtefactCard />
-            <ArtefactCard />
-            <ActionCard >Map</ActionCard>
-            <ActionCard >Ideas Board</ActionCard>
+                {artefacts}
+            {/* <ActionCard >Map</ActionCard>
+            <ActionCard >Ideas Board</ActionCard> */}
 
         </Container>
     )

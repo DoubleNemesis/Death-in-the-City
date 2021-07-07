@@ -4,10 +4,11 @@ import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
 import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
-import ProfilePic from '../../../images/janitor.png'
+import KirstenPic from '../../../images/kirsten.jpg'
 import { ErrorCorrectionData } from '../../../data/lessonData'
 import { SentenceDiv, IncorrectSentencesDiv } from './errorCorrectionComponents/ErrorCorrectionComponents'
 import GameContext from '../../../context/GameContext'
+import NextPageButton from '../../../generalComponents/NextPageButton'
 
 
 function ErrorCorrection() {
@@ -19,7 +20,7 @@ function ErrorCorrection() {
     const [isComplete2, setIsComplete2] = useState(false)
     const [correctedSentences, setCorrectedSentences] = useState({})
     const { level, setLevel } = useContext(GameContext)
-    const { instructions, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
+    const { instructions, instructions2, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
 
     useEffect(() => {
         setSentencesArray(sentences)
@@ -29,8 +30,6 @@ function ErrorCorrection() {
     function handleClick(e) {
         const selectedSentenceId = e.target.id
         const selectedSentence = document.getElementById(selectedSentenceId)
-        // if (selectedSentence.classList.contains('selected')) {
-        //selectedSentence.classList.remove('selected')
         if (sentencesArray[selectedSentenceId][2] === true) {
             let copySentencesArray = [...sentencesArray]
             copySentencesArray[selectedSentenceId][2] = false
@@ -42,7 +41,6 @@ function ErrorCorrection() {
 
         }
         else {
-            //selectedSentence.classList.add('selected')
             let copySentencesArray = [...sentencesArray]
             copySentencesArray[selectedSentenceId][2] = true
             setSentencesArray(copySentencesArray)
@@ -115,24 +113,12 @@ function ErrorCorrection() {
     </IncorrectSentencesDiv>)
     return (
         <>
-            <div className="title">
-                <Title>Solve the Puzzle</Title>
-            </div>
-            <PageContainer>
-                <Instructions>
-                    <WitnessImage img={ProfilePic} />
-                    {/* https://unsplash.com/@shnautsher */}
-                    <TaskBox>
-                        Break the code!
-                        </TaskBox>
-                </Instructions>
                 <Conversation>
-                    <SpeechBubbleLeft>
-                        {instructions}
+                    <SpeechBubbleLeft image={KirstenPic}>
+                        {!isComplete1 ? instructions : instructions2}
                     </SpeechBubbleLeft>
-                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <h1>let's go!</h1>}
+                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton>let's go!</NextPageButton>}
                 </Conversation>
-            </PageContainer>
 
         </>
 

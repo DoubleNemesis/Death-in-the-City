@@ -26,6 +26,7 @@ padding: .5em;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 background-color: white;
 text-align: center;
+font-size: 1.2rem;
 `
 
 export const Conversation = styled.div`

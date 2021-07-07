@@ -2,8 +2,9 @@ import styled from 'styled-components'
 
 const SentenceBtn = styled.button`
 border: 1px solid grey;
-background-color: ${({isSelected})=> isSelected ? 'brown' : 'yellow'};
+background-color: ${({isSelected})=> isSelected ? 'brown' : 'skyblue'};
 font-family: cursive;
+text-align: left;
 
 :hover{
     background-color: tomato;

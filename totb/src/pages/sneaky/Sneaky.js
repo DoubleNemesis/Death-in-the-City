@@ -6,12 +6,8 @@ import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import { clientData } from '../../data/lessonData'
 
-// <a href="https://www.freevector.com/metal-trash-bins#">FreeVector.com</a>
+
 const openBinLid = keyframes`
-/* 0% { transform: rotate(0deg); }
-100% { transform: rotate(270deg); }
-40% { left: 0px; }
-60% { left: -50px; } */
 0% { top: -44px; left: 0px; }
 100% { top: -450px; left: -80px; }
 
@@ -29,9 +25,13 @@ min-height: 240px;
 background-image: url(${bin});
 background-size: contain;
 background-repeat: no-repeat;
-animation: ${rotateBin} 2s;
+
+@media(min-width: 1000px){
+    animation: ${rotateBin} 2s;
 animation-delay: 2s;
 animation-fill-mode: forwards;
+}
+
 
 -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -66,6 +66,7 @@ position: relative;
 margin: 30vh auto;
 display: flex;
 flex-direction: column;
+align-items: center;
 `
 
 function Sneaky(props){
@@ -74,7 +75,6 @@ function Sneaky(props){
 
     return(
         <>
-        <Title>{props.title}</Title>
             <PageContainer>
             <StyledBinContainer>
             <StyledBinLid/>

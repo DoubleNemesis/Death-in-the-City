@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import PageContainer from './../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
+import Door from '../Door'
 import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
@@ -19,6 +20,7 @@ function WitnessComp(props) {
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
+    const [isDoorOpen, setIsDoorOpen] = useState(false)
     let history = useHistory()
     let destination = props.trialURL
 
@@ -86,7 +88,7 @@ function WitnessComp(props) {
 
     return (
         <>
-
+            <Door isDoorOpen={isDoorOpen}/>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>
@@ -97,7 +99,10 @@ function WitnessComp(props) {
                 </ul>
                 <ToggleContainer>
                 <ToggleTaskInfo
-                    onClick={() => setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)}>
+                    onClick={() => {
+                        setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)
+                        setIsDoorOpen(true)
+                        }}>
                     Start
                 </ToggleTaskInfo>
                 </ToggleContainer>

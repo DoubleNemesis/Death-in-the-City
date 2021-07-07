@@ -17,10 +17,21 @@ intro newspaper columns spelling error ge not get
 make vocab relevant
 decide about office
 
+image of door with number and color, and a bin. Knock on door...door opens to reveal conversation.
 
 
-//
+bin <a href="https://www.freevector.com/metal-trash-bins#">FreeVector.com</a>
+
 mr grey: Photo by <a href="https://unsplash.com/@samanta1225?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samanta Barba Alcalá</a> on <a href="https://unsplash.com/s/photos/older-man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+kirsten Photo by <a href="https://unsplash.com/@merittthomas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Meritt Thomas</a> on <a href="https://unsplash.com/s/photos/woman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+dallas Photo by <a href="https://unsplash.com/@julianwan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Julian Wan</a> on <a href="https://unsplash.com/s/photos/man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+floe Photo by <a href="https://unsplash.com/@matheusferrero?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Matheus Ferrero</a> on <a href="https://unsplash.com/s/photos/woman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+wendy Photo by <a href="https://unsplash.com/@princearkman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Prince Akachi</a> on <a href="https://unsplash.com/s/photos/woman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
   
 
 

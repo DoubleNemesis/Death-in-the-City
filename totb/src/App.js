@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react'
 import VocabPage from './pages/VocabPage'
 import Home from './pages/Home'
+import Door from './pages/Door'
 import Start from './pages/Start'
 import Office from './pages/Office'
 import OfficeBase from './pages/office/Office'
@@ -92,6 +93,9 @@ function App() {
             <Route path="/officebase">
               <OfficeBase />
             </Route>
+            <Route path="/door">
+              <Door />
+            </Route>
             <Route path="/mrgrey">
               <MrGrey />
             </Route>
@@ -118,7 +122,7 @@ function App() {
               <CrimeScene />
             </Route>
             <Route path="/witness2"> {/*Chay*/}
-              <Witness
+              <WitnessComp
                 title={characterNames[1]}
                 questionsWit={questionsWitness2}
                 questionsWit2={questionsWitness2_2}
@@ -134,7 +138,7 @@ function App() {
               <TornLetter />
             </Route>
             <Route path="/witness3"> {/*Kirsten*/}
-              <Witness
+              <WitnessComp
                 title={characterNames[2]}
                 questionsWit={questionsWitness3}
                 questionsWit2={questionsWitness3_2}
