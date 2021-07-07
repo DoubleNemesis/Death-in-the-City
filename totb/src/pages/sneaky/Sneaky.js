@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled, {keyframes} from 'styled-components'
 import bin from '../../images/bin.png'
 import binlid from '../../images/binlid.png'
@@ -5,6 +6,7 @@ import PageContainer from '../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import { clientData } from '../../data/lessonData'
+
 
 
 const openBinLid = keyframes`
@@ -51,7 +53,7 @@ min-height: 50px;
 background-image: url(${binlid});
 background-size: contain;
 background-repeat: no-repeat;
-animation: ${openBinLid} 4s;
+animation: ${({openBin}) => openBin ? openBinLid : null} 4s;
 animation-delay: 2s;
 transform-origin: left;
 animation-fill-mode: forwards;
@@ -70,17 +72,23 @@ align-items: center;
 `
 
 function Sneaky(props){
+    const [openBin, setOpenBin] = useState(false)
     // const {clientTitle, clientText} = clientData
     // <NextPageButton destination={props.destination}>Go to office</NextPageButton>
+
+   function handleClick(){
+        setOpenBin(true)
+    }
 
     return(
         <>
             <PageContainer>
             <StyledBinContainer>
-            <StyledBinLid/>
+            <StyledBinLid openBin={openBin}/>
 
             <StyledBin/>
             </StyledBinContainer>
+            <button onClick={handleClick}>Click</button>
             </PageContainer>
         </>
     )
