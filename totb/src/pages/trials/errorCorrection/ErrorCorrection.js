@@ -9,6 +9,7 @@ import { ErrorCorrectionData } from '../../../data/lessonData'
 import { SentenceDiv, IncorrectSentencesDiv } from './errorCorrectionComponents/ErrorCorrectionComponents'
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
 
 function ErrorCorrection() {
@@ -72,11 +73,20 @@ function ErrorCorrection() {
     }
 
     function handleSubmit(e) {
+
         if (correctedSentences[e.target.id] === incorrectAndCorrectedArray[e.target.id][2]) {
             let copyIncorrectAndCorrectedArray = [...incorrectAndCorrectedArray]
             copyIncorrectAndCorrectedArray[e.target.id][3] = true;
             setIncorrectAndCorrectedArray(copyIncorrectAndCorrectedArray)
         }
+        // remove full stop
+        else if (correctedSentences[e.target.id][correctedSentences[e.target.id].length-1] === '.'){
+                if (correctedSentences[e.target.id].slice(0, -1) === incorrectAndCorrectedArray[e.target.id][2]) {
+                    let copyIncorrectAndCorrectedArray = [...incorrectAndCorrectedArray]
+                    copyIncorrectAndCorrectedArray[e.target.id][3] = true;
+                    setIncorrectAndCorrectedArray(copyIncorrectAndCorrectedArray)
+                }
+            }
         else {
             console.log(correctedSentences[e.target.id], incorrectAndCorrectedArray[e.target.id][2]);
         }
@@ -108,7 +118,7 @@ function ErrorCorrection() {
             type="text" onChange={handleChange} />
         <button id={item[1]}
             onClick={handleSubmit}
-        >Go!
+        >Check!
         </button>
     </IncorrectSentencesDiv>)
     return (
@@ -117,7 +127,7 @@ function ErrorCorrection() {
                     <SpeechBubbleLeft image={KirstenPic}>
                         {!isComplete1 ? instructions : instructions2}
                     </SpeechBubbleLeft>
-                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton>let's go!</NextPageButton>}
+                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton destination='officebase'>let's go!</NextPageButton>}
                 </Conversation>
 
         </>
