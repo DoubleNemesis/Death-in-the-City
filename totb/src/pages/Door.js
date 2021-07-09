@@ -25,8 +25,11 @@ background-color: white;
 const StyledDoor = styled.div`
 position: absolute;
 background-image: url(${doorGrey});
+background-color: #999;
 width: 100%;
-min-height: 100vh;
+min-height: 89vh;
+top: 10%;
+left: 0px;
 background-repeat: no-repeat;
 background-size: cover;
 animation: ${({isDoorOpen}) => isDoorOpen ? OpenDoor : null} 3s;
@@ -35,6 +38,7 @@ transform-style: preserve-3d;
 animation-fill-mode: forwards;
 animation-delay: 2s;
 z-index: 4;
+border: 1px solid white;
 `
 
 const WitnessImage = styled.img`
@@ -58,7 +62,7 @@ function Door(props) {
 
             <StyledDoor isDoorOpen={props.isDoorOpen}/>
             <Inside>
-                <WitnessImage src={chaymadz}/>
+                {/* <WitnessImage src={chaymadz}/> */}
                 <SpeechBubbleRight>Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?</SpeechBubbleRight>
             </Inside>
                

@@ -13,6 +13,7 @@ import WitnessComp from './pages/witness/WitnessComp'
 import MrGrey from './pages/Client'
 import CodeBox from './pages/trials/codeBox/CodeBox'
 import TornLetter from './pages/trials/tornLetter/TornLetter'
+import ShreddedLetter from './pages/trials/shreddedLetter/ShreddedLetter'
 import LoveLetter from './pages/trials/loveLetter/LoveLetter'
 import ErrorCorrection from './pages/trials/errorCorrection/ErrorCorrection'
 import Redacted from './pages/trials/redacted/Redacted'
@@ -26,7 +27,7 @@ import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import * as lessonData from './data/lessonData'
 import TonyPic from './images/tonymonceto.png'
 import ChayPic from './images/chaymadz.jpg'
-import KirstenPic from './images/janitor.png'
+import KirstenPic from './images/kirsten.jpg'
 import { homePageData } from './data/lessonData'
 import Title from './generalComponents/Title'
 // import DallasPic from './images/tonymonceto.png'
@@ -34,6 +35,7 @@ import Title from './generalComponents/Title'
 // import WendyPic from './images/janitor.png'
 
 import GameContext from './context/GameContext'
+
 
 function App() {
 
@@ -45,8 +47,8 @@ function App() {
 
   const { characterNames } = lessonData['characterNames'];
   const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1 } = lessonData['questionsWitness1'];
-  const { questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2 } = lessonData['questionsWitness2'];
-  const { questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3 } = lessonData['questionsWitness3'];
+  const { questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2, exitMessage2 } = lessonData['questionsWitness2'];
+  const { questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3, exitMessage3 } = lessonData['questionsWitness3'];
   const { questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4 } = lessonData['questionsWitness4'];
   const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5 } = lessonData['questionsWitness5'];
   const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6 } = lessonData['questionsWitness6'];
@@ -113,6 +115,7 @@ function App() {
                 conversationArray={witnessConversationArray1}
                 personImage={TonyPic}
                 trialURL={trialURL1}
+
               />
             </Route>
             <Route path="/codebox">
@@ -129,13 +132,14 @@ function App() {
                 conversationArray={witnessConversationArray2}
                 personImage={ChayPic}
                 trialURL={trialURL2}
+                exitMessage={exitMessage2}
               />
             </Route>
             <Route path="/sneaky1">
-            <Sneaky title="" destination="witness3"/>
+            <Sneaky title="" destination="shreddedletter"/>
             </Route>
-            <Route path="/tornletter">
-              <TornLetter />
+            <Route path="/shreddedletter">
+              <ShreddedLetter />
             </Route>
             <Route path="/witness3"> {/*Kirsten*/}
               <WitnessComp
@@ -145,6 +149,7 @@ function App() {
                 conversationArray={witnessConversationArray3}
                 personImage={KirstenPic}
                 trialURL={trialURL3}
+                exitMessage={exitMessage3}
               />
             </Route>
             <Route path="/sneaky2">

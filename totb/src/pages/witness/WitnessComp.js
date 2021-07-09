@@ -22,7 +22,8 @@ function WitnessComp(props) {
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [isDoorOpen, setIsDoorOpen] = useState(false)
     let history = useHistory()
-    let destination = props.trialURL
+    // let destination = props.trialURL
+    // let exitMessage = props.exitMessage
 
     useEffect(() => {
         function assignQuestionsList(dat) {
@@ -70,9 +71,9 @@ function WitnessComp(props) {
                     }
                     else {
                         //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
-                        setRightWrong(<NextPageButton destination={destination}>Let's go!</NextPageButton>)
+                        setRightWrong(<NextPageButton destination={props.destination}>{props.exitMessage}</NextPageButton>)
+                        counter=0;
                     }
-
                 }, 1000)
             }, 1000)
         }
@@ -117,7 +118,6 @@ function WitnessComp(props) {
                 </InfoBox>
                 {questions}
             </QuestionOptions>
-            {/* </PageContainer> */}
         </>
 
     )

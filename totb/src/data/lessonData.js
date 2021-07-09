@@ -300,6 +300,9 @@ export const questionsWitness2 = {
     ],
     trialURL2: [
         'sneaky1'
+    ],
+    exitMessage2: [
+        'Hmm...I need to try something different.'
     ]
 }
 
@@ -328,6 +331,9 @@ export const questionsWitness3 = {
     ],
     trialURL3: [
         'errorcorrection'
+    ],
+    exitMessage3: [
+        'Go and help her!'
     ]
 }
 
@@ -453,7 +459,7 @@ export const TornLetterPiecesData = [
     "It was Lexi's first dinner party",
     "since recovering from Covid19",
     "but I don't know who moved it",
-    "I heard Lexi and Vhey",
+    "I had heard Lexi and Chey",
     "arguing earlier in the evening",
     "Floe's eyes were red as if she'd",
     "been crying before she arrived",
@@ -463,11 +469,51 @@ export const TornLetterPiecesData = [
     "really angry for some reason."
 ]
 
+export const ShreddedLetterPiecesData = {
+    orderEventsText: [`I got the party at around 10. I was already drunk. 
+    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've knon eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
+    Lexi? I met him on the set of his first Movie just three months ago.
+    It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
+    `],
+    eventsToOrder: [
+        "When the lights went out, we ",
+        "were all sitting round the table",
+        "I heard a chair being moved",
+        "It was Lexi's first dinner party",
+        "since recovering from Covid19",
+        "but I don't know who moved it",
+        "I had heard Lexi and Chey",
+        "arguing earlier in the evening",
+        "Floe's eyes were red as if she'd",
+        "been crying before she arrived",
+        "Lexi Grey went into the kitchen",
+        "to get everyone some drinks",
+        "You could tell that Chey was",
+        "really angry for some reason."
+    ],
+    eventsCorrectOrder: [
+        "were all sitting round the table",
+        "When the lights went out, we ",
+        "I heard a chair being moved",
+        "It was Lexi's first dinner party",
+        "since recovering from Covid19",
+        "but I don't know who moved it",
+        "I had heard Lexi and Chey",
+        "arguing earlier in the evening",
+        "Floe's eyes were red as if she'd",
+        "been crying before she arrived",
+        "Lexi Grey went into the kitchen",
+        "to get everyone some drinks",
+        "You could tell that Chey was",
+        "really angry for some reason."
+    ]
+}
+
 //error correction kirsten
 
 export const ErrorCorrectionData = {
     instructions: [
-        ["Click or tap on all of the sentences that are gramamtically incorrect."],
+        ["OK, I need you to tell me which sentences are incorrect. Just click on them, and in a moment I will ask you to show me how they should be written."],
     ],
     instructions2: [
         ["Great! Now type out the sentences so they are correct and hit go."],
