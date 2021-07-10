@@ -348,32 +348,35 @@ export const questionsWitness4 = {
         ["I want ask about the party.", 'fail']
     ],
     questionsWitness4_2: [
-        ["That can be useful", 'fail'],
-        ["That would be useful", 'success'],
+        ["Yes. That can be useful", 'fail'],
+        ["Thank you. That would be useful", 'success'],
         ["That would being useful", 'fail'],
-        ["That was useful", 'fail'],
+        ["Thanks. That was useful", 'fail'],
         ["They are useful", 'fail']
     ],
     witnessConversationArray4: [
-        "What do you want?",
+        "I'm so bored of you people. What do you want to know?",
         "I want to ask about the party.",
-        "I'm going to show you my police statement, OK? But only for a few seconds. Then you have to leave.",
-        "That would be useful",
-        "OK, here it is. The clock is ticking!"
+        "I was drunk, ok? I don't remember much. You can read my police statement, if you want.",
+        "Thank you. That would be useful",
+        "OK, here it is. Now please leave me alone!"
     ],
     trialURL4: [
         'orderevents'
+    ],
+    exitMessage4: [
+        'Read the statement'
     ]
 }
 
 //witness 5 floe lights
 export const questionsWitness5 = {
     questionsWitness5: [
-        ["I promise I won't tell him.", 'success'],
-        ["I promise I won't tell to him.", 'fail'],
-        ["I am promise I won't tell him.", 'fail'],
-        ["I promised I won't tell him.", 'fail'],
-        ["I have promised I won't tell him.", 'fail']
+        ["I promise I won't tell him you spoke to me.", 'success'],
+        ["I promise I won't tell to him you spoke to me.", 'fail'],
+        ["I am promise I won't tell him you spoke to me.", 'fail'],
+        ["I promised I won't tell him you spoke to me.", 'fail'],
+        ["I have promised I won't tell him you spoke to me.", 'fail']
     ],
     questionsWitness5_2: [
         ["Not to say anything?", 'fail'],
@@ -383,14 +386,17 @@ export const questionsWitness5 = {
         ["Roughly two questions?", 'fail']
     ],
     witnessConversationArray5: [
-        "Hey I guess you're the detective. I want to talk to you but Chey told me not to. He doesn't like me speaking to other men.",
-        "I promise I won't tell him.",
-        "No. Just get out of here! It's too dangerous",
+        "Chey told me not to. He doesn't like me speaking to other men. Especially not detectives.",
+        "I promise I won't tell him you spoke to me.",
+        "No. It's too dangerous. I can't help you",
         "Not even two questions?",
-        "No! Get lost or I'll call the cops!"
+        "No! Now go or I'll call Chey!"
     ],
     trialURL5: [
-        'loveletter'
+        'sneaky4'
+    ],
+    exitMessage5: [
+        'We need another plan!'
     ]
 }
 
@@ -420,6 +426,9 @@ export const questionsWitness6 = {
     ],
     trialURL6: [
         'redacted'
+    ],
+    exitMessage3: [
+        'Go and help her!'
     ]
 }
 

@@ -11,41 +11,27 @@ import GameContext from '../../../context/GameContext'
 import MoveableEvents from './MoveableEvents'
 
 
-function Redacted() {
-
- 
+function OrderEvents() {
     const { level, setLevel } = useContext(GameContext)
-
+    const {orderEventsText} = orderEventsData
     return (
         <>
-            <div className="title">
-                <Title>Solve the Puzzle</Title>
-            </div>
-            <PageContainer>
-                <Instructions>
-                    <WitnessImage img={ProfilePic} />
-                    {/* https://unsplash.com/@shnautsher */}
-                    <TaskBox>
-                        Break the code!
-                    </TaskBox>
-                </Instructions>
+
                 <Conversation>
-                    <SpeechBubbleLeft>
-                        {/* {instructions} */}
-                    </SpeechBubbleLeft>
+ 
                 <ParagraphContainer>
-                    This is going to be the para of text
+                    {orderEventsText}
                 </ParagraphContainer>
 
                     <EventsContainer>
                     <MoveableEvents />
                     </EventsContainer>
                 </Conversation>
-            </PageContainer>
+ 
 
         </>
 
     )
 }
 
-export default Redacted
+export default OrderEvents

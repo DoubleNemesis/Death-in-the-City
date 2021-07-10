@@ -28,6 +28,7 @@ import * as lessonData from './data/lessonData'
 import TonyPic from './images/tonymonceto.png'
 import ChayPic from './images/chaymadz.jpg'
 import KirstenPic from './images/kirsten.jpg'
+import DallasPic from './images/dallas.jpg'
 import { homePageData } from './data/lessonData'
 import Title from './generalComponents/Title'
 // import DallasPic from './images/tonymonceto.png'
@@ -49,9 +50,9 @@ function App() {
   const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1 } = lessonData['questionsWitness1'];
   const { questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2, exitMessage2 } = lessonData['questionsWitness2'];
   const { questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3, exitMessage3 } = lessonData['questionsWitness3'];
-  const { questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4 } = lessonData['questionsWitness4'];
-  const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5 } = lessonData['questionsWitness5'];
-  const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6 } = lessonData['questionsWitness6'];
+  const { questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4, exitMessage4 } = lessonData['questionsWitness4'];
+  const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5, exitMessage5 } = lessonData['questionsWitness5'];
+  const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6, exitMessage6 } = lessonData['questionsWitness6'];
 
   return (
       <div className="outer">
@@ -159,13 +160,14 @@ function App() {
               <ErrorCorrection />
             </Route>
             <Route path="/witness4"> {/*Dallas*/}
-              <Witness
+              <WitnessComp
                 title={characterNames[3]}
                 questionsWit={questionsWitness4}
                 questionsWit2={questionsWitness4_2}
                 conversationArray={witnessConversationArray4}
-                personImage={KirstenPic}
+                personImage={DallasPic}
                 trialURL={trialURL4}
+                exitMessage={exitMessage4}
               />
             </Route>
             <Route path="/sneaky3">
@@ -175,29 +177,31 @@ function App() {
               <OrderEvents />
             </Route>
             <Route path="/witness5"> {/*Floe*/}
-              <Witness
+              <WitnessComp
                 title={characterNames[4]}
                 questionsWit={questionsWitness5}
                 questionsWit2={questionsWitness5_2}
                 conversationArray={witnessConversationArray5}
                 personImage={KirstenPic}
                 trialURL={trialURL5}
+                exitMessage={exitMessage5}
               />
             </Route>
             <Route path="/sneaky4">
-            <Sneaky title="" destination="witness6"/>
+            <Sneaky title="" destination="loveletter"/>
             </Route>
             <Route path="/loveletter">
               <LoveLetter />
             </Route>
             <Route path="/witness6"> {/*wendy*/}
-              <Witness
+              <WitnessComp
                 title={characterNames[5]}
                 questionsWit={questionsWitness6}
                 questionsWit2={questionsWitness6_2}
                 conversationArray={witnessConversationArray6}
                 personImage={KirstenPic}
                 trialURL={trialURL6}
+                exitMessage={exitMessage6}
               />
             </Route>
             <Route path="/sneaky5">

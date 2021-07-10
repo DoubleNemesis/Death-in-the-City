@@ -75,17 +75,7 @@ function LoveLetter() {
 
     return (
         <>
-            <div className="title">
-                <Title>Solve the Puzzle</Title>
-            </div>
-            <PageContainer>
-                <Instructions>
-                    <WitnessImage img={ProfilePic} />
-                    {/* https://unsplash.com/@dammypayne*/}
-                    <TaskBox>
-                        Break the code!
-                        </TaskBox>
-                </Instructions>
+
                 <Conversation>
                     <SpeechBubbleLeft>
                         {instructions}
@@ -101,7 +91,6 @@ function LoveLetter() {
                         
                     </LoveLetterLettersContainer>
                 </Conversation>
-            </PageContainer>
 
         </>
 

@@ -16,13 +16,9 @@ function ShreddedLetter() {
 
     useEffect(()=>{
         if (hasFinished){
-            // console.log(items.toString());
-            // console.log(eventsCorrectOrder.toString());
-            // console.log(eventsCorrectOrder.toString() === items.toString());
-            // setMessage(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
             if (eventsCorrectOrder.toString() === items.toString()){
                 setMessage('Correct')
-                setIsCorrect(true)
+                setIsCorrect(true) 
             }
             else {
                 setMessage('Incorrect, try again')

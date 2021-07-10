@@ -1,20 +1,34 @@
 import { useState, useContext, useEffect } from 'react'
 import { List, arrayMove } from 'react-movable';
 import { orderEventsData } from '../../../data/lessonData'
+import NextPageButton from '../../../generalComponents/NextPageButton'
 
 function MoveableEvents() {
     let {eventsToOrder} = orderEventsData
     const {eventsCorrectOrder} = orderEventsData
     const [message, setMessage] = useState('')
-    const [items, setItems] = useState(eventsToOrder);
+    const [items, setItems] = useState(eventsToOrder); 
+    const [hasFinished, setHasFinished] = useState(false)
+    const [isCorrect, setIsCorrect] = useState(false)
 
 
     useEffect(()=>{
-        console.log(items.toString());
-        console.log(eventsCorrectOrder.toString());
-        console.log(eventsCorrectOrder.toString() === items.toString());
-        setMessage(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
-    },[items])
+        if(hasFinished){
+            if (eventsCorrectOrder.toString() === items.toString()){
+                setMessage('Correct')
+                setIsCorrect(true) 
+            }
+            else {
+                setMessage('Incorrect, try again')
+                setHasFinished(false)
+            }
+        }
+        // setMessage(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
+    },[items, hasFinished])
+
+    function handleCheck(){
+        setHasFinished(true)
+    }
     
     return (
         <>
@@ -30,7 +44,9 @@ function MoveableEvents() {
         }
         }
         />
+        <button onClick={handleCheck}>Check</button>
         {message}
+        {isCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
         </>
     );
 }

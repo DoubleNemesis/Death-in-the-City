@@ -71,7 +71,7 @@ function WitnessComp(props) {
                     }
                     else {
                         //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
-                        setRightWrong(<NextPageButton destination={props.destination}>{props.exitMessage}</NextPageButton>)
+                        setRightWrong(<NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>)
                         counter=0;
                     }
                 }, 1000)
