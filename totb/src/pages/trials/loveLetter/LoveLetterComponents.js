@@ -1,7 +1,16 @@
 import styled from 'styled-components'
 
+export const LoveLetterMainContainer = styled.div`
+display:flex;
+flex-direction: column;
+background-color: white;
+`
+
 export const LoveLetterSymbolsContainer = styled.div`
 display: flex;
+flex-wrap: wrap;
+width: 320px;
+border: 1px solid red;
 `
 export const LoveLetterLettersContainer = styled.div`
 width: 100%;

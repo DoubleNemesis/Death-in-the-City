@@ -4,7 +4,7 @@ import Title from '../../../generalComponents/Title'
 //import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
 import { Instructions, Conversation, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
-import { LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './LoveLetterComponents'
+import { LoveLetterMainContainer, LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './LoveLetterComponents'
 import ProfilePic from '../../../images/chaymadz.jpg'
 import GameContext from '../../../context/GameContext'
 import Draggable from 'react-draggable';
@@ -77,9 +77,7 @@ function LoveLetter() {
         <>
 
                 <Conversation>
-                    <SpeechBubbleLeft>
-                        {instructions}
-                    </SpeechBubbleLeft>
+                    <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
                         {LoveLetterCode}
                         {successMessage}
@@ -90,6 +88,7 @@ function LoveLetter() {
                         {LoveLetterLetters}
                         
                     </LoveLetterLettersContainer>
+                    </LoveLetterMainContainer>
                 </Conversation>
 
         </>

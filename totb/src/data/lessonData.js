@@ -576,7 +576,7 @@ export const orderEventsData = {
 //loveletter floe : chey: i will kill any man you go out with
 export const loveLetterData = {
     instructions: ['Break the word code'],
-    loveLetterCode: [`This is a new message`],
+    loveLetterCode: [`Dear Floe, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
     loveLetterFull: [`Dear Floe I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chey.`],
     symbols: [
         ['a', '8955', false, false],
@@ -605,6 +605,8 @@ export const loveLetterData = {
         ['x', '8791', false, false],
         ['y', '8800', false, false],
         ['z', '8812', false, false],
+        ['.', '46', false, false],
+        [',', '44', false, false],
     ],
     letters: [
         'a',
@@ -633,6 +635,8 @@ export const loveLetterData = {
         'x',
         'y',
         'z',
+        '.',
+        ',',
     ]
 }
 
