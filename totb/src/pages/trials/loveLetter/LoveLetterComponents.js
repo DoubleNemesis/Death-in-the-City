@@ -4,6 +4,7 @@ export const LoveLetterMainContainer = styled.div`
 display:flex;
 flex-direction: column;
 background-color: white;
+align-items: center;
 `
 
 export const LoveLetterSymbolsContainer = styled.div`
@@ -11,6 +12,8 @@ display: flex;
 flex-wrap: wrap;
 width: 320px;
 border: 1px solid red;
+margin-top: 1em;
+padding: .1em;
 `
 export const LoveLetterLettersContainer = styled.div`
 width: 100%;
