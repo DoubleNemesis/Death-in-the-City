@@ -646,19 +646,19 @@ export const loveLetterData = {
 
 //wendy
 export const redactedData = {
-    instructions: ['Add the missing words!'],
-    missingWords: ['first', 'second', 'third', 'fourth', 'fifth'],
+    instructions: [`Hmmm there's a problem here. I can't read some of the words. It looks like they're mostly prepositions and verbs.`],
+    missingWords: ['with', 'by', 'up', 'avoid', 'to'],
 }
 
 
 export const RedactedComp = (props) => {
     return (
         <div>
-            I first met Chey when he came into my clinic. He was having a problem with his back <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} />.
-            I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy he is cripled by pain <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} />.
-            He probably sustained this injury by working out in the gym without warming up <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} />.
-            Although he looks strong, he is physically too weak to life much more than a dinner plate <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} />.
-            And he is addicted to painkillers <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} />.
+            I first met Chey when he came into my clinic. He was having problems <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> his back.
+            I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy he is cripled <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> pain.
+            He probably sustained this injury by working out in the gym without warming <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} />.
+            Although he looks strong, he is physically too weak to lift much more than a dinner plate. He should <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} /> alcohol
+            - he is addicted <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} /> painkillers, and they don't mix.
         </div>
     )
 }

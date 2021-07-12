@@ -1,6 +1,5 @@
+add screenshots of artefacts and link to them from office
 need some info on murder: lifted over balcony - tony monceto shows apartment
-TornLetter Component needs mobile rotate option or rethink of plugin.
-profile pics needed
 artefacts like visitors book glow on discovery
 witness page needs a door to open to reveal witness 
 witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
@@ -16,6 +15,7 @@ newspaper style reading to test vocab?
 intro newspaper columns spelling error ge not get
 make vocab relevant
 decide about office
+dallas franks' witness statement needs styke
 
 image of door with number and color, and a bin. Knock on door...door opens to reveal conversation.
 

@@ -6,50 +6,48 @@ import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
 import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import ProfilePic from '../../../images/janitor.png'
 import { redactedData, RedactedComp } from '../../../data/lessonData'
-import { StatementContainer, RedactedTextComp} from './redactedComponents/RedactedComponents'
+import { StatementContainer, RedactedTextComp } from './redactedComponents/RedactedComponents'
 import GameContext from '../../../context/GameContext'
+import NextPageButton from '../../../generalComponents/NextPageButton'
+
 
 
 function Redacted() {
 
     const [redactedInputs, setRedactedInputs] = useState({})
     const [message, setMessage] = useState('')
+    const [isCorrect, setIsCorrect] = useState(false)
     const { level, setLevel } = useContext(GameContext)
-    const { instructions, text, missingWords } = redactedData
+    const { instructions, missingWords } = redactedData
 
-    function handleInputChange(e){
-        const {name, value} = e.target
+    function handleInputChange(e) {
+        const { name, value } = e.target
         console.log(name, value);
-        setRedactedInputs((prev)=>({...prev, [name]:value}))
+        setRedactedInputs((prev) => ({ ...prev, [name]: value }))
     }
 
-    function handleCheck(){
+    function handleCheck() {
         let arrayOfAnswers = []
-        setMessage(Object.values(redactedInputs).toString() === missingWords.toString()?'correct':'try again')
-
+        if (Object.values(redactedInputs).toString() === missingWords.toString()){
+            setMessage( 'Correct!')
+            setIsCorrect(true)
+        }
+        else{
+            setMessage('Incorrect, try again!')
+            setIsCorrect(false)
+        }
     }
 
- console.log(redactedInputs);
+    console.log(redactedInputs);
     return (
         <>
-            <div className="title">
-                <Title>Solve the Puzzle</Title>
-            </div>
-            <PageContainer>
-                <Instructions>
-                    <WitnessImage img={ProfilePic} />
-                    {/* https://unsplash.com/@shnautsher */}
-                    <TaskBox>
-                        Break the code!
-                        </TaskBox>
-                </Instructions>
-                <Conversation>
-                    <SpeechBubbleLeft>
-                        {instructions}
-                    </SpeechBubbleLeft>
-                    <StatementContainer>
-                        {message}
-                        <RedactedComp
+
+            <Conversation>
+                <SpeechBubbleLeft>
+                    {instructions}
+                </SpeechBubbleLeft>
+                <StatementContainer>
+                    <RedactedComp
                         onchange={handleInputChange}
                         name1="name1"
                         name2="name2"
@@ -61,12 +59,11 @@ function Redacted() {
                         value3={redactedInputs['name3'] || ""}
                         value4={redactedInputs['name4'] || ""}
                         value5={redactedInputs['name5'] || ""}
-                        />
-                        <button onClick={handleCheck}>Check</button>
-                        </StatementContainer>
-                </Conversation>
-            </PageContainer>
-
+                    />
+                    <button onClick={handleCheck}>Check</button> {message}
+                </StatementContainer>
+                    {isCorrect ? <NextPageButton destination="officeBase">Go to Office</NextPageButton> : null}
+            </Conversation>
         </>
 
     )

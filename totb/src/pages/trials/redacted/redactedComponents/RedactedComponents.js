@@ -9,5 +9,6 @@ width: 100%;
 min-width: 100%;
 height: 60%;
 min-height: 60%;
-`
+padding: 1em;
+` 
 
