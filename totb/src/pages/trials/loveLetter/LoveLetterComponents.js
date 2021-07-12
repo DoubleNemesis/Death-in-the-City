@@ -10,7 +10,7 @@ align-items: center;
 export const LoveLetterSymbolsContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
-width: 320px;
+width: 325px;
 border: 1px solid red;
 margin-top: 1em;
 padding: .1em;
@@ -20,6 +20,11 @@ width: 100%;
 display: flex;
 flex-wrap: wrap;
 margin-top: 2em;
+
+.unClickable{
+    pointer-events: none;
+    background-color: black;
+}
 `
 
 export const LoveLetterElems = styled.span`
@@ -31,6 +36,9 @@ width: 20px;
 padding: .3em .5em;
 margin: .2em;
 border-radius: .2em;
+
+
+
 `
 export const LoveLetterSymbolElems = styled.span`
 display: flex;
