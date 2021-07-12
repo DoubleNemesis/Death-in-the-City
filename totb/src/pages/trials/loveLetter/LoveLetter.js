@@ -2,15 +2,15 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 //import { history, useHistory } from 'react-router-dom'
-import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
 import { Instructions, Conversation, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
-import { LoveLetterMainContainer, LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './LoveLetterComponents'
+import { SuccessMessageComp, LoveLetterMainContainer, LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './LoveLetterComponents'
 import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../../generalComponents/InfoModal'
 import ProfilePic from '../../../images/chaymadz.jpg'
 import GameContext from '../../../context/GameContext'
 import Draggable from 'react-draggable';
 import { loveLetterData } from '../../../data/lessonData'
 import NextPageButton from '../../../generalComponents/NextPageButton'
+
 
 
 
@@ -23,17 +23,19 @@ function LoveLetter() {
     const [usedLetters, setUsedLetters] = useState([])
     const [successMessage, setSuccessMessage] = useState('')
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
+    const [displayFullText, setDisplayFullText] = useState(false)
 
     const nodeRef = useRef(null);
-    const { instructions, loveLetterCode } = loveLetterData
+    const { instructions, loveLetterCode, successMessageText, loveLetterFull } = loveLetterData
     const secretMessage = loveLetterCode[0]
     const secretMessageArray = secretMessage.toLowerCase().split('');
 
+    function handleFullTextClick(){
+        setDisplayFullText(true)
+    }
 
     function handleLetterClick(e) { 
         setSelectedLetter(e.target.id)
-        
-        //make letter unclickable
     }
 
     function handleSymbolClick(e) {
@@ -59,7 +61,7 @@ function LoveLetter() {
             decodedMessageArray.forEach(item=>{decodedMessage.push(item.innerText)})
             decodedMessage = decodedMessage.join('')
             const originalMessageNoSpace = secretMessageArray.join('').replace(/\s+/g, '')
-            setSuccessMessage(decodedMessage === originalMessageNoSpace ? 'Good' : null)
+            setSuccessMessage(decodedMessage !== originalMessageNoSpace ? <SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/> : null)
         }
     }
 
@@ -108,10 +110,10 @@ function LoveLetter() {
         <>
 
                 <Conversation>
+                
                     <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
-                        {LoveLetterCode}
-                        
+                        {!displayFullText ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}  
                     </LoveLetterSymbolsContainer>
                     {successMessage}
                     <LoveLetterLettersContainer>
@@ -120,6 +122,7 @@ function LoveLetter() {
                         
                     </LoveLetterLettersContainer>
                     </LoveLetterMainContainer>
+             
                 </Conversation>
 
         </>
