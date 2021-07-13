@@ -281,7 +281,7 @@ export const questionsWitness1 = {
         ['I need to know who was being at the party with Lexington Grey.', 'fail']
     ],
     witnessConversationArray1: [
-        "Hey! I'm Toni Monceto. What can I do for you?",
+        "Yeah! I'm Toni Monceto! Terry Grey told me you might come. What can I do for you?",
         "I was wondering if I could ask you some questions.",
         "A friend of Grey is a friend of mine! What do you want to know?",
         "I need to know who was at the party with Lexington Grey.",
@@ -292,6 +292,12 @@ export const questionsWitness1 = {
     ],
     sneaky: [
         'sneaky1'
+    ],
+    exitMessage1: [
+        'Follow Tony'
+    ],
+    speechBubbleText1: [
+        `Hi! I'm investigating the death of Lexington Grey. Are you the janitor here at Kaplinsky Tower?`
     ]
 }
 
@@ -454,17 +460,38 @@ export const questionsWitness6 = {
 }
 
 //trials
+const BubbleText3 = () => {
+    return (
+        <>
+           <p>
+               These are the verbs in the right order. There are two clue words for each verb.
+           </p>
+           <ol>
+              <li>____ friends & your bed</li>
+              <li>__ homework & housework</li>
+              <li>____ fun & a good time</li>
+              <li>____ your time & a break</li>
+              <li>_____ a ball & a cold</li>
+           </ol>
+           <p>
+               Put the first letters into the code box and spin the wheel!
+           </p>
+        </>
+    )
+}
+
 
 //codebox tony monceto
 export const CodeBoxData = {
     bubbleText1: [`Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
     up in a safe and I don't know the code.
-    But maybe you will be able to work it out. Ready to try?`],
+    But maybe you will be able to work it out.`],
     bubbleText2: [`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
-    I don't know the verbs but I do know the words they collocate with. Maybe you can work it out. For example "watch" 
-    collocates with "TV", so you would take the letter "W". 
+    I don't know the verbs but I do know the words they collocate with. For example if the clue is "TV", you would take 
+    "W", the first letter of the verb "watch" as that collocates with the noun "TV". 
     `],
-    bubbleText3: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
+    bubbleText3: <BubbleText3 />,
+    bubbleTextX: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
     3 "fun" and "a good time". 4 "your time" and "a break". 5 "a ball" and "a cold". Put the correct letters in and spin the dial!`
     ],
     bubbleText4: [`Excellent! Click on the book, and when you go back to your office you'll be able to see who was at the party and where they live. 

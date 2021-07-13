@@ -76,7 +76,7 @@ function WitnessComp(props) {
                     }
                 }, 1000)
             }, 1000)
-        }
+        } 
         else {
             e.target.classList.add('wrong')
             setRightWrong('Lose a point and try again!')
@@ -89,7 +89,7 @@ function WitnessComp(props) {
 
     return (
         <>
-            <Door isDoorOpen={isDoorOpen}/>
+            <Door isDoorOpen={isDoorOpen} speechBubbleText={props.speechBubbleText}/>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>

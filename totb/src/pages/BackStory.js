@@ -23,7 +23,7 @@ function Home() {
                 <SpeechBubbleLeft image={client}>
                     {backStoryText}
                 </SpeechBubbleLeft>
-                <NextPageButton destination="vocab">Go to the Vocab</NextPageButton>
+                <NextPageButton destination="vocab">Vocabulary Test</NextPageButton>
             </MainContainer>
         </>
     )

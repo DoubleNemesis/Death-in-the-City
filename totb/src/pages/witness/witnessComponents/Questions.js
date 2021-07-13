@@ -15,6 +15,11 @@ const StyledSpeechBubble = styled.div`
     text-align: left;
     color: #000;
     margin: 1em;
+
+    ol{
+      padding: 0 1em;
+      color: red;
+    }
 }
 
 .bubbleRight{ //delete????

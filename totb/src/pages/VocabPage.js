@@ -94,7 +94,7 @@ function VocabPage() {
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
                 </Container> :
                 <Container>
-                    <NextPageButton destination="office">Go!</NextPageButton>
+                    <NextPageButton destination="officebase">Go!</NextPageButton>
                 </Container>
 
 

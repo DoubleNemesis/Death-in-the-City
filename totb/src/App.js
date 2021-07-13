@@ -47,7 +47,7 @@ function App() {
   const providedValues = { hasDoneVocab, setHasDoneVocab, level, setLevel }
 
   const { characterNames } = lessonData['characterNames'];
-  const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1 } = lessonData['questionsWitness1'];
+  const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1, exitMessage1, speechBubbleText1 } = lessonData['questionsWitness1'];
   const { questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2, exitMessage2 } = lessonData['questionsWitness2'];
   const { questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3, exitMessage3 } = lessonData['questionsWitness3'];
   const { questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4, exitMessage4 } = lessonData['questionsWitness4'];
@@ -116,6 +116,8 @@ function App() {
                 conversationArray={witnessConversationArray1}
                 personImage={TonyPic}
                 trialURL={trialURL1}
+                exitMessage={exitMessage1}
+                speechBubbleText={speechBubbleText1}
 
               />
             </Route>

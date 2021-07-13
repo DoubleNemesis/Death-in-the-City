@@ -23,9 +23,12 @@ from { opacity: 1; }
 to { opacity: 0; }
 `
 export const show = keyframes`
-
 from { opacity: 0; }
 to { opacity: 1; }
+`
+export const highlight = keyframes`
+from { width: 100px; }
+to { width: 110px; }
 `
 export const StyledInput = styled.input`
 width: 2em;
@@ -33,11 +36,12 @@ background-color: ${({safeCodeBgColor})=>safeCodeBgColor};
 margin-right: .2em;
 border-radius: .2em;
 `
-
 export const CodeBoxContainer = styled.div`
+width: 100%;
 border: 1px solid black;
+background-color: whitesmoke;
 padding: 2em;
-margin: 0 auto;
+margin: 1em auto;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -145,9 +149,9 @@ min-height: 200px;
 min-width: 100px;
 height: 200px;
 width: 100px;
-animation: ${({codeIsCorrect})=>codeIsCorrect ? show : null} .1s;
-animation-fill-mode: forwards;
-animation-delay: .7s;
+animation: ${({codeIsCorrect})=>codeIsCorrect ? show : null} .1s forwards .7s, ${({codeIsCorrect})=>codeIsCorrect ? highlight : null} 1s infinite alternate .7s;
+/* animation-fill-mode: forwards;
+animation-delay: .7s; */
 cursor: pointer;
 
 :hover{

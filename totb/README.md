@@ -1,16 +1,20 @@
-create larger images of each trial
-artefacts like visitors book glow on discovery
+artefacts glow/throb on discovery
 witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
-one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
-chey got something new with blackmail cash
 loveletter instructions "now click a symbol..."
-test out at end?
 make vocab relevant
 door image color per person
 sort out context / local storage
 add make your guess
-credits
+credits footer???
 first page blurb, instructions etc
+crimescene page pics
+crimescene page button not centred
+codebox background
+check error on clicking correct convo option and getting "incorrect"
+create larger images of each trial
+one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
+chey got something new with blackmail cash
+test out at end?
 
 
 chay yard Photo by <a href="https://unsplash.com/@dlrmco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel Thiele</a> on <a href="https://unsplash.com/s/photos/brickwall?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

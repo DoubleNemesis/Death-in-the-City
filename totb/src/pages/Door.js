@@ -63,7 +63,7 @@ function Door(props) {
             <StyledDoor isDoorOpen={props.isDoorOpen}/>
             <Inside>
                 {/* <WitnessImage src={chaymadz}/> */}
-                <SpeechBubbleRight>Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?</SpeechBubbleRight>
+                <SpeechBubbleRight>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
             </Inside>
                
 
