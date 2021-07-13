@@ -4,10 +4,10 @@ import { history, useHistory } from 'react-router-dom'
 
 const StyledButton = styled.button`
 color: white;
-background-color: red;
+background-color: ${({color})=> color || 'red'};
 padding: 1.2em 2.2em;
 margin: .2em auto;
-font-size: 2rem;
+font-size: ${({fontSize})=> fontSize || 2} rem;
 border: none;
 
 :hover{
@@ -15,8 +15,10 @@ border: none;
     border: 1px solid grey; 
     color: black;
 }
-
 `
+// export const LinkButtonSmall = ()=>{
+//     return <StyledButton onClick={()=>history.push(`${props.destination}`)}>{children}</StyledButton>
+// }
 
 function NextPageButton({ children, ...props }) {
     let history = useHistory()

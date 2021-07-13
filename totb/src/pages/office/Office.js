@@ -34,6 +34,7 @@ border-radius: 5px;
 `
 const ArtefactCard = styled.div`
 display: flex;
+flex-direction: column;
 width: 120px;
 height: 100px;
 margin: .2em;
@@ -51,7 +52,6 @@ margin: .2em;
 background-color: pink;
 `
 
-
 function OfficeBase() {
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
 
@@ -65,18 +65,26 @@ function OfficeBase() {
         )
     })
 
-    let numberOfKnownArtefacts = 2
-    let artefactArray = ['?', '?', '?', '?', '?', '?', '?']
+    // let numberOfKnownArtefacts = 2
+    // let artefactArray = ['?', '?', '?', '?', '?', '?', '?']
 
-    for (let i=0; i<numberOfKnownArtefacts; i++){
-        artefactArray[i] = officeCards['artefacts'][i]['name']
-    }
+    // for (let i=0; i<numberOfKnownArtefacts; i++){
+    //     artefactArray[i] = officeCards['artefacts'][i]['name']
+    // }
 
-    const artefacts = artefactArray.map((item)=>{
+    // const artefacts = artefactArray.map((item)=>{
+    //     return (
+    //         <ArtefactCard>{item}</ArtefactCard>
+    //     )
+    // })
+
+    const artefacts = officeCards.artefacts.map((item)=>{
         return (
-            <ArtefactCard>{item}</ArtefactCard>
+            <ArtefactCard><img height="50px" src={item.image}/><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
         )
     })
+
+
 
 
     return (

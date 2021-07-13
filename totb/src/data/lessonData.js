@@ -5,6 +5,7 @@ import KirstenPic from '../images/kirsten.jpg'
 import DallasPic from '../images/dallas.jpg'
 import FloePic from '../images/floe.jpg'
 import WendyPic from '../images/wendy.jpg'
+import artefactPlaceholder from '../images/artefactPlaceholder.jpg'
 
 export const homePageData = {
     homeTitle: [`Murder in the City`],
@@ -19,7 +20,7 @@ export const homePageData = {
 //Backstory page
 export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
-    backStoryText: [`So are you ready to be a detective? I hope so, because you've got work to do! 
+    backStoryText: [`I'm Terence Grey. So you think you're ready to turn detective? I hope so, because you've got work to do! 
 Lexington Grey wasn't just anyone. That boy was my son, and he was murdered. Your job is to find out who killed him. First you need to show me you're capable.
  Get this vocabulary right and then we're in business!`]
 }
@@ -116,14 +117,34 @@ export const officeCards = {
     ],
     'artefacts': [
         {
-            'name': [`Torn Letter`],
+            'name': [`Shredded Letter`],
             'id': [1],
-            'image': [1],
+            'image': artefactPlaceholder,
+            'destination': 'shreddedletter',
+        },
+        {
+            'name': [`Corrected Letter`],
+            'id': [2],
+            'image': artefactPlaceholder,
+            'destination': 'errorcorrection',
         },
         {
             'name': [`Love Letter`],
             'id': [2],
-            'image': [1],
+            'image': artefactPlaceholder,
+            'destination': 'loveletter',
+        },
+        {
+            'name': [`Ordered Statement`],
+            'id': [2],
+            'image': artefactPlaceholder,
+            'destination': 'orderevents',
+        },
+        {
+            'name': [`Redacted Statement`],
+            'id': [2],
+            'image': artefactPlaceholder,
+            'destination': 'redacted',
         },
     ],
     'links': [

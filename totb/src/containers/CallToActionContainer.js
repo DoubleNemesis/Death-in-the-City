@@ -19,7 +19,7 @@ const textOut = keyframes`
 `
 
 const animateBorder = keyframes`
-100%{box-shadow: 2px 2px 2px 2px #333; }
+100%{box-shadow: 0px 0px 3px 3px firebrick; }
 0%{box-shadow: none; }
 `
 
@@ -47,11 +47,11 @@ bottom: 5.5%;
 background-image:url(${paperbgdark});
 color: #dfdbcf;
 padding: .5rem;
-font-size: 1.5rem;
+font-size: 1.3rem;
 font-weight: 700;
 text-decoration: underline;
 opacity: 0;
-animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 2s, ${animateBorder} 3s infinite alternate;
+animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 2s, ${animateBorder} 1s infinite alternate;
 animation-fill-mode: forwards;
 box-shadow: 2px 2px 2px 2px #333;
 `

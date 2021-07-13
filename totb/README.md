@@ -1,23 +1,16 @@
-add screenshots of artefacts and link to them from office
-need some info on murder: lifted over balcony - tony monceto shows apartment
+create larger images of each trial
 artefacts like visitors book glow on discovery
-witness page needs a door to open to reveal witness 
 witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
-witness page should close out with extra info sometimes
 one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
 chey got something new with blackmail cash
 loveletter instructions "now click a symbol..."
-trial intro with vocab "redacted adj with words or phrases removed"
-audio?
 test out at end?
-pacman walk round map?
-newspaper style reading to test vocab?
-intro newspaper columns spelling error ge not get
 make vocab relevant
-decide about office
-dallas franks' witness statement needs styke
-
-image of door with number and color, and a bin. Knock on door...door opens to reveal conversation.
+door image color per person
+sort out context / local storage
+add make your guess
+credits
+first page blurb, instructions etc
 
 
 chay yard Photo by <a href="https://unsplash.com/@dlrmco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel Thiele</a> on <a href="https://unsplash.com/s/photos/brickwall?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

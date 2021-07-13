@@ -33,7 +33,6 @@ function Start() {
         }
 
     }
-    console.log(paperOpen);
 
     return (
         <>
@@ -42,8 +41,6 @@ function Start() {
                 paperOpen={paperOpen} 
                 onclick={handlePaperClick}
                 >
-                    {/* {homeCallToActionText} */}
-                    {/* <NextPageButton destination="backstory">Get Going!</NextPageButton> */}
                     <img src={newspaperToDisplay}/>
                 </CallToActionContainer>
             </MainContainer>
