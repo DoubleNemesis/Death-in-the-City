@@ -25,7 +25,7 @@ min-height: 100vh;
 
 
 @media(max-width:900px){
-    margin-top: 4em;
+    margin-top: 1em;
     width: 100%;
     min-height: unset;
     flex-direction: column;

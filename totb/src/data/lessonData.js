@@ -502,8 +502,7 @@ export const CodeBoxData = {
 export const CrimeSceneData = {
     bubbleText1: [`This is the kitchen and this is the window he went through. As you can see, he can't have done it by accident.`],
     bubbleText2: [`He used to stand by the window smoking. I think someone probable came up behind him and pushed him out.`],
-    bubbleText3: [``],
-    bubbleText4: [``],
+    bubbleText3: [`Have a look out the window....that's an awfully long way down! Anyway, now you've seen where it all happened. `],
 }
 
 

@@ -5,7 +5,7 @@ import { TextButton, TextButtonContainer } from '../generalComponents/SpeechText
 import { CrimeSceneData } from '../data/lessonData'
 import Janitor from '../images/janitor.png'
 import kitchen from '../images/kitchen.jpg'
-import windowView from '../images/windowView.jpg'
+import windowView from '../images/windowView2.jpg'
 import { clientData } from '../data/lessonData'
 import PageContainer from '../containers/PageContainer'
 import ImageContainer from '../containers/ImageContainer'
@@ -35,10 +35,13 @@ function CrimeScene() {
                 </TextButtonContainer>
             </SpeechBubbleLeft>
             <PageContainer>
-                <ImageContainer image={kitchen}/>
+                <ImageContainer image={bubbleTextToDisplay === 1 || bubbleTextToDisplay === 2 ? kitchen : windowView}/>
+            
+            {bubbleTextToDisplay === 3 ?
             <NextPageButton destination="/officebase">
-                Go to office
-            </NextPageButton>
+            Go to office
+             </NextPageButton> 
+             : null}
             </PageContainer>
 
         </>
