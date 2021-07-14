@@ -1,6 +1,5 @@
 import { Navbar, Nav} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import './node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react'
 import VocabPage from './pages/VocabPage'
 import Home from './pages/Home'
@@ -8,11 +7,11 @@ import Door from './pages/Door'
 import Start from './pages/Start'
 import Office from './pages/Office'
 import OfficeBase from './pages/office/Office'
-import Witness from './pages/witness/Witness'
+// import Witness from './pages/witness/Witness'
 import WitnessComp from './pages/witness/WitnessComp'
 import MrGrey from './pages/Client'
 import CodeBox from './pages/trials/codeBox/CodeBox'
-import TornLetter from './pages/trials/tornLetter/TornLetter'
+// import TornLetter from './pages/trials/tornLetter/TornLetter'
 import ShreddedLetter from './pages/trials/shreddedLetter/ShreddedLetter'
 import LoveLetter from './pages/trials/loveLetter/LoveLetter'
 import ErrorCorrection from './pages/trials/errorCorrection/ErrorCorrection'
@@ -22,7 +21,7 @@ import BackStory from './pages/BackStory'
 import EndPage from './pages/EndPage'
 import Sneaky from './pages/sneaky/Sneaky'
 import CrimeScene from './pages/CrimeScene'
-import Cont from './pageElements/Cont'
+// import Cont from './pageElements/Cont'
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import * as lessonData from './data/lessonData'
 import TonyPic from './images/tonymonceto.png'
@@ -41,10 +40,12 @@ import GameContext from './context/GameContext'
 function App() {
 
   const [hasDoneVocab, setHasDoneVocab] = useState(false)
-  const [level, setLevel] = useState(1)
+  const [hasVisitorBook, setHasVisitorBook] = useState(false)
+  const [items, setItems] = useState([])
+
   const {homeTitle,  homeSubtitle} = homePageData
 
-  const providedValues = { hasDoneVocab, setHasDoneVocab, level, setLevel }
+  const providedValues = { hasDoneVocab, setHasDoneVocab, hasVisitorBook, setHasVisitorBook, items, setItems }
 
   const { characterNames } = lessonData['characterNames'];
   const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1, exitMessage1, speechBubbleText1 } = lessonData['questionsWitness1'];

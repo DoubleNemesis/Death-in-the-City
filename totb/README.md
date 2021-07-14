@@ -1,4 +1,5 @@
 artefacts glow/throb on discovery
+visitorbook click sign its been clicked
 witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
 loveletter instructions "now click a symbol..."
 make vocab relevant
@@ -14,6 +15,10 @@ one of women is weightlifter - find that in the bin - photo of her with muscles!
 chey got something new with blackmail cash
 test out at end?
 artefact pictures small/big
+officebase ? image needs outline pic
+issue with bubble text corrected letter at the end
+moveableevents combine????
+
 
 window view Photo by <a href="https://unsplash.com/@jannerboy62?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Fewings</a> on <a href="https://unsplash.com/s/photos/view-from-window?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

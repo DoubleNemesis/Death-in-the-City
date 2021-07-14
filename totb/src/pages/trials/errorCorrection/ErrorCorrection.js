@@ -14,6 +14,7 @@ import { propTypes } from 'react-bootstrap/esm/Image'
 
 function ErrorCorrection() {
 
+    const {items, setItems} = useContext(GameContext)
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
     const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
@@ -39,7 +40,6 @@ function ErrorCorrection() {
             const indexOfSelected = copySelectedSentences.indexOf(selectedSentenceId)
             copySelectedSentences.splice(indexOfSelected, 1)
             setSelectedSentences(copySelectedSentences)
-
         }
         else {
             let copySentencesArray = [...sentencesArray]
@@ -98,9 +98,18 @@ function ErrorCorrection() {
             if (incorrectAndCorrectedArray[item][3] === false) {
                 count++
             }
-
         }
-        setIsComplete2(count === 0 ? true : false)
+        if (count === 0){
+            setIsComplete2(true)
+            let dummyItems = [...items]
+            dummyItems.push('Corrected Letter')
+            setItems(dummyItems)
+        }
+        else{
+            setIsComplete2(false)
+        }
+        //setIsComplete2(count === 0 ? true : false)
+        //here
     }, [incorrectAndCorrectedArray])
 
 

@@ -4,28 +4,33 @@ import { ShreddedLetterPiecesData } from '../../../data/lessonData'
 import { EventsContainer, ParagraphContainer, ShreddedPiece } from './shreddedLetterComponents/ShreddedLetterComponents'
 import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../../generalComponents/InfoModal'
 import NextPageButton from '../../../generalComponents/NextPageButton'
+import GameContext from '../../../context/GameContext';
 
 function ShreddedLetter() {
     let {eventsToOrder} = ShreddedLetterPiecesData
     const {eventsCorrectOrder} = ShreddedLetterPiecesData
     const [message, setMessage] = useState('')
-    const [items, setItems] = useState(eventsToOrder);
+    const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [hasFinished, setHasFinished] = useState(false)
     const [isCorrect, setIsCorrect] = useState(false)
+    const {items, setItems} = useContext(GameContext)
 
     useEffect(()=>{
         if (hasFinished){
-            if (eventsCorrectOrder.toString() === items.toString()){
+            if (eventsCorrectOrder.toString() === itemsToOrder.toString()){
                 setMessage('Correct')
                 setIsCorrect(true) 
+                let dummyItems = [...items]
+                dummyItems.push('Shredded Letter')
+                setItems(dummyItems)
             }
             else {
                 setMessage('Incorrect, try again')
                 setHasFinished(false)
             }
         }
-    },[items, hasFinished])
+    },[itemsToOrder, hasFinished])
 
     function handleCheck(){
         setHasFinished(true)
@@ -52,9 +57,9 @@ function ShreddedLetter() {
     </StyledModal>
         <EventsContainer>
         <List
-            values={items}
+            values={itemsToOrder}
             onChange={({oldIndex, newIndex }) => {
-                setItems(arrayMove(items, oldIndex, newIndex))
+                setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
             }
             }
             renderList={({ children, props }) => <ul {...props}>{children}</ul>}

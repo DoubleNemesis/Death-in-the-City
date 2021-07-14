@@ -5,6 +5,7 @@ import KirstenPic from '../images/kirsten.jpg'
 import DallasPic from '../images/dallas.jpg'
 import FloePic from '../images/floe.jpg'
 import WendyPic from '../images/wendy.jpg'
+import questionMark from '../images/questionMark.jpg'
 import artefactPlaceholder from '../images/artefactPlaceholder.jpg'
 
 export const homePageData = {
@@ -88,31 +89,38 @@ export const officeCards = {
             'name': [`Tony Monceto`],
             'id': [1],
             'image': [TonyPic],
+            'altName':['Tony Monceto'],
+            'altImage':[TonyPic],
         },
         {
             'name': [`Chay Madz`],
             'id': [2],
             'image': [ChayPic],
+            'altImage':[questionMark],
         },
         {
             'name': [`Kirsten Stein`],
             'id': [3],
             'image': [KirstenPic],
+            'altImage':[questionMark],
         },
         {
             'name': [`Dallas Franks`],
             'id': [4],
             'image': [DallasPic],
+            'altImage':[questionMark],
         },
         {
             'name': [`Floe Light`],
             'id': [5],
             'image': [FloePic],
+            'altImage':[questionMark],
         },
         {
             'name': [`Wendy Rose`],
             'id': [6],
             'image': [WendyPic],
+            'altImage':[questionMark],
         },
     ],
     'artefacts': [
@@ -130,19 +138,19 @@ export const officeCards = {
         },
         {
             'name': [`Love Letter`],
-            'id': [2],
+            'id': [3],
             'image': artefactPlaceholder,
             'destination': 'loveletter',
         },
         {
             'name': [`Ordered Statement`],
-            'id': [2],
+            'id': [4],
             'image': artefactPlaceholder,
             'destination': 'orderevents',
         },
         {
             'name': [`Redacted Statement`],
-            'id': [2],
+            'id': [5],
             'image': artefactPlaceholder,
             'destination': 'redacted',
         },
@@ -527,7 +535,7 @@ export const TornLetterPiecesData = [
 
 export const ShreddedLetterPiecesData = {
     orderEventsText: [`I got the party at around 10. I was already drunk. 
-    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've knon eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
+    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
     Lexi? I met him on the set of his first Movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
     `],
@@ -598,7 +606,7 @@ export const ErrorCorrectionData = {
 
 export const orderEventsData = {
     orderEventsText: [`I got the party at around 10. I was already drunk. 
-    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've knon eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
+    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
     Lexi? I met him on the set of his first Movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
     `],
@@ -606,14 +614,14 @@ export const orderEventsData = {
         'Dallas arrived at the party',
         'Dallas met Lexi',
         'Dallas went to drama school',
-        'Dalls lost his mother',
+        'Dallas lost his mother',
         'Dallas started drinking with his drama school friends',
         'Dallas started drinking a lot',
     ],
     eventsCorrectOrder: [
         'Dallas went to drama school',
         'Dallas met Lexi',
-        'Dalls lost his mother',
+        'Dallas lost his mother',
         'Dallas started drinking a lot',
         'Dallas started drinking with his drama school friends',
         'Dallas arrived at the party',

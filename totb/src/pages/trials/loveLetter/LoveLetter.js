@@ -16,7 +16,7 @@ import NextPageButton from '../../../generalComponents/NextPageButton'
 
 
 function LoveLetter() {
-    //const { level, setLevel } = useContext(GameContext)
+    const { items, setItems } = useContext(GameContext)
     //let history = useHistory()
     const [selectedLetter, setSelectedLetter] = useState('')
     const [selectedSymbol, setSelectedSymbol] = useState('')
@@ -61,7 +61,14 @@ function LoveLetter() {
             decodedMessageArray.forEach(item=>{decodedMessage.push(item.innerText)})
             decodedMessage = decodedMessage.join('')
             const originalMessageNoSpace = secretMessageArray.join('').replace(/\s+/g, '')
-            setSuccessMessage(decodedMessage !== originalMessageNoSpace ? <SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/> : null)
+            
+            if (decodedMessage !== originalMessageNoSpace){
+                setSuccessMessage(<SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/>)
+                let dummyItems = [...items]
+                dummyItems.push('Love Letter')
+                setItems(dummyItems)
+            }
+            //setSuccessMessage(decodedMessage !== originalMessageNoSpace ? <SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/> : null)
         }
     }
 

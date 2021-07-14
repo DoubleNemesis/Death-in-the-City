@@ -17,7 +17,7 @@ function Redacted() {
     const [redactedInputs, setRedactedInputs] = useState({})
     const [message, setMessage] = useState('')
     const [isCorrect, setIsCorrect] = useState(false)
-    const { level, setLevel } = useContext(GameContext)
+    const { items, setItems } = useContext(GameContext)
     const { instructions, missingWords } = redactedData
 
     function handleInputChange(e) {
@@ -31,6 +31,9 @@ function Redacted() {
         if (Object.values(redactedInputs).toString() === missingWords.toString()){
             setMessage( 'Correct!')
             setIsCorrect(true)
+            let dummyItems = [...items]
+            dummyItems.push('Redacted Statement')
+            setItems(dummyItems)
         }
         else{
             setMessage('Incorrect, try again!')

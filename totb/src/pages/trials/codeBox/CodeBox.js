@@ -25,7 +25,7 @@ function CodeBox() {
     const [safeCodeBgColor, setSafeCodeBgColor] = useState('white')
     const [codeIsCorrect, setCodeIsCorrect] = useState(false)
 
-    const {level, setLevel} = useContext(GameContext)
+    const {setHasVisitorBook} = useContext(GameContext)
     const {bubbleText1, bubbleText2, bubbleText3, bubbleText4} = CodeBoxData
 
 
@@ -69,10 +69,7 @@ function CodeBox() {
     }
 
     function handleVisitorBookClick(){
-        
-        if(level < 1){
-            setLevel(1)
-        }
+        setHasVisitorBook(true)
     }
 
     return (

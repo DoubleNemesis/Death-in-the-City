@@ -7,12 +7,10 @@ import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../.
 import ProfilePic from '../../../images/janitor.png'
 import { orderEventsData } from '../../../data/lessonData'
 import { EventsContainer, ParagraphContainer } from './orderEventsComponents/OrderEventsComponents'
-import GameContext from '../../../context/GameContext'
 import MoveableEvents from './MoveableEvents'
 
 
 function OrderEvents() {
-    const { level, setLevel } = useContext(GameContext)
     const {orderEventsText} = orderEventsData
     return (
         <>

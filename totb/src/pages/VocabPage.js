@@ -79,9 +79,6 @@ function VocabPage() {
         })
     })
 
-    function handleGameEnd() {
-        history.push('/office')
-    }
 
     return (
         <div className="vocabPage">

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { history, useHistory } from 'react-router-dom'
 import GameContext from '../../context/GameContext'
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../generalComponents/InfoModal'
-import {officeCards} from '../../data/lessonData'
+import { officeCards } from '../../data/lessonData'
 import NextPageButton from './../../generalComponents/NextPageButton'
 import WitnessButton from './../../generalComponents/WitnessButton'
 
@@ -51,39 +51,44 @@ height: 100px;
 margin: .2em;
 background-color: pink;
 `
-
 function OfficeBase() {
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
+    const { hasVisitorBook, items } = useContext(GameContext)
 
-
-
-    const witnesses = officeCards.witnesses.map((item)=>{
-        console.log(item.image);
-        const destination = `/witness${item.id}`
-        return (
-            <WitnessCard><CardImageContainer><CardImage src={item.image}/></CardImageContainer><WitnessButton destination={destination}>{item.name}</WitnessButton></WitnessCard>
-        )
+    const witnesses = officeCards.witnesses.map((item) => {
+        if (hasVisitorBook) {
+            const destination = `/witness${item.id}`
+            return (
+                <WitnessCard><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination}>{item.name}</WitnessButton></WitnessCard>
+            )
+        }
+        else {
+            const destination = `/witness${item.id}`
+            return (
+                <WitnessCard><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton destination={destination}>{item.altName}</WitnessButton>: null}</WitnessCard>
+            )
+        }
     })
 
-    // let numberOfKnownArtefacts = 2
-    // let artefactArray = ['?', '?', '?', '?', '?', '?', '?']
-
-    // for (let i=0; i<numberOfKnownArtefacts; i++){
-    //     artefactArray[i] = officeCards['artefacts'][i]['name']
-    // }
-
-    // const artefacts = artefactArray.map((item)=>{
+    // const artefacts = officeCards.artefacts.map((item) => {
     //     return (
-    //         <ArtefactCard>{item}</ArtefactCard>
+    //         <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
     //     )
     // })
 
-    const artefacts = officeCards.artefacts.map((item)=>{
-        return (
-            <ArtefactCard><img height="50px" src={item.image}/><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
-        )
-    })
+    const artefacts = officeCards.artefacts.map((item) => {
+        if (items.indexOf(item.name.toString()) > -1){
+            return (
+                <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
+            )
+        }
+        else{
+            return (
+                <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}></WitnessButton></ArtefactCard>
+            )
+        }
 
+    })
 
 
 
@@ -105,8 +110,8 @@ function OfficeBase() {
                     </ToggleTaskInfo>
                 </ToggleContainer>
             </StyledModal>
-                {witnesses}
-                {artefacts}
+            {witnesses}
+            {artefacts}
             {/* <ActionCard >Map</ActionCard>
             <ActionCard >Ideas Board</ActionCard> */}
 

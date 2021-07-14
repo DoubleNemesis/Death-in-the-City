@@ -2,21 +2,26 @@ import { useState, useContext, useEffect } from 'react'
 import { List, arrayMove } from 'react-movable';
 import { orderEventsData } from '../../../data/lessonData'
 import NextPageButton from '../../../generalComponents/NextPageButton'
+import GameContext from '../../../context/GameContext'
 
 function MoveableEvents() {
+    const { items, setItems } = useContext(GameContext)
     let {eventsToOrder} = orderEventsData
     const {eventsCorrectOrder} = orderEventsData
     const [message, setMessage] = useState('')
-    const [items, setItems] = useState(eventsToOrder); 
+    const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder); 
     const [hasFinished, setHasFinished] = useState(false)
     const [isCorrect, setIsCorrect] = useState(false)
 
 
     useEffect(()=>{
         if(hasFinished){
-            if (eventsCorrectOrder.toString() === items.toString()){
+            if (eventsCorrectOrder.toString() === itemsToOrder.toString()){
                 setMessage('Correct')
                 setIsCorrect(true) 
+                let dummyItems = [...items]
+                dummyItems.push('Ordered Statement')
+                setItems(dummyItems)
             }
             else {
                 setMessage('Incorrect, try again')
@@ -24,7 +29,7 @@ function MoveableEvents() {
             }
         }
         // setMessage(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
-    },[items, hasFinished])
+    },[itemsToOrder, hasFinished])
 
     function handleCheck(){
         setHasFinished(true)
@@ -33,9 +38,9 @@ function MoveableEvents() {
     return (
         <>
         <List
-            values={items}
+            values={itemsToOrder}
             onChange={({oldIndex, newIndex }) => {
-                setItems(arrayMove(items, oldIndex, newIndex))
+                setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
             }
             }
             renderList={({ children, props }) => <ul {...props}>{children}</ul>}
