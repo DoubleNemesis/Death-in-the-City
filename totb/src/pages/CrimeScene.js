@@ -4,7 +4,11 @@ import { SpeechBubbleLeft } from './witness/witnessComponents/Questions'
 import { TextButton, TextButtonContainer } from '../generalComponents/SpeechTextButton'
 import { CrimeSceneData } from '../data/lessonData'
 import Janitor from '../images/janitor.png'
+import kitchen from '../images/kitchen.jpg'
+import windowView from '../images/windowView.jpg'
 import { clientData } from '../data/lessonData'
+import PageContainer from '../containers/PageContainer'
+import ImageContainer from '../containers/ImageContainer'
 
 function CrimeScene() {
     const { clientTitle, clientText } = clientData
@@ -14,7 +18,7 @@ function CrimeScene() {
     function handleTextButtonClick(e) {
         setBubbleTextToDisplay(parseInt(e.target.id))
     }
-
+// image change on click, nextpage button at end only
     return (
         <>
             <SpeechBubbleLeft image={Janitor}>
@@ -30,10 +34,12 @@ function CrimeScene() {
                     <TextButton id="3" bgcolor={bubbleTextToDisplay === 3 ? 'red' : null} onClick={handleTextButtonClick}>3</TextButton>
                 </TextButtonContainer>
             </SpeechBubbleLeft>
-            <NextPageButton destination="/officeBase">
+            <PageContainer>
+                <ImageContainer image={kitchen}/>
+            <NextPageButton destination="/officebase">
                 Go to office
             </NextPageButton>
-            {/* {images} */}
+            </PageContainer>
 
         </>
     )

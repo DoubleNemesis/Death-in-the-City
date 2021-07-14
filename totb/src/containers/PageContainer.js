@@ -3,7 +3,7 @@ import MainContainer from './MainContainer'
 
 const StyledContainer = styled.div`
 display: flex;
-width: 80%;
+width: 90%;
 border-radius: .3em;
 border: 1px solid #333;
 background-color: whitesmoke;
@@ -26,7 +26,11 @@ min-height: 100vh;
 
 @media(max-width:900px){
     margin-top: 4em;
-    width: 80%;
+    width: 100%;
+    min-height: unset;
+    flex-direction: column;
+    border-radius: unset;
+    border: unset;
 }
 
 `

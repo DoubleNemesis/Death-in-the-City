@@ -106,7 +106,7 @@ function CodeBox() {
                         </Safe>
                     </CodeBoxContainer>
                     {codeIsCorrect ? <NextPageButton destination="crimescene">Go to crime scene</NextPageButton> : null}
-                </Conversation>
+                </Conversation> 
 
         </>
 
