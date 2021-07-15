@@ -48,13 +48,15 @@ function App() {
   const [hasVisitorBook, setHasVisitorBook] = useState(false)
   const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
   const [items, setItems] = useState([])
+  const [collectedArtefacts, setCollectedArtefacts] = useState([])
   const { homeTitle, homeSubtitle } = homePageData
-
+  console.log(collectedArtefacts);
   const providedValues = {
     hasDoneVocab, setHasDoneVocab,
     hasVisitorBook, setHasVisitorBook,
     items, setItems,
-    isInstructionsModalDisplayed, setIsInstructionsModalDisplayed
+    isInstructionsModalDisplayed, setIsInstructionsModalDisplayed,
+    collectedArtefacts, setCollectedArtefacts
   }
 
   const { characterNames } = lessonData['characterNames'];
@@ -64,6 +66,7 @@ function App() {
   const { questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4, exitMessage4 } = lessonData['questionsWitness4'];
   const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5, exitMessage5 } = lessonData['questionsWitness5'];
   const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6, exitMessage6 } = lessonData['questionsWitness6'];
+  const { artefacts } = lessonData['officeCards'];
 
   return (
     <div className="outer">
@@ -152,7 +155,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky1">
-            <Sneaky title="" destination="shreddedletter" image={scroll} />
+            <Sneaky title="" artefactName={artefacts[0].name} image={scroll} />
           </Route>
           <Route path="/shreddedletter">
             <ShreddedLetter />

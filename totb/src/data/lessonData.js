@@ -136,7 +136,7 @@ export const officeCards = {
             'destination': 'shreddedletter',
         },
         {
-            'name': [`Corrected Letter`],
+            'name': [`Error Correction`],
             'id': [2],
             'image': artefactPlaceholder,
             'destination': 'errorcorrection',
@@ -428,7 +428,7 @@ export const questionsWitness5 = {
     witnessConversationArray5: [
         "Chey told me not to. He doesn't like me speaking to other men. Especially not detectives.",
         "I promise I won't tell him you spoke to me.",
-        "No. It's too dangerous. I can't help you",
+        "No. It's too dangerous. I can't help you.",
         "Not even two questions?",
         "No! Now go or I'll call Chey!"
     ],

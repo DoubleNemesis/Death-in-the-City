@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { history, useHistory } from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
 import bin from '../../images/bin.png'
@@ -9,6 +9,7 @@ import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import { clientData } from '../../data/lessonData'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witness/witnessComponents/Questions'
+import GameContext from '../../context/GameContext' 
 
 
 const openBinLid = keyframes`
@@ -93,15 +94,23 @@ animation-fill-mode: forwards;
 `
 const StyledFoundArtefact = styled.div`
 opacity: 0;
-top: -120px;
-left: 60px;
+top: -250px;
+left: 0;
+right: 0;
+margin: 5%;
+width: auto;
+font-size: 1.3rem;
 position: absolute;
-width: 200px;
+padding: 1em 0 0 0;
+text-align: center;
 background-color: white;
 animation: ${({isArtefactClicked})=>isArtefactClicked ? fadeIn : null} 1s;
 animation-delay: .1s;
 animation-fill-mode: forwards;
+border-radius: 5px;
+z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
 `
+
 
 const StyledBinContainer = styled.div`
 width: 300px;
@@ -120,6 +129,7 @@ margin-top: 7vh;
 `
 
 function Sneaky(props){
+    const {collectedArtefacts, setCollectedArtefacts} =useContext(GameContext)
     const [openBin, setOpenBin] = useState(false)
     const [isArtefactDisplayed, setIsArtefactDisplayed] = useState(false)
     const [isArtefactClicked, setIsArtefactClicked] = useState(false)
@@ -129,13 +139,14 @@ function Sneaky(props){
    function handleLidClick(){
         setOpenBin(true)
         setIsArtefactDisplayed(true)
-        setThought(`Oh! What's this!! This looks very interesting indeed...`)
+        setThought(`Oh! What's this!! This looks very interesting indeed...I'll click on it and take it with me...`)
     }
 
     function handleArtefactClick(){
         setIsArtefactClicked(true)
-
-        // ()=>history.push(`${props.destination}`)
+        let dummycollectedArtefacts = [...collectedArtefacts]
+        dummycollectedArtefacts.push(props.artefactName)
+        setCollectedArtefacts(dummycollectedArtefacts)
     }
 
     return(
@@ -143,9 +154,13 @@ function Sneaky(props){
             <YardContainer>
             <StyledBinContainer>
                 
-            <StyledBinArtefact src={props.image} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/>
-            <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>You found the artefact!</StyledFoundArtefact>
+            {openBin ? <StyledBinArtefact src={props.image} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}
             <StyledBinLid openBin={openBin} onClick={handleLidClick}/>
+            {isArtefactClicked ? <StyledFoundArtefact isArtefactClicked={isArtefactClicked}> 
+                You found the "{props.artefactName}" challenge!
+                <NextPageButton destination="officebase">Go to Office</NextPageButton>
+                </StyledFoundArtefact>
+                 : null}
             <StyledBin/>
             </StyledBinContainer>
             <ThoughtContainer><SpeechBubbleRight minHeight="90">{thought}</SpeechBubbleRight></ThoughtContainer>

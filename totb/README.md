@@ -1,17 +1,16 @@
-react witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
-text loveletter instructions "now click a symbol..."
+trial instructions "now click a symbol..."
 text make vocab relevant - shredded
 react add make your guess
 react credits footer???
 css codebox background
 React check error on clicking correct convo option and getting "incorrect"
 art/css create larger images of each trial / artefact pictures small/big
-react issue with bubble text corrected letter at the end
+react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh?
+react issue with bubble text error corrected  at the end and change btn text
 react moveableevents combine????
 react change witnesses on officebase to act like artefacts
 art hang names on doors?
-css artefacts glow/throb on discovery
-css artefacts click sign its been clicked
+css artefacts glow/throb on discovery??
 ???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
 ???? chey got something new with blackmail cash
 text first page blurb, instructions etc
@@ -19,6 +18,8 @@ link to vocab when done
 lose/win points?
 style task dialogue
 make it clear each artefact leads to a challenge
+scroll to top on door pages
+change wendy chat to docs report!
 
 scroll <a href="https://www.freepik.com/vectors/ribbon">Ribbon vector created by upklyak - www.freepik.com</a>
 

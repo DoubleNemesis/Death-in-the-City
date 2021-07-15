@@ -53,6 +53,7 @@ background-color: pink;
 function OfficeBase() {
     const {isInstructionsModalDisplayed, setIsInstructionsModalDisplayed} = useContext(GameContext)
     const { hasVisitorBook, items } = useContext(GameContext)
+    const { collectedArtefacts, setCollectedArtefacts } = useContext(GameContext)
 
     const witnesses = officeCards.witnesses.map((item) => {
         if (hasVisitorBook) {
@@ -69,19 +70,15 @@ function OfficeBase() {
         }
     })
 
-    // const artefacts = officeCards.artefacts.map((item) => {
-    //     return (
-    //         <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
-    //     )
-    // })
-
     const artefacts = officeCards.artefacts.map((item) => {
-        if (items.indexOf(item.name.toString()) > -1){
+        if (collectedArtefacts.indexOf(item.name) > -1){
+            console.log(true);
             return (
                 <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
             )
         }
         else{
+            console.log(false);
             return (
                 <ArtefactCard><img height="75px" src={scroll} /></ArtefactCard>
             )
