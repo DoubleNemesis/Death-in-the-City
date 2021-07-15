@@ -1,23 +1,26 @@
-artefacts glow/throb on discovery
-visitorbook click sign its been clicked
-witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
-loveletter instructions "now click a symbol..."
-make vocab relevant
-door image color per person
-sort out context / local storage
-add make your guess
-credits footer???
-first page blurb, instructions etc
-codebox background
-check error on clicking correct convo option and getting "incorrect"
-create larger images of each trial
-one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
-chey got something new with blackmail cash
-test out at end?
-artefact pictures small/big
-officebase ? image needs outline pic
-issue with bubble text corrected letter at the end
-moveableevents combine????
+react witness page should lead to another page or eg bin link / postman link (to get loveletter) to trial
+text loveletter instructions "now click a symbol..."
+text make vocab relevant - shredded
+react add make your guess
+react credits footer???
+css codebox background
+React check error on clicking correct convo option and getting "incorrect"
+art/css create larger images of each trial / artefact pictures small/big
+react issue with bubble text corrected letter at the end
+react moveableevents combine????
+react change witnesses on officebase to act like artefacts
+art hang names on doors?
+css artefacts glow/throb on discovery
+css artefacts click sign its been clicked
+???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
+???? chey got something new with blackmail cash
+text first page blurb, instructions etc
+link to vocab when done
+lose/win points?
+style task dialogue
+make it clear each artefact leads to a challenge
+
+scroll <a href="https://www.freepik.com/vectors/ribbon">Ribbon vector created by upklyak - www.freepik.com</a>
 
 
 window view Photo by <a href="https://unsplash.com/@jannerboy62?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Fewings</a> on <a href="https://unsplash.com/s/photos/view-from-window?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

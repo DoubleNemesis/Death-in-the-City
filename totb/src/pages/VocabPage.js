@@ -1,8 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { history, useHistory } from 'react-router-dom'
 import Container from '../containers/VocabContainer'
-import Title from '../generalComponents/Title'
-import SubTitle from '../generalComponents/SubTitle'
 import { vocabData as data } from '../data/lessonData'
 import GameContext from '../context/GameContext'
 import { SpeechBubbleLeft } from './witness/witnessComponents/Questions'
@@ -74,7 +72,7 @@ function VocabPage() {
                 else {
                     targetTile.classList.remove('selected')
                     selectedCards = []
-                }      //here
+                }     
             }
         })
     })
@@ -91,7 +89,7 @@ function VocabPage() {
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
                 </Container> :
                 <Container>
-                    <NextPageButton destination="officebase">Go!</NextPageButton>
+                    <NextPageButton destination="officebase">Go to the office!</NextPageButton>
                 </Container>
 
 

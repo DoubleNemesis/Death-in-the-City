@@ -19,7 +19,7 @@ function WitnessButton({ children, ...props }) {
 
     return (
   
-            <StyledButton onClick={()=>history.push(`${props.destination}`)}>{children}</StyledButton>
+            <StyledButton onClick={()=>history.push(`${props.destination}`)} disabled={props.isDisabled}>{children}</StyledButton>
 
     )
 

@@ -11,11 +11,13 @@ import { clientData } from '../../data/lessonData'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witness/witnessComponents/Questions'
 
 
-
 const openBinLid = keyframes`
 0% { top: -44px; left: 50px; }
 100% { top: -450px; left: -80px; }
-
+`
+const fadeIn = keyframes`
+0% { opacity: 0;}
+100% { opacity: 1;}
 `
 const rotateBin = keyframes`
 from { transform: rotateZ(0deg); }
@@ -70,7 +72,7 @@ background-image: url(${binlid});
 background-size: contain;
 background-repeat: no-repeat;
 animation: ${({openBin}) => openBin ? openBinLid : null} 4s;
-animation-delay: 2s;
+animation-delay: 0s;
 transform-origin: left;
 animation-fill-mode: forwards;
 -webkit-transform-style: preserve-3d;
@@ -78,19 +80,27 @@ animation-fill-mode: forwards;
     -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
 `
-const StyledBinArtefact = styled.div`
-display: ${({isArtefactDisplayed})=>isArtefactDisplayed ? 'block' : 'none'};
-top: -100px;
-left: 50px;
+const StyledBinArtefact = styled.img`
+opacity: 0;
+top: -120px;
+left: 120px;
+position: absolute;
+max-width: 80px;
+background-color: transparent;
+animation: ${({isArtefactDisplayed})=>isArtefactDisplayed ? fadeIn : null} 1s;
+animation-delay: .5s;
+animation-fill-mode: forwards;
+`
+const StyledFoundArtefact = styled.div`
+opacity: 0;
+top: -120px;
+left: 60px;
 position: absolute;
 width: 200px;
-min-width: 200px;
-height: 50px;
-min-height: 50px;
-background-color: red;
-/* background-image: url(${binlid});
-background-size: contain;
-background-repeat: no-repeat; */
+background-color: white;
+animation: ${({isArtefactClicked})=>isArtefactClicked ? fadeIn : null} 1s;
+animation-delay: .1s;
+animation-fill-mode: forwards;
 `
 
 const StyledBinContainer = styled.div`
@@ -106,27 +116,35 @@ background-color: transparent;
 
 const ThoughtContainer = styled.div`
 width: 100%;
-margin-top: 12vh;
+margin-top: 7vh;
 `
 
 function Sneaky(props){
     const [openBin, setOpenBin] = useState(false)
     const [isArtefactDisplayed, setIsArtefactDisplayed] = useState(false)
-    const [thought, setThought] = useState(`Hmmm....I wonder if there's anthing interesting in there...`)
+    const [isArtefactClicked, setIsArtefactClicked] = useState(false)
+    const [thought, setThought] = useState(`Time to get my hands dirty! (Click the lid to open the bin!)`)
     let history = useHistory()
 
    function handleLidClick(){
         setOpenBin(true)
         setIsArtefactDisplayed(true)
-        setThought(`Oh! What's this!!`)
+        setThought(`Oh! What's this!! This looks very interesting indeed...`)
     }
-console.log(props);
+
+    function handleArtefactClick(){
+        setIsArtefactClicked(true)
+
+        // ()=>history.push(`${props.destination}`)
+    }
 
     return(
         <>
             <YardContainer>
             <StyledBinContainer>
-            <StyledBinArtefact isArtefactDisplayed={isArtefactDisplayed} onClick={()=>history.push(`${props.destination}`)}/>
+                
+            <StyledBinArtefact src={props.image} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/>
+            <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>You found the artefact!</StyledFoundArtefact>
             <StyledBinLid openBin={openBin} onClick={handleLidClick}/>
             <StyledBin/>
             </StyledBinContainer>

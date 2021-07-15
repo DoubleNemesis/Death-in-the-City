@@ -77,7 +77,7 @@ export const vocabData = {
         `All I want you to do is Click on a word and then click on its synonym. Easy. Get this right and we're in business.`
     ],
     'bubbleText2': [
-        `Great, you passed the test! Now I'm happy for you to continue on your mission.`
+        `Great, you passed the test! Now head over to the office and I'll show you what's what.`
     ]
 }
 
@@ -96,30 +96,35 @@ export const officeCards = {
             'name': [`Chay Madz`],
             'id': [2],
             'image': [ChayPic],
+            'altName': ['Unknown'],
             'altImage':[questionMark],
         },
         {
             'name': [`Kirsten Stein`],
             'id': [3],
             'image': [KirstenPic],
+            'altName': ['Unknown'],
             'altImage':[questionMark],
         },
         {
             'name': [`Dallas Franks`],
             'id': [4],
             'image': [DallasPic],
+            'altName': ['Unknown'],
             'altImage':[questionMark],
         },
         {
             'name': [`Floe Light`],
             'id': [5],
             'image': [FloePic],
+            'altName': ['Unknown'],
             'altImage':[questionMark],
         },
         {
             'name': [`Wendy Rose`],
             'id': [6],
             'image': [WendyPic],
+            'altName': ['Unknown'],
             'altImage':[questionMark],
         },
     ],

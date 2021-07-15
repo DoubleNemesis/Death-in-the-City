@@ -6,13 +6,12 @@ import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '..
 import { officeCards } from '../../data/lessonData'
 import NextPageButton from './../../generalComponents/NextPageButton'
 import WitnessButton from './../../generalComponents/WitnessButton'
-
+import scroll from './../../images/scroll.png'
 
 const Container = styled.div`
 display: flex;
 flex-wrap: wrap;
 width: 100%;
-
 justify-content: center;
 `
 const WitnessCard = styled.div`
@@ -22,7 +21,7 @@ margin: .2em;
 background-color: skyblue;
 text-align: center;
 border-radius: 5px;
-border: 1px solid whitesmoke;
+border: 3px solid whitesmoke;
 `
 const CardImageContainer = styled.div`
 max-height: 100px;
@@ -38,11 +37,11 @@ flex-direction: column;
 width: 120px;
 height: 100px;
 margin: .2em;
-background-color: midnightblue;
+background-color: #333;
 justify-content: center;
 align-items: center;
 color: white;
-border: 1px solid whitesmoke;
+border: 3px solid whitesmoke;
 border-radius: 5px;
 `
 const ActionCard = styled.div`
@@ -52,20 +51,20 @@ margin: .2em;
 background-color: pink;
 `
 function OfficeBase() {
-    const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
+    const {isInstructionsModalDisplayed, setIsInstructionsModalDisplayed} = useContext(GameContext)
     const { hasVisitorBook, items } = useContext(GameContext)
 
     const witnesses = officeCards.witnesses.map((item) => {
         if (hasVisitorBook) {
             const destination = `/witness${item.id}`
             return (
-                <WitnessCard><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination}>{item.name}</WitnessButton></WitnessCard>
+                <WitnessCard><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination} isDisabled={false}>{item.name}</WitnessButton></WitnessCard>
             )
         }
         else {
             const destination = `/witness${item.id}`
             return (
-                <WitnessCard><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton destination={destination}>{item.altName}</WitnessButton>: null}</WitnessCard>
+                <WitnessCard><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton destination={destination} >{item.altName}</WitnessButton>: null}</WitnessCard>
             )
         }
     })
@@ -84,7 +83,7 @@ function OfficeBase() {
         }
         else{
             return (
-                <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}></WitnessButton></ArtefactCard>
+                <ArtefactCard><img height="75px" src={scroll} /></ArtefactCard>
             )
         }
 
@@ -96,12 +95,12 @@ function OfficeBase() {
 
         <Container>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
-                <h2>Your Office</h2>
+                <h2>The Office</h2>
                 <ul>
-                    <li> See the witnesses you have interviewed.</li>
-                    <li> Reexamine artefacts you have found.</li>
-                    <li> View the map and find your way to witnesses.</li>
-                    <li> View your ideas board and make notes.</li>
+                    <li> Click on a witness to interview them.</li>
+                    <li> New witnesses will appear as they become available.</li>
+                    <li> Any artefacts you find will appear here too.</li>
+                    <li> Click on an artefact to re-examine it.</li>
                 </ul>
                 <ToggleContainer>
                     <ToggleTaskInfo

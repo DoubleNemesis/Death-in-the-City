@@ -4,8 +4,6 @@ import NextPageButton from '../generalComponents/NextPageButton'
 import { SpeechBubbleLeft, SpeechBubbleRight } from './witness/witnessComponents/Questions'
 import { TextButton, TextButtonContainer } from '../generalComponents/SpeechTextButton'
 import { CrimeSceneData } from '../data/lessonData'
-import doorGrey from '../images/doorGrey.png'
-import chaymadz from '../images/chaymadz.jpg'
 import { clientData } from '../data/lessonData'
 
 const OpenDoor = keyframes`
@@ -24,7 +22,7 @@ background-color: white;
 
 const StyledDoor = styled.div`
 position: absolute;
-background-image: url(${doorGrey});
+background-image: url(${({doorImg})=>doorImg});
 background-color: #999;
 width: 100%;
 min-height: 89vh;
@@ -44,8 +42,6 @@ border: 1px solid white;
 const WitnessImage = styled.img`
 max-width: 100%;
 `
-//cut out images
-//intro to flow into convo onclikc
 
 
 function Door(props) {
@@ -60,9 +56,8 @@ function Door(props) {
     return (
         <>
 
-            <StyledDoor isDoorOpen={props.isDoorOpen}/>
+            <StyledDoor isDoorOpen={props.isDoorOpen} doorImg={props.doorImg}/>
             <Inside>
-                {/* <WitnessImage src={chaymadz}/> */}
                 <SpeechBubbleRight>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
             </Inside>
                

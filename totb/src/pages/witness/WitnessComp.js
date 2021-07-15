@@ -89,13 +89,13 @@ function WitnessComp(props) {
 
     return (
         <>
-            <Door isDoorOpen={isDoorOpen} speechBubbleText={props.speechBubbleText}/>
+            <Door isDoorOpen={isDoorOpen} speechBubbleText={props.speechBubbleText} doorImg={props.doorImg}/>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>
                     <li> Read the text in the speech bubble.</li>
                     <li> Choose a reply from the list to continue the conversation.</li>
-                    <li> Only one question is grammatically correct. </li>
+                    <li> Only one answer is grammatically correct. </li>
                     <li> If you choose the wrong answer, you lose a point.</li>
                 </ul>
                 <ToggleContainer>
