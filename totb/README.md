@@ -2,23 +2,20 @@
     heavy
 react add make your guess
 react credits footer???
-React check error on clicking correct convo option and getting "incorrect"
-react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh?
+witness starts convo with bigger picture maybe? Full length page? "who are you" then hit button to intro self.
 text first page blurb, instructions etc make it clear each artefact leads to a challenge
 link to vocab when done
-lose/win points?
-witness starts convo with bigger picture maybe? Full length page?
-conditional rendering so nothing visible below door?
-scroll to top on door pages
+lose/win points? where are points displayed?
 
     light css
 css codebox background
 style task dialogue
 
-    light bugs
+    light bugs/fixes
 react issue with bubble text error corrected  at the end and change btn text
 react moveableevents combine????
-
+React check error on clicking correct convo option and getting "incorrect"
+react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh? context: hasGot vs hasDone
 
     Maybe
 ???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!

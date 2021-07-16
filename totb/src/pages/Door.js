@@ -35,7 +35,7 @@ animation: ${({ isDoorOpen }) => isDoorOpen ? OpenDoor : null} 3s;
 transform-origin: left;
 transform-style: preserve-3d;
 animation-fill-mode: forwards;
-animation-delay: 2s;
+animation-delay: 1s;
 z-index: 4;
 border: 1px solid white;
 `
@@ -92,23 +92,21 @@ const DoorBell = styled.button`
 
 
 function Door(props) {
-    // const { clientTitle, clientText } = clientData
-    // const { bubbleText1, bubbleText2, bubbleText3, bubbleText4 } = CrimeSceneData
-    // const [bubbleTextToDisplay, setBubbleTextToDisplay] = useState(1)
     const [isDoorOpen, setIsDoorOpen] = useState(false)
 
     function handleDoorBellClick() {
-        // setBubbleTextToDisplay(parseInt(e.target.id))
         setIsDoorOpen(true)
+        setTimeout(() => {
+            props.setDoorWasOpened(true)
+        }, 1200)
     }
 
     return (
         <>
-
             <StyledDoor isDoorOpen={isDoorOpen} doorImg={props.doorImg}>
                 <DoorSign>{props.doorTitle}'s House</DoorSign>
                 <DoorBellBox onClick={handleDoorBellClick}>
-                <DoorBell></DoorBell>
+                    <DoorBell></DoorBell>
                 </DoorBellBox>
             </StyledDoor>
             <Inside>

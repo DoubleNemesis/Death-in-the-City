@@ -7,8 +7,6 @@ import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../.
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
 import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from './witnessComponents/Layout'
-//import ProfilePic from '../images/janitor.png'
-//import { questionsWit1, questionsWit1_2, witnessConversationArray1 as conversationArray } from '../data/lessonData'
 
 let counter = 0
 let fullConversation = []
@@ -20,13 +18,12 @@ function WitnessComp(props) {
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
+    const [doorWasOpened, setDoorWasOpened] = useState(false)
     let history = useHistory()
-    // let destination = props.trialURL
-    // let exitMessage = props.exitMessage
+
 
     useEffect(() => {
         function assignQuestionsList(dat) {
-            console.log('i ran');
             let questionsList = dat.map((item, index) => {
                 return <QuestionOption key={`question${index}`} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></QuestionOption>
             })
@@ -88,7 +85,7 @@ function WitnessComp(props) {
 
     return (
         <>
-            <Door speechBubbleText={props.speechBubbleText} doorImg={props.doorImg} doorTitle={props.doorTitle}/>
+            <Door speechBubbleText={props.speechBubbleText} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened}/>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>
@@ -107,6 +104,8 @@ function WitnessComp(props) {
                 </ToggleContainer>
             </StyledModal>
 
+            {doorWasOpened ? 
+            <>
             <Conversation>
                 {conversation}
             </Conversation>
@@ -115,7 +114,9 @@ function WitnessComp(props) {
                     {rightWrong}
                 </InfoBox>
                 {questions}
-            </QuestionOptions>
+            </QuestionOptions> 
+            </>
+            : null}
         </>
 
     )
