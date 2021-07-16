@@ -1,25 +1,44 @@
-trial instructions "now click a symbol..."
-text make vocab relevant - shredded
+
+    heavy
 react add make your guess
 react credits footer???
-css codebox background
 React check error on clicking correct convo option and getting "incorrect"
-art/css create larger images of each trial / artefact pictures small/big
 react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh?
-react issue with bubble text error corrected  at the end and change btn text
-react moveableevents combine????
-react change witnesses on officebase to act like artefacts
-art hang names on doors?
-css artefacts glow/throb on discovery??
-???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
-???? chey got something new with blackmail cash
-text first page blurb, instructions etc
+text first page blurb, instructions etc make it clear each artefact leads to a challenge
 link to vocab when done
 lose/win points?
-style task dialogue
-make it clear each artefact leads to a challenge
+witness starts convo with bigger picture maybe? Full length page?
+conditional rendering so nothing visible below door?
 scroll to top on door pages
+
+    light css
+css codebox background
+style task dialogue
+
+    light bugs
+react issue with bubble text error corrected  at the end and change btn text
+react moveableevents combine????
+
+
+    Maybe
+???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
+???? chey got something new with blackmail cash
+
+    Text
+check trial instructions "now click a symbol..."
+text make vocab relevant - shredded
 change wendy chat to docs report!
+how do you spell chay chey
+
+
+
+
+
+
+
+
+secret code https://imgur.com/HqBBy
+door sign <a href='https://www.freepik.com/vectors/work'>Work vector created by freepik - www.freepik.com</a>
 
 scroll <a href="https://www.freepik.com/vectors/ribbon">Ribbon vector created by upklyak - www.freepik.com</a>
 

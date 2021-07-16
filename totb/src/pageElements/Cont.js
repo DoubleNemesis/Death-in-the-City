@@ -13,7 +13,6 @@ background-color: white;
 function Cont({children}){
     return(
         <StyledHCont>
-
         {children}
         <div><input/></div>
         </StyledHCont>

@@ -53,26 +53,27 @@ background-color: pink;
 function OfficeBase() {
     const {isInstructionsModalDisplayed, setIsInstructionsModalDisplayed} = useContext(GameContext)
     const { hasVisitorBook, items } = useContext(GameContext)
-    const { collectedArtefacts, setCollectedArtefacts } = useContext(GameContext)
+    const { collectedArtefacts } = useContext(GameContext)
+    const { collectedWitnesses } = useContext(GameContext)
 
     const witnesses = officeCards.witnesses.map((item) => {
-        if (hasVisitorBook) {
+        if (collectedWitnesses.indexOf(item.name) > -1){
             const destination = `/witness${item.id}`
             return (
                 <WitnessCard><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination} isDisabled={false}>{item.name}</WitnessButton></WitnessCard>
             )
         }
         else {
-            const destination = `/witness${item.id}`
             return (
-                <WitnessCard><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton destination={destination} >{item.altName}</WitnessButton>: null}</WitnessCard>
+                <WitnessCard><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton isDisabled={true}>{item.altName}</WitnessButton>: null}</WitnessCard>
             )
         }
     })
 
+    console.log(collectedWitnesses);
+
     const artefacts = officeCards.artefacts.map((item) => {
         if (collectedArtefacts.indexOf(item.name) > -1){
-            console.log(true);
             return (
                 <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
             )

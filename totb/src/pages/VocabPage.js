@@ -6,9 +6,11 @@ import GameContext from '../context/GameContext'
 import { SpeechBubbleLeft } from './witness/witnessComponents/Questions'
 import NextPageButton from '../generalComponents/NextPageButton'
 import client from '../images/client.jpg'
+import { officeCards } from '../data/lessonData'
 
 function VocabPage() {
     const { hasDoneVocab, setHasDoneVocab } = useContext(GameContext)
+    const { collectedWitnesses, setCollectedWitnesses } = useContext(GameContext)
     const {bubbleText1, bubbleText2} = data
     console.log(hasDoneVocab);
     let history = useHistory()
@@ -50,6 +52,9 @@ function VocabPage() {
                             if (counter === 10) {
                                 console.log('finished');
                                 setHasDoneVocab(true)
+                                let dummyCollectedWitnesses = [...collectedWitnesses]
+                                dummyCollectedWitnesses.push(officeCards.witnesses[0].name)
+                                setCollectedWitnesses(dummyCollectedWitnesses)
                             }
                             else {
                                 counter++

@@ -24,6 +24,10 @@ const rotateBin = keyframes`
 from { transform: rotateZ(0deg); }
 to { transform: rotateZ(90deg); }
 `
+const animateBorder = keyframes`
+from { box-shadow: 0px 0px 10px 5px red; }
+to { box-shadow: 0px 0px 10px 5px orange; }
+`
 
 const YardContainer = styled.div`
 display: flex;
@@ -88,9 +92,10 @@ left: 120px;
 position: absolute;
 max-width: 80px;
 background-color: transparent;
-animation: ${({isArtefactDisplayed})=>isArtefactDisplayed ? fadeIn : null} 1s;
-animation-delay: .5s;
-animation-fill-mode: forwards;
+animation: ${({isArtefactDisplayed})=>isArtefactDisplayed ? fadeIn : null} 1s .5s forwards, ${({isArtefactDisplayed})=>isArtefactDisplayed ? animateBorder : null} 2s ease-in-out infinite alternate ;
+/* animation-delay: .5s;
+animation-fill-mode: forwards; */
+box-shadow: 0px 0px 40px 10px red;
 `
 const StyledFoundArtefact = styled.div`
 opacity: 0;
@@ -154,7 +159,7 @@ function Sneaky(props){
             <YardContainer>
             <StyledBinContainer>
                 
-            {openBin ? <StyledBinArtefact src={props.image} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}
+            {openBin ? <StyledBinArtefact src={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}
             <StyledBinLid openBin={openBin} onClick={handleLidClick}/>
             {isArtefactClicked ? <StyledFoundArtefact isArtefactClicked={isArtefactClicked}> 
                 You found the "{props.artefactName}" challenge!

@@ -102,7 +102,7 @@ function ErrorCorrection() {
         if (count === 0){
             setIsComplete2(true)
             let dummyItems = [...items]
-            dummyItems.push('Corrected Letter')
+            dummyItems.push('Errror Correction')
             setItems(dummyItems)
         }
         else{

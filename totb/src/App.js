@@ -38,28 +38,35 @@ import doorRed from './images/doorRed.png'
 import doorWhite from './images/doorWhite.png'
 import doorYellow from './images/doorYellow.png'
 import scroll from './images/scroll.png'
+import shreddedletterPic from './images/shreddedletter.png'
+import errorcorrectionPic from './images/errorcorrection.png'
+import secretcodePic from './images/secretcode.png'
+import policestatementPic from './images/policestatement.png'
+import medicalreportPic from './images/medicalreport.png'
 
 import GameContext from './context/GameContext'
 
 
 function App() {
 
-  const [hasDoneVocab, setHasDoneVocab] = useState(true)
+  const [hasDoneVocab, setHasDoneVocab] = useState(false)
   const [hasVisitorBook, setHasVisitorBook] = useState(false)
   const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
   const [items, setItems] = useState([])
   const [collectedArtefacts, setCollectedArtefacts] = useState([])
+  const [collectedWitnesses, setCollectedWitnesses] = useState([])
   const { homeTitle, homeSubtitle } = homePageData
-  console.log(collectedArtefacts);
   const providedValues = {
     hasDoneVocab, setHasDoneVocab,
     hasVisitorBook, setHasVisitorBook,
     items, setItems,
     isInstructionsModalDisplayed, setIsInstructionsModalDisplayed,
-    collectedArtefacts, setCollectedArtefacts
+    collectedArtefacts, setCollectedArtefacts,
+    collectedWitnesses, setCollectedWitnesses
   }
 
   const { characterNames } = lessonData['characterNames'];
+  const { characterFirstNames } = lessonData['characterFirstNames'];
   const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1, exitMessage1, speechBubbleText1 } = lessonData['questionsWitness1'];
   const { questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2, exitMessage2 } = lessonData['questionsWitness2'];
   const { questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3, exitMessage3 } = lessonData['questionsWitness3'];
@@ -133,6 +140,7 @@ function App() {
               exitMessage={exitMessage1}
               speechBubbleText={speechBubbleText1}
               doorImg={doorGrey}
+              
 
             />
           </Route>
@@ -152,10 +160,11 @@ function App() {
               trialURL={trialURL2}
               exitMessage={exitMessage2}
               doorImg={doorBlue}
+              doorTitle={characterFirstNames[1]}
             />
           </Route>
           <Route path="/sneaky1">
-            <Sneaky title="" artefactName={artefacts[0].name} image={scroll} />
+            <Sneaky title="" artefactName={artefacts[0].name} artefactImage={shreddedletterPic} />
           </Route>
           <Route path="/shreddedletter">
             <ShreddedLetter />

@@ -7,6 +7,11 @@ import FloePic from '../images/floe.jpg'
 import WendyPic from '../images/wendy.jpg'
 import questionMark from '../images/questionMark.jpg'
 import artefactPlaceholder from '../images/artefactPlaceholder.jpg'
+import shreddedletterPic from '../images/shreddedletter.png'
+import errorcorrectionPic from '../images/errorcorrection.png'
+import secretcodePic from '../images/secretcode.png'
+import policestatementPic from '../images/policestatement.png'
+import medicalreportPic from '../images/medicalreport.png'
 
 export const homePageData = {
     homeTitle: [`Murder in the City`],
@@ -44,6 +49,16 @@ export const characterNames = {
         'Dallas Franks',
         'Floe Light',
         'Wendy Rose'
+    ]
+}
+export const characterFirstNames = {
+    characterFirstNames: [
+        'Tony',
+        'Chay',
+        'Kirsten',
+        'Dallas',
+        'Floe',
+        'Wendy'
     ]
 }
 
@@ -89,8 +104,8 @@ export const officeCards = {
             'name': [`Tony Monceto`],
             'id': [1],
             'image': [TonyPic],
-            'altName':['Tony Monceto'],
-            'altImage':[TonyPic],
+            'altName':['unknown'],
+            'altImage':[questionMark],
         },
         {
             'name': [`Chay Madz`],
@@ -132,31 +147,31 @@ export const officeCards = {
         {
             'name': [`Shredded Letter`],
             'id': [1],
-            'image': artefactPlaceholder,
+            'image': shreddedletterPic,
             'destination': 'shreddedletter',
         },
         {
             'name': [`Error Correction`],
             'id': [2],
-            'image': artefactPlaceholder,
+            'image': errorcorrectionPic,
             'destination': 'errorcorrection',
         },
         {
             'name': [`Love Letter`],
             'id': [3],
-            'image': artefactPlaceholder,
+            'image': secretcodePic,
             'destination': 'loveletter',
         },
         {
             'name': [`Ordered Statement`],
             'id': [4],
-            'image': artefactPlaceholder,
+            'image': policestatementPic,
             'destination': 'orderevents',
         },
         {
             'name': [`Redacted Statement`],
             'id': [5],
-            'image': artefactPlaceholder,
+            'image': medicalreportPic,
             'destination': 'redacted',
         },
     ],

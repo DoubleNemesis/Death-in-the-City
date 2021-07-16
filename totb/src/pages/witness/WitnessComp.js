@@ -20,7 +20,6 @@ function WitnessComp(props) {
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
-    const [isDoorOpen, setIsDoorOpen] = useState(false)
     let history = useHistory()
     // let destination = props.trialURL
     // let exitMessage = props.exitMessage
@@ -89,7 +88,7 @@ function WitnessComp(props) {
 
     return (
         <>
-            <Door isDoorOpen={isDoorOpen} speechBubbleText={props.speechBubbleText} doorImg={props.doorImg}/>
+            <Door speechBubbleText={props.speechBubbleText} doorImg={props.doorImg} doorTitle={props.doorTitle}/>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>
@@ -102,7 +101,6 @@ function WitnessComp(props) {
                 <ToggleTaskInfo
                     onClick={() => {
                         setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)
-                        setIsDoorOpen(true)
                         }}>
                     Start
                 </ToggleTaskInfo>
