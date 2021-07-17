@@ -92,12 +92,11 @@ export const vocabData = {
         `All I want you to do is Click on a word and then click on its synonym. Easy. Get this right and we're in business.`
     ],
     'bubbleText2': [
-        `Great, you passed the test! Now head over to the office and I'll show you what's what.`
+        `Great, you passed the test! Here are the words/synonyms side-by-side if you want to take notes. Now head over to the office and I'll show you what's what.`
     ]
 }
 
 //office specific
-
 export const officeCards = {
     'witnesses': [
         {
@@ -441,11 +440,11 @@ export const questionsWitness5 = {
         ["Roughly two questions?", 'fail']
     ],
     witnessConversationArray5: [
-        "Chey told me not to. He doesn't like me speaking to other men. Especially not detectives.",
+        "Chay told me not to. He doesn't like me speaking to other men. Especially not detectives.",
         "I promise I won't tell him you spoke to me.",
         "No. It's too dangerous. I can't help you.",
         "Not even two questions?",
-        "No! Now go or I'll call Chey!"
+        "No! Now go or I'll call Chay!"
     ],
     trialURL5: [
         'sneaky4'
@@ -534,7 +533,7 @@ export const CrimeSceneData = {
 }
 
 
-//tornLetter chey madz
+//tornLetter Chay madz
 
 export const TornLetterPiecesData = [
     "When the lights went out, we ",
@@ -543,13 +542,13 @@ export const TornLetterPiecesData = [
     "It was Lexi's first dinner party",
     "since recovering from Covid19",
     "but I don't know who moved it",
-    "I had heard Lexi and Chey",
+    "I had heard Lexi and Chay",
     "arguing earlier in the evening",
     "Floe's eyes were red as if she'd",
     "been crying before she arrived",
     "Lexi Grey went into the kitchen",
     "to get everyone some drinks",
-    "You could tell that Chey was",
+    "You could tell that Chay was",
     "really angry for some reason."
 ]
 
@@ -566,13 +565,13 @@ export const ShreddedLetterPiecesData = {
         "It was Lexi's first dinner party",
         "since recovering from Covid19",
         "but I don't know who moved it",
-        "I had heard Lexi and Chey",
+        "I had heard Lexi and Chay",
         "arguing earlier in the evening",
         "Floe's eyes were red as if she'd",
         "been crying before she arrived",
         "Lexi Grey went into the kitchen",
         "to get everyone some drinks",
-        "You could tell that Chey was",
+        "You could tell that Chay was",
         "really angry for some reason."
     ],
     eventsCorrectOrder: [
@@ -582,13 +581,13 @@ export const ShreddedLetterPiecesData = {
         "It was Lexi's first dinner party",
         "since recovering from Covid19",
         "but I don't know who moved it",
-        "I had heard Lexi and Chey",
+        "I had heard Lexi and Chay",
         "arguing earlier in the evening",
         "Floe's eyes were red as if she'd",
         "been crying before she arrived",
         "Lexi Grey went into the kitchen",
         "to get everyone some drinks",
-        "You could tell that Chey was",
+        "You could tell that Chay was",
         "really angry for some reason."
     ]
 }
@@ -604,7 +603,7 @@ export const ErrorCorrectionData = {
     ],
     sentences: [
         ["I saw Lexi and Floe holding hands under the table.", "0", false],
-        ["I don't really knew Chey very well.", "1", false],
+        ["I don't really knew Chay very well.", "1", false],
         ["Lexi seemed very relaxing and happy.", "2", false],
         ["Lexi made a joke about still having Covid when he coughed.", "3", false],
         ["Lexi was a good man. He was my friend.", "4", false],
@@ -614,7 +613,7 @@ export const ErrorCorrectionData = {
         ["1", "2", "5"]
     ],
     incorrectAndCorrected: [
-        ["I don't really knew Chey very well", "0", "I don't really know Chey very well", false],
+        ["I don't really knew Chay very well", "0", "I don't really know Chay very well", false],
         ["Lexi seemed very relaxing and happy", "1", "Lexi seemed very relaxed and happy", false],
         ["I didn't see nothing of the crime because it was dark", "2", "I didn't see anything of the crime because it was dark", false],
     ]
@@ -648,12 +647,12 @@ export const orderEventsData = {
     ]
 }
 
-//loveletter floe : chey: i will kill any man you go out with
+//loveletter floe : Chay: i will kill any man you go out with
 export const loveLetterData = {
     instructions: ['Break the word code'],
     successMessageText: ['Amazing! Click here to see the full letter!'],
     loveLetterCode: [`Dear Floe, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
-    loveLetterFull: [`Dear Floe I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chey.`],
+    loveLetterFull: [`Dear Floe I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chay.`],
     symbols: [
         ['a', '8955', false, false],
         ['b', '8706', false, false],
@@ -729,7 +728,7 @@ export const redactedData = {
 export const RedactedComp = (props) => {
     return (
         <div>
-            I first met Chey when he came into my clinic. He was having problems <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> his back.
+            I first met Chay when he came into my clinic. He was having problems <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> his back.
             I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy he is cripled <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> pain.
             He probably sustained this injury by working out in the gym without warming <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} />.
             Although he looks strong, he is physically too weak to lift much more than a dinner plate. He should <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} /> alcohol

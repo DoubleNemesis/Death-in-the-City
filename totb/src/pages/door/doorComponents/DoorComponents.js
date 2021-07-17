@@ -1,11 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { useState } from 'react'
-import NextPageButton from '../generalComponents/NextPageButton'
-import { SpeechBubbleLeft, SpeechBubbleRight } from './witness/witnessComponents/Questions'
-import { TextButton, TextButtonContainer } from '../generalComponents/SpeechTextButton'
-import { CrimeSceneData } from '../data/lessonData'
-import { clientData } from '../data/lessonData'
-import doorsign from './../images/doorsign.png'
+import doorsign from '../../../images/doorsign.png'
 
 const OpenDoor = keyframes`
 from { transform: rotateY(0deg); }
@@ -16,12 +10,12 @@ from { transform: rotateY(120deg); }
 to { transform: rotateY(0deg); }
 `
 
-const Inside = styled.div`
+export const Inside = styled.div`
 width: 100%;
 background-color: white;
 `
 
-const StyledDoor = styled.div`
+export const StyledDoor = styled.div`
 position: absolute;
 background-image: url(${({ doorImg }) => doorImg});
 background-color: #999;
@@ -40,7 +34,7 @@ z-index: 4;
 border: 1px solid white;
 `
 
-const DoorSign = styled.div`
+export const DoorSign = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
@@ -52,7 +46,7 @@ margin: 2em;
 color: white;
 font-size: 1.4rem;
 `
-const DoorBellBox = styled.div`
+export const DoorBellBox = styled.div`
 /* background-image: url(${doorsign});
 background-size: contain; */
 display: flex;
@@ -70,7 +64,7 @@ font-size: 1.4rem;
 border: 2px solid skyblue;
 box-shadow: 2px 2px 4px #333;
 `
-const DoorBell = styled.button`
+export const DoorBell = styled.button`
   background-color: red;
   border: none;
   color: white;
@@ -89,33 +83,32 @@ const DoorBell = styled.button`
     background-color: darkorange;
   }
 `
+const WitnessIntroContainer = styled.div`
+display: flex;
+width: 100%;
+background-color: white;
+min-height: 200px;
+padding: .5em;
+`
+const WitnessImage = styled.img`
+max-width: 40%;
+padding: .5em;
+`
+const WitnessText = styled.div`
+max-width: 40%;
+padding: .5em;
 
-
-function Door(props) {
-    const [isDoorOpen, setIsDoorOpen] = useState(false)
-
-    function handleDoorBellClick() {
-        setIsDoorOpen(true)
-        setTimeout(() => {
-            props.setDoorWasOpened(true)
-        }, 1200)
-    }
-
-    return (
-        <>
-            <StyledDoor isDoorOpen={isDoorOpen} doorImg={props.doorImg}>
-                <DoorSign>{props.doorTitle}'s House</DoorSign>
-                <DoorBellBox onClick={handleDoorBellClick}>
-                    <DoorBell></DoorBell>
-                </DoorBellBox>
-            </StyledDoor>
-            <Inside>
-                <SpeechBubbleRight>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
-            </Inside>
-
-
-        </>
-    )
+h3{
+    font-size: 1.3rem;
 }
 
-export default Door
+`
+
+export const WitnessIntroBox = (props)=>{
+    return(
+        <WitnessIntroContainer>
+            <WitnessImage src={props.personImage}/>
+            <WitnessText><h3>Witness Info</h3>{props.personText}</WitnessText>
+        </WitnessIntroContainer>
+    )
+}

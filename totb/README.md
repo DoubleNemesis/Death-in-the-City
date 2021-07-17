@@ -1,21 +1,16 @@
-
     heavy
-react add make your guess
-react credits footer???
-witness starts convo with bigger picture maybe? Full length page? "who are you" then hit button to intro self.
-text first page blurb, instructions etc make it clear each artefact leads to a challenge
-link to vocab when done
-lose/win points? where are points displayed?
 
-    light css
-css codebox background
+    light css / images
+css trial backgrounds
 style task dialogue
+pic without background and head shots for messages?
+
 
     light bugs/fixes
 react issue with bubble text error corrected  at the end and change btn text
-react moveableevents combine????
 React check error on clicking correct convo option and getting "incorrect"
 react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh? context: hasGot vs hasDone
+disable moveable events on correct?
 
     Maybe
 ???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
@@ -26,6 +21,9 @@ check trial instructions "now click a symbol..."
 text make vocab relevant - shredded
 change wendy chat to docs report!
 how do you spell chay chey
+add credits to credits page
+sprt out footer links
+text first page blurb, instructions etc make it clear each artefact leads to a challenge
 
 
 

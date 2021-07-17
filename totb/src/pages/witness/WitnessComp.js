@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import PageContainer from './../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
-import Door from '../Door'
+import Door from '../door/Door'
 import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
@@ -85,7 +85,7 @@ function WitnessComp(props) {
 
     return (
         <>
-            <Door speechBubbleText={props.speechBubbleText} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened}/>
+            <Door speechBubbleText={props.speechBubbleText} personText={props.personText} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened}/>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>

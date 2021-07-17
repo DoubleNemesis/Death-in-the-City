@@ -3,8 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react'
 import VocabPage from './pages/VocabPage'
 import Home from './pages/Home'
-import Door from './pages/Door'
+import Door from './pages/door/Door'
 import Start from './pages/Start'
+import Footer from './pages/Footer'
+import Credits from './pages/Credits'
 import Office from './pages/Office'
 import OfficeBase from './pages/office/Office'
 // import Witness from './pages/witness/Witness'
@@ -136,12 +138,11 @@ function App() {
               questionsWit2={questionsWitness1_2}
               conversationArray={witnessConversationArray1}
               personImage={TonyPic}
+              personText="This is my witness backstory"
               trialURL={trialURL1}
               exitMessage={exitMessage1}
               speechBubbleText={speechBubbleText1}
               doorImg={doorGrey}
-              
-
             />
           </Route>
           <Route path="/codebox">
@@ -244,12 +245,12 @@ function App() {
           <Route path="/endpage">
             <EndPage />
           </Route>
-
-
-
+          <Route path="/credits">
+            <Credits />
+          </Route>
         </GameContext.Provider>
       </Router>
-
+      <Footer/>
     </div>
   );
 }
