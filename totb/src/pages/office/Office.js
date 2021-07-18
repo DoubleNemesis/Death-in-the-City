@@ -71,6 +71,7 @@ function OfficeBase() {
     })
 
     console.log(collectedWitnesses);
+    console.log(collectedArtefacts);
 
     const artefacts = officeCards.artefacts.map((item) => {
         if (collectedArtefacts.indexOf(item.name) > -1){

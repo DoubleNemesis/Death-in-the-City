@@ -1,18 +1,15 @@
     heavy
 shreddedletter is a mess - smaller, fewer, better aligned, closer together,  make sentences flow and maybe clear which one is first.
 
-
     light css / images
 css trial backgrounds
 style task/office dialogue
 pic without background and head shots for messages?
 @media for very narrow screens
-doorbell style?
-red highlight persists on dialogues after error - delete the red
 style the artefact found pup up
 
+
     light bugs/fixes
-add names to door sign's - app props
 !!!!! React check error on clicking correct convo option and getting "incorrect"
 react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh? context: hasGot vs hasDone
 disable moveable events on correct?
@@ -21,24 +18,29 @@ scroll after correct option? fade in? investigate
 pop up confirms visitors book taken
 remove 123 in speech bubble after visitorbook taken
 footer covers dialogues...use flexbox or another way?
-dallas  read statement? needs bin? gets extra info for correct order?
+where witness hands over info, just do pop up that challenge found (with icon) and lead to sneaky.
+dallas gets extra info for correct order?
+kirste dialogue needs work - after trial -> recap what she told us -> bin and photo? bonus for getting trial right?
+office link to guess page at end
+office artefacts not showing up
 
-    Maybe
-???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
-???? chey got something new with blackmail cash
 
     Text
 first page blurb, instructions, graphics - footer at foot 
-etc make it clear each artefact leads to a challenge
-check trial instructions "now click a symbol..."
+make it clear each artefact leads to a challenge
+trial instructions needed! "now click a symbol..."
 text make vocab relevant - shredded
 change wendy chat to doctor's report!
 add credits to credits page
 sort out footer links
 office/task instructions pop up check
 witness backstories needed
-kirste dialogue needs work - after trial -> recap what she told us -> bin and photo? bonus for getting trial right?
+add a PS to loveletter with extra info
+change floe text so it fits with trial
 
+
+bodybuilder Photo by <a href="https://unsplash.com/@johnarano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Arano</a> on <a href="https://unsplash.com/s/photos/weight-lifting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 secret code https://imgur.com/HqBBy
 door sign <a href='https://www.freepik.com/vectors/work'>Work vector created by freepik - www.freepik.com</a>

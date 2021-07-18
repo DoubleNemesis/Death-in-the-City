@@ -149,9 +149,8 @@ h1, h2{
 
 }
 
-
 .wrong {
-  background-color: red;
+  /* background-color: red; */
   background-image: unset;
 }
 

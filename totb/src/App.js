@@ -45,7 +45,9 @@ import errorcorrectionPic from './images/errorcorrection.png'
 import secretcodePic from './images/secretcode.png'
 import policestatementPic from './images/policestatement.png'
 import medicalreportPic from './images/medicalreport.png'
-
+import weightlifterPic from './images/weightlifter.png'
+import poisonpenPic from './images/poison.png'
+import receiptPic from './images/receipt.png'
 import GameContext from './context/GameContext'
 
 
@@ -180,10 +182,11 @@ function App() {
               trialURL={trialURL3}
               exitMessage={exitMessage3}
               doorImg={doorRed}
+              doorTitle={characterFirstNames[2]}
             />
           </Route>
           <Route path="/sneaky2">
-            <Sneaky title="" destination="witness4" />
+          <Sneaky title="" artefactName={artefacts[7].name} artefactImage={receiptPic} /> {/*receipt*/}
           </Route>
           <Route path="/errorcorrection">
             <ErrorCorrection />
@@ -198,15 +201,16 @@ function App() {
               trialURL={trialURL4}
               exitMessage={exitMessage4}
               doorImg={doorYellow}
+              doorTitle={characterFirstNames[3]}
             />
           </Route>
           <Route path="/sneaky3">
-            <Sneaky title="" destination="witness5" />
+          <Sneaky title="" artefactName={artefacts[6].name} artefactImage={poisonpenPic} /> {/*poison*/}
           </Route>
           <Route path="/orderevents">
             <OrderEvents />
           </Route>
-          <Route path="/witness5"> {/*Floe*/}
+          <Route path="/witness5"> {/*Lucy*/}
             <WitnessComp
               title={characterNames[4]}
               questionsWit={questionsWitness5}
@@ -216,10 +220,11 @@ function App() {
               trialURL={trialURL5}
               exitMessage={exitMessage5}
               doorImg={doorWhite}
+              doorTitle={characterFirstNames[4]}
             />
           </Route>
           <Route path="/sneaky4">
-            <Sneaky title="" destination="loveletter" />
+          <Sneaky title="" artefactName={artefacts[2].name} artefactImage={secretcodePic} />  {/*loveletter*/}
           </Route>
           <Route path="/loveletter">
             <LoveLetter />
@@ -234,10 +239,11 @@ function App() {
               trialURL={trialURL6}
               exitMessage={exitMessage6}
               doorImg={doorGrey}
+              doorTitle={characterFirstNames[5]}
             />
           </Route>
           <Route path="/sneaky5">
-            <Sneaky title="" destination="endpage" />
+          <Sneaky title="" artefactName={artefacts[7].name} artefactImage={weightlifterPic} /> {/*weight*/}
           </Route>
           <Route path="/redacted">
             <Redacted />

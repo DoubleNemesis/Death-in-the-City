@@ -3,7 +3,7 @@ import TonyPic from '../images/tonymonceto.png'
 import ChayPic from '../images/chaymadz.jpg'
 import KirstenPic from '../images/kirsten.jpg'
 import DallasPic from '../images/dallas.jpg'
-import FloePic from '../images/floe.jpg'
+import LucyPic from '../images/floe.jpg'
 import WendyPic from '../images/wendy.jpg'
 import questionMark from '../images/questionMark.jpg'
 import artefactPlaceholder from '../images/artefactPlaceholder.jpg'
@@ -12,6 +12,9 @@ import errorcorrectionPic from '../images/errorcorrection.png'
 import secretcodePic from '../images/secretcode.png'
 import policestatementPic from '../images/policestatement.png'
 import medicalreportPic from '../images/medicalreport.png'
+import weightlifterPic from '../images/weightlifter.png'
+import poisonpenPic from '../images/poison.png'
+import receiptPic from '../images/receipt.png'
 
 export const homePageData = {
     homeTitle: [`Murder in the City`],
@@ -47,7 +50,7 @@ export const characterNames = {
         'Chay Madz',
         'Kirsten Wenstein',
         'Dallas Franks',
-        'Floe Light',
+        'Lucy Light',
         'Wendy Rose'
     ]
 }
@@ -57,7 +60,7 @@ export const characterFirstNames = {
         'Chay',
         'Kirsten',
         'Dallas',
-        'Floe',
+        'Lucy',
         'Wendy'
     ]
 }
@@ -129,9 +132,9 @@ export const officeCards = {
             'altImage':[questionMark],
         },
         {
-            'name': [`Floe Light`],
+            'name': [`Lucy Light`],
             'id': [5],
-            'image': [FloePic],
+            'image': [LucyPic],
             'altName': ['Unknown'],
             'altImage':[questionMark],
         },
@@ -145,7 +148,7 @@ export const officeCards = {
     ],
     'artefacts': [
         {
-            'name': [`Shredded Letter`],
+            'name': [`Shredded Letter challenge`], //bin
             'id': [1],
             'image': shreddedletterPic,
             'destination': 'shreddedletter',
@@ -157,7 +160,7 @@ export const officeCards = {
             'destination': 'errorcorrection',
         },
         {
-            'name': [`Love Letter`],
+            'name': [`Love Letter challenge`], //bin
             'id': [3],
             'image': secretcodePic,
             'destination': 'loveletter',
@@ -172,6 +175,24 @@ export const officeCards = {
             'name': [`Redacted Statement`],
             'id': [5],
             'image': medicalreportPic,
+            'destination': 'redacted',
+        },
+        {
+            'name': [`Photo of Lucy`], // wendy's bin
+            'id': [6],
+            'image': weightlifterPic,
+            'destination': 'redacted',
+        },
+        {
+            'name': [`Poison Pen`], // dallas' bin
+            'id': [7],
+            'image': poisonpenPic,
+            'destination': 'redacted',
+        },
+        {
+            'name': [`Rolex Receipt`], //kirsten's bin
+            'id': [8],
+            'image': receiptPic,
             'destination': 'redacted',
         },
     ],
@@ -220,7 +241,7 @@ export const mapFeatureData = {
     },
     {
         'key': [5],
-        'label': ["Floe Light"],
+        'label': ["Lucy Light"],
         'id': ['witness5'],
         'top': [76],
         'right': [75]
@@ -424,7 +445,7 @@ export const questionsWitness4 = {
     ]
 }
 
-//witness 5 floe lights
+//witness 5 Lucy lights
 export const questionsWitness5 = {
     questionsWitness5: [
         ["I promise I won't tell him you spoke to me.", 'success'],
@@ -441,11 +462,11 @@ export const questionsWitness5 = {
         ["Roughly two questions?", 'fail']
     ],
     witnessConversationArray5: [
-        "Chay told me not to. He doesn't like me speaking to other men. Especially not detectives.",
+        "Chay told me not to speak to you. He doesn't like me speaking to other men. Especially not detectives.",
         "I promise I won't tell him you spoke to me.",
         "No. It's too dangerous. I can't help you.",
         "Not even two questions?",
-        "No! Now go or I'll call Chay!"
+        "No! Now go away or I'll call Chay!"
     ],
     trialURL5: [
         'sneaky4'
@@ -545,7 +566,7 @@ export const TornLetterPiecesData = [
     "but I don't know who moved it",
     "I had heard Lexi and Chay",
     "arguing earlier in the evening",
-    "Floe's eyes were red as if she'd",
+    "Lucy's eyes were red as if she'd",
     "been crying before she arrived",
     "Lexi Grey went into the kitchen",
     "to get everyone some drinks",
@@ -568,7 +589,7 @@ export const ShreddedLetterPiecesData = {
         "but I don't know who moved it",
         "I had heard Lexi and Chay",
         "arguing earlier in the evening",
-        "Floe's eyes were red as if she'd",
+        "Lucy's eyes were red as if she'd",
         "been crying before she arrived",
         "Lexi Grey went into the kitchen",
         "to get everyone some drinks",
@@ -584,7 +605,7 @@ export const ShreddedLetterPiecesData = {
         "but I don't know who moved it",
         "I had heard Lexi and Chay",
         "arguing earlier in the evening",
-        "Floe's eyes were red as if she'd",
+        "Lucy's eyes were red as if she'd",
         "been crying before she arrived",
         "Lexi Grey went into the kitchen",
         "to get everyone some drinks",
@@ -606,7 +627,7 @@ export const ErrorCorrectionData = {
         ["Perfect! Thank you so much for your help!"],
     ],
     sentences: [
-        ["I saw Lexi and Floe holding hands under the table.", "0", false],
+        ["I saw Lexi and Lucy holding hands under the table.", "0", false],
         ["I don't really knew Chay very well.", "1", false],
         ["Lexi seemed very relaxing and happy.", "2", false],
         ["Lexi made a joke about still having Covid when he coughed.", "3", false],
@@ -651,12 +672,12 @@ export const orderEventsData = {
     ]
 }
 
-//loveletter floe : Chay: i will kill any man you go out with
+//loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
     instructions: ['Break the word code'],
     successMessageText: ['Amazing! Click here to see the full letter!'],
-    loveLetterCode: [`Dear Floe, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
-    loveLetterFull: [`Dear Floe I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chay.`],
+    loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
+    loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chay.`],
     symbols: [
         ['a', '8955', false, false],
         ['b', '8706', false, false],

@@ -9,6 +9,10 @@ const CloseDoor = keyframes`
 from { transform: rotateY(120deg); }
 to { transform: rotateY(0deg); }
 `
+const animateBorder = keyframes`
+from { box-shadow: 0px 0px 5px 3px red; }
+to { box-shadow: 0px 0px 5px 3px orange; }
+`
 
 export const Inside = styled.div`
 width: 100%;
@@ -47,26 +51,24 @@ color: white;
 font-size: 1.4rem;
 `
 export const DoorBellBox = styled.div`
-/* background-image: url(${doorsign});
-background-size: contain; */
 display: flex;
 align-items: flex-end;
 justify-content: center;
 position: absolute;
 left: 71.5%;
 top: 20%;
-background-color: blue;
+background-color: whitesmoke;
 width: 28px;
 height: 50px;
 margin: 2em;
 color: white;
 font-size: 1.4rem;
-border: 2px solid skyblue;
-box-shadow: 2px 2px 4px #333;
+border: 2px solid midnightblue;
+box-shadow: 1px 1px 1px 0px #333;
+animation: ${animateBorder} 2s ease-in-out infinite alternate ;
 `
 export const DoorBell = styled.button`
-  background-color: red;
-  border: none;
+  background-color: gold;
   color: white;
   padding: 8px;
   text-align: center;
@@ -74,8 +76,8 @@ export const DoorBell = styled.button`
   font-size: 12px;
   border-radius: 50%;
   margin-bottom: 5px;
-  box-shadow: 2px 2px 4px #333;
-  border: 1px solid white;
+  box-shadow: 2px 2px 2px 0px #333;
+  border: 1px solid #333;
 
   :hover{
     box-shadow: 1px 1px 1px #333;
@@ -87,7 +89,7 @@ const WitnessIntroContainer = styled.div`
 display: flex;
 width: 100%;
 background-color: white;
-min-height: 200px;
+/* min-height: 200px; */
 padding: .5em;
 `
 const WitnessImage = styled.img`

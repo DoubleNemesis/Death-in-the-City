@@ -162,7 +162,7 @@ function Sneaky(props){
             {openBin ? <StyledBinArtefact src={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}
             <StyledBinLid openBin={openBin} onClick={handleLidClick}/>
             {isArtefactClicked ? <StyledFoundArtefact isArtefactClicked={isArtefactClicked}> 
-                You found the "{props.artefactName}" challenge!
+                You found the "{props.artefactName}"!
                 <NextPageButton destination="officebase">Back to Office</NextPageButton>
                 </StyledFoundArtefact>
                  : null}

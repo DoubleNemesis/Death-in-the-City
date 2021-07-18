@@ -6,15 +6,17 @@ const StyledSpeechBubble = styled.div`
     font-family: sans-serif;
     font-family: 'Kalam';
     font-size: 1.1rem;
-    line-height: 24px;
+    line-height: 1.2rem;
     width: ${({bubbleWidth})=>bubbleWidth || '80'}%;
-    min-height: ${({minHeight})=> minHeight || '140' }px;
-    background: #fff;
-    border-radius: 40px;
-    padding: 24px;
+    min-height: ${({minHeight})=> minHeight || '100' }px;
+    background: skyblue;
+    border-radius: 10px;
+    padding: 1em;
     text-align: left;
     color: #000;
     margin: 1em;
+    border: 4px solid #141414;
+    box-shadow: 2px 2px 4px 2px #444;
 
     ol{
       padding: 0 1em;
@@ -32,9 +34,9 @@ const StyledSpeechBubble = styled.div`
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 24px solid #fff;
+  border-left: 24px solid skyblue;
   border-right: 12px solid transparent;
-  border-top: 12px solid #fff;
+  border-top: 12px solid skyblue;
   border-bottom: 20px solid transparent;
   left: 32px;
   bottom: -24px;
