@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react'
 import { List, arrayMove } from 'react-movable';
 import { ShreddedLetterPiecesData } from '../../../data/lessonData'
-import { EventsContainer, ParagraphContainer, ShreddedPiece } from './shreddedLetterComponents/ShreddedLetterComponents'
+import { EventsContainer, ShreddedPiece } from './shreddedLetterComponents/ShreddedLetterComponents'
 import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../../generalComponents/InfoModal'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import GameContext from '../../../context/GameContext';

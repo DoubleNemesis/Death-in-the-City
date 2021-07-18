@@ -1,35 +1,43 @@
     heavy
+shreddedletter is a mess - smaller, fewer, better aligned, closer together,  make sentences flow and maybe clear which one is first.
+
 
     light css / images
 css trial backgrounds
-style task dialogue
+style task/office dialogue
 pic without background and head shots for messages?
-
+@media for very narrow screens
+doorbell style?
+red highlight persists on dialogues after error - delete the red
+style the artefact found pup up
 
     light bugs/fixes
-react issue with bubble text error corrected  at the end and change btn text
-React check error on clicking correct convo option and getting "incorrect"
+add names to door sign's - app props
+!!!!! React check error on clicking correct convo option and getting "incorrect"
 react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh? context: hasGot vs hasDone
 disable moveable events on correct?
+disable vocab buttons when showing list?
+scroll after correct option? fade in? investigate
+pop up confirms visitors book taken
+remove 123 in speech bubble after visitorbook taken
+footer covers dialogues...use flexbox or another way?
+dallas  read statement? needs bin? gets extra info for correct order?
 
     Maybe
 ???? one of women is weightlifter - find that in the bin - photo of her with muscles!!!!
 ???? chey got something new with blackmail cash
 
     Text
+first page blurb, instructions, graphics - footer at foot 
+etc make it clear each artefact leads to a challenge
 check trial instructions "now click a symbol..."
 text make vocab relevant - shredded
-change wendy chat to docs report!
-how do you spell chay chey
+change wendy chat to doctor's report!
 add credits to credits page
-sprt out footer links
-text first page blurb, instructions etc make it clear each artefact leads to a challenge
-
-
-
-
-
-
+sort out footer links
+office/task instructions pop up check
+witness backstories needed
+kirste dialogue needs work - after trial -> recap what she told us -> bin and photo? bonus for getting trial right?
 
 
 secret code https://imgur.com/HqBBy

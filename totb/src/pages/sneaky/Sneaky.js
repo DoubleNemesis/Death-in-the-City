@@ -163,7 +163,7 @@ function Sneaky(props){
             <StyledBinLid openBin={openBin} onClick={handleLidClick}/>
             {isArtefactClicked ? <StyledFoundArtefact isArtefactClicked={isArtefactClicked}> 
                 You found the "{props.artefactName}" challenge!
-                <NextPageButton destination="officebase">Go to Office</NextPageButton>
+                <NextPageButton destination="officebase">Back to Office</NextPageButton>
                 </StyledFoundArtefact>
                  : null}
             <StyledBin/>

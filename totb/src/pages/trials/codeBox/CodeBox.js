@@ -12,6 +12,8 @@ import { TextButton, TextButtonContainer } from '../../../generalComponents/Spee
 
 
 import {CodeBoxData} from '../../../data/lessonData'
+import {officeCards} from '../../../data/lessonData'
+
 
 
 function CodeBox() {
@@ -26,14 +28,8 @@ function CodeBox() {
     const [codeIsCorrect, setCodeIsCorrect] = useState(false)
 
     const {setHasVisitorBook} = useContext(GameContext)
+    const {collectedWitnesses, setCollectedWitnesses} = useContext(GameContext)
     const {bubbleText1, bubbleText2, bubbleText3, bubbleText4} = CodeBoxData
-
-
-    //make beds, mistakes, dinner
-    //do homework, shopping, nothing
-    //have a good time, a drink, a shower
-    //take a break your time away
-    //catch a cold a ball a train
 
     function handleChange(e) {
         const { name, value } = e.target
@@ -70,6 +66,16 @@ function CodeBox() {
 
     function handleVisitorBookClick(){
         setHasVisitorBook(true)
+        //const dummyCollectedWitnesses = [...collectedWitnesses]
+        let wits = officeCards.witnesses
+        let dummyCollectedWitnesses = [...collectedWitnesses, 
+            wits[1].name,  
+            wits[2].name, 
+            wits[3].name,  
+            wits[4].name,  
+            wits[5].name,  
+        ]
+        setCollectedWitnesses(dummyCollectedWitnesses)
     }
 
     return (

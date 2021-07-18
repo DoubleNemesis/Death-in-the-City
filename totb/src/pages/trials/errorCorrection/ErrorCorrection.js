@@ -22,7 +22,7 @@ function ErrorCorrection() {
     const [isComplete2, setIsComplete2] = useState(false)
     const [correctedSentences, setCorrectedSentences] = useState({})
     const { level, setLevel } = useContext(GameContext)
-    const { instructions, instructions2, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
+    const { instructions, instructions2, instructions3, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
 
     useEffect(() => {
         setSentencesArray(sentences)
@@ -134,9 +134,9 @@ function ErrorCorrection() {
         <>
                 <Conversation>
                     <SpeechBubbleLeft image={KirstenPic}>
-                        {!isComplete1 ? instructions : instructions2}
+                        {!isComplete1 ? instructions : !isComplete2 ? instructions2 : instructions3}
                     </SpeechBubbleLeft>
-                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton destination='officebase'>let's go!</NextPageButton>}
+                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton destination='officebase'>Go to Office</NextPageButton>}
                 </Conversation>
 
         </>

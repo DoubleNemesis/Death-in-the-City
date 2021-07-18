@@ -9,6 +9,8 @@ align-items: center;
 background-color: white;
 margin-top: 2em;
 border-top: 4px solid black;
+position: fixed;
+bottom: -100;
 
 span{
     margin: .2em;

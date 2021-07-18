@@ -89,7 +89,8 @@ export const vocabData = {
         'tread on',
     ],
     'bubbleText1': [
-        `All I want you to do is Click on a word and then click on its synonym. Easy. Get this right and we're in business.`
+        `All I want you to do is Click on a word and then click on its synonym. When you get a pair right, they will disappear. 
+        Don't worry, you will see the full word list again at the end.`
     ],
     'bubbleText2': [
         `Great, you passed the test! Here are the words/synonyms side-by-side if you want to take notes. Now head over to the office and I'll show you what's what.`
@@ -379,7 +380,7 @@ export const questionsWitness3 = {
     witnessConversationArray3: [
         "Oh! More questions about Lexi? Well, OK then. I'll help if I can.",
         "Please tell me everything about the evening Lexington died.",
-        "I don't mind talking to you. But my English is really bad",
+        "My English is really bad. ",
         "I know how you feel. Don't worry, I'll help you.",
         "OK, correct my sentences please, else I will never learn this language!"
     ],
@@ -387,7 +388,7 @@ export const questionsWitness3 = {
         'errorcorrection'
     ],
     exitMessage3: [
-        'Go and help her!'
+        'Help her!'
     ]
 }
 
@@ -501,7 +502,7 @@ const BubbleText3 = () => {
               <li>_____ a ball & a cold</li>
            </ol>
            <p>
-               Put the first letters into the code box and spin the wheel!
+               Put the first letters of the verbs into the code box and spin the wheel!
            </p>
         </>
     )
@@ -515,7 +516,7 @@ export const CodeBoxData = {
     But maybe you will be able to work it out.`],
     bubbleText2: [`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
     I don't know the verbs but I do know the words they collocate with. For example if the clue is "TV", you would take 
-    "W", the first letter of the verb "watch" as that collocates with the noun "TV". 
+    "W", the first letter of the verb "watch", as that collocates with the noun "TV". 
     `],
     bubbleText3: <BubbleText3 />,
     bubbleTextX: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
@@ -527,9 +528,9 @@ export const CodeBoxData = {
 }
 
 export const CrimeSceneData = {
-    bubbleText1: [`This is the kitchen and this is the window he went through. As you can see, he can't have done it by accident.`],
+    bubbleText1: [`This is the kitchen and that is the window he went through. As you can see, he can't have done it by accident.`],
     bubbleText2: [`He used to stand by the window smoking. I think someone probable came up behind him and pushed him out.`],
-    bubbleText3: [`Have a look out the window....that's an awfully long way down! Anyway, now you've seen where it all happened. `],
+    bubbleText3: [`Have a look out the window....that's an awfully long way down! Anyway, now you've seen where it all happened. Good luck! I hope you find the killer!`],
 }
 
 
@@ -600,6 +601,9 @@ export const ErrorCorrectionData = {
     ],
     instructions2: [
         ["Great! Now type out the sentences so they are correct and hit go."],
+    ],
+    instructions3: [
+        ["Perfect! Thank you so much for your help!"],
     ],
     sentences: [
         ["I saw Lexi and Floe holding hands under the table.", "0", false],
