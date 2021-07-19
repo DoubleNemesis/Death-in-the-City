@@ -82,6 +82,7 @@ function App() {
   const { artefacts } = lessonData['officeCards'];
 
   return (
+    <>
     <div className="outer">
       <Router>
         <GameContext.Provider value={providedValues}>
@@ -267,8 +268,10 @@ function App() {
           </Route>
         </GameContext.Provider>
       </Router>
-      <Footer/>
+      
     </div>
+    <Footer/>
+    </>
   );
 }
 

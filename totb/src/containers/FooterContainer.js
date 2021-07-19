@@ -6,11 +6,11 @@ display: flex;
 justify-content: center;
 flex-direction: row;
 align-items: center;
-background-color: white;
-margin-top: 2em;
+background-color: black;
 border-top: 4px solid black;
-position: fixed;
-bottom: -100;
+color: white;
+/* position: sticky;
+bottom: 0px; */
 
 span{
     margin: .2em;

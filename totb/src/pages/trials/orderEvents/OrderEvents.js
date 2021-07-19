@@ -14,7 +14,26 @@ import clientPic from '../../../images/client.jpg'
 // import MoveableEvents from './MoveableEvents'
 
 
-function MoveableEvents(props) {
+// function MoveableEvents(props) {
+//     const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
+//     let { eventsToOrder } = orderEventsData
+//     const { eventsCorrectOrder } = orderEventsData
+//     const [message, setMessage] = useState('')
+//     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
+//     const [hasFinished, setHasFinished] = useState(false)
+//     const [isCorrect, setIsCorrect] = useState(false)
+
+
+    
+
+//     return (
+//         <>
+
+//         </>
+//     );
+// }
+
+function OrderEvents(props) {
     const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
     let { eventsToOrder } = orderEventsData
     const { eventsCorrectOrder } = orderEventsData
@@ -22,7 +41,7 @@ function MoveableEvents(props) {
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [hasFinished, setHasFinished] = useState(false)
     const [isCorrect, setIsCorrect] = useState(false)
-
+    const { orderEventsText, instructions } = orderEventsData
 
     useEffect(() => {
         if (hasFinished) {
@@ -47,7 +66,17 @@ function MoveableEvents(props) {
 
     return (
         <>
-            <List
+
+            <Conversation>
+                <SpeechBubbleLeft image={clientPic} >
+                    {instructions}
+                </SpeechBubbleLeft>
+                <ParagraphContainer>
+                    {orderEventsText}
+                </ParagraphContainer>
+
+                <EventsContainer>
+                <List
                 values={itemsToOrder}
                 onChange={({ oldIndex, newIndex }) => {
                     setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
@@ -62,25 +91,6 @@ function MoveableEvents(props) {
             <button onClick={handleCheck}>Check</button>
             {message}
             {isCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
-        </>
-    );
-}
-
-function OrderEvents(props) {
-    const { orderEventsText, instructions } = orderEventsData
-    return (
-        <>
-
-            <Conversation>
-                <SpeechBubbleLeft image={clientPic} >
-                    {instructions}
-                </SpeechBubbleLeft>
-                <ParagraphContainer>
-                    {orderEventsText}
-                </ParagraphContainer>
-
-                <EventsContainer>
-                    <MoveableEvents artefactName={props.artefactName}/>
                 </EventsContainer>
             </Conversation>
 

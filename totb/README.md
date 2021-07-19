@@ -1,28 +1,21 @@
     heavy
 !!!!! React check error on clicking correct convo option and getting "incorrect"
-error on moveables
+
     light css / images
 css trial backgrounds
 style task/office dialogue
 pic without background and head shots for messages?
-@media for very narrow screens
 style the artefact found pup up
 style green tick on completed challenges
+@media for very narrow screens
 
 
     light bugs/fixes
-
-disable moveable events on correct?
-disable vocab buttons when showing list?
 scroll after correct option? fade in? investigate
-pop up confirms visitors book taken
-remove 123 in speech bubble after visitorbook taken
-footer covers dialogues...use flexbox or another way?
-dallas gets extra info for correct order?
-add credits to credits page
-do out footer links
 office link to guess page at end
-
+extra info for correct challenge? dallas, kirsten, loveletter
+add credits to credits page
+sort out footer links
 
 
     Text
