@@ -1,42 +1,39 @@
     heavy
-shreddedletter is a mess - smaller, fewer, better aligned, closer together,  make sentences flow and maybe clear which one is first.
-
+!!!!! React check error on clicking correct convo option and getting "incorrect"
+error on moveables
     light css / images
 css trial backgrounds
 style task/office dialogue
 pic without background and head shots for messages?
 @media for very narrow screens
 style the artefact found pup up
+style green tick on completed challenges
 
 
     light bugs/fixes
-!!!!! React check error on clicking correct convo option and getting "incorrect"
-react handle office view artefatcs vs completed artefacts? or just remember state at end of each sesh? context: hasGot vs hasDone
+
 disable moveable events on correct?
 disable vocab buttons when showing list?
 scroll after correct option? fade in? investigate
 pop up confirms visitors book taken
 remove 123 in speech bubble after visitorbook taken
 footer covers dialogues...use flexbox or another way?
-where witness hands over info, just do pop up that challenge found (with icon) and lead to sneaky.
 dallas gets extra info for correct order?
-kirste dialogue needs work - after trial -> recap what she told us -> bin and photo? bonus for getting trial right?
+add credits to credits page
+do out footer links
 office link to guess page at end
-office artefacts not showing up
+
 
 
     Text
-first page blurb, instructions, graphics - footer at foot 
-make it clear each artefact leads to a challenge
-trial instructions needed! "now click a symbol..."
+first page blurb, instructions, graphics, make it clear each artefact leads to a challenge
 text make vocab relevant - shredded
 change wendy chat to doctor's report!
-add credits to credits page
-sort out footer links
 office/task instructions pop up check
 witness backstories needed
 add a PS to loveletter with extra info
 change floe text so it fits with trial
+kirste dialogue needs work - after trial -> recap what she told us plus bonus
 
 
 bodybuilder Photo by <a href="https://unsplash.com/@johnarano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Arano</a> on <a href="https://unsplash.com/s/photos/weight-lifting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

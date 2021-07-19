@@ -1,28 +1,28 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
-//import { history, useHistory } from 'react-router-dom'
 import { Instructions, Conversation, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
 import { SuccessMessageComp, LoveLetterMainContainer, LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './LoveLetterComponents'
-import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../../generalComponents/InfoModal'
+import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
 import ProfilePic from '../../../images/chaymadz.jpg'
 import GameContext from '../../../context/GameContext'
 import Draggable from 'react-draggable';
 import { loveLetterData } from '../../../data/lessonData'
 import NextPageButton from '../../../generalComponents/NextPageButton'
+import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
+import clientPic from '../../../images/client.jpg'
 
 
 
 
 
-function LoveLetter() {
-    const { items, setItems } = useContext(GameContext)
-    //let history = useHistory()
+function LoveLetter(props) {
+    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
     const [selectedLetter, setSelectedLetter] = useState('')
     const [selectedSymbol, setSelectedSymbol] = useState('')
     const [usedLetters, setUsedLetters] = useState([])
     const [successMessage, setSuccessMessage] = useState('')
-    const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
+    // const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [displayFullText, setDisplayFullText] = useState(false)
 
     const nodeRef = useRef(null);
@@ -30,11 +30,11 @@ function LoveLetter() {
     const secretMessage = loveLetterCode[0]
     const secretMessageArray = secretMessage.toLowerCase().split('');
 
-    function handleFullTextClick(){
+    function handleFullTextClick() {
         setDisplayFullText(true)
     }
 
-    function handleLetterClick(e) { 
+    function handleLetterClick(e) {
         setSelectedLetter(e.target.id)
     }
 
@@ -58,37 +58,38 @@ function LoveLetter() {
             let decodedMessageArray = document.getElementsByClassName('symbolsClass')
             decodedMessageArray = [...decodedMessageArray]
             let decodedMessage = []
-            decodedMessageArray.forEach(item=>{decodedMessage.push(item.innerText)})
+            decodedMessageArray.forEach(item => { decodedMessage.push(item.innerText) })
             decodedMessage = decodedMessage.join('')
             const originalMessageNoSpace = secretMessageArray.join('').replace(/\s+/g, '')
-            
-            if (decodedMessage !== originalMessageNoSpace){
-                setSuccessMessage(<SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/>)
-                let dummyItems = [...items]
-                dummyItems.push('Love Letter')
-                setItems(dummyItems)
+
+            if (decodedMessage !== originalMessageNoSpace) {
+                setSuccessMessage(<SuccessMessageComp message={successMessageText} onclick={handleFullTextClick} />)
+                let dummyCompletedChallenges = [...completedChallenges]
+                dummyCompletedChallenges.push(props.artefactName)
+                setCompletedChallenges(dummyCompletedChallenges)
+
             }
             //setSuccessMessage(decodedMessage !== originalMessageNoSpace ? <SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/> : null)
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log(usedLetters);
-        usedLetters.map((item=>{
+        usedLetters.map((item => {
             document.getElementById(item).classList.add('unClickable')
         }))
-        
-    },[usedLetters])
+
+    }, [usedLetters])
 
 
     const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : 'beige'} onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
     const LoveLetterCode = secretMessageArray.map((item, index) => {
         const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
-        const symbolTiles = 'symbolTiles' 
+        const symbolTiles = 'symbolTiles'
 
         return (
             <>
-                        <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
+                {/* <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>
                     <li> Read the text in the speech bubble.</li>
@@ -104,8 +105,8 @@ function LoveLetter() {
                     Start
                 </ToggleTaskInfo>
                 </ToggleContainer>
-            </StyledModal>
-                { targetSymbol ?
+            </StyledModal> */}
+                {targetSymbol ?
                     <LoveLetterSymbolElems className={`${targetSymbol.charCodeAt(0)} symbolsClass`} onClick={handleSymbolClick} color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'beige'}>{targetSymbol}</LoveLetterSymbolElems> :
                     <LoveLetterSpace />
                 }
@@ -116,21 +117,23 @@ function LoveLetter() {
     return (
         <>
 
-                <Conversation>
-                
-                    <LoveLetterMainContainer>
+            <Conversation>
+                <SpeechBubbleLeft image={clientPic} >
+                    {instructions}
+                </SpeechBubbleLeft>
+                <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
-                        {!displayFullText ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}  
+                        {!displayFullText ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
                     {successMessage}
                     <LoveLetterLettersContainer>
 
                         {LoveLetterLetters}
-                        
+
                     </LoveLetterLettersContainer>
-                    </LoveLetterMainContainer>
-             
-                </Conversation>
+                </LoveLetterMainContainer>
+
+            </Conversation>
 
         </>
 

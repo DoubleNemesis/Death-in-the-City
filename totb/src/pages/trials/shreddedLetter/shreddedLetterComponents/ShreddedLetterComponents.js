@@ -5,9 +5,11 @@ export const EventsContainer = styled.div`
 display: flex;
 flex-direction: column;
 background-color: grey;
-width: 100%;
+width: 80%;
 justify-content: center;
 align-items: center;
+margin: 0 auto;
+padding-top: 1em;
 
 ul{
   list-style: none;

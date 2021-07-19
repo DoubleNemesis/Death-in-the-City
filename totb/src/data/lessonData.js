@@ -107,43 +107,43 @@ export const officeCards = {
             'name': [`Tony Monceto`],
             'id': [1],
             'image': [TonyPic],
-            'altName':['unknown'],
-            'altImage':[questionMark],
+            'altName': ['unknown'],
+            'altImage': [questionMark],
         },
         {
             'name': [`Chay Madz`],
             'id': [2],
             'image': [ChayPic],
             'altName': ['Unknown'],
-            'altImage':[questionMark],
+            'altImage': [questionMark],
         },
         {
             'name': [`Kirsten Stein`],
             'id': [3],
             'image': [KirstenPic],
             'altName': ['Unknown'],
-            'altImage':[questionMark],
+            'altImage': [questionMark],
         },
         {
             'name': [`Dallas Franks`],
             'id': [4],
             'image': [DallasPic],
             'altName': ['Unknown'],
-            'altImage':[questionMark],
+            'altImage': [questionMark],
         },
         {
             'name': [`Lucy Light`],
             'id': [5],
             'image': [LucyPic],
             'altName': ['Unknown'],
-            'altImage':[questionMark],
+            'altImage': [questionMark],
         },
         {
             'name': [`Wendy Rose`],
             'id': [6],
             'image': [WendyPic],
             'altName': ['Unknown'],
-            'altImage':[questionMark],
+            'altImage': [questionMark],
         },
     ],
     'artefacts': [
@@ -424,18 +424,18 @@ export const questionsWitness4 = {
         ["I want ask about the party.", 'fail']
     ],
     questionsWitness4_2: [
-        ["Yes. That can be useful", 'fail'],
-        ["Thank you. That would be useful", 'success'],
-        ["That would being useful", 'fail'],
-        ["Thanks. That was useful", 'fail'],
-        ["They are useful", 'fail']
+        ["Yes. That can be useful.", 'fail'],
+        ["Thank you. That would be useful.", 'success'],
+        ["That would being useful.", 'fail'],
+        ["Thanks. That was useful.", 'fail'],
+        ["They are useful.", 'fail']
     ],
     witnessConversationArray4: [
         "I'm so bored of you people. What do you want to know?",
         "I want to ask about the party.",
-        "I was drunk, ok? I don't remember much. You can read my police statement, if you want.",
+        "I was drunk, ok? I don't remember much and I really don't want to talk about it. If you really insist, you can read my police statement.",
         "Thank you. That would be useful",
-        "OK, here it is. Now please leave me alone!"
+        "OK, here it is. Now please leave me alone. I'm a very busy man!"
     ],
     trialURL4: [
         'orderevents'
@@ -512,19 +512,19 @@ export const questionsWitness6 = {
 const BubbleText3 = () => {
     return (
         <>
-           <p>
-               These are the verbs in the right order. There are two clue words for each verb.
-           </p>
-           <ol>
-              <li>____ friends & your bed</li>
-              <li>__ homework & housework</li>
-              <li>____ fun & a good time</li>
-              <li>____ your time & a break</li>
-              <li>_____ a ball & a cold</li>
-           </ol>
-           <p>
-               Put the first letters of the verbs into the code box and spin the wheel!
-           </p>
+            <p>
+                These are the verbs in the right order. There are two clue words for each verb.
+            </p>
+            <ol>
+                <li>____ friends & your bed</li>
+                <li>__ homework & housework</li>
+                <li>____ fun & a good time</li>
+                <li>____ your time & a break</li>
+                <li>_____ a ball & a cold</li>
+            </ol>
+            <p>
+                Put the first letters of the verbs into the code box and spin the wheel!
+            </p>
         </>
     )
 }
@@ -611,7 +611,8 @@ export const ShreddedLetterPiecesData = {
         "to get everyone some drinks",
         "You could tell that Chay was",
         "really angry for some reason."
-    ]
+    ],
+    instructions : [`It looks like this letter has been shredded. Move the pieces around until you find the right order. Click "check" when you're done.`]
 }
 
 //error correction kirsten
@@ -669,12 +670,15 @@ export const orderEventsData = {
         'Dallas started drinking a lot',
         'Dallas started drinking with his drama school friends',
         'Dallas arrived at the party',
+    ],
+    instructions: [
+        `Read the statement and then put the summary below in the right order by moving the tiles up or down. Click "check" when you're done.`
     ]
 }
 
 //loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
-    instructions: ['Break the word code'],
+    instructions: ['If we want to read this love letter, we need tobBreak the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, thing what word a letter usually starts with.'],
     successMessageText: ['Amazing! Click here to see the full letter!'],
     loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
     loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chay.`],

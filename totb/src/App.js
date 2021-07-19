@@ -58,6 +58,7 @@ function App() {
   const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
   const [items, setItems] = useState([])
   const [collectedArtefacts, setCollectedArtefacts] = useState([])
+  const [completedChallenges, setCompletedChallenges] = useState([])
   const [collectedWitnesses, setCollectedWitnesses] = useState([])
   const { homeTitle, homeSubtitle } = homePageData
   const providedValues = {
@@ -66,7 +67,8 @@ function App() {
     items, setItems,
     isInstructionsModalDisplayed, setIsInstructionsModalDisplayed,
     collectedArtefacts, setCollectedArtefacts,
-    collectedWitnesses, setCollectedWitnesses
+    collectedWitnesses, setCollectedWitnesses,
+    completedChallenges, setCompletedChallenges
   }
 
   const { characterNames } = lessonData['characterNames'];
@@ -170,7 +172,7 @@ function App() {
             <Sneaky title="" artefactName={artefacts[0].name} artefactImage={shreddedletterPic} />
           </Route>
           <Route path="/shreddedletter">
-            <ShreddedLetter />
+            <ShreddedLetter artefactName={artefacts[0].name} />
           </Route>
           <Route path="/witness3"> {/*Kirsten*/}
             <WitnessComp
@@ -183,13 +185,16 @@ function App() {
               exitMessage={exitMessage3}
               doorImg={doorRed}
               doorTitle={characterFirstNames[2]}
+              artefactName={artefacts[1].name} 
+              artefactImage={artefacts[1].image} //????
+              binCheck={'sneaky2'}
             />
           </Route>
           <Route path="/sneaky2">
           <Sneaky title="" artefactName={artefacts[7].name} artefactImage={receiptPic} /> {/*receipt*/}
           </Route>
           <Route path="/errorcorrection">
-            <ErrorCorrection />
+            <ErrorCorrection  artefactName={artefacts[1].name}/>
           </Route>
           <Route path="/witness4"> {/*Dallas*/}
             <WitnessComp
@@ -202,13 +207,16 @@ function App() {
               exitMessage={exitMessage4}
               doorImg={doorYellow}
               doorTitle={characterFirstNames[3]}
+              binCheck={'sneaky3'}
+              artefactName={artefacts[3].name} //order events
+              artefactImage={artefacts[3].image} //order events
             />
           </Route>
           <Route path="/sneaky3">
           <Sneaky title="" artefactName={artefacts[6].name} artefactImage={poisonpenPic} /> {/*poison*/}
           </Route>
           <Route path="/orderevents">
-            <OrderEvents />
+            <OrderEvents artefactName={artefacts[3].name} />
           </Route>
           <Route path="/witness5"> {/*Lucy*/}
             <WitnessComp
@@ -227,7 +235,7 @@ function App() {
           <Sneaky title="" artefactName={artefacts[2].name} artefactImage={secretcodePic} />  {/*loveletter*/}
           </Route>
           <Route path="/loveletter">
-            <LoveLetter />
+            <LoveLetter artefactName={artefacts[2].name} />
           </Route>
           <Route path="/witness6"> {/*wendy*/}
             <WitnessComp
@@ -240,13 +248,16 @@ function App() {
               exitMessage={exitMessage6}
               doorImg={doorGrey}
               doorTitle={characterFirstNames[5]}
+              artefactName={artefacts[4].name} //redacted report
+              artefactImage={artefacts[4].image} 
+              binCheck={'sneaky5'}
             />
           </Route>
           <Route path="/sneaky5">
-          <Sneaky title="" artefactName={artefacts[7].name} artefactImage={weightlifterPic} /> {/*weight*/}
+          <Sneaky title="" artefactName={artefacts[5].name} artefactImage={weightlifterPic} /> {/*weight*/}
           </Route>
           <Route path="/redacted">
-            <Redacted />
+            <Redacted artefactName={artefacts[4].name} />
           </Route>
           <Route path="/endpage">
             <EndPage />

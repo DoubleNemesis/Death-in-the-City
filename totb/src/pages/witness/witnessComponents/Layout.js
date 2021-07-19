@@ -1,4 +1,13 @@
-import styled from 'styled-components'
+import styled, {keyframes}  from 'styled-components'
+
+const fadeIn = keyframes`
+0% { opacity: 0;}
+100% { opacity: 1;}
+`
+const animateBorder = keyframes`
+from { box-shadow: 0px 0px 10px 5px red; }
+to { box-shadow: 0px 0px 10px 5px orange; }
+`
 
 export const Instructions = styled.div`
 width: 20%;
@@ -47,3 +56,27 @@ width: auto;
 max-width: 100px;
 `
 export const WitnessImage = (props)=><StyledWitnessImage src={props.img}></StyledWitnessImage>
+
+
+export const StyledArtefact = styled.img`
+opacity: 0;
+max-width: 80px;
+background-color: transparent;
+animation: ${fadeIn} 1s .5s forwards, ${animateBorder} 2s ease-in-out infinite alternate ;
+box-shadow: 0px 0px 40px 10px red;
+`
+
+export const StyledFoundArtefact = styled.div`
+opacity: 0;
+margin: 5%;
+width: auto;
+font-size: 1.3rem;
+padding: 1em 0 0 0;
+text-align: center;
+background-color: white;
+animation: ${({isArtefactClicked})=>isArtefactClicked ? fadeIn : null} 1s;
+animation-delay: .1s;
+animation-fill-mode: forwards;
+border-radius: 5px;
+z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
+`

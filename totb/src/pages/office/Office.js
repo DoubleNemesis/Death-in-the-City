@@ -50,11 +50,25 @@ height: 100px;
 margin: .2em;
 background-color: pink;
 `
+const Tick = styled.div`
+width: 10px;
+min-width: 10px;
+height: 10px;
+min-height: 10px;
+margin: .2em;
+background-color: limegreen;
+`
 function OfficeBase() {
-    const {isInstructionsModalDisplayed, setIsInstructionsModalDisplayed} = useContext(GameContext)
-    const { hasVisitorBook, items } = useContext(GameContext)
-    const { collectedArtefacts } = useContext(GameContext)
-    const { collectedWitnesses } = useContext(GameContext)
+    const {
+        isInstructionsModalDisplayed, 
+        setIsInstructionsModalDisplayed,
+        hasVisitorBook, 
+        items,
+        collectedArtefacts,
+        collectedWitnesses,
+        completedChallenges,
+    } = useContext(GameContext)
+
 
     const witnesses = officeCards.witnesses.map((item) => {
         if (collectedWitnesses.indexOf(item.name) > -1){
@@ -70,17 +84,16 @@ function OfficeBase() {
         }
     })
 
-    console.log(collectedWitnesses);
-    console.log(collectedArtefacts);
+
+    console.log(completedChallenges);
 
     const artefacts = officeCards.artefacts.map((item) => {
         if (collectedArtefacts.indexOf(item.name) > -1){
             return (
-                <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
+                <ArtefactCard><img height="50px" src={item.image} />{completedChallenges.indexOf(item.name) > -1 ? <Tick/>:null}<WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
             )
         }
         else{
-            console.log(false);
             return (
                 <ArtefactCard><img height="75px" src={scroll} /></ArtefactCard>
             )

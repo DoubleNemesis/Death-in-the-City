@@ -93,8 +93,6 @@ position: absolute;
 max-width: 80px;
 background-color: transparent;
 animation: ${({isArtefactDisplayed})=>isArtefactDisplayed ? fadeIn : null} 1s .5s forwards, ${({isArtefactDisplayed})=>isArtefactDisplayed ? animateBorder : null} 2s ease-in-out infinite alternate ;
-/* animation-delay: .5s;
-animation-fill-mode: forwards; */
 box-shadow: 0px 0px 40px 10px red;
 `
 const StyledFoundArtefact = styled.div`

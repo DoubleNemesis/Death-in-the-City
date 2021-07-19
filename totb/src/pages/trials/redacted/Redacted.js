@@ -12,12 +12,12 @@ import NextPageButton from '../../../generalComponents/NextPageButton'
 
 
 
-function Redacted() {
+function Redacted(props) {
 
     const [redactedInputs, setRedactedInputs] = useState({})
     const [message, setMessage] = useState('')
     const [isCorrect, setIsCorrect] = useState(false)
-    const { items, setItems } = useContext(GameContext)
+    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
     const { instructions, missingWords } = redactedData
 
     function handleInputChange(e) {
@@ -31,9 +31,9 @@ function Redacted() {
         if (Object.values(redactedInputs).toString() === missingWords.toString()){
             setMessage( 'Correct!')
             setIsCorrect(true)
-            let dummyItems = [...items]
-            dummyItems.push('Redacted Statement')
-            setItems(dummyItems)
+            let dummyCompletedChallenges = [...completedChallenges]
+            dummyCompletedChallenges.push(props.artefactName)
+            setCompletedChallenges(dummyCompletedChallenges)
         }
         else{
             setMessage('Incorrect, try again!')

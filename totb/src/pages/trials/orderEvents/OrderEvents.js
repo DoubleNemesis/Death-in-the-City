@@ -10,27 +10,28 @@ import { EventsContainer, ParagraphContainer } from './orderEventsComponents/Ord
 import { List, arrayMove } from 'react-movable';
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import GameContext from '../../../context/GameContext'
+import clientPic from '../../../images/client.jpg'
 // import MoveableEvents from './MoveableEvents'
 
 
-function MoveableEvents() {
-    const { items, setItems } = useContext(GameContext)
-    let {eventsToOrder} = orderEventsData
-    const {eventsCorrectOrder} = orderEventsData
+function MoveableEvents(props) {
+    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
+    let { eventsToOrder } = orderEventsData
+    const { eventsCorrectOrder } = orderEventsData
     const [message, setMessage] = useState('')
-    const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder); 
+    const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [hasFinished, setHasFinished] = useState(false)
     const [isCorrect, setIsCorrect] = useState(false)
 
 
-    useEffect(()=>{
-        if(hasFinished){
-            if (eventsCorrectOrder.toString() === itemsToOrder.toString()){
+    useEffect(() => {
+        if (hasFinished) {
+            if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
                 setMessage('Correct')
-                setIsCorrect(true) 
-                let dummyItems = [...items]
-                dummyItems.push('Ordered Statement')
-                setItems(dummyItems)
+                setIsCorrect(true)
+                let dummyCompletedChallenges = [...completedChallenges]
+                dummyCompletedChallenges.push(props.artefactName)
+                setCompletedChallenges(dummyCompletedChallenges)
             }
             else {
                 setMessage('Incorrect, try again')
@@ -38,49 +39,51 @@ function MoveableEvents() {
             }
         }
         // setMessage(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
-    },[itemsToOrder, hasFinished])
+    }, [itemsToOrder, hasFinished])
 
-    function handleCheck(){
+    function handleCheck() {
         setHasFinished(true)
     }
-    
+
     return (
         <>
-        <List
-            values={itemsToOrder}
-            onChange={({oldIndex, newIndex }) => {
-                setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
-            }
-            }
-            renderList={({ children, props }) => <ul {...props}>{children}</ul>}
-            renderItem={({ value, props }) => {
-            return <li className="eventOrderClass" {...props} disabled={true}>{value}</li>
-        }
-        }
-        />
-        <button onClick={handleCheck}>Check</button>
-        {message}
-        {isCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
+            <List
+                values={itemsToOrder}
+                onChange={({ oldIndex, newIndex }) => {
+                    setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
+                }
+                }
+                renderList={({ children, props }) => <ul {...props}>{children}</ul>}
+                renderItem={({ value, props }) => {
+                    return <li className="eventOrderClass" {...props} disabled={true}>{value}</li>
+                }
+                }
+            />
+            <button onClick={handleCheck}>Check</button>
+            {message}
+            {isCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
         </>
     );
 }
 
-function OrderEvents() {
-    const {orderEventsText} = orderEventsData
+function OrderEvents(props) {
+    const { orderEventsText, instructions } = orderEventsData
     return (
         <>
 
-                <Conversation>
- 
+            <Conversation>
+                <SpeechBubbleLeft image={clientPic} >
+                    {instructions}
+                </SpeechBubbleLeft>
                 <ParagraphContainer>
                     {orderEventsText}
                 </ParagraphContainer>
 
-                    <EventsContainer>
-                    <MoveableEvents />
-                    </EventsContainer>
-                </Conversation>
- 
+                <EventsContainer>
+                    <MoveableEvents artefactName={props.artefactName}/>
+                </EventsContainer>
+            </Conversation>
+
 
         </>
 

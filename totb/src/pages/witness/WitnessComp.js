@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import PageContainer from './../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
@@ -6,7 +6,8 @@ import Door from '../door/Door'
 import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
-import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from './witnessComponents/Layout'
+import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox, StyledArtefact, StyledFoundArtefact } from './witnessComponents/Layout'
+import GameContext from '../../context/GameContext' 
 
 let counter = 0
 let fullConversation = []
@@ -19,7 +20,15 @@ function WitnessComp(props) {
     const [questionList, setQuestionList] = useState(props.questionsWit)
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [doorWasOpened, setDoorWasOpened] = useState(false)
-    let history = useHistory()
+    const [isArtefactClicked, setIsArtefactClicked] = useState(false)
+    const {collectedArtefacts, setCollectedArtefacts} = useContext(GameContext)
+
+    function handleArtefactClick(){
+        setIsArtefactClicked(true)
+        let dummycollectedArtefacts = [...collectedArtefacts]
+        dummycollectedArtefacts.push(props.artefactName)
+        setCollectedArtefacts(dummycollectedArtefacts)
+    }
 
 
     useEffect(() => {
@@ -67,7 +76,13 @@ function WitnessComp(props) {
                     }
                     else {
                         //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
-                        setRightWrong(<NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>)
+                        //popup here found artefact if that is the case? hasArtefact ? <popup/> : null
+                        
+                        setRightWrong(
+                            props.artefactName ? 
+                        <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick}/> : 
+                        <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>
+                        )
                         counter=0;
                     }
                 }, 1000)
@@ -111,7 +126,16 @@ function WitnessComp(props) {
             </Conversation>
             <QuestionOptions>
                 <InfoBox>
-                    {rightWrong}
+                    {isArtefactClicked ? 
+                    <StyledFoundArtefact isArtefactClicked={isArtefactClicked}> 
+                    You found the "{props.artefactName}"!
+                    <NextPageButton destination={props.binCheck}>Check the bin</NextPageButton>
+                    <NextPageButton destination={props.trialURL}>Do the challenge</NextPageButton>
+                    <NextPageButton destination="officebase">Back to Office</NextPageButton>
+                    </StyledFoundArtefact>
+                    
+                    
+                    : rightWrong}
                 </InfoBox>
                 {questions}
             </QuestionOptions> 

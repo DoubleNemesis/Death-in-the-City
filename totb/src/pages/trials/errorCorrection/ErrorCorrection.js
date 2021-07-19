@@ -12,9 +12,9 @@ import NextPageButton from '../../../generalComponents/NextPageButton'
 import { propTypes } from 'react-bootstrap/esm/Image'
 
 
-function ErrorCorrection() {
+function ErrorCorrection(props) {
 
-    const {items, setItems} = useContext(GameContext)
+    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
     const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
@@ -101,9 +101,9 @@ function ErrorCorrection() {
         }
         if (count === 0){
             setIsComplete2(true)
-            let dummyItems = [...items]
-            dummyItems.push('Errror Correction')
-            setItems(dummyItems)
+            let dummyCompletedChallenges = [...completedChallenges]
+            dummyCompletedChallenges.push(props.artefactName)
+            setCompletedChallenges(dummyCompletedChallenges)
         }
         else{
             setIsComplete2(false)
