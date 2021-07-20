@@ -42,10 +42,10 @@ text-transform: uppercase;
 
 `
 
-    export const QuestionOption = styled.button`
-background-color: white;
-/* border-bottom: 1px solid #999; */
-padding: .5em 1em;
-margin: .2em;
-border-radius: 2px;
-`
+//     export const QuestionOption = styled.button`
+// background-color: yellow;
+// /* border-bottom: 1px solid #999; */
+// padding: .5em 1em;
+// margin: .2em;
+// border-radius: 2px;
+// `

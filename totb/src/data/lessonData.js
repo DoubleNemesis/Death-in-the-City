@@ -494,11 +494,11 @@ export const questionsWitness6 = {
         ["What did he exactly say?", 'fail']
     ],
     witnessConversationArray6: [
-        "Lexi told me in an email he was feeling depressed after suffering from Covid.",
-        "Really? When did he say that?",
-        "Just before the party. I didn't take it seriously. Now I wish I had.",
-        "What did he say exactly?",
-        "I'll show you! But the solicitor cut some bits out of it. I think I can help you understand it."
+        "I don't know what I can tell you. Chay was acting tough, as ever. But he's not so strong.",
+        "Really? What makes you say that?",
+        "Did you know I'm his ex-girlfriend? I know lots of things about him.",
+        "Anything you want to share?",
+        "I'll show you what his doctor said, if you can read it."
     ],
     trialURL6: [
         'redacted'
@@ -622,10 +622,12 @@ export const ErrorCorrectionData = {
         ["OK, I need you to tell me which sentences are incorrect. Just click on them, and in a moment I will ask you to show me how they should be written."],
     ],
     instructions2: [
-        ["Great! Now type out the sentences so they are correct and hit go."],
+        ["Great! Now type out the sentences so they are correct and hit check."],
     ],
     instructions3: [
-        ["Perfect! Thank you so much for your help!"],
+        [`Perfect! Thank you so much for your help! I like you, so here's some more information for you. There was something strange going on that night. 
+        A weird atmosphere. It started off fine, but later, around when Lexi was telling us about having covid, Dallas was just staring up out of the window
+         at the heavens. I think only Lexi was happy there that night. And maybe that was because Lucy was flirting with him!`],
     ],
     sentences: [
         ["I saw Lexi and Lucy holding hands under the table.", "0", false],
@@ -678,7 +680,7 @@ export const orderEventsData = {
 
 //loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
-    instructions: ['If we want to read this love letter, we need tobBreak the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, thing what word a letter usually starts with.'],
+    instructions: ['If we want to read this love letter, we need to break the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, thing what word a letter usually starts with.'],
     successMessageText: ['Amazing! Click here to see the full letter!'],
     loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
     loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chay.`],

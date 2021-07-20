@@ -80,3 +80,11 @@ animation-fill-mode: forwards;
 border-radius: 5px;
 z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
 `
+
+export const QuestionOption = styled.button`
+background-color: yellow;
+/* border-bottom: 1px solid #999; */
+padding: .5em 1em;
+margin: .2em;
+border-radius: 2px;
+`

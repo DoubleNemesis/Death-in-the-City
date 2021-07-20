@@ -4,7 +4,7 @@ import { history, useHistory } from 'react-router-dom'
 import GameContext from '../../context/GameContext'
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../generalComponents/InfoModal'
 import { officeCards } from '../../data/lessonData'
-import NextPageButton from './../../generalComponents/NextPageButton'
+import GeneralButton from './../../generalComponents/GeneralButton'
 import WitnessButton from './../../generalComponents/WitnessButton'
 import scroll from './../../images/scroll.png'
 
@@ -68,6 +68,7 @@ function OfficeBase() {
         collectedWitnesses,
         completedChallenges,
     } = useContext(GameContext)
+    let history = useHistory()
 
 
     const witnesses = officeCards.witnesses.map((item) => {
@@ -101,6 +102,12 @@ function OfficeBase() {
 
     })
 
+    function handleGuessClick(){
+    completedChallenges.length >= 5 ? 
+    history.push(`endpage`) :
+    alert('You have to finish all 5 challenges before you can make a guess!')
+    }
+
 
 
     return (
@@ -123,9 +130,7 @@ function OfficeBase() {
             </StyledModal>
             {witnesses}
             {artefacts}
-            {/* <ActionCard >Map</ActionCard>
-            <ActionCard >Ideas Board</ActionCard> */}
-
+            <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton>
         </Container>
     )
 }

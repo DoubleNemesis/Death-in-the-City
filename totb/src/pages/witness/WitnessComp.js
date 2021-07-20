@@ -3,17 +3,17 @@ import PageContainer from './../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import Door from '../door/Door'
-import {StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption} from '../../generalComponents/InfoModal'
+import {StyledModal, ToggleContainer, ToggleTaskInfo} from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
-import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox, StyledArtefact, StyledFoundArtefact } from './witnessComponents/Layout'
+import { Instructions, Conversation, QuestionOptions, QuestionOption, WitnessImage, TaskBox, InfoBox, StyledArtefact, StyledFoundArtefact } from './witnessComponents/Layout'
 import GameContext from '../../context/GameContext' 
 
 let counter = 0
 let fullConversation = []
 
 function WitnessComp(props) {
-    console.log(props);
+    // console.log(props);
     const [questions, setQuestions] = useState([])
     const [rightWrong, setRightWrong] = useState('Choose the best reply')
     const [conversation, setConversation] = useState([])
@@ -34,7 +34,7 @@ function WitnessComp(props) {
     useEffect(() => {
         function assignQuestionsList(dat) {
             let questionsList = dat.map((item, index) => {
-                return <QuestionOption key={`question${index}`} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></QuestionOption>
+                return <QuestionOption key={`question${index}`} onClick={handleClick} className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</QuestionOption>
             })
             setQuestions(questionsList)
         }
@@ -57,8 +57,8 @@ function WitnessComp(props) {
     }
 
     function handleClick(e) {
+        console.log(e.target)
         if (e.target.classList.contains('success')) {
-            console.log(counter)
             counter = counter + 1
             setRightWrong('Correct!')
             e.target.classList.add('correct')

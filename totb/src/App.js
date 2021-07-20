@@ -170,7 +170,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky1">
-            <Sneaky title="" artefactName={artefacts[0].name} artefactImage={shreddedletterPic} />
+            <Sneaky title="" artefactName={artefacts[0].name} artefactImage={shreddedletterPic} hasArtefact/>
           </Route>
           <Route path="/shreddedletter">
             <ShreddedLetter artefactName={artefacts[0].name} />
@@ -233,7 +233,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky4">
-          <Sneaky title="" artefactName={artefacts[2].name} artefactImage={secretcodePic} />  {/*loveletter*/}
+          <Sneaky title="" artefactName={artefacts[2].name} artefactImage={secretcodePic} hasArtefact/>  {/*loveletter*/}
           </Route>
           <Route path="/loveletter">
             <LoveLetter artefactName={artefacts[2].name} />

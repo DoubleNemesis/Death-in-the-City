@@ -10,6 +10,7 @@ import NextPageButton from '../../generalComponents/NextPageButton'
 import { clientData } from '../../data/lessonData'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witness/witnessComponents/Questions'
 import GameContext from '../../context/GameContext' 
+import { InfoBox } from '../witness/witnessComponents/Layout'
 
 
 const openBinLid = keyframes`
@@ -142,7 +143,11 @@ function Sneaky(props){
    function handleLidClick(){
         setOpenBin(true)
         setIsArtefactDisplayed(true)
-        setThought(`Oh! What's this!! This looks very interesting indeed...I'll click on it and take it with me...`)
+        setThought(
+            props.hasArtefact ? 
+            `Oh! What's this!! It's a Challenge! This looks very interesting indeed...I'll click on it and take it with me...` :
+            `This isn't a Challenge, but might be useful info. I'll take it.`
+            )
     }
 
     function handleArtefactClick(){

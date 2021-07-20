@@ -136,7 +136,7 @@ function ErrorCorrection(props) {
                     <SpeechBubbleLeft image={KirstenPic}>
                         {!isComplete1 ? instructions : !isComplete2 ? instructions2 : instructions3}
                     </SpeechBubbleLeft>
-                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton destination='sneaky2'>Leave</NextPageButton>}
+                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>}
                 </Conversation>
 
         </>

@@ -1,26 +1,25 @@
-    heavy
+    code
 !!!!! React check error on clicking correct convo option and getting "incorrect"
-
-    light css / images
-css trial backgrounds
-style task/office dialogue
-pic without background and head shots for messages?
-style the artefact found pup up
-style green tick on completed challenges
-@media for very narrow screens
-
-
-    light bugs/fixes
 scroll after correct option? fade in? investigate
-office link to guess page at end
-extra info for correct challenge? dallas, kirsten, loveletter
+office click to completed trials? popup?
 add credits to credits page
 sort out footer links
 
+     css / images
+css trial backgrounds
+completed letter on loveletter
+bin backgrounds
+style task/office dialogue
+pic without background and head shots for messages?
+style the artefact found pup up
+style green tick on completed challenges and office cards.
+@media for very narrow screens
 
     Text
+    what makes detective ask redacted about chay?
 first page blurb, instructions, graphics, make it clear each artefact leads to a challenge
 text make vocab relevant - shredded
+
 change wendy chat to doctor's report!
 office/task instructions pop up check
 witness backstories needed
