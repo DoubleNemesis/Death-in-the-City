@@ -1,19 +1,16 @@
     code
-!!!!! React check error on clicking correct convo option and getting "incorrect"
 scroll after correct option? fade in? investigate
 office click to completed trials? popup?
 add credits to credits page
 sort out footer links
 
      css / images
-css trial backgrounds
+css trial backgrounds size shape etc so bin looks good
 completed letter on loveletter
-bin backgrounds
 style task/office dialogue
 pic without background and head shots for messages?
 style the artefact found pup up
 style green tick on completed challenges and office cards.
-@media for very narrow screens
 
     Text
     what makes detective ask redacted about chay?
@@ -26,6 +23,20 @@ witness backstories needed
 add a PS to loveletter with extra info
 change floe text so it fits with trial
 kirste dialogue needs work - after trial -> recap what she told us plus bonus
+
+
+wendyYard Photo by <a href="https://unsplash.com/@hanzlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jisun Han</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+lucy yard Photo by <a href="https://unsplash.com/@r1g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ren Wang</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+  
+
+dallasYard Photo by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K8</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+kersten yard Photo by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K8</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 
 bodybuilder Photo by <a href="https://unsplash.com/@johnarano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Arano</a> on <a href="https://unsplash.com/s/photos/weight-lifting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

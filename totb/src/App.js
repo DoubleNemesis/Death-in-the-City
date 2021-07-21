@@ -39,6 +39,11 @@ import doorBlue from './images/doorBlue.png'
 import doorRed from './images/doorRed.png'
 import doorWhite from './images/doorWhite.png'
 import doorYellow from './images/doorYellow.png'
+import chayYard from './images/chayYard.jpg'
+import kirstenYard from './images/kirstenYard.jpg'
+import dallasYard from './images/dallasYard.jpg'
+import lucyYard from './images/lucyYard.jpg'
+import wendyYard from './images/wendyYard.jpg'
 import scroll from './images/scroll.png'
 import shreddedletterPic from './images/shreddedletter.png'
 import errorcorrectionPic from './images/errorcorrection.png'
@@ -170,7 +175,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky1">
-            <Sneaky title="" artefactName={artefacts[0].name} artefactImage={shreddedletterPic} hasArtefact/>
+            <Sneaky title="" artefactName={artefacts[0].name} artefactImage={shreddedletterPic} hasArtefact yardImage={chayYard}/>
           </Route>
           <Route path="/shreddedletter">
             <ShreddedLetter artefactName={artefacts[0].name} />
@@ -192,7 +197,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky2">
-          <Sneaky title="" artefactName={artefacts[7].name} artefactImage={receiptPic} /> {/*receipt*/}
+          <Sneaky title="" artefactName={artefacts[7].name} artefactImage={receiptPic} yardImage={kirstenYard}/> {/*receipt*/}
           </Route>
           <Route path="/errorcorrection">
             <ErrorCorrection  artefactName={artefacts[1].name}/>
@@ -214,7 +219,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky3">
-          <Sneaky title="" artefactName={artefacts[6].name} artefactImage={poisonpenPic} /> {/*poison*/}
+          <Sneaky title="" artefactName={artefacts[6].name} artefactImage={poisonpenPic} yardImage={dallasYard} /> {/*poison*/}
           </Route>
           <Route path="/orderevents">
             <OrderEvents artefactName={artefacts[3].name} />
@@ -233,7 +238,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky4">
-          <Sneaky title="" artefactName={artefacts[2].name} artefactImage={secretcodePic} hasArtefact/>  {/*loveletter*/}
+          <Sneaky title="" artefactName={artefacts[2].name} artefactImage={secretcodePic} hasArtefact yardImage={lucyYard}/>  {/*loveletter*/}
           </Route>
           <Route path="/loveletter">
             <LoveLetter artefactName={artefacts[2].name} />
@@ -255,7 +260,7 @@ function App() {
             />
           </Route>
           <Route path="/sneaky5">
-          <Sneaky title="" artefactName={artefacts[5].name} artefactImage={weightlifterPic} /> {/*weight*/}
+          <Sneaky title="" artefactName={artefacts[5].name} artefactImage={weightlifterPic} yardImage={wendyYard}/> {/*weight*/}
           </Route>
           <Route path="/redacted">
             <Redacted artefactName={artefacts[4].name} />

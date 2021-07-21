@@ -8,6 +8,11 @@ text-align: left;
 font-family: 'Bangers', cursive;
 color: red;
 letter-spacing: 2px;
+
+@media(max-width: 321px){ //iphone 5/SE
+font-size: 1.8rem;
+}
+
 `
 
 function Title({ children }) {

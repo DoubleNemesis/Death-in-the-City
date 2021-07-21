@@ -3,7 +3,7 @@ import { history, useHistory } from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
 import bin from '../../images/bin.png'
 import binlid from '../../images/binlid.png'
-import chayYard from '../../images/chayYard.jpg'
+// import chayYard from '../../images/chayYard.jpg'
 import PageContainer from '../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
@@ -15,7 +15,7 @@ import { InfoBox } from '../witness/witnessComponents/Layout'
 
 const openBinLid = keyframes`
 0% { top: -44px; left: 50px; }
-100% { top: -450px; left: -80px; }
+100% { top: -650px; left: -80px; }
 `
 const fadeIn = keyframes`
 0% { opacity: 0;}
@@ -37,7 +37,7 @@ width:100%;
 height: 100vh;
 background-color: blue;
 padding-top: 10vh;
-background-image: url(${chayYard});
+background-image: url(${({yardImage})=>yardImage});
 background-size: cover;
 `
 
@@ -101,7 +101,7 @@ opacity: 0;
 top: -250px;
 left: 0;
 right: 0;
-margin: 5%;
+margin: 0%;
 width: auto;
 font-size: 1.3rem;
 position: absolute;
@@ -113,6 +113,7 @@ animation-delay: .1s;
 animation-fill-mode: forwards;
 border-radius: 5px;
 z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
+border: 4px solid #333;
 `
 
 
@@ -129,7 +130,7 @@ background-color: transparent;
 
 const ThoughtContainer = styled.div`
 width: 100%;
-margin-top: 7vh;
+margin-top: 0vh;
 `
 
 function Sneaky(props){
@@ -159,7 +160,8 @@ function Sneaky(props){
 
     return(
         <>
-            <YardContainer>
+            <YardContainer yardImage={props.yardImage}>
+                <ThoughtContainer><SpeechBubbleRight minHeight="90">{thought}</SpeechBubbleRight></ThoughtContainer>
             <StyledBinContainer>
                 
             {openBin ? <StyledBinArtefact src={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}
@@ -171,7 +173,6 @@ function Sneaky(props){
                  : null}
             <StyledBin/>
             </StyledBinContainer>
-            <ThoughtContainer><SpeechBubbleRight minHeight="90">{thought}</SpeechBubbleRight></ThoughtContainer>
             </YardContainer>
 
 
