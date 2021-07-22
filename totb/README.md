@@ -1,22 +1,20 @@
     code
-scroll after correct option? fade in? investigate
 office click to completed trials? popup?
 add credits to credits page
 sort out footer links
+error back! line 37 witnesscomp!!!!
 
      css / images
 css trial backgrounds size shape etc so bin looks good
 completed letter on loveletter
 style task/office dialogue
 pic without background and head shots for messages?
-style the artefact found pup up
 style green tick on completed challenges and office cards.
 
     Text
-    what makes detective ask redacted about chay?
+what makes detective ask redacted about chay?
 first page blurb, instructions, graphics, make it clear each artefact leads to a challenge
 text make vocab relevant - shredded
-
 change wendy chat to doctor's report!
 office/task instructions pop up check
 witness backstories needed
