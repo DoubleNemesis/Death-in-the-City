@@ -65,7 +65,7 @@ h1, h2{
 } */
 
 .correct{
-  border: 1px solid yellow !important;
+  border: 1px solid red !important;
 }
 .wrong{
   padding: .5em;
@@ -73,6 +73,11 @@ h1, h2{
   color: #666;
   cursor:not-allowed;
 }
+
+/* span{
+  border: 1px solid red !important;
+  width: 100%;
+} */
 
 .question{
 }

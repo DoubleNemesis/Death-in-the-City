@@ -2,7 +2,6 @@
 office click to completed trials? popup?
 add credits to credits page
 sort out footer links
-error back! line 37 witnesscomp!!!!
 
      css / images
 css trial backgrounds size shape etc so bin looks good

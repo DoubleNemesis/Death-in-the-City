@@ -25,16 +25,16 @@ function WitnessComp(props) {
 
     function handleArtefactClick() {
         setIsArtefactClicked(true)
-        let dummycollectedArtefacts = [...collectedArtefacts]
-        dummycollectedArtefacts.push(props.artefactName)
-        setCollectedArtefacts(dummycollectedArtefacts)
+        let dummyCollectedArtefacts = [...collectedArtefacts]
+        dummyCollectedArtefacts.push(props.artefactName)
+        setCollectedArtefacts(dummyCollectedArtefacts)
     }
 
 
     useEffect(() => {
         function assignQuestionsList(dat) {
             let questionsList = dat.map((item, index) => {
-                return <QuestionOption key={`question${index}`} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></QuestionOption>
+                return <QuestionOption key={`question${index}`} onClick={handleClick}><div className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</div></QuestionOption>
                 // return <QuestionOption key={`question${index}`} onClick={handleClick} className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</QuestionOption>
             })
             setQuestions(questionsList)

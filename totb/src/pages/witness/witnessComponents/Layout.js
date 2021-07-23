@@ -36,6 +36,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 background-color: white;
 text-align: center;
 font-size: 1.2rem;
+width: 100%;
 `
 
 export const Conversation = styled.div`
@@ -43,12 +44,15 @@ display: flex;
 flex-direction: column;
 /* background-color: skyblue; */
 width: 100%;
+
 `
 export const QuestionOptions = styled.div`
 display: flex;
 flex-direction: column;
 /* background-color: skyblue; */
 width: 100%;
+padding: 0;
+align-items: center;
 `
 
 const StyledWitnessImage = styled.img`
@@ -82,9 +86,19 @@ z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
 `
 
 export const QuestionOption = styled.button`
-background-color: yellow;
-/* border-bottom: 1px solid #999; */
-padding: .5em 1em;
-margin: .2em;
+background-color: transparent;
+border-bottom: 1px solid #999;
+/* padding: .5em 1em;
+margin: .2em; */
 border-radius: 2px;
+width: 100%;
+div{
+    border: 1px solid pink !important;
+    width: 100%;
+    height: 100%;
+    padding: .5em 1em;
+margin: .2em;
+background-color: yellow;
+
+}
 `
