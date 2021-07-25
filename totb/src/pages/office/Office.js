@@ -70,6 +70,8 @@ function OfficeBase() {
     } = useContext(GameContext)
     let history = useHistory()
 
+    console.log(completedChallenges);
+    console.log(collectedArtefacts);
 
     const witnesses = officeCards.witnesses.map((item) => {
         if (collectedWitnesses.indexOf(item.name) > -1){
@@ -86,12 +88,13 @@ function OfficeBase() {
     })
 
 
-    console.log(completedChallenges);
 
     const artefacts = officeCards.artefacts.map((item) => {
         if (collectedArtefacts.indexOf(item.name) > -1){
             return (
-                <ArtefactCard><img height="50px" src={item.image} />{completedChallenges.indexOf(item.name) > -1 ? <Tick/>:null}<WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
+                completedChallenges.indexOf(item.name) > -1 ?
+                <ArtefactCard><img height="50px" src={item.image} /><Tick/><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
+                <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
             )
         }
         else{

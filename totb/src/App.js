@@ -65,6 +65,9 @@ function App() {
   const [collectedArtefacts, setCollectedArtefacts] = useState([])
   const [completedChallenges, setCompletedChallenges] = useState([])
   const [collectedWitnesses, setCollectedWitnesses] = useState([])
+  const [isShreddedLetterCorrect, setIsShreddedLetterCorrect] = useState(false)
+  const [isErrorCorrectionComplete, setIsErrorCorrectionComplete] = useState(false)
+  const [displayFullLoveLetterText, setDisplayFullLoveLetterText] = useState(false)
   const { homeTitle, homeSubtitle } = homePageData
   const providedValues = {
     hasDoneVocab, setHasDoneVocab,
@@ -73,7 +76,10 @@ function App() {
     isInstructionsModalDisplayed, setIsInstructionsModalDisplayed,
     collectedArtefacts, setCollectedArtefacts,
     collectedWitnesses, setCollectedWitnesses,
-    completedChallenges, setCompletedChallenges
+    completedChallenges, setCompletedChallenges,
+    isShreddedLetterCorrect, setIsShreddedLetterCorrect,
+    isErrorCorrectionComplete, setIsErrorCorrectionComplete,
+    displayFullLoveLetterText, setDisplayFullLoveLetterText
   }
 
   const { characterNames } = lessonData['characterNames'];

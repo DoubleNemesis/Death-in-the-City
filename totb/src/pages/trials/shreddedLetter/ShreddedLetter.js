@@ -9,20 +9,22 @@ import GameContext from '../../../context/GameContext';
 import clientPic from '../../../images/client.jpg'
 
 function ShreddedLetter(props) {
+    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { isShreddedLetterCorrect, setIsShreddedLetterCorrect } = useContext(GameContext)
+    
     let { eventsToOrder, instructions } = ShreddedLetterPiecesData
     const { eventsCorrectOrder } = ShreddedLetterPiecesData
     const [message, setMessage] = useState('')
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [hasFinished, setHasFinished] = useState(false)
-    const [isCorrect, setIsCorrect] = useState(false)
-    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
+    //const [isShreddedLetterCorrect, setIsShreddedLetterCorrect] = useState(false)
 
     useEffect(() => {
         if (hasFinished) {
             if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
                 setMessage('Correct')
-                setIsCorrect(true)
+                setIsShreddedLetterCorrect(true)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
                 setCompletedChallenges(dummyCompletedChallenges)
@@ -58,7 +60,7 @@ function ShreddedLetter(props) {
                 />
                 <button onClick={handleCheck}>Check</button>
                 {message}
-                {isCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
+                {isShreddedLetterCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
             </EventsContainer>
         </>
     );

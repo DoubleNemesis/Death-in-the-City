@@ -17,13 +17,15 @@ import clientPic from '../../../images/client.jpg'
 
 
 function LoveLetter(props) {
-    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { completedChallenges, setCompletedChallenges} = useContext(GameContext)
+    const { displayFullLoveLetterText, setDisplayFullLoveLetterText } = useContext(GameContext)
     const [selectedLetter, setSelectedLetter] = useState('')
     const [selectedSymbol, setSelectedSymbol] = useState('')
     const [usedLetters, setUsedLetters] = useState([])
     const [successMessage, setSuccessMessage] = useState('')
     // const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
-    const [displayFullText, setDisplayFullText] = useState(false)
+    // const [displayFullText, setDisplayFullText] = useState(false)
+    // displayFullLoveLetterText, setDisplayFullLoveLetterText
 
     const nodeRef = useRef(null);
     const { instructions, loveLetterCode, successMessageText, loveLetterFull } = loveLetterData
@@ -31,7 +33,7 @@ function LoveLetter(props) {
     const secretMessageArray = secretMessage.toLowerCase().split('');
 
     function handleFullTextClick() {
-        setDisplayFullText(true)
+        setDisplayFullLoveLetterText(true)
     }
 
     function handleLetterClick(e) {
@@ -62,7 +64,7 @@ function LoveLetter(props) {
             decodedMessage = decodedMessage.join('')
             const originalMessageNoSpace = secretMessageArray.join('').replace(/\s+/g, '')
 
-            if (decodedMessage !== originalMessageNoSpace) {
+            if (decodedMessage !== originalMessageNoSpace) { //change here to undo
                 setSuccessMessage(<SuccessMessageComp message={successMessageText} onclick={handleFullTextClick} />)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
@@ -89,23 +91,6 @@ function LoveLetter(props) {
 
         return (
             <>
-                {/* <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
-                <h2>Task: Dialogue</h2>
-                <ul>
-                    <li> Read the text in the speech bubble.</li>
-                    <li> Choose a reply from the list to continue the conversation.</li>
-                    <li> Only one question is grammatically correct. </li>
-                    <li> If you choose the wrong answer, you lose a point.</li>
-                </ul>
-                <ToggleContainer>
-                <ToggleTaskInfo
-                    onClick={() => {
-                        setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)
-                        }}>
-                    Start
-                </ToggleTaskInfo>
-                </ToggleContainer>
-            </StyledModal> */}
                 {targetSymbol ?
                     <LoveLetterSymbolElems className={`${targetSymbol.charCodeAt(0)} symbolsClass`} onClick={handleSymbolClick} color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'beige'}>{targetSymbol}</LoveLetterSymbolElems> :
                     <LoveLetterSpace />
@@ -123,7 +108,7 @@ function LoveLetter(props) {
                 </SpeechBubbleLeft>
                 <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
-                        {!displayFullText ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
+                        {!displayFullLoveLetterText ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
                     {successMessage}
                     <LoveLetterLettersContainer>

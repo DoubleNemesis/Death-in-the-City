@@ -141,8 +141,6 @@ function WitnessComp(props) {
                                     <NextPageButton destination={props.trialURL}>Do the challenge</NextPageButton>
                                     <NextPageButton destination="officebase">Back to Office</NextPageButton>
                                 </StyledFoundArtefact>
-
-
                                 : rightWrong}
                         </InfoBox>
                         {questions}

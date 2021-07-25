@@ -1,9 +1,8 @@
     code
 office click to completed trials? popup?
-add credits to credits page
-sort out footer links
+witness spoken too - view conv?
 
-     css / images
+    css / images
 css trial backgrounds size shape etc so bin looks good
 completed letter on loveletter
 style task/office dialogue
@@ -11,6 +10,7 @@ pic without background and head shots for messages?
 style green tick on completed challenges and office cards.
 
     Text
+sort out footer links
 what makes detective ask redacted about chay?
 first page blurb, instructions, graphics, make it clear each artefact leads to a challenge
 text make vocab relevant - shredded
@@ -21,39 +21,27 @@ add a PS to loveletter with extra info
 change floe text so it fits with trial
 kirste dialogue needs work - after trial -> recap what she told us plus bonus
 
-
 wendyYard Photo by <a href="https://unsplash.com/@hanzlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jisun Han</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 lucy yard Photo by <a href="https://unsplash.com/@r1g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ren Wang</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-  
-
 dallasYard Photo by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K8</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 kersten yard Photo by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K8</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
-
 bodybuilder Photo by <a href="https://unsplash.com/@johnarano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Arano</a> on <a href="https://unsplash.com/s/photos/weight-lifting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 secret code https://imgur.com/HqBBy
 door sign <a href='https://www.freepik.com/vectors/work'>Work vector created by freepik - www.freepik.com</a>
 
 scroll <a href="https://www.freepik.com/vectors/ribbon">Ribbon vector created by upklyak - www.freepik.com</a>
 
-
 window view Photo by <a href="https://unsplash.com/@jannerboy62?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Fewings</a> on <a href="https://unsplash.com/s/photos/view-from-window?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-  
-
 kitehcn Photo by <a href="https://unsplash.com/@sidekix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sidekix Media</a> on <a href="https://unsplash.com/s/photos/kitchen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 chay yard Photo by <a href="https://unsplash.com/@dlrmco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel Thiele</a> on <a href="https://unsplash.com/s/photos/brickwall?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 bin <a href="https://www.freevector.com/metal-trash-bins#">FreeVector.com</a>
 
 mr grey: Photo by <a href="https://unsplash.com/@samanta1225?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samanta Barba Alcalá</a> on <a href="https://unsplash.com/s/photos/older-man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

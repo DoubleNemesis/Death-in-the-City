@@ -15,13 +15,13 @@ import { propTypes } from 'react-bootstrap/esm/Image'
 function ErrorCorrection(props) {
 
     const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
+    const { isErrorCorrectionComplete, setIsErrorCorrectionComplete } = useContext(GameContext)
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
     const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
     const [isComplete1, setIsComplete1] = useState(false)
-    const [isComplete2, setIsComplete2] = useState(false)
+    // const [isErrorCorrectionComplete, setIsErrorCorrectionComplete] = useState(false)
     const [correctedSentences, setCorrectedSentences] = useState({})
-    const { level, setLevel } = useContext(GameContext)
     const { instructions, instructions2, instructions3, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
 
     useEffect(() => {
@@ -100,13 +100,13 @@ function ErrorCorrection(props) {
             }
         }
         if (count === 0){
-            setIsComplete2(true)
+            setIsErrorCorrectionComplete(true)
             let dummyCompletedChallenges = [...completedChallenges]
             dummyCompletedChallenges.push(props.artefactName)
             setCompletedChallenges(dummyCompletedChallenges)
         }
         else{
-            setIsComplete2(false)
+            setIsErrorCorrectionComplete(false)
         }
         //setIsComplete2(count === 0 ? true : false)
         //here
@@ -134,9 +134,12 @@ function ErrorCorrection(props) {
         <>
                 <Conversation>
                     <SpeechBubbleLeft image={KirstenPic}>
-                        {!isComplete1 ? instructions : !isComplete2 ? instructions2 : instructions3}
+                        {isErrorCorrectionComplete ? instructions3 : isComplete1 ? instructions2 : instructions}
+                        {/* {!isComplete1 ? instructions : !isErrorCorrectionComplete ? instructions2 : instructions3} */}
                     </SpeechBubbleLeft>
-                    {!isComplete1 ? firstSentenceList : !isComplete2 ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>}
+
+                    {isErrorCorrectionComplete ?  <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton> : isComplete1 ? secondSentenceList : firstSentenceList}
+                    {/* {!isComplete1 ? firstSentenceList : !isErrorCorrectionComplete ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>} */}
                 </Conversation>
 
         </>
