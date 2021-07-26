@@ -15,7 +15,7 @@ import { propTypes } from 'react-bootstrap/esm/Image'
 function ErrorCorrection(props) {
 
     const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
-    const { isErrorCorrectionComplete, setIsErrorCorrectionComplete } = useContext(GameContext)
+    const { isErrorCorrectionCorrect, setIsErrorCorrectionCorrect} = useContext(GameContext)
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
     const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
@@ -100,13 +100,13 @@ function ErrorCorrection(props) {
             }
         }
         if (count === 0){
-            setIsErrorCorrectionComplete(true)
+            setIsErrorCorrectionCorrect(true)
             let dummyCompletedChallenges = [...completedChallenges]
             dummyCompletedChallenges.push(props.artefactName)
             setCompletedChallenges(dummyCompletedChallenges)
         }
         else{
-            setIsErrorCorrectionComplete(false)
+            setIsErrorCorrectionCorrect(false)
         }
         //setIsComplete2(count === 0 ? true : false)
         //here
@@ -134,11 +134,11 @@ function ErrorCorrection(props) {
         <>
                 <Conversation>
                     <SpeechBubbleLeft image={KirstenPic}>
-                        {isErrorCorrectionComplete ? instructions3 : isComplete1 ? instructions2 : instructions}
+                        {isErrorCorrectionCorrect ? instructions3 : isComplete1 ? instructions2 : instructions}
                         {/* {!isComplete1 ? instructions : !isErrorCorrectionComplete ? instructions2 : instructions3} */}
                     </SpeechBubbleLeft>
 
-                    {isErrorCorrectionComplete ?  <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton> : isComplete1 ? secondSentenceList : firstSentenceList}
+                    {isErrorCorrectionCorrect ?  <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton> : isComplete1 ? secondSentenceList : firstSentenceList}
                     {/* {!isComplete1 ? firstSentenceList : !isErrorCorrectionComplete ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>} */}
                 </Conversation>
 

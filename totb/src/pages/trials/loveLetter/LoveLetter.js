@@ -18,7 +18,7 @@ import clientPic from '../../../images/client.jpg'
 
 function LoveLetter(props) {
     const { completedChallenges, setCompletedChallenges} = useContext(GameContext)
-    const { displayFullLoveLetterText, setDisplayFullLoveLetterText } = useContext(GameContext)
+    const { isLoveLetterCorrect, setIsLoveLetterCorrect, setCollectedArtefacts } = useContext(GameContext)
     const [selectedLetter, setSelectedLetter] = useState('')
     const [selectedSymbol, setSelectedSymbol] = useState('')
     const [usedLetters, setUsedLetters] = useState([])
@@ -33,7 +33,7 @@ function LoveLetter(props) {
     const secretMessageArray = secretMessage.toLowerCase().split('');
 
     function handleFullTextClick() {
-        setDisplayFullLoveLetterText(true)
+        setIsLoveLetterCorrect(true)
     }
 
     function handleLetterClick(e) {
@@ -69,7 +69,6 @@ function LoveLetter(props) {
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
                 setCompletedChallenges(dummyCompletedChallenges)
-
             }
             //setSuccessMessage(decodedMessage !== originalMessageNoSpace ? <SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/> : null)
         }
@@ -84,10 +83,14 @@ function LoveLetter(props) {
     }, [usedLetters])
 
 
+
+
     const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : 'beige'} onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
     const LoveLetterCode = secretMessageArray.map((item, index) => {
         const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
         const symbolTiles = 'symbolTiles'
+
+
 
         return (
             <>
@@ -108,7 +111,7 @@ function LoveLetter(props) {
                 </SpeechBubbleLeft>
                 <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
-                        {!displayFullLoveLetterText ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
+                        {!isLoveLetterCorrect ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
                     {successMessage}
                     <LoveLetterLettersContainer>

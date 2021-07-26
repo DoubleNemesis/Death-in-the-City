@@ -37,12 +37,13 @@ flex-direction: column;
 width: 120px;
 height: 100px;
 margin: .2em;
-background-color: #333;
+background-color: ${({bgColor})=>bgColor};
 justify-content: center;
 align-items: center;
 color: white;
-border: 3px solid whitesmoke;
+border: 3px solid ${({borderColor})=>borderColor};
 border-radius: 5px;
+position: relative;
 `
 const ActionCard = styled.div`
 width: 100px;
@@ -51,12 +52,20 @@ margin: .2em;
 background-color: pink;
 `
 const Tick = styled.div`
+position: absolute;
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
 width: 10px;
-min-width: 10px;
+min-width: 100%;
+max-width: 100%;
 height: 10px;
-min-height: 10px;
-margin: .2em;
-background-color: limegreen;
+min-height: 100%;
+background-color: transparent;
+border-radius: 20px;
+/* transform: rotateZ(-45deg); */
+border: 3px solid limegreen;
 `
 function OfficeBase() {
     const {
@@ -65,6 +74,8 @@ function OfficeBase() {
         hasVisitorBook, 
         items,
         collectedArtefacts,
+        setCollectedArtefacts,
+        setCompletedChallenges,
         collectedWitnesses,
         completedChallenges,
     } = useContext(GameContext)
@@ -93,13 +104,13 @@ function OfficeBase() {
         if (collectedArtefacts.indexOf(item.name) > -1){
             return (
                 completedChallenges.indexOf(item.name) > -1 ?
-                <ArtefactCard><img height="50px" src={item.image} /><Tick/><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
-                <ArtefactCard><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
+                <ArtefactCard borderColor="limegreen" bgColor="black"><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
             )
         }
         else{
             return (
-                <ArtefactCard><img height="75px" src={scroll} /></ArtefactCard>
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="75px" src={scroll} /></ArtefactCard>
             )
         }
 

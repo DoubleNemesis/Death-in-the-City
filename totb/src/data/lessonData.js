@@ -152,48 +152,56 @@ export const officeCards = {
             'id': [1],
             'image': shreddedletterPic,
             'destination': 'shreddedletter',
+            'destinationComplete' : '',
         },
         {
             'name': [`Error Correction`],
             'id': [2],
             'image': errorcorrectionPic,
             'destination': 'errorcorrection',
+            'destinationComplete' : '',
         },
         {
             'name': [`Love Letter challenge`], //bin
             'id': [3],
             'image': secretcodePic,
             'destination': 'loveletter',
+            'destinationComplete' : '',
         },
         {
             'name': [`Ordered Statement`],
             'id': [4],
             'image': policestatementPic,
             'destination': 'orderevents',
+            'destinationComplete' : '',
         },
         {
             'name': [`Redacted Statement`],
             'id': [5],
             'image': medicalreportPic,
             'destination': 'redacted',
+            'destinationComplete' : '',
         },
         {
             'name': [`Photo of Lucy`], // wendy's bin
             'id': [6],
             'image': weightlifterPic,
             'destination': 'redacted',
+            'destinationComplete' : '',
         },
         {
             'name': [`Poison Pen`], // dallas' bin
             'id': [7],
             'image': poisonpenPic,
             'destination': 'redacted',
+            'destinationComplete' : '',
         },
         {
             'name': [`Rolex Receipt`], //kirsten's bin
             'id': [8],
             'image': receiptPic,
             'destination': 'redacted',
+            'destinationComplete' : '',
         },
     ],
     'links': [

@@ -65,9 +65,12 @@ function App() {
   const [collectedArtefacts, setCollectedArtefacts] = useState([])
   const [completedChallenges, setCompletedChallenges] = useState([])
   const [collectedWitnesses, setCollectedWitnesses] = useState([])
+  const [completededWitnesses, setCompletededWitnesses] = useState([])
   const [isShreddedLetterCorrect, setIsShreddedLetterCorrect] = useState(false)
-  const [isErrorCorrectionComplete, setIsErrorCorrectionComplete] = useState(false)
-  const [displayFullLoveLetterText, setDisplayFullLoveLetterText] = useState(false)
+  const [isErrorCorrectionCorrect, setIsErrorCorrectionCorrect] = useState(false)
+  const [isLoveLetterCorrect, setIsLoveLetterCorrect] = useState(false)
+  const [isOrderEventsCorrect, setIsOrderEventsCorrect] = useState(false)
+  const [isRedactedCorrect, setIsRedactedCorrect] = useState(false)
   const { homeTitle, homeSubtitle } = homePageData
   const providedValues = {
     hasDoneVocab, setHasDoneVocab,
@@ -76,10 +79,14 @@ function App() {
     isInstructionsModalDisplayed, setIsInstructionsModalDisplayed,
     collectedArtefacts, setCollectedArtefacts,
     collectedWitnesses, setCollectedWitnesses,
+    completededWitnesses, setCompletededWitnesses,
     completedChallenges, setCompletedChallenges,
     isShreddedLetterCorrect, setIsShreddedLetterCorrect,
-    isErrorCorrectionComplete, setIsErrorCorrectionComplete,
-    displayFullLoveLetterText, setDisplayFullLoveLetterText
+    isErrorCorrectionCorrect, setIsErrorCorrectionCorrect,
+    isLoveLetterCorrect, setIsLoveLetterCorrect,
+    isOrderEventsCorrect, setIsOrderEventsCorrect,
+    isRedactedCorrect, setIsRedactedCorrect,
+
   }
 
   const { characterNames } = lessonData['characterNames'];
@@ -91,6 +98,8 @@ function App() {
   const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5, exitMessage5 } = lessonData['questionsWitness5'];
   const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6, exitMessage6 } = lessonData['questionsWitness6'];
   const { artefacts } = lessonData['officeCards'];
+
+
 
   return (
     <>

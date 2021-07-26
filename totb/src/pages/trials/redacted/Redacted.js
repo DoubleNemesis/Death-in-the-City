@@ -14,10 +14,11 @@ import NextPageButton from '../../../generalComponents/NextPageButton'
 
 function Redacted(props) {
 
+    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
+    const {isRedactedCorrect, setIsRedactedCorrect} = useContext(GameContext)
+    // const [isRedactedCorrect, setIsRedactedCorrect] = useState(false)
     const [redactedInputs, setRedactedInputs] = useState({})
     const [message, setMessage] = useState('')
-    const [isCorrect, setIsCorrect] = useState(false)
-    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
     const { instructions, missingWords } = redactedData
 
     function handleInputChange(e) {
@@ -30,14 +31,14 @@ function Redacted(props) {
         let arrayOfAnswers = []
         if (Object.values(redactedInputs).toString() === missingWords.toString()){
             setMessage( 'Correct!')
-            setIsCorrect(true)
+            setIsRedactedCorrect(true)
             let dummyCompletedChallenges = [...completedChallenges]
             dummyCompletedChallenges.push(props.artefactName)
             setCompletedChallenges(dummyCompletedChallenges)
         }
         else{
             setMessage('Incorrect, try again!')
-            setIsCorrect(false)
+            setIsRedactedCorrect(false)
         }
     }
 
@@ -65,7 +66,7 @@ function Redacted(props) {
                     />
                     <button onClick={handleCheck}>Check</button> {message}
                 </StatementContainer>
-                    {isCorrect ? <NextPageButton destination="officeBase">Go to Office</NextPageButton> : null}
+                    {isRedactedCorrect ? <NextPageButton destination="officeBase">Go to Office</NextPageButton> : null}
             </Conversation>
         </>
 

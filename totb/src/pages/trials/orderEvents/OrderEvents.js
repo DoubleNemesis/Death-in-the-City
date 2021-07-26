@@ -35,19 +35,20 @@ import clientPic from '../../../images/client.jpg'
 
 function OrderEvents(props) {
     const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
+    const {isOrderEventsCorrect, setIsOrderEventsCorrect} = useContext(GameContext)
+    // const [isOrderEventsCorrect, setIsOrderEventsCorrect] = useState(false)
     let { eventsToOrder } = orderEventsData
     const { eventsCorrectOrder } = orderEventsData
     const [message, setMessage] = useState('')
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [hasFinished, setHasFinished] = useState(false)
-    const [isCorrect, setIsCorrect] = useState(false)
     const { orderEventsText, instructions } = orderEventsData
 
     useEffect(() => {
         if (hasFinished) {
             if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
                 setMessage('Correct')
-                setIsCorrect(true)
+                setIsOrderEventsCorrect(true)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
                 setCompletedChallenges(dummyCompletedChallenges)
@@ -66,7 +67,6 @@ function OrderEvents(props) {
 
     return (
         <>
-
             <Conversation>
                 <SpeechBubbleLeft image={clientPic} >
                     {instructions}
@@ -90,7 +90,7 @@ function OrderEvents(props) {
             />
             <button onClick={handleCheck}>Check</button>
             {message}
-            {isCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
+            {isOrderEventsCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
                 </EventsContainer>
             </Conversation>
 
