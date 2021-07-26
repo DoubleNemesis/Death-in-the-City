@@ -65,7 +65,7 @@ function App() {
   const [collectedArtefacts, setCollectedArtefacts] = useState([])
   const [completedChallenges, setCompletedChallenges] = useState([])
   const [collectedWitnesses, setCollectedWitnesses] = useState([])
-  const [completededWitnesses, setCompletededWitnesses] = useState([])
+  const [completedWitnesses, setCompletedWitnesses] = useState([])
   const [isShreddedLetterCorrect, setIsShreddedLetterCorrect] = useState(false)
   const [isErrorCorrectionCorrect, setIsErrorCorrectionCorrect] = useState(false)
   const [isLoveLetterCorrect, setIsLoveLetterCorrect] = useState(false)
@@ -79,7 +79,7 @@ function App() {
     isInstructionsModalDisplayed, setIsInstructionsModalDisplayed,
     collectedArtefacts, setCollectedArtefacts,
     collectedWitnesses, setCollectedWitnesses,
-    completededWitnesses, setCompletededWitnesses,
+    completedWitnesses, setCompletedWitnesses,
     completedChallenges, setCompletedChallenges,
     isShreddedLetterCorrect, setIsShreddedLetterCorrect,
     isErrorCorrectionCorrect, setIsErrorCorrectionCorrect,

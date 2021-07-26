@@ -21,7 +21,8 @@ margin: .2em;
 background-color: skyblue;
 text-align: center;
 border-radius: 5px;
-border: 3px solid whitesmoke;
+border: 3px solid ${({borderColor})=>borderColor};
+opacity: ${({opacity})=>opacity};
 `
 const CardImageContainer = styled.div`
 max-height: 100px;
@@ -78,22 +79,25 @@ function OfficeBase() {
         setCompletedChallenges,
         collectedWitnesses,
         completedChallenges,
+        completedWitnesses
     } = useContext(GameContext)
     let history = useHistory()
 
-    console.log(completedChallenges);
-    console.log(collectedArtefacts);
+    console.log(completedWitnesses);
 
     const witnesses = officeCards.witnesses.map((item) => {
         if (collectedWitnesses.indexOf(item.name) > -1){
             const destination = `/witness${item.id}`
+            const isKnown = completedWitnesses.indexOf(item.name.toString()) > -1
+            console.log(isKnown)
+            console.log(item.name)
             return (
-                <WitnessCard><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination} isDisabled={false}>{item.name}</WitnessButton></WitnessCard>
+                <WitnessCard borderColor={isKnown ? 'limeGreen' : 'whitesmoke'} opacity={isKnown ? '0.5' : '1'}><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination} isDisabled={false}>{item.name}</WitnessButton></WitnessCard>
             )
         }
         else {
             return (
-                <WitnessCard><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton isDisabled={true}>{item.altName}</WitnessButton>: null}</WitnessCard>
+                <WitnessCard borderColor="whitesmoke"><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton isDisabled={true}>{item.altName}</WitnessButton>: null}</WitnessCard>
             )
         }
     })

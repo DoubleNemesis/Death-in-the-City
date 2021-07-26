@@ -1,6 +1,4 @@
     code
-office click to completed trials? popup?
-witness spoken too - view conv?
 
     css / images
 css trial backgrounds size shape etc so bin looks good

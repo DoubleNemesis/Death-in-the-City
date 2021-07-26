@@ -21,7 +21,7 @@ function WitnessComp(props) {
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [doorWasOpened, setDoorWasOpened] = useState(false)
     const [isArtefactClicked, setIsArtefactClicked] = useState(false)
-    const { collectedArtefacts, setCollectedArtefacts } = useContext(GameContext)
+    const { collectedArtefacts, setCollectedArtefacts, completedWitnesses, setCompletedWitnesses } = useContext(GameContext)
 
     function handleArtefactClick() {
         setIsArtefactClicked(true)
@@ -29,7 +29,6 @@ function WitnessComp(props) {
         dummyCollectedArtefacts.push(props.artefactName)
         setCollectedArtefacts(dummyCollectedArtefacts)
     }
-
 
     useEffect(() => {
         function assignQuestionsList(dat) {
@@ -58,7 +57,6 @@ function WitnessComp(props) {
     }
 
     function handleClick(e) {
-        console.log(e.target)
         if (e.target.classList.contains('success')) {
             counter = counter + 1
             setRightWrong('Correct!')
@@ -80,18 +78,41 @@ function WitnessComp(props) {
                         //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
                         //popup here found artefact if that is the case? hasArtefact ? <popup/> : null
 
-                        setRightWrong(
-                            props.artefactName ?
-                                <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} /> :
-                                <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>
-                        )
+                        // setRightWrong(
+                        //     props.artefactName ?
+                        //         <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} /> :
+                        //         <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>
+                        // )
+                        function updateCompletedWitnesses(witnessName) {
+                            let dummyCompletedWitnesses = [...completedWitnesses]
+                            dummyCompletedWitnesses = [witnessName, ...dummyCompletedWitnesses]
+                            setCompletedWitnesses(dummyCompletedWitnesses)
+                        }
+                        if (completedWitnesses.indexOf(props.title) > -1) {
+                            setRightWrong(<NextPageButton destination='officebase'>Back to Office</NextPageButton>)
+                        }
+                        else if (!props.artefactName) {
+                            setRightWrong(<NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>)
+                            updateCompletedWitnesses(props.title)
+                        }
+                        else {
+                            setRightWrong(<StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} />)
+                            updateCompletedWitnesses(props.title)
+                        }
+                        // setRightWrong(
+                        //     !props.artefactName ?
+                        //     <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>:
+                        //     completededWitnesses.indexOf(props.title) > -1 ?
+                        //     <NextPageButton destination='office'>Back to Office</NextPageButton>:
+                        //     <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} />                    
+                        // )
                         counter = 0;
                     }
                     setTimeout(() => {
                         const conversationEnd = document.getElementById('conversationBottom')
-                        if (conversationEnd){
-                            conversationEnd.scrollIntoView() 
-                        } 
+                        if (conversationEnd) {
+                            conversationEnd.scrollIntoView()
+                        }
                     }, 1001)
                 }, 1000)
             }, 1000)
