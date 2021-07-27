@@ -16,6 +16,7 @@ function ShreddedLetter(props) {
     const { eventsCorrectOrder } = ShreddedLetterPiecesData
     const [message, setMessage] = useState('')
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
+    const [itemsCorrectOrder, setItemsCorrectOrder] = useState(eventsCorrectOrder);
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [hasFinished, setHasFinished] = useState(false)
     //const [isShreddedLetterCorrect, setIsShreddedLetterCorrect] = useState(false)
@@ -40,12 +41,15 @@ function ShreddedLetter(props) {
         setHasFinished(true)
     }
 
+    console.log(isShreddedLetterCorrect);
+
     return (
         <>
             <SpeechBubbleLeft image={clientPic} >
                 {instructions}
             </SpeechBubbleLeft>
             <EventsContainer>
+            {!isShreddedLetterCorrect ? 
                 <List
                     values={itemsToOrder}
                     onChange={({ oldIndex, newIndex }) => {
@@ -57,7 +61,19 @@ function ShreddedLetter(props) {
                         return <li className="eventOrderClass" {...props} disabled={true}><ShreddedPiece>{value}</ShreddedPiece></li>
                     }
                     }
-                />
+                /> :
+                <List
+                    values={itemsCorrectOrder}
+                    onChange={({ oldIndex, newIndex }) => {
+                        setItemsCorrectOrder(arrayMove(itemsCorrectOrder, oldIndex, newIndex))
+                    }
+                    }
+                    renderList={({ children, props }) => <ul {...props}>{children}</ul>}
+                    renderItem={({ value, props }) => {
+                        return <li className="eventOrderClass correctOrder" {...props} disabled={true}><ShreddedPiece>{value}</ShreddedPiece></li>
+                    }
+                    }
+                />}
                 <button onClick={handleCheck}>Check</button>
                 {message}
                 {isShreddedLetterCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}

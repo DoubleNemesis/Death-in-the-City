@@ -10,11 +10,10 @@ homepage crime scene tape
 size of witness info box width
 
     Text
-    shredded letter sort out!
 
     End
-    add a PS to loveletter with extra info
-    text make vocab relevant - shredded
+
+
 
 wendyYard Photo by <a href="https://unsplash.com/@hanzlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jisun Han</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
