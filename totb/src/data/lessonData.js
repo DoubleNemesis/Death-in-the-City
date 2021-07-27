@@ -16,8 +16,14 @@ import weightlifterPic from '../images/weightlifter.png'
 import poisonpenPic from '../images/poison.png'
 import receiptPic from '../images/receipt.png'
 
+export const startPageBlurb = {
+    teaserText: [`In Death in the City you will be the detecive. Interview witnesses, break codes, discover evidence, complete challenges,
+    and hopefully bring a killer to justice!`],
+    academicText: [`Death in the City is aimed at Intermediate (B1) or higher learners of English. Skills covered include reading, grammar, collocations and prepositions`]
+}
+
 export const homePageData = {
-    homeTitle: [`Murder in the City`],
+    homeTitle: [`Death in the City`],
     homeSubtitle: [`Your mission: solve the crime`],
     homeCallToActionText: [`On the 27th of January 2021 at 3:06am the body of 25-year-old actor Lexington Grey was discovered on the sidewalk at the foot of the exclusive Kaplinsky Tower. 
     The police are calling it suicide...
@@ -30,7 +36,7 @@ export const homePageData = {
 export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
     backStoryText: [`I'm Terence Grey. So you think you're ready to turn detective? I hope so, because you've got work to do! 
-Lexington Grey wasn't just anyone. That boy was my son, and he was murdered. Your job is to find out who killed him. First you need to show me you're capable.
+Lexington Grey wasn't just anyone. That boy was my son, and he was murdered! Your job is to find out who killed him. First you need to show me you're capable.
  Get this vocabulary right and then we're in business!`]
 }
 
@@ -39,8 +45,6 @@ export const clientData = {
     clientText: [`OK, great! Now I know you speak the lingo, get to work! I'll send what I've got over to your office for you to look at. 
     But if you want my advice, the first thing to do is to speak to Tony Monceto. He's the janitor at Kaplinsky Tower and an old friend of mine.
     Good luck! And remember, if you don't solve the crime you don't get paid! `]
-
-
 }
 
 //character names
@@ -186,21 +190,21 @@ export const officeCards = {
             'name': [`Photo of Lucy`], // wendy's bin
             'id': [6],
             'image': weightlifterPic,
-            'destination': 'redacted',
+            'destination': 'foundArtefacts',
             'destinationComplete' : '',
         },
         {
             'name': [`Poison Pen`], // dallas' bin
             'id': [7],
             'image': poisonpenPic,
-            'destination': 'redacted',
+            'destination': 'foundArtefacts',
             'destinationComplete' : '',
         },
         {
             'name': [`Rolex Receipt`], //kirsten's bin
             'id': [8],
             'image': receiptPic,
-            'destination': 'redacted',
+            'destination': 'foundArtefacts',
             'destinationComplete' : '',
         },
     ],
@@ -355,6 +359,9 @@ export const questionsWitness1 = {
     ],
     speechBubbleText1: [
         `Hi! I'm investigating the death of Lexington Grey. Are you the janitor here at Kaplinsky Tower?`
+    ],
+    witnessInfo1: [
+        `Tony Monceto is the janitor at Kaplinksy Tower, where Lexington Grey lived and died.`
     ]
 }
 
@@ -387,38 +394,47 @@ export const questionsWitness2 = {
     ],
     exitMessage2: [
         'Hmm...I need to try something different.'
+    ],
+    witnessInfo2: [
+        `Chay Madz is an old friend of Lexington and was at the dinner party the night he died.`
     ]
 }
 
 //witness 3 kirsten wenstein
 export const questionsWitness3 = {
     questionsWitness3: [
-        ['Please tell me everything on the evening Lexington died', 'fail'],
-        ['Please tell me everything for the evening Lexington died', 'fail'],
-        ['Please tell me everything about the evening Lexington died.', 'success'],
-        ['Please tell me everything over the evening Lexington died', 'fail'],
-        ['Please tell me everything around the evening Lexington died', 'fail']
-    ],
-    questionsWitness3_2: [
         ['I know your feeling. Don\'t worry, I\'ll help you.', 'fail'],
         ['I know how you feel. Don\'t worry, I\'ll help you.', 'success'],
         ['I know how you feel. Don\'t worry, I\'m helping you.', 'fail'],
         ['I know your feelings. Don\'t worry, I\'ll help you.', 'fail'],
         ['I know what you feel. Don\'t worry, I\'ll help you.', 'fail']
     ],
+    questionsWitness3_2: [
+        ['I have to ask a simply question. Was Lexi being unfaithful to you? ', 'fail'],
+        ['I have to ask a basic questions. Was Lexi being unfaithful to you? ', 'fail'],
+        ['I have to ask a delicate question. Was Lexi being unfaithful to you? ', 'success'],
+        ['I had to ask a harsh question. Was Lexi being unfaithful to you? ', 'fail'],
+        ['I ask a delicate question. Was Lexi being unfaithful to you? ', 'fail']
+    ],
     witnessConversationArray3: [
-        "Oh! More questions about Lexi? Well, OK then. I'll help if I can.",
-        "Please tell me everything about the evening Lexington died.",
-        "My English is really bad. ",
+        "I'll help if I can, but my English is really very bad.",
         "I know how you feel. Don't worry, I'll help you.",
-        "OK, correct my sentences please, else I will never learn this language!"
+        "Great! Thanks! That's so kind of you. I find this language so hard! And now I am on my own...",
+        "I have to ask a delicate question. Was Lexi being unbfaithful to you? ",
+        "Well, I'll tell you about that. But first you have to help me. Correct these sentences and send them back to me. When you do, I will answer."
     ],
     trialURL3: [
         'errorcorrection'
     ],
     exitMessage3: [
         'Help her!'
-    ]
+    ],
+    witnessInfo3: [
+        `kirsten Wenstein was romantically involved with Lexington.`
+    ],
+    speechBubbleText3: [
+        `Hi! I'm investigating the death of Lexington Grey. I'm really sorry for your loss. Do you mind me asking a few questions?'`
+    ],
 }
 
 //witness 4 dallas franks
@@ -450,6 +466,9 @@ export const questionsWitness4 = {
     ],
     exitMessage4: [
         'Read the statement'
+    ],
+    witnessInfo4: [
+        `Dallas Franks met Lexington at drama school. They have known eachother ever since.`
     ]
 }
 
@@ -481,7 +500,13 @@ export const questionsWitness5 = {
     ],
     exitMessage5: [
         'We need another plan!'
-    ]
+    ],
+    witnessInfo5: [
+        `Lucy Light is known to like to flirt. Wives and girlfriends hate her.`
+    ],
+    speechBubbleText5: [
+        `Hi! I'm investigating the death of Lexington Grey. I want to ask you about your relationship with him.`
+    ],
 }
 
 //witness 6 wendy rose
@@ -489,30 +514,36 @@ export const questionsWitness5 = {
 export const questionsWitness6 = {
     questionsWitness6: [
         ["Really? When did he tell that?", 'fail'],
-        ["Really? When does he say that?", 'fail'],
-        ["Really? Why did he say about that?", 'fail'],
+        ["Really? When does you say that?", 'fail'],
+        ["Really? Why did you say about that?", 'fail'],
         ["Really? Who did he say that to?", 'fail'],
-        ["Really? When did he say that?", 'success']
+        ["Really? What makes you say that?", 'success']
     ],
     questionsWitness6_2: [
-        ["What does he say exactly?", 'fail'],
-        ["What did he say exactly?", 'success'],
-        ["What did he want to say exactly?", 'fail'],
-        ["What did he speak exactly?", 'fail'],
-        ["What did he exactly say?", 'fail']
+        ["Anything you can to share with me?", 'fail'],
+        ["Anything you can share with me?", 'success'],
+        ["Anything you can share to me?", 'fail'],
+        ["Nothing you can share from me?", 'fail'],
+        ["Something you can share me?", 'fail']
     ],
     witnessConversationArray6: [
-        "I don't know what I can tell you. Chay was acting tough, as ever. But he's not so strong.",
+        "Well, Chay was acting tough, as ever. But he's not so strong.",
         "Really? What makes you say that?",
         "Did you know I'm his ex-girlfriend? I know lots of things about him.",
-        "Anything you want to share?",
-        "I'll show you what his doctor said, if you can read it."
+        "Anything you can share with me?",
+        "I've got a note from his doctor. Do you want to see that?"
     ],
     trialURL6: [
         'redacted'
     ],
     exitMessage3: [
         'Go and help her!'
+    ],
+    speechBubbleText6: [
+        `Hi! I'd like to ask you some questions about Lexington Grey. Is it true your friend Chay threatened him?`
+    ],
+    witnessInfo6: [
+        `Wendy Rose used to be in a relationship with Chay. Now she barely speaks to him.`
     ]
 }
 
@@ -633,8 +664,8 @@ export const ErrorCorrectionData = {
         ["Great! Now type out the sentences so they are correct and hit check."],
     ],
     instructions3: [
-        [`Perfect! Thank you so much for your help! I like you, so here's some more information for you. There was something strange going on that night. 
-        A weird atmosphere. It started off fine, but later, around when Lexi was telling us about having covid, Dallas was just staring up out of the window
+        [`Perfect! Thank you so much for your help! I like you, so here's the information I promised you. I expect Lexi was unfaithful. You can never trust actors or tell when they are lying. But I don't know who he was unfaithful with. Lucy? Maybe! 
+        There was certainly something strange going on that night. A weird atmosphere. It started off fine, but later, around when Lexi was telling us about having covid, Dallas was just staring up out of the window
          at the heavens. I think only Lexi was happy there that night. And maybe that was because Lucy was flirting with him!`],
     ],
     sentences: [
@@ -692,6 +723,7 @@ export const loveLetterData = {
     successMessageText: ['Amazing! Click here to see the full letter!'],
     loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
     loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chay.`],
+    loveLetterFullPs: [`PS. I have come into some money! I will treat you to something.`],
     symbols: [
         ['a', '8955', false, false],
         ['b', '8706', false, false],

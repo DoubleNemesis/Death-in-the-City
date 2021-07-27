@@ -28,7 +28,7 @@ function LoveLetter(props) {
     // displayFullLoveLetterText, setDisplayFullLoveLetterText
 
     const nodeRef = useRef(null);
-    const { instructions, loveLetterCode, successMessageText, loveLetterFull } = loveLetterData
+    const { instructions, loveLetterCode, successMessageText, loveLetterFull, loveLetterFullPs } = loveLetterData
     const secretMessage = loveLetterCode[0]
     const secretMessageArray = secretMessage.toLowerCase().split('');
 
@@ -111,7 +111,7 @@ function LoveLetter(props) {
                 </SpeechBubbleLeft>
                 <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
-                        {!isLoveLetterCorrect ? LoveLetterCode : <><p>{loveLetterFull}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
+                        {!isLoveLetterCorrect ? LoveLetterCode : <><p>{loveLetterFull}</p><p>{loveLetterFullPs}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
                     {successMessage}
                     <LoveLetterLettersContainer>

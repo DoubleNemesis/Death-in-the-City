@@ -7,10 +7,10 @@ function Footer() {
         <>
             <FooterContainer>
                 <Router>
-                <Link to="/" >Credits</Link>
-                <Link to="/" >Copyright</Link>
+                <Link to="/credits" >Credits</Link>
+                {/* <Link to="/" >Copyright</Link> */}
                 <Link to="/" >Home</Link>
-                <Link to="/" >Contact/About</Link>
+                <a href="https://tomsclassroom.com/port/#/" >Contact/About Me</a>
                 </Router>
 
             </FooterContainer>

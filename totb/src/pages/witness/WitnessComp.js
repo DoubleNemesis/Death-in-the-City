@@ -129,7 +129,7 @@ function WitnessComp(props) {
 
     return (
         <>
-            <Door speechBubbleText={props.speechBubbleText} personText={props.personText} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened} />
+            <Door speechBubbleText={props.speechBubbleText} witnessInfo={props.witnessInfo} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened} />
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>

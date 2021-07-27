@@ -23,6 +23,7 @@ import BackStory from './pages/BackStory'
 import EndPage from './pages/EndPage'
 import Sneaky from './pages/sneaky/Sneaky'
 import CrimeScene from './pages/CrimeScene'
+import FoundArtefacts from './pages/FoundArtefacts'
 // import Cont from './pageElements/Cont'
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import * as lessonData from './data/lessonData'
@@ -91,12 +92,12 @@ function App() {
 
   const { characterNames } = lessonData['characterNames'];
   const { characterFirstNames } = lessonData['characterFirstNames'];
-  const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1, exitMessage1, speechBubbleText1 } = lessonData['questionsWitness1'];
-  const { questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2, exitMessage2 } = lessonData['questionsWitness2'];
-  const { questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3, exitMessage3 } = lessonData['questionsWitness3'];
-  const { questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4, exitMessage4 } = lessonData['questionsWitness4'];
-  const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5, exitMessage5 } = lessonData['questionsWitness5'];
-  const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6, exitMessage6 } = lessonData['questionsWitness6'];
+  const { questionsWitness1, questionsWitness1_2, witnessConversationArray1, trialURL1, exitMessage1, speechBubbleText1, witnessInfo1 } = lessonData['questionsWitness1'];
+  const { questionsWitness2, questionsWitness2_2, witnessConversationArray2, trialURL2, exitMessage2, speechBubbleText2, witnessInfo2 } = lessonData['questionsWitness2'];
+  const { questionsWitness3, questionsWitness3_2, witnessConversationArray3, trialURL3, exitMessage3, speechBubbleText3, witnessInfo3 } = lessonData['questionsWitness3'];
+  const { questionsWitness4, questionsWitness4_2, witnessConversationArray4, trialURL4, exitMessage4, speechBubbleText4, witnessInfo4 } = lessonData['questionsWitness4'];
+  const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5, exitMessage5, speechBubbleText5, witnessInfo5 } = lessonData['questionsWitness5'];
+  const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6, exitMessage6, speechBubbleText6, witnessInfo6 } = lessonData['questionsWitness6'];
   const { artefacts } = lessonData['officeCards'];
 
 
@@ -163,12 +164,12 @@ function App() {
               questionsWit2={questionsWitness1_2}
               conversationArray={witnessConversationArray1}
               personImage={TonyPic}
-              personText="This is my witness backstory"
               trialURL={trialURL1}
               exitMessage={exitMessage1}
-              speechBubbleText={speechBubbleText1}
               doorImg={doorGrey}
-            />
+              witnessInfo={witnessInfo1}
+              speechBubbleText={speechBubbleText1}
+              />
           </Route>
           <Route path="/codebox">
             <CodeBox />
@@ -187,7 +188,9 @@ function App() {
               exitMessage={exitMessage2}
               doorImg={doorBlue}
               doorTitle={characterFirstNames[1]}
-            />
+              witnessInfo={witnessInfo2}
+              // speechBubbleText={speechBubbleText1}
+              />
           </Route>
           <Route path="/sneaky1">
             <Sneaky title="" artefactName={artefacts[0].name} artefactImage={shreddedletterPic} hasArtefact yardImage={chayYard}/>
@@ -209,6 +212,8 @@ function App() {
               artefactName={artefacts[1].name} 
               artefactImage={artefacts[1].image} //????
               binCheck={'sneaky2'}
+              witnessInfo={witnessInfo3}
+              speechBubbleText={speechBubbleText3}
             />
           </Route>
           <Route path="/sneaky2">
@@ -231,6 +236,8 @@ function App() {
               binCheck={'sneaky3'}
               artefactName={artefacts[3].name} //order events
               artefactImage={artefacts[3].image} //order events
+              witnessInfo={witnessInfo4}
+              // speechBubbleText={speechBubbleText1}
             />
           </Route>
           <Route path="/sneaky3">
@@ -250,6 +257,8 @@ function App() {
               exitMessage={exitMessage5}
               doorImg={doorWhite}
               doorTitle={characterFirstNames[4]}
+              witnessInfo={witnessInfo5}
+              speechBubbleText={speechBubbleText5}
             />
           </Route>
           <Route path="/sneaky4">
@@ -272,6 +281,8 @@ function App() {
               artefactName={artefacts[4].name} //redacted report
               artefactImage={artefacts[4].image} 
               binCheck={'sneaky5'}
+              witnessInfo={witnessInfo6}
+              speechBubbleText={speechBubbleText6}
             />
           </Route>
           <Route path="/sneaky5">
@@ -279,6 +290,9 @@ function App() {
           </Route>
           <Route path="/redacted">
             <Redacted artefactName={artefacts[4].name} />
+          </Route>
+          <Route path="/foundArtefacts">
+            <FoundArtefacts />
           </Route>
           <Route path="/endpage">
             <EndPage />

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledFooterContainer = styled.div`
 width: 100%;
 display: flex;
-justify-content: center;
+justify-content: space-around;
 flex-direction: row;
 align-items: center;
 background-color: black;
@@ -12,10 +12,10 @@ color: white;
 /* position: sticky;
 bottom: 0px; */
 
-span{
-    margin: .2em;
-    font-size: .9rem;
+a{
+    color: white;
 }
+
 `
 
 function FooterContainer({children}){

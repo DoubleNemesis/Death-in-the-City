@@ -28,11 +28,9 @@ function Door(props) {
                 </DoorBellBox>
             </StyledDoor>
             <Inside>
-                <WitnessIntroBox personImage={props.personImage} personText={props.personText}/>
+                <WitnessIntroBox personImage={props.personImage} witnessInfo={props.witnessInfo}/>
                 <SpeechBubbleRight>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
             </Inside>
-
-
         </>
     )
 }

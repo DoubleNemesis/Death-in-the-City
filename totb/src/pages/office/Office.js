@@ -69,6 +69,7 @@ border-radius: 20px;
 border: 3px solid limegreen;
 `
 function OfficeBase() {
+   
     const {
         isInstructionsModalDisplayed, 
         setIsInstructionsModalDisplayed,
@@ -81,6 +82,10 @@ function OfficeBase() {
         completedChallenges,
         completedWitnesses
     } = useContext(GameContext)
+   
+    const [isArtefactModalDisplayed, setIsArtefactModalDisplayed] = useState(false)
+    const [artefactImageToDisplay, setArtefactImageToDisplay] = useState('')
+   
     let history = useHistory()
 
     console.log(completedWitnesses);
@@ -103,13 +108,19 @@ function OfficeBase() {
     })
 
 
+    function handleArtefactImageClick(image){
+        setArtefactImageToDisplay(image)
+        setIsArtefactModalDisplayed(true)
+    }
 
     const artefacts = officeCards.artefacts.map((item) => {
         if (collectedArtefacts.indexOf(item.name) > -1){
             return (
                 completedChallenges.indexOf(item.name) > -1 ?
                 <ArtefactCard borderColor="limegreen" bgColor="black"><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>
+                item.id < 6 ? 
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="50px" src={item.image} onClick={()=>handleArtefactImageClick(item.image)} />{item.name}</ArtefactCard>
             )
         }
         else{
@@ -134,15 +145,24 @@ function OfficeBase() {
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>The Office</h2>
                 <ul>
+                    <li> New witnesses/evidence/challenges will appear here as they become available.</li>
                     <li> Click on a witness to interview them.</li>
-                    <li> New witnesses will appear as they become available.</li>
-                    <li> Any artefacts you find will appear here too.</li>
-                    <li> Click on an artefact to re-examine it.</li>
+                    <li> Click on an artefact to examine it.</li>
+                    <li> Click on a challenge to complete it.</li>
                 </ul>
                 <ToggleContainer>
                     <ToggleTaskInfo
                         onClick={() => setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)}>
                         Start
+                    </ToggleTaskInfo>
+                </ToggleContainer>
+            </StyledModal>
+            <StyledModal display={isArtefactModalDisplayed ? 'block' : 'none'}>
+                   <div> <img src={artefactImageToDisplay}/></div>
+                <ToggleContainer>
+                    <ToggleTaskInfo
+                        onClick={() => setIsArtefactModalDisplayed(!isArtefactModalDisplayed)}>
+                        Close
                     </ToggleTaskInfo>
                 </ToggleContainer>
             </StyledModal>

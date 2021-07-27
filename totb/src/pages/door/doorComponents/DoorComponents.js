@@ -110,7 +110,7 @@ export const WitnessIntroBox = (props)=>{
     return(
         <WitnessIntroContainer>
             <WitnessImage src={props.personImage}/>
-            <WitnessText><h3>Witness Info</h3>{props.personText}</WitnessText>
+            <WitnessText><h3>Witness Info</h3>{props.witnessInfo}</WitnessText>
         </WitnessIntroContainer>
     )
 }

@@ -6,18 +6,14 @@ completed letter on loveletter
 style task/office dialogue
 pic without background and head shots for messages?
 style green tick on completed challenges and office cards.
+homepage crime scene tape
+size of witness info box width
 
     Text
-sort out footer links
-what makes detective ask redacted about chay?
-first page blurb, instructions, graphics, make it clear each artefact leads to a challenge
-text make vocab relevant - shredded
-change wendy chat to doctor's report!
-office/task instructions pop up check
-witness backstories needed
-add a PS to loveletter with extra info
-change floe text so it fits with trial
-kirste dialogue needs work - after trial -> recap what she told us plus bonus
+
+    End
+    add a PS to loveletter with extra info
+    text make vocab relevant - shredded
 
 wendyYard Photo by <a href="https://unsplash.com/@hanzlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jisun Han</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
