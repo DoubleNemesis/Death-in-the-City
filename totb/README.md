@@ -10,6 +10,7 @@ homepage crime scene tape
 size of witness info box width
 
     Text
+    shredded letter sort out!
 
     End
     add a PS to loveletter with extra info

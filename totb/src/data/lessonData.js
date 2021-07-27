@@ -72,28 +72,28 @@ export const characterFirstNames = {
 // Vocab Page
 export const vocabData = {
     'vocabA': [
-        'arid',
-        'comouflage',
-        'asset',
-        'breed',
-        'beast',
-        'curse',
-        'inscription',
-        'row(vb)',
-        'thrive',
-        'trample',
+        'sidewalk',
+        'find out',
+        'janitor',
+        'delicate',
+        'unfaithful',
+        'tough',
+        'cry',
+        'weird',
+        'weak',
+        'fall',
     ],
     'vocabB': [
-        'dry',
-        'disguise',
-        'property',
-        'reproduce',
-        'creature',
-        'jinx',
-        'carved text',
-        'propel',
-        'grow',
-        'tread on',
+        'pavement',
+        'discover',
+        'caretaker',
+        'fragile',
+        'adulterous',
+        'strong',
+        'weep',
+        'strange',
+        'feeble',
+        'plummet',
     ],
     'bubbleText1': [
         `All I want you to do is Click on a word and then click on its synonym. When you get a pair right, they will disappear. 
@@ -420,7 +420,7 @@ export const questionsWitness3 = {
         "I'll help if I can, but my English is really very bad.",
         "I know how you feel. Don't worry, I'll help you.",
         "Great! Thanks! That's so kind of you. I find this language so hard! And now I am on my own...",
-        "I have to ask a delicate question. Was Lexi being unbfaithful to you? ",
+        "I have to ask a delicate question. Was Lexi being unfaithful to you? ",
         "Well, I'll tell you about that. But first you have to help me. Correct these sentences and send them back to me. When you do, I will answer."
     ],
     trialURL3: [
@@ -468,7 +468,7 @@ export const questionsWitness4 = {
         'Read the statement'
     ],
     witnessInfo4: [
-        `Dallas Franks met Lexington at drama school. They have known eachother ever since.`
+        `Dallas Franks met Lexington while filming. They have known eachother ever since.`
     ]
 }
 
@@ -589,7 +589,7 @@ export const CodeBoxData = {
 
 export const CrimeSceneData = {
     bubbleText1: [`This is the kitchen and that is the window he went through. As you can see, he can't have done it by accident.`],
-    bubbleText2: [`He used to stand by the window smoking. I think someone probable came up behind him and pushed him out.`],
+    bubbleText2: [`He used to stand by the window smoking. I think someone probable came up behind him and pushed him out. Apparently the lights went out for a time when the building was struck by lightning.`],
     bubbleText3: [`Have a look out the window....that's an awfully long way down! Anyway, now you've seen where it all happened. Good luck! I hope you find the killer!`],
 }
 
