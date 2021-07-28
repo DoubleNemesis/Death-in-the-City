@@ -9,11 +9,11 @@ const StyledSpeechBubble = styled.div`
     line-height: 1.2rem;
     width: ${({bubbleWidth})=>bubbleWidth || '80'}%;
     min-height: ${({minHeight})=> minHeight || '100' }px;
-    background: skyblue;
+    background: ${({bgcolor})=>bgcolor || 'skyblue'};
     border-radius: 10px;
     padding: 1em;
     text-align: left;
-    color: #000;
+    color: ${({textColor})=>textColor || '#000'};
     margin: 1em;
     border: 4px solid #141414;
     box-shadow: 2px 2px 4px 2px #444;
@@ -25,7 +25,8 @@ const StyledSpeechBubble = styled.div`
 }
 
 .bubbleRight{ //delete????
-    background-color: limegreen;
+    /* background-color: limegreen; */
+    background: ${({bgcolor})=>bgcolor || 'limegreen'};
     float: right;
 }
 
@@ -34,9 +35,9 @@ const StyledSpeechBubble = styled.div`
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 24px solid skyblue;
+  border-left: 24px solid ${({bgcolor})=>bgcolor || 'skyblue'};
+  border-top: 12px solid ${({bgcolor})=>bgcolor || 'skyblue'};
   border-right: 12px solid transparent;
-  border-top: 12px solid skyblue;
   border-bottom: 20px solid transparent;
   left: 32px;
   bottom: -24px;
@@ -48,8 +49,8 @@ const StyledSpeechBubble = styled.div`
   height: 0px;
   position: absolute;
   border-left: 12px solid transparent;
-  border-right: 24px solid limegreen;
-  border-top: 12px solid limegreen;
+  border-right: 24px solid ${({bgcolor})=>bgcolor || 'limegreen'};
+  border-top: 12px solid ${({bgcolor})=>bgcolor || 'limegreen'};
   border-bottom: 20px solid transparent;
   left: 80%;
   bottom: -24px;

@@ -16,11 +16,7 @@ import weightlifterPic from '../images/weightlifter.png'
 import poisonpenPic from '../images/poison.png'
 import receiptPic from '../images/receipt.png'
 
-export const startPageBlurb = {
-    teaserText: [`In Death in the City you will be the detecive. Interview witnesses, break codes, discover evidence, complete challenges,
-    and hopefully bring a killer to justice!`],
-    academicText: [`Death in the City is aimed at Intermediate (B1) or higher learners of English. Skills covered include reading, grammar, collocations and prepositions`]
-}
+
 
 export const homePageData = {
     homeTitle: [`Death in the City`],
@@ -30,6 +26,12 @@ export const homePageData = {
     `],
     homeCallToActionTextBtn: [`Full story on page TWO!`],
     homeCallToActionTextBtn2: [`READY to turn detective?`],
+}
+
+export const startPageBlurb = {
+    teaserText: [`In ${homePageData['homeTitle']} you are the detecive. Interview witnesses, break codes, discover evidence, complete challenges,
+    and hopefully bring a killer to justice!`],
+    academicText: [`${homePageData['homeTitle']} is a language-based detective game aimed at Intermediate (B1) or higher learners of English. Skills covered include reading, grammar, collocations and prepositions`]
 }
 
 //Backstory page
@@ -96,8 +98,8 @@ export const vocabData = {
         'plummet',
     ],
     'bubbleText1': [
-        `All I want you to do is Click on a word and then click on its synonym. When you get a pair right, they will disappear. 
-        Don't worry, you will see the full word list again at the end.`
+        `All I want you to do is click on a word and then click on its synonym. When you get a pair right, they will disappear. 
+        Don't worry, you will see the full word list again at the end so you can take notes.`
     ],
     'bubbleText2': [
         `Great, you passed the test! Here are the words/synonyms side-by-side if you want to take notes. Now head over to the office and I'll show you what's what.`
