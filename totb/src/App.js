@@ -1,6 +1,7 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react'
+import styled, {createGlobalStyle} from 'styled-components'
 import VocabPage from './pages/VocabPage'
 import Home from './pages/Home'
 import Door from './pages/door/Door'
@@ -27,6 +28,7 @@ import FoundArtefacts from './pages/FoundArtefacts'
 // import Cont from './pageElements/Cont'
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import * as lessonData from './data/lessonData'
+import detective from './images/detective.png'
 import TonyPic from './images/tonymonceto.png'
 import ChayPic from './images/chaymadz.jpg'
 import KirstenPic from './images/kirsten.jpg'
@@ -59,6 +61,13 @@ import GameContext from './context/GameContext'
 
 function App() {
 
+  const GlobalStyle = createGlobalStyle`
+  p, ul, h3, a {
+    font-family: 'Poppins';
+  }
+
+`
+
   const [hasDoneVocab, setHasDoneVocab] = useState(false)
   const [hasVisitorBook, setHasVisitorBook] = useState(false)
   const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
@@ -72,6 +81,7 @@ function App() {
   const [isLoveLetterCorrect, setIsLoveLetterCorrect] = useState(false)
   const [isOrderEventsCorrect, setIsOrderEventsCorrect] = useState(false)
   const [isRedactedCorrect, setIsRedactedCorrect] = useState(false)
+  const [detectiveChosen, setDetectiveChosen] = useState(detective)
   const { homeTitle, homeSubtitle } = homePageData
   const providedValues = {
     hasDoneVocab, setHasDoneVocab,
@@ -87,7 +97,7 @@ function App() {
     isLoveLetterCorrect, setIsLoveLetterCorrect,
     isOrderEventsCorrect, setIsOrderEventsCorrect,
     isRedactedCorrect, setIsRedactedCorrect,
-
+    detectiveChosen, setDetectiveChosen
   }
 
   const { characterNames } = lessonData['characterNames'];
@@ -105,10 +115,11 @@ function App() {
   return (
     <>
     <div className="outer">
+      <GlobalStyle/>
       <Router>
         <GameContext.Provider value={providedValues}>
           <Navbar expand="lg">
-            <Navbar.Brand><Link to="/"><Title>{homeTitle}</Title></Link></Navbar.Brand>
+            <Navbar.Brand><Link to="/"><Title image={detectiveChosen}>{homeTitle}</Title></Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
@@ -303,8 +314,8 @@ function App() {
         </GameContext.Provider>
       </Router>
       
-    </div>
     <Footer/>
+    </div>
     </>
   );
 }

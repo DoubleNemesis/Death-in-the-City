@@ -6,7 +6,7 @@ const StyledButton = styled.button`
 color: white;
 background-color: ${({color})=> color || 'red'};
 padding: .8em 1.8em;
-margin: 2em auto;
+margin: ${({margin})=> margin || '2em auto'};
 font-size: ${({fontSize})=> fontSize || 1.5}rem;
 border: none;
 
@@ -22,7 +22,7 @@ function NextPageButton({ children, ...props }) {
 
     return (
   
-            <StyledButton onClick={()=>history.push(`${props.destination}`)}>{children}</StyledButton>
+            <StyledButton onClick={()=>history.push(`${props.destination}`)} margin={props.margin}>{children}</StyledButton>
 
     )
 

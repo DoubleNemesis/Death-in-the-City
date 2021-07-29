@@ -1,25 +1,41 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import MainContainer from '../containers/MainContainer'
-import { TextContainer, HomeItem } from '../containers/TextContainer'
+import { TextContainer, DetectiveAvatar, DetectiveContainer, DetectiveChoiceContainer, DetectiveChoiceItem } from '../generalComponents/HomeComponents'
 import NextPageButton from '../generalComponents/NextPageButton'
+import { FrontPageButton } from '../generalComponents/GeneralButton'
 import { startPageBlurb } from '../data/lessonData'
-import newyork1 from './../images/newyork1logo.jpg'
 import crimeline from './../images/crimeline.png'
+// import detective from './../images/detective.png'
+import Title from '../generalComponents/Title'
 import { SpeechBubbleLeft, SpeechBubbleRight } from './witness/witnessComponents/Questions'
+import GameContext from '../context/GameContext'
+import detective from '../images/detective.png'
+import detective1 from '../images/detective1.png'
+import detective2 from '../images/detective2.png'
+import detective3 from '../images/detective3.png'
+import detective4 from '../images/detective4.png'
+import detective5 from '../images/detective5.png'
+import detective6 from '../images/detective6.png'
+
 
 
 function Home() {
 
     const { teaserText, academicText } = startPageBlurb
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(1)
     const [ItemToDisplay, setItemToDisplay] = useState()
+    const { detectiveChosen, setDetectiveChosen } = useContext(GameContext)
 
+    const detectiveChoices = [detective, detective1, detective2, detective3, detective4, detective5, detective6]
+    const detectiveChoicesAlt = ['yellow man', 'white man', 'brown man', 'black woman', 'black man', 'white woman', 'brown woman']
 
+    function handleDetective(e) {
+        setDetectiveChosen(detectiveChoices[e.target.id])
+    }
 
-    const itemsToDisplay = [, 'Question Witnesses', 'Catch a Killer']
-    const itemsToDisplay2 = [`Break Codes`, `Find Evidence`, `Question Witnesses`, `Catch a Killer`]
-
-    console.log(counter);
+    const allDetectivesDisplay = detectiveChoices.map((item, index) => {
+        return <DetectiveChoiceItem key={index} image={item} alt={detectiveChoicesAlt[index]} onclick={handleDetective} id={index} />
+    })
 
     return (
         <>
@@ -28,26 +44,33 @@ function Home() {
 
 
                     <img src={crimeline} />
-                    <img src={newyork1} />
+                    <DetectiveContainer>
+                    <h3>A murder-mystery game for ESL students</h3>
+
+                        <DetectiveAvatar src={detectiveChosen} />
+
+                        <DetectiveChoiceContainer>
+                            {allDetectivesDisplay}
+                        </DetectiveChoiceContainer>
+                        <p> Choose your avatar </p>
+                    </DetectiveContainer>
                     <img src={crimeline} />
-                    <div className="modalContainer">
-                        <SpeechBubbleLeft textColor="midnightblue" minHeight="20" bubbleWidth="70" bgcolor="white">911, What's your emergency?</SpeechBubbleLeft>
-                        <SpeechBubbleRight textColor="midnightblue" bgcolor="skyblue">There's a body here on the street! I think he fell from a skyscraper! You gotta send someone quick!</SpeechBubbleRight>
-                    </div>
-                    <div className="bulletContainer">
-                    </div>
-                    <NextPageButton destination="start">PLAY</NextPageButton>
+
+                    <NextPageButton destination="start" margin='1em 0 0 0'>PLAY</NextPageButton>
                     <p>
-                        Death in the City is a language-based detective game for learners of English who are B1 level (Intermediate) or above.
+                        Death in the City is a murder-mystery game for Intermediate level or above (B1+) learners of English. 
+                    </p>
+                    <p>
+                        While practising your English, you will:
                     </p>
                     <ul>
-                    <li>Break Codes</li>
-                    <li>Solve Puzzles</li>
-                    <li>Find Evidence</li>
-                    <li>Question Witnesses</li>
-                    <li>Catch a Killer</li>
+                        <li>Crack Codes</li>
+                        <li>Solve Puzzles</li>
+                        <li>Find Evidence</li>
+                        <li>Question Witnesses</li>
+                        <li>Catch a Killer</li>
                     </ul>
-                    <p>This game will help you practice your reading and grammar skills.</p>
+                    <p>This fun game will help you practice your reading, writing and grammar skills as well as test your problem solving abilities and broadening your vocabulary.</p>
 
                 </TextContainer>
 
