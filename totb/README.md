@@ -1,8 +1,8 @@
     code
 sort out menu
-office pop up shld be bubble from client
 check vocab for error...
-scroll to top on vocab complete and update message
+check i did it: scroll to top on vocab complete and update message
+style office buttons and popup border
  
     css / images
 css trial backgrounds size shape etc so bin looks good

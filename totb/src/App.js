@@ -9,7 +9,7 @@ import Door from './pages/door/Door'
 import Start from './pages/start/Start'
 import Footer from './pageElements/Footer'
 import Credits from './pages/credits/Credits'
-import OfficeBase from './pages/office/Office'
+import Office from './pages/office/Office'
 import Witness from './pages/witness/Witness'
 import CodeBox from './pages/trials/codeBox/CodeBox'
 import ShreddedLetter from './pages/trials/shreddedLetter/ShreddedLetter'
@@ -111,7 +111,7 @@ function App() {
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/start">start</Link>.
                 <Link className="nav-link" to="/vocab">vocab</Link>
-                <Link className="nav-link" to="/officebase">office</Link>
+                <Link className="nav-link" to="/office">office</Link>
                 <Link className="nav-link" to="/witness1">{characterNames[0]}</Link>
                 <Link className="nav-link" to="/crimescene">crimeScene</Link>
                 <Link className="nav-link" to="/witness2">{characterNames[1]}</Link>
@@ -135,8 +135,8 @@ function App() {
           <Route exact path="/start">
             <Start />
           </Route>
-          <Route path="/officebase">
-            <OfficeBase />
+          <Route path="/office">
+            <Office />
           </Route>
           <Route path="/door">
             <Door />

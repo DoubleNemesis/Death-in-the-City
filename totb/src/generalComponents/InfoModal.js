@@ -6,25 +6,25 @@ background-color: #333;
 color: white;
 z-index: 5;
 display: ${({ display }) => display};
-left:5%;
-right:5%;
+left:0;
+right:0;
 margin-left:auto;
 margin-right:auto;
-top: 34%;
+top: 14%;
 font-size: 1rem;
-border: 1px solid #666;
-border-radius: 2px;
-padding: 1em;
-box-shadow: 4px 4px 3px #666;
+/* border: 1px solid #666; */
+/* border-radius: 2px; */
+/* padding: 1em; */
+/* box-shadow: 4px 4px 3px #666; */
 /* width: 80%; */
 /* display: flex;
 flex-direction: column; */
-img{   
+/* img{   
     border: 1px red solid;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-}
+} */
 
 h2{
     color: white;
@@ -37,6 +37,7 @@ h2{
 
 export const ToggleContainer = styled.div `
 display: flex;
+margin: 2em 0;
 `
 
     export const ToggleTaskInfo = styled.button`
@@ -50,11 +51,3 @@ padding: .3em 5em;
 text-transform: uppercase;
 
 `
-
-//     export const QuestionOption = styled.button`
-// background-color: yellow;
-// /* border-bottom: 1px solid #999; */
-// padding: .5em 1em;
-// margin: .2em;
-// border-radius: 2px;
-// `

@@ -108,48 +108,52 @@ export const vocabData = {
 }
 
 //office specific
+export const officeBubbleText = `This is your office space. New witnesses, evidence and challenges will appear here as they become available. 
+When you are ready to interview a witness, just click on their image and you will be guided to their house. 
+`
+
 export const officeCards = {
     'witnesses': [
         {
             'name': [`Tony Monceto`],
             'id': [1],
             'image': [TonyPic],
-            'altName': ['unknown'],
+            'altName': ['Witness'],
             'altImage': [questionMark],
         },
         {
             'name': [`Chay Madz`],
             'id': [2],
             'image': [ChayPic],
-            'altName': ['Unknown'],
+            'altName': ['Suspect'],
             'altImage': [questionMark],
         },
         {
             'name': [`Kirsten Stein`],
             'id': [3],
             'image': [KirstenPic],
-            'altName': ['Unknown'],
+            'altName': ['Suspect'],
             'altImage': [questionMark],
         },
         {
             'name': [`Dallas Franks`],
             'id': [4],
             'image': [DallasPic],
-            'altName': ['Unknown'],
+            'altName': ['Suspect'],
             'altImage': [questionMark],
         },
         {
             'name': [`Lucy Light`],
             'id': [5],
             'image': [LucyPic],
-            'altName': ['Unknown'],
+            'altName': ['Suspect'],
             'altImage': [questionMark],
         },
         {
             'name': [`Wendy Rose`],
             'id': [6],
             'image': [WendyPic],
-            'altName': ['Unknown'],
+            'altName': ['Suspect'],
             'altImage': [questionMark],
         },
     ],
