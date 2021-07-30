@@ -1,10 +1,6 @@
 import { useState } from 'react'
-import PageContainer from '../containers/PageContainer'
-import Title from '../generalComponents/Title'
-import NextPageButton from '../generalComponents/NextPageButton'
-import * as lessonData from '../data/lessonData'
-
-
+import PageContainer from '../../containers/PageContainer'
+import * as lessonData from '../../data/lessonData'
 
 function EndPage() {
 

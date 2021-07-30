@@ -9,7 +9,7 @@ import GameContext from '../../../context/GameContext'
 import Draggable from 'react-draggable';
 import { loveLetterData } from '../../../data/lessonData'
 import NextPageButton from '../../../generalComponents/NextPageButton'
-import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
+import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import clientPic from '../../../images/client.jpg'
 
 

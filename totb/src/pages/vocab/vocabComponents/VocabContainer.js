@@ -11,7 +11,7 @@ border-radius: .3em;
 margin-top: 2em;
 
 @media(max-width:900px){
-    width: 100%
+    width: 95%
 }
 
 `

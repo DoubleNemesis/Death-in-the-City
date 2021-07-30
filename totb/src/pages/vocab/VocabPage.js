@@ -1,12 +1,13 @@
 import { useEffect, useState, useContext } from 'react'
 import { history, useHistory } from 'react-router-dom'
-import Container from '../containers/VocabContainer'
-import { vocabData as data } from '../data/lessonData'
-import GameContext from '../context/GameContext'
-import { SpeechBubbleLeft } from './witness/witnessComponents/Questions'
-import NextPageButton from '../generalComponents/NextPageButton'
-import client from '../images/client.jpg'
-import { officeCards } from '../data/lessonData'
+import Container from './vocabComponents/VocabContainer'
+import { vocabData as data } from '../../data/lessonData'
+import GameContext from '../../context/GameContext'
+import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
+import NextPageButton from '../../generalComponents/NextPageButton'
+import client from '../../images/client.jpg'
+import { officeCards } from '../../data/lessonData'
+import './VocabStyles.css'
 
 function VocabPage() {
     const { hasDoneVocab, setHasDoneVocab } = useContext(GameContext)
@@ -52,6 +53,7 @@ function VocabPage() {
                             if (counter === 10) {
                                 console.log('finished');
                                 setHasDoneVocab(true)
+                                window.scrollTo(0, 0)
                                 let dummyCollectedWitnesses = [...collectedWitnesses]
                                 dummyCollectedWitnesses.push(officeCards.witnesses[0].name)
                                 setCollectedWitnesses(dummyCollectedWitnesses)
@@ -94,9 +96,9 @@ function VocabPage() {
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
                 </Container> :
                 <Container>
+                    <NextPageButton destination="officebase">Go to the office!</NextPageButton>
                    <div> {questions} </div>
                   <div>  {answers} </div>
-                    <NextPageButton destination="officebase">Go to the office!</NextPageButton>
                 </Container>
 
 

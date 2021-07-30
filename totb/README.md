@@ -1,5 +1,9 @@
     code
-
+sort out menu
+office pop up shld be bubble from client
+check vocab for error...
+scroll to top on vocab complete and update message
+ 
     css / images
 css trial backgrounds size shape etc so bin looks good
 completed letter on loveletter

@@ -5,6 +5,8 @@ const paperIn = keyframes`
 0%{width: 0vw; transform: rotate(0deg)}
 100%{width: 90vw; transform: rotate(1080deg)}
 `
+
+
 const paperRotate = keyframes`
 0%{ width: 90vw; opacity: .3; transform: rotate(0deg)}
 100%{ width: 90vw; opacity: 1; transform: rotate(1080deg)}
@@ -30,6 +32,10 @@ animation-delay: 0s;
 animation-fill-mode: forwards;
 margin-top: 1.1em;
 background-color: transparent;
+
+@media(min-width: 700px){
+    max-width: 80vw;
+}
 
 img{
     width: 100%;

@@ -10,8 +10,8 @@ background-color: black;
 border-top: 4px solid black;
 color: white;
 padding: 1em 0;
-/* position: sticky;
-bottom: 0px; */
+position:relative;
+bottom: 0px;
 
 a{
     color: white;

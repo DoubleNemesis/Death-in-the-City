@@ -1,0 +1,104 @@
+.correct {
+    border: 1px solid red !important;
+  }
+  
+  .wrong {
+    padding: .5em;
+    border-radius: .3em;
+    color: #666;
+    cursor: not-allowed;
+  }
+  
+  .questionTile {
+    border: 1px solid grey;
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8d8741;
+    background-image: linear-gradient(#333, #202020);
+    margin: .3em;
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: .1em .1em .1em #999;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 0 !important;
+  }
+  
+  @media(min-width: 1000px) {
+    .questionTile {
+      width: 7.3em;
+      height: 7.3em;
+    }
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(1px, 0, 0);
+    }
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+    }
+  }
+  
+  .questionTile:active {
+    box-shadow: 0 0 .5em limegreen;
+    animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    color: limegreen;
+  }
+  
+  @media(min-width:1000px) {
+    .questionTile:hover {
+      box-shadow: 0 0 .5em yellow;
+      animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
+      transform: translate3d(0, 0, 0);
+      color: yellow;
+    }
+  }
+  
+  .wrong {
+    background-image: unset;
+  }
+  
+  .selected {
+    box-shadow: 0 0 .5em limegreen;
+    animation: shake 1.22s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    color: limegreen;
+  }
+  
+  .used {
+    display: flex;
+    background-color: #999;
+    color: #666;
+    background-image: unset;
+    cursor: unset;
+    animation: none;
+    box-shadow: none;
+    font-size: 1em;
+    padding: .2em;
+    display: none;
+  }
+  
+  .used:hover {
+    animation: none;
+    background-color: #999;
+    color: #333;
+    box-shadow: none;
+  }
+  
+  .correctTileTick {
+    color: green;
+    font-size: .8rem;
+    padding: 0;
+  }
+  

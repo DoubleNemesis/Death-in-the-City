@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import NextPageButton from '../generalComponents/NextPageButton'
-import { SpeechBubbleLeft } from './witness/witnessComponents/Questions'
-import { TextButton, TextButtonContainer } from '../generalComponents/SpeechTextButton'
-import { CrimeSceneData } from '../data/lessonData'
-import Janitor from '../images/janitor.png'
-import kitchen from '../images/kitchen.jpg'
-import windowView from '../images/windowView2.jpg'
-import { clientData } from '../data/lessonData'
-import PageContainer from '../containers/PageContainer'
-import ImageContainer from '../containers/ImageContainer'
+import NextPageButton from '../../generalComponents/NextPageButton'
+import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
+import { TextButton, TextButtonContainer } from '../../generalComponents/SpeechTextButton'
+import { CrimeSceneData, clientData } from '../../data/lessonData'
+import Janitor from '../../images/janitor.png'
+import kitchen from '../.././images/kitchen.jpg'
+import windowView from '../../images/windowView2.jpg'
+
+import PageContainer from '../../containers/PageContainer'
+import ImageContainer from '../../containers/ImageContainer'
 
 function CrimeScene() {
     const { clientTitle, clientText } = clientData

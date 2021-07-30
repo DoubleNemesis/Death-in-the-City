@@ -26,6 +26,7 @@ export const homePageData = {
     `],
     homeCallToActionTextBtn: [`Full story on page TWO!`],
     homeCallToActionTextBtn2: [`READY to turn detective?`],
+    homePaperAltText: [`Newspaper article describing how Lexington Grey fell from the top of the tower block and how the police think it was suicide and his dad thinks it was murder.`]
 }
 
 export const startPageBlurb = {
@@ -38,7 +39,7 @@ export const startPageBlurb = {
 export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
     backStoryText: [`I'm Terence Grey. So you think you're ready to turn detective? I hope so, because you've got work to do! 
-Lexington Grey wasn't just anyone. That boy was my son, and he was murdered! Your job is to find out who killed him. First you need to show me you're capable.
+Lexington Grey wasn't just anyone. That boy was my son, and he was murdered! Don't believe the rubbish the police said. Your job is to find out who killed him. First you need to show me you're capable.
  Get this vocabulary right and then we're in business!`]
 }
 

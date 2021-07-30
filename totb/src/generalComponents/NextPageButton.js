@@ -15,6 +15,11 @@ border: none;
     border: 1px solid grey; 
     color: black;
 }
+:active{
+    background-color: pink;
+    border: 1px solid grey; 
+    color: black;
+}
 `
 
 function NextPageButton({ children, ...props }) {

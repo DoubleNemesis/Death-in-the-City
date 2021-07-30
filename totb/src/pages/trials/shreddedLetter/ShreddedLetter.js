@@ -3,7 +3,7 @@ import { List, arrayMove } from 'react-movable';
 import { ShreddedLetterPiecesData } from '../../../data/lessonData'
 import { EventsContainer, ShreddedPiece } from './shreddedLetterComponents/ShreddedLetterComponents'
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
-import { SpeechBubbleLeft } from '../../witness/witnessComponents/Questions'
+import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import GameContext from '../../../context/GameContext';
 import clientPic from '../../../images/client.jpg'

@@ -1,31 +1,26 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react'
-import styled, {createGlobalStyle} from 'styled-components'
-import VocabPage from './pages/VocabPage'
-import Home from './pages/Home'
+import {GlobalStyle} from './styles/GlobalStyle'
+import {Outer} from './pageElements/Outer'
+import VocabPage from './pages/vocab/VocabPage'
+import Home from './pages/home/Home'
 import Door from './pages/door/Door'
-import Start from './pages/Start'
-import Footer from './pages/Footer'
-import Credits from './pages/Credits'
-import Office from './pages/Office'
+import Start from './pages/start/Start'
+import Footer from './pageElements/Footer'
+import Credits from './pages/credits/Credits'
 import OfficeBase from './pages/office/Office'
-// import Witness from './pages/witness/Witness'
-import WitnessComp from './pages/witness/WitnessComp'
-import MrGrey from './pages/Client'
+import Witness from './pages/witness/Witness'
 import CodeBox from './pages/trials/codeBox/CodeBox'
-// import TornLetter from './pages/trials/tornLetter/TornLetter'
 import ShreddedLetter from './pages/trials/shreddedLetter/ShreddedLetter'
 import LoveLetter from './pages/trials/loveLetter/LoveLetter'
 import ErrorCorrection from './pages/trials/errorCorrection/ErrorCorrection'
 import Redacted from './pages/trials/redacted/Redacted'
 import OrderEvents from './pages/trials/orderEvents/OrderEvents'
-import BackStory from './pages/BackStory'
-import EndPage from './pages/EndPage'
-import Sneaky from './pages/sneaky/Sneaky'
-import CrimeScene from './pages/CrimeScene'
-import FoundArtefacts from './pages/FoundArtefacts'
-// import Cont from './pageElements/Cont'
+import BackStory from './pages/backstory/BackStory'
+import EndPage from './pages/endpage/EndPage'
+import Sneaky from './pages/sneakyBinPeak/SneakyBinPeak'
+import CrimeScene from './pages/crimescene/CrimeScene'
 import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import * as lessonData from './data/lessonData'
 import detective from './images/detective.png'
@@ -60,13 +55,6 @@ import GameContext from './context/GameContext'
 
 
 function App() {
-
-  const GlobalStyle = createGlobalStyle`
-  p, ul, h3, a {
-    font-family: 'Poppins';
-  }
-
-`
 
   const [hasDoneVocab, setHasDoneVocab] = useState(false)
   const [hasVisitorBook, setHasVisitorBook] = useState(false)
@@ -110,11 +98,9 @@ function App() {
   const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6, exitMessage6, speechBubbleText6, witnessInfo6 } = lessonData['questionsWitness6'];
   const { artefacts } = lessonData['officeCards'];
 
-
-
   return (
     <>
-    <div className="outer">
+    <Outer>
       <GlobalStyle/>
       <Router>
         <GameContext.Provider value={providedValues}>
@@ -125,7 +111,7 @@ function App() {
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/start">start</Link>.
                 <Link className="nav-link" to="/vocab">vocab</Link>
-                <Link className="nav-link" to="/office">office</Link>
+                <Link className="nav-link" to="/officebase">office</Link>
                 <Link className="nav-link" to="/witness1">{characterNames[0]}</Link>
                 <Link className="nav-link" to="/crimescene">crimeScene</Link>
                 <Link className="nav-link" to="/witness2">{characterNames[1]}</Link>
@@ -133,7 +119,6 @@ function App() {
                 <Link className="nav-link" to="/witness4">{characterNames[3]}</Link>
                 <Link className="nav-link" to="/witness5">{characterNames[4]}</Link>
                 <Link className="nav-link" to="/witness6">{characterNames[5]}</Link>
-                <Link className="nav-link" to="/mrgrey">MrGrey</Link>
                 <Link className="nav-link" to="/codebox">SafeCrack</Link>
                 <Link className="nav-link" to="/tornletter">TornLetter</Link>
                 <Link className="nav-link" to="/loveletter">LoveLetter</Link>
@@ -150,17 +135,11 @@ function App() {
           <Route exact path="/start">
             <Start />
           </Route>
-          <Route path="/office">
-            <Office />
-          </Route>
           <Route path="/officebase">
             <OfficeBase />
           </Route>
           <Route path="/door">
             <Door />
-          </Route>
-          <Route path="/mrgrey">
-            <MrGrey />
           </Route>
           <Route path="/vocab">
             <VocabPage />
@@ -169,7 +148,7 @@ function App() {
             <BackStory />
           </Route>
           <Route path="/witness1"> {/*Tony Monceto*/}
-            <WitnessComp
+            <Witness
               title={characterNames[0]}
               questionsWit={questionsWitness1}
               questionsWit2={questionsWitness1_2}
@@ -189,7 +168,7 @@ function App() {
             <CrimeScene />
           </Route>
           <Route path="/witness2"> {/*Chay*/}
-            <WitnessComp
+            <Witness
               title={characterNames[1]}
               questionsWit={questionsWitness2}
               questionsWit2={questionsWitness2_2}
@@ -210,7 +189,7 @@ function App() {
             <ShreddedLetter artefactName={artefacts[0].name} />
           </Route>
           <Route path="/witness3"> {/*Kirsten*/}
-            <WitnessComp
+            <Witness
               title={characterNames[2]}
               questionsWit={questionsWitness3}
               questionsWit2={questionsWitness3_2}
@@ -234,7 +213,7 @@ function App() {
             <ErrorCorrection  artefactName={artefacts[1].name}/>
           </Route>
           <Route path="/witness4"> {/*Dallas*/}
-            <WitnessComp
+            <Witness
               title={characterNames[3]}
               questionsWit={questionsWitness4}
               questionsWit2={questionsWitness4_2}
@@ -258,7 +237,7 @@ function App() {
             <OrderEvents artefactName={artefacts[3].name} />
           </Route>
           <Route path="/witness5"> {/*Lucy*/}
-            <WitnessComp
+            <Witness
               title={characterNames[4]}
               questionsWit={questionsWitness5}
               questionsWit2={questionsWitness5_2}
@@ -279,7 +258,7 @@ function App() {
             <LoveLetter artefactName={artefacts[2].name} />
           </Route>
           <Route path="/witness6"> {/*wendy*/}
-            <WitnessComp
+            <Witness
               title={characterNames[5]}
               questionsWit={questionsWitness6}
               questionsWit2={questionsWitness6_2}
@@ -302,9 +281,6 @@ function App() {
           <Route path="/redacted">
             <Redacted artefactName={artefacts[4].name} />
           </Route>
-          <Route path="/foundArtefacts">
-            <FoundArtefacts />
-          </Route>
           <Route path="/endpage">
             <EndPage />
           </Route>
@@ -313,9 +289,8 @@ function App() {
           </Route>
         </GameContext.Provider>
       </Router>
-      
+    </Outer>
     <Footer/>
-    </div>
     </>
   );
 }

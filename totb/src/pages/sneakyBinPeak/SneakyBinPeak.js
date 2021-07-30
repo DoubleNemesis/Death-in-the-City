@@ -8,7 +8,7 @@ import PageContainer from '../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import { clientData } from '../../data/lessonData'
-import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../witness/witnessComponents/Questions'
+import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
 import GameContext from '../../context/GameContext' 
 import { InfoBox } from '../witness/witnessComponents/Layout'
 

@@ -1,10 +1,10 @@
-import PageContainer from '../containers/PageContainer'
-import Title from '../generalComponents/Title'
+import PageContainer from '../../containers/PageContainer'
+import Title from '../../generalComponents/Title'
 // import GameContext from '../context/GameContext'
-import NextPageButton from '../generalComponents/NextPageButton'
+import NextPageButton from '../../generalComponents/NextPageButton'
 // import { useContext } from 'react'
 import {useHistory} from 'react-router-dom'
-import { clientData } from '../data/lessonData'
+import { clientData } from '../../data/lessonData'
 
 function MrGrey(){
     const {clientTitle, clientText} = clientData

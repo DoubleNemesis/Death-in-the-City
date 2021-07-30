@@ -85,24 +85,29 @@ function OfficeBase() {
    
     const [isArtefactModalDisplayed, setIsArtefactModalDisplayed] = useState(false)
     const [artefactImageToDisplay, setArtefactImageToDisplay] = useState('')
+    const [isReadyGuess, setIsReadyGuess] = useState(false)
    
     let history = useHistory()
 
     console.log(completedWitnesses);
 
-    const witnesses = officeCards.witnesses.map((item) => {
+    useEffect(()=>{
+        if(completedChallenges.length === 5){
+            setIsReadyGuess(true)
+        }
+    },[completedChallenges])
+
+    const witnesses = officeCards.witnesses.map((item, index) => {
         if (collectedWitnesses.indexOf(item.name) > -1){
             const destination = `/witness${item.id}`
             const isKnown = completedWitnesses.indexOf(item.name.toString()) > -1
-            console.log(isKnown)
-            console.log(item.name)
             return (
-                <WitnessCard borderColor={isKnown ? 'limeGreen' : 'whitesmoke'} opacity={isKnown ? '0.5' : '1'}><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination} isDisabled={false}>{item.name}</WitnessButton></WitnessCard>
+                <WitnessCard key={`index${index}`}borderColor={isKnown ? 'limeGreen' : 'whitesmoke'} opacity={isKnown ? '0.5' : '1'}><CardImageContainer><CardImage src={item.image} /></CardImageContainer><WitnessButton destination={destination} isDisabled={false}>{item.name}</WitnessButton></WitnessCard>
             )
         }
         else {
             return (
-                <WitnessCard borderColor="whitesmoke"><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton isDisabled={true}>{item.altName}</WitnessButton>: null}</WitnessCard>
+                <WitnessCard borderColor="whitesmoke" key={`index${index}`}><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton isDisabled={true}>{item.altName}</WitnessButton>: null}</WitnessCard>
             )
         }
     })
@@ -113,19 +118,19 @@ function OfficeBase() {
         setIsArtefactModalDisplayed(true)
     }
 
-    const artefacts = officeCards.artefacts.map((item) => {
+    const artefacts = officeCards.artefacts.map((item, index) => {
         if (collectedArtefacts.indexOf(item.name) > -1){
             return (
                 completedChallenges.indexOf(item.name) > -1 ?
-                <ArtefactCard borderColor="limegreen" bgColor="black"><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
+                <ArtefactCard borderColor="limegreen" bgColor="black" key={`index${index}`}><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
                 item.id < 6 ? 
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="50px" src={item.image} onClick={()=>handleArtefactImageClick(item.image)} />{item.name}</ArtefactCard>
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="50px" src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard>:
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="50px" src={item.image} onClick={()=>handleArtefactImageClick(item.image)} />{item.name}</ArtefactCard>
             )
         }
         else{
             return (
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333"><img height="75px" src={scroll} /></ArtefactCard>
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={scroll} /></ArtefactCard>
             )
         }
 
@@ -140,7 +145,7 @@ function OfficeBase() {
 
 
     return (
-
+<>
         <Container>
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>The Office</h2>
@@ -168,8 +173,11 @@ function OfficeBase() {
             </StyledModal>
             {witnesses}
             {artefacts}
-            <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton>
         </Container>
+        <Container>
+           { isReadyGuess ?  <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton> : null}
+        </Container>
+            </>
     )
 }
 

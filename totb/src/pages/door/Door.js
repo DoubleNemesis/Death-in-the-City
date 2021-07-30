@@ -1,6 +1,6 @@
 import { useState } from 'react'
 // import NextPageButton from '../../generalComponents/NextPageButton'
-import { SpeechBubbleLeft, SpeechBubbleRight } from '../witness/witnessComponents/Questions'
+import { SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
 // import { TextButton, TextButtonContainer } from '../../generalComponents/SpeechTextButton'
 // import { CrimeSceneData } from '../../data/lessonData'
 // import { clientData } from '../../data/lessonData'

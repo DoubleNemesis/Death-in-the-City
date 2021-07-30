@@ -1,29 +1,40 @@
-import { useState, useEffect } from 'react'
-import PageContainer from './../../containers/PageContainer'
+import { useState, useEffect, useContext } from 'react'
+import PageContainer from '../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
+import Door from '../door/Door'
+import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
-import { Question, SpeechBubbleLeft, SpeechBubbleRight } from './witnessComponents/Questions'
-import { Instructions, Conversation, QuestionOptions, WitnessImage, TaskBox, InfoBox } from './witnessComponents/Layout'
-// import ProfilePic from '../images/janitor.png'
-//import { questionsWit1, questionsWit1_2, witnessConversationArray1 as conversationArray } from '../data/lessonData'
+import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
+import { Instructions, Conversation, QuestionOptions, QuestionOption, WitnessImage, TaskBox, InfoBox, StyledArtefact, StyledFoundArtefact } from './witnessComponents/Layout'
+import GameContext from '../../context/GameContext'
 
 let counter = 0
 let fullConversation = []
-function Concierge(props) {
-    console.log(props);
+
+function WitnessComp(props) {
+    // console.log(props);
     const [questions, setQuestions] = useState([])
-    const [rightWrong, setRightWrong] = useState('Choose what to say')
+    const [rightWrong, setRightWrong] = useState('Choose the best reply')
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
-    let history = useHistory()
-    let destination = props.trialURL
+    const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
+    const [doorWasOpened, setDoorWasOpened] = useState(false)
+    const [isArtefactClicked, setIsArtefactClicked] = useState(false)
+    const { collectedArtefacts, setCollectedArtefacts, completedWitnesses, setCompletedWitnesses } = useContext(GameContext)
+
+    function handleArtefactClick() {
+        setIsArtefactClicked(true)
+        let dummyCollectedArtefacts = [...collectedArtefacts]
+        dummyCollectedArtefacts.push(props.artefactName)
+        setCollectedArtefacts(dummyCollectedArtefacts)
+    }
 
     useEffect(() => {
         function assignQuestionsList(dat) {
-            console.log('i ran');
             let questionsList = dat.map((item, index) => {
-                return <Question key={`question${index}`} onClick={handleClick}><span className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</span></Question>
+                return <QuestionOption key={`question${index}`} onClick={handleClick}><div className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</div></QuestionOption>
+                // return <QuestionOption key={`question${index}`} onClick={handleClick} className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</QuestionOption>
             })
             setQuestions(questionsList)
         }
@@ -32,7 +43,7 @@ function Concierge(props) {
 
     useEffect(() => {
         let newConversationArray = props.conversationArray.map((item, index) => {
-            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`}>{item}</SpeechBubbleRight>
+            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`} minHeight="125" image={props.personImage}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`} minHeight="60">{item}</SpeechBubbleRight>
         })
         fullConversation = newConversationArray
     }, [])
@@ -47,7 +58,6 @@ function Concierge(props) {
 
     function handleClick(e) {
         if (e.target.classList.contains('success')) {
-            console.log(counter)
             counter = counter + 1
             setRightWrong('Correct!')
             e.target.classList.add('correct')
@@ -61,11 +71,49 @@ function Concierge(props) {
                     setQuestionList(props.questionsWit2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
+                        setRightWrong('Choose the best reply')
+                        const conversationEnd = document.getElementById('conversationBottom')
                     }
                     else {
-                        setRightWrong(<NextPageButton destination={destination}>Let's go!</NextPageButton>)
-                    }
+                        //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
+                        //popup here found artefact if that is the case? hasArtefact ? <popup/> : null
 
+                        // setRightWrong(
+                        //     props.artefactName ?
+                        //         <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} /> :
+                        //         <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>
+                        // )
+                        function updateCompletedWitnesses(witnessName) {
+                            let dummyCompletedWitnesses = [...completedWitnesses]
+                            dummyCompletedWitnesses = [witnessName, ...dummyCompletedWitnesses]
+                            setCompletedWitnesses(dummyCompletedWitnesses)
+                        }
+                        if (completedWitnesses.indexOf(props.title) > -1) {
+                            setRightWrong(<NextPageButton destination='officebase'>Back to Office</NextPageButton>)
+                        }
+                        else if (!props.artefactName) {
+                            setRightWrong(<NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>)
+                            updateCompletedWitnesses(props.title)
+                        }
+                        else {
+                            setRightWrong(<StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} />)
+                            updateCompletedWitnesses(props.title)
+                        }
+                        // setRightWrong(
+                        //     !props.artefactName ?
+                        //     <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>:
+                        //     completededWitnesses.indexOf(props.title) > -1 ?
+                        //     <NextPageButton destination='office'>Back to Office</NextPageButton>:
+                        //     <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} />                    
+                        // )
+                        counter = 0;
+                    }
+                    setTimeout(() => {
+                        const conversationEnd = document.getElementById('conversationBottom')
+                        if (conversationEnd) {
+                            conversationEnd.scrollIntoView()
+                        }
+                    }, 1001)
                 }, 1000)
             }, 1000)
         }
@@ -76,45 +124,54 @@ function Concierge(props) {
         }
     }
 
-    function handleExit() {
-        let destination = props.trialURL
-        history.push(`/${destination}`)
-        //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
-    }
+
 
 
     return (
         <>
-            <div className="title">
-                <Title>{props.title}</Title>
-            </div>
-            <PageContainer>
+            <Door speechBubbleText={props.speechBubbleText} witnessInfo={props.witnessInfo} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened} />
+            <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
+                <h2>Task: Dialogue</h2>
+                <ul>
+                    <li> Read the text in the speech bubble.</li>
+                    <li> Choose a reply from the list to continue the conversation.</li>
+                    <li> Only one answer is grammatically correct. </li>
+                    <li> If you choose the wrong answer, you lose a point.</li>
+                </ul>
+                <ToggleContainer>
+                    <ToggleTaskInfo
+                        onClick={() => {
+                            setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)
+                        }}>
+                        Start
+                    </ToggleTaskInfo>
+                </ToggleContainer>
+            </StyledModal>
 
-                <Instructions>
-                    <WitnessImage img={props.personImage} />
-                    {/* https://unsplash.com/@shnautsher */}
-                    <TaskBox>
-                        Your Task:
-                        <ul>
-                            <li>Choose a question from the list on the right. </li>
-                            <li>Only one question is grammatically correct. </li>
-                            <li>If you choose the wrong one you lose a point.</li>
-                        </ul>
-                    </TaskBox>
-                </Instructions>
-                <Conversation>
-                    {conversation}
-                </Conversation>
-                <QuestionOptions>
-                    <InfoBox>
-                        {rightWrong}
-                    </InfoBox>
-                    {questions}
-                </QuestionOptions>
-            </PageContainer>
+            {doorWasOpened ?
+                <>
+                    <Conversation>
+                        {conversation}
+                    </Conversation>
+                    <QuestionOptions>
+                        <InfoBox>
+                            {isArtefactClicked ?
+                                <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>
+                                    You found the "{props.artefactName}"!
+                                    <NextPageButton destination={props.binCheck}>Check the bin</NextPageButton>
+                                    <NextPageButton destination={props.trialURL}>Do the challenge</NextPageButton>
+                                    <NextPageButton destination="officebase">Back to Office</NextPageButton>
+                                </StyledFoundArtefact>
+                                : rightWrong}
+                        </InfoBox>
+                        {questions}
+                        <div id="conversationBottom">Hello!</div>
+                    </QuestionOptions>
+                </>
+                : null}
         </>
 
     )
 }
 
-export default Concierge
+export default WitnessComp

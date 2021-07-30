@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { SpeechBubbleLeft, SpeechBubbleRight } from '../../witness/witnessComponents/Questions'
+import { SpeechBubbleLeft, SpeechBubbleRight } from '../../../generalComponents/ConversationComponents'
 import { TextButton, TextButtonContainer } from '../../../generalComponents/SpeechTextButton'
 
 export const SuccessMessageComp = (props)=>{
