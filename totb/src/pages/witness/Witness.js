@@ -8,6 +8,7 @@ import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
 import { Instructions, Conversation, QuestionOptions, QuestionOption, WitnessImage, TaskBox, InfoBox, StyledArtefact, StyledFoundArtefact } from './witnessComponents/Layout'
 import GameContext from '../../context/GameContext'
+import { Inside, WitnessIntroBox } from '../door/doorComponents/DoorComponents'
 
 let counter = 0
 let fullConversation = []
@@ -15,13 +16,21 @@ let fullConversation = []
 function WitnessComp(props) {
     // console.log(props);
     const [questions, setQuestions] = useState([])
-    const [rightWrong, setRightWrong] = useState('Choose the best reply')
+    const [rightWrong, setRightWrong] = useState('Choose the best reply from the options below')
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [doorWasOpened, setDoorWasOpened] = useState(false)
     const [isArtefactClicked, setIsArtefactClicked] = useState(false)
-    const { collectedArtefacts, setCollectedArtefacts, completedWitnesses, setCompletedWitnesses } = useContext(GameContext)
+    const { collectedArtefacts, setCollectedArtefacts, completedWitnesses, setCompletedWitnesses, detectiveChosen } = useContext(GameContext)
+
+    useEffect(() => {
+        const pageEnd = document.getElementById('pageEnd')
+        if(pageEnd){
+            pageEnd.scrollIntoView()
+        }
+    }, [])
+
 
     function handleArtefactClick() {
         setIsArtefactClicked(true)
@@ -43,7 +52,7 @@ function WitnessComp(props) {
 
     useEffect(() => {
         let newConversationArray = props.conversationArray.map((item, index) => {
-            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`} minHeight="125" image={props.personImage}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`} minHeight="60">{item}</SpeechBubbleRight>
+            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`} minHeight="125" image={props.personImage}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`} minHeight="60" image={detectiveChosen}>{item}</SpeechBubbleRight>
         })
         fullConversation = newConversationArray
     }, [])
@@ -71,7 +80,7 @@ function WitnessComp(props) {
                     setQuestionList(props.questionsWit2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
-                        setRightWrong('Choose the best reply')
+                        setRightWrong('Choose the best reply from the options below')
                         const conversationEnd = document.getElementById('conversationBottom')
                     }
                     else {
@@ -119,7 +128,7 @@ function WitnessComp(props) {
         }
         else {
             e.target.classList.add('wrong')
-            setRightWrong('Lose a point and try again!')
+            setRightWrong('Try again!')
             //minus points
         }
     }
@@ -129,14 +138,13 @@ function WitnessComp(props) {
 
     return (
         <>
-            <Door speechBubbleText={props.speechBubbleText} witnessInfo={props.witnessInfo} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened} />
+            {!doorWasOpened ? <Door speechBubbleText={props.speechBubbleText} witnessInfo={props.witnessInfo} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened} /> : null}
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
                 <ul>
                     <li> Read the text in the speech bubble.</li>
                     <li> Choose a reply from the list to continue the conversation.</li>
                     <li> Only one answer is grammatically correct. </li>
-                    <li> If you choose the wrong answer, you lose a point.</li>
                 </ul>
                 <ToggleContainer>
                     <ToggleTaskInfo
@@ -148,27 +156,35 @@ function WitnessComp(props) {
                 </ToggleContainer>
             </StyledModal>
 
-            {doorWasOpened ?
-                <>
-                    <Conversation>
-                        {conversation}
-                    </Conversation>
-                    <QuestionOptions>
-                        <InfoBox>
-                            {isArtefactClicked ?
-                                <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>
-                                    You found the "{props.artefactName}"!
-                                    <NextPageButton destination={props.binCheck}>Check the bin</NextPageButton>
-                                    <NextPageButton destination={props.trialURL}>Do the challenge</NextPageButton>
-                                    <NextPageButton destination="officebase">Back to Office</NextPageButton>
-                                </StyledFoundArtefact>
-                                : rightWrong}
-                        </InfoBox>
-                        {questions}
-                        <div id="conversationBottom">Hello!</div>
-                    </QuestionOptions>
-                </>
-                : null}
+            <>
+                <Inside>
+                    <WitnessIntroBox personImage={props.personImage} witnessInfo={props.witnessInfo} />
+                    <SpeechBubbleRight image={detectiveChosen}>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
+                </Inside>
+                {doorWasOpened ?
+                    <>
+                        <Conversation>
+                            {conversation}
+                        </Conversation>
+                        <QuestionOptions>
+                            <InfoBox>
+                                {isArtefactClicked ?
+                                    <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>
+                                        You found the "{props.artefactName}"!
+                                        <NextPageButton destination={props.binCheck}>Check the bin</NextPageButton>
+                                        <NextPageButton destination={props.trialURL}>Do the challenge</NextPageButton>
+                                        <NextPageButton destination="officebase">Back to Office</NextPageButton>
+                                    </StyledFoundArtefact>
+                                    : rightWrong}
+                            </InfoBox>
+                            {questions}
+                            {/* id to scroll to */}
+                            <div id="conversationBottom"></div>
+                        </QuestionOptions>
+                    </>
+                    : null}
+                <div id="pageEnd"></div>
+            </>
         </>
 
     )

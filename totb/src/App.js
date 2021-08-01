@@ -32,7 +32,7 @@ import { homePageData } from './data/lessonData'
 import Title from './generalComponents/Title'
 import FloePic from './images/floe.jpg'
 import WendyPic from './images/wendy.jpg'
-import doorGrey from './images/doorGrey.png'
+import doorGrey from './images/doorGrey1.png'
 import doorBlue from './images/doorBlue.png'
 import doorRed from './images/doorRed.png'
 import doorWhite from './images/doorWhite.png'
@@ -159,6 +159,7 @@ function App() {
               doorImg={doorGrey}
               witnessInfo={witnessInfo1}
               speechBubbleText={speechBubbleText1}
+              doorTitle={characterFirstNames[0]}
               />
           </Route>
           <Route path="/codebox">

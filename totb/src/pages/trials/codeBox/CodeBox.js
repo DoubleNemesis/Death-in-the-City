@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
@@ -26,6 +26,8 @@ function CodeBox() {
     const [codeAnswer] = useState('m,d,h,t,c')
     const [safeCodeBgColor, setSafeCodeBgColor] = useState('white')
     const [codeIsCorrect, setCodeIsCorrect] = useState(false)
+    const [codeBoxIsFull, setCodeBoxIsFull] = useState(false)
+
 
     const { hasVisitorBook, setHasVisitorBook } = useContext(GameContext)
     const { collectedWitnesses, setCollectedWitnesses } = useContext(GameContext)
@@ -33,12 +35,20 @@ function CodeBox() {
 
     function handleChange(e) {
         const { name, value } = e.target
-        if (name === 'first') { setFirst(value) }
-        if (name === 'second') { setSecond(value) }
-        if (name === 'third') { setThird(value) }
-        if (name === 'fourth') { setFourth(value) }
-        if (name === 'fifth') { setFifth(value) }
+        if (name === 'first') { setFirst(value.toLowerCase()) }
+        if (name === 'second') { setSecond(value.toLowerCase()) }
+        if (name === 'third') { setThird(value.toLowerCase()) }
+        if (name === 'fourth') { setFourth(value.toLowerCase()) }
+        if (name === 'fifth') { setFifth(value.toLowerCase()) }
     }
+
+    useEffect(()=>{
+        if(first && second && third && fourth && fifth){
+            console.log('true');
+            setCodeBoxIsFull(true)
+        }
+
+    },[first, second, third, fourth, fifth])
 
     function handleCheckCorrectCode() {
         let codeAttempt = [...first, ...second, ...third, ...fourth, ...fifth]
@@ -50,6 +60,7 @@ function CodeBox() {
         }
         else {
             setSafeCodeBgColor('red')
+            setCodeBoxIsFull(false)
             setTimeout(() => {
                 setSafeCodeBgColor('white')
                 setFirst('')
@@ -99,7 +110,7 @@ function CodeBox() {
                 </SpeechBubbleLeft>
                 <CodeBoxContainer>
 
-                    <Safe codeIsCorrect={codeIsCorrect} handleCheckCorrectCode={handleCheckCorrectCode} handleVisitorBookClick={handleVisitorBookClick}>
+                    <Safe codeIsCorrect={codeIsCorrect} codeBoxIsFull={codeBoxIsFull} handleCheckCorrectCode={handleCheckCorrectCode} handleVisitorBookClick={handleVisitorBookClick}>
                         <div>
                             <StyledInput safeCodeBgColor={safeCodeBgColor} type="text" name="first" value={first} onChange={handleChange} />
                             <StyledInput safeCodeBgColor={safeCodeBgColor} type="text" name="second" value={second} onChange={handleChange} />

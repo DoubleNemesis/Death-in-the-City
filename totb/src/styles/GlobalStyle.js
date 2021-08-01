@@ -6,8 +6,9 @@ html {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  font-family: 'Lato' !important;
+  /* font-family: 'Lato' !important; */
   font-size: 100%;
+  box-sizing: border-box;
 }
 
 body {

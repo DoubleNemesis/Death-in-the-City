@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const StyledModal = styled.div`
 position: absolute;
-background-color: #333;
+background-color: #2E2523;
+background: linear-gradient(#666, #2E2523, #666);
 color: white;
 z-index: 5;
 display: ${({ display }) => display};
@@ -10,10 +11,12 @@ left:0;
 right:0;
 margin-left:auto;
 margin-right:auto;
-top: 14%;
+top: 30%;
 font-size: 1rem;
-/* border: 1px solid #666; */
-/* border-radius: 2px; */
+width: 95%;
+padding: .5em;
+border: 3px solid red;
+border-radius: 5px;
 /* padding: 1em; */
 /* box-shadow: 4px 4px 3px #666; */
 /* width: 80%; */
@@ -47,7 +50,6 @@ font-weight: 700;
 z-index: 2;
 color: #333;
 margin: 0 auto;
-padding: .3em 5em;
+padding: .3em 3em;
 text-transform: uppercase;
-
 `

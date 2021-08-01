@@ -583,7 +583,7 @@ export const CodeBoxData = {
     But maybe you will be able to work it out.`],
     bubbleText2: [`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
     I don't know the verbs but I do know the words they collocate with. For example if the clue is "TV", you would take 
-    "W", the first letter of the verb "watch", as that collocates with the noun "TV". 
+    "W", the first letter of the verb "watch", as that collocates with the noun "TV". Clear?
     `],
     bubbleText3: <BubbleText3 />,
     bubbleTextX: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 

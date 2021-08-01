@@ -1,5 +1,8 @@
 import styled, {keyframes} from 'styled-components'
 import safewheel from '../../../../images/safewheel.png'
+import safewheelGreen from '../../../../images/safewheelGreen.png'
+import wallbg from '../../../../images/wallbg.jpg'
+import woodbg from '../../../../images/woodbg.jpg'
 import visitorbook from '../../../../images/visitorbook.png'
 
 export const rotateDoor = keyframes` 
@@ -45,11 +48,15 @@ export const CodeBoxContainer = styled.div`
 width: 100%;
 border: 1px solid black;
 background-color: whitesmoke;
-padding: 2em;
+background-image: url(${wallbg});
+background-size: cover;
+padding: 2em 2em 0 2em;
 margin: 1em auto;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: flex-end;
+/* border: 1px solid red; */
 `
 
 const SafeBox = styled.div`
@@ -105,12 +112,14 @@ min-width: 100px;
 height: 100px;
 width: 100px;
 background-image: url(${safewheel});
+background-image: url(${({codeBoxIsFull})=> codeBoxIsFull ? safewheelGreen : safewheel });
 background-size: cover;
 background-repeat: none;
 clip-path: circle(50% at 50% 50%);
 animation: ${({codeIsCorrect})=>codeIsCorrect ? rotateAndHide : rotateWheel} 2s;
 animation-fill-mode: forwards;
 animation-delay: 0;
+/* border: 10px solid red; */
 `
 const ChildrenContainer = styled.div`
 animation: ${({codeIsCorrect})=>codeIsCorrect ? hide : null} .2s;
@@ -120,9 +129,9 @@ animation-delay: 1.2s;
 const SafeFeetOuter = styled.div`
 display: flex;
 justify-content: space-between;
-min-height: 40px;
+min-height: 20px;
 min-width: 240px;
-height: 40px;
+height: 20px;
 width: 240px;
 `
 const SafeFeet = styled.div`
@@ -131,6 +140,15 @@ width: 30px;
 border-bottom: 20px solid #202020;
 border-left: 10px solid transparent;
 border-right: 10px solid transparent;
+`
+const Base = styled.div`
+height: 100px;
+min-height: 100px;
+width: 100%;
+min-width: 100%;
+background-color: brown;
+background-image: url(${woodbg});
+background-size: cover;
 `
 const SafeHinge = styled.div`
 position: absolute;
@@ -182,6 +200,6 @@ width: 110px;
 
 
 export const Safe = ({ children, ...props }) => {
-    return <><SafeBox><SafeBoxInside><Notes {...props} onClick={props.handleVisitorBookClick}/><SafeBoxDoor {...props}><SafeWheel onClick={props.handleCheckCorrectCode}{...props}/><ChildrenContainer {...props}>{children}</ChildrenContainer><SafeHinge top="190"/><SafeHinge top="25"/></SafeBoxDoor></SafeBoxInside></SafeBox><SafeFeetOuter><SafeFeet /><SafeFeet /></SafeFeetOuter></>
+    return <><SafeBox><SafeBoxInside><Notes {...props} onClick={props.handleVisitorBookClick}/><SafeBoxDoor {...props}><SafeWheel codeBoxIsFull={props.codeBoxIsFull} onClick={props.handleCheckCorrectCode}{...props}/><ChildrenContainer {...props}>{children}</ChildrenContainer><SafeHinge top="190"/><SafeHinge top="25"/></SafeBoxDoor></SafeBoxInside></SafeBox><SafeFeetOuter><SafeFeet /><SafeFeet /></SafeFeetOuter><Base/></>
 }
 

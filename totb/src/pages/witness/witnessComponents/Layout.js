@@ -32,10 +32,10 @@ padding: .5em; */
 export const InfoBox = styled.div`
 margin-top: 1em;
 padding: .5em;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
 background-color: white;
 text-align: center;
 font-size: 1.2rem;
+font-weight: 700;
 width: 100%;
 `
 
@@ -86,14 +86,14 @@ z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
 `
 
 export const QuestionOption = styled.button`
-background-color: transparent;
-border-bottom: 1px solid #999;
-/* padding: .5em 1em;
-margin: .2em; */
+background-color: yellow;
+/* border-bottom: 1px solid #999; */
+font-family: 'Poppins';
+font-size: 1.2rem;
 border-radius: 2px;
 width: 100%;
 div{
-    border: 1px solid pink !important;
+
     width: 100%;
     height: 100%;
     padding: .5em 1em;

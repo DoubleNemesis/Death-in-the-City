@@ -19,24 +19,54 @@ width: 100%;
 background-color: white;
 `
 
-export const StyledDoor = styled.div`
+export const StyledDoorOuter = styled.div`
 position: absolute;
-background-image: url(${({ doorImg }) => doorImg});
-background-color: #999;
+/* background-image: url(${({ doorImg }) => doorImg}); */
+background-color: transparent;
 width: 100%;
-min-height: 89vh;
-top: 10%;
+max-width: 100%;
+min-height: 100vh;
+top: 8.5%;
 left: 0px;
 background-repeat: no-repeat;
 background-size: cover;
+background-position: center;
+/* animation: ${({ isDoorOpen }) => isDoorOpen ? OpenDoor : null} 3s;
+transform-origin: left;
+transform-style: preserve-3d;
+animation-fill-mode: forwards;
+animation-delay: .1s;
+z-index: 4; */
+/* border: 5px solid red; */
+
+@media(min-width: 700px){
+  top: 8%;
+}
+`
+export const StyledDoor = styled.div`
+position: absolute;
+background-image: url(${({ doorImg }) => doorImg});
+/* background-color: #999; */
+width: 100%;
+max-width: 100%;
+min-height: 100vh;
+height: 100vh;
+top: 0;
+left: 0px;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: top;
 animation: ${({ isDoorOpen }) => isDoorOpen ? OpenDoor : null} 3s;
 transform-origin: left;
 transform-style: preserve-3d;
 animation-fill-mode: forwards;
-animation-delay: 1s;
+animation-delay: .1s;
 z-index: 4;
-border: 1px solid white;
+/* border: 1px solid green; */
+
 `
+
+
 
 export const DoorSign = styled.div`
 display: flex;
@@ -55,17 +85,23 @@ display: flex;
 align-items: flex-end;
 justify-content: center;
 position: absolute;
-left: 71.5%;
+right: 10px;
 top: 20%;
 background-color: whitesmoke;
 width: 28px;
 height: 50px;
-margin: 2em;
+/* margin: 2em; */
 color: white;
 font-size: 1.4rem;
 border: 2px solid midnightblue;
 box-shadow: 1px 1px 1px 0px #333;
 animation: ${animateBorder} 2s ease-in-out infinite alternate ;
+border: 1px red solid;
+
+@media(min-width: 700px){
+  top: 30%;
+  right: 30px;
+}
 `
 export const DoorBell = styled.button`
   background-color: gold;
@@ -88,21 +124,34 @@ export const DoorBell = styled.button`
 const WitnessIntroContainer = styled.div`
 display: flex;
 width: 100%;
-background-color: white;
+background-color: whitesmoke;
 /* min-height: 200px; */
 padding: .5em;
+/* border: 1px red solid; */
+box-sizing: border-box;
+align-items: flex-start;
 `
 const WitnessImage = styled.img`
-max-width: 40%;
+width: 40%;
+height: auto;
 padding: .5em;
+border-radius: 10px; 
 `
 const WitnessText = styled.div`
-max-width: 40%;
 padding: .5em;
 
 h3{
     font-size: 1.3rem;
 }
+
+p{
+  font-size: 1rem;
+}
+
+@media(min-width: 700px){
+  font-size: 1.2rem;
+}
+
 
 `
 
@@ -110,7 +159,7 @@ export const WitnessIntroBox = (props)=>{
     return(
         <WitnessIntroContainer>
             <WitnessImage src={props.personImage}/>
-            <WitnessText><h3>Witness Info</h3>{props.witnessInfo}</WitnessText>
+            <WitnessText><h3>Witness Info</h3><p>{props.witnessInfo}</p></WitnessText>
         </WitnessIntroContainer>
     )
 }

@@ -2,22 +2,25 @@
 sort out menu
 check vocab for error...
 check i did it: scroll to top on vocab complete and update message
-style office buttons and popup border
+door...scroll to bottom on load looks better REMOVE????
+cat next to codebox
  
     css / images
 css trial backgrounds size shape etc so bin looks good
 completed letter on loveletter
-style task/office dialogue
 pic without background and head shots for messages?
 style green tick on completed challenges and office cards.
-homepage crime scene tape
-size of witness info box width
+
+
 
     Text
 
     End
+woodbg codebox Photo by <a href="https://unsplash.com/@adijoshi11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aditya Joshi</a> on <a href="https://unsplash.com/s/photos/wood-texture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
-
+wallbg codebox Photo by <a href="https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/s/photos/brick-texture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 wendyYard Photo by <a href="https://unsplash.com/@hanzlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jisun Han</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

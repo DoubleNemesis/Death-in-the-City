@@ -58,8 +58,14 @@ border: 3px solid ${({ borderColor }) => borderColor};
 border-radius: 5px;
 position: relative;
 
+p{
+    color: red;
+    margin: 0;
+}
+
 img{
     height: 50px;
+    margin-bottom: .3em;
 }
 
 @media(min-width: 700px){
@@ -134,7 +140,7 @@ function Office() {
         }
         else {
             return (
-                <WitnessCard borderColor="whitesmoke" key={`index${index}`}><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName ? <WitnessButton isDisabled={true}>{item.altName}</WitnessButton> : null}</WitnessCard>
+                <WitnessCard borderColor="whitesmoke" key={`index${index}`}><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName}</WitnessCard>
             )
         }
     })
@@ -157,7 +163,7 @@ function Office() {
         }
         else {
             return (
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={scroll} /><WitnessButton>Evidence</WitnessButton></ArtefactCard>
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={scroll} /><p>Evidence</p></ArtefactCard>
             )
         }
 
@@ -173,7 +179,7 @@ function Office() {
         <>
             <Container>
                 <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
-                <SpeechBubbleLeft image={client}>
+                <SpeechBubbleLeft image={client} bubbleWidth="90">
                     {officeBubbleText}
             </SpeechBubbleLeft>
                     <ToggleContainer>
