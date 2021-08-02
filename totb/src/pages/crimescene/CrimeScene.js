@@ -18,10 +18,10 @@ function CrimeScene() {
     function handleTextButtonClick(e) {
         setBubbleTextToDisplay(parseInt(e.target.id))
     }
-// image change on click, nextpage button at end only
+    // image change on click, nextpage button at end only
     return (
         <>
-            <SpeechBubbleLeft image={Janitor}>
+            <SpeechBubbleLeft image={Janitor} minHeight="250">
                 {bubbleTextToDisplay === 1 ?
                     bubbleText1 :
                     bubbleTextToDisplay === 2 ?
@@ -35,13 +35,14 @@ function CrimeScene() {
                 </TextButtonContainer>
             </SpeechBubbleLeft>
             <PageContainer>
-                <ImageContainer image={bubbleTextToDisplay === 1 || bubbleTextToDisplay === 2 ? kitchen : windowView}/>
-            
-            {bubbleTextToDisplay === 3 ?
-            <NextPageButton destination="/officebase">
-            Go to office
-             </NextPageButton> 
-             : null}
+                {bubbleTextToDisplay === 3 ?
+                    <NextPageButton destination="/office">
+                        Go to office
+                    </NextPageButton>
+                    : null}
+                <ImageContainer image={bubbleTextToDisplay === 1 || bubbleTextToDisplay === 2 ? kitchen : windowView} />
+
+
             </PageContainer>
 
         </>

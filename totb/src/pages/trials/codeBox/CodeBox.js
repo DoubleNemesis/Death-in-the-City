@@ -31,7 +31,7 @@ function CodeBox() {
 
     const { hasVisitorBook, setHasVisitorBook } = useContext(GameContext)
     const { collectedWitnesses, setCollectedWitnesses } = useContext(GameContext)
-    const { bubbleText1, bubbleText2, bubbleText3, bubbleText4 } = CodeBoxData
+    const { bubbleText1, bubbleText2, bubbleText3 } = CodeBoxData
 
     function handleChange(e) {
         const { name, value } = e.target
@@ -94,18 +94,25 @@ function CodeBox() {
         <>
 
             <Conversation>
-                <SpeechBubbleLeft image={Janitor}>
+                <SpeechBubbleLeft image={Janitor} minHeight="475">
                     {bubbleTextToDisplay === 1 ?
                         bubbleText1 :
                         bubbleTextToDisplay === 2 ?
                             bubbleText2 :
-                            bubbleTextToDisplay === 3 ?
-                                bubbleText3 : bubbleText4}
-                    {bubbleTextToDisplay < 4 ? <TextButtonContainer>
+                                bubbleText3
+                    }
+                                    {hasVisitorBook ?
+                    <StyledFoundArtefact >
+                        You've got the record of visitors! Lexington's dinner party guests will appear in your office.
+                        <NextPageButton destination="crimescene">Visit crime scene</NextPageButton>
+                    </StyledFoundArtefact>
+                    : null}
+                    {bubbleTextToDisplay < 3 ? <TextButtonContainer>
                         <TextButton id="1" bgcolor={bubbleTextToDisplay === 1 ? 'red' : null} onClick={handleTextButtonClick}>1</TextButton>
                         <TextButton id="2" bgcolor={bubbleTextToDisplay === 2 ? 'red' : null} onClick={handleTextButtonClick}>2</TextButton>
-                        <TextButton id="3" bgcolor={bubbleTextToDisplay === 3 ? 'red' : null} onClick={handleTextButtonClick}>3</TextButton>
+                        {/* <TextButton id="3" bgcolor={bubbleTextToDisplay === 3 ? 'red' : null} onClick={handleTextButtonClick}>3</TextButton> */}
                     </TextButtonContainer> : null}
+
 
                 </SpeechBubbleLeft>
                 <CodeBoxContainer>
@@ -120,13 +127,7 @@ function CodeBox() {
                         </div>
                     </Safe>
                 </CodeBoxContainer>
-                {hasVisitorBook ?
-                    <StyledFoundArtefact >
-                        You've got the record of visitors! Lexington's dinner party guests will appear in your office.
-                        <NextPageButton destination="crimescene">Go to crime scene</NextPageButton>
-                    </StyledFoundArtefact>
-                    : null}
-                {/* {codeIsCorrect ? <NextPageButton destination="crimescene">Go to crime scene</NextPageButton> : null} */}
+
             </Conversation>
 
         </>

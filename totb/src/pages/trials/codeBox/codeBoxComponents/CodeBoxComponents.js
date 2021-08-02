@@ -161,6 +161,7 @@ min-width: 10px;
 background-color: #999;
 `
 export const StyledFoundArtefact = styled.div`
+position: absolute;
 opacity: 0;
 right: 0;
 margin: 5%;
@@ -168,7 +169,7 @@ width: auto;
 font-size: 1.3rem;
 padding: 1em 0 0 0;
 text-align: center;
-background-color: white;
+/* background-color: white; */
 animation: ${fadeIn} 1s;
 animation-delay: .1s;
 animation-fill-mode: forwards;

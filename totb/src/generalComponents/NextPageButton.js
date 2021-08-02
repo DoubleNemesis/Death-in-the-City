@@ -9,6 +9,7 @@ padding: .8em 1.8em;
 margin: ${({margin})=> margin || '2em auto'};
 font-size: ${({fontSize})=> fontSize || 1.5}rem;
 border: none;
+font-family: 'Poppins';
 
 :hover{
     background-color: orange;

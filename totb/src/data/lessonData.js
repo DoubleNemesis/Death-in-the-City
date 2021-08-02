@@ -555,7 +555,22 @@ export const questionsWitness6 = {
 }
 
 //trials
-const BubbleText3 = () => {
+const BubbleText1 = () => {
+    return (
+        <>
+            <p>
+            Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
+    up in a safe and I don't know the code. But maybe you will be able to work it out.
+    </p>
+    <p>
+    To open the safe you need to use the right combination of letters. Each letter is the first letter of a verb.
+    I don't know the verbs but I do know the nouns they collocate with. If I give you the nouns, perhaps you can work them out.
+    So for example if the noun is "TV", the verb could be "watch", so you would take "W" and put it in the safe. Clear?            
+    </p>
+        </>
+    )
+}
+const BubbleText2 = () => {
     return (
         <>
             <p>
@@ -578,25 +593,23 @@ const BubbleText3 = () => {
 
 //codebox tony monceto
 export const CodeBoxData = {
-    bubbleText1: [`Ok, I am gonna need your help! The record of who enters and leaves the building is kept locked
-    up in a safe and I don't know the code.
-    But maybe you will be able to work it out.`],
-    bubbleText2: [`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
-    I don't know the verbs but I do know the words they collocate with. For example if the clue is "TV", you would take 
-    "W", the first letter of the verb "watch", as that collocates with the noun "TV". Clear?
-    `],
-    bubbleText3: <BubbleText3 />,
-    bubbleTextX: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
-    3 "fun" and "a good time". 4 "your time" and "a break". 5 "a ball" and "a cold". Put the correct letters in and spin the dial!`
-    ],
-    bubbleText4: [`Excellent! Click on the book, and when you go back to your office you'll be able to see who was at the party and where they live. 
+    bubbleText1: <BubbleText1/>,
+    // bubbleText2: [`So here's the deal. I know that to break the code you need to know the first letter of some verbs. 
+    // I don't know the verbs but I do know the words they collocate with. For example if the clue is "TV", you would take 
+    // "W", the first letter of the verb "watch", as that collocates with the noun "TV". Clear?
+    // `],
+    bubbleText2: <BubbleText2 />,
+    // bubbleTextX: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
+    // 3 "fun" and "a good time". 4 "your time" and "a break". 5 "a ball" and "a cold". Put the correct letters in and spin the dial!`
+    // ],
+    bubbleText3: [`Excellent! Click on the book, and when you go back to your office you'll be able to see who was at the party and where they live. 
     But before you go, I should show you the crime scene!`
     ],
 }
 
 export const CrimeSceneData = {
-    bubbleText1: [`This is the kitchen and that is the window he went through. As you can see, he can't have done it by accident.`],
-    bubbleText2: [`He used to stand by the window smoking. I think someone probable came up behind him and pushed him out. Apparently the lights went out for a time when the building was struck by lightning.`],
+    bubbleText1: [`This is the kitchen and that is the window he went through. As you can see, he can't have done it by accident. He either jumped or someone else was involved.`],
+    bubbleText2: [`He used to stand by the window smoking. I think someone came up behind him and pushed him out. Apparently the lights went out when the building was struck by lightning.`],
     bubbleText3: [`Have a look out the window....that's an awfully long way down! Anyway, now you've seen where it all happened. Good luck! I hope you find the killer!`],
 }
 

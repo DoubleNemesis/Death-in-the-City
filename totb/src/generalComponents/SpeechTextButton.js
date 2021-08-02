@@ -4,7 +4,7 @@ export const TextButtonContainer = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-margin-top: auto.5em;
+margin-top: .5em;
 background-color: transparent;
 
 `

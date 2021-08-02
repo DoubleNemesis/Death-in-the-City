@@ -78,7 +78,6 @@ background-color: whitesmoke;
 `
 
 export const SpeechBubbleLeft = ({ children, ...restProps }) => {
-  console.log(restProps)
   return (
     <StyledSpeechBubble{...restProps}><div className="bubble bubble-bottom-left"><SpeakerImage src={restProps.image} />{children}</div></StyledSpeechBubble>
   )
@@ -86,7 +85,6 @@ export const SpeechBubbleLeft = ({ children, ...restProps }) => {
 
 
 export const SpeechBubbleRight = ({ children, ...restProps }) => {
-  console.log(restProps)
   return (
     <StyledSpeechBubble{...restProps}><div className="bubbleRight bubble-bottom-right"><SpeakerImage src={restProps.image} />{children}</div></StyledSpeechBubble>
   )
