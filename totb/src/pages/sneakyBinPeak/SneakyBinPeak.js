@@ -39,6 +39,7 @@ background-color: blue;
 padding-top: 10vh;
 background-image: url(${({yardImage})=>yardImage});
 background-size: cover;
+position: relative;
 `
 
 const StyledBin = styled.div`
@@ -98,22 +99,29 @@ box-shadow: 0px 0px 40px 10px red;
 `
 const StyledFoundArtefact = styled.div`
 opacity: 0;
-top: -250px;
+top: 100px;
 left: 0;
 right: 0;
-margin: 0%;
-width: auto;
+margin: auto;
+width: 80%;
 font-size: 1.3rem;
 position: absolute;
-padding: 1em 0 0 0;
+padding: 1em .4em;
 text-align: center;
-background-color: white;
+color: white;
+background: linear-gradient(#666, #2E2523, #666);
 animation: ${({isArtefactClicked})=>isArtefactClicked ? fadeIn : null} 1s;
 animation-delay: .1s;
 animation-fill-mode: forwards;
 border-radius: 5px;
 z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
 border: 4px solid #333;
+font-family: 'Poppins';
+
+@media(min-width:700px){
+    display: flex;
+    flex-direction: column;
+}
 `
 
 
@@ -166,13 +174,13 @@ function Sneaky(props){
                 
             {openBin ? <StyledBinArtefact src={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}
             <StyledBinLid openBin={openBin} onClick={handleLidClick}/>
-            {isArtefactClicked ? <StyledFoundArtefact isArtefactClicked={isArtefactClicked}> 
-                You found the "{props.artefactName}"!
-                <NextPageButton destination="officebase">Back to Office</NextPageButton>
-                </StyledFoundArtefact>
-                 : null}
             <StyledBin/>
             </StyledBinContainer>
+            {isArtefactClicked ? <StyledFoundArtefact isArtefactClicked={isArtefactClicked}> 
+                You found the "{props.artefactName}"!
+                <NextPageButton destination="office">Back to Office</NextPageButton>
+                </StyledFoundArtefact>
+                 : null}
             </YardContainer>
 
 

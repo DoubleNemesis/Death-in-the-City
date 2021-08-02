@@ -45,7 +45,7 @@ function ShreddedLetter(props) {
 
     return (
         <>
-            <SpeechBubbleLeft image={clientPic} >
+            <SpeechBubbleLeft image={clientPic} minHeight="140">
                 {instructions}
             </SpeechBubbleLeft>
             <EventsContainer>
@@ -58,7 +58,7 @@ function ShreddedLetter(props) {
                     }
                     renderList={({ children, props }) => <ul {...props}>{children}</ul>}
                     renderItem={({ value, props }) => {
-                        return <li className="eventOrderClass" {...props} disabled={true}><ShreddedPiece>{value}</ShreddedPiece></li>
+                        return <li className="eventOrderClass" {...props} disabled={true}><ShreddedPiece isShreddedLetterCorrect={isShreddedLetterCorrect}>{value}</ShreddedPiece></li>
                     }
                     }
                 /> :
@@ -70,13 +70,13 @@ function ShreddedLetter(props) {
                     }
                     renderList={({ children, props }) => <ul {...props}>{children}</ul>}
                     renderItem={({ value, props }) => {
-                        return <li className="eventOrderClass correctOrder" {...props} disabled={true}><ShreddedPiece>{value}</ShreddedPiece></li>
+                        return <li className="eventOrderClass correctOrder" {...props} disabled={true}><ShreddedPiece isShreddedLetterCorrect={isShreddedLetterCorrect}>{value}</ShreddedPiece></li>
                     }
                     }
                 />}
                 <button onClick={handleCheck}>Check</button>
                 {message}
-                {isShreddedLetterCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
+                {isShreddedLetterCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
             </EventsContainer>
         </>
     );

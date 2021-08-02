@@ -1,4 +1,9 @@
+import React, {useContext} from 'react'
 import styled from 'styled-components'
+import GameContext from './../context/GameContext'
+
+
+
 const StyledSpeechBubble = styled.div`
 
 .bubble, .bubbleRight{
@@ -85,8 +90,10 @@ export const SpeechBubbleLeft = ({ children, ...restProps }) => {
 
 
 export const SpeechBubbleRight = ({ children, ...restProps }) => {
+  const { detectiveChosen } = useContext(GameContext)
+
   return (
-    <StyledSpeechBubble{...restProps}><div className="bubbleRight bubble-bottom-right"><SpeakerImage src={restProps.image} />{children}</div></StyledSpeechBubble>
+    <StyledSpeechBubble{...restProps}><div className="bubbleRight bubble-bottom-right"><SpeakerImage src={detectiveChosen} />{children}</div></StyledSpeechBubble>
   )
 }
 

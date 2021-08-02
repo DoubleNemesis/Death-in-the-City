@@ -390,7 +390,7 @@ export const questionsWitness2 = {
         ['What happened while the lights came back off?', 'fail']
     ],
     witnessConversationArray2: [
-        "More questions? I told the police everything. I don't have time for this!",
+        "More questions? I told the police everything. I don't have time for this right now! You people are so annoying!",
         "Can you describe what happened at the party?",
         "We were having a good time, eating, drinking. The lights went out, there was a scream and that was that. That's all I know. Ok?",
         "What happened when the lights came back on?",

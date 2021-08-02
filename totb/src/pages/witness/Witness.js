@@ -24,12 +24,12 @@ function WitnessComp(props) {
     const [isArtefactClicked, setIsArtefactClicked] = useState(false)
     const { collectedArtefacts, setCollectedArtefacts, completedWitnesses, setCompletedWitnesses, detectiveChosen } = useContext(GameContext)
 
-    useEffect(() => {
-        const pageEnd = document.getElementById('pageEnd')
-        if(pageEnd){
-            pageEnd.scrollIntoView()
-        }
-    }, [])
+    // useEffect(() => {
+    //     const pageEnd = document.getElementById('pageEnd')
+    //     if(pageEnd){
+    //         pageEnd.scrollIntoView()
+    //     }
+    // }, [])
 
 
     function handleArtefactClick() {
@@ -52,7 +52,7 @@ function WitnessComp(props) {
 
     useEffect(() => {
         let newConversationArray = props.conversationArray.map((item, index) => {
-            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`} minHeight="125" image={props.personImage}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`} minHeight="60" image={detectiveChosen}>{item}</SpeechBubbleRight>
+            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`} minHeight="170" image={props.personImage}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`} minHeight="60" image={detectiveChosen}>{item}</SpeechBubbleRight>
         })
         fullConversation = newConversationArray
     }, [])
