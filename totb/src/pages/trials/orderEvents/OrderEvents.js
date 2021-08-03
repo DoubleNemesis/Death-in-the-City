@@ -90,7 +90,7 @@ function OrderEvents(props) {
             />
             <button onClick={handleCheck}>Check</button>
             {message}
-            {isOrderEventsCorrect ? <NextPageButton destination="officebase">Go to Office</NextPageButton> : null}
+            {isOrderEventsCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
                 </EventsContainer>
             </Conversation>
 

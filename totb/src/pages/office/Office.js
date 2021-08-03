@@ -16,6 +16,13 @@ flex-wrap: wrap;
 width: 100%;
 justify-content: center;
 `
+const ArtefactDisplay = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+justify-content: center;
+align-items: center;
+`
 const WitnessCard = styled.div`
 width: 120px;
 height: auto;
@@ -48,7 +55,7 @@ const ArtefactCard = styled.div`
 display: flex;
 flex-direction: column;
 width: 120px;
-height: 100px;
+min-height: 100px;
 margin: .2em;
 background-color: ${({ bgColor }) => bgColor};
 justify-content: center;
@@ -57,6 +64,8 @@ color: white;
 border: 3px solid ${({ borderColor }) => borderColor};
 border-radius: 5px;
 position: relative;
+padding: .3em;
+text-align: center;
 
 p{
     color: red;
@@ -190,7 +199,7 @@ function Office() {
                     </ToggleContainer>
                 </StyledModal>
                 <StyledModal display={isArtefactModalDisplayed ? 'block' : 'none'}>
-                    <div> <img src={artefactImageToDisplay} /></div>
+                    <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} /></ArtefactDisplay> 
                     <ToggleContainer>
                         <ToggleTaskInfo
                             onClick={() => setIsArtefactModalDisplayed(!isArtefactModalDisplayed)}>

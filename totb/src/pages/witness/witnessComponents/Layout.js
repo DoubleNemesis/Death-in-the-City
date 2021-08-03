@@ -44,7 +44,6 @@ display: flex;
 flex-direction: column;
 /* background-color: skyblue; */
 width: 100%;
-
 `
 export const QuestionOptions = styled.div`
 display: flex;

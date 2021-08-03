@@ -29,4 +29,9 @@ body {
   p, ul, h3, a {
     font-family: 'Poppins';
   }
+
+  .error{
+    background-color: red !important;
+}
+  
 `

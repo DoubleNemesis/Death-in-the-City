@@ -79,7 +79,7 @@ float: left;
 margin: 0 1em 0em 0;
 border-radius: 10%;
 border: 1px solid #333;
-background-color: whitesmoke;
+background-color: transparent;
 `
 
 export const SpeechBubbleLeft = ({ children, ...restProps }) => {

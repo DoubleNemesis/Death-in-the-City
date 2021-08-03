@@ -45,8 +45,7 @@ Lexington Grey wasn't just anyone. That boy was my son, and he was murdered! Don
 
 export const clientData = {
     clientTitle: [`Mr Grey`],
-    clientText: [`OK, great! Now I know you speak the lingo, get to work! I'll send what I've got over to your office for you to look at. 
-    But if you want my advice, the first thing to do is to speak to Tony Monceto. He's the janitor at Kaplinsky Tower and an old friend of mine.
+    clientText: [`OK, great! Now I know you speak the lingo, get to work! If you want my advice, the first thing to do is to speak to Tony Monceto. He's the janitor at Kaplinsky Tower and an old friend of mine.
     Good luck! And remember, if you don't solve the crime you don't get paid! `]
 }
 
@@ -166,7 +165,7 @@ export const officeCards = {
             'destinationComplete' : '',
         },
         {
-            'name': [`Error Correction`],
+            'name': [`Error Correction challenge`],
             'id': [2],
             'image': errorcorrectionPic,
             'destination': 'errorcorrection',
@@ -428,7 +427,7 @@ export const questionsWitness3 = {
         "I know how you feel. Don't worry, I'll help you.",
         "Great! Thanks! That's so kind of you. I find this language so hard! And now I am on my own...",
         "I have to ask a delicate question. Was Lexi being unfaithful to you? ",
-        "Well, I'll tell you about that. But first you have to help me. Correct these sentences and send them back to me. When you do, I will answer."
+        "Well, I'll tell you about that. But first you have to help me. Correct these sentences to help me learn this crazy language. When you've done it, I will answer."
     ],
     trialURL3: [
         'errorcorrection'
@@ -676,10 +675,11 @@ export const ShreddedLetterPiecesData = {
 
 export const ErrorCorrectionData = {
     instructions: [
-        ["OK, I need you to tell me which sentences are incorrect. Just click on them, and in a moment I will ask you to show me how they should be written."],
+        [`OK, I wrote down these sentences but I think at least three of them are wrong! Please read them and click on them if you think they are incorrect. 
+        In a moment I will ask you to show me how they should be written.`],
     ],
     instructions2: [
-        ["Great! Now type out the sentences so they are correct and hit check."],
+        ["Great! You found my mistakes! Now type out the sentences so they are correct and hit check. When all three are correct I will tell you what you want to know."],
     ],
     instructions3: [
         [`Perfect! Thank you so much for your help! I like you, so here's the information I promised you. I expect Lexi was unfaithful. You can never trust actors or tell when they are lying. But I don't know who he was unfaithful with. Lucy? Maybe! 

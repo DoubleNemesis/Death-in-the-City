@@ -4,6 +4,8 @@ check vocab for error...
 check i did it: scroll to top on vocab complete and update message
 door...scroll to bottom on load looks better REMOVE????
 cat next to codebox
+does every door need pop up? no...so state and context
+restyle rolex receipt and do alt texts!
  
     css / images
 css trial backgrounds size shape etc so bin looks good
