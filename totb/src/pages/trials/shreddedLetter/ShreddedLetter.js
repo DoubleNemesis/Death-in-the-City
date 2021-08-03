@@ -5,7 +5,8 @@ import { EventsContainer, ShreddedPiece } from './shreddedLetterComponents/Shred
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import NextPageButton from '../../../generalComponents/NextPageButton'
-import GameContext from '../../../context/GameContext';
+import {FrontPageButton} from '../../../generalComponents/GeneralButton'
+import GameContext from '../../../context/GameContext'
 import clientPic from '../../../images/client.jpg'
 
 function ShreddedLetter(props) {
@@ -24,7 +25,7 @@ function ShreddedLetter(props) {
     useEffect(() => {
         if (hasFinished) {
             if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
-                setMessage('Correct')
+                setMessage('Correct!')
                 setIsShreddedLetterCorrect(true)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
@@ -40,6 +41,8 @@ function ShreddedLetter(props) {
     function handleCheck() {
         setHasFinished(true)
     }
+
+    console.log(hasFinished)
 
     console.log(isShreddedLetterCorrect);
 
@@ -74,9 +77,9 @@ function ShreddedLetter(props) {
                     }
                     }
                 />}
-                <button onClick={handleCheck}>Check</button>
-                {message}
-                {isShreddedLetterCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
+                
+                <h3>{message}</h3>
+                {isShreddedLetterCorrect ? <NextPageButton destination="office" margin=".5em auto">Go to Office</NextPageButton> : <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton>}
             </EventsContainer>
         </>
     );

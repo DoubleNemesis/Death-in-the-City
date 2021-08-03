@@ -2,17 +2,24 @@ import styled from 'styled-components'
 
 const StyledFPButton = styled.button`
 color: white;
-background-color: ${({ color }) => color || 'transparent'};
+background-color: ${({ bgColor }) => bgColor || 'transparent'};
 padding: .4em .8em;
-margin: 1em auto;
-font-size: ${({ fontSize }) => fontSize || 2}rem;
+margin: .5em auto 2em auto;
+font-size: ${({ fontSize }) => fontSize || '2rem'};
 font-weight: 800;
 border: none;
+
+:hover{
+    background-color: blue;
+    border: 1px solid grey; 
+    color: black;
+}
+
 `
 
 export const FrontPageButton = ({children, ...props}) => {
     return (
-        <StyledFPButton onClick={props.onclick}>{children}</StyledFPButton>
+        <StyledFPButton fontSize={props.fontSize} bgColor={props.bgColor}  onClick={props.onclick}>{children}</StyledFPButton>
     )
 }
 
