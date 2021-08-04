@@ -179,7 +179,7 @@ export const officeCards = {
             'destinationComplete' : '',
         },
         {
-            'name': [`Ordered Statement`],
+            'name': [`Police Statement Challenge`],
             'id': [4],
             'image': policestatementPic,
             'destination': 'orderevents',
@@ -197,14 +197,14 @@ export const officeCards = {
             'id': [6],
             'image': weightlifterPic,
             'destination': 'foundArtefacts',
-            'destinationComplete' : '',
+            'destinationComplete' : 'A membership card showing Lucy Light at a weightlifting Gym',
         },
         {
             'name': [`Poison Pen`], // dallas' bin
             'id': [7],
             'image': poisonpenPic,
             'destination': 'foundArtefacts',
-            'destinationComplete' : '',
+            'destinationComplete' : 'A letter that says "I know what you did"',
         },
         {
             'name': [`Rolex Receipt`], //kirsten's bin
@@ -212,6 +212,7 @@ export const officeCards = {
             'image': receiptPic,
             'destination': 'foundArtefacts',
             'destinationComplete' : '',
+            'altText' : 'A receipt for a $1500 Rolex Oyster Perpetual watch',
         },
     ],
     'links': [
@@ -461,8 +462,8 @@ export const questionsWitness4 = {
         ["They are useful.", 'fail']
     ],
     witnessConversationArray4: [
-        "I'm so bored of you people. What do you want to know?",
-        "I want to ask about the party.",
+        "I'm so bored of you people always asking questions. The whole thing was a tragic accident. Can't you understand that? What more is there to say?",
+        "I wanted to ask about the party.",
         "I was drunk, ok? I don't remember much and I really don't want to talk about it. If you really insist, you can read my police statement.",
         "Thank you. That would be useful",
         "OK, here it is. Now please leave me alone. I'm a very busy man!"
@@ -474,7 +475,7 @@ export const questionsWitness4 = {
         'Read the statement'
     ],
     witnessInfo4: [
-        `Dallas Franks met Lexington while filming. They have known eachother ever since.`
+        `Dallas Franks met Lexington while filming. They have known each other ever since.`
     ]
 }
 

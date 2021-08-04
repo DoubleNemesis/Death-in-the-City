@@ -3,6 +3,7 @@ import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
+import { MessageContainer } from '../../../containers/MessageContainer'
 import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import ProfilePic from '../../../images/janitor.png'
 import { orderEventsData } from '../../../data/lessonData'
@@ -11,27 +12,7 @@ import { List, arrayMove } from 'react-movable';
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import GameContext from '../../../context/GameContext'
 import clientPic from '../../../images/client.jpg'
-// import MoveableEvents from './MoveableEvents'
 
-
-// function MoveableEvents(props) {
-//     const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
-//     let { eventsToOrder } = orderEventsData
-//     const { eventsCorrectOrder } = orderEventsData
-//     const [message, setMessage] = useState('')
-//     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
-//     const [hasFinished, setHasFinished] = useState(false)
-//     const [isCorrect, setIsCorrect] = useState(false)
-
-
-    
-
-//     return (
-//         <>
-
-//         </>
-//     );
-// }
 
 function OrderEvents(props) {
     const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
@@ -88,9 +69,12 @@ function OrderEvents(props) {
                 }
                 }
             />
-            <button onClick={handleCheck}>Check</button>
-            {message}
+           
+           <MessageContainer>
+           <button onClick={handleCheck}>Check</button>
+                <h3>{message}</h3>
             {isOrderEventsCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
+                </MessageContainer>
                 </EventsContainer>
             </Conversation>
 

@@ -24,15 +24,6 @@ font-weight: 600;
     background-color: tomato;
 }
 `
-export const IncorrectMessageContainer = styled.div`
-display: flex;
-justify-content: center;
-margin: .5em;
-background-color: red;
-padding: .3em;
-color: black;
-font-weight: 600;
-`
 
 export const SentenceDiv = ({ children, ...props }) => {
     return (

@@ -3,6 +3,7 @@ import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
+import { MessageContainer } from '../../../containers/MessageContainer'
 import { Instructions, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import KirstenPic from '../../../images/kirsten.jpg'
 import { ErrorCorrectionData } from '../../../data/lessonData'
@@ -147,7 +148,7 @@ function ErrorCorrection(props) {
 
                     {isErrorCorrectionCorrect ?  <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton> : isComplete1 ? secondSentenceList : firstSentenceList}
                     {/* {!isComplete1 ? firstSentenceList : !isErrorCorrectionComplete ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>} */}
-                   {incorrectMessage ? <IncorrectMessageContainer> {incorrectMessage}</IncorrectMessageContainer> : null}
+                   {incorrectMessage ? <MessageContainer bgColor="red"> {incorrectMessage}</MessageContainer> : null}
                 </ErrorCorrectionContainer>
 
         </>
