@@ -12,6 +12,7 @@ import { List, arrayMove } from 'react-movable';
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import GameContext from '../../../context/GameContext'
 import clientPic from '../../../images/client.jpg'
+import {FrontPageButton} from '../../../generalComponents/GeneralButton'
 
 
 function OrderEvents(props) {
@@ -71,7 +72,7 @@ function OrderEvents(props) {
             />
            
            <MessageContainer>
-           <button onClick={handleCheck}>Check</button>
+           <FrontPageButton onclick={handleCheck} bgColor="red">Check</FrontPageButton>
                 <h3>{message}</h3>
             {isOrderEventsCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
                 </MessageContainer>

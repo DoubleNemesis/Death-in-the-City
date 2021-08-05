@@ -4,15 +4,16 @@ const StyledFPButton = styled.button`
 color: white;
 background-color: ${({ bgColor }) => bgColor || 'transparent'};
 padding: .4em .8em;
-margin: .5em auto 2em auto;
+margin: .5em auto 0 auto;
 font-size: ${({ fontSize }) => fontSize || '2rem'};
 font-weight: 800;
 border: none;
+font-family: 'Poppins';
 
 :hover{
-    background-color: blue;
+    background-color: midnightblue;
     border: 1px solid grey; 
-    color: black;
+    color: white;
 }
 
 `

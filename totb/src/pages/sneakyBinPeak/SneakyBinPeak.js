@@ -53,6 +53,7 @@ background-image: url(${bin});
 background-size: contain;
 background-repeat: no-repeat;
 
+
 @media(min-width: 1000px){
     animation: ${rotateBin} 2s;
 animation-delay: 2s;
@@ -128,15 +129,20 @@ font-family: 'Poppins';
 const StyledBinContainer = styled.div`
 width: 300px;
 position: relative;
-margin: 30vh auto 20vh auto;
+margin: 50vh auto 20vh auto;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 background-color: transparent;
+
+@media(min-width:700px){
+    margin: 50vh auto 20vh auto;
+}
 `
 
 const ThoughtContainer = styled.div`
+position: absolute;
 width: 100%;
 margin-top: 0vh;
 `
@@ -154,8 +160,8 @@ function Sneaky(props){
         setIsArtefactDisplayed(true)
         setThought(
             props.hasArtefact ? 
-            `Oh! What's this!! It's a Challenge! This looks very interesting indeed...I'll click on it and take it with me...` :
-            `This isn't a Challenge, but might be useful info. I'll take it.`
+            `Oh! What's this!! It's a Challenge! Interesting...I'll click on it and take it with me...` :
+            `This isn't a Challenge, but might be useful info. I'll take it with me in just in case...`
             )
     }
 

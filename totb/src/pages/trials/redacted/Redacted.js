@@ -9,6 +9,9 @@ import { redactedData, RedactedComp } from '../../../data/lessonData'
 import { StatementContainer, RedactedTextComp } from './redactedComponents/RedactedComponents'
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
+import wendyPic from '../../../images/wendy.jpg'
+import {FrontPageButton} from '../../../generalComponents/GeneralButton'
+import { MessageContainer } from '../../../containers/MessageContainer'
 
 
 
@@ -47,7 +50,7 @@ function Redacted(props) {
         <>
 
             <Conversation>
-                <SpeechBubbleLeft>
+                <SpeechBubbleLeft image={wendyPic} >
                     {instructions}
                 </SpeechBubbleLeft>
                 <StatementContainer>
@@ -64,9 +67,12 @@ function Redacted(props) {
                         value4={redactedInputs['name4'] || ""}
                         value5={redactedInputs['name5'] || ""}
                     />
-                    <button onClick={handleCheck}>Check</button> {message}
-                </StatementContainer>
+                    {/* <button onClick={handleCheck}>Check</button> {message} */}
+                    <MessageContainer>
+                    <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton>
+                        <h3>{message}</h3></MessageContainer>
                     {isRedactedCorrect ? <NextPageButton destination="officeBase">Go to Office</NextPageButton> : null}
+                </StatementContainer>
             </Conversation>
         </>
 

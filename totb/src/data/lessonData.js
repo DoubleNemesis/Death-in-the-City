@@ -186,7 +186,7 @@ export const officeCards = {
             'destinationComplete' : '',
         },
         {
-            'name': [`Redacted Statement`],
+            'name': [`Redacted Statement Challenge`],
             'id': [5],
             'image': medicalreportPic,
             'destination': 'redacted',
@@ -509,7 +509,7 @@ export const questionsWitness5 = {
         'We need another plan!'
     ],
     witnessInfo5: [
-        `Lucy Light is known to like to flirt. Wives and girlfriends hate her.`
+        `Lucy Light is often said to be a flirt and an attention seeker. Wives and girlfriends hate her.`
     ],
     speechBubbleText5: [
         `Hi! I'm investigating the death of Lexington Grey. I want to ask you about your relationship with him.`
@@ -738,10 +738,10 @@ export const orderEventsData = {
 
 //loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
-    instructions: ['If we want to read this love letter, we need to break the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, thing what word a letter usually starts with.'],
+    instructions: [`If we want to read this love letter, we need to break the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, think what four-letter word a letter usually starts with. Oh, it looks like the full stops and commas don't need to be decoded.`],
     successMessageText: ['Amazing! Click here to see the full letter!'],
     loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
-    loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill any man who goes near you. I love you. Chay.`],
+    loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill a man who goes near you. I love you. Chay.`],
     loveLetterFullPs: [`PS. I have come into some money! I will treat you to something.`],
     symbols: [
         ['a', '8955', false, false],
@@ -810,7 +810,7 @@ export const loveLetterData = {
 
 //wendy
 export const redactedData = {
-    instructions: [`Hmmm there's a problem here. I can't read some of the words. It looks like they're mostly prepositions and verbs.`],
+    instructions: [`Why do doctors always have such bad handwriting? I can't read some of the words. It looks like they're mostly prepositions and verbs. Fill in the gaps anc click "check".`],
     missingWords: ['with', 'by', 'up', 'avoid', 'to'],
 }
 

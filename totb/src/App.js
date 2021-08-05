@@ -32,11 +32,12 @@ import { homePageData } from './data/lessonData'
 import Title from './generalComponents/Title'
 import FloePic from './images/floe.jpg'
 import WendyPic from './images/wendy.jpg'
-import doorGrey from './images/doorGrey1.png'
+import doorGrey from './images/doorGrey.png'
 import doorBlue from './images/doorBlue.png'
 import doorRed from './images/doorRed.png'
 import doorWhite from './images/doorWhite.png'
 import doorYellow from './images/doorYellow.png'
+import doorMulti from './images/doorMulti.png'
 import chayYard from './images/chayYard.jpg'
 import kirstenYard from './images/kirstenYard.jpg'
 import dallasYard from './images/dallasYard.jpg'
@@ -267,7 +268,7 @@ function App() {
               personImage={WendyPic}
               trialURL={trialURL6}
               exitMessage={exitMessage6}
-              doorImg={doorGrey}
+              doorImg={doorMulti}
               doorTitle={characterFirstNames[5]}
               artefactName={artefacts[4].name} //redacted report
               artefactImage={artefacts[4].image} 

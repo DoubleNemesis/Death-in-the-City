@@ -5,7 +5,11 @@ check i did it: scroll to top on vocab complete and update message
 door...scroll to bottom on load looks better REMOVE????
 cat next to codebox
 does every door need pop up? no...so state and context
-restyle rolex receipt and do alt texts!
+alt texts!
+challenge pop up style diff to artefact only
+check speechbubble unnecessary space
+start with tiles on loveletter comp then bg on redacted
+
  
     css / images
 css trial backgrounds size shape etc so bin looks good
@@ -24,13 +28,17 @@ woodbg codebox Photo by <a href="https://unsplash.com/@adijoshi11?utm_source=uns
 wallbg codebox Photo by <a href="https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/s/photos/brick-texture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 
-wendyYard Photo by <a href="https://unsplash.com/@hanzlog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jisun Han</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+wendyYard Photo by <a href="https://unsplash.com/@greg_nunes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Greg & Lois Nunes</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-lucy yard Photo by <a href="https://unsplash.com/@r1g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ren Wang</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-dallasYard Photo by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K8</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+lucy yard Photo by <a href="https://unsplash.com/@dakotalim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dakota Lim</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-kersten yard Photo by <a href="https://unsplash.com/@k8_iv?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K8</a> on <a href="https://unsplash.com/s/photos/back-yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+dallasYard Photo by <a href="https://unsplash.com/@andywatkins?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andy Watkins</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+  
+kersten yard Photo <a href="https://unsplash.com/@dougvos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Doug Vos</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
   
 bodybuilder Photo by <a href="https://unsplash.com/@johnarano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Arano</a> on <a href="https://unsplash.com/s/photos/weight-lifting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

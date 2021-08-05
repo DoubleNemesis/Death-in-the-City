@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 import { Instructions, Conversation, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
-import { SuccessMessageComp, LoveLetterMainContainer, LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './LoveLetterComponents'
+import { SuccessMessageComp, LoveLetterMainContainer, LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './loveLetterComponents/LoveLetterComponents'
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
 import ProfilePic from '../../../images/chaymadz.jpg'
 import GameContext from '../../../context/GameContext'
@@ -11,9 +11,6 @@ import { loveLetterData } from '../../../data/lessonData'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import clientPic from '../../../images/client.jpg'
-
-
-
 
 
 function LoveLetter(props) {
@@ -43,13 +40,15 @@ function LoveLetter(props) {
     function handleSymbolClick(e) {
         if (selectedLetter) {
             const maxCharCodeLetter = 122
-            console.log(e.target.innerText.charCodeAt(0) <= maxCharCodeLetter);
+            // console.log(e.target.innerText.charCodeAt(0) <= maxCharCodeLetter, e.target.innerText.charCodeAt(0));
             const tileToRemove = (e.target.innerText)
             let tilesToChange = e.target.classList[2];
             let tilesArray = document.getElementsByClassName(tilesToChange)
             tilesArray = [...tilesArray]
             tilesArray.forEach(element => {
                 element.innerText = selectedLetter
+                element.style.color = 'midnightblue'
+                element.style.backgroundColor = 'yellow'
             });
             setSelectedLetter('')
             const dummyUsedLetters = [...usedLetters]
@@ -64,7 +63,7 @@ function LoveLetter(props) {
             decodedMessage = decodedMessage.join('')
             const originalMessageNoSpace = secretMessageArray.join('').replace(/\s+/g, '')
 
-            if (decodedMessage !== originalMessageNoSpace) { //change here to undo
+            if (decodedMessage === originalMessageNoSpace) { //change here to undo
                 setSuccessMessage(<SuccessMessageComp message={successMessageText} onclick={handleFullTextClick} />)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
@@ -75,27 +74,23 @@ function LoveLetter(props) {
     }
 
     useEffect(() => {
-        console.log(usedLetters);
+        // console.log(usedLetters);
         usedLetters.map((item => {
             document.getElementById(item).classList.add('unClickable')
         }))
 
     }, [usedLetters])
 
-
-
-
     const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : 'beige'} onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
+
     const LoveLetterCode = secretMessageArray.map((item, index) => {
         const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
         const symbolTiles = 'symbolTiles'
 
-
-
         return (
             <>
                 {targetSymbol ?
-                    <LoveLetterSymbolElems className={`${targetSymbol.charCodeAt(0)} symbolsClass`} onClick={handleSymbolClick} color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'beige'}>{targetSymbol}</LoveLetterSymbolElems> :
+                    <LoveLetterSymbolElems className={`${targetSymbol.charCodeAt(0)} symbolsClass`} onClick={handleSymbolClick} color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'midnightblue'}>{targetSymbol}</LoveLetterSymbolElems> :
                     <LoveLetterSpace />
                 }
             </>
@@ -111,7 +106,7 @@ function LoveLetter(props) {
                 </SpeechBubbleLeft>
                 <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
-                        {!isLoveLetterCorrect ? LoveLetterCode : <><p>{loveLetterFull}</p><p>{loveLetterFullPs}</p><NextPageButton destination="officebase">Go to office</NextPageButton></>}
+                        {!isLoveLetterCorrect ? LoveLetterCode : <><p className="whiteBG">{loveLetterFull}</p><p className="whiteBG">{loveLetterFullPs}</p><NextPageButton destination="office">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
                     {successMessage}
                     <LoveLetterLettersContainer>
