@@ -81,7 +81,7 @@ function LoveLetter(props) {
 
     }, [usedLetters])
 
-    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : 'beige'} onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
+    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : '#f5c71a'} onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
 
     const LoveLetterCode = secretMessageArray.map((item, index) => {
         const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null

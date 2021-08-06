@@ -738,7 +738,7 @@ export const orderEventsData = {
 
 //loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
-    instructions: [`If we want to read this love letter, we need to break the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, think what four-letter word a letter usually starts with. Oh, it looks like the full stops and commas don't need to be decoded.`],
+    instructions: [`If we want to read this love letter from Lucy's bin, we need to break the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, think what four-letter word a letter usually starts with. Oh, it looks like the full stops and commas don't need to be decoded.`],
     successMessageText: ['Amazing! Click here to see the full letter!'],
     loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
     loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill a man who goes near you. I love you. Chay.`],
@@ -810,7 +810,7 @@ export const loveLetterData = {
 
 //wendy
 export const redactedData = {
-    instructions: [`Why do doctors always have such bad handwriting? I can't read some of the words. It looks like they're mostly prepositions and verbs. Fill in the gaps anc click "check".`],
+    instructions: [`Why do doctors always have such bad handwriting? I can't read some of the words. It looks like they're mostly prepositions and verbs. Fill in the gaps and click "check".`],
     missingWords: ['with', 'by', 'up', 'avoid', 'to'],
 }
 
@@ -818,6 +818,7 @@ export const redactedData = {
 export const RedactedComp = (props) => {
     return (
         <div>
+            <h3>Medical Report - Chay Maddison</h3>
             I first met Chay when he came into my clinic. He was having problems <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> his back.
             I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy he is cripled <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> pain.
             He probably sustained this injury by working out in the gym without warming <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} />.
