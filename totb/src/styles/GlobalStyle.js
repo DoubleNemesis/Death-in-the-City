@@ -9,6 +9,7 @@ html {
   /* font-family: 'Lato' !important; */
   font-size: 100%;
   box-sizing: border-box;
+
 }
 
 body {
@@ -18,12 +19,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   min-height: 100vh;
+  background-color: midnightblue;
 }
 
 @media(min-width: 700px) {
   html {
     font-size: 135%;
   }
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url(https://tomsclassroom.com/react/navIcon.png) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: whitesmoke;
 }
 
   p, ul, h3, a {
@@ -33,5 +43,7 @@ body {
   .error{
     background-color: red !important;
 }
+
+
   
 `

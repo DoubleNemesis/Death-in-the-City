@@ -110,10 +110,10 @@ function App() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
-                <Link className="nav-link" to="/start">start</Link>.
-                <Link className="nav-link" to="/vocab">vocab</Link>
-                <Link className="nav-link" to="/office">office</Link>
-                <Link className="nav-link" to="/witness1">{characterNames[0]}</Link>
+                <Link className="nav-link" to="/">home</Link>.
+                <Link className="nav-link" to="/about">about</Link>
+                {/* <Link className="nav-link" to="/office">office</Link> */}
+                {/* <Link className="nav-link" to="/witness1">{characterNames[0]}</Link>
                 <Link className="nav-link" to="/crimescene">crimeScene</Link>
                 <Link className="nav-link" to="/witness2">{characterNames[1]}</Link>
                 <Link className="nav-link" to="/witness3">{characterNames[2]}</Link>
@@ -126,7 +126,7 @@ function App() {
                 <Link className="nav-link" to="/errorcorrection">ErrorCorrection</Link>
                 <Link className="nav-link" to="/backstory">BackStory</Link>
                 <Link className="nav-link" to="/redacted">Redacted</Link>
-                <Link className="nav-link" to="/orderevents">Order Events</Link>
+                <Link className="nav-link" to="/orderevents">Order Events</Link> */}
               </Nav>
             </Navbar.Collapse>
           </Navbar>

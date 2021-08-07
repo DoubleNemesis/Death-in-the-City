@@ -15,6 +15,24 @@ margin-top: 2em;
 }
 
 `
+export const StyledAnswersContainer = styled.div`
+display: flex;
+width: 80%;
+justify-content: center;
+align-items: center;
+margin: 0 auto;
+border-radius: .3em;
+margin-top: 2em;
+
+@media(max-width:900px){
+    width: 95%
+}
+
+/* .questionTile{
+    height: 100px;
+} */
+
+`
 
 function Container({children, ...restProps}){
     return (

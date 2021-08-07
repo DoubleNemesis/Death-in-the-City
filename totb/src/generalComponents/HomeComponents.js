@@ -13,9 +13,11 @@ const StyledContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-border-radius: .3em;
+/* border-radius: .3em; */
 /* border: 5px solid #fff; */
 background-color: #2d2e36;
+background: linear-gradient(#333, #2E2523, #333);
+background: linear-gradient(#333, #141414, #333);
 color: whitesmoke;
 font-size: 1.1rem;
 opacity: 1;
@@ -28,11 +30,23 @@ img{
 margin: 0;
 }
 
+@media(min-width:1025px){
+flex-direction: row-reverse;
+
+
+}
+
 
 p{
     margin: 1em;
     font-size: .9rem;
+    color: whitesmoke;
 }
+
+h2{
+    font-family: inherit;
+}
+
 
 h3{
     font-size: 1.2rem;
@@ -41,30 +55,40 @@ h3{
     /* text-transform: uppercase; */
 }
 
+h4{
+    margin: 1em;
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
 ul{
     /* list-style: none; */
     font-size: .9rem;
     margin-left: 2em;
 }
 
-h2{
-    font-family: inherit;
-}
+
+
 
 @keyframes fadeIn{
     0% {opacity: 0}
     100%{opacity: 1}
 }
 
+`
 
-/* @media(max-width:900px){
-    margin-top: 1em;
-    width: 100%;
-    min-height: unset;
-    flex-direction: column;
-    border-radius: unset;
-    border: unset;
-} */
+export const CrimeTape = styled.img`
+width: 100%;
+`
+
+export const BlockContainer = styled.div`
+max-width: ${({maxWidth})=> maxWidth || '50%'};
+box-sizing: border-box;
+border: ${({border})=>border}px solid #d2a118;
+
+@media(max-width:1024px){
+    max-width: 100%;
+
+}
 
 `
 
@@ -119,7 +143,7 @@ height: 40px;
 min-height: 30px;
 margin: .13em;
 padding: .4em;
-background-color: lightgray;
+background-color: whitesmoke;
 
 :hover{
     border: 2px solid orange;

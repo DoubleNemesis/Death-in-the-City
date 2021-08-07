@@ -107,7 +107,7 @@ export const vocabData = {
 }
 
 //office specific
-export const officeBubbleText = `This is your office space. New witnesses, evidence and challenges will appear here as they become available. 
+export const officeBubbleText = `This is your desk. New witnesses, evidence and challenges will appear here as they become available. 
 When you are ready to interview a witness, just click on their image and you will be guided to their house. 
 `
 
@@ -826,5 +826,18 @@ export const RedactedComp = (props) => {
             - he is addicted <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} /> painkillers, and they don't mix.
         </div>
     )
+}
+
+export const endPageData = {
+    bubbleText1: `So you think you know who killed my son? Just choose from the options below and tell me why in the box.`,
+    bubbleText2: `OK, I can see I wasted my time with you. I should have gone to a professional. I'm not paying you a cent.`,
+    bubbleText3: `So you worked out some of it and helped me to get justice for my son. I will pay half your fee, that's all.`,
+    bubbleText4: `You're a great detective and I can't tell you how grateful I am! I'll double your pay! Congratulations!!!`,
+    explanation: `They were a crazy bunch of people at that dinner party but only one was a killer. It was me, Dallas Franks. I had been struggling since 
+    my mother died of coronavirus. But that night I discovered something made my blood boil. Lexington Gray hadn't isolated when he had
+    coronavirus and has passed it on to me, and I gave it to my mother. When Lexi boasted about not isolating, I knew I had to take revenge. 
+    When lightning struck and the lights went out, I took my chance.`,
+    police1: `Thank you from the City Police Department for helping us catch this evil criminal! You will receive a cash reward!`,
+    police2: `From the City Police Department, I would just like to say thanks for NOTHING. We will never catch him now!`,
 }
 

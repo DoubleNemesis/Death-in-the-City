@@ -19,7 +19,6 @@ const textOut = keyframes`
 0%{opacity: 0}
 100%{opacity: 1}
 `
-
 const animateBorder = keyframes`
 100%{box-shadow: 0px 0px 3px 3px firebrick; }
 0%{box-shadow: none; }
@@ -32,9 +31,13 @@ animation-delay: 0s;
 animation-fill-mode: forwards;
 margin-top: 1.1em;
 background-color: transparent;
+box-sizing: unset;
 
 @media(min-width: 700px){
     max-width: 80vw;
+}
+@media(min-width: 1025px){
+    max-width: 23vw;
 }
 
 img{
@@ -60,6 +63,16 @@ opacity: 0;
 animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 2s, ${animateBorder} 1s infinite alternate;
 animation-fill-mode: forwards;
 box-shadow: 2px 2px 2px 2px #333;
+cursor: pointer;
+
+@media(min-width: 1025px){
+    font-size: 1rem;
+}
+
+:hover{
+    color: red;
+}
+
 `
 
 

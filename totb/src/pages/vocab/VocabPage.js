@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { history, useHistory } from 'react-router-dom'
-import Container from './vocabComponents/VocabContainer'
+import Container, {StyledAnswersContainer} from './vocabComponents/VocabContainer'
 import { vocabData as data } from '../../data/lessonData'
 import GameContext from '../../context/GameContext'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
@@ -96,9 +96,11 @@ function VocabPage() {
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
                 </Container> :
                 <Container>
-                    <NextPageButton destination="officebase">Go to the office!</NextPageButton>
+                    <NextPageButton destination="office">Go to the office!</NextPageButton>
+                    <StyledAnswersContainer>
                    <div> {questions} </div>
                   <div>  {answers} </div>
+                  </StyledAnswersContainer>
                 </Container>
 
 

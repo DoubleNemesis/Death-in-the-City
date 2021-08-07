@@ -10,6 +10,7 @@ color: black;
 font-weight: 600;
 flex-direction: column;
 align-items: center;
+text-align: center;
 
 h3{
     margin-top: 1em;

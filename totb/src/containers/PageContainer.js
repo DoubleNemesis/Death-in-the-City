@@ -3,12 +3,14 @@ import MainContainer from './MainContainer'
 
 const StyledContainer = styled.div`
 display: flex;
+justify-content: center;
+align-items: center;
 width: 90%;
 border-radius: .3em;
-border: 1px solid #333;
-background-color: whitesmoke;
+border: 10px solid #333;
+background-color: transparent; //was whitesmoke
 color: black;
-font-family:'Courier New', Courier, monospace;
+/* font-family:'Courier New', Courier, monospace; */
 font-size: 1.5rem;
 opacity: 0;
 margin: 1em;

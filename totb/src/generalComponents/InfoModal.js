@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const StyledModal = styled.div`
 position: absolute;
 background-color: #2E2523;
-background: linear-gradient(#666, #2E2523, #666);
+/* background: linear-gradient(#666, #2E2523, #666); */
+background-color: transparent;
 color: white;
 z-index: 5;
 display: ${({ display }) => display};
@@ -15,7 +16,7 @@ top: 30%;
 font-size: 1rem;
 width: 95%;
 padding: .5em;
-border: 3px solid red;
+/* border: 3px solid red; */
 border-radius: 5px;
 /* padding: 1em; */
 /* box-shadow: 4px 4px 3px #666; */

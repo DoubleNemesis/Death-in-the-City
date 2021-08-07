@@ -19,7 +19,7 @@
     background-color: #8d8741;
     background-image: linear-gradient(#333, #202020);
     margin: .3em;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     box-shadow: .1em .1em .1em #999;
     letter-spacing: 1px;
@@ -27,10 +27,10 @@
     border-radius: 0 !important;
   }
   
-  @media(min-width: 1000px) {
+  @media(min-width: 700px) {
     .questionTile {
-      width: 7.3em;
-      height: 7.3em;
+      width: 160px;
+      height: 100px;
     }
   }
   

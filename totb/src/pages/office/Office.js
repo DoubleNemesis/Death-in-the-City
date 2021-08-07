@@ -1,115 +1,38 @@
 import { useState, useContext, useRef, useEffect } from 'react'
-import styled from 'styled-components'
+import { Container, ArtefactDisplay, WitnessCard, CardImageContainer, CardImage, ArtefactCard } from './officeComponents/OfficeComponents'
 import { history, useHistory } from 'react-router-dom'
 import GameContext from '../../context/GameContext'
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../generalComponents/InfoModal'
 import { officeBubbleText, officeCards } from '../../data/lessonData'
 import GeneralButton from './../../generalComponents/GeneralButton'
 import WitnessButton from './../../generalComponents/WitnessButton'
-import {SpeechBubbleLeft} from './../../generalComponents/ConversationComponents'
+import { SpeechBubbleLeft } from './../../generalComponents/ConversationComponents'
 import scroll from './../../images/scroll.png'
 import client from '../../images/client.jpg'
 
-const Container = styled.div`
-display: flex;
-flex-wrap: wrap;
-width: 100%;
-justify-content: center;
-`
-const ArtefactDisplay = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
-justify-content: center;
-align-items: center;
-`
-const WitnessCard = styled.div`
-width: 120px;
-height: auto;
-margin: .2em;
-background-color: skyblue;
-text-align: center;
-border-radius: 5px;
-border: 3px solid ${({ borderColor }) => borderColor};
-opacity: ${({ opacity }) => opacity};
 
-@media(min-width: 700px){
-    width: 200px;  
-    height: 220px;  
-}
-
-`
-const CardImageContainer = styled.div`
-max-height: 100px;
-overflow: hidden;
-
-@media(min-width: 700px){
-    max-height: 170px;
-}
-`
-const CardImage = styled.img`
-width: 100%;
-border-radius: 5px;
-`
-const ArtefactCard = styled.div`
-display: flex;
-flex-direction: column;
-width: 120px;
-min-height: 100px;
-margin: .2em;
-background-color: ${({ bgColor }) => bgColor};
-justify-content: center;
-align-items: center;
-color: white;
-border: 3px solid ${({ borderColor }) => borderColor};
-border-radius: 5px;
-position: relative;
-padding: .3em;
-text-align: center;
-
-p{
-    color: red;
-    margin: 0;
-}
-
-img{
-    height: 50px;
-    margin-bottom: .3em;
-}
-
-@media(min-width: 700px){
-    width: 180px;  
-    height: 220px;  
-
-    img{
-    height: 100px;
-}
-
-}
-
-`
-const ActionCard = styled.div`
-width: 100px;
-height: 100px;
-margin: .2em;
-background-color: pink;
-`
-const Tick = styled.div`
-position: absolute;
-left: 0;
-right: 0;
-margin-left: auto;
-margin-right: auto;
-width: 10px;
-min-width: 100%;
-max-width: 100%;
-height: 10px;
-min-height: 100%;
-background-color: transparent;
-border-radius: 20px;
-/* transform: rotateZ(-45deg); */
-border: 3px solid limegreen;
-`
+// const ActionCard = styled.div`
+// width: 100px;
+// height: 100px;
+// margin: .2em;
+// background-color: pink;
+// `
+// const Tick = styled.div`
+// position: absolute;
+// left: 0;
+// right: 0;
+// margin-left: auto;
+// margin-right: auto;
+// width: 10px;
+// min-width: 100%;
+// max-width: 100%;
+// height: 10px;
+// min-height: 100%;
+// background-color: transparent;
+// border-radius: 20px;
+// /* transform: rotateZ(-45deg); */
+// border: 3px solid limegreen;
+// `
 function Office() {
 
     const {
@@ -187,19 +110,17 @@ function Office() {
     return (
         <>
             <Container>
-                <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
-                <SpeechBubbleLeft image={client} bubbleWidth="90">
-                    {officeBubbleText}
-            </SpeechBubbleLeft>
-                    <ToggleContainer>
-                        <ToggleTaskInfo
-                            onClick={() => setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)}>
-                            Go Investigate!
-                        </ToggleTaskInfo>
-                    </ToggleContainer>
-                </StyledModal>
+
+                {isInstructionsModalDisplayed ?
+                    <SpeechBubbleLeft image={client} >
+                        {officeBubbleText}
+                    </SpeechBubbleLeft>
+                    :
+                    null}
+
+                {/* </StyledModal> */}
                 <StyledModal display={isArtefactModalDisplayed ? 'block' : 'none'}>
-                    <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} /></ArtefactDisplay> 
+                    <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} /></ArtefactDisplay>
                     <ToggleContainer>
                         <ToggleTaskInfo
                             onClick={() => setIsArtefactModalDisplayed(!isArtefactModalDisplayed)}>

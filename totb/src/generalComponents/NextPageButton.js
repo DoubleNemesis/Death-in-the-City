@@ -10,10 +10,11 @@ margin: ${({margin})=> margin || '2em auto'};
 font-size: ${({fontSize})=> fontSize || 1.5}rem;
 border: none;
 font-family: 'Poppins';
+width: ${({width})=> width || 'unset'};
 
 :hover{
     background-color: orange;
-    border: 1px solid grey; 
+    /* border: 1px solid grey;  */
     color: black;
 }
 :active{
@@ -28,7 +29,7 @@ function NextPageButton({ children, ...props }) {
 
     return (
   
-            <StyledButton onClick={()=>history.push(`${props.destination}`)} margin={props.margin}>{children}</StyledButton>
+            <StyledButton onClick={()=>history.push(`${props.destination}`)} margin={props.margin} width={props.width}>{children}</StyledButton>
 
     )
 

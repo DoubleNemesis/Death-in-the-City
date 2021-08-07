@@ -1,9 +1,17 @@
 import { useState, useEffect, useContext } from 'react'
 import MainContainer from './../../containers/MainContainer'
-import { TextContainer, DetectiveAvatar, DetectiveContainer, DetectiveChoiceContainer, DetectiveChoiceItem } from './../../generalComponents/HomeComponents'
+import {
+    TextContainer,
+    DetectiveAvatar,
+    DetectiveContainer,
+    DetectiveChoiceContainer,
+    DetectiveChoiceItem,
+    CrimeTape,
+    BlockContainer
+} from './../../generalComponents/HomeComponents'
 import NextPageButton from './../../generalComponents/NextPageButton'
 import { startPageBlurb } from './../../data/lessonData'
-import crimeline from '.././../images/crimeline.png'
+import crimeline from '.././../images/crimeline.jpg'
 import GameContext from './../../context/GameContext'
 import detective from '../../images/detective.png'
 import detective1 from '../../images/detective1.png'
@@ -12,7 +20,6 @@ import detective3 from '../../images/detective3.png'
 import detective4 from '../../images/detective4.png'
 import detective5 from '../../images/detective5.png'
 import detective6 from '../../images/detective6.png'
-
 
 
 function Home() {
@@ -38,26 +45,25 @@ function Home() {
             <MainContainer>
                 <TextContainer>
 
+                    <BlockContainer maxWidth="45%">
+                        <CrimeTape src={crimeline} />
+                        <DetectiveContainer>
+                            <h3>A murder-mystery game for ESL students</h3>
 
-                    <img src={crimeline} />
-                    <DetectiveContainer>
-                    <h3>A murder-mystery game for ESL students</h3>
+                            <DetectiveAvatar src={detectiveChosen} />
 
-                        <DetectiveAvatar src={detectiveChosen} />
-
-                        <DetectiveChoiceContainer>
-                            {allDetectivesDisplay}
-                        </DetectiveChoiceContainer>
-                        <p> Choose your avatar </p>
-                    </DetectiveContainer>
-                    <img src={crimeline} />
-
-                    <NextPageButton destination="start" margin='1em 0 0 0'>PLAY</NextPageButton>
+                            <DetectiveChoiceContainer>
+                                {allDetectivesDisplay}
+                            </DetectiveChoiceContainer>
+                            <p> Choose your avatar </p>
+                        </DetectiveContainer>
+                        <CrimeTape src={crimeline} />
+                    <NextPageButton destination="start" margin='0 0 0 0' width="100%">PLAY</NextPageButton>
+                    </BlockContainer>
+                    <BlockContainer maxWidth="55%" border="2">
+                    <h4><i>Death in the City</i> is a murder-mystery game for Intermediate level or above (B1+) learners of English.</h4>
                     <p>
-                        Death in the City is a murder-mystery game for Intermediate level or above (B1+) learners of English. 
-                    </p>
-                    <p>
-                        While practising your English, you will:
+                        You'll need all your detective skills to solve the mystery of the death of Lexington Grey! As well as practising your English, you will:
                     </p>
                     <ul>
                         <li>Crack Codes</li>
@@ -66,7 +72,12 @@ function Home() {
                         <li>Question Witnesses</li>
                         <li>Catch a Killer</li>
                     </ul>
-                    <p>This fun game will help you practice your reading, writing and grammar skills as well as test your problem solving abilities and broadening your vocabulary.</p>
+                    
+                   
+                    <p>This fun game will help you practice your reading, writing and grammar skills as well as testing your problem solving 
+                        abilities and broadening your vocabulary.</p>
+                    <p>To get started, choose your detective Avatar and press PLAY!</p>
+                    </BlockContainer>
 
                 </TextContainer>
 

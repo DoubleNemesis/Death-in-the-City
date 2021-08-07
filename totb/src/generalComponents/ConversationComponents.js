@@ -14,7 +14,7 @@ const StyledSpeechBubble = styled.div`
     line-height: 1.2rem;
     width: ${({ bubbleWidth }) => bubbleWidth || '80'}%;
     max-width: ${({ bubbleMaxWidth }) => bubbleMaxWidth || 'unset'}%;
-    min-height: ${({ minHeight }) => minHeight || '100'}px;
+    min-height: ${({ minHeight }) => minHeight || '150'}px;
     background: ${({ bgcolor }) => bgcolor || 'skyblue'};
     border-radius: 10px;
     padding: 1em;
@@ -23,6 +23,8 @@ const StyledSpeechBubble = styled.div`
     margin: 1em;
     border: 4px solid #141414;
     box-shadow: 2px 2px 4px 2px #444;
+
+
 
     ol{
       padding: 0 1em;
@@ -38,6 +40,10 @@ const StyledSpeechBubble = styled.div`
         color: red;
       }
     }
+/* 
+    @media(min-width: 1025px){
+      max-width: 70%;
+    } */
 }
 
 .bubbleRight{ //delete????
