@@ -6,7 +6,7 @@ import Door from '../door/Door'
 import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
-import { Instructions, Conversation, QuestionOptions, QuestionOption, WitnessImage, TaskBox, InfoBox, StyledArtefact, StyledFoundArtefact } from './witnessComponents/Layout'
+import { Instructions, Conversation, QuestionOptions, QuestionOption, WitnessImage, TaskBox, InfoBox, StyledArtefact, StyledFoundArtefact, WitnessContainer } from './witnessComponents/Layout'
 import GameContext from '../../context/GameContext'
 import { Inside, WitnessIntroBox } from '../door/doorComponents/DoorComponents'
 
@@ -137,7 +137,7 @@ function WitnessComp(props) {
 
 
     return (
-        <>
+        <WitnessContainer>
             {!doorWasOpened ? <Door speechBubbleText={props.speechBubbleText} witnessInfo={props.witnessInfo} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened} /> : null}
             <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
                 <h2>Task: Dialogue</h2>
@@ -185,7 +185,7 @@ function WitnessComp(props) {
                     : null}
                 <div id="pageEnd"></div>
             </>
-        </>
+        </WitnessContainer>
 
     )
 }

@@ -27,6 +27,11 @@ body {
     font-size: 135%;
   }
 }
+@media(min-width: 1025px) {
+  html {
+    font-size: 100%;
+  }
+}
 
 .navbar-light .navbar-toggler-icon {
   background-image: url(https://tomsclassroom.com/react/navIcon.png) !important;

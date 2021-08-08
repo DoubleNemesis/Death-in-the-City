@@ -15,8 +15,10 @@ to { box-shadow: 0px 0px 5px 3px orange; }
 `
 
 export const Inside = styled.div`
+grid-area: inside;
 width: 100%;
 background-color: white;
+/* border: 2px solid pink; */
 `
 
 export const StyledDoorOuter = styled.div`

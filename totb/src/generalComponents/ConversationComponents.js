@@ -40,6 +40,10 @@ const StyledSpeechBubble = styled.div`
         color: red;
       }
     }
+
+    @media(min-width:1025px){
+      min-height: 120px;
+    }
 /* 
     @media(min-width: 1025px){
       max-width: 70%;
@@ -86,6 +90,11 @@ margin: 0 1em 0em 0;
 border-radius: 10%;
 border: 1px solid #333;
 background-color: transparent;
+
+@media(min-width:1025px){
+  width: 80px;
+}
+
 `
 
 export const SpeechBubbleLeft = ({ children, ...restProps }) => {

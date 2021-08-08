@@ -1,4 +1,4 @@
-import styled, {keyframes}  from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
 0% { opacity: 0;}
@@ -7,6 +7,20 @@ const fadeIn = keyframes`
 const animateBorder = keyframes`
 from { box-shadow: 0px 0px 10px 5px red; }
 to { box-shadow: 0px 0px 10px 5px orange; }
+`
+
+export const WitnessContainer = styled.div`
+
+@media(min-width:1025px){
+    display: grid;
+    grid-template-columns: repeat(1, 1fr 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "inside questionoptions"
+        "conversation questionoptions";
+        font-size: .1rem;
+}
+
 `
 
 export const Instructions = styled.div`
@@ -30,6 +44,7 @@ padding: .5em; */
 /* border: 1px solid black; */
 `
 export const InfoBox = styled.div`
+grid-area: infobox;
 margin-top: 1em;
 padding: .5em;
 background-color: white;
@@ -37,28 +52,38 @@ text-align: center;
 font-size: 1.2rem;
 font-weight: 700;
 width: 100%;
+/* border: 20px solid green; */
+
+@media(min-width:1025px){
+    margin-top: 0;
+}
+
 `
 
 export const Conversation = styled.div`
+grid-area: conversation;
 display: flex;
 flex-direction: column;
 /* background-color: skyblue; */
 width: 100%;
+/* border: 2px solid blue; */
 `
 export const QuestionOptions = styled.div`
+grid-area: questionoptions;
 display: flex;
 flex-direction: column;
 /* background-color: skyblue; */
 width: 100%;
 padding: 0;
 align-items: center;
+/* border: 2px solid red; */
 `
 
 const StyledWitnessImage = styled.img`
 width: auto;
 max-width: 100px;
 `
-export const WitnessImage = (props)=><StyledWitnessImage src={props.img}></StyledWitnessImage>
+export const WitnessImage = (props) => <StyledWitnessImage src={props.img}></StyledWitnessImage>
 
 
 export const StyledArtefact = styled.img`
@@ -77,11 +102,11 @@ font-size: 1.3rem;
 padding: 1em 0 0 0;
 text-align: center;
 background-color: white;
-animation: ${({isArtefactClicked})=>isArtefactClicked ? fadeIn : null} 1s;
+animation: ${({ isArtefactClicked }) => isArtefactClicked ? fadeIn : null} 1s;
 animation-delay: .1s;
 animation-fill-mode: forwards;
 border-radius: 5px;
-z-index: ${({isArtefactClicked})=>isArtefactClicked ? 10 : 0};
+z-index: ${({ isArtefactClicked }) => isArtefactClicked ? 10 : 0};
 `
 
 export const QuestionOption = styled.button`
