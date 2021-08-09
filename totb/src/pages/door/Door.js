@@ -18,7 +18,7 @@ function Door(props) {
 
     return (
         <>
-            <StyledDoorOuter isDoorOpen={isDoorOpen} >
+            <StyledDoorOuter isDoorOpen={isDoorOpen} house={props.house} >
                 <StyledDoor isDoorOpen={isDoorOpen}  doorImg={props.doorImg}>
                     <DoorSign>{props.doorTitle}'s House</DoorSign>
                     <DoorBellBox onClick={handleDoorBellClick}>

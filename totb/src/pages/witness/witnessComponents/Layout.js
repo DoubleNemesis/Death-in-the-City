@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 
+const fadeInSpeed = '3s'
+
 const fadeIn = keyframes`
 0% { opacity: 0;}
 100% { opacity: 1;}
@@ -8,16 +10,20 @@ const animateBorder = keyframes`
 from { box-shadow: 0px 0px 10px 5px red; }
 to { box-shadow: 0px 0px 10px 5px orange; }
 `
+export const TaskImage = styled.img`
+width: 30px;
+`
 
 export const WitnessContainer = styled.div`
 
 @media(min-width:1025px){
     display: grid;
+    margin-left: 5em;
     grid-template-columns: repeat(1, 1fr 1fr);
     grid-template-rows: auto auto;
     grid-template-areas:
-        "inside questionoptions"
-        "conversation questionoptions";
+        "inside conversation"
+        "questionoptions conversation ";
         font-size: .1rem;
 }
 
@@ -46,8 +52,8 @@ padding: .5em; */
 export const InfoBox = styled.div`
 grid-area: infobox;
 margin-top: 1em;
-padding: .5em;
-background-color: white;
+/* padding: .5em; */
+background-color: transparent;
 text-align: center;
 font-size: 1.2rem;
 font-weight: 700;
@@ -55,7 +61,13 @@ width: 100%;
 /* border: 20px solid green; */
 
 @media(min-width:1025px){
-    margin-top: 0;
+    margin-top: .3em;
+    margin-left: 0;
+    /* border-radius: 10px; */
+    width: 100%;
+    padding: 0;
+    animation: ${fadeIn} ${fadeInSpeed};
+    animation-fill-mode: forwards;
 }
 
 `
@@ -67,6 +79,13 @@ flex-direction: column;
 /* background-color: skyblue; */
 width: 100%;
 /* border: 2px solid blue; */
+
+@media(min-width:1025px){
+    animation: ${fadeIn} ${fadeInSpeed};
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+}
+
 `
 export const QuestionOptions = styled.div`
 grid-area: questionoptions;
@@ -76,7 +95,14 @@ flex-direction: column;
 width: 100%;
 padding: 0;
 align-items: center;
-/* border: 2px solid red; */
+
+@media(min-width: 1025px){
+    width: auto;
+    margin-right: 10em;
+    animation: ${fadeIn} ${fadeInSpeed};
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+}
 `
 
 const StyledWitnessImage = styled.img`
@@ -110,19 +136,43 @@ z-index: ${({ isArtefactClicked }) => isArtefactClicked ? 10 : 0};
 `
 
 export const QuestionOption = styled.button`
-background-color: yellow;
+background-color: transparent;
 /* border-bottom: 1px solid #999; */
 font-family: 'Poppins';
 font-size: 1.2rem;
 border-radius: 2px;
 width: 100%;
-div{
+border: 1px solid transparent;
 
+div{
     width: 100%;
     height: 100%;
     padding: .5em 1em;
-margin: .2em;
-background-color: yellow;
+    margin: .2em 0;
+    background-color: limegreen;
+    border-radius: 5px;
+    border: 3px solid skyblue;
+    :hover{
+    background-color: transparent;
+    color: white;
+}
+}
 
+@media(min-width: 1025px){
+    font-size: 1.1rem;
+}
+
+
+`
+
+export const TaskMessage = styled.div`
+background-color: whitesmoke;
+width: 100%;
+padding: .5em 2em;
+font-weight: 700;
+
+@media(min-width:1025px){
+    border: 4px #141414 solid;
+  border-radius: 5px;
 }
 `

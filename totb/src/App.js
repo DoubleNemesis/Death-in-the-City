@@ -161,6 +161,7 @@ function App() {
               witnessInfo={witnessInfo1}
               speechBubbleText={speechBubbleText1}
               doorTitle={characterFirstNames[0]}
+              house={dallasYard}
               />
           </Route>
           <Route path="/codebox">

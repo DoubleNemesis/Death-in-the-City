@@ -2,8 +2,6 @@ import React, {useContext} from 'react'
 import styled from 'styled-components'
 import GameContext from './../context/GameContext'
 
-
-
 const StyledSpeechBubble = styled.div`
 
 .bubble, .bubbleRight{
@@ -24,8 +22,6 @@ const StyledSpeechBubble = styled.div`
     border: 4px solid #141414;
     box-shadow: 2px 2px 4px 2px #444;
 
-
-
     ol{
       padding: 0 1em;
       color: red;
@@ -42,7 +38,7 @@ const StyledSpeechBubble = styled.div`
     }
 
     @media(min-width:1025px){
-      min-height: 120px;
+      min-height: 85px;
     }
 /* 
     @media(min-width: 1025px){
@@ -88,11 +84,11 @@ max-width: 100px;
 float: left;
 margin: 0 1em 0em 0;
 border-radius: 10%;
-border: 1px solid #333;
+/* border: 1px solid #333; */
 background-color: transparent;
 
 @media(min-width:1025px){
-  width: 80px;
+  width: 50px;
 }
 
 `

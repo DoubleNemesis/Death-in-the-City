@@ -1,30 +1,42 @@
 import styled, { keyframes } from 'styled-components'
 import doorsign from '../../../images/doorsign.png'
+import brick from '../../../images/brick.jpg'
 
 const OpenDoor = keyframes`
 from { transform: rotateY(0deg); }
 to { transform: rotateY(120deg); }
 `
-const CloseDoor = keyframes`
-from { transform: rotateY(120deg); }
-to { transform: rotateY(0deg); }
+const FadeOut = keyframes`
+from { opacity: 1; }
+to { opacity: 0; }
 `
 const animateBorder = keyframes`
 from { box-shadow: 0px 0px 5px 3px red; }
 to { box-shadow: 0px 0px 5px 3px orange; }
 `
+const fadeIn = keyframes`
+0% { opacity: 0;}
+100% { opacity: 1;}
+`
 
 export const Inside = styled.div`
 grid-area: inside;
 width: 100%;
-background-color: white;
-/* border: 2px solid pink; */
+background-color: 'white';
+
+
+@media(min-width: 1025px){
+  width: unset;
+  margin-right: 10em;
+}
+
 `
 
 export const StyledDoorOuter = styled.div`
 position: absolute;
 /* background-image: url(${({ doorImg }) => doorImg}); */
 background-color: transparent;
+/* background-color: black; */
 width: 100%;
 max-width: 100%;
 min-height: 100vh;
@@ -43,6 +55,15 @@ z-index: 4; */
 
 @media(min-width: 700px){
   top: 8%;
+}
+
+@media(min-width: 1025px){
+  animation: ${({ isDoorOpen }) => isDoorOpen ? FadeOut : null} 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  z-index: 4; 
+  background-image: url(${({house})=>house});
+  background-size: cover;
 }
 `
 export const StyledDoor = styled.div`
@@ -65,6 +86,20 @@ animation-fill-mode: forwards;
 animation-delay: .1s;
 z-index: 4;
 /* border: 1px solid green; */
+
+/* media query + new door and new animation? */
+
+@media(min-width: 1025px){
+  display: none;
+  width: 30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 95%;
+  max-height: 95%;
+  animation: none;
+  background-size: contain;
+}
 
 `
 
@@ -126,18 +161,35 @@ export const DoorBell = styled.button`
 const WitnessIntroContainer = styled.div`
 display: flex;
 width: 100%;
-background-color: whitesmoke;
+background-color: skyblue;
 /* min-height: 200px; */
 padding: .5em;
-/* border: 1px red solid; */
 box-sizing: border-box;
 align-items: flex-start;
+animation: ${fadeIn} 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+
+@media(min-width: 1025px){
+  margin-right: .5em;
+  border: 4px #141414 solid;
+  border-radius: 5px;
+    /* animation: ${fadeIn} 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s; */
+}
 `
 const WitnessImage = styled.img`
 width: 40%;
 height: auto;
 padding: .5em;
 border-radius: 10px; 
+
+@media(min-width: 1025px){
+  width: 20%;
+  padding: 5em;
+}
+
 `
 const WitnessText = styled.div`
 padding: .5em;

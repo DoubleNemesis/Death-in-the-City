@@ -1,5 +1,7 @@
 .correct {
-    border: 1px solid red !important;
+    border: 4px solid chartreuse !important;
+    background-color: midnightblue !important;
+    color: white;
   }
   
   .wrong {
