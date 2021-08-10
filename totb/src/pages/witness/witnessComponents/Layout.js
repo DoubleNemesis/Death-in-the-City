@@ -26,7 +26,7 @@ export const WitnessContainer = styled.div`
         "questionoptions conversation ";
         font-size: .1rem;
 }
-
+border: 1px solid red;
 `
 
 export const Instructions = styled.div`
@@ -164,7 +164,6 @@ div{
 
 
 `
-
 export const TaskMessage = styled.div`
 background-color: whitesmoke;
 width: 100%;
@@ -176,3 +175,62 @@ font-weight: 700;
   border-radius: 5px;
 }
 `
+
+const WitnessIntroContainer = styled.div`
+display: flex;
+width: 100%;
+background-color: skyblue;
+/* min-height: 200px; */
+padding: .5em;
+box-sizing: border-box;
+align-items: flex-start;
+animation: ${fadeIn} 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+
+@media(min-width: 1025px){
+  margin-right: .5em;
+  border: 4px #141414 solid;
+  border-radius: 5px;
+    /* animation: ${fadeIn} 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s; */
+}
+`
+const WitnessImageBox = styled.img`
+width: 30%;
+height: auto;
+padding: .5em;
+margin: 7em;
+border-radius: 10px; 
+
+/* @media(min-width: 1025px){
+  width: 20%;
+  padding: 5em;
+} */
+
+`
+const WitnessText = styled.div`
+padding: .5em;
+
+h3{
+    font-size: 1.3rem;
+}
+
+p{
+  font-size: 1rem;
+}
+
+@media(min-width: 700px){
+  font-size: 1.2rem;
+}
+`
+
+export const WitnessIntroBox = (props)=>{
+    return(
+        <WitnessIntroContainer>
+            <WitnessImageBox src={props.personImage}/>
+            <WitnessText><h3>Witness Info</h3><p>{props.witnessInfo}</p></WitnessText>
+        </WitnessIntroContainer>
+    )
+}

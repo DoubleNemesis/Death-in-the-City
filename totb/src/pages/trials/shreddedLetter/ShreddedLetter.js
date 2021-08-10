@@ -6,6 +6,7 @@ import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '..
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import {FrontPageButton} from '../../../generalComponents/GeneralButton'
+import {MessageContainer} from '../../../containers/MessageContainer'
 import GameContext from '../../../context/GameContext'
 import clientPic from '../../../images/client.jpg'
 
@@ -15,7 +16,7 @@ function ShreddedLetter(props) {
     
     let { eventsToOrder, instructions } = ShreddedLetterPiecesData
     const { eventsCorrectOrder } = ShreddedLetterPiecesData
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState(`Hit check when finished`)
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [itemsCorrectOrder, setItemsCorrectOrder] = useState(eventsCorrectOrder);
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
@@ -77,9 +78,10 @@ function ShreddedLetter(props) {
                     }
                     }
                 />}
-                
-                <h3>{message}</h3>
+                <MessageContainer bgColor="white">
+                {message ? <h3>{message}</h3> : null}
                 {isShreddedLetterCorrect ? <NextPageButton destination="office" margin=".5em auto">Go to Office</NextPageButton> : <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton>}
+                    </MessageContainer>
             </EventsContainer>
         </>
     );

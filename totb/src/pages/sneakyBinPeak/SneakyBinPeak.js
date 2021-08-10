@@ -40,6 +40,10 @@ padding-top: 10vh;
 background-image: url(${({yardImage})=>yardImage});
 background-size: cover;
 position: relative;
+
+@media(min-width: 1025px){
+background-position: center;
+}
 `
 
 const StyledBin = styled.div`
@@ -52,13 +56,6 @@ min-height: 240px;
 background-image: url(${bin});
 background-size: contain;
 background-repeat: no-repeat;
-
-
-@media(min-width: 1000px){
-    animation: ${rotateBin} 2s;
-animation-delay: 2s;
-animation-fill-mode: forwards;
-}
 
 
 -webkit-transform-style: preserve-3d;
@@ -175,7 +172,7 @@ function Sneaky(props){
     return(
         <>
             <YardContainer yardImage={props.yardImage}>
-                <ThoughtContainer><SpeechBubbleRight minHeight="90">{thought}</SpeechBubbleRight></ThoughtContainer>
+                <ThoughtContainer><SpeechBubbleRight minHeight="90" bubbleWidth="40">{thought}</SpeechBubbleRight></ThoughtContainer>
             <StyledBinContainer>
                 
             {openBin ? <StyledBinArtefact src={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}

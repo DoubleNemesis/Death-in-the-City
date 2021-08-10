@@ -22,7 +22,6 @@ display: flex;
 flex-direction: column;
 width: 100%;
 justify-content: center;
-align-items: center;
 `
 export const WitnessCard = styled.div`
 width: 120px;
@@ -67,6 +66,7 @@ border-radius: 5px;
 position: relative;
 padding: .3em;
 text-align: center;
+align-items: center;
 
 p{
     color: whitesmoke;
@@ -84,6 +84,13 @@ img{
 
     img{
     height: 100px;
+}
+@media(min-width: 1025px){
+
+    height: 170px;  
+
+    img{
+    height: 75px;
 }
 
 }

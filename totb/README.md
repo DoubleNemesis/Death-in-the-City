@@ -1,27 +1,32 @@
     code
-sort out menu
-check vocab for error...
 check i did it: scroll to top on vocab complete and update message
-door...scroll to bottom on load looks better REMOVE????
-cat next to codebox
 does every door need pop up? no...so state and context
 alt texts!
 challenge pop up style diff to artefact only
 check speechbubble unnecessary space
-start with tiles on loveletter comp then bg on redacted
-
- 
-    css / images
-css trial backgrounds size shape etc so bin looks good
-completed letter on loveletter
-pic without background and head shots for messages?
 style green tick on completed challenges and office cards.
+call to action container > paper container?
+home components >  home component folder?
+office instructions close box and hide for duration? already have state in context isInstructionsModalDisplayed ?
+localstorage??
+copyright mesage
+door component....scrap and just have pic of house...click to enter? mobile and desktop?
+OR scrap door component and use their house / yard as background for convo??
+different task icons...green tick, red cross
+
 
 
 
     Text
 
     End
+
+house 5Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/s/photos/house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+brick Photo by <a href="https://unsplash.com/@neonbrand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NeONBRAND</a> on <a href="https://unsplash.com/s/photos/brick?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
 woodbg codebox Photo by <a href="https://unsplash.com/@adijoshi11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aditya Joshi</a> on <a href="https://unsplash.com/s/photos/wood-texture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 

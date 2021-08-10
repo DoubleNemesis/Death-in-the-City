@@ -1,10 +1,6 @@
 import { useState } from 'react'
-// import NextPageButton from '../../generalComponents/NextPageButton'
 import { SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
-
 import { StyledDoorOuter, StyledDoor, DoorSign, DoorBellBox, DoorBell, Inside, WitnessIntroBox } from './doorComponents/DoorComponents'
-
-
 
 function Door(props) {
     const [isDoorOpen, setIsDoorOpen] = useState(false)
@@ -19,17 +15,13 @@ function Door(props) {
     return (
         <>
             <StyledDoorOuter isDoorOpen={isDoorOpen} house={props.house} >
-                <StyledDoor isDoorOpen={isDoorOpen}  doorImg={props.doorImg}>
-                    <DoorSign>{props.doorTitle}'s House</DoorSign>
-                    <DoorBellBox onClick={handleDoorBellClick}>
+                <StyledDoor isDoorOpen={isDoorOpen}  doorImg={props.doorImg} doorImgL={props.doorImgL}>
+                    <DoorSign isDoorOpen={isDoorOpen} >{props.doorTitle}'s House</DoorSign>
+                    <DoorBellBox isDoorOpen={isDoorOpen} onClick={handleDoorBellClick}>
                         <DoorBell></DoorBell>
                     </DoorBellBox>
-                </StyledDoor>
+                    </StyledDoor>
             </StyledDoorOuter>
-            {/* <Inside>
-                <WitnessIntroBox personImage={props.personImage} witnessInfo={props.witnessInfo}/>
-                <SpeechBubbleRight>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
-            </Inside> */}
         </>
     )
 }

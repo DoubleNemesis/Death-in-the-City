@@ -12,7 +12,21 @@ flex-direction: column;
 align-items: center;
 text-align: center;
 
+
 h3{
     margin-top: 1em;
 }
+
+@media(min-width: 1025px){
+    width: 50%;
+    padding: 1em;
+    border-radius: 5px;
+    border: 3px solid #141414;
+
+    h3{
+    margin-top: unset;
+
+}
+}
+
 `

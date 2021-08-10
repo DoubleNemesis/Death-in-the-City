@@ -669,7 +669,7 @@ export const ShreddedLetterPiecesData = {
         `Someone moved - I don't know who.`, 
         `Then there was a scream...`, 
     ],
-    instructions : [`It looks like this letter has been shredded. Move the pieces around until you find the right order. Click "check" when you're done.`]
+    instructions : [`It looks like this letter has been shredded. Move the pieces around until you find the right order. I think the first one is already in the right place. You should be able to work it out from grammar and context.`]
 }
 
 //error correction kirsten

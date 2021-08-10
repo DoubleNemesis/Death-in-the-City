@@ -33,6 +33,7 @@ import Title from './generalComponents/Title'
 import FloePic from './images/floe.jpg'
 import WendyPic from './images/wendy.jpg'
 import doorGrey from './images/doorGrey.png'
+import doorGreyLarge from './images/doorGreyLarge.png'
 import doorBlue from './images/doorBlue.png'
 import doorRed from './images/doorRed.png'
 import doorWhite from './images/doorWhite.png'
@@ -41,7 +42,7 @@ import doorMulti from './images/doorMulti.png'
 import chayYard from './images/chayYard.jpg'
 import kirstenYard from './images/kirstenYard.jpg'
 import dallasYard from './images/dallasYard.jpg'
-import lucyYard from './images/lucyYard.jpg'
+import lucyYard from './images/house5.jpg'
 import wendyYard from './images/wendyYard.jpg'
 import scroll from './images/scroll.png'
 import shreddedletterPic from './images/shreddedletter.png'
@@ -158,10 +159,11 @@ function App() {
               trialURL={trialURL1}
               exitMessage={exitMessage1}
               doorImg={doorGrey}
+              doorImgL={doorGreyLarge}
               witnessInfo={witnessInfo1}
               speechBubbleText={speechBubbleText1}
               doorTitle={characterFirstNames[0]}
-              house={dallasYard}
+              house={lucyYard}
               />
           </Route>
           <Route path="/codebox">
@@ -182,6 +184,7 @@ function App() {
               doorImg={doorBlue}
               doorTitle={characterFirstNames[1]}
               witnessInfo={witnessInfo2}
+              doorImgL={doorGreyLarge}
               // speechBubbleText={speechBubbleText1}
               />
           </Route>
@@ -201,6 +204,7 @@ function App() {
               trialURL={trialURL3}
               exitMessage={exitMessage3}
               doorImg={doorRed}
+              doorImgL={doorGreyLarge}
               doorTitle={characterFirstNames[2]}
               artefactName={artefacts[1].name} 
               artefactImage={artefacts[1].image} //????
@@ -225,6 +229,7 @@ function App() {
               trialURL={trialURL4}
               exitMessage={exitMessage4}
               doorImg={doorYellow}
+              doorImgL={doorGreyLarge}
               doorTitle={characterFirstNames[3]}
               binCheck={'sneaky3'}
               artefactName={artefacts[3].name} //order events
@@ -270,6 +275,7 @@ function App() {
               trialURL={trialURL6}
               exitMessage={exitMessage6}
               doorImg={doorMulti}
+              doorImgL={doorGreyLarge}
               doorTitle={characterFirstNames[5]}
               artefactName={artefacts[4].name} //redacted report
               artefactImage={artefacts[4].image} 

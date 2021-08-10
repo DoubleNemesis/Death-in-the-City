@@ -3,33 +3,51 @@ import PageContainer from '../../containers/PageContainer'
 import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import Door from '../door/Door'
+import {DeskTopFiller} from '../door/doorComponents/DoorComponents'
+import House from '../house/House'
 import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalComponents/InfoModal'
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
 import Pencil from './../../images/task.png'
-import { Instructions, 
-    Conversation, 
-    QuestionOptions, 
-    QuestionOption, 
-    InfoBox, 
-    StyledArtefact, 
-    StyledFoundArtefact, 
+import {
+    Instructions,
+    Conversation,
+    QuestionOptions,
+    QuestionOption,
+    InfoBox,
+    StyledArtefact,
+    StyledFoundArtefact,
     WitnessContainer,
     TaskMessage,
-    TaskImage
+    TaskImage,
+    WitnessIntroBox
 
 } from './witnessComponents/Layout'
 import GameContext from '../../context/GameContext'
-import { Inside, WitnessIntroBox } from '../door/doorComponents/DoorComponents'
+import { Inside } from '../door/doorComponents/DoorComponents'
 
 let counter = 0
 let fullConversation = []
-const Task = ()=>{return <TaskMessage><TaskImage src={Pencil}/> Task: Choose the best reply from the options below</TaskMessage>}
+const Task = () => {
+    return <TaskMessage><TaskImage src={Pencil} />
+        Task: Read the conversation and choose the best reply from the options below
+    </TaskMessage>
+}
+const TaskCorrect = () => {
+    return <TaskMessage><TaskImage src={Pencil} />
+        Correct! Choose the next reply.
+    </TaskMessage>
+}
+const TaskInCorrect = () => {
+    return <TaskMessage><TaskImage src={Pencil} />
+        That's incorrect. Try again.
+    </TaskMessage>
+}
 
 function WitnessComp(props) {
     // console.log(props);
     const [questions, setQuestions] = useState([])
-    const [rightWrong, setRightWrong] = useState(<Task/>)
+    const [rightWrong, setRightWrong] = useState(<Task />)
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
@@ -73,7 +91,7 @@ function WitnessComp(props) {
     function handleClick(e) {
         if (e.target.classList.contains('success')) {
             counter = counter + 1
-            setRightWrong('Correct!')
+            setRightWrong(<TaskCorrect/>)
             e.target.classList.add('correct')
             let listToHide = document.querySelectorAll('.question');
             setTimeout(() => {
@@ -85,7 +103,7 @@ function WitnessComp(props) {
                     setQuestionList(props.questionsWit2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
-                        setRightWrong(<Task/>)
+                        setRightWrong(<Task />)
                         const conversationEnd = document.getElementById('conversationBottom')
                     }
                     else {
@@ -133,7 +151,7 @@ function WitnessComp(props) {
         }
         else {
             e.target.classList.add('wrong')
-            setRightWrong('Try again!')
+            setRightWrong(<TaskInCorrect/>)
             //minus points
         }
     }
@@ -143,32 +161,27 @@ function WitnessComp(props) {
 
     return (
         <WitnessContainer>
-            {!doorWasOpened ? <Door house={props.house} speechBubbleText={props.speechBubbleText} witnessInfo={props.witnessInfo} personImage={props.personImage} doorImg={props.doorImg} doorTitle={props.doorTitle} setDoorWasOpened={setDoorWasOpened} /> : null}
-            {/* <StyledModal display={isInstructionsModalDisplayed ? 'block' : 'none'}>
-                <h2>Task: Dialogue</h2>
-                <ul>
-                    <li> Read the text in the speech bubble.</li>
-                    <li> Choose a reply from the list to continue the conversation.</li>
-                    <li> Only one answer is grammatically correct. </li>
-                </ul>
-                <ToggleContainer>
-                    <ToggleTaskInfo
-                        onClick={() => {
-                            setIsInstructionsModalDisplayed(!isInstructionsModalDisplayed)
-                        }}>
-                        Start
-                    </ToggleTaskInfo>
-                </ToggleContainer>
-            </StyledModal> */}
+            {!doorWasOpened ? 
+            <>
+            <Door
+                house={props.house}
+                witnessInfo={props.witnessInfo}
+                personImage={props.personImage}
+                doorImg={props.doorImg}
+                doorImgL={props.doorImgL}
+                doorTitle={props.doorTitle}
+                setDoorWasOpened={setDoorWasOpened} />
+                </>
+                : null}
 
             <>
-                 { doorWasOpened ? <Inside>
+                { doorWasOpened ? <Inside>
                     <WitnessIntroBox personImage={props.personImage} witnessInfo={props.witnessInfo} />
                 </Inside> : null}
                 {doorWasOpened ?
                     <>
                         <Conversation>
-                    <SpeechBubbleRight image={detectiveChosen}>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
+                            <SpeechBubbleRight image={detectiveChosen}>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
                             {conversation}
                         </Conversation>
                         <QuestionOptions>

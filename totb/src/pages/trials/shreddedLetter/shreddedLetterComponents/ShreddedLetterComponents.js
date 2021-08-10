@@ -28,6 +28,13 @@ h3{
   padding: .2em .3em;
 }
 
+@media(min-width: 1025px){
+  flex-direction: row;
+  width: 60%;
+  align-items: center;
+  justify-content: space-around;
+} 
+
 /*.correctOrder{
   background-color: limegreen;
   border: 2px solid limegreen;
