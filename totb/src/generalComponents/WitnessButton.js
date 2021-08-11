@@ -11,7 +11,7 @@ padding: .2em .8em;
 
 :hover{
     background-color: orange;
-    border: 1px solid grey; 
+    /* border: 1px solid grey;  */
     color: black;
 }
 `

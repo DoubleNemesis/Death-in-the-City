@@ -1,18 +1,29 @@
-    code
-check i did it: scroll to top on vocab complete and update message
-does every door need pop up? no...so state and context
-alt texts!
+instructions come from teacher avatar and each task has a task sign
+better words list after vocab?
+trial task icons...green tick, red cross
+button in final speech bubble?? or my speech witness comp?
+too much opacity on seen witness?
+what happens when click competed challenge?
+more witness info words
+style of found artefacts in office inc text above
 challenge pop up style diff to artefact only
-check speechbubble unnecessary space
-style green tick on completed challenges and office cards.
-call to action container > paper container?
-home components >  home component folder?
-office instructions close box and hide for duration? already have state in context isInstructionsModalDisplayed ?
+door component....scrap and just have pic of house...click to enter? mobile and desktop? OR scrap door component and use their house / yard as background for convo??
+witness multiple buttons like kirsten desktop view problem
+on hover for aretafcts witness
+sneaky cant see speachbubble
+"i didnt see anything of crime" change?
+can check kirsten's bin twice
+kirsten doesnt grey out
+style police statement like medical one ordervents
+ordervents render buttons and update speech bubble to show that u get extra data
+lucy - no door
+lucy conversation desktop "No. It's too dangerous. I can't help you." too short and last line too!!
+love letter on paper on desk? yes
+loveletter button pink on active?
+can't get to bin after task?
+alt texts!
 localstorage??
-copyright mesage
-door component....scrap and just have pic of house...click to enter? mobile and desktop?
-OR scrap door component and use their house / yard as background for convo??
-different task icons...green tick, red cross
+
 
 
 

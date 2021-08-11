@@ -22,6 +22,7 @@ h3{
     padding: 1em;
     border-radius: 5px;
     border: 3px solid #141414;
+    margin-top: 1em;
 
     h3{
     margin-top: unset;

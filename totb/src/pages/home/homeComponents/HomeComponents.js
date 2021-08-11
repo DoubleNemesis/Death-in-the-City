@@ -1,5 +1,5 @@
-import styled, {keyframes} from 'styled-components'
-import newyork1 from './../images/newyork1logo.jpg'
+import styled, { keyframes } from 'styled-components'
+import newyork1 from '../../../images/newyork1logo.jpg'
 
 const itemIn = keyframes`
 0% { opacity: 0; }
@@ -24,7 +24,6 @@ opacity: 1;
 margin: 1em 0 0 0 ;
 
 
-
 img{
 /* margin-bottom: 1em; */
 margin: 0;
@@ -32,10 +31,7 @@ margin: 0;
 
 @media(min-width:1025px){
 flex-direction: row-reverse;
-
-
 }
-
 
 p{
     margin: 1em;
@@ -66,14 +62,10 @@ ul{
     margin-left: 2em;
 }
 
-
-
-
 @keyframes fadeIn{
     0% {opacity: 0}
     100%{opacity: 1}
 }
-
 `
 
 export const CrimeTape = styled.img`
@@ -81,22 +73,19 @@ width: 100%;
 `
 
 export const BlockContainer = styled.div`
-max-width: ${({maxWidth})=> maxWidth || '50%'};
+max-width: ${({ maxWidth }) => maxWidth || '50%'};
 box-sizing: border-box;
-border: ${({border})=>border}px solid #d2a118;
+border: ${({ border }) => border}px solid #d2a118;
 
 @media(max-width:1024px){
     max-width: 100%;
-
 }
-
 `
 
 export const DetectiveAvatar = styled.img`
 margin: 2em;
 width: 100px;
 `
-
 export const DetectiveContainer = styled.div`
 
     max-width: 100%;
@@ -155,18 +144,16 @@ img{
 }
 `
 
-export const DetectiveChoiceItem = (props) =>{
-    return(
+export const DetectiveChoiceItem = (props) => {
+    return (
         <StyledDetectiveChoiceItem onClick={props.onclick} id={props.id}>
-            <img src={props.image} id={props.id} alt={props.alt}/>
+            <img src={props.image} id={props.id} alt={props.alt} />
         </StyledDetectiveChoiceItem>
     )
 }
-export function TextContainer({children, ...restProps}){
+export function TextContainer({ children, ...restProps }) {
 
     return (
         <StyledContainer>{children}</StyledContainer>
     )
 }
-
-//export default PageContainer

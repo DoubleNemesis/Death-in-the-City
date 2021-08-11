@@ -89,6 +89,7 @@ function VocabPage() {
         <div className="vocabPage">
             <SpeechBubbleLeft image={client} bubbleWidth="90">
             {!hasDoneVocab ? bubbleText1 : bubbleText2 }
+            {hasDoneVocab ? <div><NextPageButton destination="office" margin=".5em auto">Go to the office!</NextPageButton></div> : null }
             </SpeechBubbleLeft>
 
             {!hasDoneVocab ?
@@ -96,7 +97,6 @@ function VocabPage() {
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
                 </Container> :
                 <Container>
-                    <NextPageButton destination="office">Go to the office!</NextPageButton>
                     <StyledAnswersContainer>
                    <div> {questions} </div>
                   <div>  {answers} </div>

@@ -5,12 +5,14 @@ import woodbg from '../../../../images/woodbg.jpg'
 
 export const SuccessMessageComp = (props)=>{
     return(
-        <SpeechBubbleRight>
+        <>
+        {/* <SpeechBubbleLeft> */}
             {props.message}
             <TextButtonContainer>
                 <TextButton onClick={props.onclick}>Click</TextButton>
             </TextButtonContainer>
-        </SpeechBubbleRight>
+            {/* </SpeechBubbleLeft> */}
+            </>
     )
 }
 

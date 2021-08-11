@@ -20,6 +20,7 @@ function LoveLetter(props) {
     const [selectedSymbol, setSelectedSymbol] = useState('')
     const [usedLetters, setUsedLetters] = useState([])
     const [successMessage, setSuccessMessage] = useState('')
+    const [isSuccessMessageDisplayed, setIsSuccessMessageDisplayed] = useState(false)
     // const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     // const [displayFullText, setDisplayFullText] = useState(false)
     // displayFullLoveLetterText, setDisplayFullLoveLetterText
@@ -65,11 +66,11 @@ function LoveLetter(props) {
 
             if (decodedMessage === originalMessageNoSpace) { //change here to undo
                 setSuccessMessage(<SuccessMessageComp message={successMessageText} onclick={handleFullTextClick} />)
+                setIsSuccessMessageDisplayed(true)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
                 setCompletedChallenges(dummyCompletedChallenges)
             }
-            //setSuccessMessage(decodedMessage !== originalMessageNoSpace ? <SuccessMessageComp message={successMessageText} onclick={handleFullTextClick}/> : null)
         }
     }
 
@@ -102,17 +103,15 @@ function LoveLetter(props) {
 
             <Conversation>
                 <SpeechBubbleLeft image={clientPic} >
-                    {instructions}
+                    { !isSuccessMessageDisplayed ? instructions : successMessage }
                 </SpeechBubbleLeft>
                 <LoveLetterMainContainer>
                     <LoveLetterSymbolsContainer>
                         {!isLoveLetterCorrect ? LoveLetterCode : <><p className="whiteBG">{loveLetterFull}</p><p className="whiteBG">{loveLetterFullPs}</p><NextPageButton destination="office">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
-                    {successMessage}
+                    {/* {successMessage} */}
                     <LoveLetterLettersContainer>
-
                         {LoveLetterLetters}
-
                     </LoveLetterLettersContainer>
                 </LoveLetterMainContainer>
 

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styled from 'styled-components'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
 import { TextButton, TextButtonContainer } from '../../generalComponents/SpeechTextButton'
@@ -7,8 +8,20 @@ import Janitor from '../../images/janitor.png'
 import kitchen from '../.././images/kitchen.jpg'
 import windowView from '../../images/windowView2.jpg'
 
-import PageContainer from '../../containers/PageContainer'
 import ImageContainer from '../../containers/ImageContainer'
+
+const Container = styled.div`
+@media(min-width: 1025px){
+    display: flex;
+}
+`
+const CrimeContainer = styled.div`
+@media(min-width: 1025px){
+    display: flex;
+    width: 50%;
+    min-width: 50%;
+}
+`
 
 function CrimeScene() {
     const { clientTitle, clientText } = clientData
@@ -18,9 +31,8 @@ function CrimeScene() {
     function handleTextButtonClick(e) {
         setBubbleTextToDisplay(parseInt(e.target.id))
     }
-    // image change on click, nextpage button at end only
-    return (
-        <>
+     return (
+        <Container>
             <SpeechBubbleLeft image={Janitor} minHeight="250">
                 {bubbleTextToDisplay === 1 ?
                     bubbleText1 :
@@ -33,19 +45,19 @@ function CrimeScene() {
                     <TextButton id="2" bgcolor={bubbleTextToDisplay === 2 ? 'red' : null} onClick={handleTextButtonClick}>2</TextButton>
                     <TextButton id="3" bgcolor={bubbleTextToDisplay === 3 ? 'red' : null} onClick={handleTextButtonClick}>3</TextButton>
                 </TextButtonContainer>
-            </SpeechBubbleLeft>
-            <PageContainer>
+                <TextButtonContainer>
                 {bubbleTextToDisplay === 3 ?
-                    <NextPageButton destination="/office">
+                    <NextPageButton destination="/office" margin="0 auto">
                         Go to office
                     </NextPageButton>
                     : null}
+                    </TextButtonContainer>
+            </SpeechBubbleLeft>
+            <CrimeContainer>
+ 
                 <ImageContainer image={bubbleTextToDisplay === 1 || bubbleTextToDisplay === 2 ? kitchen : windowView} />
-
-
-            </PageContainer>
-
-        </>
+            </CrimeContainer>
+        </Container>
     )
 }
 

@@ -39,6 +39,7 @@ const StyledSpeechBubble = styled.div`
 
     @media(min-width:1025px){
       min-height: 85px;
+      max-width: 80%;
     }
 /* 
     @media(min-width: 1025px){

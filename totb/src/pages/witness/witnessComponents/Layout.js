@@ -11,7 +11,8 @@ from { box-shadow: 0px 0px 10px 5px red; }
 to { box-shadow: 0px 0px 10px 5px orange; }
 `
 export const TaskImage = styled.img`
-width: 30px;
+width: 40px;
+margin-right: .5em;
 `
 
 export const WitnessContainer = styled.div`
@@ -26,7 +27,7 @@ export const WitnessContainer = styled.div`
         "questionoptions conversation ";
         font-size: .1rem;
 }
-border: 1px solid red;
+/* border: 1px solid red; */
 `
 
 export const Instructions = styled.div`
@@ -85,7 +86,6 @@ width: 100%;
     animation-fill-mode: forwards;
     animation-delay: 0s;
 }
-
 `
 export const QuestionOptions = styled.div`
 grid-area: questionoptions;
@@ -153,7 +153,7 @@ div{
     border-radius: 5px;
     border: 3px solid skyblue;
     :hover{
-    background-color: transparent;
+    background-color: black;
     color: white;
 }
 }
@@ -167,7 +167,7 @@ div{
 export const TaskMessage = styled.div`
 background-color: whitesmoke;
 width: 100%;
-padding: .5em 2em;
+padding: .5em .5em;
 font-weight: 700;
 
 @media(min-width:1025px){
@@ -201,13 +201,13 @@ const WitnessImageBox = styled.img`
 width: 30%;
 height: auto;
 padding: .5em;
-margin: 7em;
+/* margin: 7em; */
 border-radius: 10px; 
 
-/* @media(min-width: 1025px){
-  width: 20%;
+@media(min-width: 1025px){
+  width: 30%;
   padding: 5em;
-} */
+}
 
 `
 const WitnessText = styled.div`

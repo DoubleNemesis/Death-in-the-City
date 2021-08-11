@@ -34,6 +34,11 @@ min-height: 100vh;
     border-radius: unset;
     border: unset;
 }
+@media(min-width:1025px){
+flex-direction: column;
+border: unset;
+margin-top: 0;
+}
 
 `
 

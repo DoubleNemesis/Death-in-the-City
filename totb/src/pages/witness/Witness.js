@@ -9,6 +9,8 @@ import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalCompo
 import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
 import Pencil from './../../images/task.png'
+import Tick from './../../images/tick.png'
+import Cross from './../../images/cross.png'
 import {
     Instructions,
     Conversation,
@@ -34,12 +36,12 @@ const Task = () => {
     </TaskMessage>
 }
 const TaskCorrect = () => {
-    return <TaskMessage><TaskImage src={Pencil} />
+    return <TaskMessage><TaskImage src={Tick} />
         Correct! Choose the next reply.
     </TaskMessage>
 }
 const TaskInCorrect = () => {
-    return <TaskMessage><TaskImage src={Pencil} />
+    return <TaskMessage><TaskImage src={Cross} />
         That's incorrect. Try again.
     </TaskMessage>
 }

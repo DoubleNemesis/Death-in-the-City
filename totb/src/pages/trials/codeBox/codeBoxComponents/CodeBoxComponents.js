@@ -38,6 +38,18 @@ const fadeIn = keyframes`
 100% { opacity: 1;}
 `
 
+
+export const Container = styled.div`
+grid-area: conversation;
+display: flex;
+flex-direction: column;
+width: 100%;
+
+@media(min-width:1025px){
+    flex-direction: row;
+}
+`
+
 export const StyledInput = styled.input`
 width: 2em;
 background-color: ${({safeCodeBgColor})=>safeCodeBgColor};
@@ -57,6 +69,16 @@ flex-direction: column;
 align-items: center;
 justify-content: flex-end;
 /* border: 1px solid red; */
+
+@media(min-width:1025px){
+    min-width: 50%;
+    width: 50%;
+    padding: 5em;
+    margin: 1em;
+    border: 4px solid #141414;
+    border-radius: 5px;
+}
+
 `
 
 const SafeBox = styled.div`
@@ -174,6 +196,12 @@ animation: ${fadeIn} 1s;
 animation-delay: .1s;
 animation-fill-mode: forwards;
 border-radius: 5px;
+
+
+@media(min-width:1025px){
+    position: unset;
+}
+
 `
 
 const Notes = styled.div`

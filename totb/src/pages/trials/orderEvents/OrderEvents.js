@@ -4,10 +4,10 @@ import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import { MessageContainer } from '../../../containers/MessageContainer'
-import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
+// import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import ProfilePic from '../../../images/janitor.png'
 import { orderEventsData } from '../../../data/lessonData'
-import { EventsContainer, ParagraphContainer } from './orderEventsComponents/OrderEventsComponents'
+import { EventsContainer, ParagraphContainer, Container } from './orderEventsComponents/OrderEventsComponents'
 import { List, arrayMove } from 'react-movable';
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import GameContext from '../../../context/GameContext'
@@ -49,11 +49,12 @@ function OrderEvents(props) {
 
     return (
         <>
-            <Conversation>
+            <Container>
+
+                <ParagraphContainer>
                 <SpeechBubbleLeft image={clientPic} >
                     {instructions}
                 </SpeechBubbleLeft>
-                <ParagraphContainer>
                     {orderEventsText}
                 </ParagraphContainer>
 
@@ -77,7 +78,7 @@ function OrderEvents(props) {
             {isOrderEventsCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
                 </MessageContainer>
                 </EventsContainer>
-            </Conversation>
+            </Container>
 
 
         </>

@@ -84,6 +84,7 @@ img{
 
     img{
     height: 100px;
+    }
 }
 @media(min-width: 1025px){
 
@@ -94,5 +95,4 @@ img{
 }
 
 }
-
 `

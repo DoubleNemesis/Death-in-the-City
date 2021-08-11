@@ -11,6 +11,7 @@ font-size: ${({fontSize})=> fontSize || 1.5}rem;
 border: none;
 font-family: 'Poppins';
 width: ${({width})=> width || 'unset'};
+border-radius: 5px;
 
 :hover{
     background-color: orange;

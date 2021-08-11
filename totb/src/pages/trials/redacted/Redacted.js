@@ -3,10 +3,10 @@ import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
-import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
+// import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import ProfilePic from '../../../images/janitor.png'
 import { redactedData, RedactedComp } from '../../../data/lessonData'
-import { StatementContainer, RedactedTextComp } from './redactedComponents/RedactedComponents'
+import { StatementContainer, RedactedTextComp, Container } from './redactedComponents/RedactedComponents'
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import wendyPic from '../../../images/wendy.jpg'
@@ -49,11 +49,12 @@ function Redacted(props) {
     return (
         <>
 
-            <Conversation>
+            <Container>
+
+                <StatementContainer>
                 <SpeechBubbleLeft image={wendyPic} >
                     {instructions}
                 </SpeechBubbleLeft>
-                <StatementContainer>
                     <RedactedComp
                         onchange={handleInputChange}
                         name1="name1"
@@ -69,11 +70,12 @@ function Redacted(props) {
                     />
                     {/* <button onClick={handleCheck}>Check</button> {message} */}
                     <MessageContainer>
-                    <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton>
-                        <h3>{message}</h3></MessageContainer>
+                    {!isRedactedCorrect ? <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton> : null}
+                        <h3>{message}</h3>
                     {isRedactedCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
+                        </MessageContainer>
                 </StatementContainer>
-            </Conversation>
+            </Container>
         </>
 
     )

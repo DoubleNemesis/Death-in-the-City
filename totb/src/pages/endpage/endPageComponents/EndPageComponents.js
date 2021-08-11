@@ -19,4 +19,18 @@ select{
     margin-bottom: 1em;
 }
 
+@media(min-width:1025px){
+
+    background-color: white;
+    padding: 1em;
+    textarea{
+    max-width: 80%;
+}
+
+select{
+    max-width: 80%;
+}
+
+}
+
 `

@@ -8,7 +8,7 @@ import {
     DetectiveChoiceItem,
     CrimeTape,
     BlockContainer
-} from './../../generalComponents/HomeComponents'
+} from './homeComponents/HomeComponents'
 import NextPageButton from './../../generalComponents/NextPageButton'
 import { startPageBlurb } from './../../data/lessonData'
 import crimeline from '.././../images/crimeline.jpg'

@@ -392,7 +392,7 @@ export const questionsWitness2 = {
     witnessConversationArray2: [
         "More questions? I told the police everything. I don't have time for this right now! You people are so annoying!",
         "Can you describe what happened at the party?",
-        "We were having a good time, eating, drinking. The lights went out, there was a scream and that was that. That's all I know. Ok?",
+        "We were having a good time, eating and drinking. The lights went out, there was a scream and that was that. That's all I know. Ok?",
         "What happened when the lights came back on?",
         "Look, I told all this to the police. Get out of here! Leave me alone! I'm done with this!"
     ],
@@ -564,7 +564,7 @@ const BubbleText1 = () => {
     </p>
     <p>
     To open the safe you need to use the right combination of letters. Each letter is the first letter of a verb.
-    I don't know the verbs but I do know the nouns they collocate with. If I give you the nouns, perhaps you can work them out.
+    I don't know the verbs, but I do know the nouns they collocate with. If I give you the nouns, perhaps you can work them out.
     So for example if the noun is "TV", the verb could be "watch", so you would take "W" and put it in the safe. Clear?            
     </p>
         </>
@@ -602,7 +602,7 @@ export const CodeBoxData = {
     // bubbleTextX: [`These are the words in the right order. 1 "friends" and "your bed". 2 "homework" and "housework". 
     // 3 "fun" and "a good time". 4 "your time" and "a break". 5 "a ball" and "a cold". Put the correct letters in and spin the dial!`
     // ],
-    bubbleText3: [`Excellent! Click on the book, and when you go back to your office you'll be able to see who was at the party and where they live. 
+    bubbleText3: [`Excellent! Click on the book, and when you go back to your office, you'll be able to see who was at the party and where they live. 
     But before you go, I should show you the crime scene!`
     ],
 }
@@ -635,7 +635,7 @@ export const TornLetterPiecesData = [
 
 export const ShreddedLetterPiecesData = {
     orderEventsText: [`I got the party at around 10. I was already drunk. 
-    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
+    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known each other for years. If I'm honest, I have been drinking too much since my mum died two months ago.
     Lexi? I met him on the set of his first Movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
     `],
@@ -680,7 +680,7 @@ export const ErrorCorrectionData = {
         In a moment I will ask you to show me how they should be written.`],
     ],
     instructions2: [
-        ["Great! You found my mistakes! Now type out the sentences so they are correct and hit check. When all three are correct I will tell you what you want to know."],
+        ["Great! You found my mistakes! Now type out the sentences so they are correct and hit check. When all three are correct, I will tell you what you want to know."],
     ],
     instructions3: [
         [`Perfect! Thank you so much for your help! I like you, so here's the information I promised you. I expect Lexi was unfaithful. You can never trust actors or tell when they are lying. But I don't know who he was unfaithful with. Lucy? Maybe! 
@@ -711,7 +711,7 @@ export const ErrorCorrectionData = {
 
 export const orderEventsData = {
     orderEventsText: [`I got the party at around 10. I was already drunk. 
-    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known eachother for years. If I'm honest, I have been drinking too much since my mum died two months ago.
+    I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known each other for years. If I'm honest, I have been drinking too much since my mum died two months ago.
     Lexi? I met him on the set of his first Movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
     `],
@@ -738,8 +738,12 @@ export const orderEventsData = {
 
 //loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
-    instructions: [`If we want to read this love letter from Lucy's bin, we need to break the word code. Tap a letter and then tap the symbol you think represents that letter. If you need a clue, think what four-letter word a letter usually starts with. Oh, it looks like the full stops and commas don't need to be decoded.`],
-    successMessageText: ['Amazing! Click here to see the full letter!'],
+    instructions: [`It looks like Lucy and her lover communicate in code. If we want to read this love letter, we need to break the word code. 
+    Each symbol represents a letter. Just tap a letter and then tap the symbol you think represents that letter. All other identical 
+    symbols will change to that letter.
+    If you need a clue, think what four-letter word a letter usually starts with.
+    Good news: it looks like the full stops and commas don't need to be decoded. `],
+    successMessageText: ['Wow! You are good! Hey, I think the letter has a PS. Click here to see it!'],
     loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
     loveLetterFull: [`Dear Lucy I need to see you. I hate being without you. I will kill a man who goes near you. I love you. Chay.`],
     loveLetterFullPs: [`PS. I have come into some money! I will treat you to something.`],
@@ -834,9 +838,9 @@ export const endPageData = {
     bubbleText3: `So you worked out some of it and helped me to get justice for my son. I will pay half your fee, that's all.`,
     bubbleText4: `You're a great detective and I can't tell you how grateful I am! I'll double your pay! Congratulations!!!`,
     explanation: `They were a crazy bunch of people at that dinner party but only one was a killer. It was me, Dallas Franks. I had been struggling since 
-    my mother died of coronavirus. But that night I discovered something made my blood boil. Lexington Gray hadn't isolated when he had
-    coronavirus and has passed it on to me, and I gave it to my mother. When Lexi boasted about not isolating, I knew I had to take revenge. 
-    When lightning struck and the lights went out, I took my chance.`,
+    my mother died of coronavirus. But that night I discovered something that made my blood boil. Lexington Gray hadn't isolated when he had
+    coronavirus and had passed it on to me, and I gave it to my mother. When Lexi boasted about not isolating, I knew I had to take revenge. 
+    When lightning struck and the lights went out he was standing by the window, and I took my chance.`,
     police1: `Thank you from the City Police Department for helping us catch this evil criminal! You will receive a cash reward!`,
     police2: `From the City Police Department, I would just like to say thanks for NOTHING. We will never catch him now!`,
 }

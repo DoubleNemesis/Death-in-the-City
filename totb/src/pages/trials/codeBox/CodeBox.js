@@ -3,8 +3,8 @@ import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
 import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
-import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
-import { StyledInput, CodeBoxContainer, Safe, StyledFoundArtefact } from './codeBoxComponents/CodeBoxComponents'
+import { Instructions, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
+import { StyledInput, CodeBoxContainer, Safe, StyledFoundArtefact, Container } from './codeBoxComponents/CodeBoxComponents'
 import Janitor from '../../../images/janitor.png'
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
@@ -93,7 +93,7 @@ function CodeBox() {
     return (
         <>
 
-            <Conversation>
+            <Container>
                 <SpeechBubbleLeft image={Janitor} minHeight="475">
                     {bubbleTextToDisplay === 1 ?
                         bubbleText1 :
@@ -112,8 +112,6 @@ function CodeBox() {
                         <TextButton id="2" bgcolor={bubbleTextToDisplay === 2 ? 'red' : null} onClick={handleTextButtonClick}>2</TextButton>
                         {/* <TextButton id="3" bgcolor={bubbleTextToDisplay === 3 ? 'red' : null} onClick={handleTextButtonClick}>3</TextButton> */}
                     </TextButtonContainer> : null}
-
-
                 </SpeechBubbleLeft>
                 <CodeBoxContainer>
 
@@ -128,7 +126,7 @@ function CodeBox() {
                     </Safe>
                 </CodeBoxContainer>
 
-            </Conversation>
+            </Container>
 
         </>
 

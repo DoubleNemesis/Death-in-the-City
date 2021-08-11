@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
-import CallToActionContainer from './../../containers/CallToActionContainer'
+import CallToActionContainer from '../../containers/NewspaperContainer'
 import MainContainer from '../../containers/MainContainer'
 import { homePageData } from '../../data/lessonData'
 import newspaper from '../../images/newspaper.png'
