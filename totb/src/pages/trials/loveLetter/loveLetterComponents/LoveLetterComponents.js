@@ -74,6 +74,7 @@ border-radius: .2em;
 border: 2px solid #141414;
 color: ${({color})=> color === 'red' ? 'white' : '#141414'};
 font-weight: 800;
+cursor: pointer;
 
 @media(min-width: 700px){
     width: 60px;  
@@ -93,6 +94,7 @@ margin: .2em;
 border-radius: .2em;
 border: 2px solid #141414;
 color: yellow;
+cursor: pointer;
 
 @media(min-width: 700px){
     width: 40px;  

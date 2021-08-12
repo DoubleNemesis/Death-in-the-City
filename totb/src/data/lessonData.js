@@ -3,7 +3,7 @@ import TonyPic from '../images/tonymonceto.png'
 import ChayPic from '../images/chaymadz.jpg'
 import KirstenPic from '../images/kirsten.jpg'
 import DallasPic from '../images/dallas.jpg'
-import LucyPic from '../images/floe.jpg'
+import LucyPic from '../images/lucy.jpg'
 import WendyPic from '../images/wendy.jpg'
 import questionMark from '../images/questionMark.jpg'
 import artefactPlaceholder from '../images/artefactPlaceholder.jpg'
@@ -38,9 +38,11 @@ export const startPageBlurb = {
 //Backstory page
 export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
-    backStoryText: [`I'm Terence Grey. So you think you're ready to turn detective? I hope so, because you've got work to do! 
+    backStoryText: [`I'm your teacher and I'm here to guide you through your tasks. 
+    Before we do anything else, let's take a look at some of the vocabulary you're going to meet today.`],
+    backStoryText2: [`I'm Terence Grey. So you think you're ready to turn detective? I hope so, because you've got work to do! 
 Lexington Grey wasn't just anyone. That boy was my son, and he was murdered! Don't believe the rubbish the police said. Your job is to find out who killed him. First you need to show me you're capable.
- Get this vocabulary right and then we're in business!`]
+ Get this vocabulary right and then we're in business!`],
 }
 
 export const clientData = {
@@ -54,7 +56,7 @@ export const characterNames = {
     characterNames: [
         'Tony Monceto',
         'Chay Madz',
-        'Kirsten Wenstein',
+        'Kirsten Stein',
         'Dallas Franks',
         'Lucy Light',
         'Wendy Rose'
@@ -98,7 +100,7 @@ export const vocabData = {
         'plummet',
     ],
     'bubbleText1': [
-        `All I want you to do is click on a word and then click on its synonym. When you get a pair right, they will disappear. 
+        `All you have to do is click on a word and then click on its synonym. When you get a pair right, they will disappear. 
         Don't worry, you will see the full word list again at the end so you can take notes.`
     ],
     'bubbleText2': [
@@ -107,8 +109,8 @@ export const vocabData = {
 }
 
 //office specific
-export const officeBubbleText = `This is your desk. New witnesses, evidence and challenges will appear here as they become available. 
-When you are ready to interview a witness, just click on their image and you will be guided to their house. 
+export const officeBubbleText = `This is your office desk. New witnesses, evidence and challenges will appear here as they become available. 
+When you are ready to interview a witness, just click on their image and you will be guided to their house. When a challenge appears, you can click on it to tackle it. 
 `
 
 export const officeCards = {
@@ -407,7 +409,7 @@ export const questionsWitness2 = {
     ]
 }
 
-//witness 3 kirsten wenstein
+//witness 3 kirsten Stein
 export const questionsWitness3 = {
     questionsWitness3: [
         ['I know your feeling. Don\'t worry, I\'ll help you.', 'fail'],
@@ -437,7 +439,7 @@ export const questionsWitness3 = {
         'Help her!'
     ],
     witnessInfo3: [
-        `kirsten Wenstein was romantically involved with Lexington.`
+        `kirsten Stein was romantically involved with Lexington.`
     ],
     speechBubbleText3: [
         `Hi! I'm investigating the death of Lexington Grey. I'm really sorry for your loss. Do you mind me asking a few questions?'`
@@ -637,7 +639,7 @@ export const ShreddedLetterPiecesData = {
     orderEventsText: [`I got the party at around 10. I was already drunk. 
     I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known each other for years. If I'm honest, I have been drinking too much since my mum died two months ago.
     Lexi? I met him on the set of his first Movie just three months ago.
-    It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
+    It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
     eventsToOrder: [
         `This was the first party for ages`, 
@@ -669,7 +671,7 @@ export const ShreddedLetterPiecesData = {
         `Someone moved - I don't know who.`, 
         `Then there was a scream...`, 
     ],
-    instructions : [`It looks like this letter has been shredded. Move the pieces around until you find the right order. I think the first one is already in the right place. You should be able to work it out from grammar and context.`]
+    instructions : [`It looks like this letter has been shredded, but I'm sure you can work out what it originally said. Move the pieces around until you find the right order. I think the first one is already in the right place. You should be able to figure it out from grammar and context.`]
 }
 
 //error correction kirsten
@@ -693,7 +695,7 @@ export const ErrorCorrectionData = {
         ["Lexi seemed very relaxing and happy.", "2", false],
         ["Lexi made a joke about still having Covid when he coughed.", "3", false],
         ["Lexi was a good man. He was my friend.", "4", false],
-        ["I didn't see nothing of the crime because it was dark.", "5", false],
+        ["Dallas gave his mum covid and she was dying.", "5", false],
     ],
     incorrectSentences: [
         ["1", "2", "5"]
@@ -701,7 +703,7 @@ export const ErrorCorrectionData = {
     incorrectAndCorrected: [
         ["I don't really knew Chay very well", "0", "I don't really know Chay very well", false],
         ["Lexi seemed very relaxing and happy", "1", "Lexi seemed very relaxed and happy", false],
-        ["I didn't see nothing of the crime because it was dark", "2", "I didn't see anything of the crime because it was dark", false],
+        ["Dallas gave his mum covid and she was dyed.", "2", "Dallas gave his mum covid and she died", false],
     ]
 }
 
@@ -713,7 +715,7 @@ export const orderEventsData = {
     orderEventsText: [`I got the party at around 10. I was already drunk. 
     I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known each other for years. If I'm honest, I have been drinking too much since my mum died two months ago.
     Lexi? I met him on the set of his first Movie just three months ago.
-    It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I have been friends ever since. 
+    It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
     eventsToOrder: [
         'Dallas arrived at the party',
@@ -732,7 +734,7 @@ export const orderEventsData = {
         'Dallas arrived at the party',
     ],
     instructions: [
-        `Read the statement and then put the summary below in the right order by moving the tiles up or down. Click "check" when you're done.`
+        `Read the statement and then put the summary in the right order by moving the tiles up or down. Click "check" when you're done.`
     ]
 }
 
@@ -839,7 +841,7 @@ export const endPageData = {
     bubbleText4: `You're a great detective and I can't tell you how grateful I am! I'll double your pay! Congratulations!!!`,
     explanation: `They were a crazy bunch of people at that dinner party but only one was a killer. It was me, Dallas Franks. I had been struggling since 
     my mother died of coronavirus. But that night I discovered something that made my blood boil. Lexington Gray hadn't isolated when he had
-    coronavirus and had passed it on to me, and I gave it to my mother. When Lexi boasted about not isolating, I knew I had to take revenge. 
+    coronavirus and had passed it on to me, and I gave it to my mother. I knew I had to take revenge. 
     When lightning struck and the lights went out he was standing by the window, and I took my chance.`,
     police1: `Thank you from the City Police Department for helping us catch this evil criminal! You will receive a cash reward!`,
     police2: `From the City Police Department, I would just like to say thanks for NOTHING. We will never catch him now!`,

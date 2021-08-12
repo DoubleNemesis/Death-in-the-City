@@ -11,17 +11,23 @@ import { EventsContainer, ParagraphContainer, Container } from './orderEventsCom
 import { List, arrayMove } from 'react-movable';
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import GameContext from '../../../context/GameContext'
-import clientPic from '../../../images/client.jpg'
-import {FrontPageButton} from '../../../generalComponents/GeneralButton'
+import teacher from '../../../images/teacher.png'
+import { FrontPageButton } from '../../../generalComponents/GeneralButton'
+import { TaskMessage } from '../../../generalComponents/TaskMessage'
+
+
 
 
 function OrderEvents(props) {
-    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
-    const {isOrderEventsCorrect, setIsOrderEventsCorrect} = useContext(GameContext)
+    const taskText = `Hit check when finished`
+    const taskCorrect = `Correct!`
+    const taskIncorrect = `That's incorrect. Try again.`
+    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { isOrderEventsCorrect, setIsOrderEventsCorrect } = useContext(GameContext)
     // const [isOrderEventsCorrect, setIsOrderEventsCorrect] = useState(false)
     let { eventsToOrder } = orderEventsData
     const { eventsCorrectOrder } = orderEventsData
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState(<TaskMessage task="true" message={taskText} />)
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [hasFinished, setHasFinished] = useState(false)
     const { orderEventsText, instructions } = orderEventsData
@@ -29,14 +35,14 @@ function OrderEvents(props) {
     useEffect(() => {
         if (hasFinished) {
             if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
-                setMessage('Correct')
+                setMessage(<TaskMessage correct="true" message={taskCorrect} />)
                 setIsOrderEventsCorrect(true)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
                 setCompletedChallenges(dummyCompletedChallenges)
             }
             else {
-                setMessage('Incorrect, try again')
+                setMessage(<TaskMessage incorrect="true" message={taskIncorrect} />)
                 setHasFinished(false)
             }
         }
@@ -52,31 +58,31 @@ function OrderEvents(props) {
             <Container>
 
                 <ParagraphContainer>
-                <SpeechBubbleLeft image={clientPic} >
-                    {instructions}
-                </SpeechBubbleLeft>
+                    <SpeechBubbleLeft image={teacher} >
+                        {instructions}
+                    </SpeechBubbleLeft>
                     {orderEventsText}
                 </ParagraphContainer>
 
                 <EventsContainer>
-                <List
-                values={itemsToOrder}
-                onChange={({ oldIndex, newIndex }) => {
-                    setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
-                }
-                }
-                renderList={({ children, props }) => <ul {...props}>{children}</ul>}
-                renderItem={({ value, props }) => {
-                    return <li className="eventOrderClass" {...props} disabled={true}>{value}</li>
-                }
-                }
-            />
-           
-           <MessageContainer>
-           <FrontPageButton onclick={handleCheck} bgColor="red">Check</FrontPageButton>
-                <h3>{message}</h3>
-            {isOrderEventsCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
-                </MessageContainer>
+                    <List
+                        values={itemsToOrder}
+                        onChange={({ oldIndex, newIndex }) => {
+                            setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
+                        }
+                        }
+                        renderList={({ children, props }) => <ul {...props}>{children}</ul>}
+                        renderItem={({ value, props }) => {
+                            return <li className="eventOrderClass" {...props} disabled={true}>{value}</li>
+                        }
+                        }
+                    />
+
+                    <MessageContainer>
+                        {message}
+                        <FrontPageButton onclick={handleCheck} bgColor="red">Check</FrontPageButton>
+                        {isOrderEventsCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
+                    </MessageContainer>
                 </EventsContainer>
             </Container>
 

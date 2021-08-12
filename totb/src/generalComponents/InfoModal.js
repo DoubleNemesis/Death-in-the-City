@@ -1,40 +1,44 @@
 import styled from 'styled-components'
 
 export const StyledModal = styled.div`
+
 position: absolute;
 background-color: #2E2523;
-/* background: linear-gradient(#666, #2E2523, #666); */
-background-color: transparent;
+background: linear-gradient(#666, #2E2523, #666);
+/* background-color: transparent; */
 color: white;
 z-index: 5;
 display: ${({ display }) => display};
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 left:0;
 right:0;
 margin-left:auto;
 margin-right:auto;
 top: 30%;
 font-size: 1rem;
-width: 95%;
+width: 90%;
 padding: .5em;
-/* border: 3px solid red; */
 border-radius: 5px;
-/* padding: 1em; */
-/* box-shadow: 4px 4px 3px #666; */
-/* width: 80%; */
-/* display: flex;
-flex-direction: column; */
-/* img{   
-    border: 1px red solid;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-} */
 
 h2{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: .6em .5em;
     font-size: 2rem;
+}
+
+p{
+    padding: 1em 0 .5em 0;
+}
+
+@media(min-width: 1025px){
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
 }
 
 `

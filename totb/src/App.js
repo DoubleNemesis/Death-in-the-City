@@ -30,7 +30,7 @@ import KirstenPic from './images/kirsten.jpg'
 import DallasPic from './images/dallas.jpg'
 import { homePageData } from './data/lessonData'
 import Title from './generalComponents/Title'
-import FloePic from './images/floe.jpg'
+import LucyPic from './images/lucy.jpg'
 import WendyPic from './images/wendy.jpg'
 import doorGrey from './images/doorGrey.png'
 import doorGreyLarge from './images/doorGreyLarge.png'
@@ -250,7 +250,7 @@ function App() {
               questionsWit={questionsWitness5}
               questionsWit2={questionsWitness5_2}
               conversationArray={witnessConversationArray5}
-              personImage={FloePic}
+              personImage={LucyPic}
               trialURL={trialURL5}
               exitMessage={exitMessage5}
               doorImg={doorWhite}

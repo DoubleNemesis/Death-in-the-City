@@ -5,18 +5,24 @@ import { EventsContainer, ShreddedPiece } from './shreddedLetterComponents/Shred
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import NextPageButton from '../../../generalComponents/NextPageButton'
-import {FrontPageButton} from '../../../generalComponents/GeneralButton'
-import {MessageContainer} from '../../../containers/MessageContainer'
+import { FrontPageButton } from '../../../generalComponents/GeneralButton'
+import { MessageContainer } from '../../../containers/MessageContainer'
 import GameContext from '../../../context/GameContext'
-import clientPic from '../../../images/client.jpg'
+import teacher from '../../../images/teacher.png'
+import { TaskMessage } from '../../../generalComponents/TaskMessage'
+
+
 
 function ShreddedLetter(props) {
+    const taskText = `Hit check when finished`
+    const taskCorrect = `Correct!`
+    const taskIncorrect = `That's incorrect. Try again.`
     const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
     const { isShreddedLetterCorrect, setIsShreddedLetterCorrect } = useContext(GameContext)
-    
+
     let { eventsToOrder, instructions } = ShreddedLetterPiecesData
     const { eventsCorrectOrder } = ShreddedLetterPiecesData
-    const [message, setMessage] = useState(`Hit check when finished`)
+    const [message, setMessage] = useState(<TaskMessage task="true" message={taskText} />)
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [itemsCorrectOrder, setItemsCorrectOrder] = useState(eventsCorrectOrder);
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
@@ -26,14 +32,14 @@ function ShreddedLetter(props) {
     useEffect(() => {
         if (hasFinished) {
             if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
-                setMessage('Correct!')
+                setMessage(<TaskMessage correct="true" message={taskCorrect} />)
                 setIsShreddedLetterCorrect(true)
                 let dummyCompletedChallenges = [...completedChallenges]
                 dummyCompletedChallenges.push(props.artefactName)
                 setCompletedChallenges(dummyCompletedChallenges)
             }
             else {
-                setMessage('Incorrect, try again')
+                setMessage(<TaskMessage incorrect="true" message={taskIncorrect} />)
                 setHasFinished(false)
             }
         }
@@ -49,39 +55,39 @@ function ShreddedLetter(props) {
 
     return (
         <>
-            <SpeechBubbleLeft image={clientPic} minHeight="140">
+            <SpeechBubbleLeft image={teacher} minHeight="140">
                 {instructions}
             </SpeechBubbleLeft>
             <EventsContainer>
-            {!isShreddedLetterCorrect ? 
-                <List
-                    values={itemsToOrder}
-                    onChange={({ oldIndex, newIndex }) => {
-                        setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
-                    }
-                    }
-                    renderList={({ children, props }) => <ul {...props}>{children}</ul>}
-                    renderItem={({ value, props }) => {
-                        return <li className="eventOrderClass" {...props} disabled={true}><ShreddedPiece isShreddedLetterCorrect={isShreddedLetterCorrect}>{value}</ShreddedPiece></li>
-                    }
-                    }
-                /> :
-                <List
-                    values={itemsCorrectOrder}
-                    onChange={({ oldIndex, newIndex }) => {
-                        setItemsCorrectOrder(arrayMove(itemsCorrectOrder, oldIndex, newIndex))
-                    }
-                    }
-                    renderList={({ children, props }) => <ul {...props}>{children}</ul>}
-                    renderItem={({ value, props }) => {
-                        return <li className="eventOrderClass correctOrder" {...props} disabled={true}><ShreddedPiece isShreddedLetterCorrect={isShreddedLetterCorrect}>{value}</ShreddedPiece></li>
-                    }
-                    }
-                />}
+                {!isShreddedLetterCorrect ?
+                    <List
+                        values={itemsToOrder}
+                        onChange={({ oldIndex, newIndex }) => {
+                            setItemsToOrder(arrayMove(itemsToOrder, oldIndex, newIndex))
+                        }
+                        }
+                        renderList={({ children, props }) => <ul {...props}>{children}</ul>}
+                        renderItem={({ value, props }) => {
+                            return <li className="eventOrderClass" {...props} disabled={true}><ShreddedPiece isShreddedLetterCorrect={isShreddedLetterCorrect}>{value}</ShreddedPiece></li>
+                        }
+                        }
+                    /> :
+                    <List
+                        values={itemsCorrectOrder}
+                        onChange={({ oldIndex, newIndex }) => {
+                            setItemsCorrectOrder(arrayMove(itemsCorrectOrder, oldIndex, newIndex))
+                        }
+                        }
+                        renderList={({ children, props }) => <ul {...props}>{children}</ul>}
+                        renderItem={({ value, props }) => {
+                            return <li className="eventOrderClass correctOrder" {...props} disabled={true}><ShreddedPiece isShreddedLetterCorrect={isShreddedLetterCorrect}>{value}</ShreddedPiece></li>
+                        }
+                        }
+                    />}
                 <MessageContainer bgColor="white">
-                {message ? <h3>{message}</h3> : null}
-                {isShreddedLetterCorrect ? <NextPageButton destination="office" margin=".5em auto">Go to Office</NextPageButton> : <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton>}
-                    </MessageContainer>
+                    {message ? message : null}
+                    {isShreddedLetterCorrect ? <NextPageButton destination="office" margin=".5em auto">Go to Office</NextPageButton> : <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton>}
+                </MessageContainer>
             </EventsContainer>
         </>
     );

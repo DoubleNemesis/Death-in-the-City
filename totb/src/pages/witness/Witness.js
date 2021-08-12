@@ -1,16 +1,9 @@
 import { useState, useEffect, useContext } from 'react'
-import PageContainer from '../../containers/PageContainer'
-import Title from '../../generalComponents/Title'
 import NextPageButton from '../../generalComponents/NextPageButton'
+import {TaskMessage, SuccessEmoji} from '../../generalComponents/TaskMessage'
 import Door from '../door/Door'
-import {DeskTopFiller} from '../door/doorComponents/DoorComponents'
 import House from '../house/House'
-import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalComponents/InfoModal'
-import { history, useHistory } from 'react-router-dom'
 import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
-import Pencil from './../../images/task.png'
-import Tick from './../../images/tick.png'
-import Cross from './../../images/cross.png'
 import {
     Instructions,
     Conversation,
@@ -20,8 +13,6 @@ import {
     StyledArtefact,
     StyledFoundArtefact,
     WitnessContainer,
-    TaskMessage,
-    TaskImage,
     WitnessIntroBox
 
 } from './witnessComponents/Layout'
@@ -30,26 +21,13 @@ import { Inside } from '../door/doorComponents/DoorComponents'
 
 let counter = 0
 let fullConversation = []
-const Task = () => {
-    return <TaskMessage><TaskImage src={Pencil} />
-        Task: Read the conversation and choose the best reply from the options below
-    </TaskMessage>
-}
-const TaskCorrect = () => {
-    return <TaskMessage><TaskImage src={Tick} />
-        Correct! Choose the next reply.
-    </TaskMessage>
-}
-const TaskInCorrect = () => {
-    return <TaskMessage><TaskImage src={Cross} />
-        That's incorrect. Try again.
-    </TaskMessage>
-}
+const taskText = `Task: Read the conversation and choose the best reply from the options below`
+const taskCorrect = `Correct! Choose the next reply.`
+const taskIncorrect = `That's incorrect. Try again.`
 
 function WitnessComp(props) {
-    // console.log(props);
     const [questions, setQuestions] = useState([])
-    const [rightWrong, setRightWrong] = useState(<Task />)
+    const [rightWrong, setRightWrong] = useState(<TaskMessage task="true" message={taskText}/>)
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
     const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
@@ -93,7 +71,7 @@ function WitnessComp(props) {
     function handleClick(e) {
         if (e.target.classList.contains('success')) {
             counter = counter + 1
-            setRightWrong(<TaskCorrect/>)
+            setRightWrong(<TaskMessage correct="true" message={taskCorrect}/>)
             e.target.classList.add('correct')
             let listToHide = document.querySelectorAll('.question');
             setTimeout(() => {
@@ -105,7 +83,7 @@ function WitnessComp(props) {
                     setQuestionList(props.questionsWit2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
-                        setRightWrong(<Task />)
+                        setRightWrong(<TaskMessage task="true" message={taskText}/>)
                         const conversationEnd = document.getElementById('conversationBottom')
                     }
                     else {
@@ -153,7 +131,7 @@ function WitnessComp(props) {
         }
         else {
             e.target.classList.add('wrong')
-            setRightWrong(<TaskInCorrect/>)
+            setRightWrong(<TaskMessage incorrect="true" message={taskIncorrect}/>)
             //minus points
         }
     }
@@ -190,10 +168,10 @@ function WitnessComp(props) {
                             <InfoBox>
                                 {isArtefactClicked ?
                                     <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>
-                                        You found the "{props.artefactName}"!
-                                        <NextPageButton destination={props.binCheck}>Check the bin</NextPageButton>
-                                        <NextPageButton destination={props.trialURL}>Do the challenge</NextPageButton>
-                                        <NextPageButton destination="office">Back to Office</NextPageButton>
+                                        <SuccessEmoji width="80" borderColor="gold" message={`You found the "${props.artefactName}"!`}/>
+                                        <NextPageButton destination={props.binCheck} margin="1em auto .5em auto">Check the bin</NextPageButton>
+                                        <NextPageButton destination={props.trialURL} margin=".5em auto">Do the challenge</NextPageButton>
+                                        <NextPageButton destination="office" margin=".5em auto">Back to Office</NextPageButton>
                                     </StyledFoundArtefact>
                                     : rightWrong}
                             </InfoBox>

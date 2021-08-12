@@ -1,11 +1,11 @@
 import { useEffect, useState, useContext } from 'react'
-import { history, useHistory } from 'react-router-dom'
 import Container, {StyledAnswersContainer} from './vocabComponents/VocabContainer'
 import { vocabData as data } from '../../data/lessonData'
 import GameContext from '../../context/GameContext'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import client from '../../images/client.jpg'
+import teacher from '../../images/teacher.png'
 import { officeCards } from '../../data/lessonData'
 import './VocabStyles.css'
 
@@ -13,8 +13,6 @@ function VocabPage() {
     const { hasDoneVocab, setHasDoneVocab } = useContext(GameContext)
     const { collectedWitnesses, setCollectedWitnesses } = useContext(GameContext)
     const {bubbleText1, bubbleText2} = data
-    console.log(hasDoneVocab);
-    let history = useHistory()
 
     let questions = data.vocabA.map((item, index) => {
         return (
@@ -49,6 +47,7 @@ function VocabPage() {
                             secondCard.classList.remove('card')
                             firstCard.innerHTML += `<span class="correctTileTick">${counter}</span>`;
                             secondCard.innerHTML += `<span class="correctTileTick">${counter}</span>`;
+                            console.log(selectedCards)
                             selectedCards = [] //delete?
                             if (counter === 10) {
                                 console.log('finished');
@@ -61,7 +60,6 @@ function VocabPage() {
                             else {
                                 counter++
                             }
-
                         }
                         else {
                             firstCard.classList.add('wrong')
@@ -85,9 +83,11 @@ function VocabPage() {
     })
 
 
+
+
     return (
         <div className="vocabPage">
-            <SpeechBubbleLeft image={client} bubbleWidth="90">
+            <SpeechBubbleLeft image={teacher} bubbleWidth="90">
             {!hasDoneVocab ? bubbleText1 : bubbleText2 }
             {hasDoneVocab ? <div><NextPageButton destination="office" margin=".5em auto">Go to the office!</NextPageButton></div> : null }
             </SpeechBubbleLeft>

@@ -5,7 +5,7 @@ grid-area: conversation;
 display: flex;
 flex-direction: column;
 width: 100%;
-border: 1px solid red;
+/* border: 1px solid red; */
 
 @media(min-width:1025px){
     flex-direction: row;

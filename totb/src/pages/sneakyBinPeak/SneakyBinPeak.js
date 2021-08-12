@@ -120,6 +120,10 @@ font-family: 'Poppins';
     display: flex;
     flex-direction: column;
 }
+
+@media(min-width:1025px){
+    width: 40%;
+}
 `
 
 
@@ -172,7 +176,7 @@ function Sneaky(props){
     return(
         <>
             <YardContainer yardImage={props.yardImage}>
-                <ThoughtContainer><SpeechBubbleRight minHeight="90" bubbleWidth="40">{thought}</SpeechBubbleRight></ThoughtContainer>
+               {!isArtefactClicked ?  <ThoughtContainer><SpeechBubbleRight minHeight="90" bubbleWidth="40">{thought}</SpeechBubbleRight></ThoughtContainer> : null}
             <StyledBinContainer>
                 
             {openBin ? <StyledBinArtefact src={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}

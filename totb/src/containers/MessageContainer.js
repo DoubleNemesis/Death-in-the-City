@@ -18,7 +18,7 @@ h3{
 }
 
 @media(min-width: 1025px){
-    width: 50%;
+    width: 80%;
     padding: 1em;
     border-radius: 5px;
     border: 3px solid #141414;

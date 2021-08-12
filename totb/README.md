@@ -1,28 +1,23 @@
-instructions come from teacher avatar and each task has a task sign
-better words list after vocab?
-trial task icons...green tick, red cross
-button in final speech bubble?? or my speech witness comp?
-too much opacity on seen witness?
-what happens when click competed challenge?
-more witness info words
-style of found artefacts in office inc text above
-challenge pop up style diff to artefact only
-door component....scrap and just have pic of house...click to enter? mobile and desktop? OR scrap door component and use their house / yard as background for convo??
-witness multiple buttons like kirsten desktop view problem
-on hover for aretafcts witness
-sneaky cant see speachbubble
-"i didnt see anything of crime" change?
-can check kirsten's bin twice
-kirsten doesnt grey out
-style police statement like medical one ordervents
-ordervents render buttons and update speech bubble to show that u get extra data
-lucy - no door
-lucy conversation desktop "No. It's too dangerous. I can't help you." too short and last line too!!
-love letter on paper on desk? yes
-loveletter button pink on active?
-can't get to bin after task?
-alt texts!
-localstorage??
+***door component....scrap and just have pic of house...click to enter? mobile and desktop? OR scrap door component and use their   house / yard as background for convo??
+**lucy - no door
+
+*more witness info words
+*How to play instructions homepage
+*lucy conversation desktop "No. It's too dangerous. I can't help you." too short and last line too!!
+more info on order events
+
+**better words list after vocab?
+**challenge pop up style diff to artefact only??
+*style police statement like medical one ordervents
+**love letter on paper on desk? yes
+
+
+
+**alt texts!
+***localstorage??
+
+
+**what happens when click completed challenge?
 
 
 

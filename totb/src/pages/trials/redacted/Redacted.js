@@ -10,18 +10,23 @@ import { StatementContainer, RedactedTextComp, Container } from './redactedCompo
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import wendyPic from '../../../images/wendy.jpg'
-import {FrontPageButton} from '../../../generalComponents/GeneralButton'
+import { FrontPageButton } from '../../../generalComponents/GeneralButton'
 import { MessageContainer } from '../../../containers/MessageContainer'
+import {TaskMessage} from '../../../generalComponents/TaskMessage'
 
 
 
 function Redacted(props) {
 
-    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
-    const {isRedactedCorrect, setIsRedactedCorrect} = useContext(GameContext)
+    const taskText = `Hit check when finished`
+    const taskCorrect = `Correct!`
+    const taskIncorrect = `That's incorrect. Try again.`
+
+    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { isRedactedCorrect, setIsRedactedCorrect } = useContext(GameContext)
     // const [isRedactedCorrect, setIsRedactedCorrect] = useState(false)
     const [redactedInputs, setRedactedInputs] = useState({})
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState(<TaskMessage task="true" message={taskText}/>)
     const { instructions, missingWords } = redactedData
 
     function handleInputChange(e) {
@@ -32,15 +37,15 @@ function Redacted(props) {
 
     function handleCheck() {
         let arrayOfAnswers = []
-        if (Object.values(redactedInputs).toString() === missingWords.toString()){
-            setMessage( 'Correct!')
+        if (Object.values(redactedInputs).toString() === missingWords.toString()) {
+            setMessage(<TaskMessage correct="true" message={taskCorrect}/>)
             setIsRedactedCorrect(true)
             let dummyCompletedChallenges = [...completedChallenges]
             dummyCompletedChallenges.push(props.artefactName)
             setCompletedChallenges(dummyCompletedChallenges)
         }
-        else{
-            setMessage('Incorrect, try again!')
+        else {
+            setMessage(<TaskMessage incorrect="true" message={taskIncorrect}/>)
             setIsRedactedCorrect(false)
         }
     }
@@ -52,9 +57,9 @@ function Redacted(props) {
             <Container>
 
                 <StatementContainer>
-                <SpeechBubbleLeft image={wendyPic} >
-                    {instructions}
-                </SpeechBubbleLeft>
+                    <SpeechBubbleLeft image={wendyPic} >
+                        {instructions}
+                    </SpeechBubbleLeft>
                     <RedactedComp
                         onchange={handleInputChange}
                         name1="name1"
@@ -70,10 +75,10 @@ function Redacted(props) {
                     />
                     {/* <button onClick={handleCheck}>Check</button> {message} */}
                     <MessageContainer>
-                    {!isRedactedCorrect ? <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton> : null}
-                        <h3>{message}</h3>
-                    {isRedactedCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
-                        </MessageContainer>
+                        {message}
+                        {!isRedactedCorrect ? <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton> : null}
+                        {isRedactedCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
+                    </MessageContainer>
                 </StatementContainer>
             </Container>
         </>

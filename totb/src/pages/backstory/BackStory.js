@@ -3,6 +3,7 @@ import NextPageButton from './../../generalComponents/NextPageButton'
 import { backStoryData } from './../../data/lessonData'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
 import client from '../../images/client.jpg'
+import teacher from '../../images/teacher.png'
 
 
 function Home() {
@@ -13,7 +14,7 @@ function Home() {
     return (
         <>
             <MainContainer>
-                <SpeechBubbleLeft image={client}>
+                <SpeechBubbleLeft image={teacher}>
                     {backStoryText}
                 </SpeechBubbleLeft>
                 <NextPageButton destination="vocab">Vocabulary Test</NextPageButton>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PageContainer from '../../containers/PageContainer'
 import { MessageContainer } from '../../containers/MessageContainer'
 import { FrontPageButton } from '../../generalComponents/GeneralButton'
@@ -8,16 +8,32 @@ import clientPic from './../../images/client.jpg'
 import policeofficer from './../../images/policeofficer.png'
 import DallasPic from './../../images/dallas.jpg'
 import { Form } from './endPageComponents/EndPageComponents'
+import Confetti from 'react-dom-confetti';
 
 function EndPage() {
 
     const [chosenOption, setChosenOption] = useState('default')
+    const [confetti, setConfetti] = useState(false)
     const [textInputText, setTextInputText] = useState('I think ... did it because...')
     const [suspectIsCorrect, setSuspectIsCorrect] = useState(false)
     const [reasonIsCorrect, setReasonIsCorrect] = useState(false)
     const [displayMessage, setDisplayMessage] = useState(false)
     const { characterNames } = lessonData['characterNames'];
     const { bubbleText1, bubbleText2, bubbleText3, bubbleText4, explanation, police1, police2 } = lessonData.endPageData
+
+    const config = {
+        angle: "180",
+        spread: 360,
+        startVelocity: "36",
+        elementCount: "200",
+        dragFriction: "0.09",
+        duration: "30000",
+        stagger: "5",
+        width: "13px",
+        height: "12px",
+        perspective: "996px",
+        colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+      };
 
     function handleSelectInput(e) {
         setChosenOption(e.target.value)
@@ -37,6 +53,7 @@ function EndPage() {
                 setReasonIsCorrect(true)
             }
             console.log('success');
+
         }
         setDisplayMessage(true)
     }
@@ -44,10 +61,18 @@ function EndPage() {
     console.log(suspectIsCorrect);
     console.log(reasonIsCorrect);
 
+    useEffect(()=>{
+        if (suspectIsCorrect && reasonIsCorrect){
+            setConfetti(true)
+        }
+    },[suspectIsCorrect, reasonIsCorrect ])
+
 
     return (
         <>
             <PageContainer>
+                <h3>Game Over</h3>
+<Confetti active={confetti} config={config} />
                 <SpeechBubbleLeft image={clientPic}>{
 
                     !displayMessage ? bubbleText1 :
@@ -56,7 +81,7 @@ function EndPage() {
                                 !suspectIsCorrect && reasonIsCorrect ? bubbleText3 :
                                     bubbleText2
                 }</SpeechBubbleLeft>
-                <Form>
+{   !displayMessage ?             <Form>
                     <select value={chosenOption} onChange={handleSelectInput}>
                         <option disabled selected value="default"> -- select a suspect -- </option>
                         <option value={characterNames[1]}>{characterNames[1]}</option>
@@ -67,14 +92,14 @@ function EndPage() {
                     </select>
                     <textarea onChange={handleTextInput} name="textInput" value={textInputText}  />
                     <FrontPageButton onclick={handleSubmit} bgColor="red">Make Allegation</FrontPageButton>
-                </Form>
+                </Form> :null}
 
                 {
                     displayMessage ?
-                        suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="limegreen">You did it!</MessageContainer> :
-                            suspectIsCorrect && !reasonIsCorrect ? <MessageContainer bgColor="skyblue">Right person wrong reason!</MessageContainer> :
-                                !suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="skyblue">Wrong person right reason!</MessageContainer> :
-                                    <MessageContainer bgColor="red">Completely Wrong</MessageContainer>
+                        suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="limegreen">Congratulations! You did it! Excellent!</MessageContainer> :
+                            suspectIsCorrect && !reasonIsCorrect ? <MessageContainer bgColor="red">Right person wrong reason. 5/10</MessageContainer> :
+                                !suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="red">Wrong person right reason. 5/10</MessageContainer> :
+                                    <MessageContainer bgColor="red">Completely Wrong. 0/10</MessageContainer>
                         :
                         null
                 }

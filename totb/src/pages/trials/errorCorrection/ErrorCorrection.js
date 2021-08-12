@@ -146,7 +146,12 @@ function ErrorCorrection(props) {
                         {/* {!isComplete1 ? instructions : !isErrorCorrectionComplete ? instructions2 : instructions3} */}
                     </SpeechBubbleLeft>
 
-                    {isErrorCorrectionCorrect ?  <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton> : isComplete1 ? secondSentenceList : firstSentenceList}
+                    {isErrorCorrectionCorrect ?  
+                    <>
+                    <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton> 
+                    <NextPageButton destination='office'>Back to Office</NextPageButton> 
+                    </>
+                    : isComplete1 ? secondSentenceList : firstSentenceList}
                     {/* {!isComplete1 ? firstSentenceList : !isErrorCorrectionComplete ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>} */}
                    {incorrectMessage ? <MessageContainer bgColor="red"> {incorrectMessage}</MessageContainer> : null}
                 </ErrorCorrectionContainer>

@@ -20,8 +20,9 @@ border-radius: 5px;
 export const ArtefactDisplay = styled.div`
 display: flex;
 flex-direction: column;
-width: 100%;
+width: 60%;
 justify-content: center;
+align-items: center;
 `
 export const WitnessCard = styled.div`
 width: 120px;
@@ -84,14 +85,13 @@ img{
 
     img{
     height: 100px;
+    height: 35%;
     }
 }
 @media(min-width: 1025px){
-
     height: 170px;  
-
     img{
-    height: 75px;
+    height: 50%;
 }
 
 }

@@ -9,6 +9,7 @@ import WitnessButton from './../../generalComponents/WitnessButton'
 import { SpeechBubbleLeft } from './../../generalComponents/ConversationComponents'
 import scroll from './../../images/scroll.png'
 import client from '../../images/client.jpg'
+import teacher from '../../images/teacher.png'
 
 
 // const ActionCard = styled.div`
@@ -112,14 +113,14 @@ function Office() {
             <Container>
 
                 {isInstructionsModalDisplayed ?
-                    <SpeechBubbleLeft image={client} >
+                    <SpeechBubbleLeft image={teacher} >
                         {officeBubbleText}
                     </SpeechBubbleLeft>
                     :
                     null}
 
                 {/* </StyledModal> */}
-                <StyledModal display={isArtefactModalDisplayed ? 'block' : 'none'}>
+                <StyledModal display={isArtefactModalDisplayed ? 'flex' : 'none'}>
                     <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} /></ArtefactDisplay>
                     <ToggleContainer>
                         <ToggleTaskInfo

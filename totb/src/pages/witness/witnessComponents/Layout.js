@@ -10,10 +10,7 @@ const animateBorder = keyframes`
 from { box-shadow: 0px 0px 10px 5px red; }
 to { box-shadow: 0px 0px 10px 5px orange; }
 `
-export const TaskImage = styled.img`
-width: 40px;
-margin-right: .5em;
-`
+
 
 export const WitnessContainer = styled.div`
 
@@ -121,23 +118,28 @@ box-shadow: 0px 0px 40px 10px red;
 `
 
 export const StyledFoundArtefact = styled.div`
+display: flex;
+flex-direction: column;
 opacity: 0;
 margin: 5%;
 width: auto;
 font-size: 1.3rem;
-padding: 1em 0 0 0;
+padding: 1em 0 1em 0;
 text-align: center;
-background-color: white;
+background-color: whitesmoke;
 animation: ${({ isArtefactClicked }) => isArtefactClicked ? fadeIn : null} 1s;
 animation-delay: .1s;
 animation-fill-mode: forwards;
 border-radius: 5px;
 z-index: ${({ isArtefactClicked }) => isArtefactClicked ? 10 : 0};
+
+@media(min-width: 1025px){
+    border: 4px solid gold;
+}
 `
 
 export const QuestionOption = styled.button`
 background-color: transparent;
-/* border-bottom: 1px solid #999; */
 font-family: 'Poppins';
 font-size: 1.2rem;
 border-radius: 2px;
@@ -164,17 +166,7 @@ div{
 
 
 `
-export const TaskMessage = styled.div`
-background-color: whitesmoke;
-width: 100%;
-padding: .5em .5em;
-font-weight: 700;
 
-@media(min-width:1025px){
-    border: 4px #141414 solid;
-  border-radius: 5px;
-}
-`
 
 const WitnessIntroContainer = styled.div`
 display: flex;

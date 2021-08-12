@@ -10,7 +10,7 @@ import Draggable from 'react-draggable';
 import { loveLetterData } from '../../../data/lessonData'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
-import clientPic from '../../../images/client.jpg'
+import teacher from '../../../images/teacher.png'
 
 
 function LoveLetter(props) {
@@ -102,7 +102,7 @@ function LoveLetter(props) {
         <>
 
             <Conversation>
-                <SpeechBubbleLeft image={clientPic} >
+                <SpeechBubbleLeft image={teacher} >
                     { !isSuccessMessageDisplayed ? instructions : successMessage }
                 </SpeechBubbleLeft>
                 <LoveLetterMainContainer>
