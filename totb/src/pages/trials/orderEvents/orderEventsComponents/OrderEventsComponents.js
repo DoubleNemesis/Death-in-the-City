@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import policeReportBG from '../../../../images/policeReportBG.png'
 
 export const Container = styled.div`
 grid-area: conversation;
@@ -53,6 +54,8 @@ li{
 `
 export const ParagraphContainer = styled.div`
 background-color: white;
+background-image: url(${policeReportBG});
+background-repeat: repeat-x;
 width: 90%;
 min-width: 90%;
 height: auto;

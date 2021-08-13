@@ -77,26 +77,26 @@ export const characterFirstNames = {
 export const vocabData = {
     'vocabA': [
         'sidewalk',
-        'find out',
+        'hot-headed',
         'janitor',
         'delicate',
         'unfaithful',
         'tough',
         'cry',
         'weird',
-        'weak',
+        'changeable',
         'fall',
     ],
     'vocabB': [
         'pavement',
-        'discover',
+        'impulsive',
         'caretaker',
         'fragile',
         'adulterous',
         'strong',
         'weep',
         'strange',
-        'feeble',
+        'erratic',
         'plummet',
     ],
     'bubbleText1': [
@@ -370,7 +370,7 @@ export const questionsWitness1 = {
         `Hi! I'm investigating the death of Lexington Grey. Are you the janitor here at Kaplinsky Tower?`
     ],
     witnessInfo1: [
-        `Tony Monceto is the janitor at Kaplinksy Tower, where Lexington Grey lived and died.`
+        `Tony Monceto is the janitor at Kaplinksy Tower, where Lexington Grey lived and died. He was not at the party and is not a suspect, but probably has some useful info.`
     ]
 }
 
@@ -405,7 +405,7 @@ export const questionsWitness2 = {
         'Hmm...I need to try something different.'
     ],
     witnessInfo2: [
-        `Chay Madz is an old friend of Lexington and was at the dinner party the night he died.`
+        `Chay Madz is an old friend of Lexington and was at the dinner party the night he died. He's known to be hot-headed and bad-tempered, so watch out for him. `
     ]
 }
 
@@ -439,7 +439,7 @@ export const questionsWitness3 = {
         'Help her!'
     ],
     witnessInfo3: [
-        `kirsten Stein was romantically involved with Lexington.`
+        `kirsten Stein was romantically involved with Lexington. Did she have reason to be angry with him? Had he left her for another woman? These are all things you should try to find out.`
     ],
     speechBubbleText3: [
         `Hi! I'm investigating the death of Lexington Grey. I'm really sorry for your loss. Do you mind me asking a few questions?'`
@@ -477,7 +477,7 @@ export const questionsWitness4 = {
         'Read the statement'
     ],
     witnessInfo4: [
-        `Dallas Franks met Lexington while filming. They have known each other ever since.`
+        `Dallas Franks met Lexington while filming. They have known each other ever since. He is known to be a kind man but has behaved rather eratically since his mother died of Corona virus.`
     ]
 }
 
@@ -511,7 +511,7 @@ export const questionsWitness5 = {
         'We need another plan!'
     ],
     witnessInfo5: [
-        `Lucy Light is often said to be a flirt and an attention seeker. Wives and girlfriends hate her.`
+        `Lucy Light is often said to be a flirt and an attention-seeker. Wives and girlfriends hate her. There have been rumours about her and Lexington.`
     ],
     speechBubbleText5: [
         `Hi! I'm investigating the death of Lexington Grey. I want to ask you about your relationship with him.`
@@ -552,7 +552,7 @@ export const questionsWitness6 = {
         `Hi! I'd like to ask you some questions about Lexington Grey. Is it true your friend Chay threatened him?`
     ],
     witnessInfo6: [
-        `Wendy Rose used to be in a relationship with Chay. Now she barely speaks to him.`
+        `Wendy Rose used to be in a relationship with Chay. Now she barely speaks to him. Whether or not she had any reason to hate Lexington is unknown but it is thought to be unlikely.`
     ]
 }
 

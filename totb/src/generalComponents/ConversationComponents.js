@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import GameContext from './../context/GameContext'
 
 const StyledSpeechBubble = styled.div`
-
 .bubble, .bubbleRight{
     position: relative;
     font-family: sans-serif;

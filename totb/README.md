@@ -1,31 +1,16 @@
-***door component....scrap and just have pic of house...click to enter? mobile and desktop? OR scrap door component and use their   house / yard as background for convo??
+
 **lucy - no door
 
-*more witness info words
 *How to play instructions homepage
-*lucy conversation desktop "No. It's too dangerous. I can't help you." too short and last line too!!
-more info on order events
-
-**better words list after vocab?
-**challenge pop up style diff to artefact only??
-*style police statement like medical one ordervents
-**love letter on paper on desk? yes
-
-
-
 **alt texts!
 ***localstorage??
 
 
 **what happens when click completed challenge?
 
+tomorrow: style house comp
 
 
-
-
-    Text
-
-    End
 
 house 5Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/s/photos/house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

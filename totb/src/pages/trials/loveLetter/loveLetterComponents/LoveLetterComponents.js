@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { SpeechBubbleLeft, SpeechBubbleRight } from '../../../../generalComponents/ConversationComponents'
 import { TextButton, TextButtonContainer } from '../../../../generalComponents/SpeechTextButton'
 import woodbg from '../../../../images/woodbg.jpg'
+import loveLetterBG from '../../../../images/loveLetterBG.png'
 
 export const SuccessMessageComp = (props)=>{
     return(
@@ -16,32 +17,55 @@ export const SuccessMessageComp = (props)=>{
     )
 }
 
+export const Container = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+
+`
+
 export const LoveLetterMainContainer = styled.div`
 display:flex;
 flex-direction: column;
 background-color: transparent;
 align-items: center;
+justify-content: center;
+background-image: url(${woodbg});
+background-size: contain;
+
+@media(min-width: 1025px){
+flex-direction: row;
+gap: 2em;
+margin-bottom: 3em;
+}
 `
 
 export const LoveLetterSymbolsContainer = styled.div`
+background-color: whitesmoke;
+
 display: flex;
 flex-wrap: wrap;
 width: 325px;
 /* border: 1px solid red; */
-background-image: url(${woodbg});
-background-size: contain;
 margin-top: 1em;
-padding: .1em;
+
+background-size: cover;
+background-repeat: repeat-y;
 
 .whiteBG{
-    background-color: white;
+    background-color: #cfd6de;
     padding: 1em;
     margin: .5em;
     font-family: 'Kalam';
 }
 
-@media(min-width: 700px){
-    width: 520px;  
+@media(min-width: 1025px){
+    background-color: unset;
+    width: 460px;  
+    min-width: 460px;
+    background-image: url(${loveLetterBG});
+    padding: 1em 1em 1em 6.5em;
+    margin-bottom: 2em;
 }
 
 `
@@ -50,6 +74,7 @@ width: 100%;
 display: flex;
 flex-wrap: wrap;
 margin-top: 2em;
+margin-bottom: 2em;
 justify-content: center;
 
 .unClickable{
@@ -58,6 +83,15 @@ justify-content: center;
     border: 1px solid #333;
     color: lightgrey;
     font-weight: 400;
+}
+
+@media(min-width: 1025px){
+    background-color: #cfd6de;
+padding: .5em;
+border-radius: 5px;
+    width: 420px;  
+    max-width: 520px;
+
 }
 `
 
@@ -77,7 +111,7 @@ font-weight: 800;
 cursor: pointer;
 
 @media(min-width: 700px){
-    width: 60px;  
+    /* width: 60px;   */
 }
 
 
@@ -97,7 +131,7 @@ color: yellow;
 cursor: pointer;
 
 @media(min-width: 700px){
-    width: 40px;  
+    /* width: 40px;   */
 }
 
 `

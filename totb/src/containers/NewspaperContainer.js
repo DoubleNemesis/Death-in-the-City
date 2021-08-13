@@ -71,6 +71,8 @@ cursor: pointer;
 
 :hover{
     color: red;
+    transform: scale(9.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    overflow: hidden;
 }
 
 `

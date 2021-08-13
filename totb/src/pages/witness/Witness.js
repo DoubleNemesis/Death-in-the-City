@@ -140,10 +140,11 @@ function WitnessComp(props) {
 
 
     return (
-        <WitnessContainer>
-            {!doorWasOpened ? 
-            <>
-            <Door
+
+        <>
+        {!doorWasOpened ? 
+        <>
+            <House
                 house={props.house}
                 witnessInfo={props.witnessInfo}
                 personImage={props.personImage}
@@ -153,6 +154,9 @@ function WitnessComp(props) {
                 setDoorWasOpened={setDoorWasOpened} />
                 </>
                 : null}
+
+<WitnessContainer>
+
 
             <>
                 { doorWasOpened ? <Inside>
@@ -184,6 +188,7 @@ function WitnessComp(props) {
                 <div id="pageEnd"></div>
             </>
         </WitnessContainer>
+                                        </>
 
     )
 }

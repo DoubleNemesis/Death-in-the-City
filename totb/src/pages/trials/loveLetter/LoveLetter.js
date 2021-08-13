@@ -1,8 +1,15 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import PageContainer from '../../../containers/PageContainer'
 import Title from '../../../generalComponents/Title'
-import { Instructions, Conversation, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
-import { SuccessMessageComp, LoveLetterMainContainer, LoveLetterElems, LoveLetterSymbolsContainer, LoveLetterLettersContainer, LoveLetterSpace, LoveLetterSymbolElems } from './loveLetterComponents/LoveLetterComponents'
+import { Instructions, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
+import { SuccessMessageComp, 
+    LoveLetterMainContainer, 
+    LoveLetterElems, 
+    LoveLetterSymbolsContainer, 
+    LoveLetterLettersContainer, 
+    LoveLetterSpace, 
+    LoveLetterSymbolElems,
+    Container } from './loveLetterComponents/LoveLetterComponents'
 import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
 import ProfilePic from '../../../images/chaymadz.jpg'
 import GameContext from '../../../context/GameContext'
@@ -101,7 +108,7 @@ function LoveLetter(props) {
     return (
         <>
 
-            <Conversation>
+            <Container>
                 <SpeechBubbleLeft image={teacher} >
                     { !isSuccessMessageDisplayed ? instructions : successMessage }
                 </SpeechBubbleLeft>
@@ -115,7 +122,7 @@ function LoveLetter(props) {
                     </LoveLetterLettersContainer>
                 </LoveLetterMainContainer>
 
-            </Conversation>
+            </Container>
 
         </>
 

@@ -9,9 +9,9 @@ background: linear-gradient(#666, #2E2523, #666);
 color: white;
 z-index: 5;
 display: ${({ display }) => display};
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 left:0;
 right:0;
 margin-left:auto;
@@ -34,7 +34,7 @@ p{
 }
 
 @media(min-width: 1025px){
-    display: flex;
+    display: ${({ display }) => display};
     flex-direction: column;
     width: 25%;
     align-items: center;

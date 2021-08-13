@@ -1,8 +1,17 @@
-import { WitnessIntroBox } from '../witness/witnessComponents/Layout'
-import { Inside } from '../door/doorComponents/DoorComponents'
-import { HouseDisplay, Container, InnerContainer } from './houseComponents/HouseComponents'
+import { 
+    HouseImage, 
+    HousePageContainer, 
+    InnerContainerSpeech, 
+    MapContainer, 
+    MapImage, 
+    DoorBell,
+    BellContainer,
+    HouseContainer
+ } from './houseComponents/HouseComponents'
 import { SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
-import {FrontPageButton} from '../../generalComponents/GeneralButton'
+import map from '../../images/map.png'
+import map2 from '../../images/map2.png'
+
 
 
 function House(props) {
@@ -14,20 +23,27 @@ function House(props) {
         }, 500)
     }
 
-    return (
-        <Container>
-            <InnerContainer>
-        <HouseDisplay house={props.house}/>
-            </InnerContainer>
-        <InnerContainer>
-        <Inside>
-            <WitnessIntroBox personImage={props.personImage} witnessInfo={props.witnessInfo} />
-        </Inside>
-        <SpeechBubbleRight>This looks like the place! Guess I'd better knock on the door...</SpeechBubbleRight>
-        <FrontPageButton bgColor="red" onclick={handleDoorClick}>Knock on Door</FrontPageButton>
-        </InnerContainer>
-        </Container>
+    // chay and wendy urban
+    // rest rural
 
+    return (
+        <>
+            <HousePageContainer>
+                <HouseContainer>
+                    <HouseImage src={props.house} />
+                </HouseContainer>
+                <BellContainer>
+                    <DoorBell onClick={handleDoorClick}>Knock on Door</DoorBell>
+                </BellContainer>
+                <MapContainer>
+                    <MapImage src={map2} alt="Another Image zoom-on-hover effect" />
+                </MapContainer>
+                <InnerContainerSpeech>
+                    <SpeechBubbleRight minHeight="0">This looks like the place! Guess I'd better knock on the door...</SpeechBubbleRight>
+                </InnerContainerSpeech>
+
+            </HousePageContainer>
+        </>
     )
 }
 

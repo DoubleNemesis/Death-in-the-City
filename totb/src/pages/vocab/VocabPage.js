@@ -25,6 +25,18 @@ function VocabPage() {
         )
     })
 
+    let questionsList = data.vocabA.map((item, index) => {
+        return (
+            <p key={`q${index}`}>{item}</p>
+        )
+    })
+
+    let answersList = data.vocabB.map((item, index) => {
+        return (
+            <p key={`a${index}`} >{item}</p>
+        )
+    })
+
 
     let tiles = questions.concat(answers)
 
@@ -89,7 +101,6 @@ function VocabPage() {
         <div className="vocabPage">
             <SpeechBubbleLeft image={teacher} bubbleWidth="90">
             {!hasDoneVocab ? bubbleText1 : bubbleText2 }
-            {hasDoneVocab ? <div><NextPageButton destination="office" margin=".5em auto">Go to the office!</NextPageButton></div> : null }
             </SpeechBubbleLeft>
 
             {!hasDoneVocab ?
@@ -97,9 +108,10 @@ function VocabPage() {
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
                 </Container> :
                 <Container>
+                    <div><NextPageButton destination="office" margin=".5em auto">Go to Office</NextPageButton></div>
                     <StyledAnswersContainer>
-                   <div> {questions} </div>
-                  <div>  {answers} </div>
+                   <div> {questionsList} </div>
+                  <div>  {answersList} </div>
                   </StyledAnswersContainer>
                 </Container>
 
