@@ -59,6 +59,6 @@ background-color: transparent;
 width: auto;
 padding: .5em .3em .5em 2em;
 cursor: grab;
-font-size: .9rem;
+font-size: 1rem;
 font-family: 'Kalam';
 `

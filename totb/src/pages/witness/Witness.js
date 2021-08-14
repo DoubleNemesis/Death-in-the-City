@@ -55,7 +55,7 @@ function WitnessComp(props) {
 
     useEffect(() => {
         let newConversationArray = props.conversationArray.map((item, index) => {
-            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`} minHeight="170" image={props.personImage}>{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`} minHeight="60" image={detectiveChosen}>{item}</SpeechBubbleRight>
+            return index % 2 === 0 ? <SpeechBubbleLeft key={`speechbubbleleft${index}`} minHeight="170" image={props.personImage} margin=".4">{item}</SpeechBubbleLeft> : <SpeechBubbleRight key={`speechbubbleright${index}`} margin=".4" minHeight="60" image={detectiveChosen}>{item}</SpeechBubbleRight>
         })
         fullConversation = newConversationArray
     }, [])
@@ -130,9 +130,8 @@ function WitnessComp(props) {
             }, 1000)
         }
         else {
-            e.target.classList.add('wrong')
+            // e.target.classList.add('wrong')
             setRightWrong(<TaskMessage incorrect="true" message={taskIncorrect}/>)
-            //minus points
         }
     }
 
@@ -146,11 +145,14 @@ function WitnessComp(props) {
         <>
             <House
                 house={props.house}
+                houseMessage={props.houseMessage}
                 witnessInfo={props.witnessInfo}
                 personImage={props.personImage}
-                doorImg={props.doorImg}
-                doorImgL={props.doorImgL}
-                doorTitle={props.doorTitle}
+                mapImage={props.mapImage}
+                coords={props.coords}
+                // doorImg={props.doorImg}
+                // doorImgL={props.doorImgL}
+                // doorTitle={props.doorTitle}
                 setDoorWasOpened={setDoorWasOpened} />
                 </>
                 : null}
@@ -165,7 +167,7 @@ function WitnessComp(props) {
                 {doorWasOpened ?
                     <>
                         <Conversation>
-                            <SpeechBubbleRight image={detectiveChosen}>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
+                            <SpeechBubbleRight margin=".4" image={detectiveChosen}>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
                             {conversation}
                         </Conversation>
                         <QuestionOptions>
@@ -173,9 +175,9 @@ function WitnessComp(props) {
                                 {isArtefactClicked ?
                                     <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>
                                         <SuccessEmoji width="80" borderColor="gold" message={`You found the "${props.artefactName}"!`}/>
-                                        <NextPageButton destination={props.binCheck} margin="1em auto .5em auto">Check the bin</NextPageButton>
+                                        {/* <NextPageButton destination={props.binCheck} margin="1em auto .5em auto">Check the bin</NextPageButton> */}
                                         <NextPageButton destination={props.trialURL} margin=".5em auto">Do the challenge</NextPageButton>
-                                        <NextPageButton destination="office" margin=".5em auto">Back to Office</NextPageButton>
+                                        {/* <NextPageButton destination="office" margin=".5em auto">Back to Office</NextPageButton> */}
                                     </StyledFoundArtefact>
                                     : rightWrong}
                             </InfoBox>

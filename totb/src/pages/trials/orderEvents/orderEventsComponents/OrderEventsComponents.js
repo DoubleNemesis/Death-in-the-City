@@ -60,8 +60,11 @@ width: 90%;
 min-width: 90%;
 height: auto;
 padding: 1em;
+padding-top: 6em;
 margin: 1em auto;
 font-size: 1.2rem;
+font-family: 'Courier New', Courier, monospace;
+font-weight: 700;
 
 @media(min-width:1025px){
     width: 40%;

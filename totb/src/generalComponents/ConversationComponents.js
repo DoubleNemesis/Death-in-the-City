@@ -17,7 +17,7 @@ const StyledSpeechBubble = styled.div`
     padding: 1em;
     text-align: left;
     color: ${({ textColor }) => textColor || '#000'};
-    margin: 1em;
+    margin: ${({margin})=> margin || '2'}em;
     border: 4px solid #141414;
     box-shadow: 2px 2px 4px 2px #444;
 

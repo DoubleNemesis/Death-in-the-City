@@ -7,7 +7,7 @@ import { officeBubbleText, officeCards } from '../../data/lessonData'
 import GeneralButton from './../../generalComponents/GeneralButton'
 import WitnessButton from './../../generalComponents/WitnessButton'
 import { SpeechBubbleLeft } from './../../generalComponents/ConversationComponents'
-import scroll from './../../images/scroll.png'
+import magnify from './../../images/magnify.png'
 import client from '../../images/client.jpg'
 import teacher from '../../images/teacher.png'
 
@@ -96,7 +96,7 @@ function Office() {
         }
         else {
             return (
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={scroll} /><p>Evidence</p></ArtefactCard>
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={magnify} /><p>Evidence</p></ArtefactCard>
             )
         }
 

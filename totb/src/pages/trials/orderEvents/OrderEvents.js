@@ -58,10 +58,10 @@ function OrderEvents(props) {
             <Container>
 
                 <ParagraphContainer>
+                    {orderEventsText}
                     <SpeechBubbleLeft image={teacher} >
                         {instructions}
                     </SpeechBubbleLeft>
-                    {orderEventsText}
                 </ParagraphContainer>
 
                 <EventsContainer>
@@ -80,8 +80,8 @@ function OrderEvents(props) {
 
                     <MessageContainer>
                         {message}
-                        <FrontPageButton onclick={handleCheck} bgColor="red">Check</FrontPageButton>
-                        {isOrderEventsCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
+                        
+                        {isOrderEventsCorrect ? <NextPageButton destination="sneaky3">Look in his bin</NextPageButton> : <FrontPageButton onclick={handleCheck} bgColor="red">Check</FrontPageButton>}
                     </MessageContainer>
                 </EventsContainer>
             </Container>

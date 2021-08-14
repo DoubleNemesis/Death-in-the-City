@@ -84,7 +84,7 @@ function ShreddedLetter(props) {
                         }
                         }
                     />}
-                <MessageContainer bgColor="white">
+                <MessageContainer bgColor="white" width="40">
                     {message ? message : null}
                     {isShreddedLetterCorrect ? <NextPageButton destination="office" margin=".5em auto">Go to Office</NextPageButton> : <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton>}
                 </MessageContainer>

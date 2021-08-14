@@ -5,12 +5,11 @@ import {
     MapContainer, 
     MapImage, 
     DoorBell,
-    BellContainer,
+    BtnContainer,
     HouseContainer
  } from './houseComponents/HouseComponents'
 import { SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
-import map from '../../images/map.png'
-import map2 from '../../images/map2.png'
+import { FrontPageButton } from '../../generalComponents/GeneralButton'
 
 
 
@@ -32,15 +31,18 @@ function House(props) {
                 <HouseContainer>
                     <HouseImage src={props.house} />
                 </HouseContainer>
-                <BellContainer>
-                    <DoorBell onClick={handleDoorClick}>Knock on Door</DoorBell>
-                </BellContainer>
                 <MapContainer>
-                    <MapImage src={map2} alt="Another Image zoom-on-hover effect" />
+                    <MapImage src={props.mapImage} alt="map showing witness's address."  coords={props.coords}/>
                 </MapContainer>
                 <InnerContainerSpeech>
-                    <SpeechBubbleRight minHeight="0">This looks like the place! Guess I'd better knock on the door...</SpeechBubbleRight>
+                    <SpeechBubbleRight minHeight="0" bubbleMaxWidth="90" bubbleWidth="90">
+                        {props.houseMessage || `This looks like the place! Guess I'd better go and see who's home..`}
+                    
+                    </SpeechBubbleRight>
                 </InnerContainerSpeech>
+                <BtnContainer>
+                    <FrontPageButton bgColor="red" onclick={handleDoorClick}>Pay a visit</FrontPageButton>
+                </BtnContainer>
 
             </HousePageContainer>
         </>

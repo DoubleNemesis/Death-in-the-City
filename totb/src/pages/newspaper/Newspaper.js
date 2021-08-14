@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
-import CallToActionContainer from '../../containers/NewspaperContainer'
+import NewsPaperContainer from '../../containers/NewspaperContainer'
 import MainContainer from '../../containers/MainContainer'
 import { homePageData } from '../../data/lessonData'
 import newspaper from '../../images/newspaper.png'
@@ -9,7 +9,7 @@ import newspaperInside from '../../images/newspaperInside.png'
 // lexi Photo by <a href="https://unsplash.com/@nathanmortn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">nate</a> on <a href="https://unsplash.com/s/photos/man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 // skyscraper Photo by <a href="https://unsplash.com/@jtylernix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tyler Nix</a> on <a href="https://unsplash.com/s/photos/skyscraper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
     
-function Start() {
+function Newspaper() {
 
     const {homeTitle,  homeSubtitle, homeCallToActionText, homeCallToActionTextBtn, homeCallToActionTextBtn2, homePaperAltText} = homePageData
     const [paperOpen, setPaperOpen] = useState(true)
@@ -24,22 +24,22 @@ function Start() {
             },500) 
         }
         else {
-            history.push('/backstory')
+            history.push('/vocab')
         }
     }
 
     return (
         <>
             <MainContainer>
-                <CallToActionContainer homeCallToActionTextBtn={paperOpen ? homeCallToActionTextBtn : homeCallToActionTextBtn2} 
+                <NewsPaperContainer homeCallToActionTextBtn={paperOpen ? homeCallToActionTextBtn : homeCallToActionTextBtn2} 
                 paperOpen={paperOpen} 
                 onclick={handlePaperClick}
                 >
-                    <img src={newspaperToDisplay} alt={homePaperAltText} />
-                    </CallToActionContainer>
+                    <img src={newspaperToDisplay} alt={homeCallToActionText} />
+                    </NewsPaperContainer>
             </MainContainer>
         </>
     )
 }
 
-export default Start
+export default Newspaper

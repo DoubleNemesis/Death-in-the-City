@@ -7,6 +7,11 @@ justify-content: center;
 flex-direction: column;
 align-items: center;
 /* margin-bottom: 1em; */
+
+@media(min-width:1025px){
+    flex-direction: row;
+}
+
 `
 
 function MainContainer({children}){

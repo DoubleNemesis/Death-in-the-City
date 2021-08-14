@@ -7,13 +7,15 @@ flex-wrap: wrap;
 width: 100%;
 justify-content: center;
 background-image: url(${woodbg});
-background-size: contain;
+background-repeat: no-repeat;
+background-size: cover;
 padding: 1em;
 border-radius: 5px;
 
 @media(min-width: 1025px){
     width: 60%;
-    margin: 0 auto;
+    margin: 0em auto;
+    padding-bottom: 3em;
 }
 
 `

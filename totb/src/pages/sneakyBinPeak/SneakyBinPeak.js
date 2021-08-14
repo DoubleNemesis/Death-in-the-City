@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import { history, useHistory } from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
 import bin from '../../images/bin.png'
+import teacher from '../../images/teacher.png'
 import binlid from '../../images/binlid.png'
 // import chayYard from '../../images/chayYard.jpg'
 import PageContainer from '../../containers/PageContainer'
@@ -153,7 +154,7 @@ function Sneaky(props){
     const [openBin, setOpenBin] = useState(false)
     const [isArtefactDisplayed, setIsArtefactDisplayed] = useState(false)
     const [isArtefactClicked, setIsArtefactClicked] = useState(false)
-    const [thought, setThought] = useState(`Time to get my hands dirty! (Click the lid to open the bin!)`)
+    const [thought, setThought] = useState(props.text || `Time to get your hands dirty! (Click the lid to open the bin!)`)
     let history = useHistory()
 
    function handleLidClick(){
@@ -161,8 +162,8 @@ function Sneaky(props){
         setIsArtefactDisplayed(true)
         setThought(
             props.hasArtefact ? 
-            `Oh! What's this!! It's a Challenge! Interesting...I'll click on it and take it with me...` :
-            `This isn't a Challenge, but might be useful info. I'll take it with me in just in case...`
+            `Oh! What's this!! It's a Challenge! Interesting...Click on it and take it with you. You can access it from your office.` :
+            `This isn't a Challenge, but it might be useful info. Take it with you just in case...You can view it in your office.`
             )
     }
 
@@ -176,7 +177,7 @@ function Sneaky(props){
     return(
         <>
             <YardContainer yardImage={props.yardImage}>
-               {!isArtefactClicked ?  <ThoughtContainer><SpeechBubbleRight minHeight="90" bubbleWidth="40">{thought}</SpeechBubbleRight></ThoughtContainer> : null}
+               {!isArtefactClicked ?  <ThoughtContainer><SpeechBubbleLeft image={teacher} minHeight="90" bubbleWidth="40">{thought}</SpeechBubbleLeft></ThoughtContainer> : null}
             <StyledBinContainer>
                 
             {openBin ? <StyledBinArtefact src={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}

@@ -77,7 +77,7 @@ function Redacted(props) {
                     <MessageContainer>
                         {message}
                         {!isRedactedCorrect ? <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton> : null}
-                        {isRedactedCorrect ? <NextPageButton destination="office">Go to Office</NextPageButton> : null}
+                        {isRedactedCorrect ? <NextPageButton destination="sneaky5">Check her bin</NextPageButton> : null}
                     </MessageContainer>
                 </StatementContainer>
             </Container>

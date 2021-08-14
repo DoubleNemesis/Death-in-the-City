@@ -1,40 +1,35 @@
-
-**lucy - no door
-
-*How to play instructions homepage
+*change detective images
 **alt texts!
-***localstorage??
-
+backstory not happy - add ambulance picture
+House comp change picture res....chey and lucy
+check vertical center on desktop for challenges
 
 **what happens when click completed challenge?
+do credits
 
-tomorrow: style house comp
+crimescene Photo by <a href="https://unsplash.com/@visuals_by_campbell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Campbell Jensen</a> on <a href="https://unsplash.com/s/photos/crime-scene?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 
-
+dallas house Photo by <a href="https://unsplash.com/@webaliser?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ярослав Алексеенко</a> on <a href="https://unsplash.com/s/photos/house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+tonyyard Photo by <a href="https://unsplash.com/@jtylernix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tyler Nix</a> on <a href="https://unsplash.com/s/photos/skyscraper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 house 5Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/s/photos/house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 brick Photo by <a href="https://unsplash.com/@neonbrand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NeONBRAND</a> on <a href="https://unsplash.com/s/photos/brick?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 woodbg codebox Photo by <a href="https://unsplash.com/@adijoshi11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aditya Joshi</a> on <a href="https://unsplash.com/s/photos/wood-texture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 wallbg codebox Photo by <a href="https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/s/photos/brick-texture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 wendyYard Photo by <a href="https://unsplash.com/@greg_nunes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Greg & Lois Nunes</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
   
 lucy yard Photo by <a href="https://unsplash.com/@dakotalim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dakota Lim</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-  
-dallasYard Photo by <a href="https://unsplash.com/@andywatkins?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andy Watkins</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+Photo by <a href="https://unsplash.com/@feiffert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Frank Eiffert</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 kersten yard Photo <a href="https://unsplash.com/@dougvos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Doug Vos</a> on <a href="https://unsplash.com/s/photos/yard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
   
 bodybuilder Photo by <a href="https://unsplash.com/@johnarano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">John Arano</a> on <a href="https://unsplash.com/s/photos/weight-lifting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

@@ -47,6 +47,7 @@ width: 100%;
 
 @media(min-width:1025px){
     flex-direction: row;
+    justify-content: space-between;
 }
 `
 

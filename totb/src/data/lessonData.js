@@ -25,7 +25,7 @@ export const homePageData = {
     The police are calling it suicide...
     `],
     homeCallToActionTextBtn: [`Full story on page TWO!`],
-    homeCallToActionTextBtn2: [`READY to turn detective?`],
+    homeCallToActionTextBtn2: [`READY for some Vocab?`],
     homePaperAltText: [`Newspaper article describing how Lexington Grey fell from the top of the tower block and how the police think it was suicide and his dad thinks it was murder.`]
 }
 
@@ -38,8 +38,8 @@ export const startPageBlurb = {
 //Backstory page
 export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
-    backStoryText: [`I'm your teacher and I'm here to guide you through your tasks. 
-    Before we do anything else, let's take a look at some of the vocabulary you're going to meet today.`],
+    backStoryText: [`Hello there! I'm your teacher and I'm here to guide you through your tasks as you solve this crime. 
+    First, read this short newspaper article to get up to speed, and then let's take a look at some of the vocabulary you're going to meet today.`],
     backStoryText2: [`I'm Terence Grey. So you think you're ready to turn detective? I hope so, because you've got work to do! 
 Lexington Grey wasn't just anyone. That boy was my son, and he was murdered! Don't believe the rubbish the police said. Your job is to find out who killed him. First you need to show me you're capable.
  Get this vocabulary right and then we're in business!`],
@@ -439,7 +439,7 @@ export const questionsWitness3 = {
         'Help her!'
     ],
     witnessInfo3: [
-        `kirsten Stein was romantically involved with Lexington. Did she have reason to be angry with him? Had he left her for another woman? These are all things you should try to find out.`
+        `German national kirsten Stein was romantically involved with Lexington. Did she have reason to be angry with him? Had he left her for another woman? These are all things you should try to find out.`
     ],
     speechBubbleText3: [
         `Hi! I'm investigating the death of Lexington Grey. I'm really sorry for your loss. Do you mind me asking a few questions?'`
@@ -740,7 +740,7 @@ export const orderEventsData = {
 
 //loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
-    instructions: [`It looks like Lucy and her lover communicate in code. If we want to read this love letter, we need to break the word code. 
+    instructions: [`It looks like Lucy and her lover communicate in some kind of mystical ancient code. If we want to read this love letter, we need to break the word code. 
     Each symbol represents a letter. Just tap a letter and then tap the symbol you think represents that letter. All other identical 
     symbols will change to that letter.
     If you need a clue, think what four-letter word a letter usually starts with.

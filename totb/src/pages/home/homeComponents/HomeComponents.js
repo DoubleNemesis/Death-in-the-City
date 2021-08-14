@@ -35,7 +35,7 @@ flex-direction: row-reverse;
 
 p{
     margin: 1em;
-    font-size: .9rem;
+    font-size: 1.2rem;
     color: whitesmoke;
 }
 
@@ -53,13 +53,30 @@ h3{
 
 h4{
     margin: 1em;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: whitesmoke;
+    
+    i{
+        color: red;
+        font-weight: 700;
+    }
+    
+}
+h5{
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1em .5em 1em .5em;
+    /* text-transform: uppercase; */
+    background-color: #141414;
 }
 ul{
-    /* list-style: none; */
-    font-size: .9rem;
-    margin-left: 2em;
+    list-style: none;
+    font-size: 1.1rem;
+    margin-left: 0em;
+    
+    @media(min-width:1025px){
+        margin-left: 2em;
+}
 }
 
 @keyframes fadeIn{
@@ -73,9 +90,12 @@ width: 100%;
 `
 
 export const BlockContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 max-width: ${({ maxWidth }) => maxWidth || '50%'};
 box-sizing: border-box;
-border: ${({ border }) => border}px solid #d2a118;
+border-right: ${({ border }) => border}px solid #d2a118;
 
 @media(max-width:1024px){
     max-width: 100%;
@@ -85,6 +105,11 @@ border: ${({ border }) => border}px solid #d2a118;
 export const DetectiveAvatar = styled.img`
 margin: 2em;
 width: 100px;
+
+@media(min-width:1025px){
+    width: 200px;
+}
+
 `
 export const DetectiveContainer = styled.div`
 
@@ -134,13 +159,21 @@ margin: .13em;
 padding: .4em;
 background-color: whitesmoke;
 
+@media(min-width:1025px){
+    width: 60px;
+    height: 60px;
+}
+
 :hover{
     border: 2px solid orange;
-
+    
 }
 
 img{
     max-width: 25px;
+    @media(min-width:1025px){
+        max-width: 40px;
+    }
 }
 `
 
@@ -152,8 +185,13 @@ export const DetectiveChoiceItem = (props) => {
     )
 }
 export function TextContainer({ children, ...restProps }) {
-
     return (
         <StyledContainer>{children}</StyledContainer>
     )
 }
+
+export const Bullet = styled.img`
+max-height: 20px;
+padding-right: 10px;
+/* border: 1px solid red; */
+`

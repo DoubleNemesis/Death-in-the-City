@@ -7,7 +7,8 @@ import {
     DetectiveChoiceContainer,
     DetectiveChoiceItem,
     CrimeTape,
-    BlockContainer
+    BlockContainer,
+    Bullet
 } from './homeComponents/HomeComponents'
 import NextPageButton from './../../generalComponents/NextPageButton'
 import { startPageBlurb } from './../../data/lessonData'
@@ -20,6 +21,12 @@ import detective3 from '../../images/detective3.png'
 import detective4 from '../../images/detective4.png'
 import detective5 from '../../images/detective5.png'
 import detective6 from '../../images/detective6.png'
+import skull from '../../images/skull.png'
+import questionmark from '../../images/questionmark.png'
+import magnify from '../../images/magnify.png'
+import witness from '../../images/witness.png'
+import symbol from '../../images/symbol.png'
+import teacher from '../../images/teacher.png'
 
 
 function Home() {
@@ -49,16 +56,14 @@ function Home() {
                         <CrimeTape src={crimeline} />
                         <DetectiveContainer>
                             <h3>A murder-mystery game for ESL students</h3>
-
                             <DetectiveAvatar src={detectiveChosen} />
-
                             <DetectiveChoiceContainer>
                                 {allDetectivesDisplay}
                             </DetectiveChoiceContainer>
-                            <p> Choose your avatar </p>
+                            <h5> Choose your avatar </h5>
                         </DetectiveContainer>
                         <CrimeTape src={crimeline} />
-                    <NextPageButton destination="start" margin='0 0 0 0' width="100%">PLAY</NextPageButton>
+                    <NextPageButton destination="backstory" margin='0 0 0 0' width="100%" borderRadius="0">PLAY</NextPageButton>
                     </BlockContainer>
                     <BlockContainer maxWidth="55%" border="2">
                     <h4><i>Death in the City</i> is a murder-mystery game for Intermediate level or above (B1+) learners of English.</h4>
@@ -66,17 +71,22 @@ function Home() {
                         You'll need all your detective skills to solve the mystery of the death of Lexington Grey! As well as practising your English, you will:
                     </p>
                     <ul>
-                        <li>Crack Codes</li>
-                        <li>Solve Puzzles</li>
-                        <li>Find Evidence</li>
-                        <li>Question Witnesses</li>
-                        <li>Catch a Killer</li>
+                        <li><Bullet src={symbol}/>Crack Codes</li>
+                        <li><Bullet src={questionmark}/>Solve Puzzles</li>
+                        <li><Bullet src={magnify}/>Find Evidence</li>
+                        <li><Bullet src={witness}/>Question Witnesses</li>
+                        <li><Bullet src={skull}/>Catch a Killer</li>
                     </ul>
                     
                    
                     <p>This fun game will help you practice your reading, writing and grammar skills as well as testing your problem solving 
                         abilities and broadening your vocabulary.</p>
-                    <p>To get started, choose your detective Avatar and press PLAY!</p>
+                        <h4>How to Play</h4>
+                        <ul>
+                        <li><Bullet src={detective}/>To get started, choose your detective Avatar and press PLAY!</li>
+                        <li><Bullet src={teacher}/>A teacher will guide you and instruct you at each step.</li>
+                    </ul>
+                        <h4>Good Luck, Detective!</h4>
                     </BlockContainer>
 
                 </TextContainer>
