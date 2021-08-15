@@ -58,7 +58,7 @@ function Office() {
     console.log(completedWitnesses);
 
     useEffect(() => {
-        if (completedChallenges.length === 5) {
+        if (completedChallenges.length >= 5) {
             setIsReadyGuess(true)
         }
     }, [completedChallenges])
@@ -103,9 +103,7 @@ function Office() {
     })
 
     function handleGuessClick() {
-        completedChallenges.length >= 5 ?
-            history.push(`endpage`) :
-            alert('You have to finish all 5 challenges before you can make a guess!')
+            history.push(`endpage`)
     }
 
     return (

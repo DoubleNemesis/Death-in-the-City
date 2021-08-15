@@ -13,7 +13,8 @@ import {
     StyledArtefact,
     StyledFoundArtefact,
     WitnessContainer,
-    WitnessIntroBox
+    WitnessIntroBox,
+    EndDiv
 
 } from './witnessComponents/Layout'
 import GameContext from '../../context/GameContext'
@@ -21,7 +22,7 @@ import { Inside } from '../door/doorComponents/DoorComponents'
 
 let counter = 0
 let fullConversation = []
-const taskText = `Task: Read the conversation and choose the best reply from the options below`
+const taskText = `Task: Read the conversation and choose the best reply from these options`
 const taskCorrect = `Correct! Choose the next reply.`
 const taskIncorrect = `That's incorrect. Try again.`
 
@@ -126,8 +127,8 @@ function WitnessComp(props) {
                             conversationEnd.scrollIntoView()
                         }
                     }, 1001)
-                }, 1000)
-            }, 1000)
+                }, 500)
+            }, 500)
         }
         else {
             // e.target.classList.add('wrong')
@@ -183,11 +184,11 @@ function WitnessComp(props) {
                             </InfoBox>
                             {questions}
                             {/* id to scroll to */}
-                            <div id="conversationBottom"></div>
+                            <EndDiv id="conversationBottom">here</EndDiv>
                         </QuestionOptions>
                     </>
                     : null}
-                <div id="pageEnd"></div>
+                {/* <div id="pageEnd"></div> */}
             </>
         </WitnessContainer>
                                         </>

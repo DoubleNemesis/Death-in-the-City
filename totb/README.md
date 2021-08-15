@@ -1,15 +1,20 @@
 *change detective images
-**alt texts!
-backstory not happy - add ambulance picture
-House comp change picture res....chey and lucy
-check vertical center on desktop for challenges
 
-**what happens when click completed challenge?
+**alt texts!
+
 do credits
+
+do game over style end page
+
+pay a vist button door knocker icon
+
+
+
 
 crimescene Photo by <a href="https://unsplash.com/@visuals_by_campbell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Campbell Jensen</a> on <a href="https://unsplash.com/s/photos/crime-scene?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
+chay house Photo by <a href="https://unsplash.com/@sinzianasusa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sinziana Susa</a> on <a href="https://unsplash.com/s/photos/urban-house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 dallas house Photo by <a href="https://unsplash.com/@webaliser?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ярослав Алексеенко</a> on <a href="https://unsplash.com/s/photos/house?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

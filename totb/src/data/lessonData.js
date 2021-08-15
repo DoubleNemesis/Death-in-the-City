@@ -25,7 +25,7 @@ export const homePageData = {
     The police are calling it suicide...
     `],
     homeCallToActionTextBtn: [`Full story on page TWO!`],
-    homeCallToActionTextBtn2: [`READY for some Vocab?`],
+    homeCallToActionTextBtn2: [`Get Going`],
     homePaperAltText: [`Newspaper article describing how Lexington Grey fell from the top of the tower block and how the police think it was suicide and his dad thinks it was murder.`]
 }
 
@@ -40,9 +40,8 @@ export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
     backStoryText: [`Hello there! I'm your teacher and I'm here to guide you through your tasks as you solve this crime. 
     First, read this short newspaper article to get up to speed, and then let's take a look at some of the vocabulary you're going to meet today.`],
-    backStoryText2: [`I'm Terence Grey. So you think you're ready to turn detective? I hope so, because you've got work to do! 
-Lexington Grey wasn't just anyone. That boy was my son, and he was murdered! Don't believe the rubbish the police said. Your job is to find out who killed him. First you need to show me you're capable.
- Get this vocabulary right and then we're in business!`],
+    backStoryText2: [`I'm Terence Grey and I just wanted to say thank you for taking up the challenge to find my son's killer. But boy have you got work to do! 
+    Don't believe the rubbish the police said. Lexington was murderd...I know that for a fact. Someone pushed him out of the window. You know about the case, right? No? Ok, well read this newspaper to get up to speed!`],
 }
 
 export const clientData = {
@@ -79,7 +78,7 @@ export const vocabData = {
         'sidewalk',
         'hot-headed',
         'janitor',
-        'delicate',
+        'boast',
         'unfaithful',
         'tough',
         'cry',
@@ -91,7 +90,7 @@ export const vocabData = {
         'pavement',
         'impulsive',
         'caretaker',
-        'fragile',
+        'brag',
         'adulterous',
         'strong',
         'weep',
@@ -100,7 +99,9 @@ export const vocabData = {
         'plummet',
     ],
     'bubbleText1': [
-        `All you have to do is click on a word and then click on its synonym. When you get a pair right, they will disappear. 
+        `Hello there! I'm your teacher and I'm here to guide you through your tasks as you solve this crime. 
+        First, let's take a look at some of the vocabulary you're going to meet today. 
+        All you have to do is click on a word and then click on its synonym. When you get a pair right, they will disappear. 
         Don't worry, you will see the full word list again at the end so you can take notes.`
     ],
     'bubbleText2': [
@@ -195,7 +196,7 @@ export const officeCards = {
             'destinationComplete' : '',
         },
         {
-            'name': [`Photo of Lucy`], // wendy's bin
+            'name': [`Gym Card`], // wendy's bin
             'id': [6],
             'image': weightlifterPic,
             'destination': 'foundArtefacts',
@@ -370,7 +371,7 @@ export const questionsWitness1 = {
         `Hi! I'm investigating the death of Lexington Grey. Are you the janitor here at Kaplinsky Tower?`
     ],
     witnessInfo1: [
-        `Tony Monceto is the janitor at Kaplinksy Tower, where Lexington Grey lived and died. He was not at the party and is not a suspect, but probably has some useful info.`
+        `Tony Monceto is the janitor at Kaplinksy Tower, where Lexington Grey lived and died. He was not at the party and is not a suspect, but he might have some useful information.`
     ]
 }
 
@@ -636,9 +637,9 @@ export const TornLetterPiecesData = [
 ]
 
 export const ShreddedLetterPiecesData = {
-    orderEventsText: [`I got the party at around 10. I was already drunk. 
+    orderEventsText: [`I got to the party at around 10. I was already drunk. 
     I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known each other for years. If I'm honest, I have been drinking too much since my mum died two months ago.
-    Lexi? I met him on the set of his first Movie just three months ago.
+    Lexi? I met him on the set of his first movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
     eventsToOrder: [
@@ -687,7 +688,7 @@ export const ErrorCorrectionData = {
     instructions3: [
         [`Perfect! Thank you so much for your help! I like you, so here's the information I promised you. I expect Lexi was unfaithful. You can never trust actors or tell when they are lying. But I don't know who he was unfaithful with. Lucy? Maybe! 
         There was certainly something strange going on that night. A weird atmosphere. It started off fine, but later, around when Lexi was telling us about having covid, Dallas was just staring up out of the window
-         at the heavens. I think only Lexi was happy there that night. And maybe that was because Lucy was flirting with him!`],
+         at the heavens. Lexi could be very very arrogant sometimes, and it gets boring. He was boasting about how he had ignored all the corona virus rules and regulations. I think only Lexi was happy there that night. And maybe that was because Lucy was flirting with him!`],
     ],
     sentences: [
         ["I saw Lexi and Lucy holding hands under the table.", "0", false],
@@ -712,9 +713,9 @@ export const ErrorCorrectionData = {
 //orderEvent dallas chay sat next to her....she treated him for bad shoulder, too weak to lift someone
 
 export const orderEventsData = {
-    orderEventsText: [`I got the party at around 10. I was already drunk. 
+    orderEventsText: [`I got to the party at around 10. I was already drunk. 
     I had been drinking tequila since lunchtime with my old drama school friends in a club downtown - we've known each other for years. If I'm honest, I have been drinking too much since my mum died two months ago.
-    Lexi? I met him on the set of his first Movie just three months ago.
+    Lexi? I met him on the set of his first movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
     eventsToOrder: [
@@ -740,10 +741,10 @@ export const orderEventsData = {
 
 //loveletter Lucy : Chay: i will kill any man you go out with
 export const loveLetterData = {
-    instructions: [`It looks like Lucy and her lover communicate in some kind of mystical ancient code. If we want to read this love letter, we need to break the word code. 
+    instructions: [`It looks like Lucy and her lover communicate in some kind of mystical ancient code. We need to break that code! 
     Each symbol represents a letter. Just tap a letter and then tap the symbol you think represents that letter. All other identical 
     symbols will change to that letter.
-    If you need a clue, think what four-letter word a letter usually starts with.
+    If you need a clue, think what four-letter word a letter usually starts with. Also, think who it was addressed to!
     Good news: it looks like the full stops and commas don't need to be decoded. `],
     successMessageText: ['Wow! You are good! Hey, I think the letter has a PS. Click here to see it!'],
     loveLetterCode: [`Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.`],
@@ -840,9 +841,9 @@ export const endPageData = {
     bubbleText3: `So you worked out some of it and helped me to get justice for my son. I will pay half your fee, that's all.`,
     bubbleText4: `You're a great detective and I can't tell you how grateful I am! I'll double your pay! Congratulations!!!`,
     explanation: `They were a crazy bunch of people at that dinner party but only one was a killer. It was me, Dallas Franks. I had been struggling since 
-    my mother died of coronavirus. But that night I discovered something that made my blood boil. Lexington Gray hadn't isolated when he had
-    coronavirus and had passed it on to me, and I gave it to my mother. I knew I had to take revenge. 
-    When lightning struck and the lights went out he was standing by the window, and I took my chance.`,
+    my mother died of coronavirus. But that night I discovered something that made my blood boil. Lexington Gray hadn't isolated when he had had
+    coronavirus and had passed it on to me. I gave it to my mother and it killed her. I knew I had to take revenge. 
+    When lightning struck and the lights went out he was standing by the window smoking, and I took my chance.`,
     police1: `Thank you from the City Police Department for helping us catch this evil criminal! You will receive a cash reward!`,
     police2: `From the City Police Department, I would just like to say thanks for NOTHING. We will never catch him now!`,
 }

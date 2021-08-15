@@ -10,7 +10,7 @@ export const SuccessMessageComp = (props)=>{
         {/* <SpeechBubbleLeft> */}
             {props.message}
             <TextButtonContainer>
-                <TextButton onClick={props.onclick}>Click</TextButton>
+                <TextButton onClick={props.onclick} bgcolor="red">Click</TextButton>
             </TextButtonContainer>
             {/* </SpeechBubbleLeft> */}
             </>

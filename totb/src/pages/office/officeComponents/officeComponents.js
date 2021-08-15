@@ -22,9 +22,16 @@ border-radius: 5px;
 export const ArtefactDisplay = styled.div`
 display: flex;
 flex-direction: column;
-width: 60%;
+width: 90%;
 justify-content: center;
 align-items: center;
+text-align: center;
+p{
+    width: 100%;
+}
+img{
+    width:50%;
+}
 `
 export const WitnessCard = styled.div`
 width: 120px;
@@ -79,6 +86,9 @@ p{
 img{
     height: 50px;
     margin-bottom: .3em;
+    :hover{
+        height: 51px;
+    }
 }
 
 @media(min-width: 700px){

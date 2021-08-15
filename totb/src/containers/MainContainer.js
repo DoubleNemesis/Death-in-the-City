@@ -5,13 +5,11 @@ width: 100%;
 display: flex;
 justify-content: center;
 flex-direction: column;
-align-items: center;
+align-items: flex-start; //may need to change this!
 /* margin-bottom: 1em; */
-
-@media(min-width:1025px){
-    flex-direction: row;
-}
-
+/* border: 1px solid red; */
+margin-bottom: 2em;
+/* overflow: hidden; */
 `
 
 function MainContainer({children}){

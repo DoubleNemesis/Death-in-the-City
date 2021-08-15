@@ -22,9 +22,11 @@ export const WitnessContainer = styled.div`
     grid-template-areas:
         "inside conversation"
         "questionoptions conversation ";
-        font-size: .1rem;
+    font-size: .1rem;
+    min-height: 78.5vh; 
+    /* border: 1px solid red; */
+    align-items: start;
 }
-/* border: 1px solid red; */
 `
 
 export const Instructions = styled.div`
@@ -66,6 +68,8 @@ width: 100%;
     padding: 0;
     animation: ${fadeIn} ${fadeInSpeed};
     animation-fill-mode: forwards;
+    /* border: 1px solid green; */
+    min-height: 100%;
 }
 
 `
@@ -76,7 +80,6 @@ display: flex;
 flex-direction: column;
 /* background-color: skyblue; */
 width: 100%;
-/* border: 2px solid blue; */
 
 @media(min-width:1025px){
     animation: ${fadeIn} ${fadeInSpeed};
@@ -99,6 +102,7 @@ align-items: center;
     animation: ${fadeIn} ${fadeInSpeed};
     animation-fill-mode: forwards;
     animation-delay: 0s;
+min-height: 100%;
 }
 `
 
@@ -182,7 +186,7 @@ animation: ${fadeIn} 1.5s;
 
 @media(min-width: 1025px){
   margin-right: .5em;
-  border: 4px #141414 solid;
+  border: 4px solid #141414 ;
   border-radius: 5px;
     /* animation: ${fadeIn} 1s;
     animation-fill-mode: forwards;
@@ -226,3 +230,9 @@ export const WitnessIntroBox = (props)=>{
         </WitnessIntroContainer>
     )
 }
+
+export const EndDiv = styled.div`
+@media(min-width: 1025px){
+    display: none;
+}
+`

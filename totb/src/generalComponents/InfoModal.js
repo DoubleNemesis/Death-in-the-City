@@ -36,7 +36,7 @@ p{
 @media(min-width: 1025px){
     display: ${({ display }) => display};
     flex-direction: column;
-    width: 25%;
+    width: 20%;
     align-items: center;
     justify-content: center;
 }

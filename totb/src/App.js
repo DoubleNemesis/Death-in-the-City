@@ -41,7 +41,7 @@ import doorYellow from './images/doorYellow.png'
 import doorMulti from './images/doorMulti.png'
 import tonyYard from './images/tonyYard.jpg'
 import chayYard from './images/chayYard.jpg'
-import chayYardSmall from './images/chayYardSmall.jpg'
+import chayHouse from './images/chayHouse.jpg'
 import kirstenYard from './images/kirstenYard.jpg'
 import dallasYard from './images/dallasYard.jpg'
 import dallasHouse from './images/dallasHouse.jpg'
@@ -106,6 +106,8 @@ function App() {
   const { questionsWitness5, questionsWitness5_2, witnessConversationArray5, trialURL5, exitMessage5, speechBubbleText5, witnessInfo5 } = lessonData['questionsWitness5'];
   const { questionsWitness6, questionsWitness6_2, witnessConversationArray6, trialURL6, exitMessage6, speechBubbleText6, witnessInfo6 } = lessonData['questionsWitness6'];
   const { artefacts } = lessonData['officeCards'];
+
+  console.log(completedChallenges);
 
   return (
     <>
@@ -197,7 +199,7 @@ function App() {
               // doorImgL={doorGreyLarge}
               mapImage={mapImageUrban}
               coords="90% 99%"
-              house={chayYardSmall}
+              house={chayHouse}
               houseMessage={"Chay not as rich as his friend Lexington, obviously. Let's see what he has to say for himself..."}
 
               // speechBubbleText={speechBubbleText1}
@@ -207,7 +209,8 @@ function App() {
             <Sneaky title="" artefactName={artefacts[0].name} 
             artefactImage={shreddedletterPic} 
             yardImage={chayYard}
-            text="Hmmm time to get my hands dirty! Luckily someone has just put the bin out! See what's inside by clicking the lid...go on, all good private detectives do stuff like that!"
+            hasArtefact
+            text="Hmmm time to get your hands dirty! Luckily someone has just put the bin out! See what's inside by clicking the lid...go on, all good private detectives do stuff like that!"
 
             />
           </Route>
@@ -349,8 +352,8 @@ function App() {
           </Route>
         </GameContext.Provider>
       </Router>
-    </Outer>
     <Footer/>
+    </Outer>
     </>
   );
 }

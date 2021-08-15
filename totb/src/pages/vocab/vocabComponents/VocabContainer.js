@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import loveLetterBG from '../../../images/loveLetterBG.png'
 
 const StyledContainer = styled.div`
 display: flex;
@@ -22,9 +23,14 @@ align-items: center;
 margin: 1em auto;
 border-radius: .3em;
 /* margin-top: 2em; */
-background-color: whitesmoke;
+/* background-color: whitesmoke; */
+background-color: transparent;
+background-image: url(${loveLetterBG});
+background-size: cover;
 gap: 3em;
-padding: 2em;
+padding: 1em 1em 1em 5em;
+
+
 
 @media(max-width:900px){
     width: 95%

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import policeReportBG from '../../../../images/policeReportBG.png'
+import notePaper from '../../../../images/notePaper.png'
 
 export const Container = styled.div`
 grid-area: conversation;
@@ -12,24 +13,28 @@ width: 100%;
     flex-direction: row;
 }
 `
-
 export const EventsContainer = styled.div`
-background-color: white;
+background-color: whitesmoke;
+background-image: url(${notePaper});
+background-size: 8%;
+background-repeat: repeat-y;
 width: 100%;
 min-width: 100%;
 height: 45%;
 min-height: 45%;
+
 
 ul{
     list-style: none;
     margin-left: -2em;
 }
 
-li{
+/* li{
     border: 1px solid red;
     margin: .3em .3em 0;
     padding: .3em;
-}
+    cursor: grab;
+} */
 
 @media(min-width:1025px){
     width: 55%;
@@ -37,20 +42,19 @@ min-width: 55%;
 margin: 1em;
 height: unset;
 min-height: unset;
-background-color: unset;
+padding: 1em;
+padding-left: 5em; 
+/* background-color: unset; */
 
-li{
+/* li{
     background-color: whitesmoke;
-    border: 1px solid red;
+    border: 2px solid orange;
     margin: .3em .3em 0;
     padding: .3em;
+    width: 70%;
+    border-radius: 5px;
+} */
 }
-
-
-}
-
-
-
 `
 export const ParagraphContainer = styled.div`
 background-color: white;
@@ -71,4 +75,17 @@ font-weight: 700;
 min-width: 40%;
 margin: 1em;
 }
+`
+
+export const Event = styled.div`
+    background-color: whitesmoke;
+    border: 2px solid orange;
+    margin: .3em .3em 0;
+    border-radius: 5px;
+background-color: ${({isOrderEventsCorrect})=>isOrderEventsCorrect ? 'lightgreen' : 'whitesmoke'};
+width: auto;
+padding: .5em .3em .5em 2em;
+cursor: grab;
+font-size: 1rem;
+font-family: 'Poppins';
 `

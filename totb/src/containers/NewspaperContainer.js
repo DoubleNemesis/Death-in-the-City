@@ -3,20 +3,25 @@ import paperbgdark from './../images/paperbgdark.png'
 
 const paperIn = keyframes`
 0%{width: 0vw; transform: rotate(0deg)}
-100%{width: 90vw; transform: rotate(1080deg)}
+100%{width: 50vw; transform: rotate(1080deg)}
 `
 
 
+// const paperRotate = keyframes
+// 0%{ width: 90vw; opacity: .3; transform: rotate(0deg)}
+// 100%{ width: 90vw; opacity: 1; transform: rotate(1080deg)}
+// `
 const paperRotate = keyframes`
-0%{ width: 90vw; opacity: .3; transform: rotate(0deg)}
-100%{ width: 90vw; opacity: 1; transform: rotate(1080deg)}
-`
+0%{ width: 0vw; opacity: .3; transform: rotate(0deg)}
+100%{ width: 50vw; opacity: 1; transform: rotate(1080deg)}
+` 
 const textIn = keyframes`
 0%{opacity: 0}
 100%{opacity: 1}
 `
 const textOut = keyframes`
 0%{opacity: 0}
+/* 50%{opacity: 0} */
 100%{opacity: 1}
 `
 const animateBorder = keyframes`
@@ -26,25 +31,29 @@ const animateBorder = keyframes`
 
 const StyledContainer = styled.div`
 width: 0;
-animation: ${({paperOpen})=> paperOpen ? paperIn : paperRotate} 2s;
+animation: ${({paperOpen})=> paperOpen ? paperIn : paperRotate} 3s;
 animation-delay: 0s;
 animation-fill-mode: forwards;
-margin-top: 1.1em;
+/* margin-top: 1.1em; */
 background-color: transparent;
 box-sizing: unset;
+box-shadow: 5px 5px 5px 5px #141414;
+/* overflow: hidden; */
 
 @media(min-width: 700px){
     max-width: 80vw;
 }
+
 @media(min-width: 1025px){
     max-width: 23vw;
 }
 
 img{
     width: 100%;
+    border-radius: 3px;
 }
 `
-const Text = styled.div`
+const Text = styled.button`
 position: absolute;
 align-items: center;
 justify-content: center;
@@ -55,26 +64,28 @@ left: 5.7%;
 bottom: 5.5%;
 background-image:url(${paperbgdark});
 color: #dfdbcf;
+color: limegreen;
 padding: .5rem;
 font-size: 1.3rem;
 font-weight: 700;
 text-decoration: underline;
 opacity: 0;
-animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 2s, ${animateBorder} 1s infinite alternate;
+animation: ${({paperOpen})=> paperOpen ? textIn : textOut} 1s 1s;
+/* ${animateBorder} 1s infinite alternate; */
+/* animation-delay: 1s; */
 animation-fill-mode: forwards;
-box-shadow: 2px 2px 2px 2px #333;
+box-shadow: 2px 2px 2px 2px #999;
 cursor: pointer;
 
 @media(min-width: 1025px){
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 :hover{
-    color: red;
+    color: skyblue;
+    box-shadow: 1px 1px 1px 1px #666;
 }
-
 `
-
 
 function CallToActionContainer({children, ...restProps}){
     return (

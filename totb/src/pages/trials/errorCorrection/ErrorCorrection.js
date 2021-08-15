@@ -15,8 +15,8 @@ import { propTypes } from 'react-bootstrap/esm/Image'
 
 function ErrorCorrection(props) {
 
-    const {completedChallenges, setCompletedChallenges} = useContext(GameContext)
-    const { isErrorCorrectionCorrect, setIsErrorCorrectionCorrect} = useContext(GameContext)
+    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { isErrorCorrectionCorrect, setIsErrorCorrectionCorrect } = useContext(GameContext)
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
     const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
@@ -47,7 +47,6 @@ function ErrorCorrection(props) {
             copySentencesArray[selectedSentenceId][2] = true
             setSentencesArray(copySentencesArray)
             setSelectedSentences((prev) => [selectedSentenceId, ...prev])
-
         }
     }
 
@@ -76,29 +75,31 @@ function ErrorCorrection(props) {
     }
 
     function handleSubmit(e) {
-        const incorrectElement = document.getElementById(e.target.id)
-        if (correctedSentences[e.target.id] === incorrectAndCorrectedArray[e.target.id][2]) {
-            let copyIncorrectAndCorrectedArray = [...incorrectAndCorrectedArray]
-            copyIncorrectAndCorrectedArray[e.target.id][3] = true;
-            setIncorrectAndCorrectedArray(copyIncorrectAndCorrectedArray)
-            incorrectElement.classList.remove('error')
-        }
-        // remove full stop
-        else if (correctedSentences[e.target.id][correctedSentences[e.target.id].length-1] === '.'){
+        if (correctedSentences[e.target.id]) {
+            const incorrectElement = document.getElementById(e.target.id)
+            if (correctedSentences[e.target.id] === incorrectAndCorrectedArray[e.target.id][2]) {
+                let copyIncorrectAndCorrectedArray = [...incorrectAndCorrectedArray]
+                copyIncorrectAndCorrectedArray[e.target.id][3] = true;
+                setIncorrectAndCorrectedArray(copyIncorrectAndCorrectedArray)
+                incorrectElement.classList.remove('error')
+            }
+            // remove full stop
+            else if (correctedSentences[e.target.id][correctedSentences[e.target.id].length - 1] === '.') {
                 if (correctedSentences[e.target.id].slice(0, -1) === incorrectAndCorrectedArray[e.target.id][2]) {
                     let copyIncorrectAndCorrectedArray = [...incorrectAndCorrectedArray]
                     copyIncorrectAndCorrectedArray[e.target.id][3] = true;
                     setIncorrectAndCorrectedArray(copyIncorrectAndCorrectedArray)
                     incorrectElement.classList.remove('error')
                 }
-                else{
+                else {
                     incorrectElement.classList.add('error')
                 }
             }
-        else {
-            console.log('wrong', e.target.id)
-            incorrectElement.classList.add('error')
-            console.log(incorrectElement)
+            else {
+                console.log('wrong', e.target.id)
+                incorrectElement.classList.add('error')
+                console.log(incorrectElement)
+            }
         }
     }
 
@@ -109,13 +110,13 @@ function ErrorCorrection(props) {
                 count++
             }
         }
-        if (count === 0){
+        if (count === 0) {
             setIsErrorCorrectionCorrect(true)
             let dummyCompletedChallenges = [...completedChallenges]
             dummyCompletedChallenges.push(props.artefactName)
             setCompletedChallenges(dummyCompletedChallenges)
         }
-        else{
+        else {
             setIsErrorCorrectionCorrect(false)
         }
     }, [incorrectAndCorrectedArray])
@@ -140,21 +141,21 @@ function ErrorCorrection(props) {
     </IncorrectSentencesDiv>)
     return (
         <>
-                <ErrorCorrectionContainer>
-                    <SpeechBubbleLeft image={KirstenPic} minHeight="145">
-                        {isErrorCorrectionCorrect ? instructions3 : isComplete1 ? instructions2 : instructions}
-                        {/* {!isComplete1 ? instructions : !isErrorCorrectionComplete ? instructions2 : instructions3} */}
-                    </SpeechBubbleLeft>
+            <ErrorCorrectionContainer>
+                <SpeechBubbleLeft image={KirstenPic} minHeight="145">
+                    {isErrorCorrectionCorrect ? instructions3 : isComplete1 ? instructions2 : instructions}
+                    {/* {!isComplete1 ? instructions : !isErrorCorrectionComplete ? instructions2 : instructions3} */}
+                </SpeechBubbleLeft>
 
-                    {isErrorCorrectionCorrect ?  
+                {isErrorCorrectionCorrect ?
                     <>
-                    <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton> 
-                    {/* <NextPageButton destination='office'>Back to Office</NextPageButton>  */}
+                        <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>
+                        {/* <NextPageButton destination='office'>Back to Office</NextPageButton>  */}
                     </>
                     : isComplete1 ? secondSentenceList : firstSentenceList}
-                    {/* {!isComplete1 ? firstSentenceList : !isErrorCorrectionComplete ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>} */}
-                   {incorrectMessage ? <MessageContainer bgColor="red"> {incorrectMessage}</MessageContainer> : null}
-                </ErrorCorrectionContainer>
+                {/* {!isComplete1 ? firstSentenceList : !isErrorCorrectionComplete ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>} */}
+                {incorrectMessage ? <MessageContainer bgColor="red"> {incorrectMessage}</MessageContainer> : null}
+            </ErrorCorrectionContainer>
 
         </>
 
