@@ -1,8 +1,5 @@
 import styled from 'styled-components'
-import { redactedData } from '../../../../data/lessonData'
 import medicalBG from '../../../../images/medicalBG.png'
-
-const {text} = redactedData
 
 export const StatementContainer = styled.div`
 display: flex;
@@ -27,15 +24,11 @@ h3{
     min-width: 60%;
     margin: 0 auto;
 }
-
 ` 
-
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
 justify-content: center;
 align-items: center;
-
-
 `

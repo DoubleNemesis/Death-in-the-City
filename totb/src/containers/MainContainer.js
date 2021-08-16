@@ -5,17 +5,14 @@ width: 100%;
 display: flex;
 justify-content: center;
 flex-direction: column;
-align-items: flex-start; //may need to change this!
-/* margin-bottom: 1em; */
-/* border: 1px solid red; */
+align-items: ${({ alignItems }) => alignItems || 'flex-start'}; 
 margin-bottom: 2em;
-/* overflow: hidden; */
 `
 
-function MainContainer({children}){
+function MainContainer({ children, ...restProps }) {
 
-    return(
-        <StyledMainContainer>{children}</StyledMainContainer>
+    return (
+        <StyledMainContainer alignItems={restProps.alignItems}>{children}</StyledMainContainer>
     )
 
 }

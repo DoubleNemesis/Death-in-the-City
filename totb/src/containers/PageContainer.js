@@ -8,9 +8,8 @@ align-items: center;
 width: 90%;
 border-radius: .3em;
 border: 10px solid #333;
-background-color: transparent; //was whitesmoke
+background-color: transparent; 
 color: black;
-/* font-family:'Courier New', Courier, monospace; */
 font-size: 1.5rem;
 opacity: 0;
 margin: 1em;
@@ -18,8 +17,7 @@ animation-name: fadeIn;
 animation-delay: .1s;
 animation-duration: .3s;
 animation-fill-mode: forwards;
-min-height: 100vh;
-
+min-height: ${({ minHeight }) => minHeight || '100'}vh;
 @keyframes fadeIn{
     0% {opacity: 0}
     100%{opacity: 1}
@@ -35,17 +33,18 @@ min-height: 100vh;
     border: unset;
 }
 @media(min-width:1025px){
-flex-direction: column;
-border: unset;
+    flex-direction: column;
+    border: unset;
+    border: 10px solid red;
 margin-top: 0;
 }
 
 `
 
-function PageContainer({children, ...restProps}){
+function PageContainer({ children, ...restProps }) {
 
     return (
-        <MainContainer><StyledContainer>{children}</StyledContainer></MainContainer>
+        <MainContainer ><StyledContainer minHeight={restProps.minHeight}>{children}</StyledContainer></MainContainer>
     )
 }
 

@@ -18,12 +18,11 @@ a{
     font-size: .8rem;
     color: #999;
 }
-
 `
 
-function FooterContainer({children}){
+function FooterContainer({ children }) {
 
-    return(
+    return (
         <StyledFooterContainer>{children}</StyledFooterContainer>
     )
 

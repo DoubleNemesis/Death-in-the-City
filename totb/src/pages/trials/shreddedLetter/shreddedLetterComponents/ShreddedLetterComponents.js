@@ -34,19 +34,7 @@ h3{
   align-items: center;
   justify-content: space-around;
 } 
-
-/*.correctOrder{
-  background-color: limegreen;
-  border: 2px solid limegreen;
-}  */
-
 `
-// export const ParagraphContainer = styled.div`
-// background-color: white;
-// width: 100%;
-// min-width: 100%;
-// height: auto;
-// `
 
 export const ShreddedPiece = styled.div`
 border: 5px solid transparent;
@@ -54,7 +42,6 @@ background-image: url(${({isShreddedLetterCorrect})=>isShreddedLetterCorrect ? t
 background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
-/* background-color: ${({isShreddedLetterCorrect})=>isShreddedLetterCorrect ? 'lightgreen' : 'transparent'}; */
 background-color: transparent;
 width: auto;
 padding: .5em .3em .5em 2em;

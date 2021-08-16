@@ -1,7 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react'
-import PageContainer from '../../../containers/PageContainer'
-import Title from '../../../generalComponents/Title'
-import { Instructions, WitnessImage, TaskBox } from '../../witness/witnessComponents/Layout'
+import { useContext, useEffect, useState } from 'react'
 import { SuccessMessageComp, 
     LoveLetterMainContainer, 
     LoveLetterElems, 
@@ -10,10 +7,7 @@ import { SuccessMessageComp,
     LoveLetterSpace, 
     LoveLetterSymbolElems,
     Container } from './loveLetterComponents/LoveLetterComponents'
-import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
-import ProfilePic from '../../../images/chaymadz.jpg'
 import GameContext from '../../../context/GameContext'
-import Draggable from 'react-draggable';
 import { loveLetterData } from '../../../data/lessonData'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
@@ -22,17 +16,13 @@ import teacher from '../../../images/teacher.png'
 
 function LoveLetter(props) {
     const { completedChallenges, setCompletedChallenges} = useContext(GameContext)
-    const { isLoveLetterCorrect, setIsLoveLetterCorrect, setCollectedArtefacts } = useContext(GameContext)
+    const { isLoveLetterCorrect, setIsLoveLetterCorrect } = useContext(GameContext)
     const [selectedLetter, setSelectedLetter] = useState('')
-    const [selectedSymbol, setSelectedSymbol] = useState('')
+    const [selectedSymbol] = useState('')
     const [usedLetters, setUsedLetters] = useState([])
     const [successMessage, setSuccessMessage] = useState('')
     const [isSuccessMessageDisplayed, setIsSuccessMessageDisplayed] = useState(false)
-    // const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
-    // const [displayFullText, setDisplayFullText] = useState(false)
-    // displayFullLoveLetterText, setDisplayFullLoveLetterText
 
-    const nodeRef = useRef(null);
     const { instructions, loveLetterCode, successMessageText, loveLetterFull, loveLetterFullPs } = loveLetterData
     const secretMessage = loveLetterCode[0]
     const secretMessageArray = secretMessage.toLowerCase().split('');
@@ -47,8 +37,6 @@ function LoveLetter(props) {
 
     function handleSymbolClick(e) {
         if (selectedLetter) {
-            const maxCharCodeLetter = 122
-            // console.log(e.target.innerText.charCodeAt(0) <= maxCharCodeLetter, e.target.innerText.charCodeAt(0));
             const tileToRemove = (e.target.innerText)
             let tilesToChange = e.target.classList[2];
             let tilesArray = document.getElementsByClassName(tilesToChange)
@@ -82,10 +70,8 @@ function LoveLetter(props) {
     }
 
     useEffect(() => {
-        // console.log(usedLetters);
-        usedLetters.map((item => {
-            document.getElementById(item).classList.add('unClickable')
-        }))
+        usedLetters.map((item => document.getElementById(item).classList.add('unClickable') 
+        ))
 
     }, [usedLetters])
 
@@ -93,7 +79,7 @@ function LoveLetter(props) {
 
     const LoveLetterCode = secretMessageArray.map((item, index) => {
         const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
-        const symbolTiles = 'symbolTiles'
+
 
         return (
             <>
@@ -116,7 +102,6 @@ function LoveLetter(props) {
                     <LoveLetterSymbolsContainer>
                         {!isLoveLetterCorrect ? LoveLetterCode : <><p className="whiteBG">{loveLetterFull}</p><p className="whiteBG">{loveLetterFullPs}</p><NextPageButton destination="office">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
-                    {/* {successMessage} */}
                     <LoveLetterLettersContainer>
                         {LoveLetterLetters}
                     </LoveLetterLettersContainer>

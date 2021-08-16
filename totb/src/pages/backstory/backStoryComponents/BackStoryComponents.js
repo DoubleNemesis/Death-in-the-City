@@ -3,16 +3,16 @@ import styled from 'styled-components'
 const StyledContainer = styled.div`
 display: flex;
 flex-direction: column;
-/* border: 1px solid #333; */
 font-size: 1.5rem;
 margin: 0 auto;
 z-index: 100;
 background-color: #333;
-width: ${({width})=> width || 'unset'};
+width: ${({ width }) => width || 'unset'};
 border: 3px solid darkorange;
 border-radius: 5px;
 color: whitesmoke;
 position: relative;
+overflow: hidden;
 
 @media(max-width:1024px){
     display: none;
@@ -31,14 +31,14 @@ max-width: 100%;
 height: 100%;
 min-height: 100%;
 `
-export function ImageContainer({children, ...props}){
+export function ImageContainer({ children, ...props }) {
     return (
-        <StyledContainer width={props.width} ><StyledImage src={props.image}/>{children}</StyledContainer>
-        )
-    }
-    
+        <StyledContainer width={props.width} ><StyledImage src={props.image} />{children}</StyledContainer>
+    )
+}
 
-    export const FloatingImage = styled.img`
+
+export const FloatingImage = styled.img`
 bottom: -10%;
 right: -10%;
 width: 100px;
@@ -52,7 +52,7 @@ border: 3px solid darkorange;
     display: none;
 }
 `
-export const NewspaperContainer = styled.div`
+export const NewspaperOverlayContainer = styled.div`
 position: absolute;
 right: 0;
 width: 50%;
@@ -66,7 +66,7 @@ border-left: 2px solid whitesmoke;
 margin-bottom: 2em;
 
 @media(max-width:1024px){
-    display: none;
+display: none;
 }
 
 `
@@ -77,8 +77,6 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-/* margin-bottom: 1em; */
-/* border: 1px solid blue; */
 
 @media(min-width:1025px){
     flex-direction: row;
@@ -88,9 +86,9 @@ align-items: center;
 
 `
 
-export function MainContainer({children}){
+export function MainContainer({ children }) {
 
-    return(
+    return (
         <StyledMainContainer>{children}</StyledMainContainer>
     )
 

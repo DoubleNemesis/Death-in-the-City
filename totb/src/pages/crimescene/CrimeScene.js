@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
 import { TextButton, TextButtonContainer } from '../../generalComponents/SpeechTextButton'
-import { CrimeSceneData, clientData } from '../../data/lessonData'
+import { CrimeSceneData } from '../../data/lessonData'
 import Janitor from '../../images/janitor.png'
 import kitchen from '../.././images/kitchen.jpg'
 import windowView from '../../images/windowView2.jpg'
@@ -24,7 +24,6 @@ const CrimeContainer = styled.div`
 `
 
 function CrimeScene() {
-    const { clientTitle, clientText } = clientData
     const { bubbleText1, bubbleText2, bubbleText3, bubbleText4 } = CrimeSceneData
     const [bubbleTextToDisplay, setBubbleTextToDisplay] = useState(1)
 
@@ -33,7 +32,7 @@ function CrimeScene() {
     }
      return (
         <Container>
-            <SpeechBubbleLeft image={Janitor} minHeight="250">
+            <SpeechBubbleLeft image={Janitor} alt="Janitor Tony Monceto" minHeight="250">
                 {bubbleTextToDisplay === 1 ?
                     bubbleText1 :
                     bubbleTextToDisplay === 2 ?
@@ -55,7 +54,7 @@ function CrimeScene() {
             </SpeechBubbleLeft>
             <CrimeContainer>
  
-                <ImageContainer image={bubbleTextToDisplay === 1 || bubbleTextToDisplay === 2 ? kitchen : windowView} />
+                <ImageContainer alt="view inside flat of kitchen window and drop to street below" image={bubbleTextToDisplay === 1 || bubbleTextToDisplay === 2 ? kitchen : windowView} />
             </CrimeContainer>
         </Container>
     )

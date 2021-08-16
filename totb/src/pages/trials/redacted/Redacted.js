@@ -1,12 +1,7 @@
-import { useState, useContext, useEffect } from 'react'
-import PageContainer from '../../../containers/PageContainer'
-import Title from '../../../generalComponents/Title'
-import { history, useHistory } from 'react-router-dom'
+import { useState, useContext } from 'react'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
-// import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
-import ProfilePic from '../../../images/janitor.png'
 import { redactedData, RedactedComp } from '../../../data/lessonData'
-import { StatementContainer, RedactedTextComp, Container } from './redactedComponents/RedactedComponents'
+import { StatementContainer, Container } from './redactedComponents/RedactedComponents'
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import wendyPic from '../../../images/wendy.jpg'
@@ -21,10 +16,8 @@ function Redacted(props) {
     const taskText = `Hit check when finished`
     const taskCorrect = `Correct!`
     const taskIncorrect = `That's incorrect. Try again.`
-
     const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
     const { isRedactedCorrect, setIsRedactedCorrect } = useContext(GameContext)
-    // const [isRedactedCorrect, setIsRedactedCorrect] = useState(false)
     const [redactedInputs, setRedactedInputs] = useState({})
     const [message, setMessage] = useState(<TaskMessage task="true" message={taskText}/>)
     const { instructions, missingWords } = redactedData
@@ -36,8 +29,7 @@ function Redacted(props) {
     }
 
     function handleCheck() {
-        let arrayOfAnswers = []
-        if (Object.values(redactedInputs).toString() === missingWords.toString()) {
+        if (Object.values(redactedInputs).toString().toLowerCase() === missingWords.toString().toLowerCase()) {
             setMessage(<TaskMessage correct="true" message={taskCorrect}/>)
             setIsRedactedCorrect(true)
             let dummyCompletedChallenges = [...completedChallenges]
@@ -53,9 +45,7 @@ function Redacted(props) {
     console.log(redactedInputs);
     return (
         <>
-
             <Container>
-
                 <StatementContainer>
                     <SpeechBubbleLeft image={wendyPic} >
                         {instructions}
@@ -73,7 +63,6 @@ function Redacted(props) {
                         value4={redactedInputs['name4'] || ""}
                         value5={redactedInputs['name5'] || ""}
                     />
-                    {/* <button onClick={handleCheck}>Check</button> {message} */}
                     <MessageContainer>
                         {message}
                         {!isRedactedCorrect ? <FrontPageButton onclick={handleCheck} fontSize="1rem" bgColor="red">Check</FrontPageButton> : null}

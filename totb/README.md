@@ -1,15 +1,11 @@
 *change detective images
-
-**alt texts!
+error on tablet backstory
 
 do credits
 
-do game over style end page
-
-pay a vist button door knocker icon
-
-
-
+// lexi Photo by <a href="https://unsplash.com/@nathanmortn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">nate</a> on <a href="https://unsplash.com/s/photos/man?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+// skyscraper Photo by <a href="https://unsplash.com/@jtylernix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tyler Nix</a> on <a href="https://unsplash.com/s/photos/skyscraper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+   
 
 crimescene Photo by <a href="https://unsplash.com/@visuals_by_campbell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Campbell Jensen</a> on <a href="https://unsplash.com/s/photos/crime-scene?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   

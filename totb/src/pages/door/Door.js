@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
-import { StyledDoorOuter, StyledDoor, DoorSign, DoorBellBox, DoorBell, Inside, WitnessIntroBox } from './doorComponents/DoorComponents'
+import { StyledDoorOuter, StyledDoor, DoorSign, DoorBellBox, DoorBell } from './doorComponents/DoorComponents'
 
 function Door(props) {
     const [isDoorOpen, setIsDoorOpen] = useState(false)

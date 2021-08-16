@@ -69,7 +69,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: flex-end;
-/* border: 1px solid red; */
 
 @media(min-width:1025px){
     min-width: 50%;
@@ -79,9 +78,7 @@ justify-content: flex-end;
     border: 4px solid #141414;
     border-radius: 5px;
 }
-
 `
-
 const SafeBox = styled.div`
 display: flex;
 flex-direction: column;
@@ -128,7 +125,6 @@ position: relative;
 z-index: 2;
 `
 const SafeWheel = styled.div`
-/* clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%); */
 background-color: #666;
 min-height: 100px;
 min-width: 100px;
@@ -142,7 +138,6 @@ clip-path: circle(50% at 50% 50%);
 animation: ${({codeIsCorrect})=>codeIsCorrect ? rotateAndHide : rotateWheel} 2s;
 animation-fill-mode: forwards;
 animation-delay: 0;
-/* border: 10px solid red; */
 `
 const ChildrenContainer = styled.div`
 animation: ${({codeIsCorrect})=>codeIsCorrect ? hide : null} .2s;
@@ -192,7 +187,6 @@ width: auto;
 font-size: 1.3rem;
 padding: 1em 0 0 0;
 text-align: center;
-/* background-color: white; */
 animation: ${fadeIn} 1s;
 animation-delay: .1s;
 animation-fill-mode: forwards;
@@ -218,8 +212,6 @@ min-width: 100px;
 height: 200px;
 width: 100px;
 animation: ${({codeIsCorrect})=>codeIsCorrect ? show : null} .1s forwards .7s, ${({codeIsCorrect})=>codeIsCorrect ? highlight : null} 1s infinite alternate .7s;
-/* animation-fill-mode: forwards;
-animation-delay: .7s; */
 cursor: pointer;
 
 :hover{

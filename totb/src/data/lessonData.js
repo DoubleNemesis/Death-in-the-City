@@ -6,7 +6,6 @@ import DallasPic from '../images/dallas.jpg'
 import LucyPic from '../images/lucy.jpg'
 import WendyPic from '../images/wendy.jpg'
 import questionMark from '../images/questionMark.jpg'
-import artefactPlaceholder from '../images/artefactPlaceholder.jpg'
 import shreddedletterPic from '../images/shreddedletter.png'
 import errorcorrectionPic from '../images/errorcorrection.png'
 import secretcodePic from '../images/secretcode.png'
@@ -111,7 +110,7 @@ export const vocabData = {
 
 //office specific
 export const officeBubbleText = `This is your office desk. New witnesses, evidence and challenges will appear here as they become available. 
-When you are ready to interview a witness, just click on their image and you will be guided to their house. When a challenge appears, you can click on it to tackle it. 
+When you are ready to interview a witness, just click on their image and you will be guided to their house. When a challenge appears, you can click on it to tackle it. The first witness is waiting for you!
 `
 
 export const officeCards = {
@@ -427,7 +426,7 @@ export const questionsWitness3 = {
         ['I ask a delicate question. Was Lexi being unfaithful to you? ', 'fail']
     ],
     witnessConversationArray3: [
-        "I'll help if I can, but my English is really very bad.",
+        "I'll help if I can, but my English is really very bad. I find it so hard to get the verbs in the right tenses!",
         "I know how you feel. Don't worry, I'll help you.",
         "Great! Thanks! That's so kind of you. I find this language so hard! And now I am on my own...",
         "I have to ask a delicate question. Was Lexi being unfaithful to you? ",
@@ -688,7 +687,7 @@ export const ErrorCorrectionData = {
     instructions3: [
         [`Perfect! Thank you so much for your help! I like you, so here's the information I promised you. I expect Lexi was unfaithful. You can never trust actors or tell when they are lying. But I don't know who he was unfaithful with. Lucy? Maybe! 
         There was certainly something strange going on that night. A weird atmosphere. It started off fine, but later, around when Lexi was telling us about having covid, Dallas was just staring up out of the window
-         at the heavens. Lexi could be very very arrogant sometimes, and it gets boring. He was boasting about how he had ignored all the corona virus rules and regulations. I think only Lexi was happy there that night. And maybe that was because Lucy was flirting with him!`],
+         at the heavens - it was really strange. But then, Lexi could be very very arrogant sometimes, and it gets boring. He was boasting about how he had ignored all the corona virus rules and regulations. I think only Lexi was happy there that night. And maybe that was because Lucy was flirting with him!`],
     ],
     sentences: [
         ["I saw Lexi and Lucy holding hands under the table.", "0", false],
@@ -836,7 +835,7 @@ export const RedactedComp = (props) => {
 }
 
 export const endPageData = {
-    bubbleText1: `So you think you know who killed my son? Just choose from the options below and tell me why in the box.`,
+    bubbleText1: `So you think you know who killed my son? Great! Choose the guilty person from the options below and tell me why they did it in one sentence.`,
     bubbleText2: `OK, I can see I wasted my time with you. I should have gone to a professional. I'm not paying you a cent.`,
     bubbleText3: `So you worked out some of it and helped me to get justice for my son. I will pay half your fee, that's all.`,
     bubbleText4: `You're a great detective and I can't tell you how grateful I am! I'll double your pay! Congratulations!!!`,

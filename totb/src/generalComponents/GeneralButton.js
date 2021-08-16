@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import arrowRight from './../images/arrowRight.png'
 
 const StyledFPButton = styled.button`
 color: white;
@@ -7,20 +8,25 @@ padding: .4em .8em;
 margin: .5em auto 0 auto;
 font-size: ${({ fontSize }) => fontSize || '2rem'};
 font-weight: 800;
-border: none;
+border: 1px solid transparent; 
 font-family: 'Poppins';
 
 :hover{
+    box-sizing: border-box;
     background-color: midnightblue;
     border: 1px solid grey; 
     color: white;
 }
 
 `
+const Arrow = styled.img`
+padding-left: .5em;
+height: 40px;
+`
 
 export const FrontPageButton = ({children, ...props}) => {
     return (
-        <StyledFPButton fontSize={props.fontSize} bgColor={props.bgColor}  onClick={props.onclick}>{children}</StyledFPButton>
+        <StyledFPButton arrow fontSize={props.fontSize} bgColor={props.bgColor}  onClick={props.onclick}>{children}{props.arrow ? <Arrow src={arrowRight}/> : null} </StyledFPButton>
     )
 }
 

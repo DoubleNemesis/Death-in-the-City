@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -6,10 +6,9 @@ html {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  /* font-family: 'Lato' !important; */
   font-size: 100%;
   box-sizing: border-box;
-
+  overflow: hidden;
 }
 
 body {
@@ -34,7 +33,7 @@ body {
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url(https://tomsclassroom.com/react/navIcon.png) !important;
+  background-image: url('https://tomsclassroom.com/react/navIcon.png') !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -48,7 +47,5 @@ body {
   .error{
     background-color: red !important;
 }
-
-
   
 `

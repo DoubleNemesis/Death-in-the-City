@@ -52,7 +52,6 @@ border-radius: .3em;
 
 input, button{
     margin: .2em;
-    /* background-color: ${({ isCorrect }) => isCorrect ? 'white' : 'red'}; */
 }
 
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { history, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import arrowRight from './../images/arrowRight.png'
 
 
@@ -16,7 +16,7 @@ border-radius: ${({ borderRadius }) => borderRadius || '5'}px;
 
 :hover{
     background-color: orange;
-    /* border: 1px solid grey;  */
+    border: 1px solid grey; 
     color: black;
 }
 :active{

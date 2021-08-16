@@ -11,7 +11,5 @@ export const Outer = styled.div`
   background-repeat: no-repeat;
   background-color: black;
   margin-bottom: 0;
-  /* max-width: 800px;
-  overflow: hidden; */
   margin: 0 auto;
 ` 

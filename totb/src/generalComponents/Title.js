@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import TitleContainer from '../generalComponents/TitleContainer'
+import TitleContainer from './TitleContainer'
 
 const StyledTitle = styled.span`
 color: whitesmoke;
@@ -8,7 +8,6 @@ text-align: left;
 font-family: 'Bangers', cursive;
 color: red;
 letter-spacing: 2px;
-/* border: 1px solid yellow; */
 
 @media(max-width: 321px){ //iphone 5/SE
 font-size: 1.4rem;

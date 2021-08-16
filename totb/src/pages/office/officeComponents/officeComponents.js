@@ -9,7 +9,7 @@ justify-content: center;
 background-image: url(${woodbg});
 background-repeat: no-repeat;
 background-size: cover;
-padding: 1em;
+padding: 1em 1em 7.5em 1em;
 border-radius: 5px;
 
 @media(min-width: 1025px){
@@ -42,12 +42,6 @@ text-align: center;
 border-radius: 5px;
 border: 3px solid ${({ borderColor }) => borderColor};
 opacity: ${({ opacity }) => opacity};
-
-/* @media(min-width: 700px){
-    width: 200px;  
-    height: 220px;  
-} */
-
 `
 export const CardImageContainer = styled.div`
 max-height: 100px;

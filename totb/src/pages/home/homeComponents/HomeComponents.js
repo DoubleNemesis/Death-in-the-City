@@ -5,16 +5,11 @@ const itemIn = keyframes`
 0% { opacity: 0; }
 100% { opacity: 1; }
 `
-const itemOut = keyframes`
-0% { opacity: 1; right: 200px}
-100% { opacity: 0; right: 600px}
-`
+
 const StyledContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-/* border-radius: .3em; */
-/* border: 5px solid #fff; */
 background-color: #2d2e36;
 background: linear-gradient(#333, #2E2523, #333);
 background: linear-gradient(#333, #141414, #333);
@@ -25,7 +20,6 @@ margin: 1em 0 0 0 ;
 
 
 img{
-/* margin-bottom: 1em; */
 margin: 0;
 }
 
@@ -48,7 +42,6 @@ h3{
     font-size: 1.2rem;
     text-align: center;
     margin: 0em .5em 1em .5em;
-    /* text-transform: uppercase; */
 }
 
 h4{
@@ -72,7 +65,7 @@ h5{
 ul{
     list-style: none;
     font-size: 1.1rem;
-    margin-left: 0em;
+    margin-left: 1.5em;
     
     @media(min-width:1025px){
         margin-left: 2em;
@@ -129,7 +122,6 @@ export const DetectiveContainer = styled.div`
 
     p{
         margin: 0;
-        /* background-color: #2d2e36; */
         padding: .6em 2em .0em 2em;
         font-size: 1.1rem;
         font-weight: 700;
@@ -137,12 +129,8 @@ export const DetectiveContainer = styled.div`
 `
 
 export const DetectiveChoiceContainer = styled.div`
-    /* position: absolute; */
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
-    /* margin: 1em; */
-    /* border: 1px solid red; */
     background-color: #333;
     margin-top: 1.3em;
     `
@@ -193,5 +181,4 @@ export function TextContainer({ children, ...restProps }) {
 export const Bullet = styled.img`
 max-height: 20px;
 padding-right: 10px;
-/* border: 1px solid red; */
 `

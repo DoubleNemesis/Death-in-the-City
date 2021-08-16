@@ -1,49 +1,20 @@
-import { useState, useContext, useRef, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Container, ArtefactDisplay, WitnessCard, CardImageContainer, CardImage, ArtefactCard } from './officeComponents/OfficeComponents'
-import { history, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import GameContext from '../../context/GameContext'
-import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../generalComponents/InfoModal'
+import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalComponents/InfoModal'
 import { officeBubbleText, officeCards } from '../../data/lessonData'
 import GeneralButton from './../../generalComponents/GeneralButton'
 import WitnessButton from './../../generalComponents/WitnessButton'
 import { SpeechBubbleLeft } from './../../generalComponents/ConversationComponents'
 import magnify from './../../images/magnify.png'
-import client from '../../images/client.jpg'
 import teacher from '../../images/teacher.png'
 
-
-// const ActionCard = styled.div`
-// width: 100px;
-// height: 100px;
-// margin: .2em;
-// background-color: pink;
-// `
-// const Tick = styled.div`
-// position: absolute;
-// left: 0;
-// right: 0;
-// margin-left: auto;
-// margin-right: auto;
-// width: 10px;
-// min-width: 100%;
-// max-width: 100%;
-// height: 10px;
-// min-height: 100%;
-// background-color: transparent;
-// border-radius: 20px;
-// /* transform: rotateZ(-45deg); */
-// border: 3px solid limegreen;
-// `
 function Office() {
 
     const {
         isInstructionsModalDisplayed,
-        setIsInstructionsModalDisplayed,
-        hasVisitorBook,
-        items,
         collectedArtefacts,
-        setCollectedArtefacts,
-        setCompletedChallenges,
         collectedWitnesses,
         completedChallenges,
         completedWitnesses
@@ -73,7 +44,7 @@ function Office() {
         }
         else {
             return (
-                <WitnessCard borderColor="whitesmoke" key={`index${index}`}><CardImageContainer><CardImage src={item.altImage} /></CardImageContainer>{item.altName}</WitnessCard>
+                <WitnessCard borderColor="whitesmoke" key={`index${index}`}><CardImageContainer><CardImage src={item.altImage} alt="placeholder image for witness" /></CardImageContainer>{item.altName}</WitnessCard>
             )
         }
     })
@@ -88,28 +59,27 @@ function Office() {
         if (collectedArtefacts.indexOf(item.name) > -1) {
             return (
                 completedChallenges.indexOf(item.name) > -1 ?
-                    <ArtefactCard borderColor="limegreen" bgColor="black" key={`index${index}`}><img src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard> :
+                    <ArtefactCard borderColor="limegreen" bgColor="black" key={`index${index}`}><img src={item.image} alt="artefact" /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard> :
                     item.id < 6 ?
-                        <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img src={item.image} /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard> :
-                        <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img src={item.image} onClick={() => handleArtefactImageClick(item.image)} />{item.name}</ArtefactCard>
+                        <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img src={item.image} alt="artefact" /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard> :
+                        <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img src={item.image} alt="artefact" onClick={() => handleArtefactImageClick(item.image)} />{item.name}</ArtefactCard>
             )
         }
         else {
             return (
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={magnify} /><p>Evidence</p></ArtefactCard>
+                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={magnify} alt="evidence placeholder" /><p>Evidence</p></ArtefactCard>
             )
         }
 
     })
 
     function handleGuessClick() {
-            history.push(`endpage`)
+        history.push(`endpage`)
     }
 
     return (
         <>
             <Container>
-
                 {isInstructionsModalDisplayed ?
                     <SpeechBubbleLeft image={teacher} >
                         {officeBubbleText}
@@ -117,9 +87,8 @@ function Office() {
                     :
                     null}
 
-                {/* </StyledModal> */}
                 <StyledModal display={isArtefactModalDisplayed ? 'flex' : 'none'}>
-                    <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} /></ArtefactDisplay>
+                    <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} alt="artefact"/></ArtefactDisplay>
                     <ToggleContainer>
                         <ToggleTaskInfo
                             onClick={() => setIsArtefactModalDisplayed(!isArtefactModalDisplayed)}>
@@ -130,9 +99,13 @@ function Office() {
                 {witnesses}
                 {artefacts}
             </Container>
-            <Container>
-                {isReadyGuess ? <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton> : null}
-            </Container>
+            {
+                isReadyGuess ?
+                    <Container>
+                        <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton>
+                    </Container>
+                    : null
+            }
         </>
     )
 }

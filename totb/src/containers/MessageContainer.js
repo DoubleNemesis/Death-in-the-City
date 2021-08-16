@@ -6,21 +6,21 @@ justify-content: center;
 margin: .5em;
 background-color: ${({bgColor})=>bgColor || 'transparent' } ;
 padding: .3em;
-color: black;
+color: ${({color})=> color ||'black'};
 font-weight: 600;
 flex-direction: column;
 align-items: center;
 text-align: center;
+border-radius: 5px;
 
 
 h3{
-    margin-top: 1em;
+    margin: 1em;
 }
 
 @media(min-width: 1025px){
     width: ${({width})=>width || '80'}%;
     padding: 1em;
-    border-radius: 5px;
     border: 3px solid #141414;
     margin-top: 1em;
 

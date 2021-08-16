@@ -1,16 +1,11 @@
 import { useState, useContext, useEffect } from 'react'
-import PageContainer from '../../../containers/PageContainer'
-import Title from '../../../generalComponents/Title'
-import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import { MessageContainer } from '../../../containers/MessageContainer'
-import { Instructions, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import KirstenPic from '../../../images/kirsten.jpg'
 import { ErrorCorrectionData } from '../../../data/lessonData'
-import { SentenceDiv, IncorrectSentencesDiv, ErrorCorrectionContainer, IncorrectMessageContainer } from './errorCorrectionComponents/ErrorCorrectionComponents'
+import { SentenceDiv, IncorrectSentencesDiv, ErrorCorrectionContainer } from './errorCorrectionComponents/ErrorCorrectionComponents'
 import GameContext from '../../../context/GameContext'
 import NextPageButton from '../../../generalComponents/NextPageButton'
-import { propTypes } from 'react-bootstrap/esm/Image'
 
 
 function ErrorCorrection(props) {
@@ -21,7 +16,6 @@ function ErrorCorrection(props) {
     const [sentencesArray, setSentencesArray] = useState([])
     const [incorrectAndCorrectedArray, setIncorrectAndCorrectedArray] = useState([])
     const [isComplete1, setIsComplete1] = useState(false)
-    // const [isErrorCorrectionComplete, setIsErrorCorrectionComplete] = useState(false)
     const [correctedSentences, setCorrectedSentences] = useState({})
     const { instructions, instructions2, instructions3, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
     const [incorrectMessage, setIncorrectMessage] = useState('')
@@ -32,7 +26,6 @@ function ErrorCorrection(props) {
 
     function handleClick(e) {
         const selectedSentenceId = e.target.id
-        const selectedSentence = document.getElementById(selectedSentenceId)
         if (sentencesArray[selectedSentenceId][2] === true) {
             let copySentencesArray = [...sentencesArray]
             copySentencesArray[selectedSentenceId][2] = false
@@ -69,7 +62,6 @@ function ErrorCorrection(props) {
 
 
     function handleChange(e) {
-        const sentenceId = e.target.id
         const { name, value } = e.target
         setCorrectedSentences((prev) => ({ ...prev, [name]: value }))
     }
@@ -144,21 +136,16 @@ function ErrorCorrection(props) {
             <ErrorCorrectionContainer>
                 <SpeechBubbleLeft image={KirstenPic} minHeight="145">
                     {isErrorCorrectionCorrect ? instructions3 : isComplete1 ? instructions2 : instructions}
-                    {/* {!isComplete1 ? instructions : !isErrorCorrectionComplete ? instructions2 : instructions3} */}
                 </SpeechBubbleLeft>
 
                 {isErrorCorrectionCorrect ?
                     <>
                         <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>
-                        {/* <NextPageButton destination='office'>Back to Office</NextPageButton>  */}
                     </>
                     : isComplete1 ? secondSentenceList : firstSentenceList}
-                {/* {!isComplete1 ? firstSentenceList : !isErrorCorrectionComplete ? secondSentenceList : <NextPageButton destination='sneaky2'>Check her bin!</NextPageButton>} */}
                 {incorrectMessage ? <MessageContainer bgColor="red"> {incorrectMessage}</MessageContainer> : null}
             </ErrorCorrectionContainer>
-
         </>
-
     )
 }
 

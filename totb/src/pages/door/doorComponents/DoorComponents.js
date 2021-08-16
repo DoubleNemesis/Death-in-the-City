@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components'
 import doorsign from '../../../images/doorsign.png'
-import brick from '../../../images/brick.jpg'
 
 const OpenDoor = keyframes`
 from { transform: rotateY(0deg); }
@@ -14,11 +13,6 @@ const animateBorder = keyframes`
 from { box-shadow: 0px 0px 5px 3px red; }
 to { box-shadow: 0px 0px 5px 3px orange; }
 `
-const fadeIn = keyframes`
-0% { opacity: 0;}
-100% { opacity: 1;}
-`
-
 export const Inside = styled.div`
 grid-area: inside;
 width: 100%;

@@ -1,11 +1,6 @@
 import { useState, useContext, useEffect } from 'react'
-import PageContainer from '../../../containers/PageContainer'
-import Title from '../../../generalComponents/Title'
-import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import { MessageContainer } from '../../../containers/MessageContainer'
-// import { Instructions, Conversation, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
-import ProfilePic from '../../../images/janitor.png'
 import { orderEventsData } from '../../../data/lessonData'
 import { EventsContainer, ParagraphContainer, Container, Event } from './orderEventsComponents/OrderEventsComponents'
 import { List, arrayMove } from 'react-movable';
@@ -16,18 +11,15 @@ import { FrontPageButton } from '../../../generalComponents/GeneralButton'
 import { TaskMessage } from '../../../generalComponents/TaskMessage'
 
 
-
-
 function OrderEvents(props) {
     const taskText = `Hit check when finished`
     const taskCorrect = `Correct!`
     const taskIncorrect = `That's incorrect. Try again.`
     const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
     const { isOrderEventsCorrect, setIsOrderEventsCorrect } = useContext(GameContext)
-    // const [isOrderEventsCorrect, setIsOrderEventsCorrect] = useState(false)
     let { eventsToOrder } = orderEventsData
     const { eventsCorrectOrder } = orderEventsData
-    const [message, setMessage] = useState(<TaskMessage task="true" message={taskText} />)
+    const [message, setMessage] = useState(<TaskMessage width="50" task="true" message={taskText} />)
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [hasFinished, setHasFinished] = useState(false)
     const { orderEventsText, instructions } = orderEventsData
@@ -46,7 +38,6 @@ function OrderEvents(props) {
                 setHasFinished(false)
             }
         }
-        // setMessage(eventsCorrectOrder.toString() === items.toString()?'correct':'incorrect');
     }, [itemsToOrder, hasFinished])
 
     function handleCheck() {
@@ -56,7 +47,6 @@ function OrderEvents(props) {
     return (
         <>
             <Container>
-
                 <ParagraphContainer>
                     {orderEventsText}
                     <SpeechBubbleLeft image={teacher} >
@@ -81,7 +71,6 @@ function OrderEvents(props) {
 
                     <MessageContainer>
                         {message}
-                        
                         {isOrderEventsCorrect ? <NextPageButton destination="sneaky3">Look in his bin</NextPageButton> : <FrontPageButton onclick={handleCheck} bgColor="red">Check</FrontPageButton>}
                     </MessageContainer>
                 </EventsContainer>

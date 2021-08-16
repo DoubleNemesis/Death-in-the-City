@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { SpeechBubbleLeft, SpeechBubbleRight } from '../../../../generalComponents/ConversationComponents'
 import { TextButton, TextButtonContainer } from '../../../../generalComponents/SpeechTextButton'
 import woodbg from '../../../../images/woodbg.jpg'
 import loveLetterBG from '../../../../images/loveLetterBG.png'
@@ -7,12 +6,10 @@ import loveLetterBG from '../../../../images/loveLetterBG.png'
 export const SuccessMessageComp = (props)=>{
     return(
         <>
-        {/* <SpeechBubbleLeft> */}
             {props.message}
             <TextButtonContainer>
                 <TextButton onClick={props.onclick} bgcolor="red">Click</TextButton>
             </TextButtonContainer>
-            {/* </SpeechBubbleLeft> */}
             </>
     )
 }
@@ -21,9 +18,7 @@ export const Container = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
-
 `
-
 export const LoveLetterMainContainer = styled.div`
 display:flex;
 flex-direction: column;
@@ -46,7 +41,6 @@ background-color: whitesmoke;
 display: flex;
 flex-wrap: wrap;
 width: 325px;
-/* border: 1px solid red; */
 margin-top: 1em;
 
 background-size: cover;
@@ -59,13 +53,13 @@ background-repeat: repeat-y;
     font-family: 'Kalam';
 }
 
-@media(min-width: 1025px){
+@media(min-width: 700px){
     background-color: unset;
-    width: 460px;  
-    min-width: 460px;
+    width: 660px;  
+    min-width: 660px;
     background-image: url(${loveLetterBG});
-    padding: 1em 1em 1em 6.5em;
-    margin-bottom: 2em;
+    padding: 4em 1em 4em 6.5em;
+    margin: 3em 0;
 }
 
 `
@@ -85,11 +79,11 @@ justify-content: center;
     font-weight: 400;
 }
 
-@media(min-width: 1025px){
+@media(min-width: 700px){
     background-color: #cfd6de;
 padding: .5em;
 border-radius: 5px;
-    width: 420px;  
+    width: 520px;  
     max-width: 520px;
 
 }
@@ -110,8 +104,12 @@ color: ${({color})=> color === 'red' ? 'white' : '#141414'};
 font-weight: 800;
 cursor: pointer;
 
+:hover{
+    background: ${({color})=> `linear-gradient(45deg, coral 0%,  ${color} 40%, #ffff00 100%)`};  
+}
+
 @media(min-width: 700px){
-    /* width: 60px;   */
+    width: 50px;
 }
 
 
@@ -121,7 +119,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 background-color: ${({color})=> color };
-/* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
 width: 20px;
 padding: .3em .5em;
 margin: .2em;
@@ -131,7 +128,7 @@ color: yellow;
 cursor: pointer;
 
 @media(min-width: 700px){
-    /* width: 40px;   */
+    width: 42px;  
 }
 
 `

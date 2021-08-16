@@ -7,7 +7,6 @@ grid-area: conversation;
 display: flex;
 flex-direction: column;
 width: 100%;
-/* border: 1px solid red; */
 
 @media(min-width:1025px){
     flex-direction: row;
@@ -29,12 +28,6 @@ ul{
     margin-left: -2em;
 }
 
-/* li{
-    border: 1px solid red;
-    margin: .3em .3em 0;
-    padding: .3em;
-    cursor: grab;
-} */
 
 @media(min-width:1025px){
     width: 55%;
@@ -44,16 +37,6 @@ height: unset;
 min-height: unset;
 padding: 1em;
 padding-left: 5em; 
-/* background-color: unset; */
-
-/* li{
-    background-color: whitesmoke;
-    border: 2px solid orange;
-    margin: .3em .3em 0;
-    padding: .3em;
-    width: 70%;
-    border-radius: 5px;
-} */
 }
 `
 export const ParagraphContainer = styled.div`
@@ -83,9 +66,15 @@ export const Event = styled.div`
     margin: .3em .3em 0;
     border-radius: 5px;
 background-color: ${({isOrderEventsCorrect})=>isOrderEventsCorrect ? 'lightgreen' : 'whitesmoke'};
-width: auto;
+width: 80%;
 padding: .5em .3em .5em 2em;
 cursor: grab;
 font-size: 1rem;
 font-family: 'Poppins';
+margin-left: 10%;
+
+@media(min-width:1025px){
+    margin: .3em .3em 0;
+}
+
 `

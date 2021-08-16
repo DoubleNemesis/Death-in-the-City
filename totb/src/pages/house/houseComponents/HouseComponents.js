@@ -7,12 +7,12 @@ const mapZoom = keyframes`
 
 export const HousePageContainer = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
+flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 width: 100%;
 box-sizing: border-box;
-/* border: 1px solid white; */
 
 @media(min-width: 1025px){
     margin: 0 auto;
@@ -26,16 +26,6 @@ box-sizing: border-box;
                         ;
 }
 `
-
-export const DoorBell = styled.button`
-border: 4px solid #141414;
-width: 30%;
-@media(min-width: 1025px){
-    width: 25%;
-
-}
-`
-
 export const BtnContainer = styled.div`
 display: flex;
 flex-direction: row;
@@ -43,14 +33,24 @@ box-sizing: border-box;
 align-items: center;
 justify-content: center;
 grid-area: btn;
+min-width: 50%;
+margin-bottom: 1em;
+
+@media(min-width: 1025px){
+    min-width: unset;
+    margin-bottom: unset;
+}
+
 ` 
 export const InnerContainerSpeech = styled.div`
-/* display: flex;
-flex-direction: column; */
-/* box-sizing: border-box; */
-border: 1px solid yellow;
 grid-area: innerSpeech;
+min-width: 50%;
 margin-left: 1em;
+
+@media(min-width: 1025px){
+    border: 1px solid yellow;
+min-width: unset;
+}
 ` 
 
 export const HouseContainer = styled.div`
@@ -81,6 +81,7 @@ export const MapContainer = styled.div`
     border: 4px solid #141414;
     border-top: none;
     grid-area: map;
+    display: none;
     
     @media(min-width: 600px){
         height: 300px; 
@@ -90,7 +91,7 @@ export const MapContainer = styled.div`
         height: 380px; 
         width: unset;
         border: 4px solid #141414;
-    /* border-left: none; */
+        display: inline;
 }
 `
 export const MapImage = styled.img`

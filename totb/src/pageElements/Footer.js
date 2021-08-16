@@ -1,5 +1,5 @@
 import FooterContainer from '../containers/FooterContainer'
-import { history, useHistory, Link, HashRouter as Router } from 'react-router-dom'
+import { Link, HashRouter as Router } from 'react-router-dom'
 
 function Footer() {
     let date = new Date()

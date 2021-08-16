@@ -1,20 +1,19 @@
 import { useEffect, useState } from 'react'
-import PageContainer from '../../containers/PageContainer'
 import { MessageContainer } from '../../containers/MessageContainer'
 import { FrontPageButton } from '../../generalComponents/GeneralButton'
 import * as lessonData from '../../data/lessonData'
-import { SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
+import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
 import clientPic from './../../images/client.jpg'
 import policeofficer from './../../images/policeofficer.png'
 import DallasPic from './../../images/dallas.jpg'
-import { Form } from './endPageComponents/EndPageComponents'
+import { Form, Container } from './endPageComponents/EndPageComponents'
 import Confetti from 'react-dom-confetti';
 
 function EndPage() {
 
     const [chosenOption, setChosenOption] = useState('default')
     const [confetti, setConfetti] = useState(false)
-    const [textInputText, setTextInputText] = useState('I think ... did it because...')
+    const [textInputText, setTextInputText] = useState('...killed Lexington because....')
     const [suspectIsCorrect, setSuspectIsCorrect] = useState(false)
     const [reasonIsCorrect, setReasonIsCorrect] = useState(false)
     const [displayMessage, setDisplayMessage] = useState(false)
@@ -33,7 +32,7 @@ function EndPage() {
         height: "12px",
         perspective: "996px",
         colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
-      };
+    };
 
     function handleSelectInput(e) {
         setChosenOption(e.target.value)
@@ -61,19 +60,19 @@ function EndPage() {
     console.log(suspectIsCorrect);
     console.log(reasonIsCorrect);
 
-    useEffect(()=>{
-        if (suspectIsCorrect && reasonIsCorrect){
+    useEffect(() => {
+        if (suspectIsCorrect && reasonIsCorrect) {
             setConfetti(true)
         }
-    },[suspectIsCorrect, reasonIsCorrect ])
+    }, [suspectIsCorrect, reasonIsCorrect])
 
 
     return (
         <>
-            <PageContainer>
-                <h3>Game Over</h3>
-<Confetti active={confetti} config={config} />
-                <SpeechBubbleLeft image={clientPic}>{
+            {/* <PageContainer minHeight="0"> */}
+                <Confetti active={confetti} config={config} />
+                <Container>
+                <SpeechBubbleLeft alt="Terence Grey" image={clientPic}>{
 
                     !displayMessage ? bubbleText1 :
                         suspectIsCorrect && reasonIsCorrect ? bubbleText4 :
@@ -81,7 +80,7 @@ function EndPage() {
                                 !suspectIsCorrect && reasonIsCorrect ? bubbleText3 :
                                     bubbleText2
                 }</SpeechBubbleLeft>
-{   !displayMessage ?             <Form>
+                {!displayMessage ? <Form>
                     <select value={chosenOption} onChange={handleSelectInput}>
                         <option disabled selected value="default"> -- select a suspect -- </option>
                         <option value={characterNames[1]}>{characterNames[1]}</option>
@@ -90,28 +89,33 @@ function EndPage() {
                         <option value={characterNames[4]}>{characterNames[4]}</option>
                         <option value={characterNames[5]}>{characterNames[5]}</option>
                     </select>
-                    <textarea onChange={handleTextInput} name="textInput" value={textInputText}  />
+                    <textarea onChange={handleTextInput} name="textInput" value={textInputText} />
                     <FrontPageButton onclick={handleSubmit} bgColor="red">Make Allegation</FrontPageButton>
-                </Form> :null}
+               </Form> : null}
 
                 {
                     displayMessage ?
-                        suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="limegreen">Congratulations! You did it! Excellent!</MessageContainer> :
-                            suspectIsCorrect && !reasonIsCorrect ? <MessageContainer bgColor="red">Right person wrong reason. 5/10</MessageContainer> :
-                                !suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="red">Wrong person right reason. 5/10</MessageContainer> :
-                                    <MessageContainer bgColor="red">Completely Wrong. 0/10</MessageContainer>
+                        suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="limegreen" width="50"><h3>Game Over - You Win!!!</h3></MessageContainer> :
+
+                            suspectIsCorrect && !reasonIsCorrect ? <MessageContainer bgColor="red" width="50" color="white"><h3>Game Over 5/10</h3></MessageContainer> :
+                        
+                            !suspectIsCorrect && reasonIsCorrect ? <MessageContainer bgColor="red" width="50" color="white"><h3>Game Over 5/10</h3></MessageContainer> :
+                        
+                        <MessageContainer bgColor="red" color="white"><h3>Game Over - you lost.</h3></MessageContainer>                       
                         :
                         null
+                        
                 }
+                </Container>
 
                 {
                     displayMessage ?
                         <>
-                            <SpeechBubbleLeft image={DallasPic}>
+                            <SpeechBubbleLeft alt="Dallas Franks" image={DallasPic}>
                                 <h3>What Happened</h3>
                                 {explanation}
                             </SpeechBubbleLeft>
-                            <SpeechBubbleLeft image={policeofficer}>
+                            <SpeechBubbleLeft alt="Police Officer" image={policeofficer}>
                                 {suspectIsCorrect && reasonIsCorrect ?
                                     police1 :
                                     police2
@@ -121,7 +125,7 @@ function EndPage() {
                         :
                         null
                 }
-            </PageContainer>
+            {/* </PageContainer> */}
         </>
     )
 }

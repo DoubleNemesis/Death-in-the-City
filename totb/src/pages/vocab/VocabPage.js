@@ -1,10 +1,9 @@
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import Container, {StyledAnswersContainer} from './vocabComponents/VocabContainer'
 import { vocabData as data } from '../../data/lessonData'
 import GameContext from '../../context/GameContext'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
 import NextPageButton from '../../generalComponents/NextPageButton'
-import client from '../../images/client.jpg'
 import teacher from '../../images/teacher.png'
 import { officeCards } from '../../data/lessonData'
 import './VocabStyles.css'
@@ -94,15 +93,11 @@ function VocabPage() {
         })
     })
 
-
-
-
     return (
         <div className="vocabPage">
             <SpeechBubbleLeft image={teacher} bubbleWidth="90">
             {!hasDoneVocab ? bubbleText1 : bubbleText2 }
             </SpeechBubbleLeft>
-
             {!hasDoneVocab ?
                 <Container>
                     {tiles = tiles.sort(() => Math.random() - 0.5)}
@@ -114,11 +109,7 @@ function VocabPage() {
                   <div>  {answersList} </div>
                   </StyledAnswersContainer>
                 </Container>
-
-
-
             }
-
         </div>
     )
 }

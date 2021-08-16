@@ -1,9 +1,5 @@
 import { useState, useContext, useEffect } from 'react'
-import PageContainer from '../../../containers/PageContainer'
-import Title from '../../../generalComponents/Title'
-import { history, useHistory } from 'react-router-dom'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
-import { Instructions, WitnessImage, TaskBox, InfoBox } from '../../witness/witnessComponents/Layout'
 import { StyledInput, CodeBoxContainer, Safe, StyledFoundArtefact, Container } from './codeBoxComponents/CodeBoxComponents'
 import Janitor from '../../../images/janitor.png'
 import GameContext from '../../../context/GameContext'
@@ -13,8 +9,6 @@ import { TextButton, TextButtonContainer } from '../../../generalComponents/Spee
 
 import { CodeBoxData } from '../../../data/lessonData'
 import { officeCards } from '../../../data/lessonData'
-
-
 
 function CodeBox() {
     const [bubbleTextToDisplay, setBubbleTextToDisplay] = useState(1)
@@ -78,7 +72,6 @@ function CodeBox() {
 
     function handleVisitorBookClick() {
         setHasVisitorBook(true)
-        //const dummyCollectedWitnesses = [...collectedWitnesses]
         let wits = officeCards.witnesses
         let dummyCollectedWitnesses = [...collectedWitnesses,
         wits[1].name,
@@ -110,7 +103,6 @@ function CodeBox() {
                     {bubbleTextToDisplay < 3 ? <TextButtonContainer>
                         <TextButton id="1" bgcolor={bubbleTextToDisplay === 1 ? 'red' : null} onClick={handleTextButtonClick}>1</TextButton>
                         <TextButton id="2" bgcolor={bubbleTextToDisplay === 2 ? 'red' : null} onClick={handleTextButtonClick}>2</TextButton>
-                        {/* <TextButton id="3" bgcolor={bubbleTextToDisplay === 3 ? 'red' : null} onClick={handleTextButtonClick}>3</TextButton> */}
                     </TextButtonContainer> : null}
                 </SpeechBubbleLeft>
                 <CodeBoxContainer>

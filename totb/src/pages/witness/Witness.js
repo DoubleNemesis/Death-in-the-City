@@ -1,11 +1,9 @@
 import { useState, useEffect, useContext } from 'react'
 import NextPageButton from '../../generalComponents/NextPageButton'
-import {TaskMessage, SuccessEmoji} from '../../generalComponents/TaskMessage'
-import Door from '../door/Door'
+import { TaskMessage, SuccessEmoji } from '../../generalComponents/TaskMessage'
 import House from '../house/House'
-import { Question, SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
+import { SpeechBubbleLeft, SpeechBubbleRight } from '../../generalComponents/ConversationComponents'
 import {
-    Instructions,
     Conversation,
     QuestionOptions,
     QuestionOption,
@@ -28,10 +26,9 @@ const taskIncorrect = `That's incorrect. Try again.`
 
 function WitnessComp(props) {
     const [questions, setQuestions] = useState([])
-    const [rightWrong, setRightWrong] = useState(<TaskMessage task="true" message={taskText}/>)
+    const [rightWrong, setRightWrong] = useState(<TaskMessage task="true" message={taskText} />)
     const [conversation, setConversation] = useState([])
     const [questionList, setQuestionList] = useState(props.questionsWit)
-    const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [doorWasOpened, setDoorWasOpened] = useState(false)
     const [isArtefactClicked, setIsArtefactClicked] = useState(false)
     const { collectedArtefacts, setCollectedArtefacts, completedWitnesses, setCompletedWitnesses, detectiveChosen } = useContext(GameContext)
@@ -47,7 +44,6 @@ function WitnessComp(props) {
         function assignQuestionsList(dat) {
             let questionsList = dat.map((item, index) => {
                 return <QuestionOption key={`question${index}`} onClick={handleClick}><div className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</div></QuestionOption>
-                // return <QuestionOption key={`question${index}`} onClick={handleClick} className={item[1] === 'success' ? 'success question' : 'fail question'}>{item[0]}</QuestionOption>
             })
             setQuestions(questionsList)
         }
@@ -72,7 +68,7 @@ function WitnessComp(props) {
     function handleClick(e) {
         if (e.target.classList.contains('success')) {
             counter = counter + 1
-            setRightWrong(<TaskMessage correct="true" message={taskCorrect}/>)
+            setRightWrong(<TaskMessage correct="true" message={taskCorrect} />)
             e.target.classList.add('correct')
             let listToHide = document.querySelectorAll('.question');
             setTimeout(() => {
@@ -84,18 +80,9 @@ function WitnessComp(props) {
                     setQuestionList(props.questionsWit2)
                     if (counter <= 2) {
                         listToHide.forEach((item) => { item.parentNode.style.display = 'inline' })
-                        setRightWrong(<TaskMessage task="true" message={taskText}/>)
-                        const conversationEnd = document.getElementById('conversationBottom')
+                        setRightWrong(<TaskMessage task="true" message={taskText} />)
                     }
                     else {
-                        //NEEDS TO RESET HERE FOR NEXT WITNESS!!!!
-                        //popup here found artefact if that is the case? hasArtefact ? <popup/> : null
-
-                        // setRightWrong(
-                        //     props.artefactName ?
-                        //         <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} /> :
-                        //         <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>
-                        // )
                         function updateCompletedWitnesses(witnessName) {
                             let dummyCompletedWitnesses = [...completedWitnesses]
                             dummyCompletedWitnesses = [witnessName, ...dummyCompletedWitnesses]
@@ -109,16 +96,9 @@ function WitnessComp(props) {
                             updateCompletedWitnesses(props.title)
                         }
                         else {
-                            setRightWrong(<StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} />)
+                            setRightWrong(<StyledArtefact src={props.artefactImage} alt="artefact" onClick={handleArtefactClick} />)
                             updateCompletedWitnesses(props.title)
                         }
-                        // setRightWrong(
-                        //     !props.artefactName ?
-                        //     <NextPageButton destination={props.trialURL}>{props.exitMessage}</NextPageButton>:
-                        //     completededWitnesses.indexOf(props.title) > -1 ?
-                        //     <NextPageButton destination='office'>Back to Office</NextPageButton>:
-                        //     <StyledArtefact src={props.artefactImage} onClick={handleArtefactClick} />                    
-                        // )
                         counter = 0;
                     }
                     setTimeout(() => {
@@ -131,68 +111,55 @@ function WitnessComp(props) {
             }, 500)
         }
         else {
-            // e.target.classList.add('wrong')
-            setRightWrong(<TaskMessage incorrect="true" message={taskIncorrect}/>)
+            setRightWrong(<TaskMessage incorrect="true" message={taskIncorrect} />)
         }
     }
-
-
-
 
     return (
 
         <>
-        {!doorWasOpened ? 
-        <>
-            <House
-                house={props.house}
-                houseMessage={props.houseMessage}
-                witnessInfo={props.witnessInfo}
-                personImage={props.personImage}
-                mapImage={props.mapImage}
-                coords={props.coords}
-                // doorImg={props.doorImg}
-                // doorImgL={props.doorImgL}
-                // doorTitle={props.doorTitle}
-                setDoorWasOpened={setDoorWasOpened} />
+            {!doorWasOpened ?
+                <>
+                    <House
+                        house={props.house}
+                        houseMessage={props.houseMessage}
+                        witnessInfo={props.witnessInfo}
+                        personImage={props.personImage}
+                        mapImage={props.mapImage}
+                        coords={props.coords}
+                        setDoorWasOpened={setDoorWasOpened} />
                 </>
                 : null}
 
-<WitnessContainer>
-
-
-            <>
-                { doorWasOpened ? <Inside>
-                    <WitnessIntroBox personImage={props.personImage} witnessInfo={props.witnessInfo} />
-                </Inside> : null}
-                {doorWasOpened ?
-                    <>
-                        <Conversation>
-                            <SpeechBubbleRight margin=".4" image={detectiveChosen}>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
-                            {conversation}
-                        </Conversation>
-                        <QuestionOptions>
-                            <InfoBox>
-                                {isArtefactClicked ?
-                                    <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>
-                                        <SuccessEmoji width="80" borderColor="gold" message={`You found the "${props.artefactName}"!`}/>
-                                        {/* <NextPageButton destination={props.binCheck} margin="1em auto .5em auto">Check the bin</NextPageButton> */}
-                                        <NextPageButton destination={props.trialURL} margin=".5em auto">Do the challenge</NextPageButton>
-                                        {/* <NextPageButton destination="office" margin=".5em auto">Back to Office</NextPageButton> */}
-                                    </StyledFoundArtefact>
-                                    : rightWrong}
-                            </InfoBox>
-                            {questions}
-                            {/* id to scroll to */}
-                            <EndDiv id="conversationBottom">here</EndDiv>
-                        </QuestionOptions>
-                    </>
-                    : null}
-                {/* <div id="pageEnd"></div> */}
-            </>
-        </WitnessContainer>
-                                        </>
-
+            <WitnessContainer>
+                <>
+                    {doorWasOpened ? <Inside>
+                        <WitnessIntroBox personImage={props.personImage} witnessInfo={props.witnessInfo} />
+                    </Inside> : null}
+                    {doorWasOpened ?
+                        <>
+                            <Conversation>
+                                <SpeechBubbleRight margin=".4" image={detectiveChosen}>{props.speechBubbleText || `Hi! I'm a private detective investigating the death of Lexington Grey. Can I ask you some questions?`}</SpeechBubbleRight>
+                                {conversation}
+                            </Conversation>
+                            <QuestionOptions>
+                                <InfoBox>
+                                    {isArtefactClicked ?
+                                        <StyledFoundArtefact isArtefactClicked={isArtefactClicked}>
+                                            <SuccessEmoji width="80" borderColor="gold" message={`You found the "${props.artefactName}"!`} />
+                                            <NextPageButton destination={props.trialURL} margin=".5em auto">Do the challenge</NextPageButton>      
+                                        </StyledFoundArtefact>
+                                        : rightWrong}
+                                </InfoBox>
+                                {questions}
+                                {/* id to scroll to */}
+                                <EndDiv id="conversationBottom">here</EndDiv>
+                            </QuestionOptions>
+                        </>
+                        : null}
+                </>
+            </WitnessContainer>
+        </>
     )
 }
 

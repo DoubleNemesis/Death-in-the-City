@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from 'react'
 import { List, arrayMove } from 'react-movable';
 import { ShreddedLetterPiecesData } from '../../../data/lessonData'
 import { EventsContainer, ShreddedPiece } from './shreddedLetterComponents/ShreddedLetterComponents'
-import { StyledModal, ToggleContainer, ToggleTaskInfo, QuestionOption } from '../../../generalComponents/InfoModal'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import NextPageButton from '../../../generalComponents/NextPageButton'
 import { FrontPageButton } from '../../../generalComponents/GeneralButton'
@@ -25,9 +24,7 @@ function ShreddedLetter(props) {
     const [message, setMessage] = useState(<TaskMessage task="true" message={taskText} />)
     const [itemsToOrder, setItemsToOrder] = useState(eventsToOrder);
     const [itemsCorrectOrder, setItemsCorrectOrder] = useState(eventsCorrectOrder);
-    const [isInstructionsModalDisplayed, setIsInstructionsModalDisplayed] = useState(true)
     const [hasFinished, setHasFinished] = useState(false)
-    //const [isShreddedLetterCorrect, setIsShreddedLetterCorrect] = useState(false)
 
     useEffect(() => {
         if (hasFinished) {
@@ -48,10 +45,6 @@ function ShreddedLetter(props) {
     function handleCheck() {
         setHasFinished(true)
     }
-
-    console.log(hasFinished)
-
-    console.log(isShreddedLetterCorrect);
 
     return (
         <>

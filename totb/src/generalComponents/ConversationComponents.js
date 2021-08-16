@@ -41,13 +41,9 @@ const StyledSpeechBubble = styled.div`
       max-width: 80%;
       font-size: 1.2rem;
     }
-/* 
-    @media(min-width: 1025px){
-      max-width: 70%;
-    } */
 }
 
-.bubbleRight{ //delete????
+.bubbleRight{ 
     background-color: limegreen;
     background: ${({ bgcolor }) => bgcolor || 'limegreen'};
     float: right;
@@ -85,7 +81,6 @@ max-width: 100px;
 float: left;
 margin: 0 1em 0em 0;
 border-radius: 10%;
-/* border: 1px solid #333; */
 background-color: transparent;
 
 @media(min-width:1025px){

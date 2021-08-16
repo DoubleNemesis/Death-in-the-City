@@ -19,12 +19,13 @@ margin: 0 auto;
 @media(min-width:1025px){
     border: 4px ${({borderColor})=>borderColor || '#141414'} solid;
   border-radius: 5px;
+  width: 100%;
 }
 `
 
 export const TaskMessage = (props) => {
     
-    return <TaskMessageText ><TaskImage src={props.task ? pencil : props.incorrect ? cross : tick} />
+    return <TaskMessageText width={props.width} ><TaskImage  src={props.task ? pencil : props.incorrect ? cross : tick} />
         {props.message}
     </TaskMessageText>
 }

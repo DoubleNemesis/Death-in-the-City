@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components'
-
 const fadeInSpeed = '3s'
 
 const fadeIn = keyframes`
@@ -10,7 +9,6 @@ const animateBorder = keyframes`
 from { box-shadow: 0px 0px 10px 5px red; }
 to { box-shadow: 0px 0px 10px 5px orange; }
 `
-
 
 export const WitnessContainer = styled.div`
 
@@ -24,7 +22,6 @@ export const WitnessContainer = styled.div`
         "questionoptions conversation ";
     font-size: .1rem;
     min-height: 78.5vh; 
-    /* border: 1px solid red; */
     align-items: start;
 }
 `
@@ -45,40 +42,31 @@ li{
 }
 `
 export const TaskBox = styled.div`
-/* margin-top: 1em;
-padding: .5em; */
-/* border: 1px solid black; */
 `
 export const InfoBox = styled.div`
 grid-area: infobox;
 margin-top: 1em;
-/* padding: .5em; */
 background-color: transparent;
 text-align: center;
 font-size: 1.2rem;
 font-weight: 700;
 width: 100%;
-/* border: 20px solid green; */
 
 @media(min-width:1025px){
     margin-top: .3em;
     margin-left: 0;
-    /* border-radius: 10px; */
     width: 100%;
     padding: 0;
     animation: ${fadeIn} ${fadeInSpeed};
     animation-fill-mode: forwards;
-    /* border: 1px solid green; */
     min-height: 100%;
 }
-
 `
 
 export const Conversation = styled.div`
 grid-area: conversation;
 display: flex;
 flex-direction: column;
-/* background-color: skyblue; */
 width: 100%;
 
 @media(min-width:1025px){
@@ -91,7 +79,6 @@ export const QuestionOptions = styled.div`
 grid-area: questionoptions;
 display: flex;
 flex-direction: column;
-/* background-color: skyblue; */
 width: 100%;
 padding: 0;
 align-items: center;
@@ -110,7 +97,7 @@ const StyledWitnessImage = styled.img`
 width: auto;
 max-width: 100px;
 `
-export const WitnessImage = (props) => <StyledWitnessImage src={props.img}></StyledWitnessImage>
+export const WitnessImage = (props) => <StyledWitnessImage src={props.img} alt="witness"></StyledWitnessImage>
 
 
 export const StyledArtefact = styled.img`
@@ -167,8 +154,6 @@ div{
 @media(min-width: 1025px){
     font-size: 1.1rem;
 }
-
-
 `
 
 
@@ -176,7 +161,6 @@ const WitnessIntroContainer = styled.div`
 display: flex;
 width: 100%;
 background-color: skyblue;
-/* min-height: 200px; */
 padding: .5em;
 box-sizing: border-box;
 align-items: flex-start;
@@ -188,16 +172,12 @@ animation: ${fadeIn} 1.5s;
   margin-right: .5em;
   border: 4px solid #141414 ;
   border-radius: 5px;
-    /* animation: ${fadeIn} 1s;
-    animation-fill-mode: forwards;
-    animation-delay: 0s; */
 }
 `
 const WitnessImageBox = styled.img`
 width: 30%;
 height: auto;
 padding: .5em;
-/* margin: 7em; */
 border-radius: 10px; 
 
 @media(min-width: 1025px){
@@ -225,7 +205,7 @@ p{
 export const WitnessIntroBox = (props)=>{
     return(
         <WitnessIntroContainer>
-            <WitnessImageBox src={props.personImage}/>
+            <WitnessImageBox src={props.personImage} alt="witness"/>
             <WitnessText><h3>Witness Info</h3><p>{props.witnessInfo}</p></WitnessText>
         </WitnessIntroContainer>
     )

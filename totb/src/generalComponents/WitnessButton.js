@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { history, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const StyledButton = styled.button`
 background-color: #141414;
@@ -11,15 +11,12 @@ padding: .2em .8em;
 
 :hover{
     background-color: orange;
-    /* border: 1px solid grey;  */
     color: black;
 }
 
 @media(min-width: 700px){
     font-size: .7rem; 
 }
-
-
 `
 
 function WitnessButton({ children, ...props }) {
