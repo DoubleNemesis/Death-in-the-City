@@ -26,7 +26,9 @@ function Office() {
 
     let history = useHistory()
 
-    console.log(completedWitnesses);
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
 
     useEffect(() => {
         if (completedChallenges.length >= 5) {
@@ -80,13 +82,13 @@ function Office() {
     return (
         <>
             <Container>
+
                 {isInstructionsModalDisplayed ?
                     <SpeechBubbleLeft image={teacher} >
                         {officeBubbleText}
                     </SpeechBubbleLeft>
                     :
                     null}
-
                 <StyledModal display={isArtefactModalDisplayed ? 'flex' : 'none'}>
                     <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} alt="artefact"/></ArtefactDisplay>
                     <ToggleContainer>
@@ -100,6 +102,7 @@ function Office() {
                 {artefacts}
             </Container>
             {
+
                 isReadyGuess ?
                     <Container>
                         <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton>

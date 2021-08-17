@@ -16,7 +16,7 @@ left:0;
 right:0;
 margin-left:auto;
 margin-right:auto;
-top: 30%;
+top: 110%;
 font-size: 1rem;
 width: 90%;
 padding: .5em;
@@ -33,6 +33,9 @@ p{
     padding: 1em 0 .5em 0;
 }
 
+@media(min-width: 700px){
+    top: 30%;
+}
 @media(min-width: 1025px){
     display: ${({ display }) => display};
     flex-direction: column;

@@ -129,4 +129,8 @@ export const ThoughtContainer = styled.div`
 position: absolute;
 width: 100%;
 margin-top: 0vh;
+
+@media(min-width: 1025px){
+    width: 50%;  
+}
 `

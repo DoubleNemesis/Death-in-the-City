@@ -8,7 +8,6 @@ html {
   padding: 0;
   font-size: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 body {

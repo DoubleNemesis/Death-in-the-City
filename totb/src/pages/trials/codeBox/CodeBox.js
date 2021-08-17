@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from 'react'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
+import { DivToScrollTo } from '../../../generalComponents/DivToScrollTo'
 import { StyledInput, CodeBoxContainer, Safe, StyledFoundArtefact, Container } from './codeBoxComponents/CodeBoxComponents'
 import Janitor from '../../../images/janitor.png'
 import GameContext from '../../../context/GameContext'
@@ -37,8 +38,11 @@ function CodeBox() {
     }
 
     useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
+
+    useEffect(()=>{
         if(first && second && third && fourth && fifth){
-            console.log('true');
             setCodeBoxIsFull(true)
         }
 
@@ -46,7 +50,6 @@ function CodeBox() {
 
     function handleCheckCorrectCode() {
         let codeAttempt = [...first, ...second, ...third, ...fourth, ...fifth]
-        console.log(codeAttempt.toString() === codeAnswer)
         if (codeAttempt.toString() === codeAnswer) {
             setSafeCodeBgColor('limeGreen')
             setBubbleTextToDisplay(4)
@@ -81,12 +84,16 @@ function CodeBox() {
         wits[5].name,
         ]
         setCollectedWitnesses(dummyCollectedWitnesses)
+        const divToScrollTo = document.getElementById('divToScrollTo')
+        if(divToScrollTo){
+            divToScrollTo.scrollIntoView()
+        }
     }
 
     return (
         <>
-
             <Container>
+                <DivToScrollTo/>
                 <SpeechBubbleLeft image={Janitor} minHeight="475">
                     {bubbleTextToDisplay === 1 ?
                         bubbleText1 :
@@ -106,7 +113,6 @@ function CodeBox() {
                     </TextButtonContainer> : null}
                 </SpeechBubbleLeft>
                 <CodeBoxContainer>
-
                     <Safe codeIsCorrect={codeIsCorrect} codeBoxIsFull={codeBoxIsFull} handleCheckCorrectCode={handleCheckCorrectCode} handleVisitorBookClick={handleVisitorBookClick}>
                         <div>
                             <StyledInput safeCodeBgColor={safeCodeBgColor} type="text" name="first" value={first} onChange={handleChange} />
@@ -117,11 +123,8 @@ function CodeBox() {
                         </div>
                     </Safe>
                 </CodeBoxContainer>
-
             </Container>
-
         </>
-
     )
 }
 

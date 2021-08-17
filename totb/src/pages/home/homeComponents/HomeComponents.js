@@ -29,7 +29,7 @@ flex-direction: row-reverse;
 
 p{
     margin: 1em;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: whitesmoke;
 }
 
@@ -39,14 +39,14 @@ h2{
 
 
 h3{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
     margin: 0em .5em 1em .5em;
 }
 
 h4{
     margin: 1em;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: whitesmoke;
     
     i{
@@ -89,9 +89,12 @@ justify-content: space-between;
 max-width: ${({ maxWidth }) => maxWidth || '50%'};
 box-sizing: border-box;
 border-right: ${({ border }) => border}px solid #d2a118;
+border-left: ${({ border }) => border}px solid #d2a118;
 
 @media(max-width:1024px){
     max-width: 100%;
+    border-right: unset;
+    border: ${({ border }) => border}px solid #d2a118;
 }
 `
 
@@ -108,7 +111,7 @@ export const DetectiveContainer = styled.div`
 
     max-width: 100%;
     padding: 1em 0;
-    animation: ${itemIn} 3s;
+    animation: ${itemIn} 1s;
     animation-fill-mode: forwards;
     /* border: 1px solid red; */
     display: flex;

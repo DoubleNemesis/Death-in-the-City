@@ -9,7 +9,8 @@ import GameContext from '../../../context/GameContext'
 import Draggable from 'react-draggable';
 import { TornLetterPiecesData} from '../../../data/lessonData'
 
-function CodeBox() {
+function TornLetter() {
+
     const nodeRef = useRef(null);
 
     function handleStop(event){
@@ -50,4 +51,4 @@ function CodeBox() {
     )
 }
 
-export default CodeBox
+export default TornLetter

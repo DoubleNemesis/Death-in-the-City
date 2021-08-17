@@ -44,6 +44,7 @@ grid-area: conversation;
 display: flex;
 flex-direction: column;
 width: 100%;
+overflow: hidden;
 
 @media(min-width:1025px){
     flex-direction: row;
@@ -193,7 +194,7 @@ animation-fill-mode: forwards;
 border-radius: 5px;
 
 
-@media(min-width:1025px){
+@media(min-width:700px){
     position: unset;
 }
 

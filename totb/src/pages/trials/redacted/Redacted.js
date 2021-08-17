@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { SpeechBubbleLeft } from '../../../generalComponents/ConversationComponents'
 import { redactedData, RedactedComp } from '../../../data/lessonData'
 import { StatementContainer, Container } from './redactedComponents/RedactedComponents'
@@ -21,6 +21,10 @@ function Redacted(props) {
     const [redactedInputs, setRedactedInputs] = useState({})
     const [message, setMessage] = useState(<TaskMessage task="true" message={taskText}/>)
     const { instructions, missingWords } = redactedData
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
 
     function handleInputChange(e) {
         const { name, value } = e.target

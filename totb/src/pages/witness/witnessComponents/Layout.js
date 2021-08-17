@@ -212,7 +212,19 @@ export const WitnessIntroBox = (props)=>{
 }
 
 export const EndDiv = styled.div`
+color: white;
+font-size: 2rem;
+display: inline;
+@media(max-width: 700px){
+    display: none;
+}
+
 @media(min-width: 1025px){
+    display: none;
+}
+`
+export const EndDivMobile = styled.div`
+@media(min-width: 700px){
     display: none;
 }
 `

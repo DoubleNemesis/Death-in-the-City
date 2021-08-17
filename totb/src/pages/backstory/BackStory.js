@@ -1,4 +1,4 @@
-import {MainContainer, ImageContainer, FloatingImage, NewspaperOverlayContainer} from './backStoryComponents/BackStoryComponents'
+import {MainContainer, ImageContainer, FloatingImage, Column} from './backStoryComponents/BackStoryComponents'
 import { backStoryData } from './../../data/lessonData'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
 import Newspaper from '../newspaper/Newspaper'
@@ -14,17 +14,16 @@ function Home() {
     return (
         <>
             <MainContainer>
-                <div >
+            <Column>
                 <SpeechBubbleLeft image={client} alt="Terence Grey" bubbleWidth="70">
                     {backStoryText2}
                 </SpeechBubbleLeft>
                 <ImageContainer image={crimescene} alt="crime scene" width="500px">
                    <p>"The scene live at Kaplinsky Tower..."</p>
                 <FloatingImage src={journalist} alt="reporter"/>
-                </ImageContainer>
-                </div>
-                <NewspaperOverlayContainer/>
-                <Newspaper alignItems="flex-start"/>
+                </ImageContainer>  
+            </Column>
+                <Newspaper alignItems="center"/>
             </MainContainer>
         </>
     )

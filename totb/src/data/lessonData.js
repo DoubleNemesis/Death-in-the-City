@@ -39,8 +39,8 @@ export const backStoryData = {
     backStorySubtitle: [`Here's the backstory`],
     backStoryText: [`Hello there! I'm your teacher and I'm here to guide you through your tasks as you solve this crime. 
     First, read this short newspaper article to get up to speed, and then let's take a look at some of the vocabulary you're going to meet today.`],
-    backStoryText2: [`I'm Terence Grey and I just wanted to say thank you for taking up the challenge to find my son's killer. But boy have you got work to do! 
-    Don't believe the rubbish the police said. Lexington was murderd...I know that for a fact. Someone pushed him out of the window. You know about the case, right? No? Ok, well read this newspaper to get up to speed!`],
+    backStoryText2: [`I'm Terence Grey and I just wanted to say thank you for taking up the challenge to find my son's killer...but boy have you got work to do! 
+    Don't believe the rubbish the police said. Lexington was murderd - I know that for a fact. Someone pushed him out of the window. You know about the case, right? No? Ok, well read this newspaper to get up to speed!`],
 }
 
 export const clientData = {
@@ -641,20 +641,35 @@ export const ShreddedLetterPiecesData = {
     Lexi? I met him on the set of his first movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
+    // eventsToOrder: [
+    //     `This was the first party for ages`, 
+    //     `suddenly the lights went out.`, 
+    //     `Someone moved - I don't know who.`, 
+    //     `Lexi and Chay arguing. You could`, 
+    //     `tell Chay was really angry! I also`, 
+    //     `Then there was a scream...`, 
+    //     `and everyone was supposed to be`, 
+    //     `noticed that Kirsten's eye's were`,
+    //     `and making the best of it when `, 
+    //     `red as if she'd been crying. The`, 
+    //     `atmosphere was tense but we were`,
+    //     `sitting round the table drinking`, 
+    //     `excited. But earlier I had heard`, 
+    // ],
     eventsToOrder: [
+        `and everyone was supposed to be`, 
         `This was the first party for ages`, 
-        `suddenly the lights went out.`, 
-        `Someone moved - I don't know who.`, 
+        `excited. But earlier I had heard`, 
         `Lexi and Chay arguing. You could`, 
         `tell Chay was really angry! I also`, 
-        `Then there was a scream...`, 
-        `and everyone was supposed to be`, 
-        `noticed that Kirsten's eye's were`,
-        `and making the best of it when `, 
+        `noticed that Kirsten's eye's were`, 
         `red as if she'd been crying. The`, 
         `atmosphere was tense but we were`,
         `sitting round the table drinking`, 
-        `excited. But earlier I had heard`, 
+        `and making the best of it when `, 
+        `suddenly the lights went out.`, 
+        `Someone moved - I don't know who.`, 
+        `Then there was a scream...`, 
     ],
     eventsCorrectOrder: [
         `This was the first party for ages`, 

@@ -26,7 +26,7 @@ height: 40px;
 
 export const FrontPageButton = ({children, ...props}) => {
     return (
-        <StyledFPButton arrow fontSize={props.fontSize} bgColor={props.bgColor}  onClick={props.onclick}>{children}{props.arrow ? <Arrow src={arrowRight}/> : null} </StyledFPButton>
+        <StyledFPButton arrow fontSize={props.fontSize} bgColor={props.bgColor}  onClick={props.onclick}>{children}{props.arrow ? <Arrow src={arrowRight} alt="right arrow"/> : null} </StyledFPButton>
     )
 }
 

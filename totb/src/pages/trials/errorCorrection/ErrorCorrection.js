@@ -10,7 +10,7 @@ import NextPageButton from '../../../generalComponents/NextPageButton'
 
 function ErrorCorrection(props) {
 
-    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { setCompletedChallenges } = useContext(GameContext)
     const { isErrorCorrectionCorrect, setIsErrorCorrectionCorrect } = useContext(GameContext)
     const [selectedSentences, setSelectedSentences] = useState([])
     const [sentencesArray, setSentencesArray] = useState([])
@@ -19,10 +19,20 @@ function ErrorCorrection(props) {
     const [correctedSentences, setCorrectedSentences] = useState({})
     const { instructions, instructions2, instructions3, sentences, incorrectSentences, incorrectAndCorrected } = ErrorCorrectionData
     const [incorrectMessage, setIncorrectMessage] = useState('')
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
+
     useEffect(() => {
-        setSentencesArray(sentences)
-        setIncorrectAndCorrectedArray(incorrectAndCorrected)
-    }, [sentencesArray])
+        updateSentences()
+        function updateSentences() {
+            setSentencesArray(sentences)
+            setIncorrectAndCorrectedArray(incorrectAndCorrected)
+        }
+    }, [sentencesArray, incorrectAndCorrected, sentences])
+
+
 
     function handleClick(e) {
         const selectedSentenceId = e.target.id
@@ -58,7 +68,7 @@ function ErrorCorrection(props) {
                 setIncorrectMessage('Try Again.')
             }
         }
-    }, [selectedSentences])
+    }, [selectedSentences, incorrectSentences, sentencesArray])
 
 
     function handleChange(e) {
@@ -88,9 +98,7 @@ function ErrorCorrection(props) {
                 }
             }
             else {
-                console.log('wrong', e.target.id)
                 incorrectElement.classList.add('error')
-                console.log(incorrectElement)
             }
         }
     }
@@ -104,15 +112,16 @@ function ErrorCorrection(props) {
         }
         if (count === 0) {
             setIsErrorCorrectionCorrect(true)
-            let dummyCompletedChallenges = [...completedChallenges]
-            dummyCompletedChallenges.push(props.artefactName)
-            setCompletedChallenges(dummyCompletedChallenges)
+            setCompletedChallenges(prev => {
+                return (
+                    [props.artefactName, ...prev]
+                )
+            })
         }
         else {
             setIsErrorCorrectionCorrect(false)
         }
-    }, [incorrectAndCorrectedArray])
-
+    }, [incorrectAndCorrectedArray, props.artefactName, setCompletedChallenges, setIsErrorCorrectionCorrect])
 
     const firstSentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
     const secondSentenceList = incorrectAndCorrectedArray.map((item) => <IncorrectSentencesDiv

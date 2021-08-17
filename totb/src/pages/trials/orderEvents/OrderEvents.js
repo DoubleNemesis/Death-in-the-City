@@ -15,7 +15,7 @@ function OrderEvents(props) {
     const taskText = `Hit check when finished`
     const taskCorrect = `Correct!`
     const taskIncorrect = `That's incorrect. Try again.`
-    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { setCompletedChallenges } = useContext(GameContext)
     const { isOrderEventsCorrect, setIsOrderEventsCorrect } = useContext(GameContext)
     let { eventsToOrder } = orderEventsData
     const { eventsCorrectOrder } = orderEventsData
@@ -24,22 +24,28 @@ function OrderEvents(props) {
     const [hasFinished, setHasFinished] = useState(false)
     const { orderEventsText, instructions } = orderEventsData
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
+
     useEffect(() => {
         if (hasFinished) {
             if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
                 setMessage(<TaskMessage correct="true" message={taskCorrect} />)
                 setIsOrderEventsCorrect(true)
-                let dummyCompletedChallenges = [...completedChallenges]
-                dummyCompletedChallenges.push(props.artefactName)
-                setCompletedChallenges(dummyCompletedChallenges)
+                setCompletedChallenges(prev => {
+                    return(
+                        [props.artefactName, ...prev]
+                    )
+                })
             }
             else {
                 setMessage(<TaskMessage incorrect="true" message={taskIncorrect} />)
                 setHasFinished(false)
             }
         }
-    }, [itemsToOrder, hasFinished])
-
+    }, [itemsToOrder, hasFinished, eventsCorrectOrder, props.artefactName, setCompletedChallenges, setIsOrderEventsCorrect, taskCorrect, taskIncorrect])
+    
     function handleCheck() {
         setHasFinished(true)
     }

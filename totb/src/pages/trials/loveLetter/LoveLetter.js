@@ -15,8 +15,8 @@ import teacher from '../../../images/teacher.png'
 
 
 function LoveLetter(props) {
-    const { completedChallenges, setCompletedChallenges} = useContext(GameContext)
-    const { isLoveLetterCorrect, setIsLoveLetterCorrect } = useContext(GameContext)
+    const {setCompletedChallenges} = useContext(GameContext)
+    const {isLoveLetterCorrect, setIsLoveLetterCorrect} = useContext(GameContext)
     const [selectedLetter, setSelectedLetter] = useState('')
     const [selectedSymbol] = useState('')
     const [usedLetters, setUsedLetters] = useState([])
@@ -26,6 +26,10 @@ function LoveLetter(props) {
     const { instructions, loveLetterCode, successMessageText, loveLetterFull, loveLetterFullPs } = loveLetterData
     const secretMessage = loveLetterCode[0]
     const secretMessageArray = secretMessage.toLowerCase().split('');
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
 
     function handleFullTextClick() {
         setIsLoveLetterCorrect(true)
@@ -59,12 +63,15 @@ function LoveLetter(props) {
             decodedMessage = decodedMessage.join('')
             const originalMessageNoSpace = secretMessageArray.join('').replace(/\s+/g, '')
 
-            if (decodedMessage === originalMessageNoSpace) { //change here to undo
+            
+            if (decodedMessage !== originalMessageNoSpace) { //change here to undo
                 setSuccessMessage(<SuccessMessageComp message={successMessageText} onclick={handleFullTextClick} />)
                 setIsSuccessMessageDisplayed(true)
-                let dummyCompletedChallenges = [...completedChallenges]
-                dummyCompletedChallenges.push(props.artefactName)
-                setCompletedChallenges(dummyCompletedChallenges)
+                setCompletedChallenges(prev =>{ 
+                    return [props.artefactName, ...prev]
+                })
+                const scrollToHere = document.getElementById('scrollToHere')
+                scrollToHere.scrollIntoView()
             }
         }
     }
@@ -75,19 +82,42 @@ function LoveLetter(props) {
 
     }, [usedLetters])
 
-    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => <LoveLetterElems color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : '#f5c71a'} onClick={handleLetterClick} id={item[0]}>{item[0]}</LoveLetterElems>)
-
-    const LoveLetterCode = secretMessageArray.map((item, index) => {
-        const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) : null
-
-
+    const LoveLetterLetters = loveLetterData['letters'].map((item, index) => {
         return (
-            <>
+            <LoveLetterElems
+                key={index}
+                color={usedLetters.indexOf(item[0]) > -1 ? 'transparent' : item[0] === selectedLetter ? 'red' : '#f5c71a'}
+                onClick={handleLetterClick}
+                id={item[0]}>
+                    {item[0]}
+            </LoveLetterElems>)
+    }
+    )
+    
+    
+    const LoveLetterCode = secretMessageArray.map((item, index) => {
+    
+        const targetSymbol = typeof loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)] === 'object' ? 
+        String.fromCharCode(loveLetterData['symbols'][loveLetterData['letters'].indexOf(item)][1]) 
+        : 
+        null
+    
+        return (
+            <div key={index + 100} >
                 {targetSymbol ?
-                    <LoveLetterSymbolElems className={`${targetSymbol.charCodeAt(0)} symbolsClass`} onClick={handleSymbolClick} color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'midnightblue'}>{targetSymbol}</LoveLetterSymbolElems> :
-                    <LoveLetterSpace />
+                    <LoveLetterSymbolElems 
+                    
+                    isSuccessMessageDisplayed={isSuccessMessageDisplayed} 
+                    className={`${targetSymbol.charCodeAt(0)} symbolsClass`} 
+                    onClick={handleSymbolClick} 
+                    color={targetSymbol.charCodeAt(0) === parseInt(selectedSymbol) ? 'red' : 'midnightblue'}>
+                        {targetSymbol}
+                    </LoveLetterSymbolElems> 
+                    :
+                    <LoveLetterSpace 
+                    />
                 }
-            </>
+            </div>
         )
     })
 
@@ -95,11 +125,12 @@ function LoveLetter(props) {
         <>
 
             <Container>
+                <div id="scrollToHere"></div>
                 <SpeechBubbleLeft image={teacher} >
                     { !isSuccessMessageDisplayed ? instructions : successMessage }
                 </SpeechBubbleLeft>
                 <LoveLetterMainContainer>
-                    <LoveLetterSymbolsContainer>
+                    <LoveLetterSymbolsContainer isSuccessMessageDisplayed={isSuccessMessageDisplayed}>
                         {!isLoveLetterCorrect ? LoveLetterCode : <><p className="whiteBG">{loveLetterFull}</p><p className="whiteBG">{loveLetterFullPs}</p><NextPageButton destination="office">Go to office</NextPageButton></>}
                     </LoveLetterSymbolsContainer>
                     <LoveLetterLettersContainer>

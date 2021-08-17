@@ -36,7 +36,8 @@ margin-bottom: 3em;
 `
 
 export const LoveLetterSymbolsContainer = styled.div`
-background-color: whitesmoke;
+background-color: ${({isSuccessMessageDisplayed})=>isSuccessMessageDisplayed ? 'limegreen' : 'whitesmoke'};
+/* background-color: red; */
 
 display: flex;
 flex-wrap: wrap;
@@ -48,6 +49,7 @@ background-repeat: repeat-y;
 
 .whiteBG{
     background-color: #cfd6de;
+    background-color: red;
     padding: 1em;
     margin: .5em;
     font-family: 'Kalam';
@@ -124,6 +126,7 @@ padding: .3em .5em;
 margin: .2em;
 border-radius: .2em;
 border: 2px solid #141414;
+border: 2px solid ${({isSuccessMessageDisplayed})=>isSuccessMessageDisplayed ? 'orange' : '#141414'};
 color: yellow;
 cursor: pointer;
 

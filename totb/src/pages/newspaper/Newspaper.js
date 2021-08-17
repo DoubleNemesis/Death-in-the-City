@@ -18,7 +18,7 @@ function Newspaper(props) {
             setPaperOpen(false)
             setTimeout(()=>{
                 setNewspaperToDisplay(newspaperToDisplay === !newspaper ? newspaper : newspaperInside)
-            },500) 
+            },200) 
         }
         else {
             history.push('/vocab')

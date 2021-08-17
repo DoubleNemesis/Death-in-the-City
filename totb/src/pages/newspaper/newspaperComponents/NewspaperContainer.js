@@ -3,12 +3,12 @@ import paperbgdark from '../../../images/paperbgdark.png'
 
 const paperIn = keyframes`
 0%{width: 0vw; transform: rotate(0deg)}
-100%{width: 50vw; transform: rotate(1080deg)}
+100%{width: 80vw; transform: rotate(1080deg)}
 `
 
 const paperRotate = keyframes`
 0%{ width: 0vw; opacity: .3; transform: rotate(0deg)}
-100%{ width: 50vw; opacity: 1; transform: rotate(1080deg)}
+100%{ width: 80vw; opacity: 1; transform: rotate(1080deg)}
 ` 
 const textIn = keyframes`
 0%{opacity: 0}
@@ -18,14 +18,11 @@ const textOut = keyframes`
 0%{opacity: 0}
 100%{opacity: 1}
 `
-const animateBorder = keyframes`
-100%{box-shadow: 0px 0px 3px 3px firebrick; }
-0%{box-shadow: none; }
-`
+
 
 const StyledContainer = styled.div`
 width: 0;
-animation: ${({paperOpen})=> paperOpen ? paperIn : paperRotate} 3s;
+animation: ${({paperOpen})=> paperOpen ? paperIn : paperRotate} 1s;
 animation-delay: 0s;
 animation-fill-mode: forwards;
 background-color: transparent;
@@ -34,7 +31,7 @@ box-shadow: 5px 5px 5px 5px #141414;
 overflow: hidden;
 
 @media(min-width: 700px){
-    max-width: 80vw;
+    max-width: 52vw;
 }
 
 @media(min-width: 1025px){
@@ -59,7 +56,7 @@ background-image:url(${paperbgdark});
 color: #dfdbcf;
 color: limegreen;
 padding: .5rem;
-font-size: 1.3rem;
+font-size: 1rem;
 font-weight: 700;
 text-decoration: underline;
 opacity: 0;
@@ -78,7 +75,7 @@ cursor: pointer;
 }
 `
 
-function CallToActionContainer({children, ...restProps}){
+function NewspaperContainer({children, ...restProps}){
     return (
         <StyledContainer {...restProps}>
             <Text {...restProps} onClick={restProps.onclick}>{restProps.homeCallToActionTextBtn}</Text>
@@ -87,4 +84,4 @@ function CallToActionContainer({children, ...restProps}){
     )
 }
 
-export default CallToActionContainer 
+export default NewspaperContainer 

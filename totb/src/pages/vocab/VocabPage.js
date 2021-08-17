@@ -13,6 +13,10 @@ function VocabPage() {
     const { collectedWitnesses, setCollectedWitnesses } = useContext(GameContext)
     const {bubbleText1, bubbleText2} = data
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
+
     let questions = data.vocabA.map((item, index) => {
         return (
             <div key={`q${index}`} id={`question${index}`} className="card questionTile">{item}</div>

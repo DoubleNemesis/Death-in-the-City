@@ -22,7 +22,7 @@ function Title({ children, ...props }) {
 
     return (
         <TitleContainer>
-            <StyledTitle>{props.image ? <StyledImage src={props.image}/> : null}{children}</StyledTitle>
+            <StyledTitle>{props.image ? <StyledImage src={props.image} alt="detective"/> : null}{children}</StyledTitle>
         </TitleContainer>
     )
 

@@ -16,7 +16,7 @@ function ShreddedLetter(props) {
     const taskText = `Hit check when finished`
     const taskCorrect = `Correct!`
     const taskIncorrect = `That's incorrect. Try again.`
-    const { completedChallenges, setCompletedChallenges } = useContext(GameContext)
+    const { setCompletedChallenges } = useContext(GameContext)
     const { isShreddedLetterCorrect, setIsShreddedLetterCorrect } = useContext(GameContext)
 
     let { eventsToOrder, instructions } = ShreddedLetterPiecesData
@@ -26,21 +26,37 @@ function ShreddedLetter(props) {
     const [itemsCorrectOrder, setItemsCorrectOrder] = useState(eventsCorrectOrder);
     const [hasFinished, setHasFinished] = useState(false)
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
+
     useEffect(() => {
+        function checkFinish(){
         if (hasFinished) {
             if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
                 setMessage(<TaskMessage correct="true" message={taskCorrect} />)
                 setIsShreddedLetterCorrect(true)
-                let dummyCompletedChallenges = [...completedChallenges]
-                dummyCompletedChallenges.push(props.artefactName)
-                setCompletedChallenges(dummyCompletedChallenges)
+                setCompletedChallenges(prev => {
+                    return (
+                        [props.artefactName, ...prev]
+                    )
+                })
             }
             else {
                 setMessage(<TaskMessage incorrect="true" message={taskIncorrect} />)
                 setHasFinished(false)
             }
         }
-    }, [itemsToOrder, hasFinished])
+    }
+    checkFinish()
+    }, [itemsToOrder, hasFinished, eventsCorrectOrder, props.artefactName, setCompletedChallenges, setIsShreddedLetterCorrect, taskCorrect, taskIncorrect])
+    //completedChallenges, eventsCorrectOrder, props.artefactName, setCompletedChallenges, setIsShreddedLetterCorrect, taskCorrect, taskIncorrect
+
+    
+
+
+
+
 
     function handleCheck() {
         setHasFinished(true)

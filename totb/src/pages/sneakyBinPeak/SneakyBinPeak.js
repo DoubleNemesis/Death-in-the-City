@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import teacher from '../../images/teacher.png'
 import NextPageButton from '../../generalComponents/NextPageButton'
 import { SpeechBubbleLeft } from '../../generalComponents/ConversationComponents'
@@ -20,6 +20,10 @@ function Sneaky(props){
     const [isArtefactClicked, setIsArtefactClicked] = useState(false)
     const [thought, setThought] = useState(props.text || `Time to get your hands dirty! (Click the lid to open the bin!)`)
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
+
    function handleLidClick(){
         setOpenBin(true)
         setIsArtefactDisplayed(true)
@@ -40,7 +44,7 @@ function Sneaky(props){
     return(
         <>
             <YardContainer yardImage={props.yardImage}>
-               {!isArtefactClicked ?  <ThoughtContainer><SpeechBubbleLeft image={teacher} minHeight="90" bubbleWidth="40">{thought}</SpeechBubbleLeft></ThoughtContainer> : null}
+               {!isArtefactClicked ?  <ThoughtContainer><SpeechBubbleLeft image={teacher} minHeight="90" bubbleWidth="85">{thought}</SpeechBubbleLeft></ThoughtContainer> : null}
             <StyledBinContainer>
                 
             {openBin ? <StyledBinArtefact src={props.artefactImage} alt={props.artefactImage} isArtefactDisplayed={isArtefactDisplayed} onClick={handleArtefactClick}/> : null}

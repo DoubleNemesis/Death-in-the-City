@@ -29,6 +29,7 @@ const StyledSpeechBubble = styled.div`
     @media(min-width:700px){
       width: ${({ bubbleWidth }) => bubbleWidth || '90'}%;
       max-width: ${({ bubbleMaxWidth }) => bubbleMaxWidth || '90'}%;
+      min-height: 150px;
       ol{
         margin-top: 2.4em;
         padding: 1em 1em;
@@ -37,7 +38,7 @@ const StyledSpeechBubble = styled.div`
     }
 
     @media(min-width:1025px){
-      min-height: 85px;
+      min-height: 90px;
       max-width: 80%;
       font-size: 1.2rem;
     }

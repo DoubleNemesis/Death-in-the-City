@@ -10,7 +10,13 @@ background-image: url(${woodbg});
 background-repeat: no-repeat;
 background-size: cover;
 padding: 1em 1em 7.5em 1em;
-border-radius: 5px;
+
+@media(min-width: 700px){
+    border-radius: 5px;
+    width: 60%;
+    margin: 0em auto;
+    padding-bottom: 3em;
+}
 
 @media(min-width: 1025px){
     width: 60%;
