@@ -106,6 +106,10 @@ max-width: 80px;
 background-color: transparent;
 animation: ${fadeIn} 1s .5s forwards, ${animateBorder} 2s ease-in-out infinite alternate ;
 box-shadow: 0px 0px 40px 10px red;
+
+@media(min-width: 1025px){
+    margin-top: 5em;
+}
 `
 
 export const StyledFoundArtefact = styled.div`

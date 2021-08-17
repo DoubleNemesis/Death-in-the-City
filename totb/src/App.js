@@ -1,6 +1,6 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { GlobalStyle } from './styles/GlobalStyle'
 import { Outer } from './pageElements/Outer'
 import VocabPage from './pages/vocab/VocabPage'

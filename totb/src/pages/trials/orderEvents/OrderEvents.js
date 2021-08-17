@@ -28,24 +28,25 @@ function OrderEvents(props) {
         window.scrollTo(0,0)
       },[])
 
-    useEffect(() => {
-        if (hasFinished) {
-            if (eventsCorrectOrder.toString() === itemsToOrder.toString()) {
-                setMessage(<TaskMessage correct="true" message={taskCorrect} />)
+    useEffect(() => { 
+            if (hasFinished && eventsCorrectOrder.toString() === itemsToOrder.toString()) {
                 setIsOrderEventsCorrect(true)
-                setCompletedChallenges(prev => {
-                    return(
-                        [props.artefactName, ...prev]
-                    )
-                })
-            }
-            else {
-                setMessage(<TaskMessage incorrect="true" message={taskIncorrect} />)
-                setHasFinished(false)
-            }
-        }
+                setMessage(<TaskMessage correct="true" message={taskCorrect} />)
+                    setCompletedChallenges(prev => {
+                        return(
+                            [props.artefactName, ...prev]
+                        )
+                    })
+                }
+                else {
+                    if(hasFinished){
+                        setHasFinished(false)
+                        setMessage(<TaskMessage incorrect="true" message={taskIncorrect} />)
+                    }
+                }
     }, [itemsToOrder, hasFinished, eventsCorrectOrder, props.artefactName, setCompletedChallenges, setIsOrderEventsCorrect, taskCorrect, taskIncorrect])
     
+  
     function handleCheck() {
         setHasFinished(true)
     }

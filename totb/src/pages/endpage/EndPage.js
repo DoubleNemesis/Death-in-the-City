@@ -80,9 +80,10 @@ function EndPage() {
                                 !suspectIsCorrect && reasonIsCorrect ? bubbleText3 :
                                     bubbleText2
                 }</SpeechBubbleLeft>
+           
                 {!displayMessage ? <Form>
                     <select value={chosenOption} onChange={handleSelectInput}>
-                        <option disabled selected value="default"> -- select a suspect -- </option>
+                        <option defaultValue> -- select a suspect -- </option>
                         <option value={characterNames[1]}>{characterNames[1]}</option>
                         <option value={characterNames[2]}>{characterNames[2]}</option>
                         <option value={characterNames[3]}>{characterNames[3]}</option>

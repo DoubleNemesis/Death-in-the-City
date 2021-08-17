@@ -37,7 +37,6 @@ margin-bottom: 3em;
 
 export const LoveLetterSymbolsContainer = styled.div`
 background-color: ${({isSuccessMessageDisplayed})=>isSuccessMessageDisplayed ? 'limegreen' : 'whitesmoke'};
-/* background-color: red; */
 
 display: flex;
 flex-wrap: wrap;
@@ -49,7 +48,6 @@ background-repeat: repeat-y;
 
 .whiteBG{
     background-color: #cfd6de;
-    background-color: red;
     padding: 1em;
     margin: .5em;
     font-family: 'Kalam';

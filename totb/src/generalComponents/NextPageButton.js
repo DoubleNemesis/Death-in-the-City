@@ -8,11 +8,15 @@ color: white;
 background-color: ${({ color }) => color || 'red'};
 padding: .8em 1.8em;
 margin: ${({ margin }) => margin || '2em auto'};
-font-size: ${({ fontSize }) => fontSize || 1.5}rem;
+font-size: ${({ fontSize }) => fontSize || 1}rem;
 border: none;
 font-family: 'Poppins';
 width: ${({ width }) => width || 'unset'};
 border-radius: ${({ borderRadius }) => borderRadius || '5'}px;
+
+@media(min-width: 700px){
+    font-size: ${({ fontSize }) => fontSize || 1.5}rem;   
+}
 
 :hover{
     background-color: orange;

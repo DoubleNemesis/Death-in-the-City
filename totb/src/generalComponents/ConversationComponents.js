@@ -26,7 +26,7 @@ const StyledSpeechBubble = styled.div`
       color: red;
     }
 
-    @media(min-width:700px){
+    @media(min-width:400px){
       width: ${({ bubbleWidth }) => bubbleWidth || '90'}%;
       max-width: ${({ bubbleMaxWidth }) => bubbleMaxWidth || '90'}%;
       min-height: 150px;

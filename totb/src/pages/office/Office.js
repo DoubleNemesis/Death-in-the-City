@@ -3,7 +3,7 @@ import { Container, ArtefactDisplay, WitnessCard, CardImageContainer, CardImage,
 import { useHistory } from 'react-router-dom'
 import GameContext from '../../context/GameContext'
 import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalComponents/InfoModal'
-import { officeBubbleText, officeCards } from '../../data/lessonData'
+import { officeBubbleText, officeCards, guessText } from '../../data/lessonData'
 import GeneralButton from './../../generalComponents/GeneralButton'
 import WitnessButton from './../../generalComponents/WitnessButton'
 import { SpeechBubbleLeft } from './../../generalComponents/ConversationComponents'
@@ -85,7 +85,8 @@ function Office() {
 
                 {isInstructionsModalDisplayed ?
                     <SpeechBubbleLeft image={teacher} >
-                        {officeBubbleText}
+                        { !isReadyGuess ? officeBubbleText : guessText}
+                        { isReadyGuess ? <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton> : null }
                     </SpeechBubbleLeft>
                     :
                     null}
@@ -101,14 +102,6 @@ function Office() {
                 {witnesses}
                 {artefacts}
             </Container>
-            {
-
-                isReadyGuess ?
-                    <Container>
-                        <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton>
-                    </Container>
-                    : null
-            }
         </>
     )
 }

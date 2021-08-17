@@ -194,7 +194,7 @@ animation-fill-mode: forwards;
 border-radius: 5px;
 
 
-@media(min-width:700px){
+@media(min-width:400px){
     position: unset;
 }
 

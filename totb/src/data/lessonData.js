@@ -113,6 +113,8 @@ export const officeBubbleText = `This is your office desk. New witnesses, eviden
 When you are ready to interview a witness, just click on their image and you will be guided to their house. When a challenge appears, you can click on it to tackle it. The first witness is waiting for you!
 `
 
+export const guessText = `You are ready to make your allegation! Take a moment to look back at any of the evidence you have seen. In a moment, Terence Grey will want to know who you think did it and why.`
+
 export const officeCards = {
     'witnesses': [
         {
@@ -733,12 +735,18 @@ export const orderEventsData = {
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
     eventsToOrder: [
-        'Dallas arrived at the party',
+        // 'Dallas arrived at the party',
+        // 'Dallas met Lexi',
+        // 'Dallas went to drama school',
+        // 'Dallas lost his mother',
+        // 'Dallas started drinking with his drama school friends',
+        // 'Dallas started drinking a lot',
         'Dallas met Lexi',
         'Dallas went to drama school',
         'Dallas lost his mother',
-        'Dallas started drinking with his drama school friends',
         'Dallas started drinking a lot',
+        'Dallas started drinking with his drama school friends',
+        'Dallas arrived at the party',
     ],
     eventsCorrectOrder: [
         'Dallas went to drama school',
@@ -832,7 +840,7 @@ export const loveLetterData = {
 //wendy
 export const redactedData = {
     instructions: [`Why do doctors always have such bad handwriting? I can't read some of the words. It looks like they're mostly prepositions and verbs. Fill in the gaps and click "check".`],
-    missingWords: ['with', 'by', 'up', 'avoid', 'to'],
+    missingWords: ['with', 'down', 'up', 'avoid', 'to'],
 }
 
 
@@ -841,7 +849,7 @@ export const RedactedComp = (props) => {
         <div>
             <h3>Medical Report - Chay Maddison</h3>
             I first met Chay when he came into my clinic. He was having problems <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> his back.
-            I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy he is cripled <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> pain.
+            I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy, cripling pain shoots <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> his arms right to his finger tips.
             He probably sustained this injury by working out in the gym without warming <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} />.
             Although he looks strong, he is physically too weak to lift much more than a dinner plate. He should <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} /> alcohol
             - he is addicted <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} /> painkillers, and they don't mix.
