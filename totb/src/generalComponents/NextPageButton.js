@@ -9,7 +9,7 @@ background-color: ${({ color }) => color || 'red'};
 padding: .8em 1.8em;
 margin: ${({ margin }) => margin || '2em auto'};
 font-size: ${({ fontSize }) => fontSize || 1}rem;
-border: none;
+border: 1px solid ${({ color }) => color || 'red'};
 font-family: 'Poppins';
 width: ${({ width }) => width || 'unset'};
 border-radius: ${({ borderRadius }) => borderRadius || '5'}px;

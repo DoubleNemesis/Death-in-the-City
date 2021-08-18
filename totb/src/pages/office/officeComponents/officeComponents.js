@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import woodbg from '../../../images/woodbg.jpg'
 
 export const Container = styled.div`
+position: relative;
 display: flex;
 flex-wrap: wrap;
 width: 100%;
@@ -13,18 +14,27 @@ padding: 1em 1em 7.5em 1em;
 
 @media(min-width: 700px){
     border-radius: 5px;
-    width: 60%;
     margin: 0em auto;
     padding-bottom: 3em;
 }
 
 @media(min-width: 1025px){
-    width: 60%;
+    width: 80%;
     margin: 0em auto;
     padding-bottom: 3em;
 }
-
 `
+
+export const GuessContainer = styled.div`
+position: relative;
+
+@media(min-width: 200px){
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+`
+
 export const ArtefactDisplay = styled.div`
 display: flex;
 flex-direction: column;
@@ -65,7 +75,7 @@ export const ArtefactCard = styled.div`
 display: flex;
 flex-direction: column;
 width: 120px;
-min-height: 100px;
+min-height: 170px;
 margin: .2em;
 background-color: ${({ bgColor }) => bgColor};
 justify-content: center;
@@ -92,8 +102,7 @@ img{
 }
 
 @media(min-width: 700px){
-    /* width: 180px;   */
-    height: 170px;  
+    height: 190px;  
 
     img{
     height: 100px;
@@ -101,7 +110,6 @@ img{
     }
 }
 @media(min-width: 1025px){
-    height: 170px;  
     img{
     height: 50%;
 }

@@ -11,7 +11,7 @@ import {
     Bullet
 } from './homeComponents/HomeComponents'
 import NextPageButton from './../../generalComponents/NextPageButton'
-import crimeline from '.././../images/crimeline.jpg'
+import crimeline from '.././../images/crimeline2.jpg'
 import GameContext from './../../context/GameContext'
 import detective from '../../images/detective.png'
 import detective1 from '../../images/detective1.png'
@@ -62,7 +62,7 @@ function Home() {
                     <NextPageButton destination="backstory" margin='0 0 0 0' width="100%" borderRadius="0">PLAY</NextPageButton>
                     </BlockContainer>
                     <BlockContainer maxWidth="55%" border="2">
-                    <h4><i>Death in the City</i> is a murder-mystery game for Intermediate level or above (B1+) learners of English.</h4>
+                    <h4><i>Death in the City</i> is a murder-mystery game for Upper-Intermediate level or above (B2+) learners of English.</h4>
                     <p>
                         You'll need all your detective skills to solve the mystery of the death of Lexington Grey! As well as practising your English, you will:
                     </p>
@@ -75,7 +75,7 @@ function Home() {
                     </ul>
                     
                    
-                    <p>This fun game will help you practice your reading, writing and grammar skills as well as testing your problem solving 
+                    <p>This fun game will help you practise your reading, writing and grammar skills as well as testing your problem solving 
                         abilities and broadening your vocabulary.</p>
                         <h4>How to Play</h4>
                         <ul>

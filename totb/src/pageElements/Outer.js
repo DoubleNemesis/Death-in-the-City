@@ -4,7 +4,7 @@ export const Outer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url('https:www.tomsclassroom.com/newyork1.jpg');
+  background-image: url('https://tomsclassroom.com/newyork1.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;

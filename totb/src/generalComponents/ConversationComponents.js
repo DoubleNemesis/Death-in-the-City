@@ -80,7 +80,7 @@ const SpeakerImage = styled.img`
 width: 25%;
 max-width: 100px;
 float: left;
-margin: 0 1em 0em 0;
+margin: 0 1em .3em 0;
 border-radius: 10%;
 background-color: transparent;
 

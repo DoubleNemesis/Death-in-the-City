@@ -24,6 +24,11 @@ h3{
     min-width: 60%;
     margin: 0 auto;
 }
+
+input{
+    background-color: ${({bgColor})=> bgColor || 'white'};
+}
+
 ` 
 export const Container = styled.div`
 display: flex;

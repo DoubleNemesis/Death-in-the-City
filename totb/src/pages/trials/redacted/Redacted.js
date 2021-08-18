@@ -28,7 +28,6 @@ function Redacted(props) {
 
     function handleInputChange(e) {
         const { name, value } = e.target
-        console.log(name, value);
         setRedactedInputs((prev) => ({ ...prev, [name]: value }))
     }
 
@@ -46,11 +45,10 @@ function Redacted(props) {
         }
     }
 
-    console.log(redactedInputs);
     return (
         <>
             <Container>
-                <StatementContainer>
+                <StatementContainer bgColor={!isRedactedCorrect ? 'white' : 'limegreen'}>
                     <SpeechBubbleLeft image={wendyPic} >
                         {instructions}
                     </SpeechBubbleLeft>

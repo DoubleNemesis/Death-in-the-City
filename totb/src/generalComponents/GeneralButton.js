@@ -34,7 +34,7 @@ const StyledButton = styled.button`
 color: white;
 background-color: ${({ color }) => color || 'red'};
 padding: .8em 1.8em;
-margin: 2em auto;
+margin: ${({ marg }) => marg || '2em auto'};
 font-size: ${({ fontSize }) => fontSize || 1.5}rem;
 border: none;
 
@@ -43,12 +43,17 @@ border: none;
     border: 1px solid grey; 
     color: black;
 }
+
+@media(max-width: 1200px){
+    margin: 1em auto;
+}
+
 `
 
 function WitnessButton({ children, ...props }) {
 
     return (
-        <StyledButton color={props.color} onClick={props.onclick}>{children}</StyledButton>
+        <StyledButton fontSize={props.fontSize} color={props.color} onClick={props.onclick} marg={props.marg}>{children}</StyledButton>
     )
 
 }

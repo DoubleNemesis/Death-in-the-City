@@ -62,10 +62,8 @@ function VocabPage() {
                             secondCard.classList.remove('card')
                             firstCard.innerHTML += `<span class="correctTileTick">${counter}</span>`;
                             secondCard.innerHTML += `<span class="correctTileTick">${counter}</span>`;
-                            console.log(selectedCards)
                             selectedCards = [] //delete?
                             if (counter === 10) {
-                                console.log('finished');
                                 setHasDoneVocab(true)
                                 window.scrollTo(0, 0)
                                 let dummyCollectedWitnesses = [...collectedWitnesses]

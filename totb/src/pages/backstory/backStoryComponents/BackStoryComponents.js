@@ -33,7 +33,12 @@ overflow: visible !important;
 `
 export function ImageContainer({ children, ...props }) {
     return (
-        <StyledContainer width={props.width} ><StyledImage src={props.image} alt="the scene of the crime. A body at the foot of Kaplinksy tower" />{children}</StyledContainer>
+        <StyledContainer width={props.width} >
+            <StyledImage
+                src={props.image}
+                alt="the scene of the crime. A body at the foot of Kaplinksy tower" />
+            {children}
+        </StyledContainer>
     )
 }
 
@@ -74,12 +79,14 @@ display: none;
 const StyledMainContainer = styled.div`
 width: 100%;
 display: flex;
-justify-content: center;
+justify-content: flex-start;
 flex-direction: column;
 align-items: center;
 overflow: hidden;
+min-height: 150vh;
 
 @media(min-width:1025px){
+    min-height: unset;
     flex-direction: row;
     justify-content: space-around;
     align-items: space-between;

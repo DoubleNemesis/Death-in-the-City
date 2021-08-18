@@ -1,14 +1,13 @@
 import { useState, useContext, useEffect } from 'react'
 import { Container, ArtefactDisplay, WitnessCard, CardImageContainer, CardImage, ArtefactCard } from './officeComponents/OfficeComponents'
-import { useHistory } from 'react-router-dom'
 import GameContext from '../../context/GameContext'
 import { StyledModal, ToggleContainer, ToggleTaskInfo } from '../../generalComponents/InfoModal'
-import { officeBubbleText, officeCards, guessText } from '../../data/lessonData'
-import GeneralButton from './../../generalComponents/GeneralButton'
+import { officeBubbleText, officeCards, guessText, officeBubbleTextSmall } from '../../data/lessonData'
 import WitnessButton from './../../generalComponents/WitnessButton'
 import { SpeechBubbleLeft } from './../../generalComponents/ConversationComponents'
 import magnify from './../../images/magnify.png'
 import teacher from '../../images/teacher.png'
+import suspectPic from '../../images/suspect.jpg'
 
 function Office() {
 
@@ -24,11 +23,9 @@ function Office() {
     const [artefactImageToDisplay, setArtefactImageToDisplay] = useState('')
     const [isReadyGuess, setIsReadyGuess] = useState(false)
 
-    let history = useHistory()
-
-    useEffect(()=>{
-        window.scrollTo(0,0)
-      },[])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     useEffect(() => {
         if (completedChallenges.length >= 5) {
@@ -65,33 +62,31 @@ function Office() {
                     item.id < 6 ?
                         <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img src={item.image} alt="artefact" /><WitnessButton destination={item.destination}>{item.name}</WitnessButton></ArtefactCard> :
                         <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img src={item.image} alt="artefact" onClick={() => handleArtefactImageClick(item.image)} />{item.name}</ArtefactCard>
-            )
-        }
-        else {
-            return (
-                <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={magnify} alt="evidence placeholder" /><p>Evidence</p></ArtefactCard>
-            )
-        }
+                        )
+                    }
+                    else {
+                        return (
+                            <ArtefactCard borderColor="whitesmoke" bgColor="#333" key={`index${index}`}><img height="75px" src={magnify} alt="evidence placeholder" /><p>Evidence</p></ArtefactCard>
+                            )
+                        }
+                        
+                    })
+                    
+                    const suspect = <ArtefactCard borderColor="whitesmoke" bgColor="#141414"><img src={suspectPic} alt="suspect silhouette in crosshairs" /><WitnessButton destination="endpage" fontSize="1rem" bgColor="red">Guess!</WitnessButton></ArtefactCard>
 
-    })
-
-    function handleGuessClick() {
-        history.push(`endpage`)
-    }
 
     return (
         <>
             <Container>
 
-                {isInstructionsModalDisplayed ?
-                    <SpeechBubbleLeft image={teacher} >
-                        { !isReadyGuess ? officeBubbleText : guessText}
-                        { isReadyGuess ? <GeneralButton onclick={handleGuessClick}>Take a guess</GeneralButton> : null }
-                    </SpeechBubbleLeft>
-                    :
-                    null}
+                <SpeechBubbleLeft image={teacher} >
+                    {isReadyGuess ? guessText :
+                        isInstructionsModalDisplayed ?
+                        officeBubbleText : officeBubbleTextSmall}
+
+                </SpeechBubbleLeft>
                 <StyledModal display={isArtefactModalDisplayed ? 'flex' : 'none'}>
-                    <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} alt="artefact"/></ArtefactDisplay>
+                    <ArtefactDisplay><p>This is just Evidence for you to consider. There is no challenge.</p><img src={artefactImageToDisplay} alt="artefact" /></ArtefactDisplay>
                     <ToggleContainer>
                         <ToggleTaskInfo
                             onClick={() => setIsArtefactModalDisplayed(!isArtefactModalDisplayed)}>
@@ -101,6 +96,7 @@ function Office() {
                 </StyledModal>
                 {witnesses}
                 {artefacts}
+                {isReadyGuess ? suspect : null}
             </Container>
         </>
     )

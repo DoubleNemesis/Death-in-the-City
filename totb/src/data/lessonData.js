@@ -31,7 +31,7 @@ export const homePageData = {
 export const startPageBlurb = {
     teaserText: [`In ${homePageData['homeTitle']} you are the detecive. Interview witnesses, break codes, discover evidence, complete challenges,
     and hopefully bring a killer to justice!`],
-    academicText: [`${homePageData['homeTitle']} is a language-based detective game aimed at Intermediate (B1) or higher learners of English. Skills covered include reading, grammar, collocations and prepositions`]
+    academicText: [`${homePageData['homeTitle']} is a language-based detective game aimed at Upper-Intermediate (B2) learners of English. Skills covered include reading, grammar, collocations and prepositions`]
 }
 
 //Backstory page
@@ -98,8 +98,8 @@ export const vocabData = {
         'plummet',
     ],
     'bubbleText1': [
-        `Hello there! I'm your teacher and I'm here to guide you through your tasks as you solve this crime. 
-        First, let's take a look at some of the vocabulary you're going to meet today. 
+        `Hello there! I'm your teacher and I'm here to guide you through your tasks as you solve this crime. Before I say anything else, if you get really stuck, you can click "help" in the top menu for hints and answers.
+        Right, let's take a look at some of the vocabulary you're going to meet today. 
         All you have to do is click on a word and then click on its synonym. When you get a pair right, they will disappear. 
         Don't worry, you will see the full word list again at the end so you can take notes.`
     ],
@@ -112,8 +112,9 @@ export const vocabData = {
 export const officeBubbleText = `This is your office desk. New witnesses, evidence and challenges will appear here as they become available. 
 When you are ready to interview a witness, just click on their image and you will be guided to their house. When a challenge appears, you can click on it to tackle it. The first witness is waiting for you!
 `
+export const officeBubbleTextSmall = `Visit all the witnesses, do all the challenges and review all the evidence. A button will appear here when you are ready to make an allegation.`
 
-export const guessText = `You are ready to make your allegation! Take a moment to look back at any of the evidence you have seen. In a moment, Terence Grey will want to know who you think did it and why.`
+export const guessText = `You are nearly ready to make your allegation! Take a moment to make sure you have completed all the challenges and look back at any of the evidence you have seen. In a moment, Terence Grey will want to know who you think killed his son and why. When you're ready, click on the suspect card below.`
 
 export const officeCards = {
     'witnesses': [
@@ -190,7 +191,7 @@ export const officeCards = {
             'destinationComplete' : '',
         },
         {
-            'name': [`Redacted Statement Challenge`],
+            'name': [`Medical Report Challenge`],
             'id': [5],
             'image': medicalreportPic,
             'destination': 'redacted',
@@ -219,10 +220,14 @@ export const officeCards = {
             'altText' : 'A receipt for a $1500 Rolex Oyster Perpetual watch',
         },
     ],
-    'links': [
+    'suspect': [
         {
-
-        }
+            'name': [`Main Suspect`], //suspect
+            'id': [9],
+            'image': receiptPic,
+            'destination': 'endPage',
+            'altText' : 'The Suspect',
+        },
     ]
 
 }
@@ -336,6 +341,72 @@ export const NoteItemData = {
 }
 
 
+//help page
+
+export const helpBubbleText = `The best way to learn English is to keep on trying! But if you are really stuck, you will find hints and answers on this page.`
+
+export const HelpHints = ()=>{
+    return(
+        <div>
+            <h1>Hints</h1>
+        <h2>Shredded Letter</h2>
+This task is all about matching sentence halves. Look at the end of the half-sentence and see if you can work out what it needs next: a verb in ‘ing’ form, a preposition etc. If you are really stuck, kepp reading for answers.
+<h2>Error Correction</h2>
+First sentence, think about verb agreement between “don’t” and “knew”.
+Second sentence, think about adjective endings.
+Third sentence, think about when to use the active or passive, and check the spelling!
+It’s a good idea to keep trying, but if you are stuck then keep reading for answers.
+<h2>Police Statement</h2>
+You just have to work out from the grammar and context of the statement what chronological order the events happened in. If you get totally stuck, keep reading for answers.
+<h2>Love Letter</h2>
+This looks hard but is in fact very easy. We start letters usually with the word “dear” followed by the name of the recipient, in this case “lucy”. One letter words can only really be “I” or “a”. Double letters are likely to be “ss”, “ee”, “ll” or a few other common combinations. CLUE: The long word on the 4th line is “being”.
+<h2>Medical Report</h2>
+You need to know your prepositions! If you find yourself struggling, you can search online or keep reading for answers.
+</div>
+    )
+}
+export const HelpAnswers = ()=>{
+    return(
+        <div>
+            <h1>Answers</h1>
+        <h2>Shredded Letter</h2>
+        This was the first party for ages 
+        and everyone was supposed to be 
+        excited. But earlier I had heard 
+        Lexi and Chay arguing. You could 
+        tell Chay was really angry! I also 
+        noticed that Kirsten's eye's were 
+        red as if she'd been crying. The 
+        atmosphere was tense but we were
+        sitting round the table drinking 
+        and making the best of it when  
+        suddenly the lights went out. 
+        Someone moved - I don't know who. 
+        Then there was a scream... 
+
+<h2>Error Correction</h2>
+<p>I don't really know Chay very well</p>
+<p>Lexi seemed very relaxed and happy</p>
+<p>Dallas gave his mum covid and she died</p>
+
+<h2>Police Statement</h2>
+    <p>Dallas met Lexi</p>
+    <p>Dallas went to drama school</p>
+    <p>Dallas lost his mother</p>
+    <p>Dallas started drinking a lot</p>
+    <p> Dallas started drinking with his drama school friends</p>
+    <p> Dallas arrived at the party</p>
+<h2>Love Letter</h2>
+Dear Lucy, I need to see you. I hate being away from you. I will kill a man who goes near you.
+<h2>Medical Report</h2>
+The missing prepositions are: 'with', 'from', 'up', 'of', 'to'
+</div>
+    )
+}
+
+
+
+
 //character specific
 export const questionsWitness1 = {
     questionsWitness1: [
@@ -432,7 +503,7 @@ export const questionsWitness3 = {
         "I know how you feel. Don't worry, I'll help you.",
         "Great! Thanks! That's so kind of you. I find this language so hard! And now I am on my own...",
         "I have to ask a delicate question. Was Lexi being unfaithful to you? ",
-        "Well, I'll tell you about that. But first you have to help me. Correct these sentences to help me learn this crazy language. When you've done it, I will answer."
+        "Well, I'll tell you about that. But first you have to help me. How will I get a new boyfriend without English? Correct these sentences to help me learn this crazy language. When you've done it, I will answer."
     ],
     trialURL3: [
         'errorcorrection'
@@ -504,7 +575,7 @@ export const questionsWitness5 = {
         "I promise I won't tell him you spoke to me.",
         "No. It's too dangerous. I can't help you.",
         "Not even two questions?",
-        "No! Now go away or I'll call Chay!"
+        "No! Can't you hear me or are you stupid? Now go away or I'll call Chay!"
     ],
     trialURL5: [
         'sneaky4'
@@ -613,7 +684,7 @@ export const CodeBoxData = {
 
 export const CrimeSceneData = {
     bubbleText1: [`This is the kitchen and that is the window he went through. As you can see, he can't have done it by accident. He either jumped or someone else was involved.`],
-    bubbleText2: [`He used to stand by the window smoking. I think someone came up behind him and pushed him out. Apparently the lights went out when the building was struck by lightning.`],
+    bubbleText2: [`He used to stand by the window smoking. I think someone came up behind him and pushed him out. The lights went out when the building was struck by lightning. I was down in the basement and it was scary!`],
     bubbleText3: [`Have a look out the window....that's an awfully long way down! Anyway, now you've seen where it all happened. Good luck! I hope you find the killer!`],
 }
 
@@ -643,36 +714,36 @@ export const ShreddedLetterPiecesData = {
     Lexi? I met him on the set of his first movie just three months ago.
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
-    // eventsToOrder: [
-    //     `This was the first party for ages`, 
-    //     `suddenly the lights went out.`, 
-    //     `Someone moved - I don't know who.`, 
-    //     `Lexi and Chay arguing. You could`, 
-    //     `tell Chay was really angry! I also`, 
-    //     `Then there was a scream...`, 
-    //     `and everyone was supposed to be`, 
-    //     `noticed that Kirsten's eye's were`,
-    //     `and making the best of it when `, 
-    //     `red as if she'd been crying. The`, 
-    //     `atmosphere was tense but we were`,
-    //     `sitting round the table drinking`, 
-    //     `excited. But earlier I had heard`, 
-    // ],
     eventsToOrder: [
-        `and everyone was supposed to be`, 
         `This was the first party for ages`, 
-        `excited. But earlier I had heard`, 
+        `suddenly the lights went out.`, 
+        `Someone moved - I dunno who.`, 
         `Lexi and Chay arguing. You could`, 
         `tell Chay was really angry! I also`, 
-        `noticed that Kirsten's eye's were`, 
+        `Then there was a scream...`, 
+        `and everyone was supposed to be`, 
+        `noticed that Kirsten's eye's were`,
+        `and making the best of it when `, 
         `red as if she'd been crying. The`, 
         `atmosphere was tense but we were`,
         `sitting round the table drinking`, 
-        `and making the best of it when `, 
-        `suddenly the lights went out.`, 
-        `Someone moved - I don't know who.`, 
-        `Then there was a scream...`, 
+        `excited. But earlier I had heard`, 
     ],
+    // eventsToOrder: [
+    //     `and everyone was supposed to be`, 
+    //     `This was the first party for ages`, 
+    //     `excited. But earlier I had heard`, 
+    //     `Lexi and Chay arguing. You could`, 
+    //     `tell Chay was really angry! I also`, 
+    //     `noticed that Kirsten's eye's were`, 
+    //     `red as if she'd been crying. The`, 
+    //     `atmosphere was tense but we were`,
+    //     `sitting round the table drinking`, 
+    //     `and making the best of it when `, 
+    //     `suddenly the lights went out.`, 
+    //     `Someone moved - I dunno who.`, 
+    //     `Then there was a scream...`, 
+    // ],
     eventsCorrectOrder: [
         `This was the first party for ages`, 
         `and everyone was supposed to be`, 
@@ -685,7 +756,7 @@ export const ShreddedLetterPiecesData = {
         `sitting round the table drinking`, 
         `and making the best of it when `, 
         `suddenly the lights went out.`, 
-        `Someone moved - I don't know who.`, 
+        `Someone moved - I dunno who.`, 
         `Then there was a scream...`, 
     ],
     instructions : [`It looks like this letter has been shredded, but I'm sure you can work out what it originally said. Move the pieces around until you find the right order. I think the first one is already in the right place. You should be able to figure it out from grammar and context.`]
@@ -711,8 +782,8 @@ export const ErrorCorrectionData = {
         ["I don't really knew Chay very well.", "1", false],
         ["Lexi seemed very relaxing and happy.", "2", false],
         ["Lexi made a joke about still having Covid when he coughed.", "3", false],
-        ["Lexi was a good man. He was my friend.", "4", false],
-        ["Dallas gave his mum covid and she was dying.", "5", false],
+        ["Lexi was not a good man. He was my lover but not my friend.", "4", false],
+        ["Dallas gave his mum covid and she was dyed.", "5", false],
     ],
     incorrectSentences: [
         ["1", "2", "5"]
@@ -735,18 +806,18 @@ export const orderEventsData = {
     It was the middle of the pandemic but we were still able to shoot scenes outside. Lexi and I were friends ever since. 
     `],
     eventsToOrder: [
-        // 'Dallas arrived at the party',
-        // 'Dallas met Lexi',
-        // 'Dallas went to drama school',
-        // 'Dallas lost his mother',
-        // 'Dallas started drinking with his drama school friends',
-        // 'Dallas started drinking a lot',
+        'Dallas arrived at the party',
         'Dallas met Lexi',
         'Dallas went to drama school',
         'Dallas lost his mother',
-        'Dallas started drinking a lot',
         'Dallas started drinking with his drama school friends',
-        'Dallas arrived at the party',
+        'Dallas started drinking a lot',
+        // 'Dallas met Lexi',
+        // 'Dallas went to drama school',
+        // 'Dallas lost his mother',
+        // 'Dallas started drinking a lot',
+        // 'Dallas started drinking with his drama school friends',
+        // 'Dallas arrived at the party',
     ],
     eventsCorrectOrder: [
         'Dallas went to drama school',
@@ -839,8 +910,8 @@ export const loveLetterData = {
 
 //wendy
 export const redactedData = {
-    instructions: [`Why do doctors always have such bad handwriting? I can't read some of the words. It looks like they're mostly prepositions and verbs. Fill in the gaps and click "check".`],
-    missingWords: ['with', 'down', 'up', 'avoid', 'to'],
+    instructions: [`Why do doctors always have such bad handwriting? I can't read some of the words. It looks like they're prepositions so you should be able to work them out. Fill in the gaps and click "check".`],
+    missingWords: ['with', 'from', 'up', 'of', 'to'],
 }
 
 
@@ -849,9 +920,9 @@ export const RedactedComp = (props) => {
         <div>
             <h3>Medical Report - Chay Maddison</h3>
             I first met Chay when he came into my clinic. He was having problems <input id={props.id1} name={props.name1} value={props.value1} onChange={props.onchange} /> his back.
-            I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy, cripling pain shoots <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> his arms right to his finger tips.
+            I diagnosed a serious slipped disk in his upper spine. When he lifts anything heavy, cripling pain shoots through his whole body right down to his toes. It could take many months to recover <input id={props.id2} name={props.name2} value={props.value2} onChange={props.onchange} /> this. 
             He probably sustained this injury by working out in the gym without warming <input id={props.id3} name={props.name3} value={props.value3} onChange={props.onchange} />.
-            Although he looks strong, he is physically too weak to lift much more than a dinner plate. He should <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} /> alcohol
+            Although he looks strong, he is physically too weak to lift much more than a dinner plate. He should steer clear <input id={props.id4} name={props.name4} value={props.value4} onChange={props.onchange} /> alcohol
             - he is addicted <input id={props.id5} name={props.name5} value={props.value5} onChange={props.onchange} /> painkillers, and they don't mix.
         </div>
     )
@@ -866,7 +937,7 @@ export const endPageData = {
     my mother died of coronavirus. But that night I discovered something that made my blood boil. Lexington Gray hadn't isolated when he had had
     coronavirus and had passed it on to me. I gave it to my mother and it killed her. I knew I had to take revenge. 
     When lightning struck and the lights went out he was standing by the window smoking, and I took my chance.`,
-    police1: `Thank you from the City Police Department for helping us catch this evil criminal! You will receive a cash reward!`,
+    police1: `Thank you from the City Police Department for helping us catch this evil criminal! You will receive a cash reward!....Oh, wait! I'm just hearing over my radio that Dallas Franks has escaped to Mexico!`,
     police2: `From the City Police Department, I would just like to say thanks for NOTHING. We will never catch him now!`,
 }
 

@@ -5,11 +5,11 @@ import { GlobalStyle } from './styles/GlobalStyle'
 import { Outer } from './pageElements/Outer'
 import VocabPage from './pages/vocab/VocabPage'
 import Home from './pages/home/Home'
-import Door from './pages/door/Door'
 import Start from './pages/newspaper/Newspaper'
 import Footer from './pageElements/Footer'
 import Credits from './pages/credits/Credits'
 import Office from './pages/office/Office'
+import Help from './pages/help/Help'
 import Witness from './pages/witness/Witness'
 import CodeBox from './pages/trials/codeBox/CodeBox'
 import ShreddedLetter from './pages/trials/shreddedLetter/ShreddedLetter'
@@ -45,9 +45,9 @@ import secretcodePic from './images/secretcode.png'
 import weightlifterPic from './images/weightlifter.png'
 import poisonpenPic from './images/poison.png'
 import receiptPic from './images/receipt.png'
-import mapImageUrban from './images/mapUrban.png'
-import mapImageSuburban from './images/mapSuburban.png'
-import mapImageRural from './images/mapRural.png'
+import mapImageUrban from './images/mapUrban.jpg'
+import mapImageSuburban from './images/mapSuburban.jpg'
+import mapImageRural from './images/mapRural.jpg'
 import GameContext from './context/GameContext'
 
 
@@ -106,21 +106,21 @@ function App() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                   <Link className="nav-link" to="/">home</Link>.
-                  <Link className="nav-link" to="/about">about</Link>
+                  <Link className="nav-link" to="/help">help!</Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/start">
+            <Route exact path="/start"> 
               <Start />
             </Route>
             <Route path="/office">
               <Office />
             </Route>
-            <Route path="/door">
-              <Door />
+            <Route path="/help">
+              <Help />
             </Route>
             <Route path="/vocab">
               <VocabPage />

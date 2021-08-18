@@ -6,6 +6,7 @@ flex-direction: column;
 background-color: pink;
 background: repeating-linear-gradient( pink, pink 20px, skyblue 20px, skyblue 21px);
 width: 100%;
+padding-bottom: 3em;
 
 @media(min-width:1025px){
     min-width: 60%;

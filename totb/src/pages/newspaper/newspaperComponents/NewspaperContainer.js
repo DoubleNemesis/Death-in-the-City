@@ -65,7 +65,10 @@ animation-fill-mode: forwards;
 box-shadow: 2px 2px 2px 2px #999;
 cursor: pointer;
 
-@media(min-width: 1025px){
+@media(min-width: 1225px){
+    font-size: 1.2rem;
+}
+@media(min-width: 1425px){
     font-size: 1.4rem;
 }
 

@@ -111,17 +111,19 @@ function ErrorCorrection(props) {
             }
         }
         if (count === 0) {
-            setIsErrorCorrectionCorrect(true)
-            setCompletedChallenges(prev => {
-                return (
-                    [props.artefactName, ...prev]
-                )
-            })
+            if(isComplete1){
+               setIsErrorCorrectionCorrect(true)
+                setCompletedChallenges(prev => {
+                    return (
+                        [props.artefactName, ...prev]
+                    )
+                })
+            }
         }
         else {
             setIsErrorCorrectionCorrect(false)
         }
-    }, [incorrectAndCorrectedArray, props.artefactName, setCompletedChallenges, setIsErrorCorrectionCorrect])
+    }, [incorrectAndCorrectedArray, props.artefactName, setCompletedChallenges, setIsErrorCorrectionCorrect, isComplete1])
 
     const firstSentenceList = sentences.map((item) => <SentenceDiv id={item[1]} isSelected={item[2]} onClick={handleClick} key={item}>{item[0]}</SentenceDiv>)
     const secondSentenceList = incorrectAndCorrectedArray.map((item) => <IncorrectSentencesDiv

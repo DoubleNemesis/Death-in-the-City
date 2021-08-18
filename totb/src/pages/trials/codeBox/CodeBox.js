@@ -26,6 +26,7 @@ function CodeBox() {
 
     const { hasVisitorBook, setHasVisitorBook } = useContext(GameContext)
     const { collectedWitnesses, setCollectedWitnesses } = useContext(GameContext)
+    const { setIsInstructionsModalDisplayed} = useContext(GameContext)
     const { bubbleText1, bubbleText2, bubbleText3 } = CodeBoxData
 
     function handleChange(e) {
@@ -39,7 +40,8 @@ function CodeBox() {
 
     useEffect(()=>{
         window.scrollTo(0,0)
-      },[])
+        setIsInstructionsModalDisplayed(false)
+      },[setIsInstructionsModalDisplayed])
 
     useEffect(()=>{
         if(first && second && third && fourth && fifth){

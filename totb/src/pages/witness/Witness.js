@@ -36,7 +36,7 @@ function WitnessComp(props) {
 
     useEffect(()=>{
         window.scrollTo(0,0)
-      },[])
+      },[doorWasOpened])
 
     const handleArtefactClick = useCallback(()=>{
         setIsArtefactClicked(true)
@@ -78,7 +78,7 @@ function WitnessComp(props) {
                                 updateCompletedWitnesses(props.title)
                             }
                             else {
-                                setRightWrong(<StyledArtefact src={props.artefactImage} alt="artefact" onClick={handleArtefactClick} />)
+                                setRightWrong(<StyledArtefact src={props.artefactImage} alt={props.artefactName} onClick={handleArtefactClick} />)
                                 updateCompletedWitnesses(props.title)
                             }
                             counter = 0;
@@ -86,11 +86,11 @@ function WitnessComp(props) {
                         setTimeout(() => {
                             const conversationEnd = document.getElementById('conversationBottom')
                             const conversationStart = document.getElementById('conversationTop')
-                            if (conversationEnd.offsetParent !== null) {
+                            if (conversationEnd && conversationEnd.offsetParent !== null) {
                                 conversationEnd.scrollIntoView()
                                 console.log('one')
                             }
-                            else if (conversationStart.offsetParent !== null){
+                            else if (conversationStart && conversationStart.offsetParent !== null){
                                 window.scrollTo(0, 700)
                                 console.log('two')
                             }

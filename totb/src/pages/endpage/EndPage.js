@@ -43,7 +43,6 @@ function EndPage() {
     function handleSubmit(e) {
         e.preventDefault()
         const splitInput = textInputText.toLowerCase().split(' ')
-        console.log(splitInput);
         if (chosenOption === characterNames[3]) {
             setSuspectIsCorrect(true)
         }
@@ -51,14 +50,9 @@ function EndPage() {
             if (splitInput.indexOf('corona') > -1 || splitInput.indexOf('covid') > -1) {
                 setReasonIsCorrect(true)
             }
-            console.log('success');
-
         }
         setDisplayMessage(true)
     }
-
-    console.log(suspectIsCorrect);
-    console.log(reasonIsCorrect);
 
     useEffect(() => {
         if (suspectIsCorrect && reasonIsCorrect) {
@@ -91,7 +85,7 @@ function EndPage() {
                         <option value={characterNames[5]}>{characterNames[5]}</option>
                     </select>
                     <textarea onChange={handleTextInput} name="textInput" value={textInputText} />
-                    <FrontPageButton onclick={handleSubmit} bgColor="red">Make Allegation</FrontPageButton>
+                    <FrontPageButton onclick={handleSubmit} bgColor="red" fontSize="1.3rem">Make Allegation</FrontPageButton>
                </Form> : null}
 
                 {
