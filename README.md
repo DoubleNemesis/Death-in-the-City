@@ -1,8 +1,5 @@
-The aim of this app is to present a classroom ready application
+The application takes students through a series of challenges and interviews with witnesses until they have all the information they need to solve the crime. 
 
-Phase 1: create a vocab matching game
-phase 2: present quiz questions with multiple choice answers
-phase 3: give score
-phase 4: students research what they got right or wrong
-phase 5: test out the language
-Back end: students results appear on teacher's hub
+All of the game info is held in one file, so that by replacing that file the game can be changed to, say, a lower level.
+
+This is an SPA built using React. 
