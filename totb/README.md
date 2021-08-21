@@ -1,3 +1,9 @@
+The application takes students through a series of challenges and interviews with witnesses until they have all the information they need to solve the crime.
+
+All of the game info is held in one file (data/lessonData), so that by replacing that file the game can be changed to, say, a lower level.
+
+This is an SPA built using React.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
