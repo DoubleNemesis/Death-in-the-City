@@ -9,8 +9,6 @@ import { FrontPageButton } from '../../../generalComponents/GeneralButton'
 import { MessageContainer } from '../../../containers/MessageContainer'
 import {TaskMessage} from '../../../generalComponents/TaskMessage'
 
-
-
 function Redacted(props) {
 
     const taskText = `Hit check when finished`
@@ -20,7 +18,7 @@ function Redacted(props) {
     const { isRedactedCorrect, setIsRedactedCorrect } = useContext(GameContext)
     const [redactedInputs, setRedactedInputs] = useState({})
     const [message, setMessage] = useState(<TaskMessage task="true" message={taskText}/>)
-    const { instructions, missingWords } = redactedData
+    const { instructions, missingWords } = redactedData 
 
     useEffect(()=>{
         window.scrollTo(0,0)
@@ -32,16 +30,35 @@ function Redacted(props) {
     }
 
     function handleCheck() {
-        if (Object.values(redactedInputs).toString().toLowerCase() === missingWords.toString().toLowerCase()) {
+        const arrayLength = missingWords.length
+        if (
+            redactedInputs['name1'] === missingWords[0] &&
+            redactedInputs['name2'] === missingWords[1] &&
+            redactedInputs['name3'] === missingWords[2] &&
+            redactedInputs['name4'] === missingWords[3] &&
+            redactedInputs['name5'] === missingWords[4]   
+            ) {
             setMessage(<TaskMessage correct="true" message={taskCorrect}/>)
             setIsRedactedCorrect(true)
             let dummyCompletedChallenges = [...completedChallenges]
             dummyCompletedChallenges.push(props.artefactName)
             setCompletedChallenges(dummyCompletedChallenges)
+            for(let i=1; i<=arrayLength; i++){
+                let word = `name${i}`
+                    document.getElementById(word).classList.remove('error')
+            }
         }
         else {
             setMessage(<TaskMessage incorrect="true" message={taskIncorrect}/>)
             setIsRedactedCorrect(false)
+            for(let i=1; i<=arrayLength; i++){
+                let incorrectWord = `name${i}`
+                if (redactedInputs[`name${i}`] !== missingWords[i-1]){
+                    document.getElementById(incorrectWord).classList.add('error')                }
+                else{
+                    document.getElementById(incorrectWord).classList.remove('error') 
+                }
+            }
         }
     }
 
@@ -59,6 +76,11 @@ function Redacted(props) {
                         name3="name3"
                         name4="name4"
                         name5="name5"
+                        id1="name1"
+                        id2="name2"
+                        id3="name3"
+                        id4="name4"
+                        id5="name5"
                         value1={redactedInputs['name1'] || ""}
                         value2={redactedInputs['name2'] || ""}
                         value3={redactedInputs['name3'] || ""}
