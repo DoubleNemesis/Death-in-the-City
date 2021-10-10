@@ -32,11 +32,11 @@ function Redacted(props) {
     function handleCheck() {
         const arrayLength = missingWords.length
         if (
-            redactedInputs['name1'] === missingWords[0] &&
-            redactedInputs['name2'] === missingWords[1] &&
-            redactedInputs['name3'] === missingWords[2] &&
-            redactedInputs['name4'] === missingWords[3] &&
-            redactedInputs['name5'] === missingWords[4]   
+            redactedInputs['name1'].toLowerCase().trim() === missingWords[0] &&
+            redactedInputs['name2'].toLowerCase().trim() === missingWords[1] &&
+            redactedInputs['name3'].toLowerCase().trim() === missingWords[2] &&
+            redactedInputs['name4'].toLowerCase().trim() === missingWords[3] &&
+            redactedInputs['name5'].toLowerCase().trim() === missingWords[4]   
             ) {
             setMessage(<TaskMessage correct="true" message={taskCorrect}/>)
             setIsRedactedCorrect(true)
@@ -51,9 +51,10 @@ function Redacted(props) {
         else {
             setMessage(<TaskMessage incorrect="true" message={taskIncorrect}/>)
             setIsRedactedCorrect(false)
+            console.log(redactedInputs['name1'].toLowerCase() === missingWords[0])
             for(let i=1; i<=arrayLength; i++){
                 let incorrectWord = `name${i}`
-                if (redactedInputs[`name${i}`] !== missingWords[i-1]){
+                if (redactedInputs[`name${i}`].toLowerCase().trim() !== missingWords[i-1]){
                     document.getElementById(incorrectWord).classList.add('error')                }
                 else{
                     document.getElementById(incorrectWord).classList.remove('error') 
